@@ -1,0 +1,62 @@
+---
+import type { NavItem } from '../data/types';
+import pageData from '../data/pages.yml';
+import socialData from '../data/social.yml';
+
+const { pathname } = Astro.url;
+const navItems: NavItem[] = pageData;
+const socialItems: NavItem[] = socialData;
+
+const isExternal = (href: string) => href.startsWith('http') || href.startsWith('//');
+---
+
+<footer>
+  <div>
+    <p>Clouder</p>
+    &copy; {new Date().getFullYear()}
+  </div>
+  <ul>
+    {
+      navItems.map(({ title, href }) => (
+        <li>
+          <a
+            href={href}
+            class="nav-link"
+            {...(isExternal(href) && {
+              target: '_blank',
+              rel: 'noopener noreferrer'
+            })}
+          >
+            {title}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+  <ul>
+    {
+      socialItems.map(({ title, href }) => (
+        <li>
+          <a
+            href={href}
+            class="nav-link"
+            {...(isExternal(href) && {
+              target: '_blank',
+              rel: 'noopener noreferrer'
+            })}
+          >
+            {title}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</footer>
+
+<style>
+  footer {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+</style>

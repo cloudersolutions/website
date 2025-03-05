@@ -1,0 +1,52 @@
+---
+import type { NavItem } from '../data/types';
+import pageData from '../data/pages.yml';
+
+const { pathname } = Astro.url;
+const navItems: NavItem[] = pageData.filter((item: NavItem) => item.showInMainNav);
+
+const isExternal = (href: string) => href.startsWith('http') || href.startsWith('//');
+
+const isActive = (href: string) => {
+  if (href === '/') return pathname === href;
+  return pathname.startsWith(href);
+};
+---
+
+<header>
+  <p><a href="/">Clouder</a></p>
+  <nav>
+    {
+      navItems.map(({ title, href }) => (
+        <a
+          href={href}
+          aria-current={isActive(href) ? 'page' : undefined}
+          class:list={['nav-link', { active: isActive(href) }]}
+          {...(isExternal(href) && {
+            target: '_blank',
+            rel: 'noopener noreferrer'
+          })}
+        >
+          {title}
+        </a>
+      ))
+    }
+  </nav>
+</header>
+
+<style>
+  header {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  p {
+    margin-right: auto;
+  }
+
+  nav {
+    display: flex;
+    gap: 1rem;
+  }
+</style>

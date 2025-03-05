@@ -1,0 +1,18 @@
+- title: Home
+  href: /
+  showInMainNav: false
+- title: About
+  href: /about
+  showInMainNav: true
+- title: News
+  href: /news
+  showInMainNav: true
+- title: Contact
+  href: /contact
+  showInMainNav: true
+- title: Privacy Policy
+  href: /privacy
+  showInMainNav: false
+- title: Log in →
+  href: https://dashboard.cloudersolutions.com/
+  showInMainNav: true
