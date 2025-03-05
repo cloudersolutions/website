@@ -2,21 +2,13 @@
 import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
 import Layout from '../../layouts/Layout.astro';
+import { getImage } from '../../utils/images';
 
 const posts = await getCollection('news', ({ data }) =>
   import.meta.env.PROD ? !data.draft : true
 );
 
 const sortedPosts = posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
-
-const imageImports = import.meta.glob('/src/assets/*.{png,jpg,jpeg,webp,avif}', {
-  eager: true
-});
-
-function getImage(post) {
-  if (!post.data.image) return null;
-  return imageImports[post.data.image]?.default || null;
-}
 ---
 
 <Layout title="News">
