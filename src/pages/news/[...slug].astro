@@ -1,0 +1,24 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+// Generate static paths for all posts
+export async function getStaticPaths() {
+  const posts = await getCollection('news');
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post }
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<Layout title={post.data.title} description={post.data.description} ogImage={post.data.image}>
+  <article class="prose prose-lg mx-auto max-w-3xl py-8">
+    <h1>{post.data.title}</h1>
+    <p>{post.data.date.toLocaleDateString()}</p>
+    <Content />
+  </article>
+</Layout>
