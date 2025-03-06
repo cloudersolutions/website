@@ -1,11 +1,15 @@
 ---
 import MainLayout from '@layouts/MainLayout.astro';
+
+const title = 'Pricing';
+const description = 'Clear pricing, actionable results, and no hidden costs';
 ---
 
-<MainLayout title="Pricing" description="Clear pricing, actionable results, and no hidden costs.">
-  <h1>Pricing</h1>
-  <p>Clear pricing, actionable results, and no hidden costs.</p>
-
+<MainLayout title={title} description={description}>
+  <section>
+    <h1>{title}</h1>
+    <p>{description}</p>
+  </section>
   <section class="grid">
     <div>
       <h3>System audit</h3>

@@ -1,17 +1,24 @@
 ---
 import MainLayout from '@layouts/MainLayout.astro';
+
+const title = 'Page not found';
+const description = 'We couldn’t find the page you were looking for';
 ---
 
-<MainLayout title="Page not found">
+<MainLayout title={title}>
   <div>
-    <h1>🚧<br />Page not found</h1>
+    <h1>🚧<br />{title}</h1>
+    <p>{description}</p>
     <a href="/">Back to home</a>
   </div>
-</MainLayout>
 
-<style>
-  div {
-    padding: 12vmax 0;
-    text-align: center;
-  }
-</style>
+  <style>
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 12vmax 0;
+      text-align: center;
+    }
+  </style>
+</MainLayout>

@@ -2,18 +2,16 @@
 import { Image } from 'astro:assets';
 import MainLayout from '@layouts/MainLayout.astro';
 import teamImage from '@assets/team.jpg';
+
+const title = 'About us';
+const description =
+  'Clouder is on a mission to enable sustainable next generation real estate by changing how building tech connectivity is done.';
 ---
 
-<MainLayout
-  title="About us"
-  description="Clouder is on a mission to enable sustainable next generation real estate by changing how building tech connectivity is done."
->
+<MainLayout title={title} description={description}>
   <section>
     <h1>The Virtual Cabling Company</h1>
-    <p>
-      Clouder is on a mission to enable sustainable next generation real estate by changing how
-      building tech connectivity is done.
-    </p>
+    <p>{description}</p>
   </section>
   <section>
     <h2>Our purpose</h2>

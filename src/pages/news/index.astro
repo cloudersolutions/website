@@ -9,11 +9,14 @@ const posts = await getCollection('news', ({ data }) =>
 );
 
 const sortedPosts = posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const title = 'News';
+const description = 'Company news, product updates, and more.';
 ---
 
-<MainLayout title="News" description="Company news, product updates, and more.">
-  <h1>News</h1>
-  <p>Company news, product updates, and more.</p>
+<MainLayout title={title} description={description}>
+  <h1>{title}</h1>
+  <p>{description}</p>
   <div class="grid">
     {
       sortedPosts.map((post) => (

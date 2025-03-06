@@ -2,9 +2,11 @@
 import { Image } from 'astro:assets';
 import MainLayout from '@layouts/MainLayout.astro';
 import ecImage from '@assets/ec-8-8.png';
+
+const title = 'Edge Connector 8-8';
 ---
 
-<MainLayout title="Edge Connector 8-8">
-  <h1>Edge Connector 8-8</h1>
+<MainLayout title={title}>
+  <h1>{title}</h1>
   <Image src={ecImage} alt="Product image" />
 </MainLayout>

@@ -3,18 +3,16 @@ import { Image } from 'astro:assets';
 import MainLayout from '@layouts/MainLayout.astro';
 import tomiImage from '@assets/tomi.jpg';
 import jussiImage from '@assets/jussi.jpg';
+
+const title = 'Contact us';
+const description =
+  'Get in touch with sales to get your security and compliance concern answered or to book a demo.';
 ---
 
-<MainLayout
-  title="Contact us"
-  description="Get in touch with sales to get your security and compliance concern answered or to book a demo."
->
+<MainLayout title={title} description={description}>
   <section>
     <h1>Interested to learn more?</h1>
-    <p>
-      Get in touch with sales to get your security and compliance concern answered or to book a
-      demo.
-    </p>
+    <p>{description}</p>
   </section>
   <section class="grid">
     <div>

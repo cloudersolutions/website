@@ -2,18 +2,23 @@
 import MainLayout from '@layouts/MainLayout.astro';
 // This view can be used as a generic form submit success page
 // https://docs.netlify.com/forms/setup/#success-messages
+const title = 'Thank you!';
+const description = 'Your form submission has been received';
 ---
 
-<MainLayout title="Thank you!">
+<MainLayout title={title}>
   <div>
-    <h1>Thank you!</h1>
-    <p>Your form submission has been received.</p>
+    <h1>🙌<br />{title}</h1>
+    <p>{description}</p>
     <a href="/">Back to home</a>
   </div>
 </MainLayout>t
 
 <style>
   div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
     padding: 12vmax 0;
     text-align: center;
   }
