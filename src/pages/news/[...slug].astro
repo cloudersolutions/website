@@ -1,7 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
-import { getImage } from '../../utils/images';
 
 export async function getStaticPaths() {
   const posts = await getCollection('news');
@@ -13,10 +12,9 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await post.render();
-const ogImage = getImage(post);
 ---
 
-<Layout title={post.data.title} description={post.data.description} ogImage={ogImage}>
+<Layout title={post.data.title} description={post.data.description} image={post.data.cover}>
   <article class="prose prose-lg mx-auto max-w-3xl py-8">
     <h1>{post.data.title}</h1>
     <p>{post.data.date.toLocaleDateString()}</p>

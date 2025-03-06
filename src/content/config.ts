@@ -1,14 +1,14 @@
 import { defineCollection, z } from 'astro:content';
 
 const news = defineCollection({
-  type: 'content',
-  schema: z.object({
-    title: z.string(),
-    description: z.string(),
-    date: z.coerce.date(),
-    image: z.string().optional(),
-    draft: z.boolean().default(false)
-  })
+  schema: ({ image }) =>
+    z.object({
+      isDraft: z.boolean(),
+      title: z.string(),
+      description: z.string(),
+      date: z.coerce.date(),
+      cover: image()
+    })
 });
 
 export const collections = { news };

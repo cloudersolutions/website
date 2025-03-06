@@ -2,7 +2,6 @@
 import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
 import Layout from '../../layouts/Layout.astro';
-import { getImage } from '../../utils/images';
 
 const posts = await getCollection('news', ({ data }) =>
   import.meta.env.PROD ? !data.draft : true
@@ -13,30 +12,18 @@ const sortedPosts = posts.sort((a, b) => b.data.date.valueOf() - a.data.date.val
 
 <Layout title="News">
   <h1>News</h1>
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  <div>
     {
-      sortedPosts.map((post) => {
-        const imageSrc = getImage(post);
-        return (
-          <article class="border rounded-lg p-4 shadow-md">
-            {imageSrc && (
-              <Image
-                src={imageSrc}
-                alt={post.data.title}
-                format="webp"
-                class="w-full h-auto rounded-md"
-              />
-            )}
-            <h2 class="text-2xl font-bold mt-2">
-              <a href={`/news/${post.slug}`} class="hover:underline">
-                {post.data.title}
-              </a>
-            </h2>
-            <p>{post.data.date.toLocaleDateString()}</p>
-            <p class="mt-2">{post.data.description}</p>
-          </article>
-        );
-      })
+      sortedPosts.map((post) => (
+        <article>
+          <Image src={post.data.cover} alt={post.data.title} format="webp" width="400" />
+          <h2>
+            <a href={`/news/${post.slug}`}>{post.data.title}</a>
+          </h2>
+          <p>{post.data.date.toLocaleDateString()}</p>
+          <p>{post.data.description}</p>
+        </article>
+      ))
     }
   </div>
 </Layout>

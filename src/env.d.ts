@@ -1,6 +1,6 @@
 /// <reference types="astro/client" />
 
-declare module "*.yml" {
-  const value: any; // Add type definitions here if desired
+declare module '*.yml' {
+  const value: any;
   export default value;
 }

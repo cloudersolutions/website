@@ -1,9 +1,9 @@
 ---
 import type { NavItem } from '../data/types';
-import pageData from '../data/pages.yml';
+import navigation from '../data/navigation.yml';
 
 const { pathname } = Astro.url;
-const navItems: NavItem[] = pageData.filter((item: NavItem) => item.showInMainNav);
+const navItems: NavItem[] = navigation.filter((item: NavItem) => item.showInMainNav);
 
 const isExternal = (href: string) => href.startsWith('http') || href.startsWith('//');
 
