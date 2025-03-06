@@ -70,9 +70,9 @@ Käytämme näitä tietoja palvelumme tarjoamiseen ja ylläpitämiseen, henkilö
 
 Verkkosivustomme käyttää evästeitä tallentaakseen ja hakeakseen tietoja vierailustasi. Kun vierailet verkkosivustolla tai sovelluksessa, evästeeksi kutsuttu ohjelmisto tallentaa ja hakee tietoja vierailustasi. Evästeet ovat osa selainta, ja ne auttavat seuraamaan mieltymyksiäsi ja aiempia toimintojasi. Lisätietoja evästeistä on osoitteessa [www.allaboutcookies.org](http://www.allaboutcookies.org/).
 
-Me ja yhteistyökumppanimme (esim. markkinointikumppanit, tytäryhtiöt tai analytiikkapalvelujen tarjoajat) käytämme evästeitä ja lokitiedostoja analysoidaksemme trendejä, hallinnoidaksemme verkkosivustoa, jäljittääksemme käyttäjien liikkeitä verkkosivustolla ja kerätäksemme demografisia tietoja käyttäjäkunnastamme. Saatamme saada anonymisoituja raportteja, jotka perustuvat näiden tekniikoiden käyttöön yhteistyökumppaneidemme toimesta kootusti. Käytämme näitä tietoja myös sivuston sisällön tarjoamiseen, tietoteknisten järjestelmiemme toimivuuden varmistamiseen ja verkkosivustomme optimointiin. Lokitiedostojen tiedot säilytetään erillään muista henkilötiedoistasi. 
+Me ja yhteistyökumppanimme (esim. markkinointikumppanit, tytäryhtiöt tai analytiikkapalvelujen tarjoajat) käytämme evästeitä ja lokitiedostoja analysoidaksemme trendejä, hallinnoidaksemme verkkosivustoa, jäljittääksemme käyttäjien liikkeitä verkkosivustolla ja kerätäksemme demografisia tietoja käyttäjäkunnastamme. Saatamme saada anonymisoituja raportteja, jotka perustuvat näiden tekniikoiden käyttöön yhteistyökumppaneidemme toimesta kootusti. Käytämme näitä tietoja myös sivuston sisällön tarjoamiseen, tietoteknisten järjestelmiemme toimivuuden varmistamiseen ja verkkosivustomme optimointiin. Lokitiedostojen tiedot säilytetään erillään muista henkilötiedoistasi.
 
-Käyttäjät voivat hallita evästeiden käyttöä ja kieltää sen yksittäisen selaimen tasolla. Asennetut evästeet voidaan poistaa. Jos olet vieraillut verkkosivustollamme aiemmin ja haluat muuttaa evästeasetuksiasi, poista ensin evästeet selaimestasi ja päivitä sitten evästeasetuksesi. Jos hylkäät evästeet, voit edelleen käyttää verkkosivustoamme, mutta kykysi käyttää joitakin verkkosivustomme ominaisuuksia tai alueita voi olla rajoitettu. 
+Käyttäjät voivat hallita evästeiden käyttöä ja kieltää sen yksittäisen selaimen tasolla. Asennetut evästeet voidaan poistaa. Jos olet vieraillut verkkosivustollamme aiemmin ja haluat muuttaa evästeasetuksiasi, poista ensin evästeet selaimestasi ja päivitä sitten evästeasetuksesi. Jos hylkäät evästeet, voit edelleen käyttää verkkosivustoamme, mutta kykysi käyttää joitakin verkkosivustomme ominaisuuksia tai alueita voi olla rajoitettu.
 
 Kun vierailet verkkosivustollamme, selaimeesi asetetaan seuraavat evästeluokat:
 
@@ -90,7 +90,7 @@ Näiden evästeiden avulla verkkosivusto voi muistaa valintasi ja tarjota entist
 
 ### Kohdistetut evästeet
 
-Näiden evästeiden avulla voimme mitata kohdennuskampanjan tehokkuutta sekä ymmärtää käyttäjien käyttäytymistä sen jälkeen, kun he ovat katsoneet mainoksen. Nämä evästeet sijoittavat yleensä kolmansien osapuolten alustat, joiden kanssa toteutamme mainoskampanjoita, ja niiden avulla voimme tarjota sinulle sopivia mainoksia. 
+Näiden evästeiden avulla voimme mitata kohdennuskampanjan tehokkuutta sekä ymmärtää käyttäjien käyttäytymistä sen jälkeen, kun he ovat katsoneet mainoksen. Nämä evästeet sijoittavat yleensä kolmansien osapuolten alustat, joiden kanssa toteutamme mainoskampanjoita, ja niiden avulla voimme tarjota sinulle sopivia mainoksia.
 
 ## 5. Kolmannen osapuolen sovellukset
 
@@ -108,7 +108,7 @@ Saatamme myös tallentaa tietojasi muihin kolmansien osapuolten palveluihin täs
 - Sentry (virheiden seuranta ja valvonta)
 - Honeycomb (seuranta)
 
-Näiden palveluntarjoajien tietojen tallennus sijaitsee EU:ssa, ja meillä on tietojenkäsittelysopimukset kunkin palveluntarjoajan kanssa. 
+Näiden palveluntarjoajien tietojen tallennus sijaitsee EU:ssa, ja meillä on tietojenkäsittelysopimukset kunkin palveluntarjoajan kanssa.
 
 ## 6. Tietojen siirto ETA:n ulkopuolelle
 
