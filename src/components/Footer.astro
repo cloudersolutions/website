@@ -1,7 +1,7 @@
 ---
-import type { NavItem } from '../data/types';
-import navigation from '../data/navigation.yml';
-import metadata from '../data/metadata.yml';
+import type { NavItem } from '@data/types';
+import navigation from '@data/navigation.yml';
+import metadata from '@data/metadata.yml';
 
 const { pathname } = Astro.url;
 const navItems: NavItem[] = navigation;
@@ -64,6 +64,7 @@ const isExternal = (href: string) => href.startsWith('http') || href.startsWith(
 
 <style>
   footer {
+    color: dimgray;
     padding: 1rem;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -71,5 +72,11 @@ const isExternal = (href: string) => href.startsWith('http') || href.startsWith(
 
   a {
     display: block;
+    color: currentColor;
+    text-decoration: none;
+
+    &:hover {
+      color: black;
+    }
   }
 </style>

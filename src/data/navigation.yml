@@ -1,11 +1,14 @@
 - title: Home
   href: /
   showInMainNav: false
-- title: About
-  href: /about
+- title: Pricing
+  href: /pricing
   showInMainNav: true
 - title: News
   href: /news
+  showInMainNav: true
+- title: About
+  href: /about
   showInMainNav: true
 - title: Contact
   href: /contact

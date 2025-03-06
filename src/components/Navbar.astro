@@ -1,6 +1,6 @@
 ---
-import type { NavItem } from '../data/types';
-import navigation from '../data/navigation.yml';
+import type { NavItem } from '@data/types';
+import navigation from '@data/navigation.yml';
 
 const { pathname } = Astro.url;
 const navItems: NavItem[] = navigation.filter((item: NavItem) => item.showInMainNav);
@@ -21,7 +21,7 @@ const isActive = (href: string) => {
         <a
           href={href}
           aria-current={isActive(href) ? 'page' : undefined}
-          class:list={['nav-link', { active: isActive(href) }]}
+          class="nav-link"
           {...(isExternal(href) && {
             target: '_blank',
             rel: 'noopener noreferrer'
@@ -48,5 +48,14 @@ const isActive = (href: string) => {
   nav {
     display: flex;
     gap: 1rem;
+  }
+
+  a {
+    color: currentColor;
+    text-decoration: none;
+
+    &[aria-current='page'] {
+      text-decoration: underline;
+    }
   }
 </style>
