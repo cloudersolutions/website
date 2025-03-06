@@ -11,8 +11,9 @@ const posts = await getCollection('news', ({ data }) =>
 const sortedPosts = posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
-<Layout title="News">
+<Layout title="News" description="Company news, product updates, and more.">
   <h1>News</h1>
+  <p>Company news, product updates, and more.</p>
   <div class="grid">
     {
       sortedPosts.map((post) => (
@@ -30,10 +31,9 @@ const sortedPosts = posts.sort((a, b) => b.data.date.valueOf() - a.data.date.val
   <div>
     <h2>Be the first one to know more</h2>
     <p>Sign up to our newsletter to receive updates.</p>
-    <form>
-      <div>
-        <label for="email">Email</label><input id="email" name="email" type="email" required />
-      </div>
+    <form name="newsletter" method="POST" data-netlify="true" data-netlify-honeypot="honeypot">
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" required />
       <input
         id="honeypot"
         name="honeypot"

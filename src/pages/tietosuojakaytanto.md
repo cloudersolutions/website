@@ -1,6 +1,7 @@
 ---
 layout: '@layouts/Layout.astro'
 title: Tietosuojakäytäntö
+description: Lue kuinka käsittelemme henkilötietojasi ja mitä oikeuksia sinulla on tietojesi suhteen.
 ---
 
 ## 1. Rekisterinpitäjä

@@ -29,32 +29,26 @@ import jussiImage from '@assets/jussi.jpg';
   <p>Finland</p>
   <p>+358 40 3525 47 3</p>
   <h2>Fill the form and we will be in touch soon</h2>
-  <form>
+  <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="honeypot">
     <div>
-      <label for="firstName">First name</label><input
-        id="firstName"
-        name="firstName"
-        type="text"
-        required
-      />
+      <label for="firstName">First name</label>
+      <input id="firstName" name="firstName" type="text" required />
     </div>
     <div>
-      <label for="lastName">Last name</label><input
-        id="lastName"
-        name="lastName"
-        type="text"
-        required
-      />
+      <label for="lastName">Last name</label>
+      <input id="lastName" name="lastName" type="text" required />
     </div>
     <div>
-      <label for="email">Email</label><input id="email" name="email" type="email" required />
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" required />
     </div>
     <div>
-      <label for="phone">Phone</label><input id="phone" name="phone" type="tel" />
+      <label for="phone">Phone</label>
+      <input id="phone" name="phone" type="tel" />
     </div>
     <div>
-      <label for="message">Message</label><textarea id="message" name="message" rows="4" required
-      ></textarea>
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
     </div>
     <input
       id="honeypot"

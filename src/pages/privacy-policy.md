@@ -1,6 +1,7 @@
 ---
 layout: '@layouts/Layout.astro'
 title: Privacy Policy
+description: Find out how we collect and use personal information, and learn about your data privacy rights.
 ---
 
 # Privacy Policy

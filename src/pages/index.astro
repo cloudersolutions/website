@@ -3,6 +3,6 @@ import site from '@data/site.yml';
 import Layout from '@layouts/Layout.astro';
 ---
 
-<Layout>
+<Layout title={site.title} description={site.description}>
   <h1>{site.description}</h1>
 </Layout>
