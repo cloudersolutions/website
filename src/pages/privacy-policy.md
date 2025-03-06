@@ -1,5 +1,5 @@
 ---
-layout: '@layouts/Layout.astro'
+layout: '@layouts/ProseLayout.astro'
 title: Privacy Policy
 description: Find out how we collect and use personal information, and learn about your data privacy rights.
 ---

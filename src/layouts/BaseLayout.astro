@@ -44,11 +44,7 @@ const pageImage = image ? image : fallbackImage;
     <link rel="stylesheet" href="/main.css" />
   </head>
   <body>
-    <Navbar />
-    <main>
-      <slot />
-    </main>
-    <Footer />
+    <slot />
   </body>
   <script is:inline>
     const links = document.links;
@@ -60,9 +56,3 @@ const pageImage = image ? image : fallbackImage;
     }
   </script>
 </html>
-
-<style>
-  main {
-    padding: 1.25rem;
-  }
-</style>

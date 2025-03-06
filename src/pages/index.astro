@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
 import site from '@data/site.yml';
-import Layout from '@layouts/Layout.astro';
+import MainLayout from '@layouts/MainLayout.astro';
 import uiLightImage from '@assets/ui-light.png';
 import ClouderIllustration from '@assets/how-clouder-works.svg';
 
@@ -10,7 +10,7 @@ const posts = await getCollection('news');
 const featuredPosts = posts.filter((post) => post.data.featured);
 ---
 
-<Layout title={site.title} description={site.description}>
+<MainLayout title={site.title} description={site.description}>
   <section>
     <h1>{site.description}</h1>
     <p>
@@ -183,7 +183,7 @@ const featuredPosts = posts.filter((post) => post.data.featured);
       }
     </div>
   </section>
-</Layout>
+</MainLayout>
 
 <style>
   section {

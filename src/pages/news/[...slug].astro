@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import { formatDate } from '@utils/date.ts';
-import Layout from '@layouts/Layout.astro';
+import ProseLayout from '@layouts/ProseLayout.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection('news', ({ data }) =>
@@ -23,7 +23,7 @@ const { post, previousPost, nextPost } = Astro.props;
 const { Content } = await post.render();
 ---
 
-<Layout title={post.data.title} description={post.data.description} image={post.data.cover}>
+<ProseLayout title={post.data.title} description={post.data.description} image={post.data.cover}>
   <article>
     <header>
       <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
@@ -38,15 +38,12 @@ const { Content } = await post.render();
     <span></span>
     {nextPost && <a href={`/news/${nextPost.slug}`}>{nextPost.data.title} &rarr;</a>}
   </nav>
-</Layout>
+</ProseLayout>
 
-<style is:global>
-  section > * {
-    margin-block: 1rem;
-  }
-
+<style>
   nav {
     display: flex;
+    padding: 2rem 0;
 
     span {
       width: 100%;

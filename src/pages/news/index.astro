@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
 import { formatDate } from '@utils/date.ts';
-import Layout from '@layouts/Layout.astro';
+import MainLayout from '@layouts/MainLayout.astro';
 
 const posts = await getCollection('news', ({ data }) =>
   import.meta.env.PROD ? !data.draft : true
@@ -11,7 +11,7 @@ const posts = await getCollection('news', ({ data }) =>
 const sortedPosts = posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
-<Layout title="News" description="Company news, product updates, and more.">
+<MainLayout title="News" description="Company news, product updates, and more.">
   <h1>News</h1>
   <p>Company news, product updates, and more.</p>
   <div class="grid">
@@ -47,7 +47,7 @@ const sortedPosts = posts.sort((a, b) => b.data.date.valueOf() - a.data.date.val
     </form>
     <p>We respect your privacy.</p>
   </section>
-</Layout>
+</MainLayout>
 
 <style>
   section {

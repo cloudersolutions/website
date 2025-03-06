@@ -1,11 +1,11 @@
 ---
 import { Image } from 'astro:assets';
-import Layout from '@layouts/Layout.astro';
+import MainLayout from '@layouts/MainLayout.astro';
 import tomiImage from '@assets/tomi.jpg';
 import jussiImage from '@assets/jussi.jpg';
 ---
 
-<Layout
+<MainLayout
   title="Contact us"
   description="Get in touch with sales to get your security and compliance concern answered or to book a demo."
 >
@@ -74,7 +74,7 @@ import jussiImage from '@assets/jussi.jpg';
       <button type="submit">Send</button>
     </form>
   </section>
-</Layout>
+</MainLayout>
 
 <style>
   section {
