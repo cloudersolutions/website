@@ -28,7 +28,7 @@ const sortedPosts = posts.sort((a, b) => b.data.date.valueOf() - a.data.date.val
       ))
     }
   </div>
-  <div>
+  <section>
     <h2>Be the first one to know more</h2>
     <p>Sign up to our newsletter to receive updates.</p>
     <form name="newsletter" method="POST" data-netlify="true" data-netlify-honeypot="honeypot">
@@ -46,10 +46,14 @@ const sortedPosts = posts.sort((a, b) => b.data.date.valueOf() - a.data.date.val
       <button type="submit">Sign up</button>
     </form>
     <p>We respect your privacy.</p>
-  </div>
+  </section>
 </Layout>
 
 <style>
+  section {
+    padding: 2rem 0;
+  }
+
   .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));

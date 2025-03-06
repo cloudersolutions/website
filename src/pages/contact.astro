@@ -9,56 +9,82 @@ import jussiImage from '@assets/jussi.jpg';
   title="Contact us"
   description="Get in touch with sales to get your security and compliance concern answered or to book a demo."
 >
-  <h1>Interested to learn more?</h1>
-  <p>
-    Get in touch with sales to get your security and compliance concern answered or to book a demo.
-  </p>
-  <Image src={tomiImage} alt="Tomi Grönlund" />
-  <h3>Tomi Grönlund</h3>
-  <p>CEO</p>
-  <p>tomi.gronlund@cloudersolutions.com</p>
-  <p>+358 50 527 1416</p>
-  <Image src={jussiImage} alt="Jussi Toivonen" />
-  <h3>Jussi Toivonen</h3>
-  <p>Building Systems Technology Lead</p>
-  <p>jussi.toivonen@cloudersolutions.com</p>
-  <p>+358 50 560 8434</p>
-  <h3>Office</h3>
-  <p>Pursimiehenkatu 26 B</p>
-  <p>00150 Helsinki</p>
-  <p>Finland</p>
-  <p>+358 40 3525 47 3</p>
-  <h2>Fill the form and we will be in touch soon</h2>
-  <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="honeypot">
+  <section>
+    <h1>Interested to learn more?</h1>
+    <p>
+      Get in touch with sales to get your security and compliance concern answered or to book a
+      demo.
+    </p>
+  </section>
+  <section class="grid">
     <div>
-      <label for="firstName">First name</label>
-      <input id="firstName" name="firstName" type="text" required />
+      <Image src={tomiImage} alt="Tomi Grönlund" />
+      <h3>Tomi Grönlund</h3>
+      <p>CEO</p>
+      <p>tomi.gronlund@cloudersolutions.com</p>
+      <p>+358 50 527 1416</p>
     </div>
     <div>
-      <label for="lastName">Last name</label>
-      <input id="lastName" name="lastName" type="text" required />
+      <Image src={jussiImage} alt="Jussi Toivonen" />
+      <h3>Jussi Toivonen</h3>
+      <p>Building Systems Technology Lead</p>
+      <p>jussi.toivonen@cloudersolutions.com</p>
+      <p>+358 50 560 8434</p>
     </div>
     <div>
-      <label for="email">Email</label>
-      <input id="email" name="email" type="email" required />
+      <h3>Office</h3>
+      <p>Pursimiehenkatu 26 B</p>
+      <p>00150 Helsinki</p>
+      <p>Finland</p>
+      <p>+358 40 3525 47 3</p>
     </div>
-    <div>
-      <label for="phone">Phone</label>
-      <input id="phone" name="phone" type="tel" />
-    </div>
-    <div>
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="4" required></textarea>
-    </div>
-    <input
-      id="honeypot"
-      name="honeypot"
-      type="text"
-      autocomplete="off"
-      tabindex="-1"
-      aria-hidden="true"
-      style="position: absolute; left: -9999px;"
-    />
-    <button type="submit">Send</button>
-  </form>
+  </section>
+  <section>
+    <h2>Fill the form and we will be in touch soon</h2>
+    <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="honeypot">
+      <div>
+        <label for="firstName">First name</label>
+        <input id="firstName" name="firstName" type="text" required />
+      </div>
+      <div>
+        <label for="lastName">Last name</label>
+        <input id="lastName" name="lastName" type="text" required />
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required />
+      </div>
+      <div>
+        <label for="phone">Phone</label>
+        <input id="phone" name="phone" type="tel" />
+      </div>
+      <div>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+      </div>
+      <input
+        id="honeypot"
+        name="honeypot"
+        type="text"
+        autocomplete="off"
+        tabindex="-1"
+        aria-hidden="true"
+        style="position: absolute; left: -9999px;"
+      />
+      <button type="submit">Send</button>
+    </form>
+  </section>
 </Layout>
+
+<style>
+  section {
+    padding: 2rem 0;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 3rem;
+    padding: 1rem 0;
+  }
+</style>
