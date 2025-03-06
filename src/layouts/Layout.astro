@@ -50,6 +50,15 @@ const pageImage = image ? image : fallbackImage;
     </main>
     <Footer />
   </body>
+  <script is:inline>
+    const links = document.links;
+    for (const link of links) {
+      if (link.hostname !== window.location.hostname && !link.href.match(/^mailto\:/)) {
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+      }
+    }
+  </script>
 </html>
 
 <style>

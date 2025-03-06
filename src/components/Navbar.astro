@@ -6,8 +6,6 @@ import Logo from '@components/Logo.astro';
 const { pathname } = Astro.url;
 const navItems: NavItem[] = navigation.filter((item: NavItem) => item.showInMainNav);
 
-const isExternal = (href: string) => href.startsWith('http') || href.startsWith('//');
-
 const isActive = (href: string) => {
   if (href === '/') return pathname === href;
   return pathname.startsWith(href);
@@ -21,15 +19,7 @@ const isActive = (href: string) => {
   <nav>
     {
       navItems.map(({ title, href }) => (
-        <a
-          href={href}
-          aria-current={isActive(href) ? 'page' : undefined}
-          class="nav-link"
-          {...(isExternal(href) && {
-            target: '_blank',
-            rel: 'noopener noreferrer'
-          })}
-        >
+        <a href={href} aria-current={isActive(href) ? 'page' : undefined}>
           {title}
         </a>
       ))

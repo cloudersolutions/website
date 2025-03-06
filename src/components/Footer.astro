@@ -6,8 +6,6 @@ import Logo from '@components/Logo.astro';
 
 const { pathname } = Astro.url;
 const navItems: NavItem[] = navigation;
-
-const isExternal = (href: string) => href.startsWith('http') || href.startsWith('//');
 ---
 
 <footer>
@@ -19,14 +17,7 @@ const isExternal = (href: string) => href.startsWith('http') || href.startsWith(
     <h4>Navigation</h4>
     {
       navItems.map(({ title, href }) => (
-        <a
-          href={href}
-          class="nav-link"
-          {...(isExternal(href) && {
-            target: '_blank',
-            rel: 'noopener noreferrer'
-          })}
-        >
+        <a href={href} class="nav-link">
           {title}
         </a>
       ))
@@ -34,34 +25,10 @@ const isExternal = (href: string) => href.startsWith('http') || href.startsWith(
   </div>
   <div>
     <h4>Connect</h4>
-    {
-      site.twitter && (
-        <a href={site.twitter} target="_blank" rel="noopener noreferrer">
-          X (Twitter)
-        </a>
-      )
-    }
-    {
-      site.linkedin && (
-        <a href={site.linkedin} target="_blank" rel="noopener noreferrer">
-          LinkedIn
-        </a>
-      )
-    }
-    {
-      site.instagram && (
-        <a href={site.instagram} target="_blank" rel="noopener noreferrer">
-          Instagram
-        </a>
-      )
-    }
-    {
-      site.youtube && (
-        <a href={site.youtube} target="_blank" rel="noopener noreferrer">
-          YouTube
-        </a>
-      )
-    }
+    {site.twitter && <a href={site.twitter}>X (Twitter)</a>}
+    {site.linkedin && <a href={site.linkedin}>LinkedIn</a>}
+    {site.instagram && <a href={site.instagram}>Instagram</a>}
+    {site.youtube && <a href={site.youtube}>YouTube</a>}
   </div>
 </footer>
 
