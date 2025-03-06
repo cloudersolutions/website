@@ -1,7 +1,8 @@
 ---
 import type { NavItem } from '@data/types';
 import navigation from '@data/navigation.yml';
-import metadata from '@data/metadata.yml';
+import site from '@data/site.yml';
+import Logo from '@components/Logo.astro';
 
 const { pathname } = Astro.url;
 const navItems: NavItem[] = navigation;
@@ -11,10 +12,11 @@ const isExternal = (href: string) => href.startsWith('http') || href.startsWith(
 
 <footer>
   <div>
-    <p>Clouder</p>
-    &copy; {new Date().getFullYear()}
+    <Logo size={16} />
+    <p>&copy; {new Date().getFullYear()} {site.title}</p>
   </div>
   <div>
+    <h4>Navigation</h4>
     {
       navItems.map(({ title, href }) => (
         <a
@@ -31,30 +33,31 @@ const isExternal = (href: string) => href.startsWith('http') || href.startsWith(
     }
   </div>
   <div>
+    <h4>Connect</h4>
     {
-      metadata.twitter && (
-        <a href={metadata.twitter} target="_blank" rel="noopener noreferrer">
-          X
+      site.twitter && (
+        <a href={site.twitter} target="_blank" rel="noopener noreferrer">
+          X (Twitter)
         </a>
       )
     }
     {
-      metadata.linkedin && (
-        <a href={metadata.linkedin} target="_blank" rel="noopener noreferrer">
+      site.linkedin && (
+        <a href={site.linkedin} target="_blank" rel="noopener noreferrer">
           LinkedIn
         </a>
       )
     }
     {
-      metadata.instagram && (
-        <a href={metadata.instagram} target="_blank" rel="noopener noreferrer">
+      site.instagram && (
+        <a href={site.instagram} target="_blank" rel="noopener noreferrer">
           Instagram
         </a>
       )
     }
     {
-      metadata.youtube && (
-        <a href={metadata.youtube} target="_blank" rel="noopener noreferrer">
+      site.youtube && (
+        <a href={site.youtube} target="_blank" rel="noopener noreferrer">
           YouTube
         </a>
       )
@@ -64,19 +67,32 @@ const isExternal = (href: string) => href.startsWith('http') || href.startsWith(
 
 <style>
   footer {
-    color: dimgray;
     padding: 1rem;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
   }
 
+  h4 {
+    font-weight: 600;
+    font-size: 0.875rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  }
+
   a {
+    color: dimgray;
     display: block;
-    color: currentColor;
+    font-size: 0.875rem;
     text-decoration: none;
+    margin-block: 0.25rem;
 
     &:hover {
       color: black;
     }
+  }
+
+  p {
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
   }
 </style>

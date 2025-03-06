@@ -6,7 +6,7 @@ declare module '@data/navigation.yml' {
   export default value;
 }
 
-declare module '@data/metadata.yml' {
+declare module '@data/site.yml' {
   const value: Record<string, string>;
   export default value;
 }
