@@ -1,26 +1,44 @@
 ---
 import { getCollection } from 'astro:content';
+import { formatDate } from '@utils/date.ts';
 import Layout from '@layouts/Layout.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection('news', ({ data }) =>
     import.meta.env.PROD ? !data.draft : true
   );
+  const sortedPosts = posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
-  return posts.map((post) => ({
+  return sortedPosts.map((post, index) => ({
     params: { slug: post.slug },
-    props: { post }
+    props: {
+      post,
+      previousPost: sortedPosts[index - 1] || null,
+      nextPost: sortedPosts[index + 1] || null
+    }
   }));
 }
 
-const { post } = Astro.props;
+const { post, previousPost, nextPost } = Astro.props;
 const { Content } = await post.render();
 ---
 
 <Layout title={post.data.title} description={post.data.description} image={post.data.cover}>
   <article class="prose prose-lg mx-auto max-w-3xl py-8">
     <h1>{post.data.title}</h1>
-    <p>{post.data.date.toLocaleDateString()}</p>
-    <Content />
+    <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
+    <div>
+      <Content />
+    </div>
   </article>
+  <nav>
+    {previousPost && <a href={`/news/${previousPost.slug}`}>&larr; {previousPost.data.title}</a>}
+    {nextPost && <a href={`/news/${nextPost.slug}`}>{nextPost.data.title} &rarr;</a>}
+  </nav>
 </Layout>
+
+<style is:global>
+  div > * {
+    margin-block: 1rem;
+  }
+</style>
