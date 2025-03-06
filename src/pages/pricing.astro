@@ -6,24 +6,26 @@ import Layout from '@layouts/Layout.astro';
   <h1>Pricing</h1>
   <p>Clear pricing, actionable results, and no hidden costs.</p>
 
-  <div>
+  <section class="grid">
     <div>
       <h3>System audit</h3>
       <p>5000&#8202;€ per building</p>
       <p>
-        Get a complete overview of your building automation system's status and suggestions for
+        Get a complete overview of your building automation system status and get suggestions for
         improvement.
       </p>
       <ul>
         <li>
-          A comprehensive mapping of all systems and field devices in your building automation
-          system.
+          Overall view of all field devices and systems currently integrated to building automation.
         </li>
         <li>
-          Expert analysis of system performance, including identified issues and inefficiencies.
+          System analysis that includes a list of error conditions, non-functioning devices, and
+          conflicts.
         </li>
-        <li>Prioritized recommendations for system optimization and improvement.</li>
-        <li>We perform the audit on-site, and it does not require an internet connection.</li>
+        <li>Recommendations for improving the system and reducing energy consumption.</li>
+        <li>
+          We perform the scan on-site, and it does not necessarily require an Internet connection.
+        </li>
       </ul>
       <button>Book an audit</button>
     </div>
@@ -31,20 +33,25 @@ import Layout from '@layouts/Layout.astro';
       <h3>Clouder Platform</h3>
       <p>199&#8202;€&#8202;/&#8202;month per building + setup fee</p>
       <p>
-        Turn your building into a net zero autonomous building. Ideal for all kinds of properties,
-        both new and existing.
+        Transform your building into an energy efficient smart building. Ideal for all kinds of
+        buildings, both new and existing.
       </p>
       <ul>
-        <li>Integrate all systems and devices, regardless of vendor or protocol.</li>
-        <li>Easy expansion without diamond coring or feed throughs.</li>
-        <li>Manage your building using Clouder Dashboard.</li>
-        <li>Efficient monitoring with real-time building insights.</li>
-        <li>Fault detection and diagnostics with recommendations.</li>
-        <li>Reduce energy consumption with rule-based device control.</li>
-        <li>Participate in demand response programs.</li>
-        <li>Secure real-time cloud storage of accurate building data.</li>
-        <li>Export data as CSV or access it via the API.</li>
-        <li>End-to-end encryption and centralized password management.</li>
+        <li>Integrates all systems and devices regardless of the vendor or protocol.</li>
+        <li>Easy to expand without breaking surfaces.</li>
+        <li>
+          Data led building management and control with Clouder Dashboard to reduce energy
+          consumption.
+        </li>
+        <li>Get accurate and real time from field devices and systems.</li>
+        <li>Fault detection and diagnostics with improvement suggestions.</li>
+        <li>
+          Provide data to third party applications through API e.g. occupier smart building app or
+          property management software.
+        </li>
+        <li>Secure cloud storage for 5 years.</li>
+        <li>Export accurate data for sustainability reporting.</li>
+        <li>End-to-end encryption and safe password management for building tech systems.</li>
       </ul>
       <button>Get started</button>
     </div>
@@ -66,9 +73,9 @@ import Layout from '@layouts/Layout.astro';
       </ul>
       <button>Contact sales</button>
     </div>
-  </div>
+  </section>
 
-  <div>
+  <section>
     <h2>What’s included in Clouder Platform?</h2>
     <table>
       <thead>
@@ -194,18 +201,18 @@ import Layout from '@layouts/Layout.astro';
         </tr>
       </tbody>
     </table>
-  </div>
+  </section>
 
-  <div>
+  <section>
     <h2>Book a demo</h2>
     <p>
       If you’re interested in seeing the system live, contact us and book a demo visit to our
       laboratory in Helsinki.
     </p>
     <button>Contact us</button>
-  </div>
+  </section>
 
-  <div>
+  <section>
     <h2>I have a question…</h2>
     <details>
       <summary>Is this only for new construction?</summary>
@@ -256,5 +263,18 @@ import Layout from '@layouts/Layout.astro';
         device warranty.
       </p>
     </details>
-  </div>
+  </section>
 </Layout>
+
+<style>
+  section {
+    padding: 3rem 0;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 3rem;
+    padding: 1rem 0;
+  }
+</style>

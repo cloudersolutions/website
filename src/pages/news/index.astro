@@ -18,7 +18,7 @@ const sortedPosts = posts.sort((a, b) => b.data.date.valueOf() - a.data.date.val
     {
       sortedPosts.map((post) => (
         <article>
-          <Image src={post.data.cover} alt={post.data.title} width={600} height={400} />
+          <Image src={post.data.cover} alt={post.data.title} width={640} />
           <h3>
             <a href={`/news/${post.slug}`}>{post.data.title}</a>
           </h3>
