@@ -3,7 +3,10 @@ import { getCollection } from 'astro:content';
 import Layout from '@layouts/Layout.astro';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('news');
+  const posts = await getCollection('news', ({ data }) =>
+    import.meta.env.PROD ? !data.draft : true
+  );
+
   return posts.map((post) => ({
     params: { slug: post.slug },
     props: { post }
