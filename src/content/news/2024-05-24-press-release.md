@@ -7,7 +7,7 @@ cover: ./images/emma-jussi-labra.jpg
 
 The Finnish technology company Clouder launched a new intelligent cabling solution that connects all the building's technical systems with virtual cables. Virtual cabling acts as the building's digital infrastructure, enabling data-driven management of the entire property cost-effectively and environmentally friendly. 
 
-![emma-jussi-labra](./images/emma-jussi-labra.jpg)
+![People in laboratory](./images/emma-jussi-labra.jpg)
 
 Commercial properties can have more than 50 different technical systems and subsystems connected to thousands of field devices throughout the building. Currently, these systems and devices are interconnected with physical control cables, which limits flexibility and incurs unnecessary, significant costs over the building's life cycle. Clouder's comprehensive solution provides buildings with a smart infrastructure that connects and integrates all the building's technical systems using virtual cables.
 

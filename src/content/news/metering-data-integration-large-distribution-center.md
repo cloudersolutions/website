@@ -7,7 +7,7 @@ cover: ./images/logistic-center.jpg
 
 This is a case example of how Clouder effectively solved the challenges of sensor data transmission in a large logistics center by providing a solution that seamlessly integrated the data into a centralized monitoring system without expensive infrastructure modifications.
 
-![logistic-center](./images/logistic-center.jpg)
+![A large logistic center](./images/logistic-center.jpg)
 
 ## Challenge
 

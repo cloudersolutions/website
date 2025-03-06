@@ -13,18 +13,48 @@ const sortedPosts = posts.sort((a, b) => b.data.date.valueOf() - a.data.date.val
 
 <Layout title="News">
   <h1>News</h1>
-  <div>
+  <div class="grid">
     {
       sortedPosts.map((post) => (
         <article>
-          <Image src={post.data.cover} alt={post.data.title} format="webp" width="400" />
-          <h2>
+          <Image src={post.data.cover} alt={post.data.title} width={600} height={400} />
+          <h3>
             <a href={`/news/${post.slug}`}>{post.data.title}</a>
-          </h2>
+          </h3>
           <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
           <p>{post.data.description}</p>
         </article>
       ))
     }
   </div>
+  <div>
+    <h2>Be the first one to know more</h2>
+    <p>Sign up to our newsletter to receive updates.</p>
+    <form>
+      <div>
+        <label for="email">Email</label><input id="email" type="email" required />
+      </div>
+      <button type="submit">Sign up</button>
+    </form>
+    <p>We respect your privacy.</p>
+  </div>
 </Layout>
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 3rem;
+  }
+
+  article {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    img {
+      aspect-ratio: 3/2;
+      object-fit: cover;
+    }
+  }
+</style>
