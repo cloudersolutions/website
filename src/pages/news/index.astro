@@ -32,8 +32,17 @@ const sortedPosts = posts.sort((a, b) => b.data.date.valueOf() - a.data.date.val
     <p>Sign up to our newsletter to receive updates.</p>
     <form>
       <div>
-        <label for="email">Email</label><input id="email" type="email" required />
+        <label for="email">Email</label><input id="email" name="email" type="email" required />
       </div>
+      <input
+        id="honeypot"
+        name="honeypot"
+        type="text"
+        autocomplete="off"
+        tabindex="-1"
+        aria-hidden="true"
+        style="position: absolute; left: -9999px;"
+      />
       <button type="submit">Sign up</button>
     </form>
     <p>We respect your privacy.</p>
