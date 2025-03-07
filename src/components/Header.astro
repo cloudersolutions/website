@@ -1,0 +1,34 @@
+---
+import type { NavItem } from '@data/types';
+import navigation from '@data/navigation.yml';
+import Logo from '@components/Logo.astro';
+
+const { pathname } = Astro.url;
+const navItems: NavItem[] = navigation.filter((item: NavItem) => item.showInMainNav);
+
+const isActive = (href: string) => {
+  if (href === '/') return pathname === href;
+  return pathname.startsWith(href);
+};
+---
+
+<header class="py-6">
+  <div class="container flex flex-wrap items-center gap-6">
+    <a href="/" class="mr-auto">
+      <Logo size={20} />
+    </a>
+    <nav class="flex flex-wrap gap-x-4">
+      {
+        navItems.map(({ title, href }) => (
+          <a
+            href={href}
+            aria-current={isActive(href) ? 'page' : undefined}
+            class="border-b-2 border-b-transparent px-1 py-2 text-start font-[450] text-current transition hover:text-neutral-500 aria-[current]:border-b-current"
+          >
+            {title}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
+</header>
