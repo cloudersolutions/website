@@ -22,20 +22,20 @@ const description = 'Company news, product updates, and more';
   <section class="container grid grid-cols-3 gap-12 py-16">
     {
       sortedPosts.map((post) => (
-        <article class="flex flex-col gap-3">
-          <Image
-            src={post.data.cover}
-            alt={post.data.title}
-            width={640}
-            class="aspect-img mb-1 rounded object-cover"
-          />
-          <h3 class="text-xl font-semibold">
-            <a href={`/news/${post.slug}`}>{post.data.title}</a>
-          </h3>
-          <time datetime={post.data.date.toISOString()} class="text-sm text-neutral-500">
-            {formatDate(post.data.date)}
-          </time>
-          <p>{post.data.description}</p>
+        <article>
+          <a href={`/news/${post.slug}`} class="flex flex-col gap-3">
+            <Image
+              src={post.data.cover}
+              alt={post.data.title}
+              width={640}
+              class="aspect-img mb-1 rounded object-cover"
+            />
+            <h3 class="text-xl font-semibold">{post.data.title}</h3>
+            <time datetime={post.data.date.toISOString()} class="text-sm text-neutral-500">
+              {formatDate(post.data.date)}
+            </time>
+            <p>{post.data.description}</p>
+          </a>
         </article>
       ))
     }
