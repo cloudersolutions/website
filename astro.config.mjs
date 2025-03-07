@@ -7,6 +7,9 @@ export default defineConfig({
   vite: {
     plugins: [yaml()]
   },
+  server: {
+    open: true
+  },
   experimental: {
     svg: true
   }
