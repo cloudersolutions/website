@@ -10,55 +10,94 @@ const description =
 ---
 
 <MainLayout title={title} description={description}>
-  <section>
-    <h1>Interested to learn more?</h1>
+  <section class="container py-16">
+    <h1 class="mb-4 text-5xl font-semibold">Interested to learn more?</h1>
     <p>{description}</p>
   </section>
-  <section class="grid">
-    <div>
-      <Image src={tomiImage} alt="Tomi Grönlund" />
-      <h3>Tomi Grönlund</h3>
-      <p>CEO</p>
-      <p>tomi.gronlund@cloudersolutions.com</p>
-      <p>+358 50 527 1416</p>
-    </div>
-    <div>
-      <Image src={jussiImage} alt="Jussi Toivonen" />
-      <h3>Jussi Toivonen</h3>
-      <p>Building Systems Technology Lead</p>
-      <p>jussi.toivonen@cloudersolutions.com</p>
-      <p>+358 50 560 8434</p>
-    </div>
-    <div>
-      <h3>Office</h3>
-      <p>Pursimiehenkatu 26 B</p>
-      <p>00150 Helsinki</p>
-      <p>Finland</p>
-      <p>+358 40 3525 47 3</p>
+  <section class="container py-16">
+    <div class="grid grid-cols-3 gap-12">
+      <div>
+        <Image src={tomiImage} alt="Tomi Grönlund" class="aspect-square rounded object-cover" />
+        <h3 class="mt-4 mb-2 text-xl font-semibold">Tomi Grönlund</h3>
+        <p>CEO</p>
+        <p>tomi.gronlund@cloudersolutions.com</p>
+        <p>+358 50 527 1416</p>
+      </div>
+      <div>
+        <Image src={jussiImage} alt="Jussi Toivonen" class="aspect-square rounded object-cover" />
+        <h3 class="mt-4 mb-2 text-xl font-semibold">Jussi Toivonen</h3>
+        <p>Building Systems Technology Lead</p>
+        <p>jussi.toivonen@cloudersolutions.com</p>
+        <p>+358 50 560 8434</p>
+      </div>
+      <div>
+        <h3 class="mb-2 text-xl font-semibold">Office</h3>
+        <p>Pursimiehenkatu 26 B</p>
+        <p>00150 Helsinki</p>
+        <p>Finland</p>
+        <p>+358 40 3525 47 3</p>
+      </div>
     </div>
   </section>
-  <section>
-    <h2>Fill the form and we will be in touch soon</h2>
-    <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="honeypot">
-      <div>
-        <label for="firstName">First name</label>
-        <input id="firstName" name="firstName" type="text" required />
+  <section class="container py-16">
+    <h2 class="mb-4 text-3xl font-semibold">Fill the form and we will be in touch soon</h2>
+    <form
+      name="contact"
+      method="POST"
+      data-netlify="true"
+      data-netlify-honeypot="honeypot"
+      class="space-y-4"
+    >
+      <div class="flex gap-4">
+        <div class="w-full">
+          <label for="firstName" class="mb-2 block font-medium">First name</label>
+          <input
+            id="firstName"
+            name="firstName"
+            type="text"
+            required
+            class="block h-10 w-full rounded border border-neutral-200 px-3 dark:border-neutral-800"
+          />
+        </div>
+        <div class="w-full">
+          <label for="lastName" class="mb-2 block font-medium">Last name</label>
+          <input
+            id="lastName"
+            name="lastName"
+            type="text"
+            required
+            class="block h-10 w-full rounded border border-neutral-200 px-3 dark:border-neutral-800"
+          />
+        </div>
       </div>
       <div>
-        <label for="lastName">Last name</label>
-        <input id="lastName" name="lastName" type="text" required />
+        <label for="email" class="mb-2 block font-medium">Email</label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          required
+          class="block h-10 w-full rounded border border-neutral-200 px-3 dark:border-neutral-800"
+        />
       </div>
       <div>
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" required />
+        <label for="phone" class="mb-2 block font-medium">Phone</label>
+        <input
+          id="phone"
+          name="phone"
+          type="tel"
+          class="block h-10 w-full rounded border border-neutral-200 px-3 dark:border-neutral-800"
+        />
       </div>
       <div>
-        <label for="phone">Phone</label>
-        <input id="phone" name="phone" type="tel" />
-      </div>
-      <div>
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
+        <label for="message" class="mb-2 block font-medium">Message</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="4"
+          required
+          class="block w-full rounded border border-neutral-200 p-3 dark:border-neutral-800"
+        ></textarea>
       </div>
       <input
         id="honeypot"
@@ -69,20 +108,11 @@ const description =
         aria-hidden="true"
         style="position: absolute; left: -9999px;"
       />
-      <button type="submit">Send</button>
+      <button
+        type="submit"
+        class="h-10 rounded bg-black px-6 font-medium text-white dark:bg-white dark:text-black"
+        >Send</button
+      >
     </form>
   </section>
 </MainLayout>
-
-<style>
-  section {
-    padding: 2rem 0;
-  }
-
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-    gap: 3rem;
-    padding: 1rem 0;
-  }
-</style>

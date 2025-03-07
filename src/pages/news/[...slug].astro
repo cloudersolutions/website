@@ -26,27 +26,30 @@ const { Content } = await post.render();
 <ProseLayout title={post.data.title} description={post.data.description} image={post.data.cover}>
   <article>
     <header>
-      <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
-      <h1>{post.data.title}</h1>
+      <time datetime={post.data.date.toISOString()} class="text-sm text-neutral-500">
+        {formatDate(post.data.date)}
+      </time>
+      <h1 class="mt-4 mb-6">{post.data.title}</h1>
     </header>
     <section>
       <Content />
     </section>
   </article>
-  <nav>
-    {previousPost && <a href={`/news/${previousPost.slug}`}>&larr; {previousPost.data.title}</a>}
-    <span></span>
-    {nextPost && <a href={`/news/${nextPost.slug}`}>{nextPost.data.title} &rarr;</a>}
+  <nav class="flex py-12">
+    {
+      previousPost && (
+        <a href={`/news/${previousPost.slug}`} class="w-full">
+          &larr; {previousPost.data.title}
+        </a>
+      )
+    }
+    <span class="w-full"></span>
+    {
+      nextPost && (
+        <a href={`/news/${nextPost.slug}`} class="w-full">
+          {nextPost.data.title} &rarr;
+        </a>
+      )
+    }
   </nav>
 </ProseLayout>
-
-<style>
-  nav {
-    display: flex;
-    padding: 2rem 0;
-
-    span {
-      width: 100%;
-    }
-  }
-</style>

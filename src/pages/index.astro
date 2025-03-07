@@ -3,40 +3,48 @@ import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
 import site from '@data/site.yml';
 import MainLayout from '@layouts/MainLayout.astro';
-import uiLightImage from '@assets/ui-light.png';
 import ClouderIllustration from '@assets/how-clouder-works.svg';
+import uiLightImage from '@assets/ui-light.png';
+import uiDarkImage from '@assets/ui-dark.png';
 
 const posts = await getCollection('news');
 const featuredPosts = posts.filter((post) => post.data.featured);
 ---
 
 <MainLayout title={site.title} description={site.description}>
-  <section>
-    <h1>{site.description}</h1>
-    <p>
+  <section class="container py-16">
+    <h1 class="mb-4 text-5xl font-semibold">{site.description}</h1>
+    <p class="mb-4 text-lg">
       Clouder's technology seamlessly integrates all building systems and devices, regardless of the
       protocol or manufacturer. Our solution reduces the need for extensive physical cabling between
       devices and systems and allows devices to communicate and share data.
     </p>
-    <a href="https://www.youtube.com/watch?v=kdJNcAIhxDE">See how it works</a>
-    <Image src={uiLightImage} alt="Screenshot" />
+    <a
+      href="https://www.youtube.com/watch?v=kdJNcAIhxDE"
+      class="inline-flex rounded bg-black px-4 py-2 font-medium text-white dark:bg-white dark:text-black"
+      >See how it works</a
+    >
+    <div class="screenshot">
+      <Image src={uiLightImage} alt="Screenshot" class="block dark:hidden" />
+      <Image src={uiDarkImage} alt="Screenshot" class="hidden dark:block" />
+    </div>
   </section>
-  <section>
-    <h2>Today, everything is data driven - except buildings</h2>
-    <p>
+  <section class="container py-16">
+    <h2 class="mb-4 text-3xl font-semibold">Today, everything is data driven - except buildings</h2>
+    <p class="mb-12">
       Forward-thinking building owners use clouders to increase asset value, reduce operational
       costs, and improve data-led decision making.
     </p>
-    <div class="grid">
+    <div class="grid grid-cols-3 gap-12">
       <div>
-        <h3>Energy savings</h3>
+        <h3 class="mb-2 text-xl font-semibold">Energy savings</h3>
         <p>
           Detect reasons for excess energy consumption and make your building more energy efficient
           with real time monitoring and system control. Possibility for 20–50% savings.
         </p>
       </div>
       <div>
-        <h3>Accurate data</h3>
+        <h3 class="mb-2 text-xl font-semibold">Accurate data</h3>
         <p>
           Clouder is a vendor independent solution that integrates, collects, and saves all building
           tech system data and device data points. Accurate and real-time data can be utilized in
@@ -44,28 +52,28 @@ const featuredPosts = posts.filter((post) => post.data.featured);
         </p>
       </div>
       <div>
-        <h3>Flexibility</h3>
+        <h3 class="mb-2 text-xl font-semibold">Flexibility</h3>
         <p>
           Easy addition of field devices without breaking surfaces, expensive cabling or complicated
           programming projects. Connected devices are automatically integrated into the solution.
         </p>
       </div>
       <div>
-        <h3>Efficient operations</h3>
+        <h3 class="mb-2 text-xl font-semibold">Efficient operations</h3>
         <p>
           Fault detection and diagnostics in a web browser lessens unnecessary manual work and
           shortens troubleshooting, thus reducing money spent on hourly maintenance work.
         </p>
       </div>
       <div>
-        <h3>Cost savings</h3>
+        <h3 class="mb-2 text-xl font-semibold">Cost savings</h3>
         <p>
           Clear and predictable pricing with no surprises. No need for ongoing updates for third
           party solution APIs or unexpected BMS programming due to constant changes in systems.
         </p>
       </div>
       <div>
-        <h3>Security</h3>
+        <h3 class="mb-2 text-xl font-semibold">Security</h3>
         <p>
           Secure your building tech with accurate audit trail, end-to-end encryption and secure
           cloud connection. No more default passwords known by everyone.
@@ -73,59 +81,59 @@ const featuredPosts = posts.filter((post) => post.data.featured);
       </div>
     </div>
   </section>
-  <section>
-    <h2>How it works</h2>
-    <div class="grid">
+  <section class="container py-16">
+    <h2 class="mb-6 text-3xl font-semibold">How it works</h2>
+    <div class="grid grid-cols-2 gap-12">
       <div>
-        <h3>Virtual cables</h3>
-        <p>
+        <h3 class="mb-2 text-xl font-semibold">Virtual cables</h3>
+        <p class="mb-6">
           The signals of building technology systems are digitized and transmitted through the
           building's backbone network with virtual cables, eliminating the need for physical
           low-voltage cables that run through structures and fire zones.
         </p>
-        <h3>Edge connectors</h3>
-        <p>
+        <h3 class="mb-2 text-xl font-semibold">Edge connectors</h3>
+        <p class="mb-6">
           Field devices and systems are connected to Edge connector devices. They transmit data
           wirelessly or with a wire and encrypted through the IP network to the Virtual Cabling
           Engine. The devices function like distributed I/O and reduce the need for cabling.
         </p>
-        <h3>Virtual Cabling Engine</h3>
-        <p>
+        <h3 class="mb-2 text-xl font-semibold">Virtual Cabling Engine</h3>
+        <p class="mb-6">
           Virtual Cabling Engine (VCE) is a device connected to the BMS center. The VCE contains the
           virtual cabling information, consolidates all the data transmitted by the Edge connectors,
           and facilitates integrations between systems and devices.
         </p>
-        <h3>Data storage</h3>
-        <p>
+        <h3 class="mb-2 text-xl font-semibold">Data storage</h3>
+        <p class="mb-6">
           All system and device data is sent and stored in the cloud. We provide a database API,
           allowing you to utilize data from all systems, subsystems, and field devices in one place
           in real-time.
         </p>
-        <h3>Security</h3>
-        <p>
+        <h3 class="mb-2 text-xl font-semibold">Security</h3>
+        <p class="mb-6">
           Built-in military-grade security using the AES 256 encryption standard (Advanced
           Encryption Standard).
         </p>
       </div>
-      <div>
+      <div class="flex w-full justify-center">
         <ClouderIllustration />
       </div>
     </div>
   </section>
-  <section>
-    <h2>Build sustainability with virtual cabling</h2>
+  <section class="container py-16">
+    <h2 class="mb-4 text-3xl font-semibold">Build sustainability with virtual cabling</h2>
     <p>
       As the built environment is responsible for 39% of global energy-related carbon emissions,
       buildings and more efficient construction are the foundation of our sustainable future.
     </p>
-    <p>
+    <p class="mb-6">
       Clouder’s virtual cabling solution enables commercial real estate organizations to achieve
       lifelong sustainability and meet environmental standards while enhancing overall building
       performance and occupant satisfaction.
     </p>
-    <div class="grid">
+    <div class="grid grid-cols-2 gap-12">
       <div>
-        <h3>Clouder helps meet EU green building regulations</h3>
+        <h3 class="mb-2 text-xl font-semibold">Clouder helps meet EU green building regulations</h3>
         <p>
           The EU's Energy Performance of Buildings Directive (EPBD) has set a bold target: to fully
           decarbonize building stock by 2050. Clouder’s mission is to enable the shift to
@@ -136,66 +144,56 @@ const featuredPosts = posts.filter((post) => post.data.featured);
         </p>
       </div>
       <div>
-        <h3>100x less embodied carbon in cabling</h3>
-        <p>
+        <h3 class="mb-2 text-xl font-semibold">100x less embodied carbon in cabling</h3>
+        <p class="mb-4">
           11% of the built environment’s carbon emissions comes from the embodied carbon. Clouder's
           virtual cabling reduces embodied carbon emissions by 100x compared to physical cables.
         </p>
-        <table>
+        <table class="table w-full text-left text-sm">
           <thead>
-            <tr>
+            <tr class="*:py-2">
               <th>Low voltage cabling</th>
               <th>Clouder’s virtual cabling</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
+            <tr class="border-t border-neutral-200 *:py-2 dark:border-neutral-800">
               <td>50,000 eCO2kg</td>
               <td>500 eCO2kg</td>
             </tr>
-            <tr>
+            <tr class="border-t border-neutral-200 *:py-2 dark:border-neutral-800">
               <td>60,000 m of physical cables</td>
               <td>90% less cables needed</td>
             </tr>
-            <tr>
+            <tr class="border-t border-neutral-200 *:py-2 dark:border-neutral-800">
               <td>13 installation steps</td>
               <td>2 installation steps</td>
             </tr>
+            <tr class="border-t border-neutral-200 *:py-2 dark:border-neutral-800">
+              <td colspan="2" class="text-neutral-500"
+                >* Example from a 10,000 m² office building</td
+              >
+            </tr>
           </tbody>
         </table>
-        <p>* Example from a 10,000 m² office building</p>
       </div>
     </div>
   </section>
-  <section>
-    <h2>Learn how our customers are using Clouder</h2>
-    <div class="grid">
+  <section class="container py-16">
+    <h2 class="mb-4 text-3xl font-semibold">Learn how our customers are using Clouder</h2>
+    <div class="grid grid-cols-2 gap-12">
       {
         featuredPosts.map((post) => (
           <a href={`/blog/${post.slug}`}>
-            <Image src={post.data.cover} alt={post.data.title} />
-            <h3>{post.data.title}</h3>
+            <Image
+              src={post.data.cover}
+              alt={post.data.title}
+              class="aspect-video rounded object-cover"
+            />
+            <h3 class="mt-4 text-xl font-semibold">{post.data.title}</h3>
           </a>
         ))
       }
     </div>
   </section>
 </MainLayout>
-
-<style>
-  section {
-    padding: 2rem 0;
-  }
-
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-    gap: 3rem;
-    padding: 1rem 0;
-
-    img {
-      aspect-ratio: 2/1;
-      object-fit: cover;
-    }
-  }
-</style>

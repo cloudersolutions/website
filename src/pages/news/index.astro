@@ -11,32 +11,54 @@ const posts = await getCollection('news', ({ data }) =>
 const sortedPosts = posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
 const title = 'News';
-const description = 'Company news, product updates, and more.';
+const description = 'Company news, product updates, and more';
 ---
 
 <MainLayout title={title} description={description}>
-  <h1>{title}</h1>
-  <p>{description}</p>
-  <div class="grid">
+  <section class="container pt-16">
+    <h1 class="mb-4 text-5xl font-semibold">{title}</h1>
+    <p class="mb-4 text-lg">{description}</p>
+  </section>
+  <section class="container grid grid-cols-3 gap-12 py-16">
     {
       sortedPosts.map((post) => (
-        <article>
-          <Image src={post.data.cover} alt={post.data.title} width={640} />
-          <h3>
+        <article class="flex flex-col gap-3">
+          <Image
+            src={post.data.cover}
+            alt={post.data.title}
+            width={640}
+            class="aspect-img mb-1 rounded object-cover"
+          />
+          <h3 class="text-xl font-semibold">
             <a href={`/news/${post.slug}`}>{post.data.title}</a>
           </h3>
-          <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
+          <time datetime={post.data.date.toISOString()} class="text-sm text-neutral-500">
+            {formatDate(post.data.date)}
+          </time>
           <p>{post.data.description}</p>
         </article>
       ))
     }
-  </div>
-  <section>
-    <h2>Be the first one to know more</h2>
+  </section>
+  <section class="container py-16">
+    <h2 class="mb-4 text-3xl font-semibold">Be the first one to know more</h2>
     <p>Sign up to our newsletter to receive updates.</p>
     <form name="newsletter" method="POST" data-netlify="true" data-netlify-honeypot="honeypot">
-      <label for="email">Email</label>
-      <input id="email" name="email" type="email" required />
+      <div class="my-4 flex gap-2">
+        <input
+          id="email"
+          name="email"
+          placeholder="Email"
+          type="email"
+          required
+          class="field-sizing-content h-10 min-w-80 rounded border border-neutral-200 px-3 dark:border-neutral-800"
+        />
+        <button
+          type="submit"
+          class="h-10 rounded bg-black px-6 font-medium text-white dark:bg-white dark:text-black"
+          >Sign up</button
+        >
+      </div>
       <input
         id="honeypot"
         name="honeypot"
@@ -46,31 +68,7 @@ const description = 'Company news, product updates, and more.';
         aria-hidden="true"
         style="position: absolute; left: -9999px;"
       />
-      <button type="submit">Sign up</button>
     </form>
-    <p>We respect your privacy.</p>
+    <p class="text-sm text-neutral-500">We respect your privacy.</p>
   </section>
 </MainLayout>
-
-<style>
-  section {
-    padding: 2rem 0;
-  }
-
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-    gap: 3rem;
-  }
-
-  article {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-
-    img {
-      aspect-ratio: 3/2;
-      object-fit: cover;
-    }
-  }
-</style>

@@ -9,31 +9,27 @@ const description =
 ---
 
 <MainLayout title={title} description={description}>
-  <section>
-    <h1>The Virtual Cabling Company</h1>
-    <p>{description}</p>
+  <section class="container py-16">
+    <h1 class="mb-4 text-5xl font-semibold">The Virtual Cabling Company</h1>
+    <p class="text-lg">{description}</p>
   </section>
-  <section>
-    <h2>Our purpose</h2>
-    <div class="grid">
-      <p>
+  <section class="container space-y-6 py-16">
+    <h2 class="mb-4 text-3xl font-semibold">Our purpose</h2>
+    <div class="flex gap-12">
+      <p class="w-2/3">
         Clouder is building virtual cabling technology for commercial real estate to reduce cables,
         waste, spending, and emissions both in construction and throughout lifecycle renovations.
         Our solution also provides a possibility to cut operating carbon footprint and operating
         costs by providing data for truly efficient building automation.
       </p>
-      <blockquote>
-        <p>
+      <blockquote class="w-1/3">
+        <p class="text-lg font-medium italic">
           We are the first in the world to enable universal, system agnostic virtual cabling for all
           building technology systems
         </p>
       </blockquote>
     </div>
-  </section>
-  <section>
     <Image src={teamImage} alt="Clouder team" />
-  </section>
-  <section>
     <p>
       We are the first in the world to enable universal, system agnostic virtual cabling for all
       building technology systems. Doing this allows us to provide comprehensive data for truly
@@ -43,9 +39,7 @@ const description =
       On top of creating technology that enables more sustainable buildings, we do it so that it’s
       cheaper and makes construction and renovation projects significantly simpler and shorter.
     </p>
-  </section>
-  <section>
-    <h2>Our team</h2>
+    <h2 class="mb-4 text-3xl font-semibold">Our team</h2>
     <p>
       Clouder brings together a team of experts with decades of experience from a range of
       industries, including building service technology, software development, information and cyber
@@ -65,16 +59,3 @@ const description =
     </p>
   </section>
 </MainLayout>
-
-<style>
-  section {
-    padding: 2rem 0;
-  }
-
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-    gap: 3rem;
-    padding: 1rem 0;
-  }
-</style>

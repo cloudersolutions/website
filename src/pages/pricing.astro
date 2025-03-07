@@ -6,19 +6,24 @@ const description = 'Clear pricing, actionable results, and no hidden costs';
 ---
 
 <MainLayout title={title} description={description}>
-  <section>
-    <h1>{title}</h1>
-    <p>{description}</p>
+  <section class="container pt-16 text-center">
+    <h1 class="mb-4 text-5xl font-semibold">{title}</h1>
+    <p class="text-lg">
+      {description}
+    </p>
   </section>
-  <section class="grid">
-    <div>
-      <h3>System audit</h3>
-      <p>5000&#8202;€ per building</p>
+  <section class="container grid grid-cols-3 gap-4 py-16">
+    <div class="rounded border border-neutral-200 p-6 dark:border-neutral-800">
+      <h3 class="mb-2 text-2xl font-semibold">System audit</h3>
+      <p class="mb-4">
+        <strong class="font-semibold">5000&#8202;€ </strong>
+        <span class="text-neutral-500">per building</span>
+      </p>
       <p>
         Get a complete overview of your building automation system status and get suggestions for
         improvement.
       </p>
-      <ul>
+      <ul class="my-5 list-disc pl-5 *:my-2 *:text-sm">
         <li>
           Overall view of all field devices and systems currently integrated to building automation.
         </li>
@@ -31,16 +36,23 @@ const description = 'Clear pricing, actionable results, and no hidden costs';
           We perform the scan on-site, and it does not necessarily require an Internet connection.
         </li>
       </ul>
-      <button>Book an audit</button>
+      <button
+        class="h-9 w-full rounded bg-black px-4 text-sm font-medium text-white dark:bg-white dark:text-black"
+      >
+        Book an audit
+      </button>
     </div>
-    <div>
-      <h3>Clouder Platform</h3>
-      <p>199&#8202;€&#8202;/&#8202;month per building + setup fee</p>
+    <div class="rounded border border-neutral-200 p-6 dark:border-neutral-800">
+      <h3 class="mb-2 text-2xl font-semibold">Clouder Platform</h3>
+      <p class="mb-4">
+        <strong class="font-semibold">199&#8202;€&#8202;/&#8202;month </strong>
+        <span class="text-neutral-500">per building + setup fee</span>
+      </p>
       <p>
         Transform your building into an energy efficient smart building. Ideal for all kinds of
         buildings, both new and existing.
       </p>
-      <ul>
+      <ul class="my-5 list-disc pl-5 *:my-2 *:text-sm">
         <li>Integrates all systems and devices regardless of the vendor or protocol.</li>
         <li>Easy to expand without breaking surfaces.</li>
         <li>
@@ -57,16 +69,20 @@ const description = 'Clear pricing, actionable results, and no hidden costs';
         <li>Export accurate data for sustainability reporting.</li>
         <li>End-to-end encryption and safe password management for building tech systems.</li>
       </ul>
-      <button>Get started</button>
+      <button
+        class="h-9 w-full rounded bg-black px-4 text-sm font-medium text-white dark:bg-white dark:text-black"
+      >
+        Get started
+      </button>
     </div>
-    <div>
-      <h3>Clouder Portfolio</h3>
-      <p>Custom pricing</p>
+    <div class="rounded border border-neutral-200 p-6 dark:border-neutral-800">
+      <h3 class="mb-2 text-2xl font-semibold">Clouder Portfolio</h3>
+      <p class="mb-4 text-neutral-500">Custom pricing</p>
       <p>
         Maximize efficiency and sustainability across your entire building portfolio. Perfect for
         real estate funds.
       </p>
-      <ul>
+      <ul class="my-5 list-disc pl-5 *:my-2 *:text-sm">
         <li>Everything in Platform, plus:</li>
         <li>Portfolio management in Clouder Dashboard.</li>
         <li>Portfolio-wide energy optimization and sustainability tracking.</li>
@@ -75,25 +91,33 @@ const description = 'Clear pricing, actionable results, and no hidden costs';
         <li>Cross-building analytics for data-driven, portfolio-level decisions.</li>
         <li>Streamlined ESG reporting for regulatory compliance and investors.</li>
       </ul>
-      <button>Contact sales</button>
+      <button
+        class="h-9 w-full rounded bg-black px-4 text-sm font-medium text-white dark:bg-white dark:text-black"
+      >
+        Contact sales
+      </button>
     </div>
   </section>
 
-  <section>
-    <h2>What’s included in Clouder Platform?</h2>
-    <table>
+  <section class="container py-16">
+    <h2 class="mb-4 text-3xl font-semibold">What’s included in Clouder Platform?</h2>
+    <table class="w-full text-left">
       <thead>
-        <tr>
-          <th></th>
+        <tr
+          class="text-xl *:border-b *:border-neutral-200 *:py-6 *:font-semibold *:dark:border-neutral-800"
+        >
+          <th class="w-1/6"></th>
           <th>What you get</th>
           <th>Included in the price?</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Universal connectivity</td>
+        <tr
+          class="*:border-b *:border-neutral-200 *:py-6 *:align-text-top *:dark:border-neutral-800"
+        >
+          <td class="align-text-top font-medium">Universal connectivity</td>
           <td>
-            <ul>
+            <ul class="list list-disc space-y-2 px-4">
               <li>
                 Connect all building tech systems and devices, independent of vendor or protocol, by
                 using Clouder Virtual Cabling Engine.
@@ -112,10 +136,12 @@ const description = 'Clear pricing, actionable results, and no hidden costs';
             Yes. Clouder Edge Connectors are sold separately 1000&#8202;€&#8202;/&#8202;device.
           </td>
         </tr>
-        <tr>
+        <tr
+          class="*:border-b *:border-neutral-200 *:py-6 *:align-text-top *:dark:border-neutral-800"
+        >
           <td>Clouder Dashboard</td>
           <td>
-            <ul>
+            <ul class="list list-disc space-y-2 px-4">
               <li>View and manage all aspects of your building straight from your browser.</li>
               <li>
                 Access features like
@@ -127,10 +153,12 @@ const description = 'Clear pricing, actionable results, and no hidden costs';
           </td>
           <td>Yes</td>
         </tr>
-        <tr>
+        <tr
+          class="*:border-b *:border-neutral-200 *:py-6 *:align-text-top *:dark:border-neutral-800"
+        >
           <td id="building-insights">Building insights</td>
           <td>
-            <ul>
+            <ul class="list list-disc space-y-2 px-4">
               <li>
                 Real-time data on energy consumption, indoor climate, and other insights enable
                 improved monitoring and informed decision-making.
@@ -140,10 +168,12 @@ const description = 'Clear pricing, actionable results, and no hidden costs';
           </td>
           <td>Yes</td>
         </tr>
-        <tr>
+        <tr
+          class="*:border-b *:border-neutral-200 *:py-6 *:align-text-top *:dark:border-neutral-800"
+        >
           <td id="device-control">Device control</td>
           <td>
-            <ul>
+            <ul class="list list-disc space-y-2 px-4">
               <li>Control all systems and field devices in your building.</li>
               <li>
                 Use sophisticated, event-based rules to control devices. This reduces energy
@@ -157,10 +187,12 @@ const description = 'Clear pricing, actionable results, and no hidden costs';
             100&#8202;€&#8202;/&#8202;month&#8202;/&#8202;building.
           </td>
         </tr>
-        <tr>
+        <tr
+          class="*:border-b *:border-neutral-200 *:py-6 *:align-text-top *:dark:border-neutral-800"
+        >
           <td id="data-solution">Data solution</td>
           <td>
-            <ul>
+            <ul class="list list-disc space-y-2 px-4">
               <li>
                 Secure real-time cloud storage of accurate building data. No more relying on
                 benchmarks or estimates.
@@ -177,108 +209,117 @@ const description = 'Clear pricing, actionable results, and no hidden costs';
           </td>
           <td>Yes</td>
         </tr>
-        <tr>
+        <tr
+          class="*:border-b *:border-neutral-200 *:py-6 *:align-text-top *:dark:border-neutral-800"
+        >
           <td>
             <span>Security built-in</span>
-            <td>
-              <ul>
-                <li>Fine-grained data access rules and end-to-end encryption.</li>
-                <li>
-                  Robust security in building automation – no more access to systems with default
-                  passwords.
-                </li>
-              </ul>
-            </td>
-            <td>Yes</td>
           </td>
-          <tr>
-            <td>Custom integrations</td>
-            <td>
-              <ul>
-                <li>We work together with your team to come up with a tailored solution.</li>
-              </ul>
-            </td>
-            <td>
-              Happy to explore. <a href="/contact">Contact us</a>
-            </td>
-          </tr>
+          <td>
+            <ul class="list list-disc space-y-2 px-4">
+              <li>Fine-grained data access rules and end-to-end encryption.</li>
+              <li>
+                Robust security in building automation – no more access to systems with default
+                passwords.
+              </li>
+            </ul>
+          </td>
+          <td>Yes</td>
+        </tr>
+        <tr
+          class="*:border-b *:border-neutral-200 *:py-6 *:align-text-top *:dark:border-neutral-800"
+        >
+          <td>Custom integrations</td>
+          <td>
+            <ul class="list list-disc space-y-2 px-4">
+              <li>We work together with your team to come up with a tailored solution.</li>
+            </ul>
+          </td>
+          <td>
+            Happy to explore. <a href="/contact" class="underline">Contact us</a>
+          </td>
         </tr>
       </tbody>
     </table>
   </section>
 
-  <section>
-    <h2>Book a demo</h2>
-    <p>
+  <section class="container py-16">
+    <h2 class="mb-4 text-3xl font-semibold">Book a demo</h2>
+    <p class="mb-4">
       If you’re interested in seeing the system live, contact us and book a demo visit to our
       laboratory in Helsinki.
     </p>
-    <button>Contact us</button>
+    <button
+      class="h-9 rounded bg-black px-4 text-sm font-medium text-white dark:bg-white dark:text-black"
+    >
+      Contact us
+    </button>
   </section>
 
-  <section>
-    <h2>I have a question…</h2>
-    <details>
-      <summary>Is this only for new construction?</summary>
-      <p>
+  <section class="container py-16">
+    <h2 class="mb-4 text-3xl font-semibold">I have a question…</h2>
+    <details class="border-b border-neutral-200 dark:border-neutral-800">
+      <summary class="py-4 font-semibold">Is this only for new construction?</summary>
+      <p class="mb-4 ml-4">
         Clouder's solution can be installed in all types of properties, both existing and new
         construction.
       </p>
     </details>
-    <details>
-      <summary>Can I add virtual cabling alongside my current systems?</summary>
-      <p>
+    <details class="border-b border-neutral-200 dark:border-neutral-800">
+      <summary class="py-4 font-semibold">
+        Can I add virtual cabling alongside my current systems?
+      </summary>
+      <p class="mb-4 ml-4">
         Yes, our solution can be installed alongside the existing cabling regardless of the systems.
       </p>
     </details>
-    <details>
-      <summary>Does to system need a network connection to function?</summary>
-      <p>
+    <details class="border-b border-neutral-200 dark:border-neutral-800">
+      <summary class="py-4 font-semibold">
+        Does to system need a network connection to function?
+      </summary>
+      <p class="mb-4 ml-4">
         The system operates locally on the property and does not require an external connection to
         function. Network connection is needed for monitoring and storing data to cloud.
       </p>
     </details>
-    <details>
-      <summary>Who does the installation of the connectors?</summary>
-      <p>The installation can be carried out by the site's electrical or automation contractor.</p>
+    <details class="border-b border-neutral-200 dark:border-neutral-800">
+      <summary class="py-4 font-semibold">Who does the installation of the connectors?</summary>
+      <p class="mb-4 ml-4">
+        The installation can be carried out by the site's electrical or automation contractor.
+      </p>
     </details>
-    <details>
-      <summary>How much does the systems cost annually? Are there any license fees?</summary>
-      <p>
+    <details class="border-b border-neutral-200 dark:border-neutral-800">
+      <summary class="py-4 font-semibold">
+        How much does the systems cost annually? Are there any license fees?
+      </summary>
+      <p class="mb-4 ml-4">
         The monthly fee is determined by the data amounts and scope of the service. Additionally,
         there are no extra license fees.
       </p>
     </details>
-    <details>
-      <summary>Does the system increase construction costs in my projects?</summary>
-      <p>
+    <details class="border-b border-neutral-200 dark:border-neutral-800">
+      <summary class="py-4 font-semibold">
+        Does the system increase construction costs in my projects?
+      </summary>
+      <p class="mb-4 ml-4">
         No, the system reduces work phases, installation duration, and thereby lowers construction
         costs.
       </p>
     </details>
-    <details>
-      <summary>How the system should be considered in building technology system plans?</summary>
-      <p>Clouder provides a design guide for building automation and electrical designers.</p>
+    <details class="border-b border-neutral-200 dark:border-neutral-800">
+      <summary class="py-4 font-semibold">
+        How the system should be considered in building technology system plans?
+      </summary>
+      <p class="mb-4 ml-4">
+        Clouder provides a design guide for building automation and electrical designers.
+      </p>
     </details>
-    <details>
-      <summary>Is there a warranty for the system?</summary>
-      <p>
+    <details class="border-b border-neutral-200 dark:border-neutral-800">
+      <summary class="py-4 font-semibold">Is there a warranty for the system?</summary>
+      <p class="mb-4 ml-4">
         Warranty is 24 months. After the warranty period ends, a maintenance contract offers full
         device warranty.
       </p>
     </details>
   </section>
 </MainLayout>
-
-<style>
-  section {
-    padding: 2rem 0;
-  }
-
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-    gap: 3rem;
-    padding: 1rem 0;
-  }
-</style>
