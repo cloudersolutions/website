@@ -15,23 +15,26 @@ const description = 'Company news, product updates, and more';
 ---
 
 <MainLayout title={title} description={description}>
-  <section class="container pt-16">
-    <h1 class="mb-4 text-5xl font-semibold">{title}</h1>
-    <p class="mb-4 text-lg">{description}</p>
+  <section class="container py-8 md:py-12">
+    <h1 class="mb-4 text-4xl font-semibold md:text-5xl">{title}</h1>
+    <p class="text-lg">{description}</p>
   </section>
-  <section class="container grid grid-cols-3 gap-12 py-16">
+  <section class="container grid grid-cols-1 gap-12 py-9 md:grid-cols-2 lg:grid-cols-3">
     {
       sortedPosts.map((post) => (
         <article>
-          <a href={`/news/${post.slug}`} class="flex flex-col gap-3">
+          <a href={`/news/${post.slug}`} class="group flex flex-col gap-3">
             <Image
               src={post.data.cover}
               alt={post.data.title}
               width={640}
-              class="aspect-img mb-1 rounded object-cover"
+              class="aspect-img mb-1 rounded object-cover transition group-hover:opacity-75"
             />
             <h3 class="text-xl font-semibold">{post.data.title}</h3>
-            <time datetime={post.data.date.toISOString()} class="text-sm text-neutral-500">
+            <time
+              datetime={post.data.date.toISOString()}
+              class="block text-sm text-neutral-500 dark:text-neutral-400"
+            >
               {formatDate(post.data.date)}
             </time>
             <p>{post.data.description}</p>
@@ -40,35 +43,37 @@ const description = 'Company news, product updates, and more';
       ))
     }
   </section>
-  <section class="container py-16">
-    <h2 class="mb-4 text-3xl font-semibold">Be the first one to know more</h2>
-    <p>Sign up to our newsletter to receive updates.</p>
-    <form name="newsletter" method="POST" data-netlify="true" data-netlify-honeypot="honeypot">
-      <div class="my-4 flex gap-2">
+  <section class="container py-24">
+    <div class="rounded-md bg-neutral-100 p-6 md:p-12 dark:bg-neutral-900">
+      <h3 class="mb-2 text-2xl font-semibold">Be the first one to know more</h3>
+      <p>Sign up to our newsletter to receive updates</p>
+      <form name="newsletter" method="POST" data-netlify="true" data-netlify-honeypot="honeypot">
+        <div class="my-6 flex flex-wrap gap-2">
+          <input
+            id="email"
+            name="email"
+            placeholder="Email"
+            type="email"
+            required
+            class="h-12 w-full max-w-100 rounded border border-neutral-200 bg-white px-4 dark:border-neutral-800 dark:bg-neutral-950"
+          />
+          <button
+            type="submit"
+            class="h-12 rounded bg-black px-6 font-medium text-nowrap text-white dark:bg-white dark:text-black"
+            >Sign up</button
+          >
+        </div>
         <input
-          id="email"
-          name="email"
-          placeholder="Email"
-          type="email"
-          required
-          class="field-sizing-content h-10 min-w-80 rounded border border-neutral-200 px-3 dark:border-neutral-800"
+          id="honeypot"
+          name="honeypot"
+          type="text"
+          autocomplete="off"
+          tabindex="-1"
+          aria-hidden="true"
+          style="position: absolute; left: -9999px;"
         />
-        <button
-          type="submit"
-          class="h-10 rounded bg-black px-6 font-medium text-white dark:bg-white dark:text-black"
-          >Sign up</button
-        >
-      </div>
-      <input
-        id="honeypot"
-        name="honeypot"
-        type="text"
-        autocomplete="off"
-        tabindex="-1"
-        aria-hidden="true"
-        style="position: absolute; left: -9999px;"
-      />
-    </form>
-    <p class="text-sm text-neutral-500">We respect your privacy.</p>
+      </form>
+      <p class="text-sm text-neutral-500">We respect your privacy</p>
+    </div>
   </section>
 </MainLayout>

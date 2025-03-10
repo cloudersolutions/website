@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import { ArrowLeft, ArrowRight } from 'lucide-astro';
 import { formatDate } from '@utils/date.ts';
 import ProseLayout from '@layouts/ProseLayout.astro';
 
@@ -24,32 +25,47 @@ const { Content } = await post.render();
 ---
 
 <ProseLayout title={post.data.title} description={post.data.description} image={post.data.cover}>
-  <article>
-    <header>
-      <time datetime={post.data.date.toISOString()} class="text-sm text-neutral-500">
+  <article class="mb-24">
+    <header class="not-prose">
+      <time
+        datetime={post.data.date.toISOString()}
+        class="mb-4 block text-sm text-neutral-500 dark:text-neutral-400"
+      >
         {formatDate(post.data.date)}
       </time>
-      <h1 class="mt-4 mb-6">{post.data.title}</h1>
+      <h1 class="mb-6 text-3xl font-semibold text-neutral-900 md:text-4xl dark:text-neutral-100">
+        {post.data.title}
+      </h1>
     </header>
     <section>
       <Content />
     </section>
   </article>
-  <nav class="flex py-12">
-    {
-      previousPost && (
-        <a href={`/news/${previousPost.slug}`} class="w-full">
-          &larr; {previousPost.data.title}
-        </a>
-      )
-    }
-    <span class="w-full"></span>
-    {
-      nextPost && (
-        <a href={`/news/${nextPost.slug}`} class="w-full">
-          {nextPost.data.title} &rarr;
-        </a>
-      )
-    }
-  </nav>
+  <footer class="not-prose">
+    <nav class="grid grid-cols-1 gap-x-12 gap-y-4 md:grid-cols-2">
+      {
+        previousPost && (
+          <a
+            href={`/news/${previousPost.slug}`}
+            class="flex w-full items-center gap-4 rounded border border-current/10 p-4 leading-6 font-semibold text-current no-underline transition hover:bg-current/3"
+          >
+            <ArrowLeft size={20} class="flex-shrink-0" />
+            <span>{previousPost.data.title}</span>
+          </a>
+        )
+      }
+      <!-- <span class="flex-grow"></span> -->
+      {
+        nextPost && (
+          <a
+            href={`/news/${nextPost.slug}`}
+            class="flex w-full items-center justify-end gap-4 rounded border border-current/10 p-4 text-right leading-6 font-semibold text-current no-underline transition hover:bg-current/3 md:col-start-2"
+          >
+            <span>{nextPost.data.title}</span>
+            <ArrowRight size={20} class="flex-shrink-0" />
+          </a>
+        )
+      }
+    </nav>
+  </footer>
 </ProseLayout>

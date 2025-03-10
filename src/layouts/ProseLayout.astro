@@ -11,7 +11,7 @@ const props = Astro.props;
 <BaseLayout {...props}>
   <Header />
   <main class="container">
-    <section class="prose prose-neutral mx-auto max-w-4xl">
+    <section class="prose prose-neutral dark:prose-invert mx-auto pt-8 pb-24 md:pt-16">
       {
         props.frontmatter && props.frontmatter.title && (
           <h1 class="mt-4 mb-6">{props.frontmatter.title}</h1>
