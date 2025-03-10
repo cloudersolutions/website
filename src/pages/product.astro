@@ -16,19 +16,22 @@ const description =
       <div class="flex justify-center">
         <a
           href="#pricing"
-          class="rounded-full px-4 leading-9 font-medium text-indigo-500 transition hover:bg-indigo-50"
-          >Pricing</a
+          class="rounded-full px-4 leading-9 font-medium text-indigo-500 transition hover:bg-indigo-50 dark:text-indigo-400 dark:hover:bg-indigo-500/20"
         >
+          Pricing
+        </a>
         <a
           href="#features"
-          class="rounded-full px-4 leading-9 font-medium text-indigo-500 transition hover:bg-indigo-50"
-          >Features</a
+          class="rounded-full px-4 leading-9 font-medium text-indigo-500 transition hover:bg-indigo-50 dark:text-indigo-400 dark:hover:bg-indigo-500/20"
         >
+          Features
+        </a>
         <a
           href="#questions"
-          class="rounded-full px-4 leading-9 font-medium text-indigo-500 transition hover:bg-indigo-50"
-          >Questions</a
+          class="rounded-full px-4 leading-9 font-medium text-indigo-500 transition hover:bg-indigo-50 dark:text-indigo-400 dark:hover:bg-indigo-500/20"
         >
+          Questions
+        </a>
       </div>
     </div>
   </section>
@@ -257,9 +260,7 @@ const description =
           </td>
           <td>Yes</td>
         </tr>
-        <tr
-          class="*:border-b *:border-neutral-200 *:py-6 *:align-text-top *:dark:border-neutral-800"
-        >
+        <tr class="*:py-6 *:align-text-top">
           <td class="font-semibold">Custom integrations</td>
           <td>
             <ul class="list list-disc space-y-2 px-4">
@@ -267,7 +268,13 @@ const description =
             </ul>
           </td>
           <td>
-            Happy to explore. <a href="/contact" class="underline">Contact us</a>
+            Happy to explore.
+            <a
+              href="/contact"
+              class="text-indigo-500 underline underline-offset-2 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300"
+            >
+              Contact us
+            </a>
           </td>
         </tr>
       </tbody>
@@ -276,9 +283,9 @@ const description =
 
   <section id="questions" class="container pb-24 md:pb-32">
     <h2 class="mb-4 text-3xl font-semibold">I have a question…</h2>
-    <details class="group border-b border-neutral-200 open:pb-5 dark:border-neutral-800">
+    <details class="group border-b border-neutral-200 open:pb-6 dark:border-neutral-800">
       <summary
-        class="cursor-pointer py-5 font-semibold transition group-open:pb-3 hover:text-indigo-500 dark:hover:text-indigo-400"
+        class="cursor-pointer py-6 font-semibold transition group-open:pb-4 hover:text-neutral-500"
       >
         Is this only for new construction?
       </summary>
@@ -287,9 +294,9 @@ const description =
         construction.
       </p>
     </details>
-    <details class="group border-b border-neutral-200 open:pb-5 dark:border-neutral-800">
+    <details class="group border-b border-neutral-200 open:pb-6 dark:border-neutral-800">
       <summary
-        class="cursor-pointer py-5 font-semibold transition group-open:pb-3 hover:text-indigo-500 dark:hover:text-indigo-400"
+        class="cursor-pointer py-6 font-semibold transition group-open:pb-4 hover:text-neutral-500"
       >
         Can I add virtual cabling alongside my current systems?
       </summary>
@@ -297,9 +304,9 @@ const description =
         Yes, our solution can be installed alongside the existing cabling regardless of the systems.
       </p>
     </details>
-    <details class="group border-b border-neutral-200 open:pb-5 dark:border-neutral-800">
+    <details class="group border-b border-neutral-200 open:pb-6 dark:border-neutral-800">
       <summary
-        class="cursor-pointer py-5 font-semibold transition group-open:pb-3 hover:text-indigo-500 dark:hover:text-indigo-400"
+        class="cursor-pointer py-6 font-semibold transition group-open:pb-4 hover:text-neutral-500"
       >
         Does to system need a network connection to function?
       </summary>
@@ -308,9 +315,9 @@ const description =
         function. Network connection is needed for monitoring and storing data to cloud.
       </p>
     </details>
-    <details class="group border-b border-neutral-200 open:pb-5 dark:border-neutral-800">
+    <details class="group border-b border-neutral-200 open:pb-6 dark:border-neutral-800">
       <summary
-        class="cursor-pointer py-5 font-semibold transition group-open:pb-3 hover:text-indigo-500 dark:hover:text-indigo-400"
+        class="cursor-pointer py-6 font-semibold transition group-open:pb-4 hover:text-neutral-500"
       >
         Who does the installation of the connectors?
       </summary>
@@ -318,9 +325,9 @@ const description =
         The installation can be carried out by the site's electrical or automation contractor.
       </p>
     </details>
-    <details class="group border-b border-neutral-200 open:pb-5 dark:border-neutral-800">
+    <details class="group border-b border-neutral-200 open:pb-6 dark:border-neutral-800">
       <summary
-        class="cursor-pointer py-5 font-semibold transition group-open:pb-3 hover:text-indigo-500 dark:hover:text-indigo-400"
+        class="cursor-pointer py-6 font-semibold transition group-open:pb-4 hover:text-neutral-500"
       >
         How much does the systems cost annually? Are there any license fees?
       </summary>
@@ -329,9 +336,9 @@ const description =
         there are no extra license fees.
       </p>
     </details>
-    <details class="group border-b border-neutral-200 open:pb-5 dark:border-neutral-800">
+    <details class="group border-b border-neutral-200 open:pb-6 dark:border-neutral-800">
       <summary
-        class="cursor-pointer py-5 font-semibold transition group-open:pb-3 hover:text-indigo-500 dark:hover:text-indigo-400"
+        class="cursor-pointer py-6 font-semibold transition group-open:pb-4 hover:text-neutral-500"
       >
         Does the system increase construction costs in my projects?
       </summary>
@@ -340,20 +347,23 @@ const description =
         costs.
       </p>
     </details>
-    <details class="group border-b border-neutral-200 open:pb-5 dark:border-neutral-800">
+    <details class="group border-b border-neutral-200 open:pb-6 dark:border-neutral-800">
       <summary
-        class="cursor-pointer py-5 font-semibold transition group-open:pb-3 hover:text-indigo-500 dark:hover:text-indigo-400"
+        class="cursor-pointer py-6 font-semibold transition group-open:pb-4 hover:text-neutral-500"
       >
         How the system should be considered in building technology system plans?
       </summary>
       <p class="ml-4">
-        <a href="TODO" class="underline underline-offset-2">Download our design guide</a> for building
-        automation and electrical designers.
+        <a
+          href="TODO"
+          class="text-indigo-500 underline underline-offset-2 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300"
+          >Download our design guide</a
+        > for building automation and electrical designers.
       </p>
     </details>
-    <details class="group border-b border-neutral-200 open:pb-5 dark:border-neutral-800">
+    <details class="group open:pb-5">
       <summary
-        class="cursor-pointer py-5 font-semibold transition group-open:pb-3 hover:text-indigo-500 dark:hover:text-indigo-400"
+        class="cursor-pointer py-6 font-semibold transition group-open:pb-4 hover:text-neutral-500"
       >
         Is there a warranty for the system?
       </summary>
