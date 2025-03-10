@@ -14,52 +14,70 @@ const title = 'News';
 const description = 'Company news, product updates, and more.';
 ---
 
-<MainLayout title={title} description={description}>
-  <section class="container py-8 md:py-12">
-    <h1 class="mb-5 text-4xl font-semibold md:text-5xl">{title}</h1>
-    <p class="text-lg">{description}</p>
+<MainLayout title={title} description={description} headerClass="bg-white dark:bg-neutral-900">
+  <section class="border-b border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-900">
+    <div class="container-narrow pt-16 pb-24 text-center md:pt-24 md:pb-32">
+      <h1 class="mb-5 text-4xl font-semibold text-neutral-900 md:text-5xl dark:text-neutral-100">
+        {title}
+      </h1>
+      <p class="text-xl">{description}</p>
+    </div>
   </section>
-  <section class="container grid grid-cols-1 gap-12 py-9 md:grid-cols-2 lg:grid-cols-3">
-    {
-      sortedPosts.map((post) => (
-        <article>
-          <a href={`/news/${post.slug}`} class="group flex flex-col gap-3">
-            <Image
-              src={post.data.cover}
-              alt={post.data.title}
-              width={640}
-              class="aspect-img mb-1 rounded object-cover transition group-hover:opacity-75"
-            />
-            <h3 class="text-xl font-semibold">{post.data.title}</h3>
-            <time
-              datetime={post.data.date.toISOString()}
-              class="block text-sm text-neutral-500 dark:text-neutral-400"
-            >
-              {formatDate(post.data.date)}
-            </time>
-            <p>{post.data.description}</p>
-          </a>
-        </article>
-      ))
-    }
+  <section class="container py-24 md:py-32">
+    <div class="grid grid-cols-1 gap-x-10 gap-y-20 md:grid-cols-2 lg:grid-cols-3">
+      {
+        sortedPosts.map((post) => (
+          <article>
+            <a href={`/news/${post.slug}`} class="group flex flex-col gap-3">
+              <Image
+                src={post.data.cover}
+                alt={post.data.title}
+                width={640}
+                class="aspect-img mb-1 rounded object-cover transition group-hover:opacity-75"
+              />
+              <h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100">
+                {post.data.title}
+              </h3>
+              <time
+                datetime={post.data.date.toISOString()}
+                class="block text-sm text-neutral-500 transition group-hover:text-current"
+              >
+                {formatDate(post.data.date)}
+              </time>
+              <p>{post.data.description}</p>
+            </a>
+          </article>
+        ))
+      }
+    </div>
   </section>
-  <section class="container py-24">
-    <div class="rounded-md border border-current/5 bg-neutral-50 p-6 md:p-12 dark:bg-neutral-900">
-      <h3 class="mb-2 text-2xl font-semibold">Be the first one to know more</h3>
+  <section class="container mb-24 md:mb-32">
+    <div
+      class="rounded-md border border-neutral-200 bg-white p-6 md:p-12 dark:border-neutral-800 dark:bg-neutral-900"
+    >
+      <h3 class="mb-2 text-2xl font-semibold text-neutral-900 md:text-3xl dark:text-neutral-100">
+        Be the first one to know more
+      </h3>
       <p>Sign up to our newsletter to receive updates</p>
-      <form name="newsletter" method="POST" data-netlify="true" data-netlify-honeypot="honeypot">
-        <div class="my-6 flex flex-wrap gap-2">
+      <form
+        name="newsletter"
+        method="POST"
+        data-netlify="true"
+        data-netlify-honeypot="honeypot"
+        class="my-6"
+      >
+        <div class="flex flex-wrap gap-3">
           <input
             id="email"
             name="email"
             placeholder="Email"
             type="email"
             required
-            class="h-11 w-full max-w-100 rounded border border-current/10 bg-white px-3 text-sm dark:bg-neutral-950"
+            class="h-11 w-full max-w-100 rounded border border-neutral-200 bg-neutral-50 px-3 text-sm dark:border-neutral-800 dark:bg-neutral-950"
           />
           <button
             type="submit"
-            class="h-11 rounded bg-black px-6 text-sm font-medium text-nowrap text-white dark:bg-white dark:text-black"
+            class="h-11 cursor-pointer rounded bg-indigo-500 px-6 text-sm font-medium text-nowrap text-white transition hover:bg-indigo-600 dark:hover:bg-indigo-400"
           >
             Sign up
           </button>

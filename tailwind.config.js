@@ -2,12 +2,6 @@
 export default {
   content: ['./src/**/*.{astro,md,ts}'],
   theme: {
-    container: {
-      center: true,
-      padding: {
-        DEFAULT: '1.5rem'
-      }
-    },
     extend: {
       typography: () => ({
         DEFAULT: {
@@ -29,6 +23,9 @@ export default {
             },
             'blockquote p:last-of-type::after': {
               content: false
+            },
+            img: {
+              borderRadius: '0.25rem'
             }
           }
         },

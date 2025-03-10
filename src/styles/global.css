@@ -7,6 +7,7 @@
   font-style: normal;
   font-weight: 400 700;
   font-display: swap;
+  font-optical-sizing: auto;
   src: url('/PlusJakartaSans[wght].woff2') format('woff2');
   unicode-range:
     U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
@@ -15,5 +16,43 @@
 
 @theme {
   --font-sans: 'Plus Jakarta Sans', 'sans-serif';
+  --font-sans--font-feature-settings: 'case';
   --aspect-img: 3/2;
+
+  --color-indigo-50: oklch(96.2% 0.013 270.62);
+  --color-indigo-100: oklch(93% 0.024 270.62);
+  --color-indigo-200: oklch(87% 0.047 270.62);
+  --color-indigo-300: oklch(78.5% 0.083 270.62);
+  --color-indigo-400: oklch(63% 0.131 270.62);
+  --color-indigo-500: oklch(49.43% 0.1673 270.62);
+  --color-indigo-600: oklch(43% 0.188 270.62);
+  --color-indigo-700: oklch(38.5% 0.172 270.62);
+  --color-indigo-800: oklch(33.5% 0.14 270.62);
+  --color-indigo-900: oklch(30% 0.103 270.62);
+  --color-indigo-950: oklch(21.5% 0.065 270.62);
+
+  --color-neutral-900: oklch(18.22% 0 0);
+  --color-neutral-950: oklch(13.44% 0 0);
+}
+
+@layer utilities {
+  .container {
+    @media (width >= 96rem) {
+      max-width: 80rem;
+    }
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+  }
+
+  .container-narrow {
+    width: 100%;
+    @media (width >= 40rem) {
+      max-width: 40rem;
+    }
+    @media (width >= 48rem) {
+      max-width: 48rem;
+    }
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+  }
 }

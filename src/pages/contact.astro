@@ -1,8 +1,10 @@
 ---
 import { Image } from 'astro:assets';
 import MainLayout from '@layouts/MainLayout.astro';
+import Overline from '@components/Overline.astro';
 import tomiImage from '@assets/tomi.jpg';
 import jussiImage from '@assets/jussi.jpg';
+import benImage from '@assets/ben.jpg';
 import hqImage from '@assets/hq.jpg';
 
 const title = 'Contact us';
@@ -10,40 +12,59 @@ const description =
   'Get in touch with sales to get your security and compliance concern answered or to book a demo.';
 ---
 
-<MainLayout title={title} description={description} headerClass="bg-neutral-50 dark:bg-neutral-900">
-  <section class="border-b border-current/5 bg-neutral-50 dark:bg-neutral-900">
-    <div class="container flex flex-col justify-center pt-16 pb-26 md:pt-30 md:pb-40">
+<MainLayout title={title} description={description} headerClass="bg-white dark:bg-neutral-900">
+  <section class="border-b border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-900">
+    <div class="container-narrow pt-16 pb-24 text-center md:pt-24 md:pb-32">
       <h1 class="mb-5 text-4xl font-semibold text-neutral-900 md:text-5xl dark:text-neutral-100">
         Interested to learn more?
       </h1>
-      <p class="text-lg">{description}</p>
+      <p class="text-xl">{description}</p>
     </div>
   </section>
-  <section class="container py-24">
-    <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
-      <div>
-        <Image src={tomiImage} alt="Tomi Grönlund" class="aspect-square rounded object-cover" />
-        <h3 class="mt-4 mb-2 text-xl font-semibold text-neutral-900 dark:text-neutral-100">
+  <section class="container py-24 md:py-32">
+    <Overline title="Sales" />
+    <div class="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
+      <div class="space-y-0.5">
+        <Image
+          src={tomiImage}
+          alt="Tomi Grönlund"
+          class="mb-5 aspect-square rounded object-cover"
+        />
+        <h3 class="mb-2 text-xl font-semibold text-neutral-900 dark:text-neutral-100">
           Tomi Grönlund
         </h3>
         <p>CEO</p>
         <p>tomi.gronlund@cloudersolutions.com</p>
         <p>+358 50 527 1416</p>
       </div>
-      <div>
-        <Image src={jussiImage} alt="Jussi Toivonen" class="aspect-square rounded object-cover" />
-        <h3 class="mt-4 mb-2 text-xl font-semibold text-neutral-900 dark:text-neutral-100">
+      <div class="space-y-0.5">
+        <Image
+          src={jussiImage}
+          alt="Jussi Toivonen"
+          class="mb-5 aspect-square rounded object-cover"
+        />
+        <h3 class="mb-2 text-xl font-semibold text-neutral-900 dark:text-neutral-100">
           Jussi Toivonen
         </h3>
         <p>Building Systems Technology Lead</p>
         <p>jussi.toivonen@cloudersolutions.com</p>
         <p>+358 50 560 8434</p>
       </div>
-      <div>
-        <Image src={hqImage} alt="Office" class="aspect-square rounded object-cover" />
-        <h3 class="mt-4 mb-2 text-xl font-semibold text-neutral-900 dark:text-neutral-100">
-          Office
-        </h3>
+      <div class="space-y-0.5">
+        <Image src={benImage} alt="Ben Weber" class="mb-5 aspect-square rounded object-cover" />
+        <h3 class="mb-2 text-xl font-semibold text-neutral-900 dark:text-neutral-100">Ben Weber</h3>
+        <p>Account Executive</p>
+        <p>ben.weber@cloudersolutions.com</p>
+        <p>TODO</p>
+      </div>
+    </div>
+  </section>
+  <section class="container pb-24 md:pb-32">
+    <Overline title="Office" />
+    <div class="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
+      <div class="space-y-0.5">
+        <Image src={hqImage} alt="Office" class="mb-5 aspect-square rounded object-cover" />
+        <h3 class="mb-2 text-xl font-semibold text-neutral-900 dark:text-neutral-100">Helsinki</h3>
         <p>Pursimiehenkatu 26 B</p>
         <p>00150 Helsinki</p>
         <p>Finland</p>
@@ -51,83 +72,86 @@ const description =
       </div>
     </div>
   </section>
-  <section class="container pb-24">
-    <h2 class="mb-6 text-2xl font-semibold text-neutral-900 md:text-3xl dark:text-neutral-100">
-      Fill the form and we will be in touch soon
-    </h2>
-    <form
-      name="contact"
-      method="POST"
-      data-netlify="true"
-      data-netlify-honeypot="honeypot"
-      class="space-y-5 lg:max-w-2/3 lg:pr-4"
-    >
-      <div class="flex gap-4">
-        <div class="w-full">
-          <label for="firstName" class="mb-2 block font-medium">First name</label>
-          <input
-            id="firstName"
-            name="firstName"
-            type="text"
-            required
-            class="block h-11 w-full rounded border border-neutral-200 px-3 dark:border-neutral-800"
-          />
-        </div>
-        <div class="w-full">
-          <label for="lastName" class="mb-2 block font-medium">Last name</label>
-          <input
-            id="lastName"
-            name="lastName"
-            type="text"
-            required
-            class="block h-11 w-full rounded border border-neutral-200 px-3 dark:border-neutral-800"
-          />
-        </div>
-      </div>
-      <div>
-        <label for="email" class="mb-2 block font-medium">Email</label>
-        <input
-          id="email"
-          name="email"
-          type="email"
-          required
-          class="block h-11 w-full rounded border border-neutral-200 px-3 dark:border-neutral-800"
-        />
-      </div>
-      <div>
-        <label for="phone" class="mb-2 block font-medium">Phone</label>
-        <input
-          id="phone"
-          name="phone"
-          type="tel"
-          class="block h-11 w-full rounded border border-neutral-200 px-3 dark:border-neutral-800"
-        />
-      </div>
-      <div>
-        <label for="message" class="mb-2 block font-medium">Message</label>
-        <textarea
-          id="message"
-          name="message"
-          rows="4"
-          required
-          class="block w-full rounded border border-neutral-200 p-3 dark:border-neutral-800"
-        ></textarea>
-      </div>
-      <input
-        id="honeypot"
-        name="honeypot"
-        type="text"
-        autocomplete="off"
-        tabindex="-1"
-        aria-hidden="true"
-        style="position: absolute; left: -9999px;"
-      />
-      <button
-        type="submit"
-        class="h-11 rounded bg-black px-6 font-medium text-white dark:bg-white dark:text-black"
+  <section class="container pb-24 md:pb-32">
+    <Overline title="Let’s talk" />
+    <div class="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
+      <h2 class="text-2xl font-semibold text-neutral-900 md:text-3xl dark:text-neutral-100">
+        Leave us a message, and we’ll get back to you
+      </h2>
+      <form
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        data-netlify-honeypot="honeypot"
+        class="col-span-2 space-y-5"
       >
-        Send
-      </button>
-    </form>
+        <div class="flex gap-4">
+          <div class="w-full">
+            <label for="firstName" class="mb-2 block text-sm font-medium">First name</label>
+            <input
+              id="firstName"
+              name="firstName"
+              type="text"
+              required
+              class="block h-11 w-full rounded border border-neutral-200 bg-white px-3 dark:border-neutral-800 dark:bg-neutral-900"
+            />
+          </div>
+          <div class="w-full">
+            <label for="lastName" class="mb-2 block text-sm font-medium">Last name</label>
+            <input
+              id="lastName"
+              name="lastName"
+              type="text"
+              required
+              class="block h-11 w-full rounded border border-neutral-200 bg-white px-3 dark:border-neutral-800 dark:bg-neutral-900"
+            />
+          </div>
+        </div>
+        <div>
+          <label for="email" class="mb-2 block text-sm font-medium">Email</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            required
+            class="block h-11 w-full rounded border border-neutral-200 bg-white px-3 dark:border-neutral-800 dark:bg-neutral-900"
+          />
+        </div>
+        <div>
+          <label for="phone" class="mb-2 block text-sm font-medium">Phone</label>
+          <input
+            id="phone"
+            name="phone"
+            type="tel"
+            class="block h-11 w-full rounded border border-neutral-200 bg-white px-3 dark:border-neutral-800 dark:bg-neutral-900"
+          />
+        </div>
+        <div>
+          <label for="message" class="mb-2 block text-sm font-medium">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            required
+            class="block w-full rounded border border-neutral-200 bg-white p-3 dark:border-neutral-800 dark:bg-neutral-900"
+          ></textarea>
+        </div>
+        <input
+          id="honeypot"
+          name="honeypot"
+          type="text"
+          autocomplete="off"
+          tabindex="-1"
+          aria-hidden="true"
+          style="position: absolute; left: -9999px;"
+        />
+        <button
+          type="submit"
+          class="h-11 cursor-pointer rounded bg-indigo-500 px-8 text-sm font-medium text-nowrap text-white transition hover:bg-indigo-600 dark:hover:bg-indigo-400"
+        >
+          Send
+        </button>
+      </form>
+    </div>
   </section>
 </MainLayout>

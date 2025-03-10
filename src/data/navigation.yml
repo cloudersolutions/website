@@ -1,8 +1,8 @@
 - title: Home
   href: /
   showInMainNav: false
-- title: Pricing
-  href: /pricing
+- title: Product
+  href: /product
   showInMainNav: true
 - title: News
   href: /news
@@ -16,6 +16,6 @@
 - title: Privacy policy
   href: /privacy-policy
   showInMainNav: false
-- title: Log in →
+- title: Log in
   href: https://dashboard.cloudersolutions.com/
   showInMainNav: true

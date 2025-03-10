@@ -8,14 +8,14 @@ const { pathname } = Astro.url;
 const navItems: NavItem[] = navigation;
 ---
 
-<footer class="py-12">
-  <div class="container grid grid-cols-3 gap-6">
+<footer class="border-t border-neutral-200 py-12 dark:border-neutral-800">
+  <div class="container grid grid-cols-1 gap-10 md:grid-cols-3">
     <div>
-      <Logo size={16} />
-      <p class="mt-4 text-sm">&copy; {new Date().getFullYear()} {site.title}</p>
+      <Logo size={16} class="fill-neutral-600 dark:fill-neutral-400" />
+      <p class="mt-4 text-sm text-neutral-500">&copy; {new Date().getFullYear()} {site.title}</p>
     </div>
-    <div class="flex flex-col gap-2">
-      <h4 class="text-sm font-semibold">Resources</h4>
+    <div class="flex flex-col gap-3">
+      <h4 class="text-sm font-semibold text-neutral-600 dark:text-neutral-400">Resources</h4>
       {
         navItems.map(({ title, href }) => (
           <a
@@ -27,8 +27,8 @@ const navItems: NavItem[] = navigation;
         ))
       }
     </div>
-    <div class="flex flex-col gap-2">
-      <h4 class="text-sm font-semibold">Connect</h4>
+    <div class="flex flex-col gap-3">
+      <h4 class="text-sm font-semibold text-neutral-600 dark:text-neutral-400">Follow</h4>
       {
         site.twitter && (
           <a
