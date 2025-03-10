@@ -8,54 +8,61 @@ const description =
   'Clouder is on a mission to enable sustainable next generation real estate by changing how building tech connectivity is done.';
 ---
 
-<MainLayout title={title} description={description}>
-  <section class="container py-16">
-    <h1 class="mb-4 text-5xl font-semibold">The Virtual Cabling Company</h1>
-    <p class="text-lg">{description}</p>
+<MainLayout title={title} description={description} headerClass="bg-neutral-50 dark:bg-neutral-900">
+  <section class="border-b border-current/5 bg-neutral-50 dark:bg-neutral-900">
+    <div class="container flex flex-col justify-center pt-16 pb-26 md:pt-30 md:pb-40">
+      <h1 class="mb-5 text-4xl font-semibold text-neutral-900 md:text-5xl dark:text-neutral-100">
+        The Virtual Cabling Company
+      </h1>
+      <p class="text-lg">{description}</p>
+    </div>
   </section>
-  <section class="container space-y-6 py-16">
-    <h2 class="mb-4 text-3xl font-semibold">Our purpose</h2>
-    <div class="flex gap-12">
-      <p class="w-2/3">
-        Clouder is building virtual cabling technology for commercial real estate to reduce cables,
-        waste, spending, and emissions both in construction and throughout lifecycle renovations.
-        Our solution also provides a possibility to cut operating carbon footprint and operating
-        costs by providing data for truly efficient building automation.
-      </p>
-      <blockquote class="w-1/3">
-        <p class="text-lg font-medium italic">
-          We are the first in the world to enable universal, system agnostic virtual cabling for all
-          building technology systems
+  <section class="container py-24">
+    <h2 class="mb-6 text-3xl font-semibold text-neutral-900 md:text-4xl dark:text-neutral-100">
+      Our purpose
+    </h2>
+    <div class="grid grid-cols-1 gap-x-16 gap-y-8 md:grid-cols-3">
+      <div class="col-span-2 space-y-4">
+        <p class="text-lg">
+          Clouder is pioneering universal virtual cabling technology for commercial real estate,
+          enabling system-agnostic integration across all building technology systems. This
+          innovation significantly reduces physical cables, waste, costs, and emissions during both
+          initial construction and future renovations.
+        </p>
+        <p class="text-lg">
+          Our solution streamlines building automation by providing comprehensive, real-time data
+          across systems, leading to reduced operating costs and a smaller carbon footprint. By
+          simplifying construction and renovation processes, we're making sustainable building
+          technology not just more efficient, but also more affordable.
+        </p>
+      </div>
+      <blockquote class="mx-auto">
+        <p class="border-l-3 border-current/10 pl-4 -indent-2 text-xl font-medium italic">
+          “We are the first in the world to enable universal, system agnostic virtual cabling for
+          all building technology systems”
         </p>
       </blockquote>
     </div>
-    <Image src={teamImage} alt="Clouder team" />
-    <p>
-      We are the first in the world to enable universal, system agnostic virtual cabling for all
-      building technology systems. Doing this allows us to provide comprehensive data for truly
-      smart building automation.
-    </p>
-    <p>
-      On top of creating technology that enables more sustainable buildings, we do it so that it’s
-      cheaper and makes construction and renovation projects significantly simpler and shorter.
-    </p>
-    <h2 class="mb-4 text-3xl font-semibold">Our team</h2>
-    <p>
-      Clouder brings together a team of experts with decades of experience from a range of
-      industries, including building service technology, software development, information and cyber
-      security, wireless networks, real estate asset management, investments and transactions as
-      well as large-scale development projects.
-    </p>
-    <p>
-      With this cross-disciplinary background, we understand first-hand the issues that arise in
-      constructing, adapting and maintaining commercial buildings. By adopting today’s technologies,
-      Clouder’s virtual cabling solution is able to reduce both the long construction times as well
-      as the high costs that the commercial real estate industry face throughout a building’s
-      lifecycle.
-    </p>
-    <p>
-      Clouder’s innovative solution is developed to the highest standards and approved by industry
-      experts.
-    </p>
+    <Image src={teamImage} alt="Clouder team" class="my-16 md:my-20" />
+    <div class="max-w-prose space-y-4">
+      <h3 class="text-2xl font-semibold md:text-3xl">Our team</h3>
+      <p>
+        Clouder brings together a team of experts with decades of experience from a range of
+        industries, including building service technology, software development, information and
+        cyber security, wireless networks, real estate asset management, investments and
+        transactions as well as large-scale development projects.
+      </p>
+      <p>
+        With this cross-disciplinary background, we understand first-hand the issues that arise in
+        constructing, adapting and maintaining commercial buildings. By adopting today’s
+        technologies, Clouder’s virtual cabling solution is able to reduce both the long
+        construction times as well as the high costs that the commercial real estate industry face
+        throughout a building’s lifecycle.
+      </p>
+      <p>
+        Clouder’s innovative solution is developed to the highest standards and approved by industry
+        experts.
+      </p>
+    </div>
   </section>
 </MainLayout>

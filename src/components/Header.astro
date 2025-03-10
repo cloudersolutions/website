@@ -3,6 +3,12 @@ import type { NavItem } from '@data/types';
 import navigation from '@data/navigation.yml';
 import Logo from '@components/Logo.astro';
 
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+
 const { pathname } = Astro.url;
 const navItems: NavItem[] = navigation.filter((item: NavItem) => item.showInMainNav);
 
@@ -12,7 +18,7 @@ const isActive = (href: string) => {
 };
 ---
 
-<header class="py-6">
+<header class:list={['py-6', 'text-neutral-900', 'dark:text-neutral-200', className]}>
   <div class="container flex flex-wrap items-center gap-6">
     <a href="/" class="mr-auto">
       <Logo size={20} />
@@ -23,7 +29,7 @@ const isActive = (href: string) => {
           <a
             href={href}
             aria-current={isActive(href) ? 'page' : undefined}
-            class="border-b-2 border-b-transparent px-1 py-2 text-start font-[450] text-current transition hover:text-neutral-500 aria-[current]:border-b-current"
+            class="border-b-2 border-b-transparent px-1 py-2 text-start text-current transition hover:opacity-60 aria-[current]:border-b-current"
           >
             {title}
           </a>

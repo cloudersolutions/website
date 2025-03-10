@@ -11,12 +11,12 @@ const posts = await getCollection('news', ({ data }) =>
 const sortedPosts = posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
 const title = 'News';
-const description = 'Company news, product updates, and more';
+const description = 'Company news, product updates, and more.';
 ---
 
 <MainLayout title={title} description={description}>
   <section class="container py-8 md:py-12">
-    <h1 class="mb-4 text-4xl font-semibold md:text-5xl">{title}</h1>
+    <h1 class="mb-5 text-4xl font-semibold md:text-5xl">{title}</h1>
     <p class="text-lg">{description}</p>
   </section>
   <section class="container grid grid-cols-1 gap-12 py-9 md:grid-cols-2 lg:grid-cols-3">
@@ -44,7 +44,7 @@ const description = 'Company news, product updates, and more';
     }
   </section>
   <section class="container py-24">
-    <div class="rounded-md bg-neutral-100 p-6 md:p-12 dark:bg-neutral-900">
+    <div class="rounded-md border border-current/5 bg-neutral-50 p-6 md:p-12 dark:bg-neutral-900">
       <h3 class="mb-2 text-2xl font-semibold">Be the first one to know more</h3>
       <p>Sign up to our newsletter to receive updates</p>
       <form name="newsletter" method="POST" data-netlify="true" data-netlify-honeypot="honeypot">
@@ -55,13 +55,14 @@ const description = 'Company news, product updates, and more';
             placeholder="Email"
             type="email"
             required
-            class="h-12 w-full max-w-100 rounded border border-neutral-200 bg-white px-4 dark:border-neutral-800 dark:bg-neutral-950"
+            class="h-11 w-full max-w-100 rounded border border-current/10 bg-white px-3 text-sm dark:bg-neutral-950"
           />
           <button
             type="submit"
-            class="h-12 rounded bg-black px-6 font-medium text-nowrap text-white dark:bg-white dark:text-black"
-            >Sign up</button
+            class="h-11 rounded bg-black px-6 text-sm font-medium text-nowrap text-white dark:bg-white dark:text-black"
           >
+            Sign up
+          </button>
         </div>
         <input
           id="honeypot"
