@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
+import { HousePlug, ChartNoAxesColumn, HardHat, Building, Euro, ShieldCheck } from 'lucide-astro';
 import site from '@data/site.yml';
 import MainLayout from '@layouts/MainLayout.astro';
 import ClouderIllustration from '@assets/how-clouder-works.svg';
@@ -31,20 +32,26 @@ const featuredPosts = posts.filter((post) => post.data.featured);
   </section>
   <section class="container py-16">
     <h2 class="mb-4 text-3xl font-semibold">Today, everything is data driven - except buildings</h2>
-    <p class="mb-12">
+    <p class="mb-12 text-lg">
       Forward-thinking building owners use clouders to increase asset value, reduce operational
       costs, and improve data-led decision making.
     </p>
     <div class="grid grid-cols-3 gap-12">
       <div>
-        <h3 class="mb-2 text-xl font-semibold">Energy savings</h3>
+        <div class="mb-2 flex items-center gap-2">
+          <HousePlug />
+          <h3 class="text-xl font-semibold">Energy savings</h3>
+        </div>
         <p>
           Detect reasons for excess energy consumption and make your building more energy efficient
           with real time monitoring and system control. Possibility for 20–50% savings.
         </p>
       </div>
       <div>
-        <h3 class="mb-2 text-xl font-semibold">Accurate data</h3>
+        <div class="mb-2 flex items-center gap-2">
+          <ChartNoAxesColumn />
+          <h3 class="text-xl font-semibold">Accurate data</h3>
+        </div>
         <p>
           Clouder is a vendor independent solution that integrates, collects, and saves all building
           tech system data and device data points. Accurate and real-time data can be utilized in
@@ -52,28 +59,40 @@ const featuredPosts = posts.filter((post) => post.data.featured);
         </p>
       </div>
       <div>
-        <h3 class="mb-2 text-xl font-semibold">Flexibility</h3>
+        <div class="mb-2 flex items-center gap-2">
+          <HardHat />
+          <h3 class="text-xl font-semibold">Flexibility</h3>
+        </div>
         <p>
           Easy addition of field devices without breaking surfaces, expensive cabling or complicated
           programming projects. Connected devices are automatically integrated into the solution.
         </p>
       </div>
       <div>
-        <h3 class="mb-2 text-xl font-semibold">Efficient operations</h3>
+        <div class="mb-2 flex items-center gap-2">
+          <Building />
+          <h3 class="text-xl font-semibold">Efficient operations</h3>
+        </div>
         <p>
-          Fault detection and diagnostics in a web browser lessens unnecessary manual work and
+          Fault detection and diagnostics in a web browser reduces unnecessary manual work and
           shortens troubleshooting, thus reducing money spent on hourly maintenance work.
         </p>
       </div>
       <div>
-        <h3 class="mb-2 text-xl font-semibold">Cost savings</h3>
+        <div class="mb-2 flex items-center gap-2">
+          <Euro />
+          <h3 class="text-xl font-semibold">Cost savings</h3>
+        </div>
         <p>
           Clear and predictable pricing with no surprises. No need for ongoing updates for third
           party solution APIs or unexpected BMS programming due to constant changes in systems.
         </p>
       </div>
       <div>
-        <h3 class="mb-2 text-xl font-semibold">Security</h3>
+        <div class="mb-2 flex items-center gap-2">
+          <ShieldCheck />
+          <h3 class="text-xl font-semibold">Security</h3>
+        </div>
         <p>
           Secure your building tech with accurate audit trail, end-to-end encryption and secure
           cloud connection. No more default passwords known by everyone.
@@ -91,28 +110,26 @@ const featuredPosts = posts.filter((post) => post.data.featured);
           building's backbone network with virtual cables, eliminating the need for physical
           low-voltage cables that run through structures and fire zones.
         </p>
-        <h3 class="mb-2 text-xl font-semibold">Edge connectors</h3>
+        <h3 class="mb-2 text-xl font-semibold">Edge Connectors</h3>
         <p class="mb-6">
-          Field devices and systems are connected to Edge connector devices. They transmit data
-          wirelessly or with a wire and encrypted through the IP network to the Virtual Cabling
-          Engine. The devices function like distributed I/O and reduce the need for cabling.
+          Edge Connector (EC) devices serve as connection points for various field devices and
+          systems. Data is transmitted either wirelessly or through wired connections, using
+          encrypted communication over IP networks to reach the Virtual Cabling Engine. Operating
+          similarly to distributed I/O systems, these devices significantly reduce traditional
+          cabling requirements.
         </p>
         <h3 class="mb-2 text-xl font-semibold">Virtual Cabling Engine</h3>
         <p class="mb-6">
           Virtual Cabling Engine (VCE) is a device connected to the BMS center. The VCE contains the
-          virtual cabling information, consolidates all the data transmitted by the Edge connectors,
+          virtual cabling information, consolidates all the data transmitted by the Edge Connectors,
           and facilitates integrations between systems and devices.
         </p>
         <h3 class="mb-2 text-xl font-semibold">Data storage</h3>
         <p class="mb-6">
-          All system and device data is sent and stored in the cloud. We provide a database API,
-          allowing you to utilize data from all systems, subsystems, and field devices in one place
-          in real-time.
-        </p>
-        <h3 class="mb-2 text-xl font-semibold">Security</h3>
-        <p class="mb-6">
-          Built-in military-grade security using the AES 256 encryption standard (Advanced
-          Encryption Standard).
+          All system and device data is securely stored in the cloud, where it can be accessed in
+          real-time through either the Clouder Dashboard or our API interface. This centralized
+          approach allows you to seamlessly monitor and analyze data from all your systems,
+          subsystems, and devices.
         </p>
       </div>
       <div class="flex w-full justify-center">
