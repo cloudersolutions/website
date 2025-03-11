@@ -8,10 +8,12 @@ import BuildingIcon from 'lucide-astro/Building';
 import EuroIcon from 'lucide-astro/Euro';
 import ShieldCheckIcon from 'lucide-astro/ShieldCheck';
 import site from '@data/site.yml';
+import Overline from '@components/Overline.astro';
 import MainLayout from '@layouts/MainLayout.astro';
 import ClouderIllustration from '@assets/how-clouder-works.svg';
 import uiLightImage from '@assets/ui-light.png';
 import uiDarkImage from '@assets/ui-dark.png';
+import todoImage from '@assets/shareimage.png';
 
 const posts = await getCollection('news');
 const featuredPosts = posts.filter((post) => post.data.featured);
@@ -142,20 +144,23 @@ const featuredPosts = posts.filter((post) => post.data.featured);
       </div>
     </div>
   </section>
-  <section class="container py-16">
-    <h2 class="mb-4 text-3xl font-semibold">Build sustainability with virtual cabling</h2>
-    <p>
+  <section class="container py-12 md:py-16">
+    <Overline title="Sustainability" />
+    <h2 class="mb-4 text-3xl font-semibold text-neutral-900 md:text-4xl dark:text-neutral-100">
+      Build sustainability with virtual cabling
+    </h2>
+    <p class="max-w-prose text-lg">
       As the built environment is responsible for 39% of global energy-related carbon emissions,
       buildings and more efficient construction are the foundation of our sustainable future.
-    </p>
-    <p class="mb-6">
       Clouder’s virtual cabling solution enables commercial real estate organizations to achieve
       lifelong sustainability and meet environmental standards while enhancing overall building
       performance and occupant satisfaction.
     </p>
-    <div class="grid grid-cols-2 gap-12">
+    <div class="mt-24 grid grid-cols-1 gap-x-10 gap-y-6 md:grid-cols-2">
       <div>
-        <h3 class="mb-2 text-xl font-semibold">Clouder helps meet EU green building regulations</h3>
+        <h3 class="mb-4 text-xl font-semibold text-neutral-900 md:text-2xl dark:text-neutral-100">
+          Clouder helps meet EU green building regulations
+        </h3>
         <p>
           The EU's Energy Performance of Buildings Directive (EPBD) has set a bold target: to fully
           decarbonize building stock by 2050. Clouder’s mission is to enable the shift to
@@ -165,57 +170,77 @@ const featuredPosts = posts.filter((post) => post.data.featured);
           throughout the lifecycle of the building.
         </p>
       </div>
+      <Image src={todoImage} alt="TODO" />
+    </div>
+    <div class="mt-24 grid grid-cols-1 gap-x-10 gap-y-6 md:grid-cols-2">
       <div>
-        <h3 class="mb-2 text-xl font-semibold">100x less embodied carbon in cabling</h3>
-        <p class="mb-4">
+        <h3 class="mb-4 text-xl font-semibold text-neutral-900 md:text-2xl dark:text-neutral-100">
+          100x less embodied carbon in cabling
+        </h3>
+        <p>
           11% of the built environment’s carbon emissions comes from the embodied carbon. Clouder's
           virtual cabling reduces embodied carbon emissions by 100x compared to physical cables.
         </p>
-        <table class="table w-full text-left text-sm">
-          <thead>
-            <tr class="*:py-2">
-              <th>Low voltage cabling</th>
-              <th>Clouder’s virtual cabling</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="border-t border-neutral-200 *:py-2 dark:border-neutral-800">
-              <td>50,000 eCO2kg</td>
-              <td>500 eCO2kg</td>
-            </tr>
-            <tr class="border-t border-neutral-200 *:py-2 dark:border-neutral-800">
-              <td>60,000 m of physical cables</td>
-              <td>90% less cables needed</td>
-            </tr>
-            <tr class="border-t border-neutral-200 *:py-2 dark:border-neutral-800">
-              <td>13 installation steps</td>
-              <td>2 installation steps</td>
-            </tr>
-            <tr class="border-t border-neutral-200 *:py-2 dark:border-neutral-800">
-              <td colspan="2" class="text-neutral-500"
-                >* Example from a 10,000 m² office building</td
-              >
-            </tr>
-          </tbody>
-        </table>
+      </div>
+      <div>
+        <div
+          class="overflow-hidden rounded border border-neutral-200 bg-white shadow-xs dark:border-neutral-800 dark:bg-neutral-900"
+        >
+          <table class="w-full table-fixed text-left text-sm">
+            <thead>
+              <tr class="*:px-4 *:py-3 *:font-semibold">
+                <th>Low voltage cabling</th>
+                <th>Clouder’s virtual cabling</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-t border-neutral-200 *:px-4 *:py-3 dark:border-neutral-800">
+                <td>50,000 eCO2kg</td>
+                <td>500 eCO2kg</td>
+              </tr>
+              <tr class="border-t border-neutral-200 *:px-4 *:py-3 dark:border-neutral-800">
+                <td>60,000 m of physical cables</td>
+                <td>90% less cables needed</td>
+              </tr>
+              <tr class="border-t border-neutral-200 *:px-4 *:py-3 dark:border-neutral-800">
+                <td>13 installation steps</td>
+                <td>2 installation steps</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="mt-4 text-sm text-neutral-500">* Example from a 10,000 m² office building</p>
       </div>
     </div>
   </section>
-  <section class="container py-16">
-    <h2 class="mb-4 text-3xl font-semibold">Learn how our customers are using Clouder</h2>
-    <div class="grid grid-cols-2 gap-12">
+  <section class="container py-12 md:py-16">
+    <Overline title="Cases examples" />
+    <div class="grid grid-cols-1 gap-x-10 gap-y-6 md:grid-cols-2 lg:grid-cols-3">
+      <h2
+        class="text-2xl font-semibold text-neutral-900 md:col-span-2 md:text-3xl lg:col-span-1 dark:text-neutral-100"
+      >
+        Learn how our customers are using Clouder
+      </h2>
       {
         featuredPosts.map((post) => (
-          <a href={`/blog/${post.slug}`}>
-            <Image
-              src={post.data.cover}
-              alt={post.data.title}
-              class="aspect-video rounded object-cover"
-            />
-            <h3 class="mt-4 text-xl font-semibold">{post.data.title}</h3>
-          </a>
+          <article class="group my-1 overflow-hidden rounded bg-white outline -outline-offset-1 outline-current/12 transition hover:shadow-xs hover:outline-current/16 dark:bg-neutral-900">
+            <a href={`/news/${post.slug}`} class="flex flex-col items-start">
+              <Image
+                src={post.data.cover}
+                alt={post.data.title}
+                class="aspect-video object-cover transition group-hover:opacity-80"
+              />
+              <h3 class="mx-6 mt-5 mb-2 text-xl font-semibold text-neutral-900 transition group-hover:text-current dark:text-neutral-100">
+                {post.data.title}
+              </h3>
+              <p class="m-6 mt-2 rounded border border-current/12 px-3 text-sm leading-8 hover:bg-current/3">
+                Read more
+              </p>
+            </a>
+          </article>
         ))
       }
     </div>
   </section>
+  <div class="h-12 md:h-16"></div>
 </MainLayout>

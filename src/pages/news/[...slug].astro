@@ -47,7 +47,7 @@ const { Content } = await post.render();
         previousPost && (
           <a
             href={`/news/${previousPost.slug}`}
-            class="group flex items-center gap-4 rounded border border-current/10 bg-white p-4 leading-6 transition hover:border-current/15 hover:shadow-xs dark:bg-neutral-900"
+            class="group flex items-center gap-4 rounded border border-current/12 bg-white p-4 leading-6 transition hover:border-current/16 hover:text-current hover:shadow-xs dark:bg-neutral-900"
           >
             <ArrowLeftIcon
               size={20}
@@ -61,7 +61,7 @@ const { Content } = await post.render();
         nextPost && (
           <a
             href={`/news/${nextPost.slug}`}
-            class="group flex items-center gap-4 rounded border border-current/10 bg-white p-4 leading-6 transition hover:border-current/15 hover:shadow-xs md:col-start-2 dark:bg-neutral-900"
+            class="group flex items-center gap-4 rounded border border-current/12 bg-white p-4 leading-6 transition hover:border-current/16 hover:text-current hover:shadow-xs md:col-start-2 dark:bg-neutral-900"
           >
             <span class="font-semibold">{nextPost.data.title}</span>
             <ArrowRightIcon

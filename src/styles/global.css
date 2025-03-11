@@ -17,7 +17,8 @@
 @theme {
   --font-sans: 'Plus Jakarta Sans', 'sans-serif';
   --font-sans--font-feature-settings: 'case';
-  --aspect-img: 3/2;
+  --aspect-image: 3/2;
+  --aspect-wide: 2/1;
 
   --color-indigo-50: oklch(96.2% 0.013 270.62);
   --color-indigo-100: oklch(93% 0.024 270.62);
