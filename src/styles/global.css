@@ -19,6 +19,7 @@
   --font-sans--font-feature-settings: 'case';
   --aspect-image: 3/2;
   --aspect-wide: 2/1;
+  --shadow-inset: inset 0 0 0 1px;
 
   --color-indigo-50: oklch(96.2% 0.013 270.62);
   --color-indigo-100: oklch(93% 0.024 270.62);
