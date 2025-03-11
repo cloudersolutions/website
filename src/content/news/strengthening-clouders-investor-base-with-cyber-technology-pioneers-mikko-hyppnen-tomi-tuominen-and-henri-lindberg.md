@@ -9,7 +9,7 @@ We’re extremely excited to announce that internationally renowned cyber securi
 
 > We invested in Clouder because we are excited about solutions where IT meets the real world, those are game-changers by nature. Clouder bridges a significant gap in the real estate industry between the operational building technology world and data processing.
 >
-> – Tomi Tuominen
+> Tomi Tuominen
 
 ![Three technology investors](./images/t2abvc.jpg)
 
@@ -23,4 +23,4 @@ Mikko, Tomi, and Henri make the investment through their joint venture [T2AB.VC]
 
 > We’re very excited to get the best cyber security experts out there to join Clouder’s growth journey! With the advisory and experience from Mikko, Tomi, and Henri we can further focus our product’s relevant security features. Together we can bring more awareness to the commercial real estate industry about improving cyber security while getting real time access to accurate building data.
 >
-> – Tomi Grönlund, CEO & Founder at Clouder
+> Tomi Grönlund, CEO & Founder at Clouder

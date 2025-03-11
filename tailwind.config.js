@@ -8,8 +8,13 @@ export default {
           css: {
             lineHeight: '1.625',
             maxWidth: '70ch',
+            blockquote: {
+              borderInlineStartWidth: '2px',
+              paddingInlineStart: '1.25rem'
+            },
             'blockquote p:first-of-type': {
-              textIndent: '-6px'
+              fontSize: '1.125rem',
+              textIndent: '-0.45em'
             },
             'blockquote p:first-of-type::before': {
               content: 'open-quote'
@@ -17,12 +22,17 @@ export default {
             'blockquote p:first-of-type::after': {
               content: 'close-quote'
             },
-            'blockquote p:last-of-type:not(p:only-child)': {
-              fontStyle: 'normal',
-              marginTop: '-0.5rem'
-            },
             'blockquote p:last-of-type::after': {
               content: false
+            },
+            'blockquote p:last-of-type:not(p:only-child)': {
+              color: 'var(--tw-prose-captions)',
+              fontStyle: 'normal',
+              fontSize: '0.875rem',
+              marginTop: '-0.5rem'
+            },
+            'blockquote p:last-of-type:not(p:only-child)::before': {
+              content: '"— "'
             },
             img: {
               borderRadius: '0.25rem'
@@ -32,13 +42,15 @@ export default {
         neutral: {
           css: {
             '--tw-prose-body': 'var(--color-neutral-800)',
-            '--tw-prose-headings': 'var(--color-neutral-900)',
             '--tw-prose-bullets': 'var(--color-neutral-800)',
+            '--tw-prose-headings': 'var(--color-neutral-900)',
+            '--tw-prose-quotes': 'var(--color-neutral-900)',
             '--tw-prose-links': 'var(--color-indigo-500)',
             '--tw-prose-invert-body': 'var(--color-neutral-200)',
-            '--tw-prose-invert-headings': 'var(--color-neutral-100)',
             '--tw-prose-invert-bullets': 'var(--color-neutral-200)',
-            '--tw-prose-invert-links': 'var(--color-indigo-300)',
+            '--tw-prose-invert-headings': 'var(--color-neutral-100)',
+            '--tw-prose-invert-quotes': 'var(--color-neutral-100)',
+            '--tw-prose-invert-links': 'var(--color-indigo-400)',
             'h1, h2, h3, h4, h5, h6': {
               fontWeight: '600'
             },

@@ -23,8 +23,9 @@ const description = 'Company news, product updates, and more.';
       <p class="text-xl">{description}</p>
     </div>
   </section>
-  <section class="container py-24 md:py-32">
-    <div class="grid grid-cols-1 gap-x-10 gap-y-20 md:grid-cols-2 lg:grid-cols-3">
+  <div class="h-12 md:h-16"></div>
+  <section class="container py-12 md:py-16">
+    <div class="grid grid-cols-1 gap-x-10 gap-y-16 md:grid-cols-2 lg:grid-cols-3">
       {
         sortedPosts.map((post) => (
           <article>
@@ -51,7 +52,7 @@ const description = 'Company news, product updates, and more.';
       }
     </div>
   </section>
-  <section class="container mb-24 md:mb-32">
+  <section class="container py-12 md:py-16">
     <div
       class="rounded-md border border-neutral-200 bg-white p-6 md:p-16 dark:border-neutral-800 dark:bg-neutral-900"
     >
@@ -92,10 +93,12 @@ const description = 'Company news, product updates, and more.';
           />
         </form>
         <p class="text-xs text-neutral-500">
-          You can unsubscribe at any time. Please review our
-          <a href="/privacy-policy" class="underline underline-offset-2">Privacy policy</a>.
+          See our
+          <a href="/privacy-policy" class="underline">Privacy Policy</a>
+          for details on how we handle your data.
         </p>
       </div>
     </div>
   </section>
+  <div class="h-12 md:h-16"></div>
 </MainLayout>
