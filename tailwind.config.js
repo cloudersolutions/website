@@ -46,11 +46,13 @@ export default {
             '--tw-prose-headings': 'var(--color-neutral-900)',
             '--tw-prose-quotes': 'var(--color-neutral-900)',
             '--tw-prose-links': 'var(--color-indigo-500)',
+            '--tw-prose-links-hover': 'var(--color-indigo-700)',
             '--tw-prose-invert-body': 'var(--color-neutral-200)',
             '--tw-prose-invert-bullets': 'var(--color-neutral-200)',
             '--tw-prose-invert-headings': 'var(--color-neutral-100)',
             '--tw-prose-invert-quotes': 'var(--color-neutral-100)',
             '--tw-prose-invert-links': 'var(--color-indigo-400)',
+            '--tw-prose-invert-links-hover': 'var(--color-indigo-300)',
             'h1, h2, h3, h4, h5, h6': {
               fontWeight: '600'
             },
@@ -59,8 +61,16 @@ export default {
             },
             a: {
               fontWeight: '400',
-              textUnderlineOffset: '2px'
+              textUnderlineOffset: '2px',
+              '&:hover': {
+                color: 'var(--tw-prose-links-hover)'
+              }
             }
+          }
+        },
+        invert: {
+          css: {
+            '--tw-prose-links-hover': 'var(--tw-prose-invert-links-hover)'
           }
         }
       })
