@@ -14,31 +14,51 @@ import MainLayout from '@layouts/MainLayout.astro';
 import ClouderIllustration from '@assets/how-clouder-works.svg';
 import uiLightImage from '@assets/ui-light.png';
 import uiDarkImage from '@assets/ui-dark.png';
-import todoImage from '@assets/shareimage.png';
 
 const posts = await getCollection('news');
 const featuredPosts = posts.filter((post) => post.data.featured);
 ---
 
-<MainLayout title={site.title} description={site.description}>
-  <section class="container py-16">
-    <h1 class="mb-4 text-5xl font-semibold">{site.description}</h1>
-    <p class="mb-4 text-lg">
-      Clouder's technology seamlessly integrates all building systems and devices, regardless of the
-      protocol or manufacturer. Our solution reduces the need for extensive physical cabling between
-      devices and systems and allows devices to communicate and share data.
-    </p>
-    <a
-      href="https://www.youtube.com/watch?v=kdJNcAIhxDE"
-      class="inline-flex rounded bg-black px-4 py-2 font-medium text-white dark:bg-white dark:text-black"
-      >See how it works</a
-    >
-    <div class="screenshot">
-      <Image src={uiLightImage} alt="Screenshot" class="block dark:hidden" />
-      <Image src={uiDarkImage} alt="Screenshot" class="hidden dark:block" />
+<MainLayout
+  title={site.title}
+  description={site.description}
+  headerClass="bg-white dark:bg-neutral-900"
+>
+  <section class="bg-gradient-to-b from-white to-transparent dark:from-neutral-900">
+    <div class="container overflow-y-clip">
+      <div class="grid grid-cols-2">
+        <div class="my-auto">
+          <h1 class="mb-6 text-5xl leading-14 font-semibold text-neutral-950 dark:text-neutral-50">
+            {site.description.replace('.', '')}
+          </h1>
+          <p class="mb-8 text-xl">
+            Integrates all building systems and devices, regardless of the protocol or vendor.
+          </p>
+          <a
+            href="https://www.youtube.com/watch?v=kdJNcAIhxDE"
+            class="mt-auto inline-block cursor-pointer rounded bg-neutral-900 px-5 text-center text-sm leading-11 font-medium text-nowrap text-neutral-50 transition hover:bg-neutral-800 dark:bg-neutral-100 dark:text-neutral-950 dark:hover:bg-neutral-300"
+          >
+            See how it works
+          </a>
+        </div>
+        <div class="relative h-[85vh] pt-16">
+          <div class="relative ml-12 h-full w-[80vw] max-w-5xl">
+            <div
+              class="overflow-hidden rounded-md border border-current/10 shadow-[0_0_32px_#0001]"
+            >
+              <Image src={uiLightImage} alt="Screenshot" class="block dark:hidden" />
+              <Image src={uiDarkImage} alt="Screenshot" class="hidden dark:block" />
+            </div>
+          </div>
+          <div
+            class="absolute bottom-0 left-0 h-1/2 w-screen bg-gradient-to-t from-neutral-50 to-transparent dark:from-neutral-950"
+          >
+          </div>
+        </div>
+      </div>
     </div>
   </section>
-  <section class="container py-12 md:py-16">
+  <section class="container pb-12 md:pb-16">
     <Overline title="Benefits" />
     <div class="grid grid-cols-1 gap-x-10 gap-y-6 md:grid-cols-2 lg:grid-cols-3">
       <div class="md:col-span-3 lg:col-span-1">
@@ -175,6 +195,7 @@ const featuredPosts = posts.filter((post) => post.data.featured);
       </div>
       <div class="order-first flex items-center justify-center px-10 xl:order-none xl:col-span-2">
         <div class="relative">
+          <ClouderIllustration class="h-auto max-w-full opacity-75" />
           <span class="absolute top-[91.85%] left-[7.75%] flex size-3">
             <span
               class="absolute inline-flex h-full w-full animate-ping rounded-full bg-purple-300 opacity-75 [animation-duration:2000ms]"
@@ -211,7 +232,6 @@ const featuredPosts = posts.filter((post) => post.data.featured);
               class="shadow-inset relative inline-flex size-3 rounded-full bg-sky-400 shadow-current/10"
             ></span>
           </span>
-          <ClouderIllustration class="h-auto max-w-full" />
         </div>
       </div>
       <div class="grid grid-cols-1 gap-10 md:grid-cols-2 xl:grid-cols-1 xl:grid-rows-2 xl:gap-0">
