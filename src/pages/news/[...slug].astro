@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
-import { ArrowLeft, ArrowRight } from 'lucide-astro';
+import ArrowRightIcon from 'lucide-astro/ArrowRight';
+import ArrowLeftIcon from 'lucide-astro/ArrowLeft';
 import { formatDate } from '@utils/date.ts';
 import ProseLayout from '@layouts/ProseLayout.astro';
 import Overline from '@components/Overline.astro';
@@ -48,7 +49,10 @@ const { Content } = await post.render();
             href={`/news/${previousPost.slug}`}
             class="group flex items-center gap-4 rounded border border-current/10 bg-white p-4 leading-6 transition hover:border-current/15 hover:shadow-sm dark:bg-neutral-900"
           >
-            <ArrowLeft size={20} class="flex-shrink-0 transition group-hover:-translate-x-0.5" />
+            <ArrowLeftIcon
+              size={20}
+              class="flex-shrink-0 transition group-hover:-translate-x-0.5"
+            />
             <span class="font-semibold">{previousPost.data.title}</span>
           </a>
         )
@@ -60,7 +64,10 @@ const { Content } = await post.render();
             class="group flex items-center gap-4 rounded border border-current/10 bg-white p-4 leading-6 transition hover:border-current/15 hover:shadow-sm md:col-start-2 dark:bg-neutral-900"
           >
             <span class="font-semibold">{nextPost.data.title}</span>
-            <ArrowRight size={20} class="flex-shrink-0 transition group-hover:translate-x-0.5" />
+            <ArrowRightIcon
+              size={20}
+              class="flex-shrink-0 transition group-hover:translate-x-0.5"
+            />
           </a>
         )
       }

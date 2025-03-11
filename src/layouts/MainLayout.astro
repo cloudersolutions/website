@@ -6,11 +6,10 @@ import Footer from '@components/Footer.astro';
 
 type Props = Parameters<typeof BaseLayout>[0];
 
-const props = Astro.props;
-const { headerClass } = props;
+const { headerClass, ...restProps } = Astro.props;
 ---
 
-<BaseLayout {...props}>
+<BaseLayout {...restProps}>
   <Header class={headerClass} />
   <main class="flex h-full flex-grow flex-col">
     <slot />

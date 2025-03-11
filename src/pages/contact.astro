@@ -55,6 +55,7 @@ const description =
         <h3 class="mb-2 text-xl font-semibold text-neutral-900 dark:text-neutral-100">Ben Weber</h3>
         <p>Account Executive</p>
         <p>ben.weber@cloudersolutions.com</p>
+        <!-- TODO, bens number/email -->
         <p>TODO</p>
       </div>
     </div>
@@ -116,6 +117,19 @@ const description =
             required
             class="block h-11 w-full rounded border border-neutral-200 bg-white px-3 dark:border-neutral-800 dark:bg-neutral-900"
           />
+          <label for="newsletter" class="mt-3 flex items-start gap-2">
+            <!-- TODO, tailwind forms -->
+            <input id="newsletter" name="newsletter" type="checkbox" class="my-px size-3.5" />
+            <p class="inline-flex flex-col gap-1">
+              <span class="text-sm leading-4">
+                Sign up to our newsletter to receive company news, product updates and more.
+              </span>
+              <span class="text-xs text-neutral-500">
+                You can unsubscribe at any time. Please review our
+                <a href="/privacy-policy" class="underline underline-offset-2">Privacy policy</a>.
+              </span>
+            </p>
+          </label>
         </div>
         <div>
           <label for="phone" class="mb-2 block text-sm font-medium">Phone</label>

@@ -53,27 +53,27 @@ const description = 'Company news, product updates, and more.';
   </section>
   <section class="container mb-24 md:mb-32">
     <div
-      class="rounded-md border border-neutral-200 bg-white p-6 md:p-12 dark:border-neutral-800 dark:bg-neutral-900"
+      class="rounded-md border border-neutral-200 bg-white p-6 md:p-16 dark:border-neutral-800 dark:bg-neutral-900"
     >
-      <h3 class="mb-2 text-2xl font-semibold text-neutral-900 md:text-3xl dark:text-neutral-100">
-        Be the first one to know more
-      </h3>
-      <p>Sign up to our newsletter to receive updates</p>
-      <form
-        name="newsletter"
-        method="POST"
-        data-netlify="true"
-        data-netlify-honeypot="honeypot"
-        class="my-6"
-      >
-        <div class="flex flex-wrap gap-3">
+      <div class="flex flex-col justify-center md:text-center">
+        <h3 class="mb-2 text-2xl font-semibold text-neutral-900 md:text-3xl dark:text-neutral-100">
+          Be the first one to know more
+        </h3>
+        <p>Sign up to our newsletter to receive company news, product updates and more.</p>
+        <form
+          name="newsletter"
+          method="POST"
+          data-netlify="true"
+          data-netlify-honeypot="honeypot"
+          class="my-6"
+        >
           <input
             id="email"
             name="email"
             placeholder="Email"
             type="email"
             required
-            class="h-11 w-full max-w-100 rounded border border-neutral-200 bg-neutral-50 px-3 text-sm dark:border-neutral-800 dark:bg-neutral-950"
+            class="mr-2 h-11 w-full max-w-100 rounded border border-neutral-200 bg-neutral-50 px-3 text-sm dark:border-neutral-800 dark:bg-neutral-950"
           />
           <button
             type="submit"
@@ -81,18 +81,21 @@ const description = 'Company news, product updates, and more.';
           >
             Sign up
           </button>
-        </div>
-        <input
-          id="honeypot"
-          name="honeypot"
-          type="text"
-          autocomplete="off"
-          tabindex="-1"
-          aria-hidden="true"
-          style="position: absolute; left: -9999px;"
-        />
-      </form>
-      <p class="text-sm text-neutral-500">We respect your privacy</p>
+          <input
+            id="honeypot"
+            name="honeypot"
+            type="text"
+            autocomplete="off"
+            tabindex="-1"
+            aria-hidden="true"
+            style="position: absolute; left: -9999px;"
+          />
+        </form>
+        <p class="text-xs text-neutral-500">
+          You can unsubscribe at any time. Please review our
+          <a href="/privacy-policy" class="underline underline-offset-2">Privacy policy</a>.
+        </p>
+      </div>
     </div>
   </section>
 </MainLayout>

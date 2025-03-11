@@ -1,5 +1,4 @@
 ---
-import { ExternalLink, ArrowUpRight } from 'lucide-astro';
 import { twMerge } from 'tailwind-merge';
 import type { NavItem } from '@data/types';
 import navigation from '@data/navigation.yml';
@@ -18,10 +17,6 @@ const isActive = (href: string) => {
   if (href === '/') return pathname === href;
   return pathname.startsWith(href);
 };
-
-const isExternal = (href: string) => {
-  return href.startsWith('http');
-};
 ---
 
 <header
@@ -30,20 +25,22 @@ const isExternal = (href: string) => {
     className
   )}
 >
-  <div class="container flex flex-wrap items-center gap-6">
-    <a href="/" class="mr-auto">
+  <div class="container flex flex-wrap gap-x-6 gap-y-2">
+    <a href="/" class="mr-auto py-2">
       <Logo size={20} />
     </a>
-    <nav class="flex flex-wrap gap-x-4">
+    <nav class="-mx-3.5 flex flex-wrap">
       {
         navItems.map(({ title, href }) => (
           <a
             href={href}
             aria-current={isActive(href) ? 'page' : undefined}
-            class="inline-flex items-center gap-0.5 border-b-2 border-b-transparent px-1 py-2 text-current transition hover:opacity-60 aria-[current]:border-b-indigo-500 hover:aria-[current]:opacity-100"
+            class:list={twMerge(
+              'rounded-full px-3.5 leading-9 font-medium text-current transition hover:bg-current/5 aria-[current]:text-current',
+              navItems.some((i) => isActive(i.href)) && 'text-current/60 hover:text-current'
+            )}
           >
             {title}
-            {isExternal(href) && <ArrowUpRight size={16} />}
           </a>
         ))
       }

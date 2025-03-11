@@ -1,7 +1,12 @@
 ---
 import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
-import { HousePlug, ChartNoAxesColumn, HardHat, Building, Euro, ShieldCheck } from 'lucide-astro';
+import HousePlugIcon from 'lucide-astro/HousePlug';
+import ChartNoAxesColumnIcon from 'lucide-astro/ChartNoAxesColumn';
+import HardHatIcon from 'lucide-astro/HardHat';
+import BuildingIcon from 'lucide-astro/Building';
+import EuroIcon from 'lucide-astro/Euro';
+import ShieldCheckIcon from 'lucide-astro/ShieldCheck';
 import site from '@data/site.yml';
 import MainLayout from '@layouts/MainLayout.astro';
 import ClouderIllustration from '@assets/how-clouder-works.svg';
@@ -39,7 +44,7 @@ const featuredPosts = posts.filter((post) => post.data.featured);
     <div class="grid grid-cols-3 gap-12">
       <div>
         <div class="mb-2 flex items-center gap-2">
-          <HousePlug />
+          <HousePlugIcon />
           <h3 class="text-xl font-semibold">Energy savings</h3>
         </div>
         <p>
@@ -49,7 +54,7 @@ const featuredPosts = posts.filter((post) => post.data.featured);
       </div>
       <div>
         <div class="mb-2 flex items-center gap-2">
-          <ChartNoAxesColumn />
+          <ChartNoAxesColumnIcon />
           <h3 class="text-xl font-semibold">Accurate data</h3>
         </div>
         <p>
@@ -60,7 +65,7 @@ const featuredPosts = posts.filter((post) => post.data.featured);
       </div>
       <div>
         <div class="mb-2 flex items-center gap-2">
-          <HardHat />
+          <HardHatIcon />
           <h3 class="text-xl font-semibold">Flexibility</h3>
         </div>
         <p>
@@ -70,7 +75,7 @@ const featuredPosts = posts.filter((post) => post.data.featured);
       </div>
       <div>
         <div class="mb-2 flex items-center gap-2">
-          <Building />
+          <BuildingIcon />
           <h3 class="text-xl font-semibold">Efficient operations</h3>
         </div>
         <p>
@@ -80,7 +85,7 @@ const featuredPosts = posts.filter((post) => post.data.featured);
       </div>
       <div>
         <div class="mb-2 flex items-center gap-2">
-          <Euro />
+          <EuroIcon />
           <h3 class="text-xl font-semibold">Cost savings</h3>
         </div>
         <p>
@@ -90,7 +95,7 @@ const featuredPosts = posts.filter((post) => post.data.featured);
       </div>
       <div>
         <div class="mb-2 flex items-center gap-2">
-          <ShieldCheck />
+          <ShieldCheckIcon />
           <h3 class="text-xl font-semibold">Security</h3>
         </div>
         <p>
