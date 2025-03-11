@@ -8,6 +8,7 @@ import BuildingIcon from 'lucide-astro/Building';
 import EuroIcon from 'lucide-astro/Euro';
 import ShieldCheckIcon from 'lucide-astro/ShieldCheck';
 import LeafIcon from 'lucide-astro/Leaf';
+import PlayIcon from 'lucide-astro/Play';
 import site from '@data/site.yml';
 import Overline from '@components/Overline.astro';
 import MainLayout from '@layouts/MainLayout.astro';
@@ -27,24 +28,27 @@ const featuredPosts = posts.filter((post) => post.data.featured);
   <section class="bg-gradient-to-b from-white to-transparent dark:from-neutral-900">
     <div class="container overflow-y-clip">
       <div class="grid grid-cols-2">
-        <div class="my-auto">
+        <div class="z-10 pt-40">
           <h1 class="mb-6 text-5xl leading-14 font-semibold text-neutral-950 dark:text-neutral-50">
             {site.description.replace('.', '')}
           </h1>
           <p class="mb-8 text-xl">
             Integrates all building systems and devices, regardless of the protocol or vendor.
           </p>
-          <a
-            href="https://www.youtube.com/watch?v=kdJNcAIhxDE"
-            class="mt-auto inline-block cursor-pointer rounded bg-neutral-900 px-5 text-center text-sm leading-11 font-medium text-nowrap text-neutral-50 transition hover:bg-neutral-800 dark:bg-neutral-100 dark:text-neutral-950 dark:hover:bg-neutral-300"
-          >
-            See how it works
-          </a>
+          <div class="flex gap-3">
+            <a
+              href="https://www.youtube.com/watch?v=kdJNcAIhxDE"
+              class="mt-auto inline-flex cursor-pointer items-center gap-2 rounded bg-indigo-500 px-5 text-center text-sm leading-11 font-medium text-nowrap text-white transition hover:bg-indigo-600 dark:hover:bg-indigo-400"
+            >
+              <PlayIcon size={14} class="fill-current stroke-current" />
+              See how it works
+            </a>
+          </div>
         </div>
-        <div class="relative h-[85vh] pt-16">
-          <div class="relative ml-12 h-full w-[80vw] max-w-5xl">
+        <div class="relative h-[85vh]">
+          <div class="relative h-full w-5xl perspective-dramatic">
             <div
-              class="overflow-hidden rounded-md border border-current/10 shadow-[0_0_32px_#0001]"
+              class="translate-x-1/4 translate-y-1/10 -rotate-20 skew-10 overflow-hidden rounded-md border border-current/10 shadow-[0_0_32px_#0001] dark:shadow-[0_0_32px_#0006]"
             >
               <Image src={uiLightImage} alt="Screenshot" class="block dark:hidden" />
               <Image src={uiDarkImage} alt="Screenshot" class="hidden dark:block" />
