@@ -11,7 +11,8 @@ export default defineConfig({
     plugins: [yaml(), tailwindcss()]
   },
   server: {
-    open: true
+    open: true,
+    host: true
   },
   experimental: {
     svg: true
