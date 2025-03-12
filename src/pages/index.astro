@@ -11,6 +11,7 @@ import LeafIcon from 'lucide-astro/Leaf';
 import PlayIcon from 'lucide-astro/Play';
 import site from '@data/site.yml';
 import Overline from '@components/Overline.astro';
+import Ping from '@components/Ping.astro';
 import MainLayout from '@layouts/MainLayout.astro';
 import ClouderIllustration from '@assets/how-clouder-works.svg';
 import uiLightImage from '@assets/ui-light.png';
@@ -179,9 +180,7 @@ const featuredPosts = posts.filter((post) => post.data.featured);
       >
         <div>
           <div class="mb-2 flex items-center gap-2.5">
-            <span
-              class="shadow-inset inline-flex size-3 rounded-full bg-purple-400 shadow-current/10 outline-4 outline-purple-300/25"
-            ></span>
+            <Ping color="purple" />
             <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100">
               Virtual cables
             </h3>
@@ -195,9 +194,7 @@ const featuredPosts = posts.filter((post) => post.data.featured);
         </div>
         <div>
           <div class="mb-2 flex items-center gap-2.5">
-            <span
-              class="shadow-inset inline-flex size-3 rounded-full bg-indigo-400 shadow-current/10 outline-4 outline-indigo-300/25"
-            ></span>
+            <Ping color="indigo" />
             <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100">
               Edge Connectors
             </h3>
@@ -215,49 +212,23 @@ const featuredPosts = posts.filter((post) => post.data.featured);
         <div class="relative my-4">
           <ClouderIllustration class="h-auto max-w-full opacity-75" />
           <span class="absolute top-[91.85%] left-[7.75%] flex size-3">
-            <span
-              class="absolute inline-flex h-full w-full animate-ping rounded-full bg-purple-300 opacity-75 [animation-duration:2000ms]"
-            >
-            </span>
-            <span
-              class="shadow-inset relative inline-flex size-3 rounded-full bg-purple-400 shadow-current/10"
-            ></span>
+            <Ping color="purple" isAnimated />
           </span>
           <span class="absolute top-[64%] left-0 flex size-3">
-            <span
-              class="absolute inline-flex h-full w-full animate-ping rounded-full bg-indigo-300 opacity-75 [animation-duration:2000ms]"
-            >
-            </span>
-            <span
-              class="shadow-inset relative inline-flex size-3 rounded-full bg-indigo-400 shadow-current/10"
-            ></span>
+            <Ping color="indigo" isAnimated />
           </span>
           <span class="absolute top-[93%] left-[42%] flex size-3">
-            <span
-              class="absolute inline-flex h-full w-full animate-ping rounded-full bg-pink-300 opacity-75 [animation-duration:2000ms]"
-            >
-            </span>
-            <span
-              class="shadow-inset relative inline-flex size-3 rounded-full bg-pink-400 shadow-current/10"
-            ></span>
+            <Ping color="pink" isAnimated />
           </span>
           <span class="absolute top-[35%] left-[79.5%] flex size-3">
-            <span
-              class="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-300 opacity-75 [animation-duration:2000ms]"
-            >
-            </span>
-            <span
-              class="shadow-inset relative inline-flex size-3 rounded-full bg-sky-400 shadow-current/10"
-            ></span>
+            <Ping color="sky" isAnimated />
           </span>
         </div>
       </div>
       <div class="grid grid-cols-1 gap-10 md:grid-cols-2 xl:grid-cols-1 xl:grid-rows-2 xl:gap-0">
         <div>
           <div class="mb-2 flex items-center gap-2.5">
-            <span
-              class="shadow-inset inline-flex size-3 rounded-full bg-sky-400 shadow-current/10 outline-4 outline-sky-300/25"
-            ></span>
+            <Ping color="sky" />
             <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100">
               Data storage
             </h3>
@@ -271,9 +242,7 @@ const featuredPosts = posts.filter((post) => post.data.featured);
         </div>
         <div>
           <div class="mb-2 flex items-center gap-2.5">
-            <span
-              class="shadow-inset inline-flex size-3 rounded-full bg-rose-400 shadow-current/10 outline-4 outline-rose-300/25"
-            ></span>
+            <Ping color="pink" />
             <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100">
               Virtual Cabling Engine
             </h3>
@@ -439,7 +408,7 @@ const featuredPosts = posts.filter((post) => post.data.featured);
               <h3 class="mx-6 mt-5 mb-2 text-xl font-semibold text-neutral-900 transition group-hover:text-current dark:text-neutral-100">
                 {post.data.title}
               </h3>
-              <p class="m-6 mt-2 rounded border border-current/12 px-3 text-sm leading-8 hover:bg-current/3">
+              <p class="m-6 mt-2 rounded border border-current/12 px-3 text-sm leading-8 font-medium hover:bg-current/3">
                 Read more
               </p>
             </a>
