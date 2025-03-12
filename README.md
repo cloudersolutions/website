@@ -28,7 +28,7 @@ npm run dev
 ## Todo
 
 - [ ] PaaS, Netlify?
-- [ ] Page styles
+- [x] Page styles
 - [ ] Forms styles & [tailwindcss-forms](https://github.com/tailwindlabs/tailwindcss-forms)
 - [ ] Forms submissions
 - [ ] Redirects
