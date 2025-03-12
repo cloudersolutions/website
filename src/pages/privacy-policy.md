@@ -4,8 +4,6 @@ title: Privacy Policy
 description: Find out how we collect and use personal information and learn about your data privacy rights
 ---
 
-# Privacy Policy
-
 ## 1. Controller
 
 Clouder Oy (“Clouder”, “we”, “us”)

@@ -7,19 +7,10 @@ const description = 'Your form submission has been received';
 ---
 
 <MainLayout title={title}>
-  <div>
-    <h1>🙌<br />{title}</h1>
+  <div class="flex flex-grow flex-col items-center justify-center gap-4 p-6 text-center">
+    <span class="text-4xl">🙌</span>
+    <h1 class="text-3xl font-semibold">{title}</h1>
     <p>{description}</p>
-    <a href="/">Back to home</a>
+    <a href="/" class="underline underline-offset-2 hover:text-current/75"> &larr; Back to home </a>
   </div>
 </MainLayout>t
-
-<style>
-  div {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    padding: 12vmax 0;
-    text-align: center;
-  }
-</style>
