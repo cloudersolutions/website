@@ -27,12 +27,16 @@ const featuredPosts = posts.filter((post) => post.data.featured);
 >
   <section class="bg-gradient-to-b from-white to-transparent dark:from-neutral-900">
     <div class="container overflow-y-clip">
-      <div class="grid grid-cols-2">
-        <div class="z-10 pt-40">
-          <h1 class="mb-6 text-5xl leading-14 font-semibold text-neutral-950 dark:text-neutral-50">
-            {site.description.replace('.', '')}
+      <div class="grid grid-cols-1 lg:grid-cols-2">
+        <div class="z-10 pt-16 lg:pt-32">
+          <h1
+            class="mb-6 text-4xl font-semibold text-neutral-950 xl:text-5xl xl:leading-14 dark:text-neutral-50"
+          >
+            Clouder enables <span class="underline decoration-indigo-400/20 underline-offset-4"
+              >net&#8209;zero digital&nbsp;buildings</span
+            > by fixing building tech connectivity.
           </h1>
-          <p class="mb-8 text-xl">
+          <p class="mb-8 text-lg lg:text-xl">
             Integrates all building systems and devices, regardless of the protocol or vendor.
           </p>
           <div class="flex gap-3">
@@ -45,10 +49,10 @@ const featuredPosts = posts.filter((post) => post.data.featured);
             </a>
           </div>
         </div>
-        <div class="relative h-[85vh]">
-          <div class="relative h-full w-5xl perspective-dramatic">
+        <div class="relative">
+          <div class="relative w-xl perspective-dramatic lg:w-4xl xl:w-5xl">
             <div
-              class="translate-x-1/4 translate-y-1/10 -rotate-20 skew-10 overflow-hidden rounded-md border border-current/10 shadow-[0_0_32px_#0001] dark:shadow-[0_0_32px_#0006]"
+              class="translate-x-1/5 translate-y-8 -rotate-20 skew-10 overflow-hidden rounded-md border border-current/10 shadow-[0_0_32px_#0001] lg:translate-y-16 xl:translate-x-1/4 dark:shadow-[0_0_32px_#0006]"
             >
               <Image src={uiLightImage} alt="Screenshot" class="block dark:hidden" />
               <Image src={uiDarkImage} alt="Screenshot" class="hidden dark:block" />
@@ -307,7 +311,7 @@ const featuredPosts = posts.filter((post) => post.data.featured);
           with the EPBD regulations and enables sustainable real estate operations throughout the
           lifecycle of the building.
         </p>
-        <div class="mt-8 grid grid-cols-2 gap-6">
+        <div class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
           <div
             class="rounded border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-900"
           >
@@ -359,7 +363,7 @@ const featuredPosts = posts.filter((post) => post.data.featured);
           and construction. Clouder's virtual cabling reduces embodied carbon emissions by 100x
           compared to physical cables.
         </p>
-        <div class="mt-8 grid grid-cols-2 gap-6">
+        <div class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
           <div
             class="rounded border border-neutral-200 bg-white p-6 pb-4 dark:border-neutral-800 dark:bg-neutral-900"
           >
@@ -416,7 +420,7 @@ const featuredPosts = posts.filter((post) => post.data.featured);
       </h2>
       {
         featuredPosts.map((post) => (
-          <article class="group my-1 overflow-hidden rounded bg-white outline -outline-offset-1 outline-current/12 transition hover:shadow-xs hover:outline-current/16 dark:bg-neutral-900">
+          <article class="group overflow-hidden rounded bg-white outline -outline-offset-1 outline-current/12 transition hover:shadow-xs hover:outline-current/16 lg:mt-1 dark:bg-neutral-900">
             <a href={`/news/${post.slug}`} class="flex flex-col items-start">
               <Image
                 src={post.data.cover}
