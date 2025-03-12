@@ -16,16 +16,16 @@ const description = 'Company news, product updates, and more.';
 
 <MainLayout title={title} description={description} headerClass="bg-white dark:bg-neutral-900">
   <section class="border-b border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-900">
-    <div class="container-narrow pt-16 pb-24 text-center md:pt-24 md:pb-32">
+    <div class="container-narrow pt-8 pb-16 text-center sm:pt-16 sm:pb-24 lg:pt-24 lg:pb-32">
       <h1 class="mb-5 text-4xl font-semibold text-neutral-900 md:text-5xl dark:text-neutral-100">
         {title}
       </h1>
       <p class="text-xl">{description}</p>
     </div>
   </section>
-  <div class="h-12 md:h-16"></div>
-  <section class="container py-12 md:py-16">
-    <div class="grid grid-cols-1 gap-x-10 gap-y-16 md:grid-cols-2 lg:grid-cols-3">
+  <div class="h-8 sm:h-12 lg:h-16"></div>
+  <section class="container py-8 sm:py-12 lg:py-16">
+    <div class="grid grid-cols-1 gap-x-10 gap-y-12 md:grid-cols-2 lg:grid-cols-3 lg:gap-y-20">
       {
         sortedPosts.map((post) => (
           <article>
@@ -52,7 +52,7 @@ const description = 'Company news, product updates, and more.';
       }
     </div>
   </section>
-  <section class="container py-12 md:py-16">
+  <section class="container py-8 sm:py-12 lg:py-16">
     <div
       class="rounded-md border border-neutral-200 bg-white p-6 md:p-16 dark:border-neutral-800 dark:bg-neutral-900"
     >
@@ -100,5 +100,5 @@ const description = 'Company news, product updates, and more.';
       </div>
     </div>
   </section>
-  <div class="h-12 md:h-16"></div>
+  <div class="h-8 sm:h-12 lg:h-16"></div>
 </MainLayout>

@@ -11,24 +11,24 @@ const description =
 
 <MainLayout title={title} description={description} headerClass="bg-white dark:bg-neutral-900">
   <section class="border-b border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-900">
-    <div class="container-narrow pt-16 pb-24 text-center md:pt-24 md:pb-32">
+    <div class="container-narrow pt-8 pb-16 text-center sm:pt-16 sm:pb-24 lg:pt-24 lg:pb-32">
       <h1 class="mb-5 text-4xl font-semibold text-neutral-900 md:text-5xl dark:text-neutral-100">
         The Virtual Cabling Company
       </h1>
       <p class="text-xl">{description}</p>
     </div>
   </section>
-  <div class="h-12 md:h-16"></div>
-  <section class="container py-12 md:py-16">
+  <div class="h-8 sm:h-12 lg:h-16"></div>
+  <section class="container py-8 sm:py-12 lg:py-16">
     <Overline title="Purpose" />
-    <div class="grid grid-cols-1 gap-x-10 gap-y-6 md:grid-cols-2">
+    <div class="grid grid-cols-1 gap-x-10 md:grid-cols-2">
       <h2
-        class="text-2xl font-semibold text-neutral-900 md:max-w-lg md:text-3xl dark:text-neutral-100"
+        class="mb-5 text-2xl font-semibold text-neutral-900 md:text-3xl lg:max-w-lg dark:text-neutral-100"
       >
         We are the first in the world to enable universal, system agnostic virtual cabling for all
         building technology systems
       </h2>
-      <div class="space-y-5">
+      <div class="space-y-4">
         <p>
           Clouder is pioneering universal virtual cabling technology for commercial real estate,
           enabling system-agnostic integration across all building technology systems. This
@@ -44,11 +44,11 @@ const description =
       </div>
     </div>
   </section>
-  <section class="container py-12 md:py-16">
+  <section class="container py-8 sm:py-12 lg:py-16">
     <Overline title="Team" />
-    <div class="grid grid-cols-1 gap-x-10 gap-y-6 md:grid-cols-2">
-      <div class="space-y-5">
-        <h3 class="text-2xl font-semibold text-neutral-900 md:text-3xl dark:text-neutral-100">
+    <div class="grid grid-cols-1 gap-x-10 gap-y-6 lg:grid-cols-2">
+      <div class="space-y-4">
+        <h3 class="mb-5 text-2xl font-semibold text-neutral-900 md:text-3xl dark:text-neutral-100">
           Built by seasoned professionals
         </h3>
         <p>
@@ -69,8 +69,8 @@ const description =
           industry experts.
         </p>
       </div>
-      <Image src={teamImage} alt="Clouder team" class="my-1 rounded" />
+      <Image src={teamImage} alt="Clouder team" class="mt-2 rounded" />
     </div>
   </section>
-  <div class="h-12 md:h-16"></div>
+  <div class="h-8 sm:h-12 lg:h-16"></div>
 </MainLayout>
