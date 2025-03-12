@@ -1,5 +1,12 @@
 ---
 import CheckIcon from 'lucide-astro/Check';
+import BlocksIcon from 'lucide-astro/Blocks';
+import BuildingIcon from 'lucide-astro/Building';
+import LaptopIcon from 'lucide-astro/Laptop';
+import ShieldCheckIcon from 'lucide-astro/ShieldCheck';
+import BoltIcon from 'lucide-astro/Bolt';
+import DatabaseIcon from 'lucide-astro/Database';
+import WrenchIcon from 'lucide-astro/Wrench';
 import MainLayout from '@layouts/MainLayout.astro';
 
 const title = 'Product';
@@ -216,22 +223,25 @@ const headingIncluded = 'Included in the price?';
   </section>
   <section id="features" class="container py-8 sm:py-12 lg:py-16">
     <h2 class="text-3xl font-semibold md:mb-4 md:text-4xl">What’s included in Clouder Platform?</h2>
-    <table class="w-full table-auto text-left">
+    <table class="w-full table-fixed text-left">
       <thead class="hidden md:table-header-group">
-        <tr
-          class="border-b border-neutral-200 *:px-7 *:py-6 *:font-semibold *:first:pl-0 *:last:pr-0 dark:border-neutral-800"
-        >
+        <tr class="border-b border-neutral-200 *:py-6 *:font-semibold dark:border-neutral-800">
           <th class="w-1/6">Feature</th>
-          <th class="w-3/6">{headingBenefits}</th>
-          <th class="w-2/6">{headingIncluded}</th>
+          <th class="w-3/6 pl-7">{headingBenefits}</th>
+          <th class="w-2/6 pl-7">{headingIncluded}</th>
         </tr>
       </thead>
       <tbody
         class="block *:grid *:border-b *:border-neutral-200 md:table-row-group *:md:table-row *:dark:border-neutral-800"
       >
-        <tr class="py-4 *:py-2 *:align-text-top *:md:px-7 *:md:py-6 *:md:first:pl-0 *:md:last:pr-0">
-          <td class="font-semibold">Universal connectivity</td>
-          <td>
+        <tr class="py-4 *:py-2 *:align-text-top *:md:py-6">
+          <td class="font-semibold">
+            <span class="inline-flex items-center gap-2">
+              <BlocksIcon size={18} class="flex-shrink-0" />
+              Universal connectivity
+            </span>
+          </td>
+          <td class="md:pl-7">
             <p class="mb-2 block text-sm font-medium text-neutral-500 md:hidden">
               {headingBenefits}
             </p>
@@ -250,16 +260,21 @@ const headingIncluded = 'Included in the price?';
               </li>
             </ul>
           </td>
-          <td>
+          <td class="md:pl-7">
             <p class="mb-2 block text-sm font-medium text-neutral-500 md:hidden">
               {headingIncluded}
             </p>
             Yes. Clouder Edge Connectors are sold separately 1000 € / device.
           </td>
         </tr>
-        <tr class="py-4 *:py-2 *:align-text-top *:md:px-7 *:md:py-6 *:md:first:pl-0 *:md:last:pr-0">
-          <td class="font-semibold">Clouder Dashboard</td>
-          <td>
+        <tr class="py-4 *:py-2 *:align-text-top *:md:py-6">
+          <td class="font-semibold">
+            <span class="inline-flex items-center gap-2">
+              <LaptopIcon size={18} class="flex-shrink-0" />
+              Clouder Dashboard
+            </span>
+          </td>
+          <td class="md:pl-7">
             <p class="mb-2 block text-sm font-medium text-neutral-500 md:hidden">
               {headingBenefits}
             </p>
@@ -270,16 +285,21 @@ const headingIncluded = 'Included in the price?';
               </li>
             </ul>
           </td>
-          <td>
+          <td class="md:pl-7">
             <p class="mb-2 block text-sm font-medium text-neutral-500 md:hidden">
-              {headingBenefits}
+              {headingIncluded}
             </p>
             Yes
           </td>
         </tr>
-        <tr class="py-4 *:py-2 *:align-text-top *:md:px-7 *:md:py-6 *:md:first:pl-0 *:md:last:pr-0">
-          <td id="building-insights" class="font-semibold">Building insights</td>
-          <td>
+        <tr class="py-4 *:py-2 *:align-text-top *:md:py-6">
+          <td id="building-insights" class="font-semibold">
+            <span class="inline-flex items-center gap-2">
+              <BuildingIcon size={18} class="flex-shrink-0" />
+              Building insights
+            </span>
+          </td>
+          <td class="md:pl-7">
             <p class="mb-2 block text-sm font-medium text-neutral-500 md:hidden">
               {headingBenefits}
             </p>
@@ -291,16 +311,21 @@ const headingIncluded = 'Included in the price?';
               <li>Fault detection and diagnostics with recommendations on how to fix them.</li>
             </ul>
           </td>
-          <td>
+          <td class="md:pl-7">
             <p class="mb-2 block text-sm font-medium text-neutral-500 md:hidden">
               {headingIncluded}
             </p>
             Yes
           </td>
         </tr>
-        <tr class="py-4 *:py-2 *:align-text-top *:md:px-7 *:md:py-6 *:md:first:pl-0 *:md:last:pr-0">
-          <td id="device-control" class="font-semibold">Device control</td>
-          <td>
+        <tr class="py-4 *:py-2 *:align-text-top *:md:py-6">
+          <td id="device-control" class="font-semibold">
+            <span class="inline-flex items-center gap-2">
+              <BoltIcon size={18} class="flex-shrink-0" />
+              Device control
+            </span>
+          </td>
+          <td class="md:pl-7">
             <p class="mb-2 block text-sm font-medium text-neutral-500 md:hidden">
               {headingBenefits}
             </p>
@@ -313,16 +338,21 @@ const headingIncluded = 'Included in the price?';
               <li>Enables participation in demand response programs to reduce energy costs.</li>
             </ul>
           </td>
-          <td>
+          <td class="md:pl-7">
             <p class="mb-2 block text-sm font-medium text-neutral-500 md:hidden">
               {headingIncluded}
             </p>
             Yes. Event-based rules are available for an additional 100 € / month / building.
           </td>
         </tr>
-        <tr class="py-4 *:py-2 *:align-text-top *:md:px-7 *:md:py-6 *:md:first:pl-0 *:md:last:pr-0">
-          <td id="data-solution" class="font-semibold">Data solution</td>
-          <td>
+        <tr class="py-4 *:py-2 *:align-text-top *:md:py-6">
+          <td id="data-solution" class="font-semibold">
+            <span class="inline-flex items-center gap-2">
+              <DatabaseIcon size={18} class="flex-shrink-0" />
+              Data solution
+            </span>
+          </td>
+          <td class="md:pl-7">
             <p class="mb-2 block text-sm font-medium text-neutral-500 md:hidden">
               {headingBenefits}
             </p>
@@ -341,16 +371,21 @@ const headingIncluded = 'Included in the price?';
               </li>
             </ul>
           </td>
-          <td>
+          <td class="md:pl-7">
             <p class="mb-2 block text-sm font-medium text-neutral-500 md:hidden">
               {headingIncluded}
             </p>
             Yes
           </td>
         </tr>
-        <tr class="py-4 *:py-2 *:align-text-top *:md:px-7 *:md:py-6 *:md:first:pl-0 *:md:last:pr-0">
-          <td class="font-semibold">Security built-in</td>
-          <td>
+        <tr class="py-4 *:py-2 *:align-text-top *:md:py-6">
+          <td class="font-semibold">
+            <span class="inline-flex items-center gap-2">
+              <ShieldCheckIcon size={18} class="flex-shrink-0" />
+              Security built-in
+            </span>
+          </td>
+          <td class="md:pl-7">
             <p class="mb-2 block text-sm font-medium text-neutral-500 md:hidden">
               {headingBenefits}
             </p>
@@ -362,18 +397,21 @@ const headingIncluded = 'Included in the price?';
               </li>
             </ul>
           </td>
-          <td>
+          <td class="md:pl-7">
             <p class="mb-2 block text-sm font-medium text-neutral-500 md:hidden">
               {headingIncluded}
             </p>
             Yes
           </td>
         </tr>
-        <tr
-          class="border-none py-4 *:py-2 *:align-text-top *:md:px-7 *:md:py-6 *:md:first:pl-0 *:md:last:pr-0"
-        >
-          <td class="font-semibold">Custom integrations</td>
-          <td>
+        <tr class="border-none py-4 *:py-2 *:align-text-top *:md:py-6">
+          <td class="font-semibold">
+            <span class="inline-flex items-center gap-2">
+              <WrenchIcon size={18} class="flex-shrink-0" />
+              Custom integrations
+            </span>
+          </td>
+          <td class="md:pl-7">
             <p class="mb-2 block text-sm font-medium text-neutral-500 md:hidden">
               {headingBenefits}
             </p>
@@ -381,7 +419,7 @@ const headingIncluded = 'Included in the price?';
               <li>We work together with your team to come up with a tailored solution.</li>
             </ul>
           </td>
-          <td>
+          <td class="md:pl-7">
             <p class="mb-2 block text-sm font-medium text-neutral-500 md:hidden">
               {headingIncluded}
             </p>
