@@ -42,20 +42,20 @@ const featuredPosts = posts.filter((post) => post.data.featured);
           <div class="flex gap-3">
             <a
               href="https://www.youtube.com/watch?v=kdJNcAIhxDE"
-              class="inline-flex h-11 cursor-pointer items-center gap-2 rounded bg-indigo-500 px-5 text-center text-sm font-medium text-nowrap text-white transition hover:bg-indigo-600 dark:hover:bg-indigo-400"
+              class="inline-flex h-11 cursor-pointer items-center justify-center gap-2 rounded bg-indigo-500 px-5 text-center text-sm font-medium text-nowrap text-white transition hover:bg-indigo-600 dark:hover:bg-indigo-400"
             >
               <PlayIcon size={14} class="fill-current stroke-current" />
               See how it works
             </a>
             <a
               href="#benefits"
-              class="inline-flex h-11 cursor-pointer items-center gap-2 rounded border border-current/12 bg-white px-5 text-center text-sm font-medium text-nowrap transition hover:bg-current/3 dark:bg-neutral-900"
+              class="inline-flex h-11 cursor-pointer items-center justify-center gap-2 rounded border border-current/12 bg-white px-5 text-center text-sm font-medium text-nowrap transition hover:bg-neutral-100 dark:bg-neutral-900 dark:hover:bg-neutral-800"
             >
               Learn more
             </a>
           </div>
         </div>
-        <div class="relative">
+        <div>
           <div class="relative w-xl perspective-dramatic lg:w-4xl xl:w-5xl">
             <div
               class="translate-x-1/5 translate-y-8 -rotate-20 skew-10 overflow-hidden rounded-md border border-current/10 shadow-[0_0_32px_#0001] lg:translate-y-16 xl:translate-x-1/4 dark:shadow-[0_0_32px_#0006]"
@@ -63,10 +63,10 @@ const featuredPosts = posts.filter((post) => post.data.featured);
               <Image src={uiLightImage} alt="Screenshot" class="block dark:hidden" />
               <Image src={uiDarkImage} alt="Screenshot" class="hidden dark:block" />
             </div>
-          </div>
-          <div
-            class="absolute bottom-0 left-0 h-1/2 w-screen bg-gradient-to-t from-neutral-50 to-transparent dark:from-neutral-950"
-          >
+            <div
+              class="absolute bottom-0 left-0 h-1/2 w-screen bg-gradient-to-t from-neutral-50 to-transparent dark:from-neutral-950"
+            >
+            </div>
           </div>
         </div>
       </div>
