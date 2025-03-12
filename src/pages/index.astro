@@ -42,10 +42,16 @@ const featuredPosts = posts.filter((post) => post.data.featured);
           <div class="flex gap-3">
             <a
               href="https://www.youtube.com/watch?v=kdJNcAIhxDE"
-              class="mt-auto inline-flex cursor-pointer items-center gap-2 rounded bg-indigo-500 px-5 text-center text-sm leading-11 font-medium text-nowrap text-white transition hover:bg-indigo-600 dark:hover:bg-indigo-400"
+              class="inline-flex h-11 cursor-pointer items-center gap-2 rounded bg-indigo-500 px-5 text-center text-sm font-medium text-nowrap text-white transition hover:bg-indigo-600 dark:hover:bg-indigo-400"
             >
               <PlayIcon size={14} class="fill-current stroke-current" />
               See how it works
+            </a>
+            <a
+              href="#benefits"
+              class="inline-flex h-11 cursor-pointer items-center gap-2 rounded border border-current/12 bg-white px-5 text-center text-sm font-medium text-nowrap transition hover:bg-current/3 dark:bg-neutral-900"
+            >
+              Learn more
             </a>
           </div>
         </div>
@@ -66,7 +72,7 @@ const featuredPosts = posts.filter((post) => post.data.featured);
       </div>
     </div>
   </section>
-  <section class="container pb-12 md:pb-16">
+  <section id="benefits" class="container pb-12 md:pb-16">
     <Overline title="Benefits" />
     <div class="grid grid-cols-1 gap-x-6 gap-y-10 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-10">
       <div class="md:col-span-3 lg:col-span-1">
