@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.11",
-    "astro": "^5.4.2",
+    "astro": "^5.4.3",
     "lucide-astro": "^0.479.0",
     "luxon": "^3.5.0",
     "tailwind-merge": "^3.0.2",
