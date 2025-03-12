@@ -37,7 +37,7 @@ const featuredPosts = posts.filter((post) => post.data.featured);
               >net&#8209;zero digital&nbsp;buildings</span
             > by fixing building tech connectivity.
           </h1>
-          <p class="mb-8 text-lg lg:text-xl">
+          <p class="mb-8 text-xl">
             Integrates all building systems and devices, regardless of the protocol or vendor.
           </p>
           <div class="flex gap-3">
@@ -398,7 +398,7 @@ const featuredPosts = posts.filter((post) => post.data.featured);
       </h2>
       {
         featuredPosts.map((post) => (
-          <article class="group overflow-hidden rounded bg-white outline -outline-offset-1 outline-current/12 transition hover:shadow-xs hover:outline-current/16 md:mt-2 dark:bg-neutral-900">
+          <article class="group overflow-hidden rounded bg-white outline -outline-offset-1 outline-current/12 transition hover:shadow-xs hover:outline-current/16 md:mt-1.5 dark:bg-neutral-900">
             <a href={`/news/${post.slug}`} class="flex flex-col items-start">
               <Image
                 src={post.data.cover}

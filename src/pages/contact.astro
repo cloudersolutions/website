@@ -4,12 +4,12 @@ import MainLayout from '@layouts/MainLayout.astro';
 import Overline from '@components/Overline.astro';
 import tomiImage from '@assets/tomi.jpg';
 import jussiImage from '@assets/jussi.jpg';
-import benImage from '@assets/ben.jpg';
+import emmaImage from '@assets/emma.jpg';
+import benImage from '@assets/ben-bw.jpg';
 import hqImage from '@assets/hq.jpg';
 
 const title = 'Contact us';
-const description =
-  'Get in touch with sales to get your security and compliance concern answered or to book a demo.';
+const description = 'Get in touch with our sales team or book a demo.';
 ---
 
 <MainLayout title={title} description={description} headerClass="bg-white dark:bg-neutral-900">
@@ -27,11 +27,20 @@ const description =
     <div
       class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-x-8 lg:grid-cols-3 lg:gap-x-10"
     >
-      <div class="space-y-0.5">
+      <div class="space-y-4 sm:col-span-2 lg:col-span-1 lg:row-span-2">
+        <h2 class="text-2xl font-semibold text-neutral-900 md:text-3xl dark:text-neutral-100">
+          How can we help?
+        </h2>
+        <p>
+          Whether you have security and compliance concerns or product questions, our team is here
+          to help.
+        </p>
+      </div>
+      <div class="space-y-0.5 lg:mt-1.5">
         <Image
           src={tomiImage}
           alt="Tomi Grönlund"
-          class="mb-4 aspect-square rounded object-cover"
+          class="mb-4 aspect-square rounded object-cover transition hover:brightness-95 hover:saturate-105 dark:hover:brightness-105"
           width={800}
         />
         <h3 class="mb-2 text-xl font-semibold text-neutral-900 dark:text-neutral-100">
@@ -41,11 +50,25 @@ const description =
         <p>tomi.gronlund@cloudersolutions.com</p>
         <p>+358 50 527 1416</p>
       </div>
+      <div class="space-y-0.5 lg:mt-1.5">
+        <Image
+          src={emmaImage}
+          alt="Emma Grönlund"
+          class="mb-4 aspect-square rounded object-cover transition hover:brightness-95 hover:saturate-105 dark:hover:brightness-105"
+          width={800}
+        />
+        <h3 class="mb-2 text-xl font-semibold text-neutral-900 dark:text-neutral-100">
+          Emma Grönlund
+        </h3>
+        <p>COO</p>
+        <p>emma.gronlund@cloudersolutions.com</p>
+        <p>+358 40 846 8169</p>
+      </div>
       <div class="space-y-0.5">
         <Image
           src={jussiImage}
           alt="Jussi Toivonen"
-          class="mb-4 aspect-square rounded object-cover"
+          class="mb-4 aspect-square rounded object-cover transition hover:brightness-95 hover:saturate-105 dark:hover:brightness-105"
           width={800}
         />
         <h3 class="mb-2 text-xl font-semibold text-neutral-900 dark:text-neutral-100">
@@ -59,7 +82,7 @@ const description =
         <Image
           src={benImage}
           alt="Ben Weber"
-          class="mb-4 aspect-square rounded object-cover"
+          class="mb-4 aspect-square rounded object-cover transition hover:brightness-95 hover:saturate-105 lg:mt-1.5 dark:hover:brightness-105"
           width={800}
         />
         <h3 class="mb-2 text-xl font-semibold text-neutral-900 dark:text-neutral-100">Ben Weber</h3>
@@ -72,20 +95,23 @@ const description =
   <section id="office" class="container py-8 sm:py-12 lg:py-16">
     <Overline title="Office" />
     <div
-      class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-x-8 lg:grid-cols-3 lg:gap-x-10"
+      class="grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2 sm:gap-x-8 lg:grid-cols-3 lg:gap-x-10"
     >
-      <div class="space-y-0.5">
-        <Image
-          src={hqImage}
-          alt="Office"
-          class="mb-4 aspect-square rounded object-cover"
-          width={800}
-        />
-        <h3 class="mb-2 text-xl font-semibold text-neutral-900 dark:text-neutral-100">Helsinki</h3>
+      <Image
+        src={hqImage}
+        alt="Office"
+        class="aspect-square rounded object-cover object-top transition hover:brightness-95 hover:saturate-105 lg:col-span-2 lg:aspect-video dark:hover:brightness-105"
+        width={800}
+      />
+      <div class="space-y-0.5 sm:order-first">
+        <h2 class="mb-2 text-2xl font-semibold text-neutral-900 md:text-3xl dark:text-neutral-100">
+          Helsinki
+        </h2>
         <p>Pursimiehenkatu 26 B</p>
         <p>00150 Helsinki</p>
         <p>Finland</p>
         <p>+358 40 3525 47 3</p>
+        <p>3356072-5</p>
       </div>
     </div>
   </section>
@@ -109,7 +135,7 @@ const description =
         method="POST"
         data-netlify="true"
         data-netlify-honeypot="honeypot"
-        class="col-span-2 space-y-4"
+        class="col-span-2 mt-1 space-y-4"
       >
         <div class="flex gap-4">
           <div class="w-full">

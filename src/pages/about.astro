@@ -2,7 +2,7 @@
 import { Image } from 'astro:assets';
 import MainLayout from '@layouts/MainLayout.astro';
 import Overline from '@components/Overline.astro';
-import teamImage from '@assets/team.jpg';
+import labImage from '../content/news/images/emma-jussi-labra.jpg';
 
 const title = 'About us';
 const description =
@@ -69,7 +69,7 @@ const description =
           industry experts.
         </p>
       </div>
-      <Image src={teamImage} alt="Clouder team" class="mt-2 rounded" />
+      <Image src={labImage} alt="Clouder team" class="rounded lg:mt-1.5" />
     </div>
   </section>
   <div class="h-8 sm:h-12 lg:h-16"></div>
