@@ -29,7 +29,7 @@ npm run dev
 
 - [ ] PaaS, Netlify?
 - [x] Page styles
-- [ ] Forms styles & [tailwindcss-forms](https://github.com/tailwindlabs/tailwindcss-forms)
+- [x] Forms styles & [tailwindcss-forms](https://github.com/tailwindlabs/tailwindcss-forms)
 - [ ] Forms submissions
 - [ ] Redirects
 - [ ] Git based CMS

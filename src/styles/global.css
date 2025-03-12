@@ -1,5 +1,6 @@
 @import 'tailwindcss';
 @plugin "@tailwindcss/typography";
+@plugin "@tailwindcss/forms";
 @config "../../tailwind.config.js";
 
 @font-face {
@@ -59,6 +60,30 @@
   }
 }
 
+/* Force ring color since tailwind doesn't provide a better way of customizing it */
+@layer base {
+  :root {
+    --ring: #6677cc;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ring: #334499;
+    }
+  }
+
+  [type='checkbox']:focus,
+  *:focus-visible {
+    --tw-ring-color: transparent !important;
+    --tw-ring-offset-width: 0px !important;
+    --tw-ring-offset-color: transparent !important;
+    outline: 2px solid var(--ring) !important;
+    outline-offset: 1px !important;
+    transition: none !important; /* prevents flash of currentColor for links */
+  }
+}
+
+/* Nicer text wrapping */
 p,
 h1,
 h2,
