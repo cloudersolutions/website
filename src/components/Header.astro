@@ -36,7 +36,7 @@ const isActive = (href: string) => {
             href={href}
             aria-current={isActive(href) ? 'page' : undefined}
             class:list={twMerge(
-              'rounded-full px-3.5 leading-9 font-medium text-current underline-offset-8 transition hover:bg-current/5 aria-[current]:text-current aria-[current]:underline aria-[current]:hover:bg-transparent',
+              'rounded-full px-3.5 leading-9 font-medium text-current underline-offset-8 transition select-none hover:bg-current/5 aria-[current]:text-current aria-[current]:underline aria-[current]:hover:bg-transparent',
               navItems.some((i) => isActive(i.href)) && 'text-current/60 hover:text-current'
             )}
           >

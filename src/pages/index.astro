@@ -44,14 +44,14 @@ const featuredPosts = posts.filter((post) => post.data.featured);
           <div class="flex gap-3">
             <a
               href="https://www.youtube.com/watch?v=kdJNcAIhxDE"
-              class="inline-flex h-11 cursor-pointer items-center justify-center gap-2 rounded bg-indigo-500 px-5 text-center text-sm font-medium text-nowrap text-white transition hover:bg-indigo-600 dark:hover:bg-indigo-400"
+              class="inline-flex h-11 cursor-pointer items-center justify-center gap-2 rounded bg-indigo-500 px-5 text-center text-sm font-medium text-nowrap text-white transition select-none hover:bg-indigo-600 dark:hover:bg-indigo-400"
             >
               <PlayIcon size={14} class="fill-current stroke-current" />
               See how it works
             </a>
             <a
               href="#benefits"
-              class="inline-flex h-11 cursor-pointer items-center justify-center gap-2 rounded border border-current/12 bg-white px-5 text-center text-sm font-medium text-nowrap transition hover:bg-neutral-100 dark:bg-neutral-900 dark:hover:bg-neutral-800"
+              class="inline-flex h-11 cursor-pointer items-center justify-center gap-2 rounded border border-current/12 bg-white px-5 text-center text-sm font-medium text-nowrap transition select-none hover:bg-neutral-100 dark:bg-neutral-900 dark:hover:bg-neutral-800"
             >
               Learn more
             </a>
@@ -409,7 +409,7 @@ const featuredPosts = posts.filter((post) => post.data.featured);
               <h3 class="mx-6 mt-5 mb-2 text-xl font-semibold text-neutral-900 transition group-hover:text-current dark:text-neutral-100">
                 {post.data.title}
               </h3>
-              <p class="m-6 mt-2 rounded border border-current/12 px-3 text-sm leading-8 font-medium hover:bg-current/3">
+              <p class="m-6 mt-2 rounded border border-current/12 px-3 text-sm leading-8 font-medium transition select-none hover:bg-current/3">
                 Read more
               </p>
             </a>

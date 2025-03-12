@@ -4,36 +4,36 @@ import navigation from '@data/navigation.yml';
 import site from '@data/site.yml';
 import Logo from '@components/Logo.astro';
 
-const { pathname } = Astro.url;
 const navItems: NavItem[] = navigation;
+const socialItems = [site.twitter, site.linkedin, site.instagram, site.youtube];
 ---
 
 <footer class="border-t border-neutral-200 py-12 dark:border-neutral-800">
   <div class="container grid grid-cols-2 gap-10 sm:grid-cols-3">
     <div class="col-span-2 sm:col-span-1">
-      <Logo size={16} class="fill-neutral-600 dark:fill-neutral-400" />
+      <Logo size={16} class="flex-shrink-0" />
       <p class="mt-4 text-sm text-neutral-500">&copy; {new Date().getFullYear()} {site.title}</p>
     </div>
-    <div class="flex flex-col gap-3">
-      <h4 class="text-sm font-semibold text-neutral-600 dark:text-neutral-400">Resources</h4>
+    <div class="flex flex-col items-start gap-1">
+      <h4 class="mb-1 text-sm font-semibold">Resources</h4>
       {
         navItems.map(({ title, href }) => (
           <a
             href={href}
-            class="text-sm text-neutral-500 transition hover:text-neutral-900 dark:hover:text-neutral-200"
+            class="py-1 text-sm text-neutral-500 transition hover:text-neutral-900 dark:hover:text-neutral-200"
           >
             {title}
           </a>
         ))
       }
     </div>
-    <div class="flex flex-col gap-3">
-      <h4 class="text-sm font-semibold text-neutral-600 dark:text-neutral-400">Follow</h4>
+    <div class="flex flex-col gap-1">
+      <h4 class="mb-1 text-sm font-semibold">Follow</h4>
       {
         site.twitter && (
           <a
             href={site.twitter}
-            class="text-sm text-neutral-500 transition hover:text-neutral-900 dark:hover:text-neutral-200"
+            class="py-1 text-sm text-neutral-500 transition hover:text-neutral-900 dark:hover:text-neutral-200"
           >
             X (Twitter)
           </a>
@@ -43,7 +43,7 @@ const navItems: NavItem[] = navigation;
         site.linkedin && (
           <a
             href={site.linkedin}
-            class="text-sm text-neutral-500 transition hover:text-neutral-900 dark:hover:text-neutral-200"
+            class="py-1 text-sm text-neutral-500 transition hover:text-neutral-900 dark:hover:text-neutral-200"
           >
             LinkedIn
           </a>
@@ -53,7 +53,7 @@ const navItems: NavItem[] = navigation;
         site.instagram && (
           <a
             href={site.instagram}
-            class="text-sm text-neutral-500 transition hover:text-neutral-900 dark:hover:text-neutral-200"
+            class="py-1 text-sm text-neutral-500 transition hover:text-neutral-900 dark:hover:text-neutral-200"
           >
             Instagram
           </a>
@@ -63,7 +63,7 @@ const navItems: NavItem[] = navigation;
         site.youtube && (
           <a
             href={site.youtube}
-            class="text-sm text-neutral-500 transition hover:text-neutral-900 dark:hover:text-neutral-200"
+            class="py-1 text-sm text-neutral-500 transition hover:text-neutral-900 dark:hover:text-neutral-200"
           >
             YouTube
           </a>
