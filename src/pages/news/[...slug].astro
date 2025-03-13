@@ -1,0 +1,76 @@
+---
+import { getCollection } from 'astro:content';
+import ArrowRightIcon from 'lucide-astro/ArrowRight';
+import ArrowLeftIcon from 'lucide-astro/ArrowLeft';
+import { formatDate } from '@utils/date.ts';
+import ProseLayout from '@layouts/ProseLayout.astro';
+import Overline from '@components/Overline.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('news', ({ data }) =>
+    import.meta.env.PROD ? !data.draft : true
+  );
+  const sortedPosts = posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+  return sortedPosts.map((post, index) => ({
+    params: { slug: post.slug },
+    props: {
+      post,
+      previousPost: sortedPosts[index - 1] || null,
+      nextPost: sortedPosts[index + 1] || null
+    }
+  }));
+}
+
+const { post, previousPost, nextPost } = Astro.props;
+const { Content } = await post.render();
+---
+
+<ProseLayout title={post.data.title} description={post.data.description} image={post.data.cover}>
+  <article class="mb-8 sm:mb-16 lg:mb-24">
+    <header class="not-prose">
+      <time datetime={post.data.date.toISOString()} class="mb-4 block text-sm text-neutral-500">
+        {formatDate(post.data.date)}
+      </time>
+      <h1 class="mb-8 text-3xl font-semibold text-neutral-900 md:text-4xl dark:text-neutral-100">
+        {post.data.title}
+      </h1>
+    </header>
+    <section>
+      <Content />
+    </section>
+  </article>
+  <footer class="not-prose">
+    <Overline title="More news" />
+    <nav class="grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2 sm:gap-x-8 lg:gap-x-10">
+      {
+        previousPost && (
+          <a
+            href={`/news/${previousPost.slug}`}
+            class="group flex items-center gap-4 rounded border border-current/12 bg-white p-4 leading-6 transition hover:border-current/16 hover:text-current hover:shadow-xs dark:bg-neutral-900"
+          >
+            <ArrowLeftIcon
+              size={20}
+              class="flex-shrink-0 transition group-hover:-translate-x-0.5"
+            />
+            <span class="font-semibold">{previousPost.data.title}</span>
+          </a>
+        )
+      }
+      {
+        nextPost && (
+          <a
+            href={`/news/${nextPost.slug}`}
+            class="group flex items-center gap-4 rounded border border-current/12 bg-white p-4 leading-6 transition hover:border-current/16 hover:text-current hover:shadow-xs md:col-start-2 dark:bg-neutral-900"
+          >
+            <span class="font-semibold">{nextPost.data.title}</span>
+            <ArrowRightIcon
+              size={20}
+              class="flex-shrink-0 transition group-hover:translate-x-0.5"
+            />
+          </a>
+        )
+      }
+    </nav>
+  </footer>
+</ProseLayout>

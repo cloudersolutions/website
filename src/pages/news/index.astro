@@ -1,0 +1,107 @@
+---
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import { formatDate } from '@utils/date.ts';
+import MainLayout from '@layouts/MainLayout.astro';
+
+const posts = await getCollection('news', ({ data }) =>
+  import.meta.env.PROD ? !data.draft : true
+);
+
+const sortedPosts = posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const title = 'News';
+const description = 'Company news, product updates, and more.';
+---
+
+<MainLayout title={title} description={description} headerClass="bg-white dark:bg-neutral-900">
+  <section class="border-b border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-900">
+    <div class="container-narrow pt-16 pb-24 text-center lg:pt-28 lg:pb-40">
+      <h1 class="mb-5 text-4xl font-semibold text-neutral-900 md:text-5xl dark:text-neutral-100">
+        {title}
+      </h1>
+      <p class="text-xl">{description}</p>
+    </div>
+  </section>
+  <div class="h-8 sm:h-12 lg:h-16"></div>
+  <section class="container py-8 sm:py-12 lg:py-16">
+    <div class="grid grid-cols-1 gap-x-10 gap-y-12 md:grid-cols-2 lg:grid-cols-3 lg:gap-y-20">
+      {
+        sortedPosts.map((post) => (
+          <article class="group">
+            <a href={`/news/${post.slug}`} class="flex flex-col gap-3">
+              <div class="relative mb-1 overflow-clip rounded">
+                <Image
+                  src={post.data.cover}
+                  alt={post.data.title}
+                  width={800}
+                  class="aspect-image object-cover"
+                />
+                <div class="absolute inset-0 bg-current opacity-0 transition duration-300 group-hover:opacity-10" />
+              </div>
+              <h3 class="text-xl font-semibold text-neutral-900 transition group-hover:text-current dark:text-neutral-100">
+                {post.data.title}
+              </h3>
+              <time
+                datetime={post.data.date.toISOString()}
+                class="block text-sm text-neutral-500 transition group-hover:text-neutral-600 dark:group-hover:text-neutral-400"
+              >
+                {formatDate(post.data.date)}
+              </time>
+              <p>{post.data.description}</p>
+            </a>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+  <section class="container py-8 sm:py-12 lg:py-16">
+    <div
+      class="rounded-md border border-neutral-200 bg-white p-6 md:p-16 dark:border-neutral-800 dark:bg-neutral-900"
+    >
+      <div class="flex flex-col justify-center md:text-center">
+        <h3 class="mb-2 text-2xl font-semibold text-neutral-900 md:text-3xl dark:text-neutral-100">
+          Be the first one to know more
+        </h3>
+        <p>Sign up to our newsletter to receive company news, product updates and more.</p>
+        <form
+          name="newsletter"
+          method="POST"
+          data-netlify="true"
+          data-netlify-honeypot="honeypot"
+          class="my-6"
+        >
+          <input
+            id="email"
+            name="email"
+            placeholder="Email"
+            type="email"
+            required
+            class="mr-2 h-11 w-full max-w-100 rounded border border-neutral-200 bg-neutral-50 px-3 text-sm dark:border-neutral-800 dark:bg-neutral-950"
+          />
+          <button
+            type="submit"
+            class="inline-flex h-11 cursor-pointer items-center justify-center gap-2 rounded bg-indigo-500 px-5 text-center text-sm font-medium text-nowrap text-white transition select-none hover:bg-indigo-600 dark:hover:bg-indigo-400"
+          >
+            Sign up
+          </button>
+          <input
+            id="honeypot"
+            name="honeypot"
+            type="text"
+            autocomplete="off"
+            tabindex="-1"
+            aria-hidden="true"
+            style="position: absolute; left: -9999px;"
+          />
+        </form>
+        <p class="text-xs text-neutral-500">
+          See our
+          <a href="/privacy-policy" class="underline">Privacy Policy</a>
+          for details on how we handle your data.
+        </p>
+      </div>
+    </div>
+  </section>
+  <div class="h-8 sm:h-12 lg:h-16"></div>
+</MainLayout>

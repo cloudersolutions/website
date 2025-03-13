@@ -1,0 +1,421 @@
+---
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import HousePlugIcon from 'lucide-astro/HousePlug';
+import ChartNoAxesColumnIcon from 'lucide-astro/ChartNoAxesColumn';
+import HardHatIcon from 'lucide-astro/HardHat';
+import BuildingIcon from 'lucide-astro/Building';
+import EuroIcon from 'lucide-astro/Euro';
+import ShieldCheckIcon from 'lucide-astro/ShieldCheck';
+import LeafIcon from 'lucide-astro/Leaf';
+import PlayIcon from 'lucide-astro/Play';
+import site from '@data/site.yml';
+import Overline from '@components/Overline.astro';
+import Ping from '@components/Ping.astro';
+import MainLayout from '@layouts/MainLayout.astro';
+import ClouderIllustration from '@assets/how-clouder-works.svg';
+import uiLightImage from '@assets/ui-light.png';
+import uiDarkImage from '@assets/ui-dark.png';
+
+const posts = await getCollection('news');
+const featuredPosts = posts.filter((post) => post.data.featured);
+---
+
+<MainLayout
+  title={site.title}
+  description={site.description}
+  headerClass="bg-white dark:bg-neutral-900"
+>
+  <section class="bg-gradient-to-b from-white to-transparent dark:from-neutral-900">
+    <div class="container overflow-y-clip">
+      <div class="grid grid-cols-1 lg:grid-cols-2">
+        <div class="z-10 pt-16 lg:pt-32">
+          <h1
+            class="mb-6 text-4xl font-semibold text-neutral-950 xl:text-5xl xl:leading-14 dark:text-neutral-50"
+          >
+            Clouder enables <span
+              class="underline decoration-indigo-400/20 underline-offset-4 dark:underline-offset-6"
+              >net&#8209;zero digital&nbsp;buildings</span
+            > by fixing building tech connectivity
+          </h1>
+          <p class="mb-8 text-xl">
+            Infrastructure that seamlessly integrates all building technology systems and devices,
+            regardless of vendor or protocol.
+          </p>
+          <div class="flex gap-3">
+            <a
+              href="https://www.youtube.com/watch?v=kdJNcAIhxDE"
+              class="inline-flex h-11 cursor-pointer items-center justify-center gap-2 rounded bg-indigo-500 px-5 text-center text-sm font-medium text-nowrap text-white transition select-none hover:bg-indigo-600 dark:hover:bg-indigo-400"
+            >
+              <PlayIcon size={14} class="fill-current stroke-current" />
+              See how it works
+            </a>
+            <a
+              href="#benefits"
+              class="inline-flex h-11 cursor-pointer items-center justify-center gap-2 rounded border border-current/12 bg-white px-5 text-center text-sm font-medium text-nowrap transition select-none hover:bg-neutral-100 dark:bg-neutral-900 dark:hover:bg-neutral-800"
+            >
+              Learn more
+            </a>
+          </div>
+        </div>
+        <div>
+          <div class="relative w-xl perspective-dramatic lg:w-4xl xl:w-5xl">
+            <div
+              class="translate-x-1/5 translate-y-8 -rotate-20 skew-10 overflow-clip rounded-md border border-current/10 shadow-[0_0_32px_#0001] lg:translate-y-16 xl:translate-x-1/4 dark:shadow-[0_0_32px_#0006]"
+            >
+              <Image src={uiLightImage} alt="Screenshot" class="block dark:hidden" />
+              <Image src={uiDarkImage} alt="Screenshot" class="hidden dark:block" />
+            </div>
+            <div
+              class="absolute bottom-0 left-0 h-1/2 w-screen bg-gradient-to-t from-neutral-50 to-transparent dark:from-neutral-950"
+            >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="benefits" class="container pb-12 md:pb-16">
+    <Overline title="Benefits" />
+    <div class="grid grid-cols-1 gap-10 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-9">
+      <div class="col-span-full xl:col-span-3 xl:row-span-2">
+        <h2 class="mb-4 text-3xl font-semibold text-neutral-900 md:text-4xl dark:text-neutral-100">
+          Today, everything is data driven — except buildings
+        </h2>
+        <p class="text-lg">
+          Forward-thinking building owners use Clouder to increase asset value, enhance building
+          performance, and improve occupant satisfaction.
+        </p>
+      </div>
+      <div class="col-span-2">
+        <div class="w-min rounded bg-indigo-400/10 p-2.5">
+          <HousePlugIcon size={20} class="stroke-indigo-500 dark:stroke-indigo-400" />
+        </div>
+        <h3 class="mt-3 mb-2 text-lg font-semibold text-neutral-900 dark:text-neutral-100">
+          Energy savings
+        </h3>
+        <p>
+          Detect reasons for excess energy consumption and make your building more energy efficient
+          with real time monitoring and system control. Possibility for 20–50% savings.
+        </p>
+      </div>
+      <div class="col-span-2">
+        <div class="w-min rounded bg-indigo-400/10 p-2.5">
+          <ChartNoAxesColumnIcon size={20} class="stroke-indigo-500 dark:stroke-indigo-400" />
+        </div>
+        <h3 class="mt-3 mb-2 text-lg font-semibold text-neutral-900 dark:text-neutral-100">
+          Accurate data
+        </h3>
+        <p>
+          Clouder is a vendor independent solution that integrates, collects, and saves all building
+          tech system data and device data points. Accurate and real-time data can be utilized in
+          monitoring and reporting.
+        </p>
+      </div>
+      <div class="col-span-2">
+        <div class="w-min rounded bg-indigo-400/10 p-2.5">
+          <HardHatIcon size={20} class="stroke-indigo-500 dark:stroke-indigo-400" />
+        </div>
+        <h3 class="mt-3 mb-2 text-lg font-semibold text-neutral-900 dark:text-neutral-100">
+          Flexibility
+        </h3>
+        <p>
+          Easy addition of field devices without breaking surfaces, expensive cabling or complicated
+          programming projects. Connected devices are automatically integrated into the solution.
+        </p>
+      </div>
+      <div class="col-span-2">
+        <div class="w-min rounded bg-indigo-400/10 p-2.5">
+          <BuildingIcon size={20} class="stroke-indigo-500 dark:stroke-indigo-400" />
+        </div>
+        <h3 class="mt-3 mb-2 text-lg font-semibold text-neutral-900 dark:text-neutral-100">
+          Efficient operations
+        </h3>
+        <p>
+          Fault detection and diagnostics in a web browser reduces unnecessary manual work and
+          shortens troubleshooting, thus reducing money spent on hourly maintenance work.
+        </p>
+      </div>
+      <div class="col-span-2">
+        <div class="w-min rounded bg-indigo-400/10 p-2.5">
+          <EuroIcon size={20} class="stroke-indigo-500 dark:stroke-indigo-400" />
+        </div>
+        <h3 class="mt-3 mb-2 text-lg font-semibold text-neutral-900 dark:text-neutral-100">
+          Cost savings
+        </h3>
+        <p>
+          Clear and predictable pricing with no surprises. No need for ongoing updates for third
+          party solution APIs or unexpected BMS programming due to constant changes in systems.
+        </p>
+      </div>
+      <div class="col-span-2">
+        <div class="w-min rounded bg-indigo-400/10 p-2.5">
+          <ShieldCheckIcon size={20} class="stroke-indigo-500 dark:stroke-indigo-400" />
+        </div>
+        <h3 class="mt-3 mb-2 text-lg font-semibold text-neutral-900 dark:text-neutral-100">
+          Security
+        </h3>
+        <p>
+          Secure your building tech with accurate audit trail, end-to-end encryption and secure
+          cloud connection. No more default passwords known by everyone.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="container py-8 sm:py-12 lg:py-16">
+    <Overline title="Product" />
+    <h2
+      class="mb-8 text-3xl font-semibold text-neutral-900 md:text-4xl lg:mb-12 dark:text-neutral-100"
+    >
+      How it works
+    </h2>
+    <div class="grid grid-cols-1 gap-10 md:grid-cols-2 xl:grid-cols-4">
+      <div
+        class="col-span-1 flex items-center justify-center px-4 md:col-span-2 xl:col-span-2 xl:col-start-2 xl:row-span-2"
+      >
+        <div class="relative my-4">
+          <ClouderIllustration class="h-auto max-w-full opacity-75" />
+          <span class="absolute top-[91.85%] left-[7.75%] flex size-3">
+            <Ping color="purple" isAnimated />
+          </span>
+          <span class="absolute top-[64%] left-0 flex size-3">
+            <Ping color="indigo" isAnimated />
+          </span>
+          <span class="absolute top-[93%] left-[42%] flex size-3">
+            <Ping color="pink" isAnimated />
+          </span>
+          <span class="absolute top-[35%] left-[79.5%] flex size-3">
+            <Ping color="sky" isAnimated />
+          </span>
+        </div>
+      </div>
+      <div class="xl:col-start-1 xl:row-start-1">
+        <div class="mb-2 flex items-center gap-2.5">
+          <Ping color="purple" />
+          <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100">
+            Virtual cables
+          </h3>
+        </div>
+        <p>
+          The signals of building technology systems are digitized and transmitted through the
+          building's backbone network with virtual cables. This eliminates the need for physical
+          low-voltage cables that run through structures and fire zones, making the system flexible.
+        </p>
+      </div>
+      <div class="xl:col-start-1 xl:row-start-2">
+        <div class="mb-2 flex items-center gap-2.5">
+          <Ping color="indigo" />
+          <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100">
+            Edge Connectors
+          </h3>
+        </div>
+        <p>
+          Edge Connector (EC) devices serve as connection points for various field devices and
+          systems. Data is transmitted either wirelessly or through wired connections, using
+          encrypted communication over IP networks to reach the Virtual Cabling Engine. Operating
+          similarly to distributed I/O systems, these devices significantly reduce traditional
+          cabling requirements.
+        </p>
+      </div>
+      <div class="xl:col-start-4 xl:row-start-1">
+        <div class="mb-2 flex items-center gap-2.5">
+          <Ping color="sky" />
+          <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100">Data storage</h3>
+        </div>
+        <p>
+          All system and device data is securely stored in the cloud, where it can be accessed in
+          real-time through either the Clouder Dashboard or our API interface. This centralized
+          approach allows you to seamlessly monitor and analyze data from all your systems,
+          subsystems, and devices.
+        </p>
+      </div>
+      <div class="xl:col-start-4 xl:row-start-2">
+        <div class="mb-2 flex items-center gap-2.5">
+          <Ping color="pink" />
+          <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100">
+            Virtual Cabling Engine
+          </h3>
+        </div>
+        <p>
+          Virtual Cabling Engine (VCE) is a device connected to the BMS center. The VCE contains the
+          virtual cabling information, consolidates all the data transmitted by the Edge Connectors,
+          and facilitates integrations between systems and devices.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="container py-8 sm:py-12 lg:py-16">
+    <Overline title="Sustainability" />
+    <div class="mx-auto max-w-prose text-center">
+      <div
+        class="mx-auto mt-16 mb-14 w-min rounded-full bg-gradient-to-br from-emerald-400/10 to-emerald-400/20 p-6 shadow-2xs shadow-emerald-400/20 outline-16 outline-emerald-400/5"
+      >
+        <LeafIcon class="flex-shrink-0 stroke-emerald-600 dark:stroke-emerald-700" />
+      </div>
+      <h2 class="my-4 text-3xl font-semibold text-neutral-900 md:text-4xl dark:text-neutral-100">
+        Build sustainability with virtual cabling
+      </h2>
+      <p class="text-lg">
+        As the built environment is responsible for 39% of global energy-related carbon emissions,
+        buildings and more efficient construction are the foundation to a sustainable future.
+        Clouder's virtual cabling solution helps buildings meet environmental standards while
+        improving performance and occupant comfort.
+      </p>
+    </div>
+    <div class="mt-16 flex flex-col gap-x-10 gap-y-16 sm:mt-24 lg:mt-32 lg:flex-row">
+      <div class="w-full space-y-4">
+        <h3 class="mb-5 text-2xl font-semibold text-neutral-900 md:text-3xl dark:text-neutral-100">
+          Clouder helps meet EU green building regulations
+        </h3>
+        <p>
+          The EU's Energy Performance of Buildings Directive (EPBD) has set a bold target: to fully
+          decarbonize building stock by 2050. Clouder’s mission is to enable the shift to
+          sustainable next-generation real estate by transforming how building tech connectivity is
+          done.
+        </p>
+        <p>
+          Clouder’s virtual cabling creates a smart building infrastructure that ensures compliance
+          with the EPBD regulations and enables sustainable real estate operations throughout the
+          lifecycle of the building.
+        </p>
+        <div class="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2">
+          <div
+            class="rounded border border-neutral-200 bg-white px-6 py-5 dark:border-neutral-800 dark:bg-neutral-900"
+          >
+            <h4 class="mb-2 text-xl font-semibold text-emerald-900">2028</h4>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400">
+              All <strong class="font-semibold">new public buildings</strong> must meet <strong
+                class="font-semibold">net-zero</strong
+              > emission building standards.
+            </p>
+          </div>
+          <div
+            class="rounded border border-neutral-200 bg-white px-6 py-5 dark:border-neutral-800 dark:bg-neutral-900"
+          >
+            <h4 class="mb-2 text-xl font-semibold text-emerald-800">2030</h4>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400">
+              All <strong class="font-semibold">new buildings</strong> must be built to a <strong
+                class="font-semibold">zero-emission</strong
+              >
+              building standards.
+            </p>
+          </div>
+          <div
+            class="rounded border border-neutral-200 bg-white px-6 py-5 dark:border-neutral-800 dark:bg-neutral-900"
+          >
+            <h4 class="mb-2 text-xl font-semibold text-emerald-700">2033</h4>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400">
+              26% of worst EU non-residential buildings <strong class="font-semibold"
+                >targeted for renovation</strong
+              >.
+            </p>
+          </div>
+          <div
+            class="rounded border border-neutral-200 bg-white px-6 py-5 dark:border-neutral-800 dark:bg-neutral-900"
+          >
+            <h4 class="mb-2 text-xl font-semibold text-emerald-600">2050</h4>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400">
+              Goal: a <strong class="font-semibold">climate-neutral</strong> building stock.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="hidden w-px flex-grow bg-gradient-to-b from-transparent to-neutral-200 select-none lg:-my-40 lg:block dark:to-neutral-800"
+      >
+        &nbsp;
+      </div>
+
+      <div class="w-full space-y-4">
+        <h3 class="mb-5 text-2xl font-semibold text-neutral-900 md:text-3xl dark:text-neutral-100">
+          Virtual cabling cuts embodied carbon by 100x
+        </h3>
+        <p>
+          11% of the built environment's carbon emissions comes from embodied carbon in materials
+          and construction. Clouder's virtual cabling reduces embodied carbon emissions by 100x
+          compared to physical cables.
+        </p>
+        <div class="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2">
+          <div
+            class="rounded border border-neutral-200 bg-white px-6 pt-5 pb-2 dark:border-neutral-800 dark:bg-neutral-900"
+          >
+            <h4 class="mb-4 text-xl leading-tight font-semibold">Low voltage<br />cabling</h4>
+            <p
+              class="border-t border-current/10 text-sm leading-12 text-neutral-600 dark:text-neutral-400"
+            >
+              50,000 eCO2kg
+            </p>
+            <p
+              class="border-t border-current/10 text-sm leading-12 text-neutral-600 dark:text-neutral-400"
+            >
+              60,000 m of physical cables
+            </p>
+            <p
+              class="border-t border-current/10 text-sm leading-12 text-neutral-600 dark:text-neutral-400"
+            >
+              13 installation steps
+            </p>
+          </div>
+          <div
+            class="rounded border border-neutral-200 bg-white px-6 pt-5 pb-2 dark:border-neutral-800 dark:bg-neutral-900"
+          >
+            <h4 class="mb-4 text-xl leading-tight font-semibold text-emerald-700">
+              Clouder’s virtual cabling
+            </h4>
+            <p
+              class="border-t border-current/10 text-sm leading-12 text-neutral-600 dark:text-neutral-400"
+            >
+              500 eCO2kg
+            </p>
+            <p
+              class="border-t border-current/10 text-sm leading-12 text-neutral-600 dark:text-neutral-400"
+            >
+              90% less cables needed
+            </p>
+            <p
+              class="border-t border-current/10 text-sm leading-12 text-neutral-600 dark:text-neutral-400"
+            >
+              2 installation steps
+            </p>
+          </div>
+        </div>
+        <p class="text-sm text-neutral-500">* Example from a 10,000 m² office building</p>
+      </div>
+    </div>
+  </section>
+  <section class="container py-8 sm:py-12 lg:py-16">
+    <Overline title="Cases examples" />
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-x-10 xl:grid-cols-3">
+      <h2
+        class="text-2xl font-semibold text-neutral-900 md:col-span-2 md:text-3xl xl:col-span-1 dark:text-neutral-100"
+      >
+        Learn how our customers are using Clouder
+      </h2>
+      {
+        featuredPosts.map((post) => (
+          <article class="group relative overflow-clip rounded bg-white transition hover:shadow-xs hover:outline-current/16 md:mt-1.5 dark:bg-neutral-900">
+            <a href={`/news/${post.slug}`} class="flex flex-col items-start">
+              <div class="relative">
+                <Image
+                  src={post.data.cover}
+                  alt={post.data.title}
+                  width={800}
+                  class="aspect-video object-cover"
+                />
+                <div class="absolute inset-0 bg-current opacity-0 transition duration-300 group-hover:opacity-10" />
+              </div>
+              <h3 class="mx-6 mt-5 mb-2 text-xl font-semibold text-neutral-900 transition group-hover:text-current dark:text-neutral-100">
+                {post.data.title}
+              </h3>
+              <p class="m-6 mt-2 inline-flex h-8 cursor-pointer items-center rounded border border-current/25 px-3 text-xs font-medium text-current/65 transition hover:bg-current/5">
+                Read more
+              </p>
+            </a>
+            <div class="pointer-events-none absolute inset-0 rounded border border-current/12 transition group-hover:border-current/16" />
+          </article>
+        ))
+      }
+    </div>
+  </section>
+  <div class="h-8 sm:h-12 lg:h-16"></div>
+</MainLayout>

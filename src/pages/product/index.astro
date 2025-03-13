@@ -1,0 +1,581 @@
+---
+import CheckIcon from 'lucide-astro/Check';
+import BlocksIcon from 'lucide-astro/Blocks';
+import BuildingIcon from 'lucide-astro/Building';
+import LaptopIcon from 'lucide-astro/Laptop';
+import ShieldCheckIcon from 'lucide-astro/ShieldCheck';
+import BoltIcon from 'lucide-astro/Bolt';
+import DatabaseIcon from 'lucide-astro/Database';
+import WrenchIcon from 'lucide-astro/Wrench';
+import Overline from '@components/Overline.astro';
+import MainLayout from '@layouts/MainLayout.astro';
+
+const title = 'Product';
+const description =
+  'Increase asset value, reduce operational costs, and improve data-led decision making. Ideal for all kinds of buildings, both new and existing.';
+const headingIncluded = 'Included in the price?';
+---
+
+<MainLayout title={title} description={description} headerClass="bg-white dark:bg-neutral-900">
+  <section class="bg-gradient-to-b from-white to-transparent dark:from-neutral-900">
+    <div class="container-narrow py-16 text-center lg:py-24">
+      <div
+        class="mx-auto mb-12 w-min rounded-full bg-gradient-to-br from-indigo-400/10 to-indigo-400/20 p-6 shadow-2xs shadow-indigo-400/20 outline-16 outline-indigo-400/5"
+      >
+        <BuildingIcon class="flex-shrink-0 stroke-indigo-600 dark:stroke-indigo-400" />
+      </div>
+      <h1 class="mb-6 text-4xl font-semibold text-neutral-900 md:text-5xl dark:text-neutral-100">
+        Get a real-time overview of your building
+      </h1>
+      <p class="mb-8 text-xl">{description}</p>
+      <div class="flex flex-wrap justify-center">
+        <a
+          href="#pricing"
+          class="rounded-full px-3.5 leading-9 font-medium text-indigo-500 transition select-none hover:bg-indigo-400/10 dark:text-indigo-400"
+        >
+          Pricing
+        </a>
+        <a
+          href="#features"
+          class="rounded-full px-3.5 leading-9 font-medium text-indigo-500 transition select-none hover:bg-indigo-400/10 dark:text-indigo-400"
+        >
+          Features
+        </a>
+        <a
+          href="#questions"
+          class="rounded-full px-3.5 leading-9 font-medium text-indigo-500 transition select-none hover:bg-indigo-400/10 dark:text-indigo-400"
+        >
+          Questions
+        </a>
+      </div>
+    </div>
+  </section>
+  <section id="pricing" class="container py-8 sm:py-12 lg:pt-16 lg:pb-24">
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-0">
+      <div
+        class="flex flex-col rounded-md border border-neutral-200 bg-white p-8 pt-6 lg:rounded-r-none lg:border-r-0 dark:border-neutral-800 dark:bg-neutral-900"
+      >
+        <h3 class="mb-2 text-2xl font-semibold text-neutral-900 dark:text-neutral-100">
+          System audit
+        </h3>
+        <p>
+          <span class="text-neutral-500">Fixed fee per building</span>
+        </p>
+        <p class="-mx-8 my-6 border-y border-neutral-200 px-8 py-6 dark:border-neutral-800">
+          Get a complete overview of your building automation system status and get suggestions for
+          improvement.
+        </p>
+        <ul class="mb-8 space-y-2 text-sm *:flex *:gap-2">
+          <li>
+            <CheckIcon size={14} class="mt-1 flex-shrink-0 stroke-current/60 stroke-3" />
+            Overall view of all field devices and systems currently integrated to building automation.
+          </li>
+          <li>
+            <CheckIcon size={14} class="mt-1 flex-shrink-0 stroke-current/60 stroke-3" />
+            System analysis that includes a list of error conditions, non-functioning devices, and conflicts.
+          </li>
+          <li>
+            <CheckIcon size={14} class="mt-1 flex-shrink-0 stroke-current/60 stroke-3" />
+            Recommendations for improving the system and reducing energy consumption.
+          </li>
+          <li>
+            <CheckIcon size={14} class="mt-1 flex-shrink-0 stroke-current/60 stroke-3" />
+            We perform the scan on-site, and it does not necessarily require an Internet connection.
+          </li>
+        </ul>
+        <a
+          href="/contact#form"
+          class="mt-auto inline-flex h-11 cursor-pointer items-center justify-center gap-2 rounded bg-neutral-900 px-5 text-center text-sm font-medium text-nowrap text-neutral-100 transition select-none hover:bg-neutral-800 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-300"
+        >
+          Book an audit
+        </a>
+      </div>
+      <div
+        class="flex flex-col rounded-md border border-neutral-200 bg-white px-8 py-6 lg:z-10 lg:-my-4 lg:py-10 lg:shadow-2xl lg:shadow-black/10 dark:border-neutral-800 dark:bg-neutral-900"
+      >
+        <h3 class="mb-2 text-2xl font-semibold text-neutral-900 dark:text-neutral-100">
+          Clouder Platform
+        </h3>
+        <p>
+          <span class="text-neutral-500">Monthly fee per building + setup fee</span>
+        </p>
+        <p class="-mx-8 my-6 border-y border-neutral-200 px-8 py-6 dark:border-neutral-800">
+          Transform your building into an energy efficient smart building. Ideal for all kinds of
+          buildings, both new and existing.
+        </p>
+        <ul class="mb-8 space-y-2 text-sm *:flex *:gap-2">
+          <li>
+            <CheckIcon
+              size={14}
+              class="mt-1 flex-shrink-0 stroke-indigo-500 stroke-3 dark:stroke-indigo-400"
+            />
+            Integrates all systems and devices regardless of the vendor or protocol.
+          </li>
+          <li>
+            <CheckIcon
+              size={14}
+              class="mt-1 flex-shrink-0 stroke-indigo-500 stroke-3 dark:stroke-indigo-400"
+            />
+            Easy to expand without breaking surfaces.
+          </li>
+          <li>
+            <CheckIcon
+              size={14}
+              class="mt-1 flex-shrink-0 stroke-indigo-500 stroke-3 dark:stroke-indigo-400"
+            />
+            Data led building management and control with Clouder Dashboard to reduce energy consumption.
+          </li>
+          <li>
+            <CheckIcon
+              size={14}
+              class="mt-1 flex-shrink-0 stroke-indigo-500 stroke-3 dark:stroke-indigo-400"
+            />
+            Get accurate and real time from field devices and systems.
+          </li>
+          <li>
+            <CheckIcon
+              size={14}
+              class="mt-1 flex-shrink-0 stroke-indigo-500 stroke-3 dark:stroke-indigo-400"
+            />
+            Fault detection and diagnostics with improvement suggestions.
+          </li>
+          <li>
+            <CheckIcon
+              size={14}
+              class="mt-1 flex-shrink-0 stroke-indigo-500 stroke-3 dark:stroke-indigo-400"
+            />
+            Provide data to third party applications through API e.g. occupier smart building app or
+            property management software.
+          </li>
+          <li>
+            <CheckIcon
+              size={14}
+              class="mt-1 flex-shrink-0 stroke-indigo-500 stroke-3 dark:stroke-indigo-400"
+            />
+            Secure cloud storage for 5 years.
+          </li>
+          <li>
+            <CheckIcon
+              size={14}
+              class="mt-1 flex-shrink-0 stroke-indigo-500 stroke-3 dark:stroke-indigo-400"
+            />
+            Export accurate data for sustainability reporting.
+          </li>
+          <li>
+            <CheckIcon
+              size={14}
+              class="mt-1 flex-shrink-0 stroke-indigo-500 stroke-3 dark:stroke-indigo-400"
+            />
+            End-to-end encryption and safe password management for building tech systems.
+          </li>
+        </ul>
+        <a
+          href="/contact#sales"
+          class="mt-auto inline-flex h-11 cursor-pointer items-center justify-center gap-2 rounded bg-indigo-500 px-5 text-center text-sm font-medium text-nowrap text-white transition select-none hover:bg-indigo-600 dark:hover:bg-indigo-400"
+        >
+          Contact sales
+        </a>
+      </div>
+      <div
+        class="flex flex-col rounded-md border border-neutral-200 bg-white p-8 pt-6 lg:rounded-l-none lg:border-l-0 dark:border-neutral-800 dark:bg-neutral-900"
+      >
+        <h3 class="mb-2 text-2xl font-semibold text-neutral-900 dark:text-neutral-100">
+          Clouder Portfolio
+        </h3>
+        <p class="text-neutral-500">Custom pricing</p>
+        <p class="-mx-8 my-6 border-y border-neutral-200 px-8 py-6 dark:border-neutral-800">
+          Maximize efficiency and sustainability across your entire building portfolio. Perfect for
+          real estate funds.
+        </p>
+        <ul class="mb-8 space-y-2 text-sm *:flex *:gap-2">
+          <li class="font-medium text-neutral-500">Everything in Platform, plus:</li>
+          <li>
+            <CheckIcon size={14} class="mt-1 flex-shrink-0 stroke-3" />
+            Portfolio management in Clouder Dashboard.
+          </li>
+          <li>
+            <CheckIcon size={14} class="mt-1 flex-shrink-0 stroke-3" />
+            Portfolio-wide energy optimization and sustainability tracking.
+          </li>
+          <li>
+            <CheckIcon size={14} class="mt-1 flex-shrink-0 stroke-3" />
+            Benchmark performance across properties to identify inefficiencies.
+          </li>
+          <li>
+            <CheckIcon size={14} class="mt-1 flex-shrink-0 stroke-3" />
+            Scalable integrations for rapid onboarding of new buildings.
+          </li>
+          <li>
+            <CheckIcon size={14} class="mt-1 flex-shrink-0 stroke-3" />
+            Cross-building analytics for data-driven, portfolio-level decisions.
+          </li>
+          <li>
+            <CheckIcon size={14} class="mt-1 flex-shrink-0 stroke-3" />
+            Streamlined ESG reporting for regulatory compliance and investors.
+          </li>
+        </ul>
+        <a
+          href="/contact#sales"
+          class="mt-auto inline-flex h-11 cursor-pointer items-center justify-center gap-2 rounded bg-neutral-900 px-5 text-center text-sm font-medium text-nowrap text-neutral-100 transition select-none hover:bg-neutral-800 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-300"
+        >
+          Contact sales
+        </a>
+      </div>
+    </div>
+  </section>
+  <section id="features" class="container py-8 sm:py-12 lg:py-16">
+    <Overline title="Features" />
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3 xl:gap-10">
+      <div class="col-span-full mb-4 xl:col-span-1 xl:row-span-4">
+        <h2 class="mb-4 text-3xl font-semibold md:text-4xl">
+          What’s included in Clouder Platform?
+        </h2>
+        <p>
+          Clouder Platform includes a range of features and capabilities that enable efficient
+          building management.
+        </p>
+      </div>
+      <div
+        class="rounded border border-neutral-200 bg-white p-6 pt-5 lg:mt-1.5 dark:border-neutral-800 dark:bg-neutral-900"
+      >
+        <h4
+          class="mb-4 flex items-center gap-2 text-lg font-semibold text-neutral-900 dark:text-neutral-100"
+        >
+          <BlocksIcon size={20} class="flex-shrink-0 stroke-indigo-500 dark:stroke-indigo-400" />
+          Universal connectivity
+        </h4>
+        <div class="space-y-3 text-sm">
+          <p>
+            Connect all building tech systems and devices, independent of vendor or protocol, by
+            using Virtual Cabling Engine.
+          </p>
+          <p>
+            Integrate new or external systems and devices with minimal construction work by using
+            Edge Connectors.
+          </p>
+          <p>
+            Protocol conversions to enable efficient communication between otherwise
+            hard-to-integrate systems that do not communicate with one another.
+          </p>
+          <h5 class="mt-6 font-semibold">
+            {headingIncluded}
+          </h5>
+          <p>Yes, Edge Connectors are sold separately.</p>
+        </div>
+      </div>
+      <div
+        class="rounded border border-neutral-200 bg-white p-6 pt-5 lg:mt-1.5 dark:border-neutral-800 dark:bg-neutral-900"
+      >
+        <h4
+          class="mb-4 flex items-center gap-2 text-lg font-semibold text-neutral-900 dark:text-neutral-100"
+        >
+          <LaptopIcon size={20} class="flex-shrink-0 stroke-indigo-500 dark:stroke-indigo-400" />
+          Clouder Dashboard
+        </h4>
+        <div class="space-y-3 text-sm">
+          <p>View and manage all aspects of your building straight from your browser.</p>
+          <p>
+            Access features like
+            <a
+              href="#building-insights"
+              class="underline decoration-current/50 decoration-dotted underline-offset-2"
+              >Building&nbsp;insights</a
+            >,
+            <a
+              href="#device-control"
+              class="underline decoration-current/50 decoration-dotted underline-offset-2"
+              >Device&nbsp;control</a
+            >, and
+            <a
+              href="#data-solution"
+              class="underline decoration-current/50 decoration-dotted underline-offset-2"
+              >Data&nbsp;solution</a
+            >.
+          </p>
+          <h5 class="mt-6 font-semibold">
+            {headingIncluded}
+          </h5>
+          <p>Yes</p>
+        </div>
+      </div>
+      <div
+        class="rounded border border-neutral-200 bg-white p-6 pt-5 dark:border-neutral-800 dark:bg-neutral-900"
+      >
+        <h4
+          class="mb-4 flex items-center gap-2 text-lg font-semibold text-neutral-900 dark:text-neutral-100"
+        >
+          <BuildingIcon size={20} class="flex-shrink-0 stroke-indigo-500 dark:stroke-indigo-400" />
+          Building insights
+        </h4>
+        <div class="space-y-3 text-sm">
+          <p>
+            Real-time data on energy consumption, indoor climate, and other insights enable improved
+            monitoring and informed decision-making.
+          </p>
+          <p>Fault detection and diagnostics with recommendations on how to fix them.</p>
+          <h5 class="mt-6 font-semibold">
+            {headingIncluded}
+          </h5>
+          <p>Yes</p>
+        </div>
+      </div>
+      <div
+        class="rounded border border-neutral-200 bg-white p-6 pt-5 dark:border-neutral-800 dark:bg-neutral-900"
+      >
+        <h4
+          class="mb-4 flex items-center gap-2 text-lg font-semibold text-neutral-900 dark:text-neutral-100"
+        >
+          <BoltIcon size={20} class="flex-shrink-0 stroke-indigo-500 dark:stroke-indigo-400" />
+          Device control
+        </h4>
+        <div class="space-y-3 text-sm">
+          <p>Control all systems and field devices in your building.</p>
+          <p>
+            Use sophisticated, event-based rules to control devices. This reduces energy consumption
+            without disrupting the existing building automation system.
+          </p>
+          <p>Enables participation in demand response programs to reduce energy costs.</p>
+          <h5 class="mt-6 font-semibold">
+            {headingIncluded}
+          </h5>
+          <p>Yes, event-based rules are available for an additional cost.</p>
+        </div>
+      </div>
+      <div
+        class="rounded border border-neutral-200 bg-white p-6 pt-5 dark:border-neutral-800 dark:bg-neutral-900"
+      >
+        <h4
+          class="mb-4 flex items-center gap-2 text-lg font-semibold text-neutral-900 dark:text-neutral-100"
+        >
+          <DatabaseIcon size={20} class="flex-shrink-0 stroke-indigo-500 dark:stroke-indigo-400" />
+          Data solution
+        </h4>
+        <div class="space-y-3 text-sm">
+          <p>
+            Secure real-time cloud storage of accurate building data. No more relying on benchmarks
+            or estimates.
+          </p>
+          <p class="text-wrap">
+            Export your building's data as a CSV file for sustainability reporting, or access it via
+            API for smart office applications and third‑party integrations.
+          </p>
+          <p>
+            Our five-year data retention policy means that you have full ownership and control over
+            the data.
+          </p>
+          <h5 class="mt-6 font-semibold">
+            {headingIncluded}
+          </h5>
+          <p>Yes</p>
+        </div>
+      </div>
+      <div
+        class="rounded border border-neutral-200 bg-white p-6 pt-5 dark:border-neutral-800 dark:bg-neutral-900"
+      >
+        <h4
+          class="mb-4 flex items-center gap-2 text-lg font-semibold text-neutral-900 dark:text-neutral-100"
+        >
+          <ShieldCheckIcon
+            size={20}
+            class="flex-shrink-0 stroke-indigo-500 dark:stroke-indigo-400"
+          />
+          Security built-in
+        </h4>
+        <div class="space-y-3 text-sm">
+          <p>Fine-grained data access rules and end-to-end encryption.</p>
+          <p>
+            Robust security in building automation – no more access to systems with default
+            passwords.
+          </p>
+          <h5 class="mt-6 font-semibold">
+            {headingIncluded}
+          </h5>
+          <p>Yes</p>
+        </div>
+      </div>
+      <div
+        class="rounded border border-neutral-200 bg-white p-6 pt-5 md:col-span-2 lg:pr-10 dark:border-neutral-800 dark:bg-neutral-900"
+      >
+        <div class="flex flex-col gap-6 md:flex-row md:items-center">
+          <div class="mr-auto max-w-prose">
+            <h4
+              class="mb-4 flex items-center gap-2 text-lg font-semibold text-neutral-900 dark:text-neutral-100"
+            >
+              <WrenchIcon
+                size={20}
+                class="flex-shrink-0 stroke-indigo-500 dark:stroke-indigo-400"
+              />
+              Custom integrations
+            </h4>
+            <p class="text-sm">
+              We're happy to explore. Our team can offer tailored solutions and consulting services
+              to address your specific needs, from advanced system integrations to personalized
+              building performance strategies.
+            </p>
+          </div>
+          <a
+            href="/contact"
+            class="inline-flex h-10 cursor-pointer items-center justify-center gap-2 rounded bg-indigo-500 px-4 text-center text-sm font-medium text-nowrap text-white transition select-none hover:bg-indigo-600 dark:hover:bg-indigo-400"
+          >
+            Let’s talk
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="questions" class="container py-8 sm:py-12 lg:py-16">
+    <Overline title="Questions" />
+    <div class="grid grid-cols-1 items-start gap-10 lg:grid-cols-3">
+      <div class="flex items-center gap-5 lg:flex-col lg:items-start">
+        <div class="mr-auto">
+          <h2 class="mb-4 text-3xl font-semibold md:text-4xl">I have a question…</h2>
+          <p>
+            We've gathered answers to the questions we hear most often. <a
+              href="/contact"
+              class="underline underline-offset-2 transition hover:opacity-65">Contact us</a
+            > if you can’t find what you’re looking for.
+          </p>
+        </div>
+        <button
+          id="toggleBtn"
+          class="h-8 flex-shrink-0 cursor-pointer rounded border border-current/25 px-3 text-xs font-medium text-current/65 transition hover:bg-current/5"
+        >
+          Expand all
+        </button>
+      </div>
+      <div class="*:border-b *:border-neutral-200 lg:col-span-2 *:dark:border-neutral-800">
+        <details class="group open:pb-6">
+          <summary
+            class="cursor-pointer py-6 font-semibold transition group-open:pb-4 hover:opacity-65"
+          >
+            Is it only for new construction?
+          </summary>
+          <p>
+            No. Clouder can be installed in all types of properties, both existing and new
+            construction.
+          </p>
+        </details>
+        <details class="group open:pb-6">
+          <summary
+            class="cursor-pointer py-6 font-semibold transition group-open:pb-4 hover:opacity-65"
+          >
+            Can I add it alongside my current systems?
+          </summary>
+          <p>
+            Yes. Clouder can be installed alongside your existing system, regardless of what kind of
+            cabling or devices you have.
+          </p>
+        </details>
+        <details class="group open:pb-6">
+          <summary
+            class="cursor-pointer py-6 font-semibold transition group-open:pb-4 hover:opacity-65"
+          >
+            Do I need a network connection for it to function?
+          </summary>
+          <p class="mb-4">
+            Clouder hardware operates locally on the property and does not require an external
+            connection to function. Network connection is needed for monitoring, controlling, and
+            storing data in the cloud.
+          </p>
+          <p>
+            The system audit is performed on-site and can be done with or without a network
+            connection.
+          </p>
+        </details>
+        <details class="group open:pb-6">
+          <summary
+            class="cursor-pointer py-6 font-semibold transition group-open:pb-4 hover:opacity-65"
+          >
+            What are the annual costs? Are there any license fees?
+          </summary>
+          <p class="mb-4">
+            <strong class="font-semibold">Clouder Platform</strong> operates on a simple pricing structure:
+            a monthly subscription fee plus any additional features you choose to add on. Setup costs
+            vary based on your building's size and complexity. We don't charge any extra license fees.
+          </p>
+          <p>
+            <strong class="font-semibold">Clouder Portfolio</strong> offers custom pricing tailored to
+            your specific requirements, including data volume, service scope, and the features you need.
+          </p>
+        </details>
+        <details class="group open:pb-6">
+          <summary
+            class="cursor-pointer py-6 font-semibold transition group-open:pb-4 hover:opacity-65"
+          >
+            Will it increase construction costs in my projects?
+          </summary>
+          <p>
+            No. Clouder reduces work phases, installation duration, and thereby lowers construction
+            costs.
+          </p>
+        </details>
+        <details class="group open:pb-6">
+          <summary
+            class="cursor-pointer py-6 font-semibold transition group-open:pb-4 hover:opacity-65"
+          >
+            Any special considerations for building technology system plans?
+          </summary>
+          <p>
+            <a
+              href="/clouder-suunnitteluohje-2024-10.pdf"
+              class="underline underline-offset-2 transition hover:opacity-65"
+              >Download our design guide</a
+            > for building automation and electrical designers.
+          </p>
+        </details>
+        <details class="group open:pb-6">
+          <summary
+            class="cursor-pointer py-6 font-semibold transition group-open:pb-4 hover:opacity-65"
+          >
+            Who does the installation?
+          </summary>
+          <p>
+            The installation can be carried out by the site's electrical or automation contractor.
+          </p>
+        </details>
+        <details class="group border-none open:pb-5">
+          <summary
+            class="cursor-pointer py-6 font-semibold transition group-open:pb-4 hover:opacity-65"
+          >
+            Is there a warranty?
+          </summary>
+          <p>
+            Warranty is 24 months. After the warranty period ends, a maintenance contract offers
+            full device warranty.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+  <section class="container py-8 sm:py-12 lg:py-16">
+    <div
+      class="rounded-md border border-neutral-200 bg-white p-6 text-center md:p-16 dark:border-neutral-800 dark:bg-neutral-900"
+    >
+      <h2 class="mb-4 text-2xl font-semibold text-neutral-900 md:text-3xl dark:text-neutral-100">
+        Book a demo
+      </h2>
+      <p class="mb-5">
+        Experience the system firsthand by scheduling a visit to our lab in Helsinki.
+      </p>
+      <a
+        href="/contact#form"
+        class="inline-flex h-11 cursor-pointer items-center justify-center gap-2 rounded bg-indigo-500 px-5 text-center text-sm font-medium text-nowrap text-white transition select-none hover:bg-indigo-600 dark:hover:bg-indigo-400"
+      >
+        Contact us
+      </a>
+    </div>
+  </section>
+  <div class="h-8 sm:h-12 lg:h-16"></div>
+</MainLayout>
+
+<script is:inline>
+  const btn = document.getElementById('toggleBtn');
+  const details = document.querySelectorAll('details');
+  let isExpanded = false;
+
+  btn.addEventListener('click', () => {
+    isExpanded = !isExpanded;
+    details.forEach((d) => d.toggleAttribute('open', isExpanded));
+    btn.textContent = isExpanded ? 'Collapse all' : 'Expand all';
+  });
+</script>
