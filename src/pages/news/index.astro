@@ -67,12 +67,12 @@ const description = 'Company news, product updates, and more.';
         <form
           name="newsletter"
           method="POST"
+          action="/success"
           data-netlify="true"
-          data-netlify-honeypot="honeypot"
+          netlify-honeypot="leave-blank"
           class="my-6"
         >
           <input
-            id="email"
             name="email"
             placeholder="Email"
             type="email"
@@ -86,8 +86,7 @@ const description = 'Company news, product updates, and more.';
             Sign up
           </button>
           <input
-            id="honeypot"
-            name="honeypot"
+            name="leave-blank"
             type="text"
             autocomplete="off"
             tabindex="-1"

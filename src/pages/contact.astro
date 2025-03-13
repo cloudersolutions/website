@@ -133,8 +133,9 @@ const description = 'Get in touch with our sales team or book a demo.';
       <form
         name="contact"
         method="POST"
+        action="/success"
         data-netlify="true"
-        data-netlify-honeypot="honeypot"
+        netlify-honeypot="leave-blank"
         class="col-span-2 mt-1 space-y-4"
       >
         <div class="flex gap-4">
@@ -207,8 +208,7 @@ const description = 'Get in touch with our sales team or book a demo.';
           ></textarea>
         </div>
         <input
-          id="honeypot"
-          name="honeypot"
+          name="leave-blank"
           type="text"
           autocomplete="off"
           tabindex="-1"
