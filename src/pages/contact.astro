@@ -135,25 +135,25 @@ const description = 'Get in touch with our sales team or book a demo.';
         method="POST"
         action="/success"
         data-netlify="true"
-        netlify-honeypot="leave-blank"
+        netlify-honeypot="bot-field"
         class="col-span-2 mt-1 space-y-4"
       >
         <div class="flex gap-4">
           <div class="w-full">
-            <label for="firstName" class="mb-2 block text-sm font-medium">First name</label>
+            <label for="firstname" class="mb-2 block text-sm font-medium">First name</label>
             <input
-              id="firstName"
-              name="firstName"
+              id="firstname"
+              name="firstname"
               type="text"
               required
               class="block h-11 w-full rounded border border-neutral-200 bg-white px-3 dark:border-neutral-800 dark:bg-neutral-900"
             />
           </div>
           <div class="w-full">
-            <label for="lastName" class="mb-2 block text-sm font-medium">Last name</label>
+            <label for="lastname" class="mb-2 block text-sm font-medium">Last name</label>
             <input
-              id="lastName"
-              name="lastName"
+              id="lastname"
+              name="lastname"
               type="text"
               required
               class="block h-11 w-full rounded border border-neutral-200 bg-white px-3 dark:border-neutral-800 dark:bg-neutral-900"
@@ -199,7 +199,7 @@ const description = 'Get in touch with our sales team or book a demo.';
           ></textarea>
         </div>
         <input
-          name="leave-blank"
+          name="bot-field"
           type="text"
           autocomplete="off"
           tabindex="-1"
