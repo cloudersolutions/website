@@ -1,5 +1,6 @@
 ---
 import type { ImageMetadata } from 'astro';
+import { ClientRouter } from 'astro:transitions';
 import fallbackImage from '@assets/shareimage.png';
 import site from '@data/site.yml';
 import '../styles/global.css';
@@ -25,7 +26,7 @@ const pageImage = image ? image : fallbackImage;
 ---
 
 <!doctype html>
-<html lang="en" class="overflow-x-hidden scroll-smooth">
+<html lang="en" class="overflow-x-hidden scroll-smooth" transition:animate="none">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -41,13 +42,13 @@ const pageImage = image ? image : fallbackImage;
     <meta property="og:image:height" content={String(pageImage.height)} />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <ClientRouter />
   </head>
   <body
     class="flex min-h-screen flex-col overflow-x-hidden bg-neutral-50 text-neutral-800 dark:bg-neutral-950 dark:text-neutral-200"
   >
     <slot />
-  </body>
-  <script is:inline>
+  </body><script is:inline>
     const links = document.links;
     for (const link of links) {
       if (link.hostname !== window.location.hostname && !link.href.match(/^mailto\:/)) {
