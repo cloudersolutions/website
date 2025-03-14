@@ -37,7 +37,7 @@ to = "/product/ec-6-2"
 status = 302
 
 [[redirects]]
-from = "/p/EC-6-2"
+from = "/p/ec-6-2"
 to = "/product/ec-6-2"
 status = 302
 
