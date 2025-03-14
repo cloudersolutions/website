@@ -1,0 +1,63 @@
+[[headers]]
+for = "/*"
+[headers.values]
+X-Frame-Options = "DENY"
+X-Content-Type-Options = "nosniff"
+X-XSS-Protection = "1; mode=block"
+
+[[redirects]]
+from = "https://fi.cloudersolutions.com/*"
+to = "https://cloudersolutions.com/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "/our-solutions"
+to = "/product"
+status = 301
+
+[[redirects]]
+from = "/sustainability"
+to = "/"
+status = 301
+
+[[redirects]]
+from = "/about-us"
+to = "/about"
+status = 301
+
+[[redirects]]
+from = "/contact-us"
+to = "/contact"
+status = 301
+
+[[redirects]]
+from = "/p/EC-6-2"
+to = "/product/ec-6-2"
+status = 302
+
+[[redirects]]
+from = "/p/EC-6-2"
+to = "/product/ec-6-2"
+status = 302
+
+[[redirects]]
+from = "/p/EC-8-8"
+to = "/product/ec-8-8"
+status = 302
+
+[[redirects]]
+from = "/p/ec-8-8"
+to = "/product/ec-8-8"
+status = 302
+
+[[redirects]]
+from = "/metering-data-integration-large-distribution-center"
+to = "/news/metering-data-integration-large-distribution-center"
+status = 302
+
+[[redirects]]
+from = "/dashboard"
+to = "https://dashboard.cloudersolutions.com"
+status = 301
+force = true
