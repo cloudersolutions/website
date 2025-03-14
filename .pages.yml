@@ -92,5 +92,9 @@ content:
         label: Social links
         type: object
         fields:
-          - title: string
-            href: string
+          - name: title
+            label: Title
+            type: string
+          - name: href
+            label: Title
+            type: string
