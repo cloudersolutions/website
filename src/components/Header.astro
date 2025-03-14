@@ -12,7 +12,7 @@ interface Props {
 const { class: className } = Astro.props;
 
 const { pathname } = Astro.url;
-const navItems: NavItem[] = navigation.filter((item: NavItem) => item.showInMainNav);
+const navItems: NavItem[] = navigation.items.filter((item: NavItem) => item.showInMainNav);
 
 const isActive = (href: string) => {
   if (href === '/') return pathname === href;

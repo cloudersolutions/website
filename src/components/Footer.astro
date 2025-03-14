@@ -14,7 +14,7 @@ import Logo from '@components/Logo.astro';
     <div class="flex flex-col items-start gap-1">
       <h4 class="mb-1 text-sm font-semibold">Resources</h4>
       {
-        navigation.map(({ title, href, isExternal }) => (
+        navigation.items.map(({ title, href, isExternal }) => (
           <a
             href={href}
             class="inline-flex items-center gap-0.5 py-1 text-sm text-neutral-500 transition hover:text-neutral-900 dark:hover:text-neutral-200"
