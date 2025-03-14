@@ -74,7 +74,8 @@ content:
       - name: body
         label: Body
         type: rich-text
-  - name: Site settings
+  - name: site-settings
+    label: Site settings
     type: file
     path: src/data/site.yml
     format: yaml
