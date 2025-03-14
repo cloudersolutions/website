@@ -2,42 +2,6 @@ media:
   input: src/content/news/images
   output: ./images
 content:
-  - name: Privacy Policy
-    type: file
-    path: src/pages/privacy-policy.md
-    fields:
-      - name: layout
-        type: string
-        default: '@layouts/ProseLayout.astro'
-        required: true
-        hidden: true
-      - name: title
-        type: string
-        required: true
-      - name: description
-        type: string
-        required: true
-      - name: body
-        label: Body
-        type: rich-text
-  - name: Tietosuojakäytäntö
-    type: file
-    path: src/pages/tietosuojakaytanto.md
-    fields:
-      - name: layout
-        type: string
-        default: '@layouts/ProseLayout.astro'
-        required: true
-        hidden: true
-      - name: title
-        type: string
-        required: true
-      - name: description
-        type: string
-        required: true
-      - name: body
-        label: Body
-        type: rich-text
   - name: News
     type: collection
     path: src/content/news
@@ -69,6 +33,63 @@ content:
         type: image
       - name: body
         label: Body
-        type: text
+        type: rich-text
     view:
       fields: [cover, title, date, draft, featured]
+  - name: privacy-policy-en
+    label: Privacy Policy
+    type: file
+    path: src/pages/privacy-policy.md
+    fields:
+      - name: layout
+        type: string
+        default: '@layouts/ProseLayout.astro'
+        required: true
+        hidden: true
+      - name: title
+        type: string
+        required: true
+      - name: description
+        type: string
+        required: true
+      - name: body
+        label: Body
+        type: rich-text
+  - name: privacy-policy-fi
+    label: Tietosuojakäytäntö
+    type: file
+    path: src/pages/tietosuojakaytanto.md
+    fields:
+      - name: layout
+        type: string
+        default: '@layouts/ProseLayout.astro'
+        required: true
+        hidden: true
+      - name: title
+        type: string
+        required: true
+      - name: description
+        type: string
+        required: true
+      - name: body
+        label: Body
+        type: rich-text
+  - name: Site settings
+    type: file
+    path: src/data/site.yml
+    format: yaml
+    fields:
+      - name: title
+        label: Site title
+        type: string
+        required: true
+      - name: description
+        label: Site description
+        type: string
+        required: true
+      - name: social
+        label: Social links
+        type: object
+        fields:
+          - title: string
+            href: string
