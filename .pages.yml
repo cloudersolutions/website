@@ -23,10 +23,12 @@ content:
         label: Featured on the home page
         type: boolean
         default: false
+        required: false
       - name: draft
         label: Draft
         type: boolean
         default: true
+        required: false
       - name: cover
         label: Cover image
         description: The cover image will appear on listing pages and as the preview image when shared. To display this image in your post content, you'll need to insert it separately in the editor.
@@ -97,5 +99,30 @@ content:
             label: Title
             type: string
           - name: href
+            label: URL
+            type: string
+  - name: navigation
+    label: Navigation
+    type: file
+    path: src/data/navigation.yml
+    format: yaml
+    fields:
+      - name: root
+        label: Navigation Items
+        type: object
+        list: true
+        fields:
+          - name: title
             label: Title
             type: string
+          - name: href
+            label: URL
+            type: string
+          - name: showInMainNav
+            label: Show in main navigation
+            type: boolean
+            required: false
+          - name: isExternal
+            label: External link
+            type: boolean
+            required: false
