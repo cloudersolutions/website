@@ -19,10 +19,14 @@ content:
         label: Date
         type: date
         required: true
+      - name: cover
+        label: Cover image
+        description: The cover image will appear on listing pages and as the preview image when shared. To display this image in your post content, you'll need to insert it separately in the editor.
+        type: image
       - name: featured
         label: Featured
         type: boolean
-        description: Featured posts are shown on the home page.
+        description: Two latest featured posts are shown on the home page. If no posts are featured, the section will be hidden.
         default: false
         required: false
       - name: draft
@@ -30,10 +34,6 @@ content:
         type: boolean
         default: true
         required: false
-      - name: cover
-        label: Cover image
-        description: The cover image will appear on listing pages and as the preview image when shared. To display this image in your post content, you'll need to insert it separately in the editor.
-        type: image
       - name: body
         label: Body
         type: rich-text
