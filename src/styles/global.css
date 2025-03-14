@@ -83,6 +83,12 @@
   }
 }
 
+/* Mitigate FOUT */
+html,
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
 /* Nicer text wrapping */
 p,
 h1,

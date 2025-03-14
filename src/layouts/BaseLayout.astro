@@ -43,16 +43,18 @@ const pageImage = image ? image : fallbackImage;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
   <body
-    class="flex min-h-screen flex-col overflow-x-hidden bg-neutral-50 text-neutral-800 dark:bg-neutral-950 dark:text-neutral-200"
+    class="flex min-h-screen flex-col overflow-x-hidden bg-neutral-50 font-sans text-neutral-800 dark:bg-neutral-950 dark:text-neutral-200"
   >
     <slot />
-  </body><script is:inline>
-    const links = document.links;
-    for (const link of links) {
-      if (link.hostname !== window.location.hostname && !link.href.match(/^mailto\:/)) {
-        link.target = '_blank';
-        link.rel = 'noopener noreferrer';
-      }
-    }
-  </script>
+  </body>
 </html>
+
+<script is:inline>
+  const links = document.links;
+  for (const link of links) {
+    if (link.hostname !== window.location.hostname && !link.href.match(/^mailto\:/)) {
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+    }
+  }
+</script>
