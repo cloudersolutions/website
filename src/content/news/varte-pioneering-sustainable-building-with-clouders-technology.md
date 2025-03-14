@@ -2,7 +2,8 @@
 title: Varte Pioneering Sustainable Building with Clouder’s Technology
 description: By combining Clouder’s robust data infrastructure with Varte’s construction expertise, this collaboration showcases how digital and energy efficient buildings are constructed and  accelerates the industry’s transition towards truly sustainable and energy efficient buildings.
 date: 2025-02-07
-cover: ./images/varte.jpg
+cover: images/varte.jpg
+draft: false
 featured: true
 ---
 

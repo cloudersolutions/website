@@ -2,7 +2,9 @@
 title: Strengthening Clouder’s investor base with cyber technology pioneers
 description: Internationally renowned cyber security experts Mikko Hyppönen, Tomi Tuominen, and Henri Lindberg have joined Clouder as investors and active advisory board members.
 date: 2025-02-27
-cover: ./images/t2abvc.jpg
+cover: images/t2abvc.jpg
+draft: false
+featured: false
 ---
 
 We’re extremely excited to announce that internationally renowned cyber security experts Mikko Hyppönen, Tomi Tuominen, and Henri Lindberg have joined Clouder as investors and active advisory board members.
