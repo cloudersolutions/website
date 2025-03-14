@@ -82,6 +82,7 @@ content:
     label: Site settings
     type: file
     path: src/data/site.yml
+    icon: file-cog
     format: yaml
     fields:
       - name: title
@@ -111,6 +112,7 @@ content:
     label: Navigation
     type: file
     path: src/data/navigation.yml
+    icon: file-cog
     format: yaml
     fields:
       - name: items
