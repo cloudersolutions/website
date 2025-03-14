@@ -20,8 +20,9 @@ content:
         type: date
         required: true
       - name: featured
-        label: Featured on the home page
+        label: Featured
         type: boolean
+        description: Featured posts are shown on the home page.
         default: false
         required: false
       - name: draft
