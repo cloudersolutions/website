@@ -39,6 +39,13 @@ const pageImage = image ? image : fallbackImage;
     <meta property="og:image:alt" content={pageTitle} />
     <meta property="og:image:width" content={String(pageImage.width)} />
     <meta property="og:image:height" content={String(pageImage.height)} />
+    <link
+      rel="preload"
+      href="/PlusJakartaSans[wght].woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
