@@ -1,6 +1,6 @@
 media:
   input: src/content/news/images
-  output: images
+  output: ./images
   categories: [image]
 content:
   - name: News
