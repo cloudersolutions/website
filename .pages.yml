@@ -90,11 +90,13 @@ content:
         required: true
       - name: social
         label: Social links
-        type: object
-        fields:
-          - name: title
-            label: Title
-            type: string
-          - name: href
-            label: Title
-            type: string
+        type: list
+        items:
+          type: object
+          fields:
+            - name: title
+              label: Title
+              type: string
+            - name: href
+              label: URL
+              type: string
