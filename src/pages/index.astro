@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
+import { twMerge } from 'tailwind-merge';
 import HousePlugIcon from 'lucide-astro/HousePlug';
 import ChartNoAxesColumnIcon from 'lucide-astro/ChartNoAxesColumn';
 import HardHatIcon from 'lucide-astro/HardHat';
@@ -393,8 +394,13 @@ const featuredPosts = posts
     featuredPosts.length > 0 && (
       <section class="container py-8 sm:py-12 lg:py-16">
         <Overline title="Cases examples" />
-        <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-x-10 xl:grid-cols-3">
-          <h2 class="text-2xl font-semibold text-neutral-900 md:col-span-2 md:text-3xl xl:col-span-1 dark:text-neutral-100">
+        <div
+          class:list={twMerge(
+            'grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-10',
+            featuredPosts.length === 1 && 'lg:grid-cols-2'
+          )}
+        >
+          <h2 class="text-2xl font-semibold text-neutral-900 md:col-span-2 md:text-3xl lg:col-span-1 dark:text-neutral-100">
             Learn how our customers are using Clouder
           </h2>
           {featuredPosts.map((post) => (
