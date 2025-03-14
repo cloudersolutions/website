@@ -32,12 +32,10 @@ content:
         type: boolean
         description: Two latest featured posts are shown on the home page. If no posts are featured, the section will be hidden.
         default: false
-        required: false
       - name: draft
         label: Draft
         type: boolean
         default: true
-        required: false
       - name: body
         label: Body
         type: rich-text
@@ -108,10 +106,12 @@ content:
           - name: title
             label: Title
             type: string
+            required: true
           - name: href
             label: URL
             type: string
             pattern: ^https?
+            required: true
   - name: navigation
     label: Navigation
     type: file
@@ -127,11 +127,12 @@ content:
           - name: title
             label: Title
             type: string
+            required: true
           - name: href
             label: URL
             type: string
             pattern: ^(\/|https?)
+            required: true
           - name: showInMainNav
             label: Show in main navigation
             type: boolean
-            required: false
