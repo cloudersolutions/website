@@ -1,6 +1,7 @@
 media:
   input: src/content/news/images
-  output: ./images
+  output: images
+  categories: [image]
 content:
   - name: News
     type: collection
@@ -21,7 +22,7 @@ content:
         required: true
       - name: cover
         label: Cover image
-        description: The cover image will appear on listing pages and as the preview image when shared. To display this image in your post content, you'll need to insert it separately in the editor.
+        description: Please keep images under 1MB. The cover image will appear on listing pages and in social shares. To display this image in your post content, you'll need to insert it separately in the editor.
         type: image
       - name: featured
         label: Featured
@@ -85,14 +86,17 @@ content:
     fields:
       - name: title
         label: Site title
+        description: Appears in browser tabs, search results, social shares and site footer. On sub-pages, it's added as a suffix (e.g., "News · Clouder").
         type: string
         required: true
       - name: description
         label: Site description
+        description: Default text shown in search results and social previews. Individual pages can override this with their own descriptions.
         type: string
         required: true
       - name: social
         label: Social links
+        description: Add and manage social media links.
         type: object
         list: true
         fields:
@@ -102,6 +106,7 @@ content:
           - name: href
             label: URL
             type: string
+            pattern: ^https?
   - name: navigation
     label: Navigation
     type: file
@@ -110,6 +115,7 @@ content:
     fields:
       - name: items
         label: Navigation Items
+        description: Add and manage navigation items.
         type: object
         list: true
         fields:
@@ -119,11 +125,8 @@ content:
           - name: href
             label: URL
             type: string
+            pattern: ^(\/|https?)
           - name: showInMainNav
             label: Show in main navigation
-            type: boolean
-            required: false
-          - name: isExternal
-            label: External link
             type: boolean
             required: false

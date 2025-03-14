@@ -8,7 +8,7 @@ featured: true
 
 We’re pleased to announce that Varte, a construction company dedicated to sustainable building, has chosen to adopt Clouder’s technology in its upcoming construction project. By combining Clouder’s robust data infrastructure with Varte’s construction expertise, this collaboration showcases how digital and energy efficient buildings are constructed and accelerates the industry’s transition towards truly sustainable buildings.
 
-![People on a construction site](./images/varte.jpg)
+![People on a construction site](images/varte.jpg)
 
 Varte’s goal is to be a forerunner in following the new standard for green building practices, one that minimizes environmental impact while adding to quality and security. By leveraging Clouder’s technology, Varte will optimize material usage, reduce cabling waste, and lower the carbon footprint of their project.
 

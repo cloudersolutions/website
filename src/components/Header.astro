@@ -18,6 +18,10 @@ const isActive = (href: string) => {
   if (href === '/') return pathname === href;
   return pathname.startsWith(href);
 };
+
+const isExternal = (href: string) => {
+  return href.startsWith('http');
+};
 ---
 
 <header
@@ -32,7 +36,7 @@ const isActive = (href: string) => {
     </a>
     <nav class="-mx-3.5 flex flex-wrap">
       {
-        navItems.map(({ title, href, isExternal }) => (
+        navItems.map(({ title, href }) => (
           <a
             href={href}
             aria-current={isActive(href) ? 'page' : undefined}
@@ -42,7 +46,9 @@ const isActive = (href: string) => {
             )}
           >
             {title}
-            {isExternal && <ArrowUpRightIcon size={16} class="mt-0.5 flex-shrink-0 opacity-50" />}
+            {isExternal(href) && (
+              <ArrowUpRightIcon size={16} class="mt-0.5 flex-shrink-0 opacity-50" />
+            )}
           </a>
         ))
       }

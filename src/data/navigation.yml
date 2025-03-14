@@ -20,4 +20,3 @@ items:
   - title: Log in
     href: https://dashboard.cloudersolutions.com/
     showInMainNav: true
-    isExternal: true

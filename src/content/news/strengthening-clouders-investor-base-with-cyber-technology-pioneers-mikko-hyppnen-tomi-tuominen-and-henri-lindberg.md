@@ -11,7 +11,7 @@ We’re extremely excited to announce that internationally renowned cyber securi
 >
 > Tomi Tuominen
 
-![Three technology investors](./images/t2abvc.jpg)
+![Three technology investors](images/t2abvc.jpg)
 
 Mikko Hyppönen is a global security expert and a bestselling author. He works as the Chief Research Officer at WithSecure and as the Principal Research Advisor at F-Secure. He has written on his research e.g. for the New York Times, Wired and Scientific American. He has lectured at the universities of Stanford, Oxford and Harvard.
 

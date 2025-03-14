@@ -3,6 +3,10 @@ import ArrowUpRightIcon from 'lucide-astro/ArrowUpRight';
 import navigation from '@data/navigation.yml';
 import site from '@data/site.yml';
 import Logo from '@components/Logo.astro';
+
+const isExternal = (href: string) => {
+  return href.startsWith('http');
+};
 ---
 
 <footer
@@ -16,13 +20,15 @@ import Logo from '@components/Logo.astro';
     <div class="flex flex-col items-start gap-1">
       <h4 class="mb-1 text-sm font-semibold">Resources</h4>
       {
-        navigation.items.map(({ title, href, isExternal }) => (
+        navigation.items.map(({ title, href }) => (
           <a
             href={href}
             class="inline-flex items-center gap-0.5 py-1 text-sm text-neutral-500 transition hover:text-neutral-900 dark:hover:text-neutral-200"
           >
             {title}
-            {isExternal && <ArrowUpRightIcon size={14} class="mt-px flex-shrink-0 opacity-50" />}
+            {isExternal(href) && (
+              <ArrowUpRightIcon size={14} class="mt-px flex-shrink-0 opacity-50" />
+            )}
           </a>
         ))
       }
