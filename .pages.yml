@@ -1,0 +1,74 @@
+media:
+  input: src/content/news/images
+  output: ./images
+content:
+  - name: Privacy Policy
+    type: file
+    path: src/pages/privacy-policy.md
+    fields:
+      - name: layout
+        type: string
+        default: '@layouts/ProseLayout.astro'
+        required: true
+        hidden: true
+      - name: title
+        type: string
+        required: true
+      - name: description
+        type: string
+        required: true
+      - name: body
+        label: Body
+        type: rich-text
+  - name: Tietosuojakäytäntö
+    type: file
+    path: src/pages/tietosuojakaytanto.md
+    fields:
+      - name: layout
+        type: string
+        default: '@layouts/ProseLayout.astro'
+        required: true
+        hidden: true
+      - name: title
+        type: string
+        required: true
+      - name: description
+        type: string
+        required: true
+      - name: body
+        label: Body
+        type: rich-text
+  - name: News
+    type: collection
+    path: src/content/news
+    filename: '{primary}.md'
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: description
+        label: Description
+        type: string
+        required: true
+      - name: date
+        label: Date
+        type: date
+        required: true
+      - name: featured
+        label: Featured on the home page
+        type: boolean
+        default: false
+      - name: draft
+        label: Draft
+        type: boolean
+        default: true
+      - name: cover
+        label: Cover image
+        description: The cover image will appear on listing pages and as the preview image when shared. To display this image in your post content, you'll need to insert it separately in the editor.
+        type: image
+      - name: body
+        label: Body
+        type: text
+    view:
+      fields: [cover, title, date, draft, featured]

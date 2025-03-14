@@ -17,8 +17,14 @@ import ClouderIllustration from '@assets/how-clouder-works.svg';
 import uiLightImage from '@assets/ui-light.png';
 import uiDarkImage from '@assets/ui-dark.png';
 
-const posts = await getCollection('news');
-const featuredPosts = posts.filter((post) => post.data.featured);
+const posts = await getCollection(
+  'news',
+  ({ data }) => (!import.meta.env.PROD || !data.draft) && data.featured === true
+);
+
+const featuredPosts = posts
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 2);
 ---
 
 <MainLayout
