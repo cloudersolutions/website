@@ -140,7 +140,8 @@ const description = 'Get in touch with our sales team or book a demo.';
       >
         <div class="flex gap-4">
           <div class="w-full">
-            <label for="firstname" class="mb-2 block text-sm font-medium">First name</label>
+            <label for="firstname" class="mb-2 inline-block text-sm font-medium">First name</label>
+            <span class="text-sm leading-none opacity-50">*</span>
             <input
               id="firstname"
               name="firstname"
@@ -150,7 +151,8 @@ const description = 'Get in touch with our sales team or book a demo.';
             />
           </div>
           <div class="w-full">
-            <label for="lastname" class="mb-2 block text-sm font-medium">Last name</label>
+            <label for="lastname" class="mb-2 inline-block text-sm font-medium">Last name</label>
+            <span class="text-sm leading-none opacity-50">*</span>
             <input
               id="lastname"
               name="lastname"
@@ -161,7 +163,8 @@ const description = 'Get in touch with our sales team or book a demo.';
           </div>
         </div>
         <div>
-          <label for="email" class="mb-2 block text-sm font-medium">Email</label>
+          <label for="email" class="mb-2 inline-block text-sm font-medium">Email</label>
+          <span class="text-sm leading-none opacity-50">*</span>
           <input
             id="email"
             name="email"
@@ -170,7 +173,7 @@ const description = 'Get in touch with our sales team or book a demo.';
             class="block h-11 w-full rounded border border-neutral-200 bg-white px-3 dark:border-neutral-800 dark:bg-neutral-900"
           />
         </div>
-        <div class="flex gap-1.5">
+        <div class="-mt-1 flex gap-1.5">
           <input
             id="marketing"
             name="marketing"
@@ -180,7 +183,7 @@ const description = 'Get in touch with our sales team or book a demo.';
           <label for="marketing" class="text-sm">Sign up for news and updates</label>
         </div>
         <div>
-          <label for="phone" class="mb-2 block text-sm font-medium">Phone</label>
+          <label for="phone" class="mb-2 inline-block text-sm font-medium">Phone</label>
           <input
             id="phone"
             name="phone"
@@ -189,7 +192,8 @@ const description = 'Get in touch with our sales team or book a demo.';
           />
         </div>
         <div class="mb-5">
-          <label for="message" class="mb-2 block text-sm font-medium">Message</label>
+          <label for="message" class="mb-2 inline-block text-sm font-medium">Message</label>
+          <span class="text-sm leading-none opacity-50">*</span>
           <textarea
             id="message"
             name="message"
@@ -224,3 +228,26 @@ const description = 'Get in touch with our sales team or book a demo.';
   </section>
   <div class="h-8 sm:h-12 lg:h-16"></div>
 </MainLayout>
+
+<script is:inline>
+  window.addEventListener('pageshow', (event) => {
+    const navEntry = performance.getEntriesByType('navigation')[0];
+    if (!navEntry) return;
+    const navigationType = navEntry.type;
+    if (event.persisted || navigationType === 'back_forward') {
+      const form = document.querySelector('form');
+      if (form instanceof HTMLFormElement) {
+        form.reset();
+      }
+    }
+  });
+</script>
+
+<style>
+  div:has(*[required]:user-invalid) {
+    > label,
+    span {
+      color: #ef4444;
+    }
+  }
+</style>

@@ -104,3 +104,17 @@ const description = 'Company news, product updates, and more.';
   </section>
   <div class="h-8 sm:h-12 lg:h-16"></div>
 </MainLayout>
+
+<script is:inline>
+  window.addEventListener('pageshow', (event) => {
+    const navEntry = performance.getEntriesByType('navigation')[0];
+    if (!navEntry) return;
+    const navigationType = navEntry.type;
+    if (event.persisted || navigationType === 'back_forward') {
+      const form = document.querySelector('form');
+      if (form instanceof HTMLFormElement) {
+        form.reset();
+      }
+    }
+  });
+</script>
