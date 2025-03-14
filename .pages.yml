@@ -7,6 +7,9 @@ content:
     type: collection
     path: src/content/news
     filename: '{primary}.md'
+    view:
+      fields: [cover, title, date, draft, featured]
+    subfolders: false
     fields:
       - name: title
         label: Title
@@ -38,8 +41,6 @@ content:
       - name: body
         label: Body
         type: rich-text
-    view:
-      fields: [cover, title, date, draft, featured]
   - name: privacy-policy-en
     label: Privacy Policy
     type: file
@@ -51,9 +52,11 @@ content:
         required: true
         hidden: true
       - name: title
+        label: Title
         type: string
         required: true
       - name: description
+        label: Description
         type: string
         required: true
       - name: body
@@ -70,9 +73,11 @@ content:
         required: true
         hidden: true
       - name: title
+        label: Title
         type: string
         required: true
       - name: description
+        label: Description
         type: string
         required: true
       - name: body
@@ -87,7 +92,7 @@ content:
     fields:
       - name: title
         label: Site title
-        description: Appears in browser tabs, search results, social shares and site footer. On sub-pages, it's added as a suffix (e.g., "News · Clouder").
+        description: Defautl text that appears in browser tabs, search results, social shares and site footer. On sub-pages, it's added as a suffix (e.g., "News · Clouder").
         type: string
         required: true
       - name: description
@@ -97,7 +102,6 @@ content:
         required: true
       - name: social
         label: Social links
-        description: Add and manage social media links.
         type: object
         list: true
         fields:
@@ -117,7 +121,6 @@ content:
     fields:
       - name: items
         label: Navigation Items
-        description: Add and manage navigation items.
         type: object
         list: true
         fields:
