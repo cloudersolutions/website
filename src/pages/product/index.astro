@@ -14,6 +14,7 @@ const title = 'Product';
 const description =
   'Increase asset value, reduce operational costs, and improve data-led decision making. Ideal for all kinds of buildings, both new and existing.';
 const headingIncluded = 'Included in the price?';
+const headingAddOn = 'Add-ons';
 ---
 
 <MainLayout title={title} description={description} headerClass="bg-white dark:bg-neutral-900">
@@ -226,14 +227,13 @@ const headingIncluded = 'Included in the price?';
   <section id="features" class="container py-8 sm:py-12 lg:py-16">
     <Overline title="Features" />
     <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:gap-10">
-      <div class="col-span-full mb-4 lg:col-span-1 lg:row-span-4">
-        <h2 class="mb-4 text-3xl font-semibold md:text-4xl">
-          What’s included in Clouder Platform?
-        </h2>
+      <div class="col-span-full mb-4 space-y-4 lg:col-span-1 lg:row-span-4">
+        <h2 class="text-2xl font-semibold md:text-3xl">What’s included in Clouder Platform?</h2>
         <p>
-          Clouder Platform includes a range of features and capabilities that enable efficient
+          Clouder Platform is comes with a range of features and capabilities that enable efficient
           building management.
         </p>
+        <p>Add-ons give you further flexibility and customization options.</p>
       </div>
       <div
         class="rounded border border-neutral-200 bg-white p-6 pt-5 lg:mt-1.5 dark:border-neutral-800 dark:bg-neutral-900"
@@ -246,21 +246,21 @@ const headingIncluded = 'Included in the price?';
         </h4>
         <div class="space-y-3 text-sm">
           <p>
-            Connect all building tech systems and devices, independent of vendor or protocol, by
-            using Virtual Cabling Engine.
+            Connect all building tech systems and devices, regardless of vendor or protocol with our
+            Virtual Cabling Engine.
           </p>
           <p>
-            Integrate new or external systems and devices with minimal construction work by using
+            Integrate new or external systems and devices with minimal construction work with our
             Edge Connectors.
           </p>
           <p>
-            Protocol conversions to enable efficient communication between otherwise
-            hard-to-integrate systems that do not communicate with one another.
+            Protocol conversions to enable communication between otherwise hard-to-integrate systems
+            that don’t communicate with each other.
           </p>
           <h5 class="mt-6 font-semibold">
-            {headingIncluded}
+            {headingAddOn}
           </h5>
-          <p>Yes, Edge Connectors are sold separately.</p>
+          <p>Edge Connectors are sold separately.</p>
         </div>
       </div>
       <div
@@ -292,10 +292,6 @@ const headingIncluded = 'Included in the price?';
               >Data&nbsp;solution</a
             >.
           </p>
-          <h5 class="mt-6 font-semibold">
-            {headingIncluded}
-          </h5>
-          <p>Yes</p>
         </div>
       </div>
       <div
@@ -312,11 +308,10 @@ const headingIncluded = 'Included in the price?';
             Real-time data on energy consumption, indoor climate, and other insights enable improved
             monitoring and informed decision-making.
           </p>
-          <p>Fault detection and diagnostics with recommendations on how to fix them.</p>
           <h5 class="mt-6 font-semibold">
-            {headingIncluded}
+            {headingAddOn}
           </h5>
-          <p>Yes</p>
+          <p>Fault detection and diagnostics with recommendations on how to fix them.</p>
         </div>
       </div>
       <div
@@ -329,16 +324,18 @@ const headingIncluded = 'Included in the price?';
           Device control
         </h4>
         <div class="space-y-3 text-sm">
-          <p>Control all systems and field devices in your building.</p>
           <p>
-            Use sophisticated, event-based rules to control devices. This reduces energy consumption
-            without disrupting the existing building automation system.
+            Control all systems and field devices in your building without disrupting the existing
+            building automation system.
           </p>
-          <p>Enables participation in demand response programs to reduce energy costs.</p>
           <h5 class="mt-6 font-semibold">
-            {headingIncluded}
+            {headingAddOn}
           </h5>
-          <p>Yes, event-based rules are available for an additional cost.</p>
+          <p>
+            Use sophisticated, event-based rules to control devices to further reduce energy
+            consumption.
+          </p>
+          <p>Participate in demand response programs to reduce energy costs.</p>
         </div>
       </div>
       <div
@@ -355,18 +352,19 @@ const headingIncluded = 'Included in the price?';
             Secure real-time cloud storage of accurate building data. No more relying on benchmarks
             or estimates.
           </p>
-          <p class="text-wrap">
-            Export your building's data as a CSV file for sustainability reporting, or access it via
-            API for smart office applications and third‑party integrations.
-          </p>
           <p>
-            Our five-year data retention policy means that you have full ownership and control over
-            the data.
+            Five-year data retention policy means that you have full ownership and control over the
+            data.
+          </p>
+          <p class="text-wrap">
+            View your data from Clouder Dashboard and export as CSV for sustainability reporting.
           </p>
           <h5 class="mt-6 font-semibold">
-            {headingIncluded}
+            {headingAddOn}
           </h5>
-          <p>Yes</p>
+          <p>
+            Access your data via our API, ideal for smart office apps and third-party integrations.
+          </p>
         </div>
       </div>
       <div
@@ -387,10 +385,6 @@ const headingIncluded = 'Included in the price?';
             Robust security in building automation – no more access to systems with default
             passwords.
           </p>
-          <h5 class="mt-6 font-semibold">
-            {headingIncluded}
-          </h5>
-          <p>Yes</p>
         </div>
       </div>
       <div
@@ -430,7 +424,7 @@ const headingIncluded = 'Included in the price?';
         class="flex flex-col items-start gap-5 md:flex-row md:items-center lg:flex-col lg:items-start"
       >
         <div class="mr-auto">
-          <h2 class="mb-4 text-3xl font-semibold md:text-4xl">I have a question…</h2>
+          <h2 class="mb-4 text-2xl font-semibold md:text-3xl">I have a question…</h2>
           <p>
             We've gathered answers to the questions we hear most often. <a
               href="/contact"
@@ -492,13 +486,14 @@ const headingIncluded = 'Included in the price?';
           </summary>
           <p class="mb-4">
             <strong class="font-semibold">Clouder Platform</strong> operates on a simple pricing structure:
-            a monthly subscription fee plus any additional features you choose to add on. Setup costs
-            vary based on your building's size and complexity. We don't charge any extra license fees.
+            a monthly subscription fee plus optional add-ons. Setup costs vary based on your building's
+            size and complexity.
           </p>
-          <p>
+          <p class="mb-4">
             <strong class="font-semibold">Clouder Portfolio</strong> offers custom pricing tailored to
             your specific requirements, including data volume, service scope, and the features you need.
           </p>
+          <p>We don't charge any extra license fees for any plans.</p>
         </details>
         <details class="group open:pb-6">
           <summary
@@ -551,12 +546,12 @@ const headingIncluded = 'Included in the price?';
   </section>
   <section class="container py-8 sm:py-12 lg:py-16">
     <div
-      class="rounded-md border border-neutral-200 bg-white p-6 text-center md:p-16 dark:border-neutral-800 dark:bg-neutral-900"
+      class="rounded-md border border-neutral-200 bg-white p-8 text-center md:p-16 dark:border-neutral-800 dark:bg-neutral-900"
     >
-      <h2 class="mb-4 text-2xl font-semibold text-neutral-900 md:text-3xl dark:text-neutral-100">
+      <h2 class="mb-3 text-2xl font-semibold text-neutral-900 md:text-3xl dark:text-neutral-100">
         Book a demo
       </h2>
-      <p class="mb-5">
+      <p class="mb-6">
         Experience the system firsthand by scheduling a visit to our lab in Helsinki.
       </p>
       <a
