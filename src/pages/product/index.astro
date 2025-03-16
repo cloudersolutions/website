@@ -7,6 +7,7 @@ import ShieldCheckIcon from 'lucide-astro/ShieldCheck';
 import BoltIcon from 'lucide-astro/Bolt';
 import DatabaseIcon from 'lucide-astro/Database';
 import WrenchIcon from 'lucide-astro/Wrench';
+import navigation from '@data/navigation.yml';
 import Overline from '@components/Overline.astro';
 import MainLayout from '@layouts/MainLayout.astro';
 
@@ -85,7 +86,7 @@ const headingAddOn = 'Add-ons';
           </li>
         </ul>
         <a
-          href="/contact#form"
+          href={navigation.main.contact.href + '#form'}
           class="mt-auto inline-flex h-11 cursor-pointer items-center justify-center gap-2 rounded bg-neutral-900 px-5 text-center text-sm font-medium text-nowrap text-neutral-100 transition select-none hover:bg-neutral-800 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-300"
         >
           Book an audit
@@ -171,7 +172,7 @@ const headingAddOn = 'Add-ons';
           </li>
         </ul>
         <a
-          href="/contact#sales"
+          href={navigation.main.contact.href + '#sales'}
           class="mt-auto inline-flex h-11 cursor-pointer items-center justify-center gap-2 rounded bg-indigo-500 px-5 text-center text-sm font-medium text-nowrap text-white transition select-none hover:bg-indigo-600 dark:hover:bg-indigo-400"
         >
           Contact sales
@@ -216,7 +217,7 @@ const headingAddOn = 'Add-ons';
           </li>
         </ul>
         <a
-          href="/contact#sales"
+          href={navigation.main.contact.href + '#sales'}
           class="mt-auto inline-flex h-11 cursor-pointer items-center justify-center gap-2 rounded bg-neutral-900 px-5 text-center text-sm font-medium text-nowrap text-neutral-100 transition select-none hover:bg-neutral-800 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-300"
         >
           Contact sales
@@ -408,7 +409,7 @@ const headingAddOn = 'Add-ons';
             </p>
           </div>
           <a
-            href="/contact"
+            href={navigation.main.contact.href}
             class="inline-flex h-10 cursor-pointer items-center justify-center gap-2 rounded bg-indigo-500 px-4 text-center text-sm font-medium text-nowrap text-white transition select-none hover:bg-indigo-600 dark:hover:bg-indigo-400"
           >
             Let’s talk
@@ -427,7 +428,7 @@ const headingAddOn = 'Add-ons';
           <h2 class="mb-4 text-2xl font-semibold md:text-3xl">I have a question…</h2>
           <p>
             We've gathered answers to the questions we hear most often. <a
-              href="/contact"
+              href={navigation.main.contact.href}
               class="underline underline-offset-2 transition hover:opacity-65">Contact us</a
             > if you can’t find what you’re looking for.
           </p>
@@ -514,7 +515,7 @@ const headingAddOn = 'Add-ons';
           </summary>
           <p>
             <a
-              href="https://drive.google.com/file/d/1whQJX5S5KKf_M9TgUcpR2xA0Qy26LyLV/view?usp=drive_link"
+              href={navigation.resources.guide.href}
               class="underline underline-offset-2 transition hover:opacity-65"
               >Download our design guide</a
             > for building automation and electrical designers.
@@ -555,7 +556,7 @@ const headingAddOn = 'Add-ons';
         Experience the system firsthand by scheduling a visit to our lab in Helsinki.
       </p>
       <a
-        href="/contact#form"
+        href={navigation.main.contact.href + '#form'}
         class="inline-flex h-11 cursor-pointer items-center justify-center gap-2 rounded bg-indigo-500 px-5 text-center text-sm font-medium text-nowrap text-white transition select-none hover:bg-indigo-600 dark:hover:bg-indigo-400"
       >
         Contact us

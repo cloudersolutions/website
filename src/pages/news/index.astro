@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
+import navigation from '@data/navigation.yml';
 import { formatDate } from '@utils/date.ts';
 import MainLayout from '@layouts/MainLayout.astro';
 
@@ -96,7 +97,9 @@ const description = 'Company news, product updates, and more.';
         </form>
         <p class="text-xs text-neutral-500">
           See our
-          <a href="/privacy-policy" class="underline">Privacy Policy</a>
+          <a href={navigation.resources.privacy.href} class="underline" tabindex="-1"
+            >{navigation.resources.privacy.title}</a
+          >
           for details on how we handle your data.
         </p>
       </div>

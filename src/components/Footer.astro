@@ -12,28 +12,43 @@ const isExternal = (href: string) => {
 <footer
   class="border-t border-neutral-200 bg-neutral-50 py-12 dark:border-neutral-800 dark:bg-neutral-950"
 >
-  <div class="container grid grid-cols-2 gap-10 sm:grid-cols-3">
-    <div class="col-span-2 sm:col-span-1">
-      <Logo size={16} class="flex-shrink-0" />
+  <div class="container grid grid-cols-1 gap-10 sm:grid-cols-9">
+    <div class="sm:col-span-3">
+      <a href="/">
+        <Logo size={16} class="flex-shrink-0" />
+      </a>
       <p class="mt-4 text-sm text-neutral-500">&copy; {new Date().getFullYear()} {site.title}</p>
     </div>
-    <div class="flex flex-col items-start gap-1">
-      <h4 class="mb-1 text-sm font-semibold">Resources</h4>
+    <div class="flex flex-col items-start gap-1 sm:col-span-2">
+      <h4 class="mb-1 text-sm font-semibold">Sitemap</h4>
       {
-        navigation.items.map(({ title, href }) => (
+        Object.entries(navigation.main).map(([_, item]) => (
           <a
-            href={href}
+            href={item.href}
             class="inline-flex items-center gap-0.5 py-1 text-sm text-neutral-500 transition hover:text-neutral-900 dark:hover:text-neutral-200"
           >
-            {title}
-            {isExternal(href) && (
+            {item.title}
+          </a>
+        ))
+      }
+    </div>
+    <div class="flex flex-col items-start gap-1 sm:col-span-2">
+      <h4 class="mb-1 text-sm font-semibold">Resources</h4>
+      {
+        Object.entries(navigation.resources).map(([_, item]) => (
+          <a
+            href={item.href}
+            class="inline-flex items-center gap-0.5 py-1 text-sm text-neutral-500 transition hover:text-neutral-900 dark:hover:text-neutral-200"
+          >
+            {item.title}
+            {isExternal(item.href) && (
               <ArrowUpRightIcon size={14} class="mt-px flex-shrink-0 opacity-50" />
             )}
           </a>
         ))
       }
     </div>
-    <div class="flex flex-col gap-1">
+    <div class="flex flex-col items-start gap-1 sm:col-span-2">
       <h4 class="mb-1 text-sm font-semibold">Follow</h4>
       {
         site.social.map(({ title, href }) => (

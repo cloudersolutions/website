@@ -1,22 +1,26 @@
-items:
-  - title: Home
+main:
+  home:
+    title: Home
     href: /
-    showInMainNav: false
-  - title: Product
+  product:
+    title: Product
     href: /product
-    showInMainNav: true
-  - title: News
+  news:
+    title: News
     href: /news
-    showInMainNav: true
-  - title: About
+  about:
+    title: About
     href: /about
-    showInMainNav: true
-  - title: Contact
+  contact:
+    title: Contact
     href: /contact
-    showInMainNav: true
-  - title: Privacy policy
+resources:
+  privacy:
+    title: Privacy Policy
     href: /privacy-policy
-    showInMainNav: false
-  - title: Log in
+  guide:
+    title: Design guide
+    href: https://drive.google.com/file/d/1whQJX5S5KKf_M9TgUcpR2xA0Qy26LyLV/view?usp=drive_link
+  dashboard:
+    title: Log in
     href: https://dashboard.cloudersolutions.com/
-    showInMainNav: true

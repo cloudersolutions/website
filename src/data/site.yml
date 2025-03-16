@@ -2,11 +2,15 @@
 title: Clouder
 description: Clouder enables net-zero digital buildings by fixing building tech connectivity.
 social:
-  - title: X (Twitter)
+  - key: twitter
+    title: X (Twitter)
     href: https://x.com/Clouder_tech
-  - title: LinkedIn
+  - key: linkedin
+    title: LinkedIn
     href: https://www.linkedin.com/company/clouder/about/
-  - title: Instagram
+  - key: instagram
+    title: Instagram
     href: http://instagram.com/cloudersolutions
-  - title: YouTube
+  - key: youtube
+    title: YouTube
     href: https://www.youtube.com/@cloudersolutions

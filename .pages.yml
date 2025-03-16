@@ -119,11 +119,14 @@ content:
     icon: file-cog
     format: yaml
     fields:
-      - name: items
-        label: Navigation Items
+      - name: main
+        label: Main navigation
         type: object
-        list: true
         fields:
+          - name: key
+            type: string
+            hidden: true
+            required: true
           - name: title
             label: Title
             type: string
@@ -133,6 +136,20 @@ content:
             type: string
             pattern: ^(\/|https?)
             required: true
-          - name: showInMainNav
-            label: Show in main navigation
-            type: boolean
+      - name: resources
+        label: Resources navigation
+        type: object
+        fields:
+          - name: key
+            type: string
+            hidden: true
+            required: true
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: href
+            label: URL
+            type: string
+            pattern: ^(\/|https?)
+            required: true
