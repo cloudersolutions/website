@@ -123,33 +123,99 @@ content:
         label: Main navigation
         type: object
         fields:
-          - name: key
-            type: string
-            hidden: true
-            required: true
-          - name: title
-            label: Title
-            type: string
-            required: true
-          - name: href
-            label: URL
-            type: string
-            pattern: ^(\/|https?)
-            required: true
+          - name: home
+            label: Home
+            description: Hidden from the main navigation, but visible in the footer.
+            type: object
+            fields:
+              - name: title
+                label: Title
+                type: string
+                required: true
+              - name: href
+                label: URL
+                type: string
+                pattern: ^(\/|https?)
+                required: true
+          - name: product
+            label: Product
+            type: object
+            fields:
+              - name: title
+                label: Title
+                type: string
+                required: true
+              - name: href
+                label: URL
+                type: string
+                pattern: ^(\/|https?)
+                required: true
+          - name: news
+            label: News
+            type: object
+            fields:
+              - name: title
+                label: Title
+                type: string
+                required: true
+              - name: href
+                label: URL
+                type: string
+                pattern: ^(\/|https?)
+                required: true
+          - name: contact
+            label: Contact
+            type: object
+            fields:
+              - name: title
+                label: Title
+                type: string
+                required: true
+              - name: href
+                label: URL
+                type: string
+                pattern: ^(\/|https?)
+                required: true
       - name: resources
         label: Resources navigation
         type: object
         fields:
-          - name: key
-            type: string
-            hidden: true
-            required: true
-          - name: title
-            label: Title
-            type: string
-            required: true
-          - name: href
-            label: URL
-            type: string
-            pattern: ^(\/|https?)
-            required: true
+          - name: privacy
+            label: Privacy Policy
+            type: object
+            fields:
+              - name: title
+                label: Title
+                type: string
+                required: true
+              - name: href
+                label: URL
+                type: string
+                pattern: ^(\/|https?)
+                required: true
+          - name: guide
+            label: Design Guide
+            type: object
+            fields:
+              - name: title
+                label: Title
+                type: string
+                required: true
+              - name: href
+                label: URL
+                type: string
+                pattern: ^(\/|https?)
+                required: true
+          - name: dashboard
+            label: Dashboard
+            type: object
+            fields:
+              - name: title
+                label: Title
+                type: string
+                required: true
+              - name: href
+                label: URL
+                type: string
+                pattern: ^(\/|https?)
+                required: true
