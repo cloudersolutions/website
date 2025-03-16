@@ -7,6 +7,14 @@ import Logo from '@components/Logo.astro';
 const isExternal = (href: string) => {
   return href.startsWith('http');
 };
+
+const navigationLinks = Object.entries(navigation)
+  .filter(([key, _]) => !['dashboard', 'privacy', 'guide'].includes(key))
+  .map(([_, item]) => item);
+
+const resourcesLinks = Object.entries(navigation)
+  .filter(([key, _]) => ['dashboard', 'privacy', 'guide'].includes(key))
+  .map(([_, item]) => item);
 ---
 
 <footer
@@ -22,12 +30,15 @@ const isExternal = (href: string) => {
     <div class="flex flex-col items-start gap-1 sm:col-span-2">
       <h4 class="mb-1 text-sm font-semibold">Sitemap</h4>
       {
-        Object.entries(navigation.main).map(([_, item]) => (
+        navigationLinks.map((item) => (
           <a
             href={item.href}
             class="inline-flex items-center gap-0.5 py-1 text-sm text-neutral-500 transition hover:text-neutral-900 dark:hover:text-neutral-200"
           >
             {item.title}
+            {isExternal(item.href) && (
+              <ArrowUpRightIcon size={14} class="mt-px flex-shrink-0 opacity-50" />
+            )}
           </a>
         ))
       }
@@ -35,7 +46,7 @@ const isExternal = (href: string) => {
     <div class="flex flex-col items-start gap-1 sm:col-span-2">
       <h4 class="mb-1 text-sm font-semibold">Resources</h4>
       {
-        Object.entries(navigation.resources).map(([_, item]) => (
+        resourcesLinks.map((item) => (
           <a
             href={item.href}
             class="inline-flex items-center gap-0.5 py-1 text-sm text-neutral-500 transition hover:text-neutral-900 dark:hover:text-neutral-200"

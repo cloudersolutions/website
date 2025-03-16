@@ -1,26 +1,24 @@
-main:
-  home:
-    title: Home
-    href: /
-  product:
-    title: Product
-    href: /product
-  news:
-    title: News
-    href: /news
-  about:
-    title: About
-    href: /about
-  contact:
-    title: Contact
-    href: /contact
-resources:
-  privacy:
-    title: Privacy policy
-    href: /privacy-policy
-  guide:
-    title: Design guide
-    href: https://drive.google.com/file/d/1whQJX5S5KKf_M9TgUcpR2xA0Qy26LyLV/view?usp=drive_link
-  dashboard:
-    title: Log in
-    href: https://dashboard.cloudersolutions.com/
+home:
+  title: Home
+  href: /
+product:
+  title: Product
+  href: /product
+news:
+  title: News
+  href: /news
+about:
+  title: About
+  href: /about
+contact:
+  title: Contact
+  href: /contact
+privacy:
+  title: Privacy policy
+  href: /privacy-policy
+guide:
+  title: Design guide
+  href: https://drive.google.com/file/d/1whQJX5S5KKf_M9TgUcpR2xA0Qy26LyLV/view?usp=drive_link
+dashboard:
+  title: Log in
+  href: https://dashboard.cloudersolutions.com/

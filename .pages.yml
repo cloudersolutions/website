@@ -40,7 +40,7 @@ content:
         label: Body
         type: rich-text
   - name: privacy-policy-en
-    label: Privacy Policy
+    label: Privacy policy
     type: file
     path: src/pages/privacy-policy.md
     fields:
@@ -119,103 +119,95 @@ content:
     icon: file-cog
     format: yaml
     fields:
-      - name: main
-        label: Main navigation
+      - name: home
+        label: Home
+        description: Hidden from the main navigation, but visible in the footer.
         type: object
         fields:
-          - name: home
-            label: Home
-            description: Hidden from the main navigation, but visible in the footer.
-            type: object
-            fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
-              - name: href
-                label: URL
-                type: string
-                pattern: ^(\/|https?)
-                required: true
-          - name: product
-            label: Product
-            type: object
-            fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
-              - name: href
-                label: URL
-                type: string
-                pattern: ^(\/|https?)
-                required: true
-          - name: news
-            label: News
-            type: object
-            fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
-              - name: href
-                label: URL
-                type: string
-                pattern: ^(\/|https?)
-                required: true
-          - name: contact
-            label: Contact
-            type: object
-            fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
-              - name: href
-                label: URL
-                type: string
-                pattern: ^(\/|https?)
-                required: true
-      - name: resources
-        label: Resources navigation
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: href
+            label: URL
+            type: string
+            pattern: ^(\/|https?)
+            required: true
+      - name: product
+        label: Product
         type: object
         fields:
-          - name: privacy
-            label: Privacy Policy
-            type: object
-            fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
-              - name: href
-                label: URL
-                type: string
-                pattern: ^(\/|https?)
-                required: true
-          - name: guide
-            label: Design Guide
-            type: object
-            fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
-              - name: href
-                label: URL
-                type: string
-                pattern: ^(\/|https?)
-                required: true
-          - name: dashboard
-            label: Dashboard
-            type: object
-            fields:
-              - name: title
-                label: Title
-                type: string
-                required: true
-              - name: href
-                label: URL
-                type: string
-                pattern: ^(\/|https?)
-                required: true
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: href
+            label: URL
+            type: string
+            pattern: ^(\/|https?)
+            required: true
+      - name: news
+        label: News
+        type: object
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: href
+            label: URL
+            type: string
+            pattern: ^(\/|https?)
+            required: true
+      - name: contact
+        label: Contact
+        type: object
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: href
+            label: URL
+            type: string
+            pattern: ^(\/|https?)
+            required: true
+      - name: privacy
+        label: Privacy Policy
+        type: object
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: href
+            label: URL
+            type: string
+            pattern: ^(\/|https?)
+            required: true
+      - name: guide
+        label: Design Guide
+        type: object
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: href
+            label: URL
+            type: string
+            pattern: ^(\/|https?)
+            required: true
+      - name: dashboard
+        label: Dashboard
+        type: object
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: href
+            label: URL
+            type: string
+            pattern: ^(\/|https?)
+            required: true

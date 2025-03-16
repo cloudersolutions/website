@@ -6,10 +6,7 @@ interface NavItem {
 }
 
 declare module '@data/navigation.yml' {
-  interface NavData {
-    [section: string]: Record<string, NavItem>;
-  }
-  const value: NavData;
+  const value: Record<string, NavItem>;
   export default value;
 }
 

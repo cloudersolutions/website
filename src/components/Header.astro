@@ -12,11 +12,17 @@ const { class: className } = Astro.props;
 
 const { pathname } = Astro.url;
 
-const mainNavItems = Object.entries(navigation.main).filter(([key, _]) => key !== 'home');
+const mainNavItems = Object.entries(navigation)
+  .filter(([key, _]) => !['home', 'privacy', 'guide'].includes(key))
+  .map(([_, item]) => item);
 
 const isActive = (href: string) => {
   if (href === '/') return pathname === href;
   return pathname.startsWith(href);
+};
+
+const isExternal = (href: string) => {
+  return href.startsWith('http');
 };
 ---
 
@@ -32,30 +38,22 @@ const isActive = (href: string) => {
     </a>
     <nav class="-mx-3.5 flex flex-wrap">
       {
-        mainNavItems.map(([_, item]) => (
+        mainNavItems.map((item) => (
           <a
             href={item.href}
             aria-current={isActive(item.href) ? 'page' : undefined}
             class:list={twMerge(
               'inline-flex items-center gap-0.5 rounded-full px-3.5 leading-9 font-medium text-current underline-offset-8 transition select-none hover:bg-current/5 aria-[current]:text-current aria-[current]:underline aria-[current]:hover:bg-transparent',
-              mainNavItems.some(([_, i]) => isActive(i.href)) &&
-                'text-current/65 hover:text-current'
+              mainNavItems.some((i) => isActive(i.href)) && 'text-current/65 hover:text-current'
             )}
           >
             {item.title}
+            {isExternal(item.href) && (
+              <ArrowUpRightIcon size={14} class="mt-px flex-shrink-0 opacity-50" />
+            )}
           </a>
         ))
       }
-      <a
-        href={navigation.resources.dashboard.href}
-        class:list={twMerge(
-          'inline-flex items-center gap-0.5 rounded-full px-3.5 leading-9 font-medium text-current underline-offset-8 transition select-none hover:bg-current/5 aria-[current]:text-current aria-[current]:underline aria-[current]:hover:bg-transparent',
-          mainNavItems.some(([_, i]) => isActive(i.href)) && 'text-current/65 hover:text-current'
-        )}
-      >
-        {navigation.resources.dashboard.title}
-        <ArrowUpRightIcon size={16} class="mt-0.5 flex-shrink-0 opacity-50" />
-      </a>
     </nav>
   </div>
 </header>
