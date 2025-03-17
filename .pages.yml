@@ -17,7 +17,7 @@ content:
         required: true
       - name: description
         label: Description
-        type: string
+        type: text
         required: true
       - name: date
         label: Date
@@ -25,7 +25,7 @@ content:
         required: true
       - name: cover
         label: Cover image
-        description: Please keep images under 1MB. The cover image will appear on listing pages and in social shares. To display this image in your post content, you'll need to insert it separately in the editor.
+        description: Please keep images under 1MB. Used in listing pages, search results and link previews. To display this image in your post content, you'll need to insert it separately in the editor.
         type: image
       - name: featured
         label: Featured
@@ -35,6 +35,7 @@ content:
       - name: draft
         label: Draft
         type: boolean
+        description: Draft posts are not visible to the public.
         default: true
       - name: body
         label: Body
@@ -90,13 +91,13 @@ content:
     fields:
       - name: title
         label: Site title
-        description: Defautl text that appears in browser tabs, search results, social shares and site footer. On sub-pages, it's added as a suffix (e.g., "News · Clouder").
+        description: Used in browser tabs, search results, link previews and site footer. On sub-pages, the title is added as a suffix (e.g., "News · Clouder").
         type: string
         required: true
       - name: description
         label: Site description
-        description: Default text shown in search results and social previews. Individual pages can override this with their own descriptions.
-        type: string
+        description: Used in search results and link previews. Individual pages can override this with their own descriptions.
+        type: text
         required: true
       - name: social
         label: Social links
@@ -121,7 +122,6 @@ content:
     fields:
       - name: home
         label: Home
-        description: Hidden from the main navigation, but visible in the footer.
         type: object
         fields:
           - name: title
