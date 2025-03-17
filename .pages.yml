@@ -128,6 +128,7 @@ content:
     format: yaml
     fields:
       - name: home
+        label: Home
         type: object
         fields:
           - name: title
@@ -140,6 +141,7 @@ content:
             pattern: ^(\/|https?)
             required: true
       - name: product
+        label: Product
         type: object
         fields:
           - name: title
@@ -152,6 +154,7 @@ content:
             pattern: ^(\/|https?)
             required: true
       - name: news
+        label: News
         type: object
         fields:
           - name: title
@@ -164,6 +167,7 @@ content:
             pattern: ^(\/|https?)
             required: true
       - name: contact
+        label: Contact
         type: object
         fields:
           - name: title
@@ -176,6 +180,7 @@ content:
             pattern: ^(\/|https?)
             required: true
       - name: privacy
+        label: Privacy policy
         type: object
         fields:
           - name: title
@@ -188,6 +193,7 @@ content:
             pattern: ^(\/|https?)
             required: true
       - name: guide
+        label: Design guide
         type: object
         fields:
           - name: title
@@ -200,6 +206,7 @@ content:
             pattern: ^(\/|https?)
             required: true
       - name: dashboard
+        label: Dashboard
         type: object
         fields:
           - name: title
