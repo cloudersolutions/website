@@ -22,7 +22,7 @@ content:
         required: true
         options:
           autoresize: false
-          rows: 2
+          rows: 1
       - name: date
         label: Date
         type: date
@@ -65,7 +65,7 @@ content:
         required: true
         options:
           autoresize: false
-          rows: 2
+          rows: 1
       - name: body
         label: Body
         type: rich-text
@@ -90,7 +90,7 @@ content:
         required: true
         options:
           autoresize: false
-          rows: 2
+          rows: 1
       - name: body
         label: Body
         type: rich-text
@@ -113,7 +113,7 @@ content:
         required: true
         options:
           autoresize: false
-          rows: 2
+          rows: 1
       - name: social
         label: Social links
         type: object
