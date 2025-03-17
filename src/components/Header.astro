@@ -12,7 +12,7 @@ const { class: className } = Astro.props;
 
 const { pathname } = Astro.url;
 
-const mainNavItems = Object.entries(navigation)
+const navigationLinks = Object.entries(navigation)
   .filter(([key, _]) => !['home', 'privacy', 'guide'].includes(key))
   .map(([_, item]) => item);
 
@@ -38,17 +38,17 @@ const isExternal = (href: string) => {
     </a>
     <nav class="-mx-3.5 flex flex-wrap">
       {
-        mainNavItems.map((item) => (
+        navigationLinks.map(({ title, href }) => (
           <a
-            href={item.href}
-            aria-current={isActive(item.href) ? 'page' : undefined}
+            href={href}
+            aria-current={isActive(href) ? 'page' : undefined}
             class:list={twMerge(
               'inline-flex items-center gap-0.5 rounded-full px-3.5 leading-9 font-medium text-current underline-offset-8 transition select-none hover:bg-current/5 aria-[current]:text-current aria-[current]:underline aria-[current]:hover:bg-transparent',
-              mainNavItems.some((i) => isActive(i.href)) && 'text-current/65 hover:text-current'
+              navigationLinks.some((i) => isActive(i.href)) && 'text-current/65 hover:text-current'
             )}
           >
-            {item.title}
-            {isExternal(item.href) && (
+            {title}
+            {isExternal(href) && (
               <ArrowUpRightIcon size={14} class="mt-px flex-shrink-0 opacity-50" />
             )}
           </a>
