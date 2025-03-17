@@ -100,7 +100,7 @@ content:
         required: true
       - name: description
         label: Site description
-        description: Used in search results and link previews. Individual pages can override this with their own descriptions.
+        description: Used in search results and link previews. Individual pages can override this with their own descriptions. Keep it brief and avoid line breaks.
         type: text
         required: true
         options:
@@ -128,7 +128,6 @@ content:
     format: yaml
     fields:
       - name: home
-        label: Home
         type: object
         fields:
           - name: title
@@ -141,7 +140,6 @@ content:
             pattern: ^(\/|https?)
             required: true
       - name: product
-        label: Product
         type: object
         fields:
           - name: title
@@ -154,7 +152,6 @@ content:
             pattern: ^(\/|https?)
             required: true
       - name: news
-        label: News
         type: object
         fields:
           - name: title
@@ -167,7 +164,6 @@ content:
             pattern: ^(\/|https?)
             required: true
       - name: contact
-        label: Contact
         type: object
         fields:
           - name: title
@@ -180,7 +176,6 @@ content:
             pattern: ^(\/|https?)
             required: true
       - name: privacy
-        label: Privacy Policy
         type: object
         fields:
           - name: title
@@ -193,7 +188,6 @@ content:
             pattern: ^(\/|https?)
             required: true
       - name: guide
-        label: Design Guide
         type: object
         fields:
           - name: title
@@ -206,7 +200,6 @@ content:
             pattern: ^(\/|https?)
             required: true
       - name: dashboard
-        label: Dashboard
         type: object
         fields:
           - name: title
