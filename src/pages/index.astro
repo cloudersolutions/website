@@ -404,9 +404,9 @@ const featuredPosts = posts
             Learn how our customers are using Clouder
           </h2>
           {featuredPosts.map((post) => (
-            <article class="group relative overflow-clip rounded bg-white transition hover:shadow-xs hover:outline-current/16 md:mt-1.5 dark:bg-neutral-900">
-              <a href={`/news/${post.slug}`} class="flex flex-col items-start">
-                <div class="relative">
+            <article class="group relative rounded bg-white transition hover:shadow-xs md:mt-1.5 dark:bg-neutral-900">
+              <a href={`/news/${post.slug}`} class="flex flex-col items-start rounded">
+                <div class="relative overflow-clip rounded-t-sm">
                   <Image
                     src={post.data.cover}
                     alt={post.data.title}

@@ -30,7 +30,7 @@ const description = 'Company news, product updates, and more.';
       {
         sortedPosts.map((post) => (
           <article class="group">
-            <a href={`/news/${post.slug}`} class="flex flex-col gap-3">
+            <a href={`/news/${post.slug}`} class="flex flex-col gap-3 rounded">
               <div class="relative mb-1 overflow-clip rounded">
                 <Image
                   src={post.data.cover}
