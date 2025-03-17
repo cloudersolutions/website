@@ -1,3 +1,6 @@
+import typography from '@tailwindcss/typography';
+import forms from '@tailwindcss/forms';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./src/**/*.{astro,md,ts}'],
@@ -76,5 +79,5 @@ export default {
       })
     }
   },
-  plugins: [require('@tailwindcss/typography'), require('@tailwindcss/forms')]
+  plugins: [typography, forms]
 };

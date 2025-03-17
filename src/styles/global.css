@@ -1,7 +1,7 @@
 @import 'tailwindcss';
 @plugin "@tailwindcss/typography";
 @plugin "@tailwindcss/forms";
-@config "../../tailwind.config.js";
+@config "../../tailwind.config.mjs";
 
 @font-face {
   font-family: 'Plus Jakarta Sans';
