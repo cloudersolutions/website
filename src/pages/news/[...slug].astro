@@ -4,7 +4,6 @@ import ArrowRightIcon from 'lucide-astro/ArrowRight';
 import ArrowLeftIcon from 'lucide-astro/ArrowLeft';
 import { formatDate } from '@utils/date.ts';
 import ProseLayout from '@layouts/ProseLayout.astro';
-import Overline from '@components/Overline.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection('news', ({ data }) =>
@@ -41,19 +40,21 @@ const { Content } = await post.render();
     </section>
   </article>
   <footer class="not-prose">
-    <Overline title="More news" />
     <nav class="grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2 sm:gap-x-8 lg:gap-x-10">
       {
         previousPost && (
           <a
             href={`/news/${previousPost.slug}`}
-            class="group flex items-center gap-4 rounded border border-current/12 bg-white p-4 leading-6 transition hover:border-current/16 hover:text-current hover:shadow-xs dark:bg-neutral-900"
+            class="group flex flex-col items-start gap-2 rounded border border-current/12 bg-white p-4 text-left transition hover:border-current/16 hover:text-current hover:shadow-xs dark:bg-neutral-900"
           >
-            <ArrowLeftIcon
-              size={20}
-              class="flex-shrink-0 transition group-hover:-translate-x-0.5"
-            />
-            <span class="font-semibold">{previousPost.data.title}</span>
+            <div class="flex items-center gap-1 text-neutral-500">
+              <ArrowLeftIcon
+                size={14}
+                class="flex-shrink-0 transition group-hover:-translate-x-0.5"
+              />
+              <span class="text-sm leading-tight">Previous</span>
+            </div>
+            <p class="text-base font-semibold">{previousPost.data.title}</p>
           </a>
         )
       }
@@ -61,13 +62,16 @@ const { Content } = await post.render();
         nextPost && (
           <a
             href={`/news/${nextPost.slug}`}
-            class="group flex items-center gap-4 rounded border border-current/12 bg-white p-4 leading-6 transition hover:border-current/16 hover:text-current hover:shadow-xs md:col-start-2 dark:bg-neutral-900"
+            class="group flex flex-col items-end gap-2 rounded border border-current/12 bg-white p-4 text-right transition hover:border-current/16 hover:text-current hover:shadow-xs md:col-start-2 dark:bg-neutral-900"
           >
-            <span class="font-semibold">{nextPost.data.title}</span>
-            <ArrowRightIcon
-              size={20}
-              class="flex-shrink-0 transition group-hover:translate-x-0.5"
-            />
+            <div class="flex items-center gap-1 text-neutral-500">
+              <span class="text-sm leading-tight">Next</span>
+              <ArrowRightIcon
+                size={14}
+                class="flex-shrink-0 transition group-hover:translate-x-0.5"
+              />
+            </div>
+            <p class="text-base font-semibold">{nextPost.data.title}</p>
           </a>
         )
       }
