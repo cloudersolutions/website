@@ -29,6 +29,7 @@ content:
       - name: cover
         label: Cover image
         description: Please keep images under 1MB. Used in listing pages, search results and link previews. To display this image in your post content, you'll need to insert it separately in the editor.
+        required: true
         type: image
       - name: featured
         label: Featured

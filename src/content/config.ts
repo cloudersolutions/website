@@ -6,7 +6,7 @@ const news = defineCollection({
       title: z.string(),
       description: z.string(),
       date: z.coerce.date(),
-      cover: image().default('images/post-fallback.png'),
+      cover: image(),
       draft: z.boolean().optional(),
       featured: z.boolean().optional()
     })
