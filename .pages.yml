@@ -25,7 +25,6 @@ content:
       - name: date
         label: Date
         type: date
-        default: today
         required: true
       - name: cover
         label: Cover image
