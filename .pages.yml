@@ -19,6 +19,9 @@ content:
         label: Description
         type: text
         required: true
+        description: Used in listing pages, search results and link previews. Keep it brief and avoid line breaks.
+        options:
+          rows: 2
       - name: date
         label: Date
         type: date
@@ -99,6 +102,8 @@ content:
         description: Used in search results and link previews. Individual pages can override this with their own descriptions.
         type: text
         required: true
+        options:
+          rows: 2
       - name: social
         label: Social links
         type: object
