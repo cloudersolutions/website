@@ -11,6 +11,7 @@
     "lint": "prettier --check . && eslint ."
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.3.0",
     "@tailwindcss/vite": "^4.0.15",
     "astro": "^5.5.4",
     "lucide-astro": "^0.483.0",

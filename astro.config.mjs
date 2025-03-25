@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import sitemap from '@astrojs/sitemap';
 import yaml from '@rollup/plugin-yaml';
 import tailwindcss from '@tailwindcss/vite';
 
@@ -8,7 +9,7 @@ export default defineConfig({
   prefetch: {
     prefetchAll: true
   },
-  site: process.env.URL,
+  site: 'https://cloudersolutions.com',
   vite: {
     plugins: [yaml(), tailwindcss()]
   },
@@ -19,5 +20,6 @@ export default defineConfig({
   },
   experimental: {
     svg: true
-  }
+  },
+  integrations: [sitemap()]
 });
