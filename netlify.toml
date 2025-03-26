@@ -6,6 +6,12 @@ X-Content-Type-Options = "nosniff"
 X-XSS-Protection = "1; mode=block"
 
 [[redirects]]
+from = "https://fi.cloudersolutions.com/*"
+to = "https://cloudersolutions.com/:splat"
+status = 301
+force = true
+
+[[redirects]]
 from = "/our-solutions"
 to = "/product"
 status = 301
