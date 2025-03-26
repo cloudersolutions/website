@@ -1,12 +1,16 @@
 ---
-title: 'Press release: New Finnish Innovation Revolutionizes Buildings – Virtual Cabling Makes Properties Smart and Sustainable'
-description: The Finnish technology company Clouder launched a new intelligent cabling solution that connects all the building’s technical systems with virtual cables. Virtual cabling acts as the building’s digital infrastructure, enabling data-driven management of the entire property cost-effectively and environmentally friendly.
+title: New Finnish Innovation Revolutionizes Buildings – Virtual Cabling Makes
+  Properties Smart and Sustainable
+description: The Finnish technology company Clouder launched a new intelligent
+  cabling solution that connects all the building’s technical systems with
+  virtual cables. Virtual cabling acts as the building’s digital infrastructure,
+  enabling data-driven management of the entire property cost-effectively and
+  environmentally friendly.
 date: 2024-05-24
 cover: images/emma-jussi-labra.jpg
-draft: false
 featured: false
+draft: false
 ---
-
 The Finnish technology company Clouder launched a new intelligent cabling solution that connects all the building's technical systems with virtual cables. Virtual cabling acts as the building's digital infrastructure, enabling data-driven management of the entire property cost-effectively and environmentally friendly.
 
 ![People in laboratory](images/emma-jussi-labra.jpg)
