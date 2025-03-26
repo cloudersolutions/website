@@ -20,7 +20,7 @@
 }
 
 @theme {
-  --font-sans: 'Plus Jakarta Sans', 'sans-serif';
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
   --font-sans--font-feature-settings: 'case';
   --aspect-image: 3/2;
   --aspect-wide: 2/1;
@@ -42,30 +42,28 @@
   --color-neutral-950: oklch(13.44% 0 0);
 }
 
-@layer utilities {
-  .container {
-    @media (width >= 96rem) {
-      max-width: 80rem;
-    }
-    margin-inline: auto;
-    padding-inline: 1.5rem;
+@utility container {
+  @media (width >= 96rem) {
+    max-width: 80rem;
   }
-
-  .container-narrow {
-    width: 100%;
-    @media (width >= 40rem) {
-      max-width: 40rem;
-    }
-    @media (width >= 48rem) {
-      max-width: 48rem;
-    }
-    margin-inline: auto;
-    padding-inline: 1.5rem;
-  }
+  margin-inline: auto;
+  padding-inline: 1.5rem;
 }
 
-/* Force ring color since tailwind doesn't provide a better way of customizing it */
+@utility container-narrow {
+  width: 100%;
+  @media (width >= 40rem) {
+    max-width: 40rem;
+  }
+  @media (width >= 48rem) {
+    max-width: 48rem;
+  }
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
 @layer base {
+  /* Force ring color since tailwind doesn't provide a better way of customizing it */
   :root {
     --ring: #6677cc;
   }
@@ -85,34 +83,28 @@
     outline-offset: 1px !important;
     transition: none !important; /* prevents flash of currentColor for links */
   }
-}
 
-/* Mitigate FOUT */
-html,
-body {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-}
+  /* Nicer text wrapping */
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    overflow-wrap: break-word;
+  }
 
-/* Nicer text wrapping */
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  overflow-wrap: break-word;
-}
+  p {
+    text-wrap: pretty;
+  }
 
-p {
-  text-wrap: pretty;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  text-wrap: balance;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-wrap: balance;
+  }
 }
