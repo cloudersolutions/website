@@ -6,8 +6,8 @@ description: For the owner saving energy is an important mission considering
   provided significant energy savings and improvement in indoor conditions from
   day one for a prestigious art nouveau building.
 date: 2025-03-26
+category: case-example
 cover: images/kalevankatu-9-exterior.jpg
-featured: true
 draft: false
 ---
 Kalevankatu 9 is a prestigious art nouveau building, partially protected by The Finnish Heritage Agency (SR-1), in Helsinki. For the owner, Conficap, saving energy is an important mission considering both sustainability and costs. Clouder’s integration and data platform provided significant energy savings and improvement in indoor conditions from day one and will be expanded in the building within future building tech renovations.

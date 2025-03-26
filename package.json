@@ -14,6 +14,7 @@
     "@astrojs/sitemap": "^3.3.0",
     "@tailwindcss/vite": "^4.0.17",
     "astro": "^5.5.5",
+    "change-case": "^5.4.4",
     "lucide-astro": "^0.484.0",
     "luxon": "^3.6.0",
     "posthog-js": "^1.232.7",

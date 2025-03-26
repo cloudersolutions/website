@@ -18,12 +18,10 @@ import ClouderIllustration from '@assets/how-clouder-works.svg';
 import uiLightImage from '@assets/ui-light.png';
 import uiDarkImage from '@assets/ui-dark.png';
 
-const posts = await getCollection(
-  'news',
-  ({ data }) => (!import.meta.env.PROD || !data.draft) && data.featured === true
-);
+const posts = await getCollection('news', ({ data }) => !import.meta.env.PROD || !data.draft);
 
-const featuredPosts = posts
+const caseExamplePosts = posts
+  .filter((post) => post.data.category === 'case-example')
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, 2);
 ---
@@ -398,19 +396,19 @@ const featuredPosts = posts
     </div>
   </section>
   {
-    featuredPosts.length > 0 && (
+    caseExamplePosts.length > 0 && (
       <section class="container py-8 sm:py-12 lg:py-16">
         <Overline title="Cases examples" />
         <div
           class:list={twMerge(
             'grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-10',
-            featuredPosts.length === 1 && 'lg:grid-cols-2'
+            caseExamplePosts.length === 1 && 'lg:grid-cols-2'
           )}
         >
           <h2 class="text-2xl font-semibold text-neutral-900 md:col-span-2 md:text-3xl lg:col-span-1 dark:text-neutral-100">
             Learn how our customers are using Clouder
           </h2>
-          {featuredPosts.map((post) => (
+          {caseExamplePosts.map((post) => (
             <article class="group relative rounded bg-white transition hover:shadow-xs md:mt-1.5 dark:bg-neutral-900">
               <a href={`/news/${post.slug}`} class="flex flex-col items-start rounded">
                 <div class="relative overflow-clip rounded-t-sm">

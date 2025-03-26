@@ -9,7 +9,7 @@ content:
     filename: '{primary}.md'
     subfolders: false
     view:
-      fields: [cover, title, date, draft, featured]
+      fields: [cover, title, date, draft, category]
     fields:
       - name: title
         label: Title
@@ -26,16 +26,20 @@ content:
         label: Date
         type: date
         required: true
+      - name: category
+        label: Category
+        type: select
+        description: Two latest "case example" posts are shown on the home page.
+        required: true
+        options:
+          multiple: false
+          creatable: false
+          values: [case-example, company-news, general, press-release, product-updates]
       - name: cover
         label: Cover image
         description: Please keep images under 2 MB. Used in listing pages, search results and link previews. To display this image in your post content, you'll need to insert it separately in the editor.
         required: true
         type: image
-      - name: featured
-        label: Featured
-        type: boolean
-        description: Two latest featured posts are shown on the home page. If no posts are featured, the section will be hidden.
-        default: false
       - name: draft
         label: Draft
         type: boolean
