@@ -165,7 +165,7 @@ const description =
               size={14}
               class="mt-1 flex-shrink-0 stroke-indigo-500 stroke-3 dark:stroke-indigo-400"
             />
-            Additional security with data access rules, end-to-end encryption, and password management.
+            Additional security with accurate audit trail, end-to-end encryption, and password management.
           </li>
         </ul>
         <a
@@ -403,12 +403,12 @@ const description =
         </h4>
         <div class="space-y-3 text-sm">
           <p>
-            Fine-grained data access rules, end-to-end encryption and secure cloude storage of
-            building data.
+            Fine-grained data access rules, accurate audit trail, end-to-end encryption and secure
+            cloude storage of building data.
           </p>
           <p>
             Robust security in building automation with centralized password management. No more
-            access to systems with default passwords.
+            default passwords known by everyone.
           </p>
           <p class="text-[13px] text-neutral-500">
             <strong class="font-medium">Availability:</strong> Platform and Portfolio plans
@@ -457,7 +457,7 @@ const description =
         </div>
         <button
           id="toggleBtn"
-          class="h-8 flex-shrink-0 cursor-pointer rounded border border-current/25 px-3 text-xs font-medium text-current/65 transition hover:bg-current/5"
+          class="inline-flex h-8 flex-shrink-0 cursor-pointer items-center rounded border border-current/25 px-3 text-xs font-medium text-current/65 transition hover:bg-current/5"
         >
           Expand all
         </button>
@@ -504,15 +504,15 @@ const description =
             What are the annual costs? Are there any license fees?
           </summary>
           <p class="mb-4">
-            Both <strong class="font-semibold">Platform</strong> and <strong class="font-semibold"
-              >Portfolio</strong
-            > plans consists of a one-time setup fee and a monthly subscription. The setup fee is determined
-            by your building's size and complexity.
+            Both <strong class="font-semibold">Connect</strong> and <strong class="font-semibold"
+              >Platform</strong
+            > plans consist of a one-time setup fee and a monthly subscription. The setup fee is determined
+            by the chosen plan and your building’s size and complexity.
           </p>
           <p class="mb-4">
             The <strong class="font-semibold">Portfolio</strong> plan offers custom pricing that’s tailored
-            to your specific requirements. The price is based on number of buildings, data volume, service
-            scope, and the features required.
+            to your specific requirements. The price is based on the number of buildings, data volume,
+            service scope, and the features required.
           </p>
           <p>We don't charge any extra license fees for any plans.</p>
         </details>
@@ -591,7 +591,7 @@ const description =
   const details = document.querySelectorAll('details');
   let isExpanded = false;
 
-  btn.addEventListener('click', () => {
+  btn?.addEventListener('click', () => {
     isExpanded = !isExpanded;
     details.forEach((d) => d.toggleAttribute('open', isExpanded));
     btn.textContent = isExpanded ? 'Collapse all' : 'Expand all';
