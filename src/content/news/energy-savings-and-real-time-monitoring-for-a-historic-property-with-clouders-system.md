@@ -28,11 +28,11 @@ We implemented a local LoRa indoor network, without any extra monthly costs, alo
 
 To solve this issue two controllable dampers were installed in the ventilation system and added wireless environmental sensors to the saunas. These sensors transmit motion detection, CO2,  and humidity data to the building automation system. When motion is detected, ventilation is activated for that specific sauna and automatically shuts off one hour after users leave.
 
-![](images/kalevankatu-9-interior.jpg)
+![Historic building stairwell](images/kalevankatu-9-interior.jpg)
 
-> _The best part is that Clouder supports all connectivity modes, so we did not have to add useless low voltage cabling. In a protected historic building we can’t add cabling to the corridors or break walls and adding new systems with low voltage cabling would be almost impossible or at least extremely difficult and expensive, requiring a lot of planning._
+> The best part is that Clouder supports all connectivity modes, so we did not have to add useless low voltage cabling. In a protected historic building we can’t add cabling to the corridors or break walls and adding new systems with low voltage cabling would be almost impossible or at least extremely difficult and expensive, requiring a lot of planning.
 > 
-> _Jani Pulkkinen, Construction Manager, Conficap_
+> Jani Pulkkinen, Construction Manager, Conficap
 
 ## Implementation
 
@@ -44,6 +44,6 @@ The introduction of Clouder has significantly reduced unnecessary use of the ven
 
 In addition, the system gave the client full visibility into all building automation data for the first time through the Clouder Dashboard. The owner can, for example, review trend data from each monitored point, and the ability to feed real data directly into the billing process via Clouder improves the property’s profitability.
 
-> _Clouder’s system is better than I could imagine. To think that we’ve had two machines going on 16 hours per day and now we’re able to save so much energy being able to control them in real time by the usage of the space. I bet our energy savings are more than 50% with this._
+> Clouder’s system is better than I could imagine. To think that we’ve had two machines going on 16 hours per day and now we’re able to save so much energy being able to control them in real time by the usage of the space. I bet our energy savings are more than 50% with this.
 > 
-> _Jani Pulkkkinen, Construction Manager, Conficap_
+> Jani Pulkkinen, Construction Manager, Conficap
