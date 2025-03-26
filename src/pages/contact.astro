@@ -231,9 +231,9 @@ const description = 'Get in touch with our sales team or book a demo.';
   <div class="h-8 sm:h-12 lg:h-16"></div>
 </MainLayout>
 
-<script is:inline>
+<script>
   window.addEventListener('pageshow', (event) => {
-    const navEntry = performance.getEntriesByType('navigation')[0];
+    const navEntry = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
     if (!navEntry) return;
     const navigationType = navEntry.type;
     if (event.persisted || navigationType === 'back_forward') {
