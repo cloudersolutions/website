@@ -12,15 +12,15 @@ draft: false
 ---
 Kalevankatu 9 is a prestigious art nouveau building, partially protected by The Finnish Heritage Agency (SR-1), in Helsinki. For the owner, Conficap, saving energy is an important mission considering both sustainability and costs. Clouder’s integration and data platform provided significant energy savings and improvement in indoor conditions from day one and will be expanded in the building within future building tech renovations.
 
-![](images/kalevankatu-9-exterior.jpg)
+![Historic building exterior](images/kalevankatu-9-exterior.jpg)
 
 ## Challenge
 
 The client wanted to implement room-specific environmental monitoring in their historic property. Their goal was to reduce energy consumption, especially in the sauna facilities, by shifting from a time-based ventilation schedule to demand-based ventilation. Beyond saving energy, improving indoor conditions was also a priority. For instance, if the ventilation system switches off in the evening while the sauna remains in use until morning, conditions will not be ideal. Since the building is protected, installing new cabling would be both challenging and expensive.
 
-> _We’ve been struggling with these problems for a long time and everyone seems to come up with old school solutions and promises they can’t keep. Clouder was the first one to bring modern solutions that worked. Everything happened so fast and Clouder’s team reacted to our inquiries right away. We even get the data to our own spreadsheet just with the push of a button._
+> We’ve been struggling with these problems for a long time and everyone seems to come up with old school solutions and promises they can’t keep. Clouder was the first one to bring modern solutions that worked. Everything happened so fast and Clouder’s team reacted to our inquiries right away. We even get the data to our own spreadsheet just with the push of a button.
 > 
-> _Jani Pulkkinen, Construction Manager, Conficap_
+> Jani Pulkkinen, Construction Manager, Conficap
 
 ## Solution
 
