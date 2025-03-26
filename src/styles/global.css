@@ -11,6 +11,14 @@
   src: url(/PlusJakartaSans[wght].woff2) format('woff2');
 }
 
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: italic;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url(/PlusJakartaSans-Italic[wght].woff2) format('woff2');
+}
+
 @theme {
   --font-sans: 'Plus Jakarta Sans', 'sans-serif';
   --font-sans--font-feature-settings: 'case';
