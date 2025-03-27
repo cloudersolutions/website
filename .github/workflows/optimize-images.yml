@@ -1,0 +1,49 @@
+name: Optimize New Images
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  optimize-images:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Install TinyPNG CLI
+        run: npm install -g tinypng-cli
+
+      - name: Get New and Modified Images
+        id: new-images
+        run: |
+          git diff --name-only HEAD^ | grep -E '\.(png|jpe?g)$' > new_images.txt || true
+          echo "New images detected:"
+          cat new_images.txt || echo "No new images found."
+
+      - name: Optimize Images
+        run: |
+          if [ -s new_images.txt ]; then
+            while IFS= read -r image; do
+              echo "Optimizing $image..."
+              tinypng --key ${{ secrets.TINYPNG_API_KEY }} "$image" -o "$image"
+            done < new_images.txt
+          else
+            echo "No new images to optimize."
+          fi
+
+      - name: Commit and Push Changes
+        if: success()
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "🔧 Optimized new images [skip ci]" || exit 0
+          git push
