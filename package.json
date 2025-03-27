@@ -8,7 +8,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "format": "prettier --write .",
-    "lint": "prettier --check . && eslint ."
+    "lint": "prettier --check . && eslint .",
+    "optimize-new-images": "git diff --name-only HEAD^ | grep -E '\\.(png|jpe?g)$' | xargs -I {} tinypng --key $TINYPNG_API_KEY '{}' -o '{}' || echo 'No new images to optimize'"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.3.0",
@@ -35,6 +36,7 @@
     "eslint-plugin-astro": "^1.3.1",
     "prettier": "^3.5.3",
     "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-tailwindcss": "^0.6.11"
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "tinypng-cli": "^0.0.7"
   }
 }
