@@ -1,3 +1,6 @@
+permissions:
+  contents: write
+
 name: Optimize New Images
 
 on:
