@@ -21,6 +21,13 @@ jobs:
         with:
           fetch-depth: 2
 
+      - name: Check TinyPNG API Key
+        run: |
+          if [ -z "${{ secrets.TINYPNG_API_KEY }}" ]; then
+            echo "Error: TINYPNG_API_KEY is not set"
+            exit 1
+          fi
+
       - name: Install TinyPNG CLI
         run: npm install -g tinypng-cli
 
@@ -32,7 +39,7 @@ jobs:
           echo "New images detected:"
           cat new_images.txt || echo "No new images found."
           # Set output for conditionally skipping push
-          echo "::set-output name=images-to-optimize::$(cat new_images.txt)"
+          echo "images-to-optimize=$(cat new_images.txt)" >> $GITHUB_OUTPUT
 
       - name: Optimize Images
         if: steps.new-images.outputs.images-to-optimize != ''
@@ -40,7 +47,12 @@ jobs:
           if [ -s new_images.txt ]; then
             while IFS= read -r image; do
               echo "Optimizing $image..."
-              tinypng --key ${{ secrets.TINYPNG_API_KEY }} "$image" -o "$image"
+              if tinypng --key ${{ secrets.TINYPNG_API_KEY }} "$image" -o "$image"; then
+                echo "✅ Successfully optimized $image"
+              else
+                echo "❌ Failed to optimize $image"
+                exit 1
+              fi
             done < new_images.txt
           else
             echo "No new images to optimize."
