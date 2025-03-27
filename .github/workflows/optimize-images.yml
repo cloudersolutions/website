@@ -24,11 +24,15 @@ jobs:
       - name: Get New and Modified Images
         id: new-images
         run: |
+          # Get the list of new or modified image files
           git diff --name-only HEAD^ | grep -E '\.(png|jpe?g)$' > new_images.txt || true
           echo "New images detected:"
           cat new_images.txt || echo "No new images found."
+          # Set output for conditionally skipping push
+          echo "::set-output name=images-to-optimize::$(cat new_images.txt)"
 
       - name: Optimize Images
+        if: steps.new-images.outputs.images-to-optimize != ''
         run: |
           if [ -s new_images.txt ]; then
             while IFS= read -r image; do
@@ -40,10 +44,11 @@ jobs:
           fi
 
       - name: Commit and Push Changes
-        if: success()
+        if: steps.new-images.outputs.images-to-optimize != ''
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add .
           git commit -m "🔧 Optimized new images [skip ci]" || exit 0
-          git push https://github.com/${{ github.repository }} HEAD:main
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+          git push origin HEAD:main
