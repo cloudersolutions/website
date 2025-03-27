@@ -1,16 +1,12 @@
-# yaml-language-server: $schema=none
 title: Clouder
-description: Clouder enables net-zero digital buildings by fixing building tech connectivity.
+description: Clouder enables net-zero digital buildings by fixing building tech
+  connectivity.
 social:
-  - key: twitter
-    title: X (Twitter)
-    href: https://x.com/Clouder_tech
-  - key: linkedin
-    title: LinkedIn
+  - title: LinkedIn
     href: https://www.linkedin.com/company/clouder/about/
-  - key: instagram
-    title: Instagram
+  - title: X (Twitter)
+    href: https://x.com/Clouder_tech
+  - title: Instagram
     href: http://instagram.com/cloudersolutions
-  - key: youtube
-    title: YouTube
+  - title: YouTube
     href: https://www.youtube.com/@cloudersolutions
