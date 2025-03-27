@@ -38,7 +38,8 @@ export default {
               content: '"— "'
             },
             img: {
-              borderRadius: '0.25rem'
+              borderRadius: '0.25rem',
+              backgroundColor: 'color-mix(in srgb, currentColor 10%, transparent)'
             }
           }
         },
