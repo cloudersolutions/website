@@ -94,9 +94,20 @@ Näiden evästeiden avulla voimme mitata kohdennuskampanjan tehokkuutta sekä ym
 
 ## 5. Kolmannen osapuolen sovellukset
 
-### Google Analytics
+Käytämme kolmannen osapuolen palveluita verkkosivustomme ja hallintapaneelimme toiminnan tukemiseen, säilyttäen käyttäjien yksityisyyden.
 
-Käytämme Google Analyticsia ensisijaisesti mittaamaan, miten käyttäjät ovat vuorovaikutuksessa verkkosivustomme kanssa. Google Analytics käyttää erilaisia evästeitä tuottaakseen tietoja, kuten aika, paikka ja käyntitiheys sivustollamme. Google käyttää näitä tietoja arvioidakseen, miten käytät sivustoamme, tuottaakseen raportteja verkkotoiminnasta ja suorittaakseen muita verkkosivustoomme liittyviä toimintoja. Voit lukea lisää näistä evästeistä ja siitä, miten Google suojaa niitä. täältä.
+### Analytiikka
+
+Käytämme PostHogia käyttäjien vuorovaikutusten mittaamiseen sekä verkkosivustollamme että hallintapaneelissamme. Olemme määrittäneet PostHogin käyttämään evästeetöntä seurantaa, mikä tarkoittaa, ettei se tallenna pysyviä tunnisteita tai seuraa käyttäjiä istuntojen välillä evästeiden avulla. Keräämämme tiedot sisältävä:
+
+- Sivunäytöt ja vuorovaikutukset
+- Sivulla vietetty ajan
+- Yleiset laite- ja selaintiedot
+- Arvioitu sijainti (perustuu IP-osoitteeseen, mutta sitä ei tallenneta)
+
+Hallintapaneeliin kirjautuneille käyttäjille määritämme lisäksi yksilöllisen, ei-henkilökohtaisen tunnisteen, jonka avulla voimme ymmärtää tuotteen käyttöä istuntojen välillä. Tämä auttaa meitä parantamaan palveluamme ja käyttäjäkokemusta.
+
+Kaikki analytiikkatiedot tallennetaan EU:n alueella.
 
 ### Muut sovellukset
 
@@ -104,7 +115,6 @@ Saatamme myös tallentaa tietojasi muihin kolmansien osapuolten palveluihin täs
 
 - Amazon Web Services (käyttäjän todennus, tietojen tallennus)
 - Azure (käyttäjän todennus)
-- PostHog (analytiikka)
 - Sentry (virheiden seuranta ja valvonta)
 - Honeycomb (seuranta)
 

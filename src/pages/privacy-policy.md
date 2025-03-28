@@ -93,9 +93,20 @@ These cookies allow us to measure the effectiveness of a targeting campaign as w
 
 ## 5. Third-party applications
 
-### Google Analytics
+We use third-party services to help us operate our website and dashboard while maintaining user privacy.
 
-We primarily use Google Analytics to measure how users interact with our website. Google Analytics deploys various cookies in order to generate information such as the time, place, and frequency of your visits to our site. Google uses this information to evaluate how you use our site, provide reports on web activity, and perform other functions related to our website. You can read more about these cookies and how Google safeguard them here.
+### Analytics
+
+We use PostHog to measure interactions on both our website and dashboard. We have configured PostHog to use cookieless tracking, meaning it does not store persistent identifiers or track users across sessions via cookies. The data we collect includes:
+
+- Page views and interactions
+- Time spent on pages
+- General device and browser information
+- Approximate location (based on IP address, but not stored)
+
+For logged-in users of our dashboard, we additionally assign a unique, non-personal identifier to understand product usage patterns across sessions. This helps us improve our service and user experience.
+
+Analytics data is stored in the EU.
 
 ### Other applications
 
@@ -103,7 +114,6 @@ We may also store your information in other third party services for the purpose
 
 - Amazon Web Services (user authentication, data storage)
 - Azure (user authentication)
-- PostHog (analytics)
 - Sentry (error tracking and monitoring)
 - Honeycomb (monitoring)
 
