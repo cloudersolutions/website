@@ -18,7 +18,7 @@
     "change-case": "^5.4.4",
     "lucide-astro": "^0.484.0",
     "luxon": "^3.6.0",
-    "posthog-js": "^1.232.7",
+    "posthog-js": "^1.234.1",
     "tailwind-merge": "^3.0.2",
     "tailwindcss": "^4.0.17"
   },
