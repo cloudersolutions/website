@@ -15,7 +15,7 @@ import MainLayout from '@layouts/MainLayout.astro';
 
 const title = 'Product';
 const description =
-  'Increase asset value, reduce operational costs, and improve data-led decision making. Ideal for all kinds of commercial buildings, both new and existing.';
+  'Increase asset value, reduce operational costs, and improve data-led decision making. Ideal for all commercial buildings.';
 ---
 
 <MainLayout title={title} description={description} headerClass="bg-white dark:bg-neutral-900">
@@ -68,18 +68,20 @@ const description =
           >
         </p>
         <p class="-mx-8 my-6 border-y border-neutral-200 px-8 py-6 dark:border-neutral-800">
-          Get a complete overview of your building automation system and access your building data
-          straight from the browser.
+          Get a complete overview of your building automation system and reduce energy consumption.
         </p>
         <ul class="mb-8 space-y-2 text-sm *:flex *:gap-2">
           <li>
             <CheckIcon size={14} class="mt-1 flex-shrink-0 stroke-current/60 stroke-3" />
-            Overview of all systems and devices currently connected to the building automation system.
+            Overview of all systems and devices connected to the building automation system.
           </li>
           <li>
             <CheckIcon size={14} class="mt-1 flex-shrink-0 stroke-current/60 stroke-3" />
-            Analyze building data in Clouder&nbsp;Dashboard to identify inefficiencies and optimization
-            opportunities.
+            Detect reasons for excess energy consumption and make your building more energy efficient.
+          </li>
+          <li>
+            <CheckIcon size={14} class="mt-1 flex-shrink-0 stroke-current/60 stroke-3" />
+            Utilize accurate building data in monitoring, reporting, and other applications.
           </li>
           <li>
             <CheckIcon size={14} class="mt-1 flex-shrink-0 stroke-current/60 stroke-3" />
@@ -103,8 +105,8 @@ const description =
           <span class="text-neutral-500">Custom pricing</span>
         </p>
         <p class="-mx-8 my-6 border-y border-neutral-200 px-8 py-6 dark:border-neutral-800">
-          Transform your building into an energy efficient smart building. Ideal for all kinds of
-          buildings, both new and existing.
+          Transform your building into a net-zero emission building, improve operation efficiency,
+          and enhance building security.
         </p>
         <ul class="mb-8 space-y-2 text-sm *:flex *:gap-2">
           <li>
@@ -112,7 +114,46 @@ const description =
               size={14}
               class="mt-1 flex-shrink-0 stroke-indigo-500 stroke-3 dark:stroke-indigo-400"
             />
-            Seamlessly integrate all systems and devices regardless of vendor or protocol.
+            Seamless physical integration of all systems, subsystems, and devices giving you a complete
+            overview and improved control.
+          </li>
+          <li>
+            <CheckIcon
+              size={14}
+              class="mt-1 flex-shrink-0 stroke-indigo-500 stroke-3 dark:stroke-indigo-400"
+            />
+            Reduce the need for traditional cabling which streamlines work phases, installation duration,
+            and thereby lowers construction costs.
+          </li>
+          <li>
+            <CheckIcon
+              size={14}
+              class="mt-1 flex-shrink-0 stroke-indigo-500 stroke-3 dark:stroke-indigo-400"
+            />
+            Detect reasons for excess energy consumption to make your building more energy efficient.
+          </li>
+          <li>
+            <CheckIcon
+              size={14}
+              class="mt-1 flex-shrink-0 stroke-indigo-500 stroke-3 dark:stroke-indigo-400"
+            />
+            Utilize accurate real-time building data in monitoring, device control, fault detection and
+            diagnostics, reporting, and other applications.
+          </li>
+          <li>
+            <CheckIcon
+              size={14}
+              class="mt-1 flex-shrink-0 stroke-indigo-500 stroke-3 dark:stroke-indigo-400"
+            />
+            Integrate building data with smart office apps or property management software via our API.
+          </li>
+          <li>
+            <CheckIcon
+              size={14}
+              class="mt-1 flex-shrink-0 stroke-indigo-500 stroke-3 dark:stroke-indigo-400"
+            />
+            Enhance building security with accurate audit trail, end-to-end encryption, and password
+            management.
           </li>
           <li>
             <CheckIcon
@@ -120,48 +161,6 @@ const description =
               class="mt-1 flex-shrink-0 stroke-indigo-500 stroke-3 dark:stroke-indigo-400"
             />
             Easy to expand with minimal construction work.
-          </li>
-          <li>
-            <CheckIcon
-              size={14}
-              class="mt-1 flex-shrink-0 stroke-indigo-500 stroke-3 dark:stroke-indigo-400"
-            />
-            Analyze real-time data on energy consumption, indoor climate, and more in Clouder&nbsp;Dashboard.
-          </li>
-          <li>
-            <CheckIcon
-              size={14}
-              class="mt-1 flex-shrink-0 stroke-indigo-500 stroke-3 dark:stroke-indigo-400"
-            />
-            Fault detection and diagnostics with targeted recommendations.
-          </li>
-          <li>
-            <CheckIcon
-              size={14}
-              class="mt-1 flex-shrink-0 stroke-indigo-500 stroke-3 dark:stroke-indigo-400"
-            />
-            Sophisticated device control without disrupting the existing building automation system.
-          </li>
-          <li>
-            <CheckIcon
-              size={14}
-              class="mt-1 flex-shrink-0 stroke-indigo-500 stroke-3 dark:stroke-indigo-400"
-            />
-            Real-time API for smart office apps or property management software.
-          </li>
-          <li>
-            <CheckIcon
-              size={14}
-              class="mt-1 flex-shrink-0 stroke-indigo-500 stroke-3 dark:stroke-indigo-400"
-            />
-            Export building data for sustainability reporting.
-          </li>
-          <li>
-            <CheckIcon
-              size={14}
-              class="mt-1 flex-shrink-0 stroke-indigo-500 stroke-3 dark:stroke-indigo-400"
-            />
-            Additional security with accurate audit trail, end-to-end encryption, and password management.
           </li>
         </ul>
         <a
@@ -179,15 +178,10 @@ const description =
         </h2>
         <p class="text-neutral-500">Custom pricing</p>
         <p class="-mx-8 my-6 border-y border-neutral-200 px-8 py-6 dark:border-neutral-800">
-          Maximize efficiency and sustainability across your entire building portfolio. Perfect for
-          real estate funds.
+          Maximize efficiency and sustainability across your entire building portfolio when Clouder
+          is integrated to all of them.
         </p>
         <ul class="mb-8 space-y-2 text-sm *:flex *:gap-2">
-          <li class="font-medium text-neutral-500">Everything in Platform, plus:</li>
-          <li>
-            <CheckIcon size={14} class="mt-1 flex-shrink-0 stroke-3" />
-            Portfolio management in Clouder&nbsp;Dashboard.
-          </li>
           <li>
             <CheckIcon size={14} class="mt-1 flex-shrink-0 stroke-3" />
             Portfolio-wide energy optimization and sustainability tracking.
@@ -239,8 +233,8 @@ const description =
         </h4>
         <div class="space-y-3 text-sm">
           <p>
-            Seamlessly integrate all building technology systems and devices, regardless of vendor
-            or protocol.
+            Seamless integration of all building technology systems, subsystems, and devices,
+            regardless of vendor or protocol.
           </p>
           <p>
             Add new or external systems and devices with minimal construction work by using Edge
