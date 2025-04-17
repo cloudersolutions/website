@@ -2,15 +2,17 @@
 import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
 import { twMerge } from 'tailwind-merge';
-import HousePlugIcon from 'lucide-astro/HousePlug';
-import ChartNoAxesColumnIcon from 'lucide-astro/ChartNoAxesColumn';
-import HardHatIcon from 'lucide-astro/HardHat';
 import BuildingIcon from 'lucide-astro/Building';
+import ChartNoAxesColumnIcon from 'lucide-astro/ChartNoAxesColumn';
 import EuroIcon from 'lucide-astro/Euro';
-import ShieldCheckIcon from 'lucide-astro/ShieldCheck';
+import HardHatIcon from 'lucide-astro/HardHat';
+import HousePlugIcon from 'lucide-astro/HousePlug';
+import LayersIcon from 'lucide-astro/Layers2';
 import LeafIcon from 'lucide-astro/Leaf';
 import PlayIcon from 'lucide-astro/Play';
+import ShieldCheckIcon from 'lucide-astro/ShieldCheck';
 import site from '@data/site.yml';
+import ImageComparisonSlider from '@components/ImageComparisonSlider.astro';
 import Overline from '@components/Overline.astro';
 import Ping from '@components/Ping.astro';
 import MainLayout from '@layouts/MainLayout.astro';
@@ -170,6 +172,27 @@ const caseExamplePosts = posts
     </div>
   </section>
   <section class="container py-8 sm:py-12 lg:py-16">
+    <Overline title="Solution" />
+    <div class="mx-auto max-w-prose text-center">
+      <div
+        class="mx-auto mt-16 mb-14 w-min rounded-full bg-gradient-to-br from-slate-400/10 to-slate-400/20 p-6 shadow-2xs shadow-slate-400/20 outline-16 outline-slate-400/5"
+      >
+        <LayersIcon class="flex-shrink-0 stroke-slate-600 dark:stroke-slate-500" />
+      </div>
+      <h2 class="my-4 text-3xl font-semibold text-neutral-900 md:text-4xl dark:text-neutral-100">
+        Rethinking integration
+      </h2>
+      <p class="text-lg">
+        Unlike traditional setups that require managing multiple cloud solutions, Clouder provides a
+        single, unified platform. Our virtual cabling solution handles the heavy lifting on-site and
+        the data can be accessed from the cloud, letting you focus on what matters.
+      </p>
+    </div>
+    <div class="mt-12">
+      <ImageComparisonSlider firstImage={uiLightImage} secondImage={uiLightImage} />
+    </div>
+  </section>
+  <section class="container py-8 sm:py-12 lg:py-16">
     <Overline title="Product" />
     <h2
       class="mb-8 text-3xl font-semibold text-neutral-900 md:text-4xl lg:mb-12 dark:text-neutral-100"
@@ -217,10 +240,10 @@ const caseExamplePosts = posts
           </h3>
         </div>
         <p>
-          Edge Connector (EC) devices act as connection points for field devices and systems,
-          transmitting data to the Virtual Cabling Engine through either wireless or wired IP
-          networks using end-to-end encryption. Edge Connectors operate similarly to distributed I/O
-          systems and significantly reduce the need for traditional cabling.
+          Edge Connector (EC) devices act as connection points for systems and devices, transmitting
+          data to the Virtual Cabling Engine through either wireless or wired IP networks using
+          end-to-end encryption. Edge Connectors operate similarly to distributed I/O systems and
+          significantly reduce the need for traditional cabling.
         </p>
       </div>
       <div class="xl:col-start-4 xl:row-start-1">
@@ -231,7 +254,7 @@ const caseExamplePosts = posts
         <p>
           All system and device data is securely stored in the cloud, where it can be accessed in
           real-time through the Clouder Dashboard or via our API. This centralized approach allows
-          you to seamlessly monitor and analyze data from all your systems, subsystems, and devices.
+          you to seamlessly monitor and analyze data from all your systems and devices.
         </p>
       </div>
       <div class="xl:col-start-4 xl:row-start-2">
@@ -242,10 +265,10 @@ const caseExamplePosts = posts
           </h3>
         </div>
         <p class="mb-4">
-          The Virtual Cabling Engine (VCE) device connects to the BMS center, storing virtual
-          cabling information and consolidating data from Edge Connectors. It facilitates a much
-          more advanced level of integration between systems and devices compared to traditional
-          methods.
+          The Virtual Cabling Engine (VCE) integrates with building technology systems on a more
+          advanced level compared to traditional setups. It stores virtual cabling information,
+          consolidates data from Edge Connectors and handles protocol conversions on-site. The data
+          is then securely transmitted to the cloud.
         </p>
         <a
           href="/product"
