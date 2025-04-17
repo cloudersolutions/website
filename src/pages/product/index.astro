@@ -1,13 +1,14 @@
 ---
-import CheckIcon from 'lucide-astro/Check';
 import BlocksIcon from 'lucide-astro/Blocks';
 import BuildingIcon from 'lucide-astro/Building';
-import LaptopIcon from 'lucide-astro/Laptop';
-import ShieldCheckIcon from 'lucide-astro/ShieldCheck';
-import BoltIcon from 'lucide-astro/Bolt';
-import DatabaseIcon from 'lucide-astro/Database';
-import WrenchIcon from 'lucide-astro/Wrench';
+import CheckIcon from 'lucide-astro/Check';
 import ChevronsLeftRightEllipsisIcon from 'lucide-astro/CodeSquare';
+import DatabaseIcon from 'lucide-astro/Database';
+import LaptopIcon from 'lucide-astro/Laptop';
+import OcatagonAlertIcon from 'lucide-astro/OctagonAlert';
+import SettingsIcon from 'lucide-astro/Settings';
+import ShieldCheckIcon from 'lucide-astro/ShieldCheck';
+import WrenchIcon from 'lucide-astro/Wrench';
 import navigation from '@data/navigation.yml';
 import { formatPrice } from '@utils/format';
 import Overline from '@components/Overline.astro';
@@ -218,215 +219,211 @@ const description =
       <div class="col-span-full mb-4 space-y-4 lg:col-span-1 lg:row-span-4">
         <h2 class="text-2xl font-semibold md:text-3xl">Feature overview and availability</h2>
         <p>
-          Each Clouder plan comes with a range of features and capabilities that enable efficient
-          building management.
+          Clouder comes with a range of features and capabilities that enable efficient building
+          management.
         </p>
       </div>
       <div
-        class="rounded border border-neutral-200 bg-white p-6 pt-5 lg:mt-1.5 dark:border-neutral-800 dark:bg-neutral-900"
+        class="space-y-3 rounded-md border border-neutral-200 bg-white p-6 lg:mt-1.5 dark:border-neutral-800 dark:bg-neutral-900"
       >
-        <h4
-          class="mb-4 flex items-center gap-2 text-lg font-semibold text-neutral-900 dark:text-neutral-100"
-        >
-          <BlocksIcon size={20} class="flex-shrink-0 stroke-indigo-500 dark:stroke-indigo-400" />
+        <div class="flex size-10 rounded bg-indigo-400/10">
+          <BlocksIcon
+            size={20}
+            class="m-auto flex-shrink-0 stroke-indigo-500 dark:stroke-indigo-400"
+          />
+        </div>
+        <h4 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100">
           Integration platform
         </h4>
-        <div class="space-y-3 text-sm">
-          <p>
-            Seamless integration of all building technology systems, subsystems, and devices,
-            regardless of vendor or protocol.
-          </p>
-          <p>
-            Add new or external systems and devices with minimal construction work by using Edge
-            Connectors.
-          </p>
-          <p>
-            Protocol conversions to enable communication between otherwise hard-to-integrate systems
-            that don’t communicate with each other.
-          </p>
-          <p class="text-[13px] text-neutral-500">
-            <strong class="font-medium">Availability:</strong> All plans
-          </p>
-        </div>
+        <p class="text-sm">
+          Seamless integration of all building technology systems, subsystems, and devices,
+          regardless of vendor or protocol.
+        </p>
+        <p class="text-sm">
+          Add new or external systems and devices with minimal construction work by using Edge
+          Connectors.
+        </p>
+        <p class="text-sm">
+          Protocol conversions to enable communication between otherwise hard-to-integrate systems
+          that don’t communicate with each other.
+        </p>
+        <p class="text-xs text-neutral-500">
+          <strong class="font-medium">Availability:</strong> All plans
+        </p>
       </div>
       <div
-        class="rounded border border-neutral-200 bg-white p-6 pt-5 lg:mt-1.5 dark:border-neutral-800 dark:bg-neutral-900"
+        class="space-y-3 rounded-md border border-neutral-200 bg-white p-6 lg:mt-1.5 dark:border-neutral-800 dark:bg-neutral-900"
       >
-        <h4
-          class="mb-4 flex items-center gap-2 text-lg font-semibold text-neutral-900 dark:text-neutral-100"
-        >
-          <LaptopIcon size={20} class="flex-shrink-0 stroke-indigo-500 dark:stroke-indigo-400" />
+        <div class="flex size-10 rounded bg-indigo-400/10">
+          <LaptopIcon
+            size={20}
+            class="m-auto flex-shrink-0 stroke-indigo-500 dark:stroke-indigo-400"
+          />
+        </div>
+        <h4 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100">
           Clouder&nbsp;Dashboard
         </h4>
-        <div class="space-y-3 text-sm">
-          <p>View and manage all aspects of your building straight from your browser.</p>
-          <p>
-            Real-time data on energy consumption, indoor climate, and other insights enable improved
-            monitoring and informed decision-making.
-          </p>
-          <p>
-            Access to features like <a
-              href="#features-fdd"
-              class="underline decoration-current/50 decoration-dotted underline-offset-2"
-              >Fault detection & diagnostics</a
-            >, <a
-              href="#features-dc"
-              class="underline decoration-current/50 decoration-dotted underline-offset-2"
-              >Device control</a
-            >, and more.
-          </p>
-          <p class="text-[13px] text-neutral-500">
-            <strong class="font-medium">Availability:</strong> All plans
-          </p>
-        </div>
+        <p class="text-sm">
+          View and manage all aspects of your building straight from your browser.
+        </p>
+        <p class="text-sm">
+          Real-time data on energy consumption, indoor climate, and other insights enable improved
+          monitoring and informed decision-making.
+        </p>
+        <p class="text-sm">
+          Access to features like <a
+            href="#features-fdd"
+            class="underline decoration-current/50 decoration-dotted underline-offset-2"
+            >Fault detection & diagnostics</a
+          >, <a
+            href="#features-dc"
+            class="underline decoration-current/50 decoration-dotted underline-offset-2"
+            >Device control</a
+          >, and more.
+        </p>
+        <p class="text-xs text-neutral-500">
+          <strong class="font-medium">Availability:</strong> All plans
+        </p>
       </div>
       <div
-        class="rounded border border-neutral-200 bg-white p-6 pt-5 dark:border-neutral-800 dark:bg-neutral-900"
+        class="space-y-3 rounded-md border border-neutral-200 bg-white p-6 lg:mt-1.5 dark:border-neutral-800 dark:bg-neutral-900"
       >
-        <h4
-          class="mb-4 flex items-center gap-2 text-lg font-semibold text-neutral-900 dark:text-neutral-100"
-        >
-          <DatabaseIcon size={20} class="flex-shrink-0 stroke-indigo-500 dark:stroke-indigo-400" />
-          Data storage
-        </h4>
-        <div class="space-y-3 text-sm">
-          <p>
-            Cloud-based data storage for accurate building data. No more relying on benchmarks or
-            estimates.
-          </p>
-          <p>
-            View and export building data from Clouder&nbsp;Dashboard for sustainability reporting.
-          </p>
-          <p>
-            Our five-year data retention policy gives you full ownership and control of your data.
-          </p>
-          <p class="text-[13px] text-neutral-500">
-            <strong class="font-medium">Availability:</strong> All plans
-          </p>
+        <div class="flex size-10 rounded bg-indigo-400/10">
+          <DatabaseIcon
+            size={20}
+            class="m-auto flex-shrink-0 stroke-indigo-500 dark:stroke-indigo-400"
+          />
         </div>
+        <h4 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100">Data storage</h4>
+        <p class="text-sm">
+          Cloud-based data storage for accurate building data. No more relying on benchmarks or
+          estimates.
+        </p>
+        <p class="text-sm">
+          View and export building data from Clouder&nbsp;Dashboard for sustainability reporting.
+        </p>
+        <p class="text-sm">
+          Our five-year data retention policy gives you full ownership and control of your data.
+        </p>
+        <p class="text-xs text-neutral-500">
+          <strong class="font-medium">Availability:</strong> All plans
+        </p>
       </div>
       <div
-        class="rounded border border-neutral-200 bg-white p-6 pt-5 dark:border-neutral-800 dark:bg-neutral-900"
+        class="space-y-3 rounded-md border border-neutral-200 bg-white p-6 lg:mt-1.5 dark:border-neutral-800 dark:bg-neutral-900"
       >
-        <h4
-          class="mb-4 flex items-center gap-2 text-lg font-semibold text-neutral-900 dark:text-neutral-100"
-        >
+        <div class="flex size-10 rounded bg-indigo-400/10">
           <ChevronsLeftRightEllipsisIcon
             size={20}
-            class="flex-shrink-0 stroke-indigo-500 dark:stroke-indigo-400"
+            class="m-auto flex-shrink-0 stroke-indigo-500 dark:stroke-indigo-400"
           />
-          Real-time API
-        </h4>
-        <div class="space-y-3 text-sm">
-          <p>Access building data through our real-time API.</p>
-          <p>
-            Perfect for smart office apps, property management software, and other third-party
-            integrations.
-          </p>
-          <p class="text-[13px] text-neutral-500">
-            <strong class="font-medium">Availability:</strong> Platform and Portfolio plans
-          </p>
         </div>
+        <h4 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100">Real-time API</h4>
+        <p class="text-sm">Access building data through our real-time API.</p>
+        <p class="text-sm">
+          Perfect for smart office apps, property management software, and other third-party
+          integrations.
+        </p>
+        <p class="text-xs text-neutral-500">
+          <strong class="font-medium">Availability:</strong> Platform and Portfolio plans
+        </p>
       </div>
       <div
         id="features-fdd"
-        class="rounded border border-neutral-200 bg-white p-6 pt-5 dark:border-neutral-800 dark:bg-neutral-900"
+        class="space-y-3 rounded-md border border-neutral-200 bg-white p-6 lg:mt-1.5 dark:border-neutral-800 dark:bg-neutral-900"
       >
-        <h4
-          class="mb-4 flex items-center gap-2 text-lg font-semibold text-neutral-900 dark:text-neutral-100"
-        >
-          <BuildingIcon size={20} class="flex-shrink-0 stroke-indigo-500 dark:stroke-indigo-400" />
+        <div class="flex size-10 rounded bg-indigo-400/10">
+          <OcatagonAlertIcon
+            size={20}
+            class="m-auto flex-shrink-0 stroke-indigo-500 dark:stroke-indigo-400"
+          />
+        </div>
+        <h4 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100">
           Fault detection & diagnostics
         </h4>
-        <div class="space-y-3 text-sm">
-          <p>
-            Quickly identify and diagnose faults, problems, and conflicts in your building
-            automation system.
-          </p>
-          <p>
-            Receive targeted recommendations and clear guidance for resolving identified issues.
-          </p>
-          <p>
-            Save time and resources by reducing manual work and streamline troubleshooting
-            workflows.
-          </p>
-          <p class="text-[13px] text-neutral-500">
-            <strong class="font-medium">Availability:</strong> Platform and Portfolio plans
-          </p>
-        </div>
+        <p class="text-sm">
+          Quickly identify and diagnose faults, problems, and conflicts in your building automation
+          system.
+        </p>
+        <p class="text-sm">
+          Receive targeted recommendations and clear guidance for resolving identified issues.
+        </p>
+        <p class="text-sm">
+          Save time and resources by reducing manual work and streamline troubleshooting workflows.
+        </p>
+        <p class="text-xs text-neutral-500">
+          <strong class="font-medium">Availability:</strong> Platform and Portfolio plans
+        </p>
       </div>
       <div
         id="features-dc"
-        class="rounded border border-neutral-200 bg-white p-6 pt-5 dark:border-neutral-800 dark:bg-neutral-900"
+        class="space-y-3 rounded-md border border-neutral-200 bg-white p-6 lg:mt-1.5 dark:border-neutral-800 dark:bg-neutral-900"
       >
-        <h4
-          class="mb-4 flex items-center gap-2 text-lg font-semibold text-neutral-900 dark:text-neutral-100"
-        >
-          <BoltIcon size={20} class="flex-shrink-0 stroke-indigo-500 dark:stroke-indigo-400" />
-          Device control
-        </h4>
-        <div class="space-y-3 text-sm">
-          <p>
-            Control all systems and field devices in your building without disrupting the existing
-            building automation system.
-          </p>
-          <p>
-            Use sophisticated, event-based rules to control devices to further reduce energy
-            consumption.
-          </p>
-          <p class="text-[13px] text-neutral-500">
-            <strong class="font-medium">Availability:</strong> Platform and Portfolio plans
-          </p>
+        <div class="flex size-10 rounded bg-indigo-400/10">
+          <SettingsIcon
+            size={20}
+            class="m-auto flex-shrink-0 stroke-indigo-500 dark:stroke-indigo-400"
+          />
         </div>
+        <h4 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100">Device control</h4>
+        <p class="text-sm">
+          Control all systems and field devices in your building without disrupting the existing
+          building automation system.
+        </p>
+        <p class="text-sm">
+          Use sophisticated, event-based rules to control devices to further reduce energy
+          consumption.
+        </p>
+        <p class="text-xs text-neutral-500">
+          <strong class="font-medium">Availability:</strong> Platform and Portfolio plans
+        </p>
       </div>
       <div
-        class="rounded border border-neutral-200 bg-white p-6 pt-5 dark:border-neutral-800 dark:bg-neutral-900"
+        class="space-y-3 rounded-md border border-neutral-200 bg-white p-6 lg:mt-1.5 dark:border-neutral-800 dark:bg-neutral-900"
       >
-        <h4
-          class="mb-4 flex items-center gap-2 text-lg font-semibold text-neutral-900 dark:text-neutral-100"
-        >
+        <div class="flex size-10 rounded bg-indigo-400/10">
           <ShieldCheckIcon
             size={20}
-            class="flex-shrink-0 stroke-indigo-500 dark:stroke-indigo-400"
+            class="m-auto flex-shrink-0 stroke-indigo-500 dark:stroke-indigo-400"
           />
+        </div>
+        <h4 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100">
           Additional security
         </h4>
-        <div class="space-y-3 text-sm">
-          <p>
-            Fine-grained data access rules, accurate audit trail, end-to-end encryption and secure
-            cloud storage of building data.
-          </p>
-          <p>
-            Robust security in building automation with centralized password management. No more
-            default passwords known by everyone.
-          </p>
-          <p class="text-[13px] text-neutral-500">
-            <strong class="font-medium">Availability:</strong> Platform and Portfolio plans
-          </p>
-        </div>
+        <p class="text-sm">
+          Fine-grained data access rules, accurate audit trail, end-to-end encryption and secure
+          cloud storage of building data.
+        </p>
+        <p class="text-sm">
+          Robust security in building automation with centralized password management. No more
+          default passwords known by everyone.
+        </p>
+        <p class="text-xs text-neutral-500">
+          <strong class="font-medium">Availability:</strong> Platform and Portfolio plans
+        </p>
       </div>
       <div
-        class="rounded border border-neutral-200 bg-white p-6 pt-5 dark:border-neutral-800 dark:bg-neutral-900"
+        class="space-y-3 rounded-md border border-neutral-200 bg-white p-6 lg:mt-1.5 dark:border-neutral-800 dark:bg-neutral-900"
       >
-        <h4
-          class="mb-4 flex items-center gap-2 text-lg font-semibold text-neutral-900 dark:text-neutral-100"
-        >
-          <WrenchIcon size={20} class="flex-shrink-0 stroke-indigo-500 dark:stroke-indigo-400" />
+        <div class="flex size-10 rounded bg-indigo-400/10">
+          <WrenchIcon
+            size={20}
+            class="m-auto flex-shrink-0 stroke-indigo-500 dark:stroke-indigo-400"
+          />
+        </div>
+        <h4 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100">
           Custom integrations
         </h4>
-        <div class="space-y-3 text-sm">
-          <p>
-            Our team can offer tailored solutions and consulting services to address your specific
-            needs, from advanced system integrations to personalized building performance
-            strategies.
-          </p>
-          <a
-            href={navigation.contact.href}
-            class="inline-flex h-8 cursor-pointer items-center justify-center gap-2 rounded bg-indigo-500 px-3 text-center text-xs font-medium text-nowrap text-white transition select-none hover:bg-indigo-600 dark:hover:bg-indigo-400"
-          >
-            Let’s talk
-          </a>
-        </div>
+        <p class="text-sm">
+          Our team can offer tailored solutions and consulting services to address your specific
+          needs, from advanced system integrations to personalized building performance strategies.
+        </p>
+        <a
+          href={navigation.contact.href}
+          class="mt-2 inline-flex h-8 cursor-pointer items-center justify-center gap-2 rounded bg-indigo-500 px-3 text-center text-xs font-medium text-nowrap text-white transition select-none hover:bg-indigo-600 dark:hover:bg-indigo-400"
+        >
+          Let’s talk
+        </a>
       </div>
     </div>
   </section>
