@@ -2,19 +2,23 @@
 import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
 import { twMerge } from 'tailwind-merge';
-import HousePlugIcon from 'lucide-astro/HousePlug';
-import ChartNoAxesColumnIcon from 'lucide-astro/ChartNoAxesColumn';
-import HardHatIcon from 'lucide-astro/HardHat';
 import BuildingIcon from 'lucide-astro/Building';
+import ChartNoAxesColumnIcon from 'lucide-astro/ChartNoAxesColumn';
 import EuroIcon from 'lucide-astro/Euro';
-import ShieldCheckIcon from 'lucide-astro/ShieldCheck';
+import HardHatIcon from 'lucide-astro/HardHat';
+import HousePlugIcon from 'lucide-astro/HousePlug';
 import LeafIcon from 'lucide-astro/Leaf';
 import PlayIcon from 'lucide-astro/Play';
+import ShieldCheckIcon from 'lucide-astro/ShieldCheck';
 import site from '@data/site.yml';
 import Overline from '@components/Overline.astro';
 import Ping from '@components/Ping.astro';
 import MainLayout from '@layouts/MainLayout.astro';
-import ClouderIllustration from '@assets/how-clouder-works.svg';
+import HowClouderWorksIllustration from '@assets/how-clouder-works.svg';
+import SolutionIndustryLightIllustration from '@assets/solution-industry-light.svg';
+import SolutionIndustryDarkIllustration from '@assets/solution-industry-dark.svg';
+import SolutionClouderLightIllustration from '@assets/solution-clouder-light.svg';
+import SolutionClouderDarkIllustration from '@assets/solution-clouder-dark.svg';
 import uiLightImage from '@assets/ui-light.png';
 import uiDarkImage from '@assets/ui-dark.png';
 
@@ -99,7 +103,7 @@ const caseExamplePosts = posts
         <div class="w-min rounded bg-indigo-400/10 p-2.5">
           <HousePlugIcon size={20} class="stroke-indigo-500 dark:stroke-indigo-400" />
         </div>
-        <h3 class="my-3 text-xl font-semibold text-neutral-900 dark:text-neutral-100">
+        <h3 class="mt-3 mb-2 text-xl font-semibold text-neutral-900 dark:text-neutral-100">
           Energy savings
         </h3>
         <p>
@@ -112,7 +116,7 @@ const caseExamplePosts = posts
         <div class="w-min rounded bg-indigo-400/10 p-2.5">
           <ChartNoAxesColumnIcon size={20} class="stroke-indigo-500 dark:stroke-indigo-400" />
         </div>
-        <h3 class="my-3 text-xl font-semibold text-neutral-900 dark:text-neutral-100">
+        <h3 class="mt-3 mb-2 text-xl font-semibold text-neutral-900 dark:text-neutral-100">
           Accurate data
         </h3>
         <p>
@@ -125,7 +129,7 @@ const caseExamplePosts = posts
         <div class="w-min rounded bg-indigo-400/10 p-2.5">
           <HardHatIcon size={20} class="stroke-indigo-500 dark:stroke-indigo-400" />
         </div>
-        <h3 class="my-3 text-xl font-semibold text-neutral-900 dark:text-neutral-100">
+        <h3 class="mt-3 mb-2 text-xl font-semibold text-neutral-900 dark:text-neutral-100">
           Flexibility
         </h3>
         <p>
@@ -137,7 +141,7 @@ const caseExamplePosts = posts
         <div class="w-min rounded bg-indigo-400/10 p-2.5">
           <BuildingIcon size={20} class="stroke-indigo-500 dark:stroke-indigo-400" />
         </div>
-        <h3 class="my-3 text-xl font-semibold text-neutral-900 dark:text-neutral-100">
+        <h3 class="mt-3 mb-2 text-xl font-semibold text-neutral-900 dark:text-neutral-100">
           Efficient operations
         </h3>
         <p>
@@ -149,7 +153,7 @@ const caseExamplePosts = posts
         <div class="w-min rounded bg-indigo-400/10 p-2.5">
           <EuroIcon size={20} class="stroke-indigo-500 dark:stroke-indigo-400" />
         </div>
-        <h3 class="my-3 text-xl font-semibold text-neutral-900 dark:text-neutral-100">
+        <h3 class="mt-3 mb-2 text-xl font-semibold text-neutral-900 dark:text-neutral-100">
           Cost savings
         </h3>
         <p>
@@ -161,11 +165,52 @@ const caseExamplePosts = posts
         <div class="w-min rounded bg-indigo-400/10 p-2.5">
           <ShieldCheckIcon size={20} class="stroke-indigo-500 dark:stroke-indigo-400" />
         </div>
-        <h3 class="my-3 text-xl font-semibold text-neutral-900 dark:text-neutral-100">Security</h3>
+        <h3 class="mt-3 mb-2 text-xl font-semibold text-neutral-900 dark:text-neutral-100">
+          Security
+        </h3>
         <p>
           Secure your building technology with accurate audit trail, end-to-end encryption and
           secure cloud connection. No more default passwords known by everyone.
         </p>
+      </div>
+    </div>
+  </section>
+  <section class="container py-8 sm:pt-12 lg:pt-16 lg:pb-10">
+    <Overline title="Solution" />
+    <div class="grid grid-cols-1 gap-10 lg:grid-cols-3">
+      <div class="col-span-1 lg:pr-6">
+        <h2 class="mb-5 text-3xl font-semibold text-neutral-900 md:text-4xl dark:text-neutral-100">
+          Rethinking building tech integration
+        </h2>
+        <p class="text-lg">
+          Unlike traditional setups that require managing multiple cloud solutions, Clouder provides
+          a single, unified platform. Our virtual cabling solution handles the heavy lifting on-site
+          and the data can easily be accessed from the cloud.
+        </p>
+      </div>
+      <div class="group col-span-2">
+        <div class="py-1.5 transition group-hover:opacity-50 hover:opacity-100">
+          <h3 class="mb-4 text-xl font-semibold text-neutral-900 lg:pl-1 dark:text-neutral-100">
+            Current industry trend
+          </h3>
+          <SolutionIndustryLightIllustration
+            class="-ml-0.5 block h-auto w-full md:-ml-1 lg:ml-0 dark:hidden"
+          />
+          <SolutionIndustryDarkIllustration
+            class="-ml-0.5 hidden h-auto w-full md:-ml-1 lg:ml-0 dark:block"
+          />
+        </div>
+        <div class="py-1.5 transition group-hover:opacity-50 hover:opacity-100">
+          <h3 class="mb-4 text-xl font-semibold text-neutral-900 lg:pl-1 dark:text-neutral-100">
+            Clouder’s solution
+          </h3>
+          <SolutionClouderLightIllustration
+            class="-ml-0.5 block h-auto w-full md:-ml-1 lg:ml-0 dark:hidden"
+          />
+          <SolutionClouderDarkIllustration
+            class="-ml-0.5 hidden h-auto w-full md:-ml-1 lg:ml-0 dark:block"
+          />
+        </div>
       </div>
     </div>
   </section>
@@ -181,7 +226,7 @@ const caseExamplePosts = posts
         class="col-span-1 flex items-center justify-center px-4 md:col-span-2 xl:col-span-2 xl:col-start-2 xl:row-span-2"
       >
         <div class="relative my-4">
-          <ClouderIllustration class="h-auto max-w-full" />
+          <HowClouderWorksIllustration class="h-auto max-w-full" />
           <span class="absolute top-[91.85%] left-[7.75%] flex size-3">
             <Ping color="purple" isAnimated />
           </span>
@@ -217,10 +262,10 @@ const caseExamplePosts = posts
           </h3>
         </div>
         <p>
-          Edge Connector (EC) devices act as connection points for field devices and systems,
-          transmitting data to the Virtual Cabling Engine through either wireless or wired IP
-          networks using end-to-end encryption. Edge Connectors operate similarly to distributed I/O
-          systems and significantly reduce the need for traditional cabling.
+          Edge Connector (EC) devices act as connection points for systems and devices, transmitting
+          data to the Virtual Cabling Engine through either wireless or wired IP networks using
+          end-to-end encryption. Edge Connectors operate similarly to distributed I/O systems and
+          significantly reduce the need for traditional cabling.
         </p>
       </div>
       <div class="xl:col-start-4 xl:row-start-1">
@@ -231,7 +276,7 @@ const caseExamplePosts = posts
         <p>
           All system and device data is securely stored in the cloud, where it can be accessed in
           real-time through the Clouder Dashboard or via our API. This centralized approach allows
-          you to seamlessly monitor and analyze data from all your systems, subsystems, and devices.
+          you to seamlessly monitor and analyze data from all your systems and devices.
         </p>
       </div>
       <div class="xl:col-start-4 xl:row-start-2">
@@ -242,10 +287,10 @@ const caseExamplePosts = posts
           </h3>
         </div>
         <p class="mb-4">
-          The Virtual Cabling Engine (VCE) device connects to the BMS center, storing virtual
-          cabling information and consolidating data from Edge Connectors. It facilitates a much
-          more advanced level of integration between systems and devices compared to traditional
-          methods.
+          The Virtual Cabling Engine (VCE) integrates with building technology systems on a more
+          advanced level compared to traditional setups. It stores virtual cabling information,
+          consolidates data from Edge Connectors and handles protocol conversions on-site. The data
+          is then securely transmitted to the cloud.
         </p>
         <a
           href="/product"
@@ -259,11 +304,11 @@ const caseExamplePosts = posts
     <Overline title="Sustainability" />
     <div class="mx-auto max-w-prose text-center">
       <div
-        class="mx-auto mt-16 mb-14 w-min rounded-full bg-gradient-to-br from-emerald-400/10 to-emerald-400/20 p-6 shadow-2xs shadow-emerald-400/20 outline-16 outline-emerald-400/5"
+        class="mx-auto mt-20 mb-12 w-min rounded-full bg-gradient-to-br from-emerald-400/10 to-emerald-400/20 p-6 shadow-2xs shadow-emerald-400/20 outline-16 outline-emerald-400/5"
       >
         <LeafIcon class="flex-shrink-0 stroke-emerald-600 dark:stroke-emerald-500" />
       </div>
-      <h2 class="my-4 text-3xl font-semibold text-neutral-900 md:text-4xl dark:text-neutral-100">
+      <h2 class="mb-5 text-3xl font-semibold text-neutral-900 md:text-4xl dark:text-neutral-100">
         Build sustainability with virtual cabling
       </h2>
       <p class="text-lg">
@@ -275,7 +320,7 @@ const caseExamplePosts = posts
     </div>
     <div class="mt-16 flex flex-col gap-x-10 gap-y-16 sm:mt-24 lg:mt-32 lg:flex-row">
       <div class="w-full space-y-4">
-        <h3 class="mb-5 text-2xl font-semibold text-neutral-900 md:text-3xl dark:text-neutral-100">
+        <h3 class="mb-4 text-2xl font-semibold text-neutral-900 md:text-3xl dark:text-neutral-100">
           Clouder helps meet EU green building regulations
         </h3>
         <p>
@@ -338,7 +383,7 @@ const caseExamplePosts = posts
       </div>
 
       <div class="w-full space-y-4">
-        <h3 class="mb-5 text-2xl font-semibold text-neutral-900 md:text-3xl dark:text-neutral-100">
+        <h3 class="text-2xl font-semibold text-neutral-900 md:text-3xl dark:text-neutral-100">
           Virtual cabling cuts embodied carbon by 100x
         </h3>
         <p>
