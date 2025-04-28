@@ -12,7 +12,7 @@
     "optimize-new-images": "git diff --name-only HEAD^ | grep -E '\\.(png|jpe?g)$' | xargs -I {} tinypng --key $TINYPNG_API_KEY '{}' -o '{}' || echo 'No new images to optimize'"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^3.3.0",
+    "@astrojs/sitemap": "^3.3.1",
     "@tailwindcss/vite": "^4.1.4",
     "astro": "^5.7.4",
     "change-case": "^5.4.4",
