@@ -20,7 +20,7 @@
     "luxon": "^3.6.1",
     "posthog-js": "^1.236.7",
     "tailwind-merge": "^3.2.0",
-    "tailwindcss": "^4.1.4"
+    "tailwindcss": "^4.1.5"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.1",
