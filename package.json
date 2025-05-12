@@ -14,7 +14,7 @@
   "dependencies": {
     "@astrojs/sitemap": "^3.3.1",
     "@tailwindcss/vite": "^4.1.4",
-    "astro": "^5.7.8",
+    "astro": "^5.7.12",
     "change-case": "^5.4.4",
     "lucide-astro": "^0.503.0",
     "luxon": "^3.6.1",
