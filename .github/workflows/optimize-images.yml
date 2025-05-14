@@ -67,4 +67,5 @@ jobs:
           git add .
           git commit -m "🔧 Optimized new images [skip ci]" || exit 0
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
-          git push origin HEAD:${{ github.ref_name }
+          branch="${{ github.head_ref || github.ref_name }}"
+          git push origin HEAD:$branch
