@@ -17,12 +17,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 2
 
-      - name: Check TinyPNG API Key
+      - name: Checkout feature branch (for PRs)
+        if: github.event_name == 'pull_request'
+        run: |
+          git fetch origin ${{ github.head_ref }}
+          git checkout ${{ github.head_ref }}
+
+      - name: Check TinyPNG API key
         run: |
           if [ -z "${{ secrets.TINYPNG_API_KEY }}" ]; then
             echo "Error: TINYPNG_API_KEY is not set"
@@ -32,7 +38,7 @@ jobs:
       - name: Install TinyPNG CLI
         run: npm install -g tinypng-cli
 
-      - name: Get New and Modified Images
+      - name: Get new and modified images
         id: new-images
         run: |
           # Get the list of new or modified image files, excluding deleted files
@@ -42,7 +48,7 @@ jobs:
           # Set output for conditionally skipping push (comma-separated)
           echo "images-to-optimize=$(paste -sd, new_images.txt)" >> $GITHUB_OUTPUT
 
-      - name: Optimize Images
+      - name: Optimize images
         if: steps.new-images.outputs.images-to-optimize != ''
         run: |
           if [ -s new_images.txt ]; then
@@ -59,7 +65,7 @@ jobs:
             echo "No new images to optimize."
           fi
 
-      - name: Commit and Push Changes
+      - name: Commit and push changes
         if: steps.new-images.outputs.images-to-optimize != ''
         run: |
           git config --global user.name "github-actions[bot]"
