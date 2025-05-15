@@ -41,8 +41,10 @@ jobs:
       - name: Get new and modified images
         id: new-images
         run: |
+          BASE_BRANCH="${{ github.base_ref || 'main' }}"
+          git fetch origin $BASE_BRANCH
           # Get the list of new or modified image files, excluding deleted files
-          git diff --name-status HEAD^ | grep -E '^[AM]\s+.*\.(png|jpe?g)$' | cut -f2 > new_images.txt || true
+          git diff --name-status origin/$BASE_BRANCH...HEAD | grep -E '^[AM]\s+.*\.(png|jpe?g)$' | cut -f2 > new_images.txt || true
           echo "New images detected:"
           cat new_images.txt || echo "No new images found."
           # Set output for conditionally skipping push (comma-separated)
@@ -73,5 +75,5 @@ jobs:
           git add .
           git commit -m "🔧 Optimized new images [skip ci]" || exit 0
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
-          branch="${{ github.head_ref || github.ref_name }}"
-          git push origin HEAD:$branch
+          BRANCH="${{ github.head_ref || github.ref_name }}"
+          git push origin HEAD:$BRANCH
