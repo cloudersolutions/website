@@ -9,7 +9,8 @@
     "astro": "astro",
     "format": "prettier --write .",
     "lint": "prettier --check . && eslint .",
-    "optimize-new-images": "git diff --name-only HEAD^ | grep -E '\\.(png|jpe?g)$' | xargs -I {} tinypng --key $TINYPNG_API_KEY '{}' -o '{}' || echo 'No new images to optimize'"
+    "optimize-new-images": "git diff --name-only HEAD^ | grep -E '\\.(png|jpe?g)$' | xargs -I {} tinypng --key $TINYPNG_API_KEY '{}' -o '{}' || echo 'No new images to optimize'",
+    "test": "playwright test"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.4.1",
@@ -24,6 +25,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.29.0",
+    "@playwright/test": "^1.53.0",
     "@rollup/plugin-yaml": "^4.1.2",
     "@tailwindcss/forms": "^0.5.10",
     "@tailwindcss/typography": "^0.5.16",

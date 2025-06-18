@@ -1,4 +1,5 @@
 # build output
+test-results/
 dist/
 
 # generated types
