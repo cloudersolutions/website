@@ -1,4 +1,7 @@
-name: Verify
+permissions:
+  contents: write
+
+name: Verify and deploy to production
 
 on:
   push:
