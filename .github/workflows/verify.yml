@@ -41,3 +41,12 @@ jobs:
       - name: Test
         if: ${{ !cancelled() }}
         run: npm run test
+
+      - name: Promote to production
+        if: ${{ success() && github.ref == 'refs/heads/main' }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git checkout -B production
+          git push origin production --force
