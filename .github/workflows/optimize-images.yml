@@ -7,9 +7,6 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
 
 jobs:
   optimize-images:
@@ -22,13 +19,18 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Checkout feature branch (for PRs)
-        if: github.event_name == 'pull_request'
+      - name: Get new and modified images
+        id: new-images
         run: |
-          git fetch origin ${{ github.head_ref }}
-          git checkout ${{ github.head_ref }}
+          # Get the list of new or modified image files in the last commit, excluding deleted files
+          git diff --name-status HEAD^ HEAD | grep -E '^[AM]\s+.*\.(png|jpe?g)$' | cut -f2 > new_images.txt || true
+          echo "New images detected:"
+          cat new_images.txt || echo "No new images found."
+          # Set output for conditionally skipping push (comma-separated)
+          echo "images-to-optimize=$(paste -sd, new_images.txt)" >> $GITHUB_OUTPUT
 
       - name: Check TinyPNG API key
+        if: steps.new-images.outputs.images-to-optimize != ''
         run: |
           if [ -z "${{ secrets.TINYPNG_API_KEY }}" ]; then
             echo "Error: TINYPNG_API_KEY is not set"
@@ -36,19 +38,8 @@ jobs:
           fi
 
       - name: Install TinyPNG CLI
+        if: steps.new-images.outputs.images-to-optimize != ''
         run: npm install -g tinypng-cli
-
-      - name: Get new and modified images
-        id: new-images
-        run: |
-          BASE_BRANCH="${{ github.base_ref || 'main' }}"
-          git fetch origin $BASE_BRANCH
-          # Get the list of new or modified image files, excluding deleted files
-          git diff --name-status origin/$BASE_BRANCH...HEAD | grep -E '^[AM]\s+.*\.(png|jpe?g)$' | cut -f2 > new_images.txt || true
-          echo "New images detected:"
-          cat new_images.txt || echo "No new images found."
-          # Set output for conditionally skipping push (comma-separated)
-          echo "images-to-optimize=$(paste -sd, new_images.txt)" >> $GITHUB_OUTPUT
 
       - name: Optimize images
         if: steps.new-images.outputs.images-to-optimize != ''
@@ -75,5 +66,4 @@ jobs:
           git add .
           git commit -m "🔧 Optimized new images [skip ci]" || exit 0
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
-          BRANCH="${{ github.head_ref || github.ref_name }}"
-          git push origin HEAD:$BRANCH
+          git push origin main
