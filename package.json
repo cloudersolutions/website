@@ -2,10 +2,14 @@
   "name": "website",
   "type": "module",
   "version": "0.0.1",
+  "engines": {
+    "node": "^22",
+    "npm": ">=9"
+  },
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
+    "preview": "astro preview --port 3001",
     "astro": "astro",
     "format": "prettier --write .",
     "lint": "prettier --check . && eslint .",
