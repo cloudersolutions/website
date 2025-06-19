@@ -11,6 +11,4 @@ npm run dev
 
 ## Deployment
 
-1. Push changes to `main` 
-2. Upon successful verification, the changes are pushed to `production`
-3. Changes are pushed to production
+Changes are automatically deployed to production via GitHub Actions. When changes are pushed to the main branch, they are first verified. Upon successful verification, the changes are then promoted and pushed to the production branch, triggering a production deployment.
