@@ -5,7 +5,7 @@ test('render home page with key sections', async ({ page }) => {
   await expect(page).toHaveTitle('Clouder');
   await expect(page.locator('nav')).toBeVisible();
   await expect(
-    page.getByRole('heading', { name: 'Clouder is a data and integration platform' })
+    page.getByRole('heading', { name: 'The market-leading data and integration platform' })
   ).toBeVisible();
   await expect(page.getByTestId('overline').getByText('Benefits')).toBeVisible();
   await expect(page.getByTestId('overline').getByText('Solution')).toBeVisible();
@@ -18,7 +18,7 @@ test('product page navigation', async ({ page }) => {
   await page.getByRole('navigation').getByRole('link', { name: 'Product' }).click();
   await expect(page).toHaveURL('/product');
   await expect(
-    page.getByRole('heading', { name: 'Get a real-time overview of your building' })
+    page.getByRole('heading', { name: ' The new standard for comercial property performance ' })
   ).toBeVisible();
 });
 
