@@ -21,7 +21,7 @@
     "@tailwindcss/vite": "^4.1.11",
     "astro": "^5.12.3",
     "change-case": "^5.4.4",
-    "lucide-astro": "^0.526.0",
+    "lucide-astro": "^0.536.0",
     "luxon": "^3.7.1",
     "posthog-js": "^1.258.2",
     "tailwind-merge": "^3.3.1",
