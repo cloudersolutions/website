@@ -8,6 +8,7 @@
   font-style: normal;
   font-weight: 400 700;
   font-display: swap;
+  ascent-override: 99%; /* Fix Jakarta baseline */
   src: url(/PlusJakartaSans[wght].woff2) format('woff2');
 }
 
@@ -16,6 +17,7 @@
   font-style: italic;
   font-weight: 400 700;
   font-display: swap;
+  ascent-override: 99%; /* Fix Jakarta baseline */
   src: url(/PlusJakartaSans-Italic[wght].woff2) format('woff2');
 }
 

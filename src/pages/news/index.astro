@@ -25,24 +25,24 @@ const description = 'Company news, product updates, and more.';
   </section>
   <div class="h-8 sm:h-12 lg:h-16"></div>
   <section class="container py-8 sm:py-12 lg:py-16">
-    <div class="grid grid-cols-1 gap-x-10 gap-y-12 md:grid-cols-2 lg:grid-cols-3 lg:gap-y-20">
+    <div class="grid grid-cols-1 gap-x-10 gap-y-12 md:grid-cols-2 lg:grid-cols-6 lg:gap-y-20">
       {
-        sortedPosts.map((post) => (
-          <article class="group">
+        sortedPosts.map((post, index) => (
+          <article class={`group ${index < 2 ? 'lg:col-span-3' : 'lg:col-span-2'}`}>
             <a href={`/news/${post.slug}`} class="flex flex-col gap-3 rounded">
               <div class="relative mb-1 overflow-clip rounded">
                 <Image
                   src={post.data.cover}
                   alt={post.data.title}
                   width={800}
-                  class="aspect-image bg-current/5 object-cover"
+                  class="aspect-video bg-current/5 object-cover"
                 />
                 <div class="absolute inset-0 bg-current opacity-0 transition duration-300 group-hover:opacity-10" />
               </div>
               <h3 class="text-xl font-semibold text-neutral-900 transition group-hover:text-current dark:text-neutral-100">
                 {post.data.title}
               </h3>
-              <div class="flex flex-wrap gap-1 text-sm text-neutral-500 transition group-hover:text-neutral-600 dark:group-hover:text-neutral-400">
+              <div class="flex flex-wrap gap-1.5 text-sm text-neutral-500 transition group-hover:text-neutral-600 dark:group-hover:text-neutral-400">
                 <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
                 <span>&middot;</span>
                 <span>{sentenceCase(post.data.category)}</span>

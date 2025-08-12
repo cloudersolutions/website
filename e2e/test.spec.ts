@@ -18,7 +18,7 @@ test('product page navigation', async ({ page }) => {
   await page.getByRole('navigation').getByRole('link', { name: 'Product' }).click();
   await expect(page).toHaveURL('/product');
   await expect(
-    page.getByRole('heading', { name: ' The new standard for comercial property performance ' })
+    page.getByRole('heading', { name: ' The new standard for commercial property performance ' })
   ).toBeVisible();
 });
 

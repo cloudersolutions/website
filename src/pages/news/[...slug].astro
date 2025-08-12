@@ -29,14 +29,14 @@ const { Content } = await post.render();
 <ProseLayout title={post.data.title} description={post.data.description} image={post.data.cover}>
   <article class="mb-8 sm:mb-16 lg:mb-24">
     <header class="not-prose">
-      <div class="mb-6 flex flex-wrap gap-1 text-sm text-neutral-500">
+      <h1 class="text-3xl font-semibold text-neutral-900 md:text-4xl dark:text-neutral-100">
+        {post.data.title}
+      </h1>
+      <div class="my-6 flex flex-wrap gap-1.5 text-sm text-neutral-500">
         <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
         <span>&middot;</span>
         <p>{sentenceCase(post.data.category)}</p>
       </div>
-      <h1 class="mb-8 text-3xl font-semibold text-neutral-900 md:text-4xl dark:text-neutral-100">
-        {post.data.title}
-      </h1>
     </header>
     <section>
       <Content />

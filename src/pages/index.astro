@@ -54,14 +54,14 @@ const caseExamplePosts = posts
           <div class="flex gap-3">
             <a
               href="https://www.youtube.com/watch?v=kdJNcAIhxDE"
-              class="inline-flex h-11 cursor-pointer items-center justify-center gap-2 rounded bg-indigo-500 px-5 text-center text-sm font-medium text-nowrap text-white transition select-none hover:bg-indigo-600 dark:hover:bg-indigo-400"
+              class="inline-flex h-11 cursor-pointer items-center justify-center gap-2 rounded bg-indigo-500 px-5 text-center text-sm font-medium text-nowrap text-white shadow-xs transition select-none hover:bg-indigo-600 dark:hover:bg-indigo-400"
             >
               <PlayIcon size={14} class="fill-current stroke-current" />
               See how it works
             </a>
             <a
               href="#benefits"
-              class="inline-flex h-11 cursor-pointer items-center justify-center gap-2 rounded border border-current/12 bg-white px-5 text-center text-sm font-medium text-nowrap transition select-none hover:bg-neutral-100 dark:bg-neutral-900 dark:hover:bg-neutral-800"
+              class="inline-flex h-11 cursor-pointer items-center justify-center gap-2 rounded border border-current/15 bg-white px-5 text-center text-sm font-medium text-nowrap shadow-xs transition select-none hover:bg-neutral-100 dark:bg-neutral-900 dark:hover:bg-neutral-800"
             >
               Learn more
             </a>
@@ -282,7 +282,7 @@ const caseExamplePosts = posts
         </p>
         <a
           href="/product"
-          class="inline-flex h-8 flex-shrink-0 cursor-pointer items-center rounded border border-current/25 px-3 text-xs font-medium text-current/65 transition hover:bg-current/5"
+          class="inline-flex h-8 flex-shrink-0 cursor-pointer items-center rounded border border-current/15 bg-white px-3 text-center text-xs font-medium text-nowrap transition select-none hover:bg-neutral-100 dark:bg-neutral-900 dark:hover:bg-neutral-800"
           >Learn more</a
         >
       </div>
@@ -444,7 +444,7 @@ const caseExamplePosts = posts
           </h2>
           {caseExamplePosts.map((post) => (
             <article class="group relative rounded bg-white transition hover:shadow-xs md:mt-1.5 dark:bg-neutral-900">
-              <a href={`/news/${post.slug}`} class="flex flex-col items-start rounded">
+              <a href={`/news/${post.slug}`} class="flex h-full flex-col items-start rounded">
                 <div class="relative overflow-clip rounded-t-sm">
                   <Image
                     src={post.data.cover}
@@ -454,14 +454,14 @@ const caseExamplePosts = posts
                   />
                   <div class="absolute inset-0 bg-current opacity-0 transition duration-300 group-hover:opacity-10" />
                 </div>
-                <h3 class="mx-6 mt-5 mb-2 text-xl font-semibold text-neutral-900 transition group-hover:text-current dark:text-neutral-100">
+                <h3 class="mx-6 my-5 text-xl font-semibold text-neutral-900 transition group-hover:text-current dark:text-neutral-100">
                   {post.data.title}
                 </h3>
-                <p class="m-6 mt-2 inline-flex h-8 cursor-pointer items-center rounded border border-current/25 px-3 text-xs font-medium text-current/65 transition hover:bg-current/5">
+                <p class="m-6 mt-auto inline-flex h-8 cursor-pointer items-center rounded border border-current/25 px-3 text-xs font-medium text-current/65 transition hover:bg-current/5">
                   Read more
                 </p>
               </a>
-              <div class="pointer-events-none absolute inset-0 rounded border border-current/12 transition group-hover:border-current/16" />
+              <div class="pointer-events-none absolute inset-0 rounded border border-current/15 transition group-hover:border-current/16" />
             </article>
           ))}
         </div>
