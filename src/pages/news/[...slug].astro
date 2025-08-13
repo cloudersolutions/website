@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import { sentenceCase } from 'change-case';
 import ArrowRightIcon from 'lucide-astro/ArrowRight';
 import ArrowLeftIcon from 'lucide-astro/ArrowLeft';
+import navigation from '@data/navigation.yml';
 import { formatDate } from '@utils/date.ts';
 import ProseLayout from '@layouts/ProseLayout.astro';
 
@@ -35,7 +36,12 @@ const { Content } = await post.render();
       <div class="my-6 flex flex-wrap gap-1.5 text-sm text-neutral-500">
         <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
         <span>&middot;</span>
-        <p>{sentenceCase(post.data.category)}</p>
+        <a
+          href={`${navigation.news.href}/${post.data.category}`}
+          class="transition hover:text-neutral-900 dark:hover:text-neutral-100"
+        >
+          {sentenceCase(post.data.category)}
+        </a>
       </div>
     </header>
     <section>

@@ -1,0 +1,49 @@
+---
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import { sentenceCase } from 'change-case';
+import ArrowRightIcon from 'lucide-astro/ArrowRight';
+import navigation from '@data/navigation.yml';
+import { formatDate } from '@utils/date.ts';
+import { twMerge } from 'tailwind-merge';
+
+interface Props {
+  post: CollectionEntry<'news'>;
+  isLarge?: boolean;
+}
+
+const { post, isLarge } = Astro.props;
+---
+
+<article class={twMerge('group', isLarge ? 'lg:col-span-3' : 'lg:col-span-2')}>
+  <a href={`${navigation.news.href}/${post.slug}`} class="flex flex-col gap-3 rounded">
+    <div class="relative mb-1 overflow-clip rounded">
+      <Image
+        src={post.data.cover}
+        alt={post.data.title}
+        width={800}
+        class="aspect-video bg-current/5 object-cover"
+      />
+      <div
+        class="absolute inset-0 bg-current opacity-0 transition duration-300 group-hover:opacity-10"
+      >
+      </div>
+    </div>
+    <h3
+      class="text-xl font-semibold text-neutral-900 transition group-hover:text-current dark:text-neutral-100"
+    >
+      {post.data.title}
+    </h3>
+    <div
+      class="flex flex-wrap items-center gap-1.5 text-sm text-neutral-500 transition group-hover:text-neutral-600 dark:group-hover:text-neutral-400"
+    >
+      <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
+      <span>&middot;</span>
+      <span>{sentenceCase(post.data.category)}</span>
+      <span class="opacity-0 transition group-hover:translate-x-1 group-hover:opacity-100">
+        &rarr;
+      </span>
+    </div>
+    <p>{post.data.description}</p>
+  </a>
+</article>

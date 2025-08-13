@@ -1,0 +1,42 @@
+---
+import { getCollection } from 'astro:content';
+import { sentenceCase } from 'change-case';
+import { twMerge } from 'tailwind-merge';
+import { categories } from '@content/config';
+import navigation from '@data/navigation.yml';
+
+interface Props {
+  current?: string;
+}
+
+const { current } = Astro.props;
+
+const posts = await getCollection('news', ({ data }) => !import.meta.env.PROD || !data.draft);
+const usedCategories = Array.from(new Set(posts.map(({ data }) => data.category)));
+const nonEmptyCategories = categories.filter((c) => usedCategories.includes(c));
+---
+
+<div class="flex flex-wrap justify-center gap-1">
+  <a
+    href={navigation.news.href}
+    class={twMerge(
+      'rounded-full px-3.5 leading-9 font-medium text-indigo-500 transition select-none hover:bg-indigo-400/10 dark:text-indigo-400',
+      current === undefined && 'bg-indigo-400/10'
+    )}
+  >
+    All
+  </a>
+  {
+    nonEmptyCategories.map((c) => (
+      <a
+        href={`${navigation.news.href}/${c}`}
+        class={twMerge(
+          'rounded-full px-3.5 leading-9 font-medium text-indigo-500 transition select-none hover:bg-indigo-400/10 dark:text-indigo-400',
+          current === c && 'bg-indigo-400/10'
+        )}
+      >
+        {sentenceCase(c)}
+      </a>
+    ))
+  }
+</div>
