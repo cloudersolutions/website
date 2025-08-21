@@ -39,7 +39,8 @@ export default {
             },
             img: {
               borderRadius: '0.25rem',
-              backgroundColor: 'color-mix(in srgb, currentColor 10%, transparent)'
+              backgroundColor: 'color-mix(in oklab, currentColor 10%, transparent)',
+              color: 'var(--color-neutral-500)'
             }
           }
         },
