@@ -12,11 +12,7 @@ import PlayIcon from 'lucide-astro/Play';
 import ShieldCheckIcon from 'lucide-astro/ShieldCheck';
 import site from '@data/site.yml';
 import Overline from '@components/Overline.astro';
-import Ping from '@components/Ping.astro';
 import MainLayout from '@layouts/MainLayout.astro';
-import HowClouderWorksIllustration from '@assets/how-clouder-works.svg';
-import SolutionIndustryIllustration from '@assets/solution-industry.svg';
-import SolutionClouderIllustration from '@assets/solution-clouder.svg';
 import uiLightImage from '@assets/ui-light.png';
 import uiDarkImage from '@assets/ui-dark.png';
 
@@ -172,122 +168,7 @@ const caseExamplePosts = posts
       </div>
     </div>
   </section>
-  <section class="container py-8 sm:pt-12 lg:pt-16 lg:pb-10">
-    <Overline title="Solution" />
-    <div class="grid grid-cols-1 gap-10 lg:grid-cols-3">
-      <div class="col-span-1 lg:pr-8">
-        <h2 class="mb-5 text-3xl font-semibold text-neutral-900 md:text-4xl dark:text-neutral-100">
-          The last API you’ll ever need
-        </h2>
-        <p class="text-lg">
-          Unlike traditional setups that require integrating multiple cloud solutions to your
-          systems, Clouder provides a single platform and API. The heavy lifting is done on-site,
-          producing higher quality and more comprehensive data that can easily be accessed from the
-          cloud.
-        </p>
-      </div>
-      <div class="col-span-2">
-        <div class="py-1.5 transition">
-          <h3 class="mb-4 text-xl font-semibold text-neutral-900 dark:text-neutral-100">
-            Current industry trend
-          </h3>
-          <SolutionIndustryIllustration class="h-auto w-full drop-shadow-sm drop-shadow-black/5" />
-        </div>
-        <div class="py-1.5 transition">
-          <h3 class="mb-4 text-xl font-semibold text-neutral-900 dark:text-neutral-100">
-            Clouder’s solution
-          </h3>
-          <SolutionClouderIllustration class="h-auto w-full drop-shadow-sm drop-shadow-black/5" />
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="container py-8 sm:py-12 lg:py-16">
-    <Overline title="Product" />
-    <h2
-      class="mb-8 text-3xl font-semibold text-neutral-900 md:text-4xl lg:mb-12 dark:text-neutral-100"
-    >
-      How it works
-    </h2>
-    <div class="grid grid-cols-1 gap-10 md:grid-cols-2 xl:grid-cols-4">
-      <div
-        class="col-span-1 flex items-center justify-center px-4 md:col-span-2 xl:col-span-2 xl:col-start-2 xl:row-span-2"
-      >
-        <div class="relative my-4">
-          <HowClouderWorksIllustration class="h-auto max-w-full" />
-          <span class="absolute top-[91.85%] left-[7.75%] flex size-3">
-            <Ping color="purple" isAnimated />
-          </span>
-          <span class="absolute top-[64%] left-0 flex size-3">
-            <Ping color="indigo" isAnimated />
-          </span>
-          <span class="absolute top-[93%] left-[42%] flex size-3">
-            <Ping color="pink" isAnimated />
-          </span>
-          <span class="absolute top-[35%] left-[79.5%] flex size-3">
-            <Ping color="sky" isAnimated />
-          </span>
-        </div>
-      </div>
-      <div class="xl:col-start-1 xl:row-start-1">
-        <div class="mb-2 flex items-center gap-3">
-          <Ping color="purple" />
-          <h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100">
-            Virtual cables
-          </h3>
-        </div>
-        <p>
-          The signals of building technology systems are digitized and transmitted through the
-          building’s core network with virtual cables. This eliminates the need for physical
-          low-voltage cables that run through structures and firestops, making the system flexible.
-        </p>
-      </div>
-      <div class="xl:col-start-1 xl:row-start-2">
-        <div class="mb-2 flex items-center gap-3">
-          <Ping color="indigo" />
-          <h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100">
-            Edge Connectors
-          </h3>
-        </div>
-        <p>
-          Edge Connector (EC) devices act as connection points for systems and devices, transmitting
-          data to the Virtual Cabling Engine through either wireless or wired IP networks using
-          end-to-end encryption. Edge Connectors operate similarly to distributed I/O systems and
-          significantly reduce the need for traditional cabling.
-        </p>
-      </div>
-      <div class="xl:col-start-4 xl:row-start-1">
-        <div class="mb-2 flex items-center gap-3">
-          <Ping color="sky" />
-          <h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100">Data storage</h3>
-        </div>
-        <p>
-          All system and device data is securely stored in the cloud, where it can be accessed in
-          real-time through the Clouder Dashboard or via our API. This centralized approach allows
-          you to seamlessly monitor and analyze data from all your systems and devices.
-        </p>
-      </div>
-      <div class="xl:col-start-4 xl:row-start-2">
-        <div class="mb-2 flex items-center gap-3">
-          <Ping color="pink" />
-          <h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100">
-            Virtual Cabling Engine
-          </h3>
-        </div>
-        <p class="mb-4">
-          The Virtual Cabling Engine (VCE) integrates with building technology systems on a more
-          advanced level compared to traditional setups. It stores virtual cabling information,
-          consolidates data from Edge Connectors and handles protocol conversions on-site. The data
-          is then securely transmitted to the cloud.
-        </p>
-        <a
-          href="/product"
-          class="inline-flex h-8 flex-shrink-0 cursor-pointer items-center rounded border border-current/15 bg-white px-3 text-center text-xs font-medium text-nowrap transition select-none hover:bg-neutral-100 dark:bg-neutral-900 dark:hover:bg-neutral-800"
-          >Learn more</a
-        >
-      </div>
-    </div>
-  </section>
+
   <section class="container py-8 sm:py-12 lg:py-16">
     <Overline title="Sustainability" />
     <div class="mx-auto max-w-prose text-center">
