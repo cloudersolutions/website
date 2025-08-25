@@ -2,15 +2,10 @@
 import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
 import { twMerge } from 'tailwind-merge';
-import BuildingIcon from 'lucide-astro/Building';
-import ChartNoAxesColumnIcon from 'lucide-astro/ChartNoAxesColumn';
-import EuroIcon from 'lucide-astro/Euro';
-import HardHatIcon from 'lucide-astro/HardHat';
-import HousePlugIcon from 'lucide-astro/HousePlug';
 import LeafIcon from 'lucide-astro/Leaf';
 import PlayIcon from 'lucide-astro/Play';
-import ShieldCheckIcon from 'lucide-astro/ShieldCheck';
 import site from '@data/site.yml';
+import navigation from '@data/navigation.yml';
 import Overline from '@components/Overline.astro';
 import MainLayout from '@layouts/MainLayout.astro';
 import uiLightImage from '@assets/ui-light.png';
@@ -49,17 +44,17 @@ const caseExamplePosts = posts
           </p>
           <div class="flex gap-3">
             <a
-              href="https://www.youtube.com/watch?v=kdJNcAIhxDE"
+              href="#benefits"
               class="inline-flex h-11 cursor-pointer items-center justify-center gap-2 rounded bg-indigo-500 px-5 text-center text-sm font-medium text-nowrap text-white shadow-xs transition select-none hover:bg-indigo-600 dark:hover:bg-indigo-400"
             >
               <PlayIcon size={14} class="fill-current stroke-current" />
               See how it works
             </a>
             <a
-              href="#benefits"
+              href={navigation.contact.href}
               class="inline-flex h-11 cursor-pointer items-center justify-center gap-2 rounded border border-current/15 bg-white px-5 text-center text-sm font-medium text-nowrap shadow-xs transition select-none hover:bg-neutral-100 dark:bg-neutral-900 dark:hover:bg-neutral-800"
             >
-              Learn more
+              Book a demo
             </a>
           </div>
         </div>
@@ -80,95 +75,85 @@ const caseExamplePosts = posts
       </div>
     </div>
   </section>
+  <section class="container pb-12 md:pb-16">
+    <p class="mb-4 text-sm font-medium text-neutral-500 sm:mb-6 lg:mb-8">Trusted by</p>
+    <div class="flex flex-wrap justify-between gap-8">
+      <img class="h-16 w-32 object-contain" src="https://placeholdit.com/200x100" />
+      <img class="h-16 w-32 object-contain" src="https://placeholdit.com/200x100" />
+      <img class="h-16 w-32 object-contain" src="https://placeholdit.com/200x100" />
+      <img class="h-16 w-32 object-contain" src="https://placeholdit.com/200x100" />
+      <img class="h-16 w-32 object-contain" src="https://placeholdit.com/200x100" />
+      <img class="h-16 w-32 object-contain" src="https://placeholdit.com/200x100" />
+    </div>
+  </section>
   <section id="benefits" class="container pb-12 md:pb-16">
     <Overline title="Benefits" />
-    <div class="grid grid-cols-1 gap-10 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-9">
-      <div class="col-span-full xl:col-span-3 xl:row-span-2">
+    <div class="grid grid-cols-1 gap-10 md:grid-cols-3">
+      <div class="col-span-full lg:col-span-1">
         <h2 class="mb-5 text-3xl font-semibold text-neutral-900 md:text-4xl dark:text-neutral-100">
           The future of real estate is data
         </h2>
-        <p class="text-lg">
+        <p class="mb-5 text-lg">
           Forward-thinking property owners and managers use Clouder to increase asset value, enhance
           building performance, and improve occupant satisfaction.
         </p>
-      </div>
-      <div class="col-span-2">
-        <div class="w-min rounded bg-indigo-400/10 p-2.5">
-          <HousePlugIcon size={20} class="stroke-indigo-500 dark:stroke-indigo-400" />
-        </div>
-        <h3 class="mt-3 mb-2 text-xl font-semibold text-neutral-900 dark:text-neutral-100">
-          Energy savings
-        </h3>
+        <p class="mb-2 text-lg font-semibold">Energy savings</p>
         <p>
           Detect reasons for excess energy consumption and make your building more energy efficient
           with real-time monitoring and system control. Our solutions can reduce energy costs by
           20–50%.
         </p>
       </div>
-      <div class="col-span-2">
-        <div class="w-min rounded bg-indigo-400/10 p-2.5">
-          <ChartNoAxesColumnIcon size={20} class="stroke-indigo-500 dark:stroke-indigo-400" />
-        </div>
-        <h3 class="mt-3 mb-2 text-xl font-semibold text-neutral-900 dark:text-neutral-100">
-          Accurate data
-        </h3>
-        <p>
-          A vendor-independent solution that integrates, collects, and saves all building tech
-          system data and device data points. Accurate and real-time data can be utilized in
-          monitoring, reporting, and other applications.
-        </p>
-      </div>
-      <div class="col-span-2">
-        <div class="w-min rounded bg-indigo-400/10 p-2.5">
-          <HardHatIcon size={20} class="stroke-indigo-500 dark:stroke-indigo-400" />
-        </div>
-        <h3 class="mt-3 mb-2 text-xl font-semibold text-neutral-900 dark:text-neutral-100">
-          Flexibility
-        </h3>
-        <p>
-          Easy to expand without breaking surfaces, expensive cabling, or complicated programming
-          projects. Connected devices are automatically integrated into the solution.
-        </p>
-      </div>
-      <div class="col-span-2">
-        <div class="w-min rounded bg-indigo-400/10 p-2.5">
-          <BuildingIcon size={20} class="stroke-indigo-500 dark:stroke-indigo-400" />
-        </div>
-        <h3 class="mt-3 mb-2 text-xl font-semibold text-neutral-900 dark:text-neutral-100">
-          Efficient operations
-        </h3>
-        <p>
-          Fault detection and diagnostics in your web browser reduce unnecessary manual work and
-          streamline troubleshooting, leading to significant maintenance cost savings.
-        </p>
-      </div>
-      <div class="col-span-2">
-        <div class="w-min rounded bg-indigo-400/10 p-2.5">
-          <EuroIcon size={20} class="stroke-indigo-500 dark:stroke-indigo-400" />
-        </div>
-        <h3 class="mt-3 mb-2 text-xl font-semibold text-neutral-900 dark:text-neutral-100">
-          Cost savings
-        </h3>
-        <p>
-          Clear and predictable pricing with no surprises. No need for ongoing updates for third
-          party solution APIs or unexpected BMS programming due to constant changes in systems.
-        </p>
-      </div>
-      <div class="col-span-2">
-        <div class="w-min rounded bg-indigo-400/10 p-2.5">
-          <ShieldCheckIcon size={20} class="stroke-indigo-500 dark:stroke-indigo-400" />
-        </div>
-        <h3 class="mt-3 mb-2 text-xl font-semibold text-neutral-900 dark:text-neutral-100">
-          Security
-        </h3>
-        <p>
-          Secure your building technology with accurate audit trail, end-to-end encryption and
-          secure cloud connection. No more default passwords known by everyone.
-        </p>
+      <div class="col-span-full lg:col-span-2">
+        <iframe
+          class="aspect-video h-auto w-full rounded-md bg-black"
+          src="https://www.youtube.com/embed/I667nb4kOJc?si=FwujKkc2vnbM-aUb"
+          frameborder="0"
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen></iframe>
       </div>
     </div>
   </section>
-
+  {
+    caseExamplePosts.length > 0 && (
+      <section class="container py-8 sm:py-12 lg:py-16">
+        <Overline title="Cases examples" />
+        <div
+          class:list={twMerge(
+            'grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-10',
+            caseExamplePosts.length === 1 && 'lg:grid-cols-2'
+          )}
+        >
+          <h2 class="text-2xl font-semibold text-neutral-900 md:col-span-2 md:text-3xl lg:col-span-1 dark:text-neutral-100">
+            Learn how our customers are using Clouder
+          </h2>
+          {caseExamplePosts.map((post) => (
+            <article class="group relative rounded bg-white transition hover:shadow-xs md:mt-1.5 dark:bg-neutral-900">
+              <a href={`/news/${post.slug}`} class="flex h-full flex-col items-start rounded">
+                <div class="relative overflow-clip rounded-t-sm">
+                  <Image
+                    src={post.data.cover}
+                    alt={post.data.title}
+                    width={800}
+                    class="aspect-video bg-current/10 object-cover text-neutral-500"
+                  />
+                  <div class="absolute inset-0 bg-current opacity-0 transition duration-300 group-hover:opacity-10" />
+                </div>
+                <h3 class="mx-6 my-5 text-xl font-semibold text-neutral-900 transition group-hover:text-current dark:text-neutral-100">
+                  {post.data.title}
+                </h3>
+                <p class="m-6 mt-auto inline-flex h-8 cursor-pointer items-center rounded border border-current/25 px-3 text-xs font-medium text-current/65 transition hover:bg-current/5">
+                  Read more
+                </p>
+              </a>
+              <div class="pointer-events-none absolute inset-0 rounded border border-current/15 transition group-hover:border-current/16" />
+            </article>
+          ))}
+        </div>
+      </section>
+    )
+  }
   <section class="container py-8 sm:py-12 lg:py-16">
     <Overline title="Sustainability" />
     <div class="mx-auto max-w-prose text-center">
@@ -310,44 +295,5 @@ const caseExamplePosts = posts
       </div>
     </div>
   </section>
-  {
-    caseExamplePosts.length > 0 && (
-      <section class="container py-8 sm:py-12 lg:py-16">
-        <Overline title="Cases examples" />
-        <div
-          class:list={twMerge(
-            'grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-10',
-            caseExamplePosts.length === 1 && 'lg:grid-cols-2'
-          )}
-        >
-          <h2 class="text-2xl font-semibold text-neutral-900 md:col-span-2 md:text-3xl lg:col-span-1 dark:text-neutral-100">
-            Learn how our customers are using Clouder
-          </h2>
-          {caseExamplePosts.map((post) => (
-            <article class="group relative rounded bg-white transition hover:shadow-xs md:mt-1.5 dark:bg-neutral-900">
-              <a href={`/news/${post.slug}`} class="flex h-full flex-col items-start rounded">
-                <div class="relative overflow-clip rounded-t-sm">
-                  <Image
-                    src={post.data.cover}
-                    alt={post.data.title}
-                    width={800}
-                    class="aspect-video bg-current/10 object-cover text-neutral-500"
-                  />
-                  <div class="absolute inset-0 bg-current opacity-0 transition duration-300 group-hover:opacity-10" />
-                </div>
-                <h3 class="mx-6 my-5 text-xl font-semibold text-neutral-900 transition group-hover:text-current dark:text-neutral-100">
-                  {post.data.title}
-                </h3>
-                <p class="m-6 mt-auto inline-flex h-8 cursor-pointer items-center rounded border border-current/25 px-3 text-xs font-medium text-current/65 transition hover:bg-current/5">
-                  Read more
-                </p>
-              </a>
-              <div class="pointer-events-none absolute inset-0 rounded border border-current/15 transition group-hover:border-current/16" />
-            </article>
-          ))}
-        </div>
-      </section>
-    )
-  }
   <div class="h-8 sm:h-12 lg:h-16"></div>
 </MainLayout>

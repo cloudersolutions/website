@@ -15,8 +15,6 @@ import Overline from '@components/Overline.astro';
 import Ping from '@components/Ping.astro';
 import MainLayout from '@layouts/MainLayout.astro';
 import HowClouderWorksIllustration from '@assets/how-clouder-works.svg';
-import SolutionIndustryIllustration from '@assets/solution-industry.svg';
-import SolutionClouderIllustration from '@assets/solution-clouder.svg';
 
 const title = 'Product';
 const description =
@@ -233,11 +231,11 @@ const description =
   <section id="benefits" class="container py-8 sm:pt-12 lg:pt-16 lg:pb-10">
     <Overline title="Benefits" />
     <div class="grid grid-cols-1 gap-10 lg:grid-cols-3">
-      <div class="col-span-1 lg:pr-8">
+      <div class="col-span-full lg:col-span-1">
         <h2 class="mb-5 text-3xl font-semibold text-neutral-900 md:text-4xl dark:text-neutral-100">
           The last API you’ll ever need
         </h2>
-        <p class="mb-6 text-lg">
+        <p class="mb-6">
           Unlike traditional setups that require integrating multiple cloud solutions to your
           systems, Clouder provides a single platform and API. The heavy lifting is done on-site,
           producing higher quality and more comprehensive data that can easily be accessed from the
@@ -250,19 +248,14 @@ const description =
           Book a demo
         </a>
       </div>
-      <div class="col-span-2">
-        <div class="py-1.5 transition">
-          <h3 class="mb-4 text-xl font-semibold text-neutral-900 dark:text-neutral-100">
-            Current industry trend
-          </h3>
-          <SolutionIndustryIllustration class="h-auto w-full drop-shadow-sm drop-shadow-black/5" />
-        </div>
-        <div class="py-1.5 transition">
-          <h3 class="mb-4 text-xl font-semibold text-neutral-900 dark:text-neutral-100">
-            Clouder’s solution
-          </h3>
-          <SolutionClouderIllustration class="h-auto w-full drop-shadow-sm drop-shadow-black/5" />
-        </div>
+      <div class="col-span-full lg:col-span-2">
+        <iframe
+          class="aspect-video h-auto w-full rounded-md bg-black"
+          src="https://www.youtube.com/embed/I667nb4kOJc?si=FwujKkc2vnbM-aUb"
+          frameborder="0"
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen></iframe>
       </div>
     </div>
   </section>

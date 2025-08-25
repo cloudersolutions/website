@@ -5,6 +5,7 @@ import ArrowRightIcon from 'lucide-astro/ArrowRight';
 import ArrowLeftIcon from 'lucide-astro/ArrowLeft';
 import { formatDate } from '@utils/date.ts';
 import ProseLayout from '@layouts/ProseLayout.astro';
+import Overline from '@components/Overline.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection('news', ({ data }) =>
@@ -43,6 +44,7 @@ const { Content } = await post.render();
     </section>
   </article>
   <footer class="not-prose">
+    <Overline title="More news" />
     <nav class="grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2 sm:gap-x-8 lg:gap-x-10">
       {
         previousPost && (
