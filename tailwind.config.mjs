@@ -12,12 +12,16 @@ export default {
             lineHeight: '1.625',
             maxWidth: '70ch',
             blockquote: {
-              borderInlineStartWidth: '2px',
-              paddingInlineStart: '1.25rem'
+              marginTop: '2rem',
+              marginBottom: '2rem',
+              border: 'none',
+              padding: 0,
+              lineHeight: '1.5'
             },
             'blockquote p:first-of-type': {
-              fontSize: '1.125rem',
-              textIndent: '-0.45em'
+              fontSize: '1.25rem',
+              fontWeight: '550',
+              textIndent: '-0.5em'
             },
             'blockquote p:first-of-type::before': {
               content: 'open-quote'
@@ -32,7 +36,9 @@ export default {
               color: 'var(--tw-prose-captions)',
               fontStyle: 'normal',
               fontSize: '0.875rem',
-              marginTop: '-0.5rem'
+              fontWeight: '400',
+              marginTop: '-0.75em',
+              marginBottom: 0
             },
             'blockquote p:last-of-type:not(p:only-child)::before': {
               content: '"— "'

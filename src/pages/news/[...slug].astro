@@ -5,7 +5,6 @@ import ArrowRightIcon from 'lucide-astro/ArrowRight';
 import ArrowLeftIcon from 'lucide-astro/ArrowLeft';
 import { formatDate } from '@utils/date.ts';
 import ProseLayout from '@layouts/ProseLayout.astro';
-import Overline from '@components/Overline.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection('news', ({ data }) =>
@@ -28,7 +27,7 @@ const { Content } = await post.render();
 ---
 
 <ProseLayout title={post.data.title} description={post.data.description} image={post.data.cover}>
-  <article class="mb-8 sm:mb-16 lg:mb-24">
+  <article class="mb-8 sm:mb-12 lg:mb-16">
     <header class="not-prose">
       <h1 class="text-3xl font-semibold text-neutral-900 md:text-4xl dark:text-neutral-100">
         {post.data.title}
@@ -43,21 +42,22 @@ const { Content } = await post.render();
       <Content />
     </section>
   </article>
-  <footer class="not-prose">
-    <Overline title="More news" />
+  <footer
+    class="not-prose border-t border-neutral-200 pt-6 sm:pt-8 lg:pt-10 dark:border-neutral-800"
+  >
     <nav class="grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2 sm:gap-x-8 lg:gap-x-10">
       {
         previousPost && (
           <a
             href={`/news/${previousPost.slug}`}
-            class="group flex flex-col items-start gap-2 rounded border border-current/12 bg-white p-4 text-left transition hover:border-current/16 hover:text-current hover:shadow-xs dark:bg-neutral-900"
+            class="group flex flex-col items-start gap-2 text-left"
           >
-            <div class="flex items-center gap-1 text-neutral-500">
+            <div class="flex items-center gap-1 text-neutral-500 transition group-hover:text-neutral-900 dark:group-hover:text-neutral-200">
               <ArrowLeftIcon
                 size={14}
                 class="flex-shrink-0 transition group-hover:-translate-x-0.5"
               />
-              <span class="text-sm leading-tight">Previous</span>
+              <span class="text-sm">Previous</span>
             </div>
             <p class="text-base font-semibold">{previousPost.data.title}</p>
           </a>
@@ -67,10 +67,10 @@ const { Content } = await post.render();
         nextPost && (
           <a
             href={`/news/${nextPost.slug}`}
-            class="group flex flex-col items-end gap-2 rounded border border-current/12 bg-white p-4 text-right transition hover:border-current/16 hover:text-current hover:shadow-xs md:col-start-2 dark:bg-neutral-900"
+            class="group flex flex-col items-end gap-2 text-right md:col-start-2"
           >
-            <div class="flex items-center gap-1 text-neutral-500">
-              <span class="text-sm leading-tight">Next</span>
+            <div class="flex items-center gap-1 text-neutral-500 transition group-hover:text-neutral-900 dark:group-hover:text-neutral-200">
+              <span class="text-sm">Next</span>
               <ArrowRightIcon
                 size={14}
                 class="flex-shrink-0 transition group-hover:translate-x-0.5"
