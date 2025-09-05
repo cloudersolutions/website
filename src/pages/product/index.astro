@@ -41,16 +41,10 @@ const description =
           Plans
         </a>
         <a
-          href="#benefits"
-          class="rounded-full px-3.5 leading-9 font-medium text-indigo-500 transition select-none hover:bg-indigo-400/10 dark:text-indigo-400"
-        >
-          Benefits
-        </a>
-        <a
           href="#overview"
           class="rounded-full px-3.5 leading-9 font-medium text-indigo-500 transition select-none hover:bg-indigo-400/10 dark:text-indigo-400"
         >
-          Overview
+          How it works
         </a>
         <a
           href="#features"
@@ -228,37 +222,6 @@ const description =
       </div>
     </div>
   </section>
-  <section id="benefits" class="container py-8 sm:pt-12 lg:pt-16 lg:pb-10">
-    <Overline title="Benefits" />
-    <div class="grid grid-cols-1 gap-10 lg:grid-cols-3">
-      <div class="col-span-full lg:col-span-1">
-        <h2 class="mb-5 text-3xl font-semibold text-neutral-900 md:text-4xl dark:text-neutral-100">
-          The last API you’ll ever need
-        </h2>
-        <p class="mb-6">
-          Unlike traditional setups that require integrating multiple cloud solutions to your
-          systems, Clouder provides a single platform and API. The heavy lifting is done on-site,
-          producing higher quality and more comprehensive data that can easily be accessed from the
-          cloud.
-        </p>
-        <a
-          href={navigation.contact.href + '#form'}
-          class="inline-flex h-11 cursor-pointer items-center justify-center gap-2 rounded bg-indigo-500 px-5 text-center text-sm font-medium text-nowrap text-white transition select-none hover:bg-indigo-600 dark:hover:bg-indigo-400"
-        >
-          Book a demo
-        </a>
-      </div>
-      <div class="col-span-full lg:col-span-2">
-        <iframe
-          class="aspect-video h-auto w-full rounded-md bg-black"
-          src="https://www.youtube.com/embed/I667nb4kOJc?si=FwujKkc2vnbM-aUb"
-          frameborder="0"
-          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen></iframe>
-      </div>
-    </div>
-  </section>
   <section id="overview" class="container py-8 sm:py-12 lg:py-16">
     <Overline title="Overview" />
     <h2
@@ -266,9 +229,9 @@ const description =
     >
       How it works
     </h2>
-    <div class="grid grid-cols-1 gap-10 md:grid-cols-2 xl:grid-cols-4">
+    <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 xl:grid-cols-4">
       <div
-        class="col-span-1 flex items-center justify-center px-4 md:col-span-2 xl:col-span-2 xl:col-start-2 xl:row-span-2"
+        class="col-span-1 flex items-center justify-center px-4 lg:col-start-2 lg:row-span-4 lg:row-start-1 xl:col-span-2 xl:col-start-2 xl:row-span-2"
       >
         <div class="relative my-4">
           <HowClouderWorksIllustration class="h-auto max-w-full" />
@@ -286,7 +249,7 @@ const description =
           </span>
         </div>
       </div>
-      <div class="xl:col-start-1 xl:row-start-1">
+      <div class="lg:row-start-1 xl:col-start-1 xl:row-start-1">
         <div class="mb-2 flex items-center gap-3">
           <Ping color="purple" />
           <h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100">
@@ -299,7 +262,7 @@ const description =
           low-voltage cables that run through structures and firestops, making the system flexible.
         </p>
       </div>
-      <div class="xl:col-start-1 xl:row-start-2">
+      <div class="lg:row-start-2 xl:col-start-1 xl:row-start-2">
         <div class="mb-2 flex items-center gap-3">
           <Ping color="indigo" />
           <h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100">
@@ -313,7 +276,7 @@ const description =
           significantly reduce the need for traditional cabling.
         </p>
       </div>
-      <div class="xl:col-start-4 xl:row-start-1">
+      <div class="lg:row-start-3 xl:col-start-4 xl:row-start-1">
         <div class="mb-2 flex items-center gap-3">
           <Ping color="sky" />
           <h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100">Data storage</h3>
@@ -324,7 +287,7 @@ const description =
           you to seamlessly monitor and analyze data from all your systems and devices.
         </p>
       </div>
-      <div class="xl:col-start-4 xl:row-start-2">
+      <div class="lg:row-start-4 xl:col-start-4 xl:row-start-2">
         <div class="mb-2 flex items-center gap-3">
           <Ping color="pink" />
           <h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100">
