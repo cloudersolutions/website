@@ -1,0 +1,65 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+  videoId: string;
+  coverImg: ImageMetadata;
+}
+
+const { videoId, coverImg } = Astro.props;
+
+const embedUrl = `https://www.youtube.com/embed/${videoId}?controls=1&modestbranding=1&rel=0&fs=0&playsinline=1`;
+---
+
+<youtube-embed data-id={videoId}>
+  <div class="relative aspect-video overflow-clip rounded-md bg-black">
+    <iframe
+      id={`yt-iframe-${videoId}`}
+      src={embedUrl}
+      class="absolute inset-0 z-0 size-full"
+      frameborder="0"
+      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; autoplay"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen></iframe>
+    <div
+      aria-hidden
+      id={`yt-cover-${videoId}`}
+      class="absolute inset-0 z-1 flex cursor-pointer items-center justify-center bg-black transition delay-250 duration-250"
+    >
+      <Image src={coverImg} alt="cover" class="absolute inset-0 transition hover:opacity-80" />
+      <svg
+        width="100"
+        height="100"
+        viewBox="0 0 100 100"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="pointer-events-none size-16 drop-shadow md:size-20"
+      >
+        <path
+          d="M50 0C77.6142 0 100 22.3858 100 50C100 77.6142 77.6142 100 50 100C22.3858 100 0 77.6142 0 50C0 22.3858 22.3858 0 50 0ZM36 70L72 50L36 30V70Z"
+          class="fill-white"></path>
+      </svg>
+    </div>
+  </div>
+</youtube-embed>
+
+<script>
+  class YouTubeEmbed extends HTMLElement {
+    connectedCallback() {
+      const { id } = this.dataset;
+      const cover: HTMLDivElement | null = this.querySelector(`#yt-cover-${id}`);
+      const iframe: HTMLIFrameElement | null = this.querySelector(`#yt-iframe-${id}`);
+
+      if (!cover || !iframe) return;
+
+      cover.addEventListener('click', () => {
+        cover.style.opacity = '0';
+        cover.style.visibility = 'hidden';
+        if (!iframe.src.includes('autoplay=1')) {
+          iframe.src += '&autoplay=1';
+        }
+      });
+    }
+  }
+  customElements.define('youtube-embed', YouTubeEmbed);
+</script>
