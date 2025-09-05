@@ -11,6 +11,7 @@ import YouTubeEmbed from '@components/YouTubeEmbed.astro';
 import MainLayout from '@layouts/MainLayout.astro';
 import uiLightImage from '@assets/ui-light.png';
 import uiDarkImage from '@assets/ui-dark.png';
+import videoCover from '@assets/video-cover.png';
 
 const posts = await getCollection('news', ({ data }) => !import.meta.env.PROD || !data.draft);
 
@@ -64,8 +65,18 @@ const caseExamplePosts = posts
             <div
               class="translate-x-1/5 translate-y-8 -rotate-20 skew-10 overflow-clip rounded-md border border-current/10 shadow-[0_0_32px_#0001] lg:translate-y-4 xl:translate-x-48 dark:shadow-[0_0_32px_#0006]"
             >
-              <Image src={uiLightImage} alt="" class="block bg-neutral-50 dark:hidden" />
-              <Image src={uiDarkImage} alt="" class="hidden bg-neutral-950 dark:block" />
+              <Image
+                src={uiLightImage}
+                alt=""
+                class="block bg-neutral-50 dark:hidden"
+                layout="full-width"
+              />
+              <Image
+                src={uiDarkImage}
+                alt=""
+                class="hidden bg-neutral-950 dark:block"
+                layout="full-width"
+              />
             </div>
             <div
               class="absolute bottom-0 left-0 h-1/2 w-screen bg-gradient-to-t from-neutral-50 to-transparent dark:from-neutral-950"
@@ -106,7 +117,7 @@ const caseExamplePosts = posts
         </p>
       </div>
       <div class="col-span-full lg:col-span-2">
-        <YouTubeEmbed videoId="I667nb4kOJc" coverImg={uiDarkImage} />
+        <YouTubeEmbed videoId="I667nb4kOJc" coverImg={videoCover} />
       </div>
     </div>
   </section>
@@ -130,7 +141,8 @@ const caseExamplePosts = posts
                   <Image
                     src={post.data.cover}
                     alt={post.data.title}
-                    width={800}
+                    width={600}
+                    layout="constrained"
                     class="aspect-video bg-current/10 object-cover text-neutral-500"
                   />
                   <div class="absolute inset-0 bg-current opacity-0 transition duration-300 group-hover:opacity-10" />
