@@ -12,6 +12,7 @@ import MainLayout from '@layouts/MainLayout.astro';
 import uiLightImage from '@assets/ui-light.png';
 import uiDarkImage from '@assets/ui-dark.png';
 import videoCover from '@assets/video-cover.png';
+import heroVideo from '@assets/hero.webm';
 
 const posts = await getCollection('news', ({ data }) => !import.meta.env.PROD || !data.draft);
 
@@ -26,13 +27,21 @@ const caseExamplePosts = posts
   description={site.description}
   headerClass="bg-white dark:bg-neutral-900"
 >
-  <section class="bg-gradient-to-b from-white to-transparent dark:from-neutral-900">
-    <div class="container" style="clip-path: inset(-100vw -100vw 1px -100vw);">
-      <div class="grid grid-cols-1 lg:grid-cols-2">
-        <div class="pt-16 lg:pt-32">
-          <h1
-            class="mb-6 text-4xl font-semibold text-neutral-950 xl:text-5xl xl:leading-14 dark:text-neutral-50"
-          >
+  <section class="bg-black">
+    <div class="relative container">
+      <video
+        aria-hidden="true"
+        playsinline=""
+        autoplay=""
+        muted=""
+        loop=""
+        class="absolute inset-0 left-1/4 z-0 size-full object-cover opacity-75"
+      >
+        <source src={heroVideo} type="video/webm" />
+      </video>
+      <div class="relative z-1 grid grid-cols-1 lg:grid-cols-2">
+        <div class="py-24 lg:py-48">
+          <h1 class="mb-6 text-4xl font-semibold text-neutral-50 xl:text-5xl xl:leading-14">
             The market-leading
             <span
               class="underline decoration-indigo-400/20 underline-offset-4 dark:underline-offset-6"
@@ -40,7 +49,7 @@ const caseExamplePosts = posts
               data and integration platform</span
             > for commercial real estate
           </h1>
-          <p class="mb-8 text-xl">
+          <p class="mb-8 text-xl text-neutral-300">
             Clouder’s virtual cabling enables net-zero digital buildings by seamlessly integrating
             all building technology systems and devices, regardless of vendor or protocol.
           </p>
@@ -58,30 +67,6 @@ const caseExamplePosts = posts
             >
               Book a demo
             </a>
-          </div>
-        </div>
-        <div>
-          <div class="relative w-xl perspective-dramatic lg:w-4xl xl:w-5xl">
-            <div
-              class="translate-x-1/5 translate-y-8 -rotate-20 skew-10 overflow-clip rounded-md border border-current/10 shadow-[0_0_32px_#0001] lg:translate-y-4 xl:translate-x-48 dark:shadow-[0_0_32px_#0006]"
-            >
-              <Image
-                src={uiLightImage}
-                alt=""
-                class="block bg-neutral-50 dark:hidden"
-                layout="full-width"
-              />
-              <Image
-                src={uiDarkImage}
-                alt=""
-                class="hidden bg-neutral-950 dark:block"
-                layout="full-width"
-              />
-            </div>
-            <div
-              class="absolute bottom-0 left-0 h-1/2 w-screen bg-gradient-to-t from-neutral-50 to-transparent dark:from-neutral-950"
-            >
-            </div>
           </div>
         </div>
       </div>
