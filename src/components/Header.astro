@@ -43,7 +43,7 @@ const isExternal = (href: string) => {
             href={href}
             aria-current={isActive(href) ? 'page' : undefined}
             class:list={twMerge(
-              'inline-flex items-center gap-0.5 rounded-full px-3.5 leading-9 font-medium text-current underline-offset-8 transition select-none hover:bg-current/5 aria-[current]:text-current aria-[current]:underline aria-[current]:hover:bg-transparent',
+              'inline-flex items-center gap-0.5 rounded-full px-3.5 leading-9 font-medium text-current decoration-1 underline-offset-6 transition select-none hover:bg-current/10 aria-[current]:text-current aria-[current]:underline aria-[current]:hover:bg-transparent',
               navigationLinks.some((i) => isActive(i.href)) && 'text-current/65 hover:text-current'
             )}
           >

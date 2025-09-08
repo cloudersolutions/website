@@ -1,7 +1,6 @@
 ---
 import { Image } from 'astro:assets';
 import MainLayout from '@layouts/MainLayout.astro';
-import Overline from '@components/Overline.astro';
 import labImage from '@assets/emma-jussi-labra.jpg';
 
 const title = 'About us';
@@ -11,16 +10,16 @@ const description =
 
 <MainLayout title={title} description={description} headerClass="bg-white dark:bg-neutral-900">
   <section class="border-b border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-900">
-    <div class="container-narrow pt-16 pb-24 text-center lg:pt-28 lg:pb-40">
+    <div
+      class="container-narrow pt-12 pb-16 text-center sm:pt-16 sm:pb-20 md:pt-20 md:pb-24 lg:pt-28 lg:pb-32"
+    >
       <h1 class="mb-5 text-4xl font-semibold text-neutral-900 md:text-5xl dark:text-neutral-100">
         The Virtual Cabling Company
       </h1>
       <p class="text-xl">{description}</p>
     </div>
   </section>
-  <div class="h-8 sm:h-12 lg:h-16"></div>
-  <section class="container py-8 sm:py-12 lg:py-16">
-    <Overline title="Purpose" />
+  <section class="container py-16 sm:py-20 md:py-24 lg:py-32">
     <div class="grid grid-cols-1 gap-x-10 md:grid-cols-2">
       <h2
         class="mb-5 text-2xl font-semibold text-neutral-900 md:text-3xl lg:max-w-lg dark:text-neutral-100"
@@ -44,8 +43,10 @@ const description =
       </div>
     </div>
   </section>
-  <section class="container py-8 sm:py-12 lg:py-16">
-    <Overline title="Team" />
+  <div class="container">
+    <hr class="border-t border-neutral-200 dark:border-neutral-800" />
+  </div>
+  <section class="container py-16 sm:py-20 md:py-24 lg:py-32">
     <div class="grid grid-cols-1 gap-x-10 gap-y-6 lg:grid-cols-2">
       <div class="space-y-4">
         <h3 class="mb-5 text-2xl font-semibold text-neutral-900 md:text-3xl dark:text-neutral-100">
@@ -78,5 +79,4 @@ const description =
       />
     </div>
   </section>
-  <div class="h-8 sm:h-12 lg:h-16"></div>
 </MainLayout>

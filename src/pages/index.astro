@@ -23,17 +23,19 @@ const posts = await getCollection('news', ({ data }) => !import.meta.env.PROD ||
 const caseExamplePosts = posts
   .filter((post) => post.data.category === 'case-example')
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-  .slice(0, 2);
+  .slice(0, 3);
 ---
 
 <MainLayout
   title={site.title}
   description={site.description}
-  headerClass="bg-black text-neutral-50"
+  headerClass="bg-black text-neutral-100 dark:bg-black dark:text-neutral-100"
 >
   <section id="hero" class="relative overflow-clip bg-black">
     <div class="relative z-1 container">
-      <div class="bg-gradient-to-r from-black to-transparent pt-24 lg:max-w-lg lg:pt-48 lg:pb-64">
+      <div
+        class="bg-gradient-to-r from-black from-50% to-transparent pt-24 lg:max-w-lg lg:pt-48 lg:pb-56"
+      >
         <h1
           class="mb-6 text-4xl leading-none font-semibold text-neutral-50 lg:text-5xl xl:text-6xl"
         >
@@ -46,14 +48,14 @@ const caseExamplePosts = posts
         </p>
         <a
           href={navigation.contact.href}
-          class="inline-flex h-12 cursor-pointer items-center justify-center gap-2 rounded bg-indigo-500 px-5 text-center text-[15px] font-medium text-nowrap text-white shadow-xs transition select-none hover:bg-indigo-400"
+          class="inline-flex h-12 cursor-pointer items-center justify-center gap-2 rounded bg-indigo-500 px-5 text-center text-sm font-medium text-nowrap text-white shadow-xs transition select-none hover:bg-indigo-400"
         >
           Get started today
         </a>
       </div>
     </div>
     <div
-      class="relative z-0 aspect-square h-full w-full sm:aspect-video lg:absolute lg:inset-0 lg:left-1/4 lg:container"
+      class="relative z-0 aspect-square size-full sm:aspect-video lg:absolute lg:inset-0 lg:left-1/4 lg:container"
     >
       <video
         aria-hidden="true"
@@ -79,7 +81,7 @@ const caseExamplePosts = posts
   </section>
   <section
     id="intro"
-    class="border-t border-black/5 bg-gradient-to-b from-white to-transparent to-[300px] py-16 sm:py-20 md:py-24 lg:py-32 dark:border-white/10 dark:from-neutral-900"
+    class="border-t border-neutral-200 bg-gradient-to-b from-white to-transparent to-[400px] py-16 sm:py-20 md:py-24 lg:py-32 dark:border-neutral-800 dark:from-neutral-900"
   >
     <div class="container">
       <div>
@@ -147,7 +149,7 @@ const caseExamplePosts = posts
   </section>
   <section
     id="benefits"
-    class="border-t border-black/5 bg-gradient-to-b from-white to-transparent to-[300px] py-16 sm:py-20 md:py-24 lg:py-32 dark:border-white/10 dark:from-neutral-900"
+    class="border-t border-neutral-200 bg-gradient-to-b from-white to-transparent to-[400px] py-16 sm:py-20 md:py-24 lg:py-32 dark:border-neutral-800 dark:from-neutral-900"
   >
     <div class="container">
       <div class="overflow-clip">
@@ -253,23 +255,24 @@ const caseExamplePosts = posts
       </div>
     </div>
   </section>
-  <section class="container py-4 lg:py-8">
+  <section class="container pb-16 sm:pb-20 md:pb-24 lg:pb-32">
     <GetStarted />
   </section>
   {
     caseExamplePosts.length > 0 && (
-      <section class="container py-16 sm:py-20 md:py-24 lg:py-32">
-        <div
-          class:list={twMerge(
-            'grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-10',
-            caseExamplePosts.length === 1 && 'lg:grid-cols-2'
-          )}
-        >
-          <div class="md:col-span-2 lg:col-span-1">
-            <h2 class="text-2xl font-semibold text-neutral-900 md:text-3xl dark:text-neutral-100">
-              Learn how our customers are using Clouder
-            </h2>
-          </div>
+      <section class="container pb-16 sm:pb-20 md:pb-24 lg:pb-32">
+        <div class="mb-8 text-center md:mb-12">
+          <h2 class="text-2xl font-semibold text-neutral-900 md:text-3xl dark:text-neutral-100">
+            Learn how our customers are using Clouder
+          </h2>
+          <a
+            href={navigation.news.href}
+            class="mt-4 inline-block text-neutral-500 underline-offset-2 transition hover:underline"
+          >
+            Read more caste studies &rarr;
+          </a>
+        </div>
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
           {caseExamplePosts.map((post) => (
             <article class="group relative rounded bg-white transition hover:shadow-xs md:mt-1.5 dark:bg-neutral-900">
               <a href={`/news/${post.slug}`} class="flex h-full flex-col items-start rounded">
@@ -286,8 +289,8 @@ const caseExamplePosts = posts
                 <h3 class="mx-6 my-5 text-xl font-semibold text-neutral-900 transition group-hover:text-current dark:text-neutral-100">
                   {post.data.title}
                 </h3>
-                <p class="m-6 mt-auto inline-flex h-8 cursor-pointer items-center rounded border border-current/25 px-3 text-xs font-medium text-current/65 transition hover:bg-current/5">
-                  Read the story
+                <p class="m-6 mt-auto inline-flex h-8 cursor-pointer items-center rounded border border-current/25 px-3 text-xs font-medium text-current/65 transition hover:bg-current/10">
+                  Read the case study
                 </p>
               </a>
               <div class="pointer-events-none absolute inset-0 rounded border border-current/15 transition group-hover:border-current/16" />

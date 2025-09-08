@@ -2,7 +2,6 @@
 import { Image } from 'astro:assets';
 import navigation from '@data/navigation.yml';
 import MainLayout from '@layouts/MainLayout.astro';
-import Overline from '@components/Overline.astro';
 import tomiImage from '@assets/tomi.jpg';
 import jussiImage from '@assets/jussi.jpg';
 import emmaImage from '@assets/emma.jpg';
@@ -15,16 +14,16 @@ const description = 'Get in touch with our sales team or book a demo.';
 
 <MainLayout title={title} description={description} headerClass="bg-white dark:bg-neutral-900">
   <section class="border-b border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-900">
-    <div class="container-narrow pt-16 pb-24 text-center lg:pt-28 lg:pb-40">
+    <div
+      class="container-narrow pt-12 pb-16 text-center sm:pt-16 sm:pb-20 md:pt-20 md:pb-24 lg:pt-28 lg:pb-32"
+    >
       <h1 class="mb-5 text-4xl font-semibold text-neutral-900 md:text-5xl dark:text-neutral-100">
         Interested to learn more?
       </h1>
       <p class="text-xl">{description}</p>
     </div>
   </section>
-  <div class="h-8 sm:h-12 lg:h-16"></div>
-  <section id="sales" class="container py-8 sm:py-12 lg:py-16">
-    <Overline title="Sales" />
+  <section id="sales" class="container py-16 sm:py-20 md:py-24 lg:py-32">
     <div
       class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-x-8 lg:grid-cols-3 lg:gap-x-10"
     >
@@ -99,8 +98,10 @@ const description = 'Get in touch with our sales team or book a demo.';
       </div>
     </div>
   </section>
-  <section id="office" class="container py-8 sm:py-12 lg:py-16">
-    <Overline title="Office" />
+  <div class="container">
+    <hr class="border-t border-neutral-200 dark:border-neutral-800" />
+  </div>
+  <section id="office" class="container py-16 sm:py-20 md:py-24 lg:py-32">
     <div
       class="grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2 sm:gap-x-8 lg:grid-cols-3 lg:gap-x-10"
     >
@@ -123,8 +124,10 @@ const description = 'Get in touch with our sales team or book a demo.';
       </div>
     </div>
   </section>
-  <section id="form" class="container py-8 sm:py-12 lg:py-16">
-    <Overline title="Contact us" />
+  <div class="container">
+    <hr class="border-t border-neutral-200 dark:border-neutral-800" />
+  </div>
+  <section id="form" class="container py-16 sm:py-20 md:py-24 lg:py-32">
     <div class="grid grid-cols-1 gap-x-6 gap-y-10 md:grid-cols-2 md:gap-x-10 lg:grid-cols-3">
       <div class="space-y-4 md:col-span-2 lg:col-span-1">
         <h2 class="text-2xl font-semibold text-neutral-900 md:text-3xl dark:text-neutral-100">
@@ -234,7 +237,6 @@ const description = 'Get in touch with our sales team or book a demo.';
       </form>
     </div>
   </section>
-  <div class="h-8 sm:h-12 lg:h-16"></div>
 </MainLayout>
 
 <script>

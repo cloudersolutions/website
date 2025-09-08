@@ -1,17 +1,18 @@
 ---
-import ArrowRightIcon from 'lucide-astro/ArrowRight';
 import navigation from '@data/navigation.yml';
 import GetStartedIllustration from '@assets/getstarted.svg';
 ---
 
-<div class="dark:text-900 overflow-clip rounded-md bg-neutral-950 dark:bg-neutral-50">
-  <GetStartedIllustration class="h-auto w-[1232px] text-white dark:text-black" />
+<div
+  class="overflow-hidden rounded-md border border-neutral-200 bg-white shadow-lg shadow-black/2 dark:border-neutral-800 dark:bg-neutral-900"
+>
+  <GetStartedIllustration class="h-auto w-[1232px]" />
   <div class="flex flex-wrap items-end gap-6 p-8 md:p-12 lg:p-16">
     <div class="mr-auto">
-      <h2 class="mb-4 text-2xl font-semibold text-neutral-100 md:text-3xl dark:text-neutral-900">
+      <h2 class="mb-4 text-2xl font-semibold text-neutral-900 md:text-3xl dark:text-neutral-100">
         Get up and running in 14 days
       </h2>
-      <p class="text-neutral-400 dark:text-neutral-600">
+      <p class="text-neutral-700 dark:text-neutral-300">
         Clouder’s technology has been developed for fast results and quick deployment. <br
           class="hidden lg:inline"
         /> Book a free consultation session so that you can start increasing value today.
@@ -19,10 +20,9 @@ import GetStartedIllustration from '@assets/getstarted.svg';
     </div>
     <a
       href={navigation.contact.href}
-      class="group inline-flex h-11 cursor-pointer items-center justify-center gap-1 rounded bg-indigo-500 px-4 text-center text-sm font-medium text-nowrap text-white shadow-xs transition select-none hover:bg-indigo-400 dark:hover:bg-indigo-600"
+      class="inline-flex h-10 cursor-pointer items-center justify-center gap-1 rounded bg-indigo-500 px-4 text-center text-sm font-medium text-nowrap text-white shadow-xs transition select-none hover:bg-indigo-600 dark:hover:bg-indigo-400"
     >
       Book a free consultation
-      <ArrowRightIcon size={14} class="flex-shrink-0 transition group-hover:translate-x-0.5" />
     </a>
   </div>
 </div>
