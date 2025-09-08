@@ -27,7 +27,7 @@ const { Content } = await post.render();
 ---
 
 <ProseLayout title={post.data.title} description={post.data.description} image={post.data.cover}>
-  <article class="mb-8 sm:mb-12 lg:mb-16">
+  <article>
     <header class="not-prose">
       <h1 class="text-3xl font-semibold text-neutral-900 md:text-4xl dark:text-neutral-100">
         {post.data.title}
@@ -50,9 +50,9 @@ const { Content } = await post.render();
         previousPost && (
           <a
             href={`/news/${previousPost.slug}`}
-            class="group flex flex-col items-start gap-2 text-left"
+            class="group flex flex-col items-start gap-1 text-left"
           >
-            <div class="flex items-center gap-1 text-neutral-500 transition group-hover:text-neutral-900 dark:group-hover:text-neutral-200">
+            <div class="flex items-center gap-1 text-neutral-500 transition group-hover:text-neutral-800 dark:group-hover:text-neutral-200">
               <ArrowLeftIcon
                 size={14}
                 class="flex-shrink-0 transition group-hover:-translate-x-0.5"
@@ -67,9 +67,9 @@ const { Content } = await post.render();
         nextPost && (
           <a
             href={`/news/${nextPost.slug}`}
-            class="group flex flex-col items-end gap-2 text-right md:col-start-2"
+            class="group flex flex-col items-end gap-1 text-right md:col-start-2"
           >
-            <div class="flex items-center gap-1 text-neutral-500 transition group-hover:text-neutral-900 dark:group-hover:text-neutral-200">
+            <div class="flex items-center gap-1 text-neutral-500 transition group-hover:text-neutral-800 dark:group-hover:text-neutral-200">
               <span class="text-sm">Next</span>
               <ArrowRightIcon
                 size={14}

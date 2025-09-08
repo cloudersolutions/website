@@ -10,7 +10,7 @@ const props = Astro.props;
 
 <BaseLayout {...props}>
   <Header />
-  <main class="container py-16 sm:py-20 md:py-24 lg:py-32">
+  <main class="container py-16 sm:py-20 md:py-24 lg:py-28">
     <section class="prose prose-neutral dark:prose-invert mx-auto">
       {props.frontmatter?.title && <h1>{props.frontmatter.title}</h1>}
       {props.frontmatter?.description && <p>{props.frontmatter.description}</p>}

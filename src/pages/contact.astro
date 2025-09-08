@@ -9,21 +9,139 @@ import matiasImage from '@assets/matias.jpg';
 import hqImage from '@assets/hq.jpg';
 
 const title = 'Contact us';
-const description = 'Get in touch with our sales team or book a demo.';
+const description =
+  'Get in touch with our sales team for consultations, demos, or general questions.';
 ---
 
 <MainLayout title={title} description={description} headerClass="bg-white dark:bg-neutral-900">
-  <section class="border-b border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-900">
-    <div
-      class="container-narrow pt-12 pb-16 text-center sm:pt-16 sm:pb-20 md:pt-20 md:pb-24 lg:pt-28 lg:pb-32"
-    >
-      <h1 class="mb-5 text-4xl font-semibold text-neutral-900 md:text-5xl dark:text-neutral-100">
+  <section class="bg-gradient-to-b from-white to-transparent dark:from-neutral-900">
+    <div class="container-narrow py-16 text-center sm:py-20 md:py-24 lg:py-28 xl:py-32">
+      <h1 class="mb-6 text-4xl font-semibold text-neutral-900 md:text-5xl dark:text-neutral-100">
         Interested to learn more?
       </h1>
-      <p class="text-xl">{description}</p>
+      <p class="text-lg text-neutral-600 dark:text-neutral-400">{description}</p>
     </div>
   </section>
-  <section id="sales" class="container py-16 sm:py-20 md:py-24 lg:py-32">
+  <div class="container">
+    <hr class="border-t border-neutral-200 dark:border-neutral-800" />
+  </div>
+  <section id="form" class="container py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32">
+    <div class="grid grid-cols-1 gap-x-6 gap-y-10 md:grid-cols-2 md:gap-x-10 lg:grid-cols-3">
+      <div class="space-y-4 md:col-span-2 lg:col-span-1">
+        <h2 class="text-2xl font-semibold text-neutral-900 md:text-3xl dark:text-neutral-100">
+          Send us a message
+        </h2>
+        <p>For consultations and demos, please suggest a few dates and times that work for you.</p>
+        <p class="text-sm text-neutral-500">
+          Prefer email or phone?
+          <a href="#sales" class="underline">Contact our sales team</a>
+        </p>
+      </div>
+      <form
+        name="contact"
+        method="POST"
+        action="/success"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        class="col-span-2 space-y-4"
+      >
+        <div class="flex gap-4">
+          <div class="w-full">
+            <label for="firstname" class="mb-2 inline-block text-sm font-medium">First name</label>
+            <span class="text-sm leading-none opacity-50">*</span>
+            <input
+              id="firstname"
+              name="firstname"
+              type="text"
+              required
+              class="block h-11 w-full rounded border border-neutral-200 bg-white px-3 text-sm placeholder-current/50 dark:border-neutral-800 dark:bg-neutral-900"
+            />
+          </div>
+          <div class="w-full">
+            <label for="lastname" class="mb-2 inline-block text-sm font-medium">Last name</label>
+            <span class="text-sm leading-none opacity-50">*</span>
+            <input
+              id="lastname"
+              name="lastname"
+              type="text"
+              required
+              class="block h-11 w-full rounded border border-neutral-200 bg-white px-3 text-sm placeholder-current/50 dark:border-neutral-800 dark:bg-neutral-900"
+            />
+          </div>
+        </div>
+        <div>
+          <label for="email" class="mb-2 inline-block text-sm font-medium">Email</label>
+          <span class="text-sm leading-none opacity-50">*</span>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            required
+            class="block h-11 w-full rounded border border-neutral-200 bg-white px-3 text-sm placeholder-current/50 dark:border-neutral-800 dark:bg-neutral-900"
+          />
+        </div>
+        <div class="-mt-1 flex gap-1.5">
+          <input
+            id="marketing"
+            name="marketing"
+            type="checkbox"
+            class="mt-0.5 size-4 rounded border-neutral-300 text-indigo-500 not-checked:bg-white dark:border-neutral-700 dark:not-checked:bg-neutral-900"
+          />
+          <label for="marketing" class="text-sm">Sign up for news and updates</label>
+        </div>
+        <div>
+          <label for="phone" class="mb-2 inline-block text-sm font-medium">Phone</label>
+          <input
+            id="phone"
+            name="phone"
+            type="tel"
+            class="block h-11 w-full rounded border border-neutral-200 bg-white px-3 text-sm placeholder-current/50 dark:border-neutral-800 dark:bg-neutral-900"
+          />
+        </div>
+        <div class="mb-5">
+          <label for="message" class="mb-2 inline-block text-sm font-medium"
+            >Tell us about your requirements</label
+          >
+          <span class="text-sm leading-none opacity-50">*</span>
+          <textarea
+            placeholder="What do you want to achieve with Clouder?"
+            id="message"
+            name="message"
+            rows="4"
+            required
+            class="block field-sizing-content min-h-26 w-full rounded border border-neutral-200 bg-white px-3 py-2.5 text-sm placeholder-current/50 dark:border-neutral-800 dark:bg-neutral-900"
+          ></textarea>
+        </div>
+        <input
+          name="bot-field"
+          type="text"
+          autocomplete="off"
+          tabindex="-1"
+          aria-hidden="true"
+          style="position: absolute; left: -9999px;"
+        />
+        <div class="mt-6 flex flex-col items-center justify-between gap-4 sm:flex-row">
+          <button
+            type="submit"
+            class="inline-flex h-11 w-full min-w-24 cursor-pointer items-center justify-center gap-2 rounded bg-indigo-500 px-5 text-center text-sm font-medium text-nowrap text-white transition select-none hover:bg-indigo-600 sm:w-auto dark:hover:bg-indigo-400"
+          >
+            Send message
+          </button>
+          <p class="text-xs text-neutral-500">
+            See our
+            <a href={navigation.privacy.href} class="underline" tabindex="-1"
+              >{navigation.privacy.title}</a
+            >
+            for details on how we handle your data.
+          </p>
+        </div>
+      </form>
+    </div>
+  </section>
+  <div class="container">
+    <hr class="border-t border-neutral-200 dark:border-neutral-800" />
+  </div>
+  <section id="sales" class="xl container py-16 sm:py-20 md:py-24 lg:py-28">
     <div
       class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-x-8 lg:grid-cols-3 lg:gap-x-10"
     >
@@ -101,7 +219,7 @@ const description = 'Get in touch with our sales team or book a demo.';
   <div class="container">
     <hr class="border-t border-neutral-200 dark:border-neutral-800" />
   </div>
-  <section id="office" class="container py-16 sm:py-20 md:py-24 lg:py-32">
+  <section id="office" class="xl container py-16 sm:py-20 md:py-24 lg:py-28">
     <div
       class="grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2 sm:gap-x-8 lg:grid-cols-3 lg:gap-x-10"
     >
@@ -122,119 +240,6 @@ const description = 'Get in touch with our sales team or book a demo.';
         <p>+358 40 3525 47 3</p>
         <p>3356072-5</p>
       </div>
-    </div>
-  </section>
-  <div class="container">
-    <hr class="border-t border-neutral-200 dark:border-neutral-800" />
-  </div>
-  <section id="form" class="container py-16 sm:py-20 md:py-24 lg:py-32">
-    <div class="grid grid-cols-1 gap-x-6 gap-y-10 md:grid-cols-2 md:gap-x-10 lg:grid-cols-3">
-      <div class="space-y-4 md:col-span-2 lg:col-span-1">
-        <h2 class="text-2xl font-semibold text-neutral-900 md:text-3xl dark:text-neutral-100">
-          Drop us a line, and we’ll get back to you
-        </h2>
-        <p>For demos and audits, please suggest a few dates and times that work for you.</p>
-        <p class="text-sm text-neutral-500">
-          Prefer email or phone?
-          <a href="#sales" class="underline">Contact our sales team</a>
-        </p>
-      </div>
-      <form
-        name="contact"
-        method="POST"
-        action="/success"
-        data-netlify="true"
-        netlify-honeypot="bot-field"
-        class="col-span-2 space-y-4"
-      >
-        <div class="flex gap-4">
-          <div class="w-full">
-            <label for="firstname" class="mb-2 inline-block text-sm font-medium">First name</label>
-            <span class="text-sm leading-none opacity-50">*</span>
-            <input
-              id="firstname"
-              name="firstname"
-              type="text"
-              required
-              class="block h-11 w-full rounded border border-neutral-200 bg-white px-3 dark:border-neutral-800 dark:bg-neutral-900"
-            />
-          </div>
-          <div class="w-full">
-            <label for="lastname" class="mb-2 inline-block text-sm font-medium">Last name</label>
-            <span class="text-sm leading-none opacity-50">*</span>
-            <input
-              id="lastname"
-              name="lastname"
-              type="text"
-              required
-              class="block h-11 w-full rounded border border-neutral-200 bg-white px-3 dark:border-neutral-800 dark:bg-neutral-900"
-            />
-          </div>
-        </div>
-        <div>
-          <label for="email" class="mb-2 inline-block text-sm font-medium">Email</label>
-          <span class="text-sm leading-none opacity-50">*</span>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            required
-            class="block h-11 w-full rounded border border-neutral-200 bg-white px-3 dark:border-neutral-800 dark:bg-neutral-900"
-          />
-        </div>
-        <div class="-mt-1 flex gap-1.5">
-          <input
-            id="marketing"
-            name="marketing"
-            type="checkbox"
-            class="mt-0.5 size-4 rounded border-neutral-300 text-indigo-500 not-checked:bg-white dark:border-neutral-700 dark:not-checked:bg-neutral-900"
-          />
-          <label for="marketing" class="text-sm">Sign up for news and updates</label>
-        </div>
-        <div>
-          <label for="phone" class="mb-2 inline-block text-sm font-medium">Phone</label>
-          <input
-            id="phone"
-            name="phone"
-            type="tel"
-            class="block h-11 w-full rounded border border-neutral-200 bg-white px-3 dark:border-neutral-800 dark:bg-neutral-900"
-          />
-        </div>
-        <div class="mb-5">
-          <label for="message" class="mb-2 inline-block text-sm font-medium">Message</label>
-          <span class="text-sm leading-none opacity-50">*</span>
-          <textarea
-            id="message"
-            name="message"
-            rows="4"
-            required
-            class="block w-full rounded border border-neutral-200 bg-white p-3 dark:border-neutral-800 dark:bg-neutral-900"
-          ></textarea>
-        </div>
-        <input
-          name="bot-field"
-          type="text"
-          autocomplete="off"
-          tabindex="-1"
-          aria-hidden="true"
-          style="position: absolute; left: -9999px;"
-        />
-        <div class="flex flex-col items-center justify-between gap-4 sm:flex-row">
-          <button
-            type="submit"
-            class="inline-flex h-11 w-full min-w-24 cursor-pointer items-center justify-center gap-2 rounded bg-indigo-500 px-5 text-center text-sm font-medium text-nowrap text-white transition select-none hover:bg-indigo-600 sm:w-auto dark:hover:bg-indigo-400"
-          >
-            Send
-          </button>
-          <p class="text-xs text-neutral-500">
-            See our
-            <a href={navigation.privacy.href} class="underline" tabindex="-1"
-              >{navigation.privacy.title}</a
-            >
-            for details on how we handle your data.
-          </p>
-        </div>
-      </form>
     </div>
   </section>
 </MainLayout>

@@ -9,17 +9,18 @@ const description =
 ---
 
 <MainLayout title={title} description={description} headerClass="bg-white dark:bg-neutral-900">
-  <section class="border-b border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-900">
-    <div
-      class="container-narrow pt-12 pb-16 text-center sm:pt-16 sm:pb-20 md:pt-20 md:pb-24 lg:pt-28 lg:pb-32"
-    >
-      <h1 class="mb-5 text-4xl font-semibold text-neutral-900 md:text-5xl dark:text-neutral-100">
+  <section class="bg-gradient-to-b from-white to-transparent dark:from-neutral-900">
+    <div class="container-narrow py-16 text-center sm:py-20 md:py-24 lg:py-28 xl:py-32">
+      <h1 class="mb-6 text-4xl font-semibold text-neutral-900 md:text-5xl dark:text-neutral-100">
         The Virtual Cabling Company
       </h1>
-      <p class="text-xl">{description}</p>
+      <p class="text-lg text-neutral-600 dark:text-neutral-400">{description}</p>
     </div>
   </section>
-  <section class="container py-16 sm:py-20 md:py-24 lg:py-32">
+  <div class="container">
+    <hr class="border-t border-neutral-200 dark:border-neutral-800" />
+  </div>
+  <section class="container py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32">
     <div class="grid grid-cols-1 gap-x-10 md:grid-cols-2">
       <h2
         class="mb-5 text-2xl font-semibold text-neutral-900 md:text-3xl lg:max-w-lg dark:text-neutral-100"
@@ -46,7 +47,7 @@ const description =
   <div class="container">
     <hr class="border-t border-neutral-200 dark:border-neutral-800" />
   </div>
-  <section class="container py-16 sm:py-20 md:py-24 lg:py-32">
+  <section class="container py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32">
     <div class="grid grid-cols-1 gap-x-10 gap-y-6 lg:grid-cols-2">
       <div class="space-y-4">
         <h3 class="mb-5 text-2xl font-semibold text-neutral-900 md:text-3xl dark:text-neutral-100">

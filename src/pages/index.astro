@@ -1,7 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
-import { twMerge } from 'tailwind-merge';
 import site from '@data/site.yml';
 import navigation from '@data/navigation.yml';
 import { formatPrice } from '@utils/format';
@@ -34,14 +33,12 @@ const caseExamplePosts = posts
   <section id="hero" class="relative overflow-clip bg-black">
     <div class="relative z-1 container">
       <div
-        class="bg-gradient-to-r from-black from-50% to-transparent pt-24 lg:max-w-lg lg:pt-48 lg:pb-56"
+        class="bg-gradient-to-r from-black from-50% to-transparent pt-20 text-center sm:pt-24 md:pt-28 lg:max-w-lg lg:pt-40 lg:pb-44 lg:text-left xl:pt-50 xl:pb-54"
       >
-        <h1
-          class="mb-6 text-4xl leading-none font-semibold text-neutral-50 lg:text-5xl xl:text-6xl"
-        >
+        <h1 class="mb-6 text-4xl font-semibold text-neutral-100 lg:text-5xl xl:text-6xl">
           Turn building performance into value
         </h1>
-        <p class="mb-8 text-lg text-neutral-100">
+        <p class="mb-8 text-lg text-neutral-200">
           With Clouder owners can cut energy use and operating costs from day one. Our virtual
           cabling connects building systems and devices into one data layer, unlocking faster
           decisions, lower risk and higher returns, portfolio-wide.
@@ -80,12 +77,11 @@ const caseExamplePosts = posts
     </div>
   </section>
   <section
-    id="intro"
-    class="border-t border-neutral-200 bg-gradient-to-b from-white to-transparent to-[400px] py-16 sm:py-20 md:py-24 lg:py-32 dark:border-neutral-800 dark:from-neutral-900"
+    class="border-t border-neutral-200 bg-gradient-to-b from-white to-transparent to-[500px] py-16 sm:py-20 md:py-24 lg:py-32 dark:border-neutral-800 dark:from-neutral-900"
   >
     <div class="container">
       <div>
-        <p class="mb-4 text-center font-semibold">Our trusted partners</p>
+        <p class="mb-6 text-center text-lg font-semibold">Our trusted partners</p>
         <ul class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">
           <li class="flex items-center justify-center p-4">
             <ConficapLogo class="h-6 w-auto flex-shrink-0 sm:h-8.5" />
@@ -124,7 +120,7 @@ const caseExamplePosts = posts
             href={navigation.contact.href}
             class="inline-flex h-11 cursor-pointer items-center justify-center gap-2 rounded bg-indigo-500 px-5 text-center text-sm font-medium text-nowrap text-white shadow-xs transition select-none hover:bg-indigo-600 dark:hover:bg-indigo-400"
           >
-            Book a demo
+            Book a free consultation
           </a>
         </div>
         <div class="col-span-full lg:col-span-3">
@@ -148,8 +144,7 @@ const caseExamplePosts = posts
     </div>
   </section>
   <section
-    id="benefits"
-    class="border-t border-neutral-200 bg-gradient-to-b from-white to-transparent to-[400px] py-16 sm:py-20 md:py-24 lg:py-32 dark:border-neutral-800 dark:from-neutral-900"
+    class="border-t border-neutral-200 bg-gradient-to-b from-white to-transparent to-[500px] py-16 sm:py-20 md:py-24 lg:py-32 dark:border-neutral-800 dark:from-neutral-900"
   >
     <div class="container">
       <div class="overflow-clip">
@@ -159,21 +154,21 @@ const caseExamplePosts = posts
           >
             Increased asset value
           </h3>
-          <p class="mb-4 text-lg">
+          <p class="mb-4">
             <strong class="font-semibold">Integrated systems enable 20–50% energy savings.</strong> A
             20% reduction in annual energy costs of {formatPrice(300000)} can increase asset value by
             {formatPrice(1000000)}.
           </p>
-          <p class="mb-4">
+          <p class="mb-6">
             ESG-compliant, energy-efficient buildings get 25–35% higher market valuations compared
             to outdated “brown buildings.” Better data equals better certifications, occupancy
             rates, and long-term investment appeal.
           </p>
           <a
-            href={navigation.contact.href}
+            href={navigation.product.href}
             class="inline-flex h-11 cursor-pointer items-center justify-center gap-2 rounded bg-indigo-500 px-5 text-center text-sm font-medium text-nowrap text-white shadow-xs transition select-none hover:bg-indigo-600 dark:hover:bg-indigo-400"
           >
-            Call to action
+            See how it works
           </a>
         </div>
         <div class="relative z-0 lg:-mt-24">
@@ -267,16 +262,16 @@ const caseExamplePosts = posts
           </h2>
           <a
             href={navigation.news.href}
-            class="mt-4 inline-block text-neutral-500 underline-offset-2 transition hover:underline"
+            class="mt-4 inline-block text-neutral-500 underline-offset-2 transition hover:text-neutral-800 dark:hover:text-neutral-200"
           >
-            Read more caste studies &rarr;
+            More case examples &rarr;
           </a>
         </div>
         <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
           {caseExamplePosts.map((post) => (
-            <article class="group relative rounded bg-white transition hover:shadow-xs md:mt-1.5 dark:bg-neutral-900">
-              <a href={`/news/${post.slug}`} class="flex h-full flex-col items-start rounded">
-                <div class="relative overflow-clip rounded-t-sm">
+            <article class="group relative overflow-clip rounded-md bg-white transition hover:shadow-xs dark:bg-neutral-900">
+              <a href={`/news/${post.slug}`} class="flex h-full flex-col items-start">
+                <div class="relative">
                   <Image
                     src={post.data.cover}
                     alt={post.data.title}
@@ -289,11 +284,11 @@ const caseExamplePosts = posts
                 <h3 class="mx-6 my-5 text-xl font-semibold text-neutral-900 transition group-hover:text-current dark:text-neutral-100">
                   {post.data.title}
                 </h3>
-                <p class="m-6 mt-auto inline-flex h-9 cursor-pointer items-center rounded border border-current/25 px-3.5 text-xs font-medium text-current/65 transition hover:bg-current/10">
-                  Read the case study
+                <p class="m-6 mt-auto inline-flex h-9 cursor-pointer items-center rounded border border-current/25 px-3.5 text-xs font-medium text-current/65 transition hover:bg-current/8">
+                  Read the case example
                 </p>
               </a>
-              <div class="pointer-events-none absolute inset-0 rounded border border-current/15 transition group-hover:border-current/16" />
+              <div class="pointer-events-none absolute inset-0 rounded-md border border-current/12 transition group-hover:border-current/16" />
             </article>
           ))}
         </div>
