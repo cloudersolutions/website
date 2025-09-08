@@ -11,6 +11,7 @@ import ShieldCheckIcon from 'lucide-astro/ShieldCheck';
 import WrenchIcon from 'lucide-astro/Wrench';
 import navigation from '@data/navigation.yml';
 import { formatPrice } from '@utils/format';
+import GetStarted from '@components/GetStarted.astro';
 import Overline from '@components/Overline.astro';
 import Ping from '@components/Ping.astro';
 import MainLayout from '@layouts/MainLayout.astro';
@@ -66,13 +67,11 @@ const description =
       <div
         class="flex flex-col rounded-md border border-neutral-200 bg-white p-8 pt-6 lg:rounded-r-none lg:border-r-0 dark:border-neutral-800 dark:bg-neutral-900"
       >
-        <h2 class="mb-2 text-2xl font-semibold text-neutral-900 md:text-3xl dark:text-neutral-100">
-          Retrofit
-        </h2>
+        <h2 class="mb-2 text-2xl font-semibold text-neutral-900 dark:text-neutral-100">Retrofit</h2>
         <p>
           <span class="text-neutral-500"
             >From <span class="font-semibold text-neutral-900 dark:text-neutral-100"
-              >{formatPrice(10000)} + {formatPrice(149, 'month')}</span
+              >{formatPrice(20000)} + {formatPrice(149, 'month')}</span
             > per building</span
           >
         </p>
@@ -108,7 +107,7 @@ const description =
       <div
         class="flex flex-col rounded-md border border-neutral-200 bg-white p-8 pt-6 lg:z-10 lg:-my-4 lg:pt-10 lg:pb-12 lg:shadow-2xl lg:shadow-black/10 dark:border-neutral-800 dark:bg-neutral-900"
       >
-        <h2 class="mb-2 text-2xl font-semibold text-neutral-900 md:text-3xl dark:text-neutral-100">
+        <h2 class="mb-2 text-2xl font-semibold text-neutral-900 dark:text-neutral-100">
           Full Integration
         </h2>
         <p>
@@ -183,7 +182,7 @@ const description =
       <div
         class="flex flex-col rounded-md border border-neutral-200 bg-white p-8 pt-6 lg:rounded-l-none lg:border-l-0 dark:border-neutral-800 dark:bg-neutral-900"
       >
-        <h2 class="mb-2 text-2xl font-semibold text-neutral-900 md:text-3xl dark:text-neutral-100">
+        <h2 class="mb-2 text-2xl font-semibold text-neutral-900 dark:text-neutral-100">
           Portfolio
         </h2>
         <p class="text-neutral-500">Custom pricing</p>
@@ -225,11 +224,11 @@ const description =
   <section id="overview" class="container py-8 sm:py-12 lg:py-16">
     <Overline title="Overview" />
     <h2
-      class="mb-8 text-3xl font-semibold text-neutral-900 md:text-4xl lg:mb-12 dark:text-neutral-100"
+      class="mb-8 text-2xl font-semibold text-neutral-900 md:text-3xl lg:mb-12 dark:text-neutral-100"
     >
       How it works
     </h2>
-    <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 xl:grid-cols-4">
+    <div class="grid grid-cols-1 gap-6 lg:grid-cols-2 xl:grid-cols-4">
       <div
         class="col-span-1 flex items-center justify-center px-4 lg:col-start-2 lg:row-span-4 lg:row-start-1 xl:col-span-2 xl:col-start-2 xl:row-span-2"
       >
@@ -250,56 +249,75 @@ const description =
         </div>
       </div>
       <div class="lg:row-start-1 xl:col-start-1 xl:row-start-1">
-        <div class="mb-2 flex items-center gap-3">
-          <Ping color="purple" />
-          <h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100">
-            Virtual cables
-          </h3>
+        <div
+          class="rounded-md border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-900"
+        >
+          <div class="mb-2 flex items-center gap-3">
+            <Ping color="purple" />
+            <h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100">
+              Virtual cables
+            </h3>
+          </div>
+          <p class="text-sm">
+            The signals of building technology systems are digitized and transmitted through the
+            building’s core network with virtual cables. This eliminates the need for physical
+            low-voltage cables that run through structures and firestops, making the system
+            flexible.
+          </p>
         </div>
-        <p>
-          The signals of building technology systems are digitized and transmitted through the
-          building’s core network with virtual cables. This eliminates the need for physical
-          low-voltage cables that run through structures and firestops, making the system flexible.
-        </p>
       </div>
       <div class="lg:row-start-2 xl:col-start-1 xl:row-start-2">
-        <div class="mb-2 flex items-center gap-3">
-          <Ping color="indigo" />
-          <h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100">
-            Edge Connectors
-          </h3>
+        <div
+          class="rounded-md border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-900"
+        >
+          <div class="mb-2 flex items-center gap-3">
+            <Ping color="indigo" />
+            <h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100">
+              Edge Connectors
+            </h3>
+          </div>
+          <p class="text-sm">
+            Edge Connector (EC) devices act as connection points for systems and devices,
+            transmitting data to the Virtual Cabling Engine through either wireless or wired IP
+            networks using end-to-end encryption. Edge Connectors operate similarly to distributed
+            I/O systems and significantly reduce the need for traditional cabling.
+          </p>
         </div>
-        <p>
-          Edge Connector (EC) devices act as connection points for systems and devices, transmitting
-          data to the Virtual Cabling Engine through either wireless or wired IP networks using
-          end-to-end encryption. Edge Connectors operate similarly to distributed I/O systems and
-          significantly reduce the need for traditional cabling.
-        </p>
       </div>
       <div class="lg:row-start-3 xl:col-start-4 xl:row-start-1">
-        <div class="mb-2 flex items-center gap-3">
-          <Ping color="sky" />
-          <h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100">Data storage</h3>
+        <div
+          class="rounded-md border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-900"
+        >
+          <div class="mb-2 flex items-center gap-3">
+            <Ping color="sky" />
+            <h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100">
+              Data storage
+            </h3>
+          </div>
+          <p class="text-sm">
+            All system and device data is securely stored in the cloud, where it can be accessed in
+            real-time through the Clouder Dashboard or via our API. This centralized approach allows
+            you to seamlessly monitor and analyze data from all your systems and devices.
+          </p>
         </div>
-        <p>
-          All system and device data is securely stored in the cloud, where it can be accessed in
-          real-time through the Clouder Dashboard or via our API. This centralized approach allows
-          you to seamlessly monitor and analyze data from all your systems and devices.
-        </p>
       </div>
       <div class="lg:row-start-4 xl:col-start-4 xl:row-start-2">
-        <div class="mb-2 flex items-center gap-3">
-          <Ping color="pink" />
-          <h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100">
-            Virtual Cabling Engine
-          </h3>
+        <div
+          class="rounded-md border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-900"
+        >
+          <div class="mb-2 flex items-center gap-3">
+            <Ping color="pink" />
+            <h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100">
+              Virtual Cabling Engine
+            </h3>
+          </div>
+          <p class="text-sm">
+            The Virtual Cabling Engine (VCE) integrates with building technology systems on a more
+            advanced level compared to traditional setups. It stores virtual cabling information,
+            consolidates data from Edge Connectors and handles protocol conversions on-site. The
+            data is then securely transmitted to the cloud.
+          </p>
         </div>
-        <p class="mb-4">
-          The Virtual Cabling Engine (VCE) integrates with building technology systems on a more
-          advanced level compared to traditional setups. It stores virtual cabling information,
-          consolidates data from Edge Connectors and handles protocol conversions on-site. The data
-          is then securely transmitted to the cloud.
-        </p>
       </div>
     </div>
   </section>
@@ -645,23 +663,9 @@ const description =
       </div>
     </div>
   </section>
-  <section class="container py-8 sm:py-12 lg:py-16">
-    <div
-      class="rounded-md border border-neutral-200 bg-white p-8 text-center md:p-16 dark:border-neutral-800 dark:bg-neutral-900"
-    >
-      <h2 class="mb-3 text-2xl font-semibold text-neutral-900 md:text-3xl dark:text-neutral-100">
-        Book a demo
-      </h2>
-      <p class="mb-6">Experience the system firsthand by scheduling a demo.</p>
-      <a
-        href={navigation.contact.href + '#form'}
-        class="inline-flex h-11 cursor-pointer items-center justify-center gap-2 rounded bg-indigo-500 px-5 text-center text-sm font-medium text-nowrap text-white transition select-none hover:bg-indigo-600 dark:hover:bg-indigo-400"
-      >
-        Contact us
-      </a>
-    </div>
+  <section class="container pb-16 md:pb-20 lg:pb-24">
+    <GetStarted />
   </section>
-  <div class="h-8 sm:h-12 lg:h-16"></div>
 </MainLayout>
 
 <script>

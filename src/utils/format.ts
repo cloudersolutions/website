@@ -1,7 +1,7 @@
 export function formatPrice(
   amount: number,
   monthly: string = '',
-  locale: string = 'de-DE'
+  locale: string = 'en-IE'
 ): string {
   const number = new Intl.NumberFormat(locale, {
     style: 'currency',

@@ -19,9 +19,9 @@ export default {
               lineHeight: '1.5'
             },
             'blockquote p:first-of-type': {
-              fontSize: '1.25rem',
+              fontSize: '1.125rem',
               fontWeight: '550',
-              textIndent: '-0.5em'
+              textIndent: '-0.45em'
             },
             'blockquote p:first-of-type::before': {
               content: 'open-quote'
