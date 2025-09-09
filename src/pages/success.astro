@@ -8,9 +8,14 @@ const description = 'Your form submission has been received';
 
 <MainLayout title={title}>
   <div class="flex flex-grow flex-col items-center justify-center gap-4 px-6 py-24 text-center">
-    <span class="text-4xl">🙌</span>
+    <span class="text-5xl">📬</span>
     <h1 class="text-3xl font-semibold">{title}</h1>
-    <p>{description}</p>
-    <a href="/" class="underline underline-offset-2 transition hover:opacity-65"> Back to home </a>
+    <p class="mb-2">{description}</p>
+    <a
+      href="/"
+      class="inline-flex h-10 cursor-pointer items-center justify-center gap-1 rounded bg-neutral-800 px-4 text-center text-sm font-medium text-nowrap text-neutral-50 transition select-none hover:bg-neutral-950 dark:bg-neutral-200 dark:text-neutral-950 dark:hover:bg-white"
+    >
+      Back to home
+    </a>
   </div>
 </MainLayout>t
