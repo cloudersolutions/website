@@ -8,6 +8,7 @@ import '../styles/global.css';
 interface Props {
   headerClass?: string;
   title?: string;
+  ogTitle?: string;
   description?: string;
   image?: ImageMetadata;
   frontmatter?: {
@@ -16,7 +17,7 @@ interface Props {
   };
 }
 
-const { title, description, image, frontmatter } = Astro.props;
+const { title, ogTitle, description, image, frontmatter } = Astro.props;
 
 const pageTitle = [...new Set([frontmatter?.title || title, site.title])]
   .filter(Boolean)
@@ -33,7 +34,7 @@ const pageImage = image ? image : fallbackImage;
     <meta name="theme-color" content="#000000" />
     <title>{pageTitle}</title>
     <meta name="description" content={pageDescription} />
-    <meta property="og:title" content={pageTitle} />
+    <meta property="og:title" content={ogTitle || pageTitle} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={Astro.url.toString()} />
     <meta property="og:image" content={new URL(String(pageImage.src), Astro.url).href} />
