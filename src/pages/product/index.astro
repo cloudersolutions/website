@@ -32,7 +32,7 @@ const description =
       <h1 class="mb-6 text-4xl font-semibold text-neutral-900 md:text-5xl dark:text-neutral-100">
         The new standard for commercial property performance
       </h1>
-      <p class="mx-auto mb-8 max-w-3xl text-lg text-neutral-600 dark:text-neutral-400">
+      <p class="mx-auto mb-8 max-w-3xl text-lg text-neutral-700 dark:text-neutral-400">
         {description}
       </p>
       <div class="flex flex-wrap justify-center">
@@ -231,11 +231,11 @@ const description =
     >
       How it works
     </h2>
-    <div class="grid grid-cols-1 gap-6 lg:grid-cols-2 xl:grid-cols-4">
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-10 lg:gap-x-12">
       <div
-        class="col-span-1 flex items-center justify-center px-4 lg:col-start-2 lg:row-span-4 lg:row-start-1 xl:col-span-2 xl:col-start-2 xl:row-span-2"
+        class="col-span-1 flex items-center justify-center px-4 md:col-span-2 md:col-start-1 md:row-span-2 md:row-start-1 lg:col-span-4 lg:col-start-4 lg:row-span-2"
       >
-        <div class="relative scale-95">
+        <div class="relative">
           <HowClouderWorksIllustration class="h-auto max-w-full" />
           <span class="absolute top-[91.85%] left-[7.75%] flex size-3">
             <Ping color="purple" isAnimated />
@@ -251,9 +251,9 @@ const description =
           </span>
         </div>
       </div>
-      <div class="lg:row-start-1 xl:col-start-1 xl:row-start-1">
+      <div class="md:col-start-1 md:row-start-3 lg:col-span-3 lg:col-start-1 lg:row-start-1">
         <div
-          class="rounded-md border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-900"
+          class="h-full rounded-md border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-900"
         >
           <div class="mb-2 flex items-center gap-3">
             <Ping color="purple" />
@@ -269,9 +269,9 @@ const description =
           </p>
         </div>
       </div>
-      <div class="lg:row-start-2 xl:col-start-1 xl:row-start-2">
+      <div class="md:col-start-2 md:row-start-3 lg:col-span-3 lg:col-start-1 lg:row-start-2">
         <div
-          class="rounded-md border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-900"
+          class="h-full rounded-md border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-900"
         >
           <div class="mb-2 flex items-center gap-3">
             <Ping color="indigo" />
@@ -287,9 +287,9 @@ const description =
           </p>
         </div>
       </div>
-      <div class="lg:row-start-3 xl:col-start-4 xl:row-start-1">
+      <div class="md:col-start-1 md:row-start-4 lg:col-span-3 lg:col-start-8 lg:row-start-1">
         <div
-          class="rounded-md border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-900"
+          class="h-full rounded-md border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-900"
         >
           <div class="mb-2 flex items-center gap-3">
             <Ping color="sky" />
@@ -304,9 +304,9 @@ const description =
           </p>
         </div>
       </div>
-      <div class="lg:row-start-4 xl:col-start-4 xl:row-start-2">
+      <div class="md:col-start-2 md:row-start-4 lg:col-span-3 lg:col-start-8 lg:row-start-2">
         <div
-          class="rounded-md border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-900"
+          class="h-full rounded-md border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-900"
         >
           <div class="mb-2 flex items-center gap-3">
             <Ping color="pink" />
@@ -329,8 +329,10 @@ const description =
   </div>
   <section id="features" class="container py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32">
     <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
-      <div class="col-span-full mb-4 space-y-4 lg:col-span-1 lg:row-span-4">
-        <h2 class="text-2xl font-semibold md:text-3xl">Feature overview</h2>
+      <div class="col-span-full mb-4 lg:col-span-1 lg:row-span-4">
+        <h2 class="mb-4 text-2xl font-semibold text-neutral-900 md:text-3xl dark:text-neutral-100">
+          Feature overview
+        </h2>
         <p>
           Clouder comes with a range of features and capabilities that enable efficient building
           management.
@@ -549,7 +551,11 @@ const description =
         class="flex flex-col items-start gap-5 md:flex-row md:items-center lg:flex-col lg:items-start"
       >
         <div class="mr-auto">
-          <h2 class="mb-4 text-2xl font-semibold md:text-3xl">I have a question…</h2>
+          <h2
+            class="mb-4 text-2xl font-semibold text-neutral-900 md:text-3xl dark:text-neutral-100"
+          >
+            I have a question…
+          </h2>
           <p>
             We've gathered answers to the questions we hear most often. <a
               href={navigation.contact.href}
@@ -569,56 +575,103 @@ const description =
           <summary
             class="cursor-pointer py-6 font-semibold transition group-open:pb-4 hover:opacity-65"
           >
-            Is it only for new construction?
+            What is Clouder and how does virtual cabling work?
           </summary>
           <p>
-            No. Clouder can be installed in all types of properties, both existing and new
-            construction.
+            Clouder is a vendor-agnostic data and integration platform for real estate. Its patented
+            virtual cabling technology connects building systems through one secure API without the
+            need for excess rewiring or ceiling tear-downs. This unlocks significant energy and
+            operational savings at property and portfolio level, directly increasing asset value.
+            The harmonised data can also be used for ESG reporting, AI solutions and tenant
+            services.
           </p>
         </details>
         <details class="group open:pb-6">
           <summary
             class="cursor-pointer py-6 font-semibold transition group-open:pb-4 hover:opacity-65"
           >
-            Can I add it alongside my current systems?
+            How quickly can we retrofit Clouder across a portfolio?
           </summary>
           <p>
-            Yes. Clouder can be installed alongside your existing system, regardless of what kind of
-            cabling or devices you have.
+            Pilot buildings, whether residential, office or logistics, typically go live in two
+            weeks. Portfolio rollouts then follow a repeatable playbook. Deployments are
+            capex-light, minimally disruptive to tenants, and deliver value from day one.
           </p>
         </details>
         <details class="group open:pb-6">
           <summary
             class="cursor-pointer py-6 font-semibold transition group-open:pb-4 hover:opacity-65"
           >
-            Do I need a network connection for it to function?
+            How does Clouder help with EU Taxonomy and CSRD compliance?
           </summary>
-          <p class="mb-4">
-            Clouder hardware operates locally on the property and does not require an external
-            connection to function. Network connection is needed for monitoring, controlling, and
-            storing data in the cloud.
+          <p>
+            Clouder integrates energy, water, indoor climate, and automation data into one
+            standardised layer. This makes disclosures under EU Taxonomy and CSRD accurate,
+            traceable, and audit-ready. The operational savings that Clouder delivers simultaneously
+            raise compliance scores and asset valuations.
           </p>
         </details>
         <details class="group open:pb-6">
           <summary
             class="cursor-pointer py-6 font-semibold transition group-open:pb-4 hover:opacity-65"
           >
-            What are the annual costs? Are there any license fees?
+            Can Clouder improve our GRESB score?
+          </summary>
+          <p>
+            Yes. By increasing data coverage and reducing consumption, Clouder strengthens the
+            Management and Performance components of GRESB. Better metering, benchmarking and fault
+            detection all contribute to higher scores and more attractive valuations.
+          </p>
+        </details>
+        <details class="group open:pb-6">
+          <summary
+            class="cursor-pointer py-6 font-semibold transition group-open:pb-4 hover:opacity-65"
+          >
+            What savings have Clouder pilots shown?
+          </summary>
+          <p>
+            Clouder pilots have achieved up to 50% reductions in HVAC runtime within two weeks
+            through automated optimisation and fault detection. A 20% cut in €300,000 annual energy
+            costs can raise an individual asset’s value by €1 million at a 6% cap rate.
+          </p>
+        </details>
+        <details class="group open:pb-6">
+          <summary
+            class="cursor-pointer py-6 font-semibold transition group-open:pb-4 hover:opacity-65"
+          >
+            Is Clouder compatible with our existing systems and vendors?
+          </summary>
+          <p>
+            Yes. Clouder integrates with all major building protocols (BACnet, Modbus, OPC UA) and
+            IoT platforms. Owners can retain their existing systems while unifying data into a
+            clean, actionable layer.
+          </p>
+        </details>
+        <details class="group open:pb-6">
+          <summary
+            class="cursor-pointer py-6 font-semibold transition group-open:pb-4 hover:opacity-65"
+          >
+            What about cybersecurity and data ownership?
+          </summary>
+          <p>
+            All portfolio data remains the property of the owner. Clouder applies end-to-end
+            encryption, accurate audit trails and secure cloud connections.
+          </p>
+        </details>
+        <details class="group open:pb-6">
+          <summary
+            class="cursor-pointer py-6 font-semibold transition group-open:pb-4 hover:opacity-65"
+          >
+            What commercial model does Clouder use? Any license fees?
           </summary>
           <p class="mb-4">
-            Our pricing structure varies by plan. The Retrofit Plan consists of a one-time setup fee
-            and a monthly subscription fee. The setup fee is determined by the building size and
-            service scope.
+            Clouder combines low-cost edge devices with a monthly subscription. ROI comes from
+            energy savings, lower maintenance costs and improved certifications that increase both
+            property-level NOI and portfolio value.
           </p>
           <p class="mb-4">
-            The Full Integration Plan offers custom pricing that includes a one-time setup fee and
-            monthly subscription. The pricing is based on your specific needs, taking into account
-            building size and complexity, data volume, service scope, and selected features.
-          </p>
-          <p class="mb-4">
-            The Portfolio Plan provides custom pricing designed for multiple Clouder-enabled
-            buildings. The price is based on the number of buildings, total data volume, service
-            scope, and selected features.
+            The setup and subscription fees are determined by building size, complexity, data
+            volume, selected features, and service scope.
           </p>
           <p>We don't charge any additional license fees for any of our plans.</p>
         </details>
@@ -626,45 +679,25 @@ const description =
           <summary
             class="cursor-pointer py-6 font-semibold transition group-open:pb-4 hover:opacity-65"
           >
-            Will it increase construction costs in my projects?
+            Which asset classes benefit most from Clouder?
           </summary>
           <p>
-            No. Clouder reduces work phases, installation duration, and thereby lowers construction
-            costs.
-          </p>
-        </details>
-        <details class="group open:pb-6">
-          <summary
-            class="cursor-pointer py-6 font-semibold transition group-open:pb-4 hover:opacity-65"
-          >
-            Any special considerations for building technology system plans?
-          </summary>
-          <p>
-            <a
-              href={navigation.contact.href}
-              class="underline underline-offset-2 transition hover:opacity-65">Contact us</a
-            > and we’ll provide you with our design guide for building automation and electrical designers.
-          </p>
-        </details>
-        <details class="group open:pb-6">
-          <summary
-            class="cursor-pointer py-6 font-semibold transition group-open:pb-4 hover:opacity-65"
-          >
-            Who does the installation?
-          </summary>
-          <p>
-            The installation can be carried out by the site’s electrical or automation contractor.
+            Clouder scales across residential, office, logistics and mixed-use assets. Any building
+            type with siloed systems benefits from reduced operating costs, improved sustainability
+            metrics and higher valuations.
           </p>
         </details>
         <details class="group border-none open:pb-5">
           <summary
             class="cursor-pointer py-6 font-semibold transition group-open:pb-4 hover:opacity-65"
           >
-            Is there a warranty?
+            How does Clouder work with our existing ESG reporting software?
           </summary>
           <p>
-            Warranty is 24 months. After the warranty period ends, a maintenance contract offers
-            full device warranty.
+            Clouder supplies the clean, unified data that ESG software depends on. This eliminates
+            manual data collection, reduces errors, and ensures that operational efficiency gains
+            show up clearly in compliance and valuation metrics. You can keep using your existing
+            ESG-software. Clouder will serve clean data to that platform through the API.
           </p>
         </details>
       </div>
