@@ -1,6 +1,8 @@
 ---
 import { twMerge } from 'tailwind-merge';
 import ArrowUpRightIcon from 'lucide-astro/ArrowUpRight';
+import MenuIcon from 'lucide-astro/Menu';
+import XIcon from 'lucide-astro/X';
 import navigation from '@data/navigation.yml';
 import Logo from '@components/Logo.astro';
 
@@ -24,19 +26,48 @@ const isActive = (href: string) => {
 const isExternal = (href: string) => {
   return href.startsWith('http');
 };
+
+const defaultClasses =
+  'bg-neutral-50 py-4 text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100';
 ---
 
-<header
-  class:list={twMerge(
-    'bg-neutral-50 py-4 text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100',
-    className
-  )}
->
-  <div class="container flex flex-wrap gap-x-6 gap-y-2">
+<header class:list={twMerge(defaultClasses, className)}>
+  <div class="container flex items-center gap-x-4">
     <a href="/" class="mr-auto py-2">
       <Logo size={20} />
     </a>
-    <nav class="-mx-3.5 flex flex-wrap">
+    <!-- Mobile menu -->
+    <label class="relative left-1.5 -m-1.5 block p-3 md:hidden" for="mobile-menu">
+      <input class="peer hidden" type="checkbox" id="mobile-menu" />
+      <MenuIcon class="relative block peer-checked:hidden" />
+      <XIcon class="relative z-30 hidden peer-checked:block" />
+      <div
+        class:list={twMerge(
+          'pointer-events-none invisible fixed inset-0 top-17 z-20 size-full border-t border-current/5 bg-neutral-50 opacity-0 transition duration-300 peer-checked:pointer-events-auto peer-checked:visible peer-checked:opacity-100',
+          defaultClasses,
+          className
+        )}
+      >
+        <nav class="flex flex-col">
+          {
+            navigationLinks.map(({ title, href }) => (
+              <a
+                href={href}
+                aria-current={isActive(href) ? 'page' : undefined}
+                class="inline-flex items-center gap-0.5 px-5 py-2.5 text-lg font-medium text-current underline-offset-3 transition select-none active:bg-current/10 aria-[current]:underline"
+              >
+                {title}
+                {isExternal(href) && (
+                  <ArrowUpRightIcon size={14} class="mt-px flex-shrink-0 opacity-50" />
+                )}
+              </a>
+            ))
+          }
+        </nav>
+      </div>
+    </label>
+    <!-- Desktop menu -->
+    <nav class="-mx-3.5 hidden flex-wrap md:flex">
       {
         navigationLinks.map(({ title, href }) => (
           <a
@@ -57,3 +88,11 @@ const isExternal = (href: string) => {
     </nav>
   </div>
 </header>
+
+<script>
+  document.querySelector('#mobile-menu')?.addEventListener('change', (e) => {
+    if (e.currentTarget instanceof HTMLInputElement) {
+      document.documentElement.classList.toggle('overflow-y-hidden', e.currentTarget.checked);
+    }
+  });
+</script>
