@@ -9,11 +9,11 @@ const isExternal = (href: string) => {
 };
 
 const navigationLinks = Object.entries(navigation)
-  .filter(([key, _]) => !['dashboard', 'privacy', 'guide'].includes(key))
+  .filter(([key, _]) => !['dashboard', 'privacy'].includes(key))
   .map(([_, item]) => item);
 
 const resourcesLinks = Object.entries(navigation)
-  .filter(([key, _]) => ['dashboard', 'privacy', 'guide'].includes(key))
+  .filter(([key, _]) => ['dashboard', 'privacy'].includes(key))
   .map(([_, item]) => item);
 ---
 
