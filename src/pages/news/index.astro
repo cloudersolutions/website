@@ -56,31 +56,33 @@ const description = 'Company news, product updates, and more.';
   </section>
   <section class="container pb-16 sm:pb-20 md:pb-24 lg:pb-28 xl:pb-32">
     <div
-      class="rounded-md border border-neutral-200 bg-white p-8 shadow-lg shadow-black/2 md:p-16 dark:border-neutral-800 dark:bg-neutral-900"
+      class="rounded-lg border border-neutral-200 bg-white p-8 shadow-lg shadow-black/2 md:p-12 lg:p-16 dark:border-neutral-800 dark:bg-neutral-900"
     >
-      <div class="flex flex-col justify-center md:text-center">
+      <div class="flex flex-col justify-center text-center">
         <h3 class="mb-3 text-2xl font-semibold text-neutral-900 md:text-3xl dark:text-neutral-100">
           Be the first one to know more
         </h3>
-        <p>Sign up to our newsletter to receive company news, product updates and more.</p>
+        <p class="text-neutral-700 dark:text-neutral-300">
+          Sign up to our newsletter to receive company news, product updates and more.
+        </p>
         <form
           name="newsletter"
           method="POST"
           action="/success"
           data-netlify="true"
           netlify-honeypot="bot-field"
-          class="my-6"
+          class="my-8 flex flex-wrap justify-center gap-x-2 gap-y-4"
         >
           <input
             name="email"
             placeholder="Email"
             type="email"
             required
-            class="mr-2 h-11 w-full max-w-100 rounded border border-neutral-200 bg-neutral-50 px-3 text-sm dark:border-neutral-800 dark:bg-neutral-950"
+            class="h-10 w-full rounded border border-neutral-200 bg-neutral-50 px-3 text-sm placeholder:text-neutral-500 sm:max-w-96 dark:border-neutral-800 dark:bg-neutral-950"
           />
           <button
             type="submit"
-            class="inline-flex h-11 cursor-pointer items-center justify-center gap-2 rounded bg-indigo-500 px-5 text-center text-sm font-medium text-nowrap text-white transition select-none hover:bg-indigo-600 dark:hover:bg-indigo-400"
+            class="inline-flex h-10 w-full cursor-pointer items-center justify-center gap-1 rounded bg-indigo-500 px-4 text-center text-sm font-medium text-nowrap text-white transition select-none hover:bg-indigo-600 sm:w-auto dark:hover:bg-indigo-400"
           >
             Sign up
           </button>

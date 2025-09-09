@@ -66,7 +66,7 @@ const description =
   <section id="plans" class="container pb-16 sm:pb-20 md:pb-24 lg:pb-32 xl:pb-36">
     <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-0">
       <div
-        class="flex flex-col rounded-md border border-neutral-200 bg-white p-8 pt-6 lg:rounded-r-none lg:border-r-0 dark:border-neutral-800 dark:bg-neutral-900"
+        class="flex flex-col rounded-lg border border-neutral-200 bg-white p-8 pt-6 lg:rounded-r-none lg:border-r-0 dark:border-neutral-800 dark:bg-neutral-900"
       >
         <h2 class="mb-2 text-2xl font-semibold text-neutral-900 dark:text-neutral-100">Retrofit</h2>
         <p>
@@ -100,13 +100,13 @@ const description =
         </ul>
         <a
           href={navigation.contact.href}
-          class="mt-auto inline-flex h-11 cursor-pointer items-center justify-center gap-2 rounded bg-neutral-900 px-5 text-center text-sm font-medium text-nowrap text-neutral-100 transition select-none hover:bg-neutral-800 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-300"
+          class="mt-auto inline-flex h-10 cursor-pointer items-center justify-center gap-1 rounded bg-neutral-800 px-4 text-center text-sm font-medium text-nowrap text-neutral-50 transition select-none hover:bg-neutral-950 dark:bg-neutral-200 dark:text-neutral-950 dark:hover:bg-white"
         >
           Contact sales
         </a>
       </div>
       <div
-        class="flex flex-col rounded-md border border-neutral-200 bg-white p-8 pt-6 lg:z-10 lg:-my-4 lg:pt-10 lg:pb-12 lg:shadow-2xl lg:shadow-black/10 dark:border-neutral-800 dark:bg-neutral-900"
+        class="flex flex-col rounded-lg border border-neutral-200 bg-white p-8 pt-6 lg:z-10 lg:-my-4 lg:pt-10 lg:pb-12 lg:shadow-2xl lg:shadow-black/10 dark:border-neutral-800 dark:bg-neutral-900"
       >
         <h2 class="mb-2 text-2xl font-semibold text-neutral-900 dark:text-neutral-100">
           Full Integration
@@ -175,13 +175,13 @@ const description =
         </ul>
         <a
           href={navigation.contact.href}
-          class="mt-auto inline-flex h-11 cursor-pointer items-center justify-center gap-2 rounded bg-indigo-500 px-5 text-center text-sm font-medium text-nowrap text-white transition select-none hover:bg-indigo-600 dark:hover:bg-indigo-400"
+          class="mt-auto inline-flex h-10 cursor-pointer items-center justify-center gap-1 rounded bg-indigo-500 px-4 text-center text-sm font-medium text-nowrap text-white transition select-none hover:bg-indigo-600 dark:hover:bg-indigo-400"
         >
           Contact sales
         </a>
       </div>
       <div
-        class="flex flex-col rounded-md border border-neutral-200 bg-white p-8 pt-6 lg:rounded-l-none lg:border-l-0 dark:border-neutral-800 dark:bg-neutral-900"
+        class="flex flex-col rounded-lg border border-neutral-200 bg-white p-8 pt-6 lg:rounded-l-none lg:border-l-0 dark:border-neutral-800 dark:bg-neutral-900"
       >
         <h2 class="mb-2 text-2xl font-semibold text-neutral-900 dark:text-neutral-100">
           Portfolio
@@ -215,7 +215,7 @@ const description =
         </ul>
         <a
           href={navigation.contact.href}
-          class="mt-auto inline-flex h-11 cursor-pointer items-center justify-center gap-2 rounded bg-neutral-900 px-5 text-center text-sm font-medium text-nowrap text-neutral-100 transition select-none hover:bg-neutral-800 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-300"
+          class="mt-auto inline-flex h-10 cursor-pointer items-center justify-center gap-1 rounded bg-neutral-800 px-4 text-center text-sm font-medium text-nowrap text-neutral-50 transition select-none hover:bg-neutral-950 dark:bg-neutral-200 dark:text-neutral-950 dark:hover:bg-white"
         >
           Contact sales
         </a>
@@ -535,7 +535,7 @@ const description =
         </p>
         <a
           href={navigation.contact.href}
-          class="mt-2 inline-flex h-9 cursor-pointer items-center justify-center gap-2 rounded bg-indigo-500 px-3.5 text-center text-xs font-medium text-nowrap text-white transition select-none hover:bg-indigo-600 dark:hover:bg-indigo-400"
+          class="mt-2 inline-flex h-8 cursor-pointer items-center justify-center gap-1 rounded bg-indigo-500 px-3 text-center text-xs font-medium text-nowrap text-white transition select-none hover:bg-indigo-600 dark:hover:bg-indigo-400"
         >
           Let’s talk
         </a>
@@ -547,33 +547,31 @@ const description =
   </div>
   <section id="questions" class="container py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32">
     <div class="grid grid-cols-1 items-start gap-10 lg:grid-cols-3">
-      <div
-        class="flex flex-col items-start gap-5 md:flex-row md:items-center lg:flex-col lg:items-start"
-      >
-        <div class="mr-auto">
-          <h2
-            class="mb-4 text-2xl font-semibold text-neutral-900 md:text-3xl dark:text-neutral-100"
-          >
-            I have a question…
-          </h2>
+      <div>
+        <h2 class="mb-4 text-2xl font-semibold text-neutral-900 md:text-3xl dark:text-neutral-100">
+          I have a question…
+        </h2>
+        <div
+          class="flex flex-col items-start gap-6 md:flex-row md:items-center lg:flex-col lg:items-start"
+        >
           <p>
             We've gathered answers to the questions we hear most often. <a
               href={navigation.contact.href}
-              class="underline underline-offset-2 transition hover:opacity-65">Contact us</a
+              class="underline underline-offset-2 transition hover:opacity-65">Contact&nbsp;us</a
             > if you can’t find what you’re looking for.
           </p>
+          <button
+            id="toggleBtn"
+            class="inline-flex h-10 flex-shrink-0 cursor-pointer items-center rounded border border-current/12 bg-white px-4 text-center text-sm font-medium text-nowrap transition select-none hover:bg-neutral-100 dark:bg-neutral-900 dark:hover:bg-neutral-800"
+          >
+            Expand all
+          </button>
         </div>
-        <button
-          id="toggleBtn"
-          class="inline-flex h-9 flex-shrink-0 cursor-pointer items-center rounded border border-current/15 bg-white px-3.5 text-center text-xs font-medium text-nowrap transition select-none hover:bg-neutral-100 dark:bg-neutral-900 dark:hover:bg-neutral-800"
-        >
-          Expand all
-        </button>
       </div>
       <div class="*:border-b *:border-neutral-200 lg:col-span-2 *:dark:border-neutral-800">
         <details class="group open:pb-6">
           <summary
-            class="cursor-pointer py-6 font-semibold transition group-open:pb-4 hover:opacity-65"
+            class="cursor-pointer py-6 text-lg font-semibold transition group-open:pb-4 hover:opacity-65"
           >
             What is Clouder and how does virtual cabling work?
           </summary>
@@ -588,7 +586,7 @@ const description =
         </details>
         <details class="group open:pb-6">
           <summary
-            class="cursor-pointer py-6 font-semibold transition group-open:pb-4 hover:opacity-65"
+            class="cursor-pointer py-6 text-lg font-semibold transition group-open:pb-4 hover:opacity-65"
           >
             How quickly can we retrofit Clouder across a portfolio?
           </summary>
@@ -600,7 +598,7 @@ const description =
         </details>
         <details class="group open:pb-6">
           <summary
-            class="cursor-pointer py-6 font-semibold transition group-open:pb-4 hover:opacity-65"
+            class="cursor-pointer py-6 text-lg font-semibold transition group-open:pb-4 hover:opacity-65"
           >
             How does Clouder help with EU Taxonomy and CSRD compliance?
           </summary>
@@ -613,7 +611,7 @@ const description =
         </details>
         <details class="group open:pb-6">
           <summary
-            class="cursor-pointer py-6 font-semibold transition group-open:pb-4 hover:opacity-65"
+            class="cursor-pointer py-6 text-lg font-semibold transition group-open:pb-4 hover:opacity-65"
           >
             Can Clouder improve our GRESB score?
           </summary>
@@ -625,7 +623,7 @@ const description =
         </details>
         <details class="group open:pb-6">
           <summary
-            class="cursor-pointer py-6 font-semibold transition group-open:pb-4 hover:opacity-65"
+            class="cursor-pointer py-6 text-lg font-semibold transition group-open:pb-4 hover:opacity-65"
           >
             What savings have Clouder pilots shown?
           </summary>
@@ -637,7 +635,7 @@ const description =
         </details>
         <details class="group open:pb-6">
           <summary
-            class="cursor-pointer py-6 font-semibold transition group-open:pb-4 hover:opacity-65"
+            class="cursor-pointer py-6 text-lg font-semibold transition group-open:pb-4 hover:opacity-65"
           >
             Is Clouder compatible with our existing systems and vendors?
           </summary>
@@ -649,7 +647,7 @@ const description =
         </details>
         <details class="group open:pb-6">
           <summary
-            class="cursor-pointer py-6 font-semibold transition group-open:pb-4 hover:opacity-65"
+            class="cursor-pointer py-6 text-lg font-semibold transition group-open:pb-4 hover:opacity-65"
           >
             What about cybersecurity and data ownership?
           </summary>
@@ -660,7 +658,7 @@ const description =
         </details>
         <details class="group open:pb-6">
           <summary
-            class="cursor-pointer py-6 font-semibold transition group-open:pb-4 hover:opacity-65"
+            class="cursor-pointer py-6 text-lg font-semibold transition group-open:pb-4 hover:opacity-65"
           >
             What commercial model does Clouder use? Any license fees?
           </summary>
@@ -677,7 +675,7 @@ const description =
         </details>
         <details class="group open:pb-6">
           <summary
-            class="cursor-pointer py-6 font-semibold transition group-open:pb-4 hover:opacity-65"
+            class="cursor-pointer py-6 text-lg font-semibold transition group-open:pb-4 hover:opacity-65"
           >
             Which asset classes benefit most from Clouder?
           </summary>
@@ -689,7 +687,7 @@ const description =
         </details>
         <details class="group border-none open:pb-5">
           <summary
-            class="cursor-pointer py-6 font-semibold transition group-open:pb-4 hover:opacity-65"
+            class="cursor-pointer py-6 text-lg font-semibold transition group-open:pb-4 hover:opacity-65"
           >
             How does Clouder work with our existing ESG reporting software?
           </summary>
