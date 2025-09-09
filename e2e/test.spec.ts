@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 test('render home page with key sections', async ({ page }) => {
   await page.goto('/');
   await expect(page).toHaveTitle('Clouder');
-  await expect(page.locator('nav')).toBeVisible();
+  await expect(page.getByTestId('menu')).toBeVisible();
   await expect(
     page.getByRole('heading', { name: 'Turn building performance into value' })
   ).toBeVisible();
