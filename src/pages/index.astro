@@ -254,9 +254,13 @@ const caseExamplePosts = posts
           </h2>
           <a
             href={navigation.news.href}
-            class="mt-4 inline-block text-neutral-500 underline-offset-2 transition hover:text-neutral-800 dark:hover:text-neutral-200"
+            class="group mt-4 inline-flex items-center gap-0.5 text-neutral-500 transition hover:text-current"
           >
-            More case examples &rarr;
+            More case examples
+            <ChevronRightIcon
+              class="mt-0.5 opacity-75 transition group-hover:translate-x-0.5 group-hover:text-current group-hover:opacity-100"
+              size={16}
+            />
           </a>
         </div>
         <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
@@ -276,11 +280,11 @@ const caseExamplePosts = posts
                 <h3 class="mx-6 my-5 text-xl font-semibold text-neutral-900 transition group-hover:text-current dark:text-neutral-100">
                   {post.data.title}
                 </h3>
-                <p class="m-6 mt-auto inline-flex items-center text-sm text-neutral-500 transition group-hover:text-current">
+                <p class="m-6 mt-auto inline-flex items-center gap-0.5 text-sm text-neutral-500 transition group-hover:text-current">
                   Read the case example
                   <ChevronRightIcon
-                    class="mt-px text-neutral-500 transition group-hover:translate-x-0.5 group-hover:text-current"
-                    size={15}
+                    class="mt-px opacity-75 transition group-hover:translate-x-0.5 group-hover:text-current group-hover:opacity-100"
+                    size={14}
                   />
                 </p>
               </a>
