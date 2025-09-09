@@ -1,9 +1,11 @@
 ---
+import type { AstroComponentFactory } from 'astro/runtime/server/index.js';
+
 interface Props {
   quote: string;
   citeName: string;
   citeTitle: string;
-  citeLogo?: ((_props: astroHTML.JSX.SVGAttributes) => any) & ImageMetadata;
+  citeLogo?: AstroComponentFactory & ImageMetadata;
 }
 
 const { quote, citeName, citeTitle, citeLogo: Logo } = Astro.props;
@@ -16,6 +18,6 @@ const { quote, citeName, citeTitle, citeLogo: Logo } = Astro.props;
     &ldquo;{quote}&rdquo;
   </p>
   <p class="mt-6 text-sm font-medium text-neutral-700 dark:text-neutral-300">{citeName}</p>
-  <p class="mt-0.5 text-sm font-medium text-neutral-500">{citeTitle}</p>
+  <p class="text-sm font-medium text-neutral-500">{citeTitle}</p>
   {Logo && <Logo class="mt-1 h-5 w-auto text-neutral-500" />}
 </blockquote>

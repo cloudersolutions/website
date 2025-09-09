@@ -28,24 +28,24 @@ const { Content } = await post.render();
 
 <ProseLayout title={post.data.title} description={post.data.description} image={post.data.cover}>
   <article>
-    <header class="not-prose">
+    <header class="not-prose text-center">
       <h1 class="text-3xl font-semibold text-neutral-900 md:text-4xl dark:text-neutral-100">
         {post.data.title}
       </h1>
-      <div class="my-6 flex flex-wrap gap-1.5 text-sm text-neutral-500">
+      <div class="mt-6 flex flex-wrap justify-center gap-1.5 text-sm text-neutral-500">
         <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
         <span>&middot;</span>
         <p>{sentenceCase(post.data.category)}</p>
       </div>
     </header>
-    <section>
+    <section class="py-4 sm:py-6 md:py-8 lg:py-10 xl:py-12">
       <Content />
     </section>
   </article>
   <footer
-    class="not-prose border-t border-neutral-200 pt-6 sm:pt-8 lg:pt-10 dark:border-neutral-800"
+    class="not-prose border-t border-neutral-200 pt-8 sm:pt-10 md:pt-12 lg:pt-14 xl:pt-16 dark:border-neutral-800"
   >
-    <nav class="grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2 sm:gap-x-8 lg:gap-x-10">
+    <nav class="grid grid-cols-1 gap-8 sm:grid-cols-2">
       {
         previousPost && (
           <a
