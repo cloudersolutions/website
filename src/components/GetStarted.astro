@@ -14,34 +14,69 @@ import navigation from '@data/navigation.yml';
     </div>
     <hr class="absolute z-0 w-full border-neutral-200 dark:border-neutral-800" />
     <div
-      class="z-1 flex h-6 flex-shrink-0 cursor-default items-center gap-1 rounded-full border border-neutral-200 bg-white px-2 shadow-xs transition hover:scale-105 dark:border-neutral-800 dark:bg-neutral-900"
+      class="group z-1 flex h-6 flex-shrink-0 cursor-default items-center gap-1.5 rounded-full border border-neutral-200 bg-white px-2 shadow-xs dark:border-neutral-800 dark:bg-neutral-900"
     >
-      <span class="size-2 rounded-full bg-gray-400"></span>
-      <span class="text-xs font-medium text-current/75">Assessment</span>
+      <span
+        class="size-2 rounded-full bg-gray-400 outline-4 outline-transparent transition duration-300 group-hover:outline-gray-400/20"
+      >
+      </span>
+      <span
+        class="text-xs font-medium text-current/75 transition duration-300 group-hover:text-current"
+      >
+        Assessment
+      </span>
     </div>
     <div
-      class="z-1 flex h-6 flex-shrink-0 cursor-default items-center gap-1 rounded-full border border-neutral-200 bg-white px-2 shadow-xs transition hover:scale-105 dark:border-neutral-800 dark:bg-neutral-900"
+      class="group z-1 flex h-6 flex-shrink-0 cursor-default items-center gap-1.5 rounded-full border border-neutral-200 bg-white px-2 shadow-xs dark:border-neutral-800 dark:bg-neutral-900"
     >
-      <span class="size-2 rounded-full bg-purple-400"></span>
-      <span class="text-xs font-medium text-current/75">Pilot</span>
+      <span
+        class="size-2 rounded-full bg-purple-400 outline-4 outline-transparent transition duration-300 group-hover:outline-purple-400/20"
+      >
+      </span>
+      <span
+        class="text-xs font-medium text-current/75 transition duration-300 group-hover:text-current"
+      >
+        Pilot
+      </span>
     </div>
     <div
-      class="z-1 flex h-6 flex-shrink-0 cursor-default items-center gap-1 rounded-full border border-neutral-200 bg-white px-2 shadow-xs transition hover:scale-105 dark:border-neutral-800 dark:bg-neutral-900"
+      class="group z-1 flex h-6 flex-shrink-0 cursor-default items-center gap-1.5 rounded-full border border-neutral-200 bg-white px-2 shadow-xs dark:border-neutral-800 dark:bg-neutral-900"
     >
-      <span class="size-2 rounded-full bg-indigo-400"></span>
-      <span class="text-xs font-medium text-current/75">Implementation</span>
+      <span
+        class="size-2 rounded-full bg-indigo-400 outline-4 outline-transparent transition duration-300 group-hover:outline-indigo-400/20"
+      >
+      </span>
+      <span
+        class="text-xs font-medium text-current/75 transition duration-300 group-hover:text-current"
+      >
+        Implementation
+      </span>
     </div>
     <div
-      class="z-1 flex h-6 flex-shrink-0 cursor-default items-center gap-1 rounded-full border border-neutral-200 bg-white px-2 shadow-xs transition hover:scale-105 dark:border-neutral-800 dark:bg-neutral-900"
+      class="group z-1 flex h-6 flex-shrink-0 cursor-default items-center gap-1.5 rounded-full border border-neutral-200 bg-white px-2 shadow-xs dark:border-neutral-800 dark:bg-neutral-900"
     >
-      <span class="size-2 rounded-full bg-sky-400"></span>
-      <span class="text-xs font-medium text-current/75">Data-driven optimization </span>
+      <span
+        class="size-2 rounded-full bg-sky-400 outline-4 outline-transparent transition duration-300 group-hover:outline-sky-400/16"
+      >
+      </span>
+      <span
+        class="text-xs font-medium text-current/75 transition duration-300 group-hover:text-current"
+      >
+        Data-driven optimization
+      </span>
     </div>
     <div
-      class="z-1 flex h-6 flex-shrink-0 cursor-default items-center gap-1 rounded-full border border-neutral-200 bg-white px-2 shadow-xs transition hover:scale-105 dark:border-neutral-800 dark:bg-neutral-900"
+      class="group z-1 flex h-6 flex-shrink-0 cursor-default items-center gap-1.5 rounded-full border border-neutral-200 bg-white px-2 shadow-xs dark:border-neutral-800 dark:bg-neutral-900"
     >
-      <span class="size-2 rounded-full bg-green-400"></span>
-      <span class="text-xs font-medium text-current/75">Scaling</span>
+      <span
+        class="size-2 rounded-full bg-green-600 outline-4 outline-transparent transition duration-300 group-hover:outline-green-600/16"
+      >
+      </span>
+      <span
+        class="text-xs font-medium text-current/75 transition duration-300 group-hover:text-current"
+      >
+        Scaling
+      </span>
     </div>
   </div>
   <div class="flex flex-wrap items-end gap-6 p-8 md:p-12 lg:p-16">
@@ -57,7 +92,7 @@ import navigation from '@data/navigation.yml';
     </div>
     <a
       href={navigation.contact.href}
-      class="inline-flex h-10 cursor-pointer items-center justify-center gap-1 rounded bg-indigo-500 px-4 text-center text-sm font-medium text-nowrap text-white transition select-none hover:bg-indigo-600 dark:hover:bg-indigo-400"
+      class="inline-flex h-10 cursor-pointer items-center justify-center gap-1.5 rounded bg-indigo-500 px-4 text-center text-sm font-medium text-nowrap text-white transition select-none hover:bg-indigo-600 dark:hover:bg-indigo-400"
     >
       Book a free consultation
     </a>
