@@ -3,25 +3,35 @@ import TrendingUpIcon from 'lucide-astro/TrendingUp';
 import InfoIcon from 'lucide-astro/Info';
 import ChevronsUpDownIcon from 'lucide-astro/ChevronsUpDown';
 import DownloadIcon from 'lucide-astro/Download';
-import { formatPrice } from '@utils/format';
+import { formatPrice, formatNumber } from '@utils/format';
 
 interface Props {
   targetUsage: number;
   actualUsage: number;
+  area?: number;
+  priceKwh?: number;
+  capRate?: number;
 }
 
-const { targetUsage, actualUsage } = Astro.props;
+const { targetUsage, actualUsage, area = 9750, priceKwh = 0.08, capRate = 0.06 } = Astro.props;
 
-const pricePerKwh = 0.08;
-const area = 12500;
-const yieldRate = 0.05;
+const dist = [0.11, 0.1, 0.09, 0.07, 0.06, 0.07, 0.09, 0.07, 0.05, 0.09, 0.11, 0.09];
+const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-const costTarget = pricePerKwh * area * targetUsage;
-const costActual = pricePerKwh * area * actualUsage;
+const tickStep = 5;
+const maxValue = Math.max(...dist.map((d) => d * actualUsage));
+const maxTick = Math.ceil(maxValue / tickStep) * tickStep;
+const ticks: number[] = [];
+for (let t = 0; t <= maxTick; t += tickStep) {
+  ticks.unshift(t);
+}
+
+const costTarget = priceKwh * area * targetUsage;
+const costActual = priceKwh * area * actualUsage;
 
 const annualSavings = costTarget - costActual;
 const percentChange = (annualSavings / costTarget) * 100;
-const valueChange = annualSavings / yieldRate;
+const valueChange = annualSavings / capRate;
 ---
 
 <div
@@ -30,21 +40,23 @@ const valueChange = annualSavings / yieldRate;
   <div class="mb-2 flex items-center gap-2">
     <div class="mr-auto flex-shrink-0 pr-2">
       <p class="text-md leading-tight font-semibold">Energy efficiency</p>
-      <span class="text-xs leading-tight text-current/60">
-        Office building&puncsp;&middot;&puncsp;{Math.round(area)}m&sup2;
+      <span class="text-xs leading-tight text-neutral-500">
+        <span>Office building</span>
+        <span class="px-0.5">&middot;</span>
+        <span>{formatNumber(area)}m&sup2;</span>
       </span>
     </div>
     <div
       class="flex h-7 flex-shrink-0 items-center gap-1 rounded border border-neutral-200 pr-1.5 pl-2.5 transition hover:bg-current/3 dark:border-neutral-800"
     >
-      <span class="text-xs font-medium">Last 12 months</span>
-      <ChevronsUpDownIcon size={14} />
+      <span class="text-xs">Last 12 months</span>
+      <ChevronsUpDownIcon size={12} />
     </div>
     <div
       class="flex h-7 items-center gap-1 rounded border border-neutral-200 pr-2.5 pl-1.5 transition hover:bg-current/3 dark:border-neutral-800"
     >
-      <DownloadIcon size={14} />
-      <span class="text-xs font-medium">Download</span>
+      <DownloadIcon size={13} />
+      <span class="text-xs">Download</span>
     </div>
   </div>
   <div
@@ -52,91 +64,84 @@ const valueChange = annualSavings / yieldRate;
   >
     <TrendingUpIcon size={14} />
     <p class="text-xs whitespace-nowrap">
-      {Math.round(percentChange)}% less energy usage compared to the target.
+      {formatNumber(percentChange, true)}% less energy usage compared to the target.
     </p>
   </div>
-  <div class="my-6 flex items-end gap-2">
-    <div class="flex w-1/2 min-w-8 flex-col gap-1 text-center opacity-65">
-      <div class="h-2 bg-emerald-700 dark:bg-emerald-800"></div>
-      <span class="text-xs font-medium">A</span>
+  <div class="relative mt-6 mb-5 flex items-end gap-2">
+    <div class="mb-3 flex flex-shrink-0 flex-col justify-between gap-2 self-stretch">
+      {
+        ticks.map((t) => (
+          <span class="relative pr-1 text-[11px] text-neutral-500">
+            {t} kWh/m&sup2;
+            <hr class="absolute top-1/2 left-full w-screen opacity-10" />
+          </span>
+        ))
+      }
     </div>
-    <div class="flex w-full flex-col gap-1 text-center">
-      <p class="mb-0.5 text-xs">
-        <span class="font-semibold">Actual</span><br />
-        <span class="font-normal text-current/60">{Math.round(actualUsage)} kWh/m&sup2;</span>
-      </p>
-      <div
-        class="h-2 rounded-t-xs bg-green-700 dark:bg-green-800"
-        style={`height: ${Math.round(actualUsage / 2)}px`}
-      >
-      </div>
-      <span class="text-xs font-semibold">B</span>
-    </div>
-    <div class="flex w-full flex-col gap-1 text-center">
-      <p class="mb-0.5 text-xs">
-        <span class="font-semibold">Target</span><br />
-        <span class="font-normal text-current/60">{Math.round(targetUsage)} kWh/m&sup2;</span>
-      </p>
-      <div
-        class="h-2 rounded-t-xs bg-lime-600 dark:bg-lime-700"
-        style={`height: ${Math.round(targetUsage / 2)}px`}
-      >
-      </div>
-      <span class="text-xs font-semibold">C</span>
-    </div>
-    <div class="flex w-1/2 min-w-8 flex-col gap-1 text-center opacity-65">
-      <div class="h-2 rounded-t-xs bg-yellow-500 dark:bg-yellow-600"></div>
-      <span class="text-xs font-medium">D</span>
-    </div>
-    <div class="flex w-1/2 min-w-8 flex-col gap-1 text-center opacity-65">
-      <div class="h-2 rounded-t-xs bg-orange-600 dark:bg-orange-700"></div>
-      <span class="text-xs font-medium">E</span>
-    </div>
-    <div class="flex w-1/2 min-w-8 flex-col gap-1 text-center opacity-65">
-      <div class="h-2 rounded-t-xs bg-red-600 dark:bg-red-700"></div>
-      <span class="text-xs font-medium">F</span>
-    </div>
-    <div class="flex w-1/2 min-w-8 flex-col gap-1 text-center opacity-65">
-      <div class="h-2 rounded-t-xs bg-red-700 dark:bg-red-800"></div>
-      <span class="text-xs font-medium">G</span>
-    </div>
+    {
+      months.map((m, i) => (
+        <div class="group relative flex w-full min-w-8 flex-col gap-1 text-center opacity-65 transition hover:opacity-100">
+          <span class="absolute top-5 w-full text-[10px] text-indigo-100 opacity-0 transition duration-300 group-hover:opacity-100">
+            {formatNumber(dist[i] * actualUsage)}
+          </span>
+          <div
+            class="mt-4 h-2 rounded-t-xs bg-indigo-500 bg-gradient-to-b from-white/10 to-transparent dark:from-neutral-900/10"
+            style={`height: ${Math.floor(dist[i] * actualUsage * 6)}px`}
+          />
+          <span class="text-[11px] leading-4">{m}</span>
+        </div>
+      ))
+    }
   </div>
   <div class="flex flex-col">
+    <div class="flex items-center justify-between gap-4 pb-1.5">
+      <span class="mr-auto"></span>
+      <span class="w-24 text-xs font-medium text-neutral-500">Target</span>
+      <span class="w-24 text-xs font-medium">Actual</span>
+    </div>
     <div
-      class="flex h-10 items-center justify-between border-t border-neutral-200 px-2 text-sm dark:border-neutral-800"
+      class="flex h-10 items-center justify-between gap-4 border-t border-neutral-200 dark:border-neutral-800"
     >
-      <span>Estimated cost</span>
-      <span>
-        {formatPrice(costTarget)}
+      <span class="mr-auto text-sm">Usage</span>
+      <span class="w-24 text-[13px] text-neutral-500">
+        {formatNumber(targetUsage, true)} kWh/m&sup2;/y
+      </span>
+      <span class="w-24 text-[13px]">
+        {formatNumber(actualUsage, true)} kWh/m&sup2;/y
       </span>
     </div>
     <div
-      class="flex h-10 items-center justify-between border-t border-neutral-200 px-2 text-sm dark:border-neutral-800"
+      class="flex h-10 items-center justify-between gap-4 border-t border-neutral-200 dark:border-neutral-800"
     >
-      <span>Actual cost</span>
-      <span>
+      <span class="mr-auto text-sm">Cost</span>
+      <span class="w-24 text-[13px] text-neutral-500">
+        {formatPrice(costTarget)}
+      </span>
+      <span class="w-24 text-[13px]">
         {formatPrice(costActual)}
       </span>
     </div>
     <div
-      class="flex h-10 items-center justify-between border-t border-neutral-200 px-2 text-sm dark:border-neutral-800"
+      class="flex h-10 items-center justify-between gap-4 border-t border-neutral-200 dark:border-neutral-800"
     >
-      <div class="inline-flex items-center gap-1">
-        <span class="font-semibold">Annual savings</span>
+      <div class="mr-auto inline-flex items-center gap-1">
+        <span class="text-sm font-medium">Annual savings</span>
         <InfoIcon size={14} class="mt-px text-current/60" />
       </div>
-      <span class="font-semibold">
+
+      <span class="w-24 text-[13px] font-medium">
         {formatPrice(annualSavings)}
       </span>
     </div>
     <div
-      class="flex h-10 items-center justify-between border-t border-neutral-200 px-2 text-sm dark:border-neutral-800"
+      class="flex h-10 items-center justify-between gap-4 border-t border-neutral-200 dark:border-neutral-800"
     >
-      <div class="inline-flex items-center gap-1">
-        <span class="font-semibold">Increased value</span>
+      <div class="mr-auto inline-flex items-center gap-1">
+        <span class="text-sm font-medium">Increased value</span>
         <InfoIcon size={14} class="mt-px text-current/60" />
       </div>
-      <span class="font-semibold">
+
+      <span class="w-24 text-[13px] font-medium">
         {formatPrice(valueChange)}
       </span>
     </div>

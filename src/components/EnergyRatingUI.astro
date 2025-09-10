@@ -1,0 +1,143 @@
+---
+import TrendingUpIcon from 'lucide-astro/TrendingUp';
+import InfoIcon from 'lucide-astro/Info';
+import ChevronsUpDownIcon from 'lucide-astro/ChevronsUpDown';
+import DownloadIcon from 'lucide-astro/Download';
+import { formatPrice } from '@utils/format';
+
+interface Props {
+  targetUsage: number;
+  actualUsage: number;
+  area?: number;
+  priceKwh?: number;
+  capRate?: number;
+}
+
+const { targetUsage, actualUsage, area = 9750, priceKwh = 0.08, capRate = 0.06 } = Astro.props;
+
+const costTarget = priceKwh * area * targetUsage;
+const costActual = priceKwh * area * actualUsage;
+
+const annualSavings = costTarget - costActual;
+const percentChange = (annualSavings / costTarget) * 100;
+const valueChange = annualSavings / capRate;
+---
+
+<div
+  class="rounded-lg border border-neutral-200 bg-white p-6 shadow-xl dark:border-neutral-800 dark:bg-neutral-900"
+>
+  <div class="mb-2 flex items-center gap-2">
+    <div class="mr-auto flex-shrink-0 pr-2">
+      <p class="text-md leading-tight font-semibold">Energy efficiency</p>
+      <span class="text-xs leading-tight text-current/60">
+        Office building&puncsp;&middot;&puncsp;{Math.round(area)}m&sup2;
+      </span>
+    </div>
+    <div
+      class="flex h-7 flex-shrink-0 items-center gap-1 rounded border border-neutral-200 pr-1.5 pl-2.5 transition hover:bg-current/3 dark:border-neutral-800"
+    >
+      <span class="text-xs font-medium">Last 12 months</span>
+      <ChevronsUpDownIcon size={14} />
+    </div>
+    <div
+      class="flex h-7 items-center gap-1 rounded border border-neutral-200 pr-2.5 pl-1.5 transition hover:bg-current/3 dark:border-neutral-800"
+    >
+      <DownloadIcon size={14} />
+      <span class="text-xs font-medium">Download</span>
+    </div>
+  </div>
+  <div
+    class="flex h-7 w-fit flex-shrink-0 items-center gap-1.5 rounded bg-green-400/10 px-2.5 text-green-900 outline -outline-offset-1 outline-current/10 dark:text-green-100"
+  >
+    <TrendingUpIcon size={14} />
+    <p class="text-xs whitespace-nowrap">
+      {Math.round(percentChange)}% less energy usage compared to the target.
+    </p>
+  </div>
+  <div class="my-6 flex items-end gap-2">
+    <div class="flex w-1/2 min-w-8 flex-col gap-1 text-center opacity-65">
+      <div class="h-2 bg-emerald-700 dark:bg-emerald-800"></div>
+      <span class="text-xs font-medium">A</span>
+    </div>
+    <div class="flex w-full flex-col gap-1 text-center">
+      <p class="mb-0.5 text-xs">
+        <span class="font-semibold">Actual</span><br />
+        <span class="font-normal text-current/60">{Math.round(actualUsage)} kWh/m&sup2;</span>
+      </p>
+      <div
+        class="h-2 rounded-t-xs bg-green-700 dark:bg-green-800"
+        style={`height: ${Math.round(actualUsage / 2)}px`}
+      >
+      </div>
+      <span class="text-xs font-semibold">B</span>
+    </div>
+    <div class="flex w-full flex-col gap-1 text-center">
+      <p class="mb-0.5 text-xs">
+        <span class="font-semibold">Target</span><br />
+        <span class="font-normal text-current/60">{Math.round(targetUsage)} kWh/m&sup2;</span>
+      </p>
+      <div
+        class="h-2 rounded-t-xs bg-lime-600 dark:bg-lime-700"
+        style={`height: ${Math.round(targetUsage / 2)}px`}
+      >
+      </div>
+      <span class="text-xs font-semibold">C</span>
+    </div>
+    <div class="flex w-1/2 min-w-8 flex-col gap-1 text-center opacity-65">
+      <div class="h-2 rounded-t-xs bg-yellow-500 dark:bg-yellow-600"></div>
+      <span class="text-xs font-medium">D</span>
+    </div>
+    <div class="flex w-1/2 min-w-8 flex-col gap-1 text-center opacity-65">
+      <div class="h-2 rounded-t-xs bg-orange-600 dark:bg-orange-700"></div>
+      <span class="text-xs font-medium">E</span>
+    </div>
+    <div class="flex w-1/2 min-w-8 flex-col gap-1 text-center opacity-65">
+      <div class="h-2 rounded-t-xs bg-red-600 dark:bg-red-700"></div>
+      <span class="text-xs font-medium">F</span>
+    </div>
+    <div class="flex w-1/2 min-w-8 flex-col gap-1 text-center opacity-65">
+      <div class="h-2 rounded-t-xs bg-red-700 dark:bg-red-800"></div>
+      <span class="text-xs font-medium">G</span>
+    </div>
+  </div>
+  <div class="flex flex-col">
+    <div
+      class="flex h-10 items-center justify-between border-t border-neutral-200 px-2 text-sm dark:border-neutral-800"
+    >
+      <span>Estimated cost</span>
+      <span>
+        {formatPrice(costTarget)}
+      </span>
+    </div>
+    <div
+      class="flex h-10 items-center justify-between border-t border-neutral-200 px-2 text-sm dark:border-neutral-800"
+    >
+      <span>Actual cost</span>
+      <span>
+        {formatPrice(costActual)}
+      </span>
+    </div>
+    <div
+      class="flex h-10 items-center justify-between border-t border-neutral-200 px-2 text-sm dark:border-neutral-800"
+    >
+      <div class="inline-flex items-center gap-1">
+        <span class="font-semibold">Annual savings</span>
+        <InfoIcon size={14} class="mt-px text-current/60" />
+      </div>
+      <span class="font-semibold">
+        {formatPrice(annualSavings)}
+      </span>
+    </div>
+    <div
+      class="flex h-10 items-center justify-between border-t border-neutral-200 px-2 text-sm dark:border-neutral-800"
+    >
+      <div class="inline-flex items-center gap-1">
+        <span class="font-semibold">Increased value</span>
+        <InfoIcon size={14} class="mt-px text-current/60" />
+      </div>
+      <span class="font-semibold">
+        {formatPrice(valueChange)}
+      </span>
+    </div>
+  </div>
+</div>
