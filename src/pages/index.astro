@@ -11,6 +11,7 @@ import Quote from '@components/Quote.astro';
 import EnergyEfficiencyUI from '@components/EnergyEfficiencyUI.astro';
 import MainLayout from '@layouts/MainLayout.astro';
 import heroVideo from '@assets/hero.webm';
+import heroPoster from '@assets/hero-poster.png';
 import videoCover from '@assets/video-cover.png';
 import ConficapLogo from '@assets/conficap.svg';
 import LifelineLogo from '@assets/lifeline.svg';
@@ -62,6 +63,7 @@ const caseExamplePosts = posts
         autoplay=""
         muted=""
         loop=""
+        poster={heroPoster.src}
         class="absolute inset-0 size-full object-cover"
       >
         <source src={heroVideo} type="video/webm" />
