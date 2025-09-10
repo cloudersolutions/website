@@ -5,7 +5,7 @@ test('render home page with key sections', async ({ page }) => {
   await expect(page).toHaveTitle('Clouder');
   await expect(page.getByTestId('menu')).toBeVisible();
   await expect(
-    page.getByRole('heading', { name: 'Turn building performance into value' })
+    page.getByRole('heading', { name: 'Turn building data into performance and value ' })
   ).toBeVisible();
   await expect(
     page.getByRole('heading').getByText('The future of real estate is data')
