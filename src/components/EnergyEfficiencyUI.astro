@@ -80,8 +80,8 @@ const valueChange = annualSavings / capRate;
     </div>
     {
       months.map((m, i) => (
-        <div class="group relative flex w-full min-w-8 flex-col gap-1 text-center opacity-65 transition hover:opacity-100">
-          <span class="absolute top-5 w-full text-[10px] text-indigo-100 opacity-0 transition duration-300 group-hover:opacity-100">
+        <div class="group relative flex w-full min-w-8 flex-col gap-1 text-center opacity-65 transition duration-300 hover:opacity-100">
+          <span class="absolute top-5 w-full text-[10px] text-indigo-100 opacity-0 transition duration-300 group-hover:translate-y-px group-hover:opacity-100">
             {formatNumber(dist[i] * actualUsage)}
           </span>
           <div
