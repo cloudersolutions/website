@@ -33,7 +33,7 @@ const resourcesLinks = Object.entries(navigation)
         navigationLinks.map(({ title, href }) => (
           <a
             href={href}
-            class="inline-flex items-center gap-0.5 py-1 text-sm text-neutral-500 transition hover:text-neutral-800 active:text-neutral-800 dark:hover:text-neutral-200 dark:active:text-neutral-200"
+            class="inline-flex items-center gap-0.5 py-1 text-sm text-neutral-500 transition hover:text-current active:text-current"
           >
             {title}
             {isExternal(href) && (
@@ -49,7 +49,7 @@ const resourcesLinks = Object.entries(navigation)
         resourcesLinks.map(({ title, href }) => (
           <a
             href={href}
-            class="inline-flex items-center gap-0.5 py-1 text-sm text-neutral-500 transition hover:text-neutral-800 active:text-neutral-800 dark:hover:text-neutral-200 dark:active:text-neutral-200"
+            class="inline-flex items-center gap-0.5 py-1 text-sm text-neutral-500 transition hover:text-current active:text-current"
           >
             {title}
             {isExternal(href) && (
@@ -65,7 +65,7 @@ const resourcesLinks = Object.entries(navigation)
         site.social.map(({ title, href }) => (
           <a
             href={href}
-            class="inline-flex items-center gap-0.5 py-1 text-sm text-neutral-500 transition hover:text-neutral-800 active:text-neutral-800 dark:hover:text-neutral-200 dark:active:text-neutral-200"
+            class="inline-flex items-center gap-0.5 py-1 text-sm text-neutral-500 transition hover:text-current active:text-current"
           >
             {title}
             <ArrowUpRightIcon size={14} class="mt-px flex-shrink-0 opacity-50" />
