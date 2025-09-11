@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+import Divider from '@components/Divider.astro';
 import MainLayout from '@layouts/MainLayout.astro';
 import labImage from '@assets/emma-jussi-labra.jpg';
 
@@ -19,9 +20,7 @@ const description =
       <p class="text-lg text-neutral-700 dark:text-neutral-400">{description}</p>
     </div>
   </section>
-  <div class="container">
-    <hr class="border-t border-neutral-200 dark:border-neutral-800" />
-  </div>
+  <Divider />
   <section class="container py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32">
     <div class="grid grid-cols-1 gap-x-20 lg:grid-cols-2">
       <h2
@@ -46,9 +45,7 @@ const description =
       </div>
     </div>
   </section>
-  <div class="container">
-    <hr class="border-t border-neutral-200 dark:border-neutral-800" />
-  </div>
+  <Divider />
   <section class="container py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32">
     <div class="grid grid-cols-1 gap-x-20 gap-y-8 lg:grid-cols-2">
       <div class="space-y-4">

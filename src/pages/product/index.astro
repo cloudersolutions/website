@@ -11,6 +11,7 @@ import ShieldCheckIcon from 'lucide-astro/ShieldCheck';
 import WrenchIcon from 'lucide-astro/Wrench';
 import navigation from '@data/navigation.yml';
 import { formatPrice } from '@utils/format';
+import Divider from '@components/Divider.astro';
 import GetStarted from '@components/GetStarted.astro';
 import Ping from '@components/Ping.astro';
 import MainLayout from '@layouts/MainLayout.astro';
@@ -224,9 +225,7 @@ const description =
       </div>
     </div>
   </section>
-  <div class="container">
-    <hr class="border-t border-neutral-200 dark:border-neutral-800" />
-  </div>
+  <Divider />
   <section id="overview" class="container py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32">
     <h2
       class="mb-8 text-2xl font-semibold text-neutral-900 md:text-3xl lg:mb-12 dark:text-neutral-100"
@@ -326,9 +325,7 @@ const description =
       </div>
     </div>
   </section>
-  <div class="container">
-    <hr class="border-t border-neutral-200 dark:border-neutral-800" />
-  </div>
+  <Divider />
   <section id="features" class="container py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32">
     <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
       <div class="col-span-full mb-4 lg:col-span-1 lg:row-span-4">
@@ -544,9 +541,7 @@ const description =
       </div>
     </div>
   </section>
-  <div class="container">
-    <hr class="border-t border-neutral-200 dark:border-neutral-800" />
-  </div>
+  <Divider />
   <section id="questions" class="container py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32">
     <div class="grid grid-cols-1 items-start gap-10 lg:grid-cols-3">
       <div>

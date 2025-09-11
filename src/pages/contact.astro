@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import navigation from '@data/navigation.yml';
+import Divider from '@components/Divider.astro';
 import MainLayout from '@layouts/MainLayout.astro';
 import tomiImage from '@assets/tomi.jpg';
 import jussiImage from '@assets/jussi.jpg';
@@ -24,9 +25,7 @@ const description =
       <p class="text-lg text-neutral-700 dark:text-neutral-400">{description}</p>
     </div>
   </section>
-  <div class="container">
-    <hr class="border-t border-neutral-200 dark:border-neutral-800" />
-  </div>
+  <Divider />
   <section id="form" class="container py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32">
     <div class="grid grid-cols-1 gap-x-6 gap-y-10 md:grid-cols-2 md:gap-x-10 lg:grid-cols-3">
       <div class="space-y-4 md:col-span-2 lg:col-span-1">
@@ -138,9 +137,7 @@ const description =
       </form>
     </div>
   </section>
-  <div class="container">
-    <hr class="border-t border-neutral-200 dark:border-neutral-800" />
-  </div>
+  <Divider />
   <section id="sales" class="xl container py-16 sm:py-20 md:py-24 lg:py-28">
     <div
       class="grid grid-cols-1 gap-x-6 gap-y-10 md:grid-cols-2 md:gap-x-8 lg:grid-cols-3 lg:gap-x-10"
@@ -216,9 +213,7 @@ const description =
       </div>
     </div>
   </section>
-  <div class="container">
-    <hr class="border-t border-neutral-200 dark:border-neutral-800" />
-  </div>
+  <Divider />
   <section id="office" class="xl container py-16 sm:py-20 md:py-24 lg:py-28">
     <div
       class="grid grid-cols-1 gap-x-6 gap-y-4 md:grid-cols-2 md:gap-x-8 lg:grid-cols-3 lg:gap-x-10"
