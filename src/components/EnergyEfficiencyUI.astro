@@ -35,7 +35,7 @@ const valueChange = annualSavings / capRate;
 ---
 
 <div
-  class="rounded-lg border border-neutral-200 bg-white p-6 shadow-xl select-none dark:border-neutral-800 dark:bg-neutral-900"
+  class="rounded-lg border border-neutral-200 bg-white p-6 shadow-[0_1px_16px] shadow-black/5 select-none dark:border-neutral-800 dark:bg-neutral-900"
 >
   <div class="mb-2 flex items-center gap-2">
     <div class="mr-auto flex-shrink-0 pr-2">
@@ -43,7 +43,7 @@ const valueChange = annualSavings / capRate;
       <span class="text-xs leading-tight text-neutral-500">
         <span>Office building</span>
         <span class="px-0.5">&middot;</span>
-        <span>{formatNumber(area)}m&sup2;</span>
+        <span>{formatNumber(area)}m²</span>
       </span>
     </div>
     <div
@@ -72,7 +72,7 @@ const valueChange = annualSavings / capRate;
       {
         ticks.map((t) => (
           <span class="relative pr-1 text-[11px] text-neutral-500">
-            {t} kWh/m&sup2;
+            {t} kWh/m²
             <hr class="absolute top-1/2 left-full w-screen opacity-10" />
           </span>
         ))
@@ -104,10 +104,10 @@ const valueChange = annualSavings / capRate;
     >
       <span class="mr-auto text-sm">Usage</span>
       <span class="w-24 text-[13px] text-neutral-500">
-        {formatNumber(targetUsage, true)} kWh/m&sup2;/y
+        {formatNumber(targetUsage, true)} kWh/m²/y
       </span>
       <span class="w-24 text-[13px]">
-        {formatNumber(actualUsage, true)} kWh/m&sup2;/y
+        {formatNumber(actualUsage, true)} kWh/m²/y
       </span>
     </div>
     <div

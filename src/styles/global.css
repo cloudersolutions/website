@@ -113,4 +113,8 @@
   h6 {
     text-wrap: balance;
   }
+
+  strong {
+    font-weight: 600;
+  }
 }

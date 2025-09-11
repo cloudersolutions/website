@@ -4,11 +4,12 @@ import { Image } from 'astro:assets';
 import ChevronRightIcon from 'lucide-astro/ChevronRight';
 import site from '@data/site.yml';
 import navigation from '@data/navigation.yml';
-import { formatPrice } from '@utils/format';
 import YouTubeEmbed from '@components/YouTubeEmbed.astro';
 import GetStarted from '@components/GetStarted.astro';
 import Quote from '@components/Quote.astro';
 import EnergyEfficiencyUI from '@components/EnergyEfficiencyUI.astro';
+import SustainabilityUI from '@components/SustainabilityUI.astro';
+import HistoryUI from '@components/HistoryUI.astro';
 import MainLayout from '@layouts/MainLayout.astro';
 import heroVideo from '@assets/hero.webm';
 import videoCover from '@assets/video-cover.png';
@@ -168,7 +169,7 @@ const caseExamplePosts = posts
         </div>
         <div>
           <div
-            class="relative -mt-2 -ml-4 max-w-4xl mask-r-from-75% mask-b-from-75% pt-4 pl-4 lg:-mt-8 lg:w-[50vw]"
+            class="relative -mt-4 -ml-4 max-w-3xl mask-r-from-75% mask-b-from-75% pt-4 pl-4 lg:-mt-8 lg:w-[50vw]"
           >
             <EnergyEfficiencyUI targetUsage={160} actualUsage={132.257} />
           </div>
@@ -176,8 +177,8 @@ const caseExamplePosts = posts
       </div>
       <div class="flex flex-col gap-y-16 lg:flex-row">
         <div class="w-full border-t border-neutral-200 pt-16 lg:pr-16 dark:border-neutral-800">
-          <div>
-            <img src="https://placeholdit.com/600x300/dddddd/999999" />
+          <div class="-mt-4 -ml-4 max-h-56 mask-r-from-75% mask-b-from-25% pt-4 pl-4">
+            <HistoryUI />
           </div>
           <div>
             <h3 class="my-5 text-2xl font-semibold text-neutral-900 dark:text-neutral-100">
@@ -212,8 +213,8 @@ const caseExamplePosts = posts
           &nbsp;
         </div>
         <div class="w-full border-t border-neutral-200 pt-16 lg:pl-16 dark:border-neutral-800">
-          <div>
-            <img src="https://placeholdit.com/600x300/dddddd/999999" />
+          <div class="-mt-4 -ml-4 max-h-56 mask-r-from-75% mask-b-from-25% pt-4 pl-4">
+            <SustainabilityUI />
           </div>
           <div>
             <h3 class="my-5 text-2xl font-semibold text-neutral-900 dark:text-neutral-100">
