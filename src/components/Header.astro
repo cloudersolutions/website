@@ -104,6 +104,11 @@ const defaultClasses =
 <script>
   const menu = document.getElementById('mobile-menu');
 
+  if (menu instanceof HTMLInputElement) {
+    menu.checked = false;
+    document.documentElement.classList.remove('overflow-y-hidden');
+  }
+
   menu?.addEventListener('change', (e) => {
     if (e.currentTarget instanceof HTMLInputElement) {
       document.documentElement.classList.toggle('overflow-y-hidden', e.currentTarget.checked);
