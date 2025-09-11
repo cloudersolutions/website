@@ -11,7 +11,8 @@ import EnergyEfficiencyUI from '@components/EnergyEfficiencyUI.astro';
 import SustainabilityUI from '@components/SustainabilityUI.astro';
 import HistoryUI from '@components/HistoryUI.astro';
 import MainLayout from '@layouts/MainLayout.astro';
-import heroVideo from '@assets/hero.webm';
+import heroVideoWebm from '@assets/hero.webm';
+import heroVideoAv1 from '@assets/hero.av1.mp4';
 import videoPoster from '@assets/video-poster.webp';
 import ConficapLogo from '@assets/conficap.svg';
 import LifelineLogo from '@assets/lifeline.svg';
@@ -65,7 +66,8 @@ const caseExamplePosts = posts
         loop
         class="absolute inset-0 size-full object-cover"
       >
-        <source src={heroVideo} type="video/webm" />
+        <source src={heroVideoAv1} type="video/mp4; codecs=av01.0.05M.08, opus" />
+        <source src={heroVideoWebm} type="video/webm; codecs=av01,opus" />
       </video>
     </div>
   </section>
