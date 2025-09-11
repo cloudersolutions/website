@@ -48,7 +48,7 @@ const caseExamplePosts = posts
         </p>
         <a
           href={navigation.contact.href}
-          class="inline-flex h-10 cursor-pointer items-center justify-center gap-1 rounded bg-indigo-500 px-4 text-center text-sm font-medium text-nowrap text-white shadow-xs transition select-none hover:bg-indigo-400"
+          class="inline-flex h-10 cursor-pointer items-center justify-center gap-1 rounded bg-indigo-500 px-4 text-center text-sm font-medium text-nowrap text-white shadow-xs transition select-none hover:bg-indigo-400 active:bg-indigo-400"
         >
           Get started today
         </a>
@@ -110,7 +110,7 @@ const caseExamplePosts = posts
           </p>
           <a
             href={navigation.contact.href}
-            class="inline-flex h-10 cursor-pointer items-center justify-center gap-1 rounded bg-neutral-800 px-4 text-center text-sm font-medium text-nowrap text-neutral-50 transition select-none hover:bg-neutral-950 dark:bg-neutral-200 dark:text-neutral-950 dark:hover:bg-white"
+            class="inline-flex h-10 cursor-pointer items-center justify-center gap-1 rounded bg-neutral-800 px-4 text-center text-sm font-medium text-nowrap text-neutral-50 transition select-none hover:bg-neutral-950 active:bg-neutral-950 dark:bg-neutral-200 dark:text-neutral-950 dark:hover:bg-white dark:active:bg-white"
           >
             Book a free consultation
           </a>
@@ -168,7 +168,7 @@ const caseExamplePosts = posts
           </p>
           <a
             href={navigation.contact.href}
-            class="inline-flex h-10 cursor-pointer items-center justify-center gap-1 rounded bg-neutral-800 px-4 text-center text-sm font-medium text-nowrap text-neutral-50 transition select-none hover:bg-neutral-950 dark:bg-neutral-200 dark:text-neutral-950 dark:hover:bg-white"
+            class="inline-flex h-10 cursor-pointer items-center justify-center gap-1 rounded bg-neutral-800 px-4 text-center text-sm font-medium text-nowrap text-neutral-50 transition select-none hover:bg-neutral-950 active:bg-neutral-950 dark:bg-neutral-200 dark:text-neutral-950 dark:hover:bg-white dark:active:bg-white"
           >
             Get started today
           </a>
@@ -207,7 +207,7 @@ const caseExamplePosts = posts
             </p>
             <a
               href={navigation.product.href}
-              class="inline-flex h-10 cursor-pointer items-center justify-center gap-1 rounded bg-neutral-800 px-4 text-center text-sm font-medium text-nowrap text-neutral-50 transition select-none hover:bg-neutral-950 dark:bg-neutral-200 dark:text-neutral-950 dark:hover:bg-white"
+              class="inline-flex h-10 cursor-pointer items-center justify-center gap-1 rounded bg-neutral-800 px-4 text-center text-sm font-medium text-nowrap text-neutral-50 transition select-none hover:bg-neutral-950 active:bg-neutral-950 dark:bg-neutral-200 dark:text-neutral-950 dark:hover:bg-white dark:active:bg-white"
             >
               See how it works
             </a>
@@ -243,7 +243,7 @@ const caseExamplePosts = posts
             </p>
             <a
               href={navigation.news.href}
-              class="inline-flex h-10 cursor-pointer items-center justify-center gap-1 rounded bg-neutral-800 px-4 text-center text-sm font-medium text-nowrap text-neutral-50 transition select-none hover:bg-neutral-950 dark:bg-neutral-200 dark:text-neutral-950 dark:hover:bg-white"
+              class="inline-flex h-10 cursor-pointer items-center justify-center gap-1 rounded bg-neutral-800 px-4 text-center text-sm font-medium text-nowrap text-neutral-50 transition select-none hover:bg-neutral-950 active:bg-neutral-950 dark:bg-neutral-200 dark:text-neutral-950 dark:hover:bg-white dark:active:bg-white"
             >
               See case examples
             </a>
@@ -268,14 +268,14 @@ const caseExamplePosts = posts
           >
             More case examples
             <ChevronRightIcon
-              class="mt-0.5 opacity-75 transition group-hover:translate-x-0.5 group-hover:text-current group-hover:opacity-100"
+              class="mt-0.5 opacity-75 transition group-hover:translate-x-0.5 group-hover:text-current group-hover:opacity-100 group-active:text-current group-active:opacity-100"
               size={16}
             />
           </a>
         </div>
         <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
           {caseExamplePosts.map((post) => (
-            <article class="group relative overflow-clip rounded-md bg-white transition hover:shadow-xs dark:bg-neutral-900">
+            <article class="group relative overflow-clip rounded-md bg-white transition hover:shadow-xs active:shadow-xs dark:bg-neutral-900">
               <a href={`/news/${post.slug}`} class="flex h-full flex-col items-start">
                 <div class="relative">
                   <Image
@@ -285,9 +285,9 @@ const caseExamplePosts = posts
                     layout="constrained"
                     class="aspect-video bg-current/10 object-cover text-neutral-500"
                   />
-                  <div class="absolute inset-0 bg-current opacity-0 transition duration-300 group-hover:opacity-10" />
+                  <div class="absolute inset-0 bg-current opacity-0 transition duration-300 group-hover:opacity-10 group-active:opacity-10" />
                 </div>
-                <h3 class="mx-6 my-5 text-xl font-semibold text-neutral-900 transition group-hover:text-current dark:text-neutral-100">
+                <h3 class="mx-6 my-5 text-xl font-semibold text-neutral-900 dark:text-neutral-100">
                   {post.data.title}
                 </h3>
                 <p class="m-6 mt-auto inline-flex items-center gap-0.5 text-sm text-neutral-500 transition group-hover:text-current">
@@ -298,7 +298,7 @@ const caseExamplePosts = posts
                   />
                 </p>
               </a>
-              <div class="pointer-events-none absolute inset-0 rounded-md border border-current/12 transition group-hover:border-current/16" />
+              <div class="pointer-events-none absolute inset-0 rounded-md border border-current/12 transition group-hover:border-current/16 group-active:border-current/16" />
             </article>
           ))}
         </div>

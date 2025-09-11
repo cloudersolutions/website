@@ -38,13 +38,16 @@ const defaultClasses =
       <Logo size={20} />
     </a>
     <!-- Mobile menu -->
-    <label class="relative left-1.5 -m-1.5 block p-3 md:hidden" for="mobile-menu">
+    <label
+      class="relative left-1.5 -m-1.5 block rounded-full p-3 transition active:bg-current/10 md:hidden"
+      for="mobile-menu"
+    >
       <input class="peer hidden" type="checkbox" id="mobile-menu" />
       <MenuIcon class="relative block peer-checked:hidden" />
       <XIcon class="relative z-30 hidden peer-checked:block" />
       <div
         class:list={twMerge(
-          'pointer-events-none invisible fixed inset-0 top-17 z-20 h-auto w-full border-t border-current/5 bg-neutral-50 opacity-0 transition duration-300 peer-checked:pointer-events-auto peer-checked:visible peer-checked:opacity-100',
+          'pointer-events-none invisible fixed inset-0 top-17 z-20 h-auto w-full border-t border-current/10 bg-neutral-50 opacity-0 transition duration-300 peer-checked:pointer-events-auto peer-checked:visible peer-checked:opacity-100',
           defaultClasses,
           className
         )}
