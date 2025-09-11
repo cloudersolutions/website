@@ -35,7 +35,7 @@ const valueChange = annualSavings / capRate;
 ---
 
 <div
-  class="rounded-lg border border-neutral-200 bg-white p-6 shadow-[0_1px_16px] shadow-black/5 select-none dark:border-neutral-800 dark:bg-neutral-900"
+  class="rounded-lg border border-neutral-200 bg-white p-6 text-neutral-700 shadow-[0_1px_16px] shadow-black/5 select-none dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-300"
 >
   <div class="mb-2 flex items-center gap-2">
     <div class="mr-auto flex-shrink-0 pr-2">
@@ -60,7 +60,7 @@ const valueChange = annualSavings / capRate;
     </div>
   </div>
   <div
-    class="flex h-7 w-fit flex-shrink-0 items-center gap-1.5 rounded bg-green-400/10 px-2.5 text-green-900 outline -outline-offset-1 outline-current/10 dark:text-green-100"
+    class="flex h-7 w-fit flex-shrink-0 items-center gap-1.5 rounded bg-green-400/10 px-2.5 text-green-900 outline -outline-offset-1 outline-current/10 dark:text-green-100/90"
   >
     <TrendingUpIcon size={14} />
     <p class="text-xs whitespace-nowrap">
@@ -81,7 +81,7 @@ const valueChange = annualSavings / capRate;
     {
       months.map((m, i) => (
         <div class="group relative flex w-full min-w-8 flex-col gap-1 text-center opacity-65 transition duration-300 hover:opacity-100">
-          <span class="absolute top-5 w-full text-[10px] text-indigo-100 opacity-0 transition duration-300 group-hover:translate-y-px group-hover:opacity-100">
+          <span class="absolute top-5 w-full text-[10px] text-indigo-100 opacity-0 transition duration-300 group-hover:translate-y-px group-hover:opacity-100 dark:text-indigo-200">
             {formatNumber(dist[i] * actualUsage)}
           </span>
           <div
