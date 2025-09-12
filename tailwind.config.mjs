@@ -37,7 +37,7 @@ export default {
               fontStyle: 'normal',
               fontSize: '0.875rem',
               fontWeight: '400',
-              marginTop: '-0.75em',
+              marginTop: '-0.4rem',
               marginBottom: 0
             },
             'blockquote p:last-of-type:not(p:only-child)::before': {
@@ -68,6 +68,13 @@ export default {
             '--tw-prose-invert-links-hover': 'var(--color-indigo-300)',
             'h1, h2, h3, h4, h5, h6': {
               fontWeight: '600'
+            },
+            h1: {
+              marginBottom: '0.666667em'
+            },
+            h2: {
+              marginTop: '1.8em',
+              marginBottom: '0.8em'
             },
             strong: {
               fontWeight: '600'
