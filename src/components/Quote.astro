@@ -1,0 +1,25 @@
+---
+import type { AstroComponentFactory } from 'astro/runtime/server/index.js';
+
+interface Props {
+  quote: string;
+  citeName: string;
+  citeTitle: string;
+  citeLogo?: AstroComponentFactory & ImageMetadata;
+}
+
+const { quote, citeName, citeTitle, citeLogo: Logo } = Astro.props;
+---
+
+<blockquote
+  class="flex flex-col items-start border-l-2 border-neutral-200 pl-6 dark:border-neutral-800"
+>
+  <p
+    class="mb-auto max-w-prose -indent-[0.45em] text-lg leading-normal font-[550] text-neutral-900 italic dark:text-neutral-100"
+  >
+    &ldquo;{quote}&rdquo;
+  </p>
+  <p class="mt-4 text-sm font-medium">{citeName}</p>
+  <p class="mt-px text-sm font-medium text-neutral-500">{citeTitle}</p>
+  {Logo && <Logo class="mt-1 h-5 w-auto text-neutral-500" />}
+</blockquote>

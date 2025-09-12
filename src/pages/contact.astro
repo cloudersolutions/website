@@ -1,117 +1,38 @@
 ---
 import { Image } from 'astro:assets';
 import navigation from '@data/navigation.yml';
+import Divider from '@components/Divider.astro';
 import MainLayout from '@layouts/MainLayout.astro';
-import Overline from '@components/Overline.astro';
 import tomiImage from '@assets/tomi.jpg';
 import jussiImage from '@assets/jussi.jpg';
 import emmaImage from '@assets/emma.jpg';
+import matiasImage from '@assets/matias.jpg';
 import hqImage from '@assets/hq.jpg';
 
 const title = 'Contact us';
-const description = 'Get in touch with our sales team or book a demo.';
+const description =
+  'Get in touch with our sales team for consultations, demos, or general questions.';
 ---
 
 <MainLayout title={title} description={description} headerClass="bg-white dark:bg-neutral-900">
-  <section class="border-b border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-900">
-    <div class="container-narrow pt-16 pb-24 text-center lg:pt-28 lg:pb-40">
-      <h1 class="mb-5 text-4xl font-semibold text-neutral-900 md:text-5xl dark:text-neutral-100">
+  <section class="bg-gradient-to-b from-white to-transparent dark:from-neutral-900">
+    <div class="container-narrow py-16 text-center sm:py-20 md:py-24 lg:py-28 xl:py-32">
+      <h1
+        class="mb-6 text-3xl font-semibold text-neutral-950 md:text-4xl lg:text-5xl dark:text-neutral-50"
+      >
         Interested to learn more?
       </h1>
-      <p class="text-xl">{description}</p>
+      <p class="text-lg text-neutral-700 dark:text-neutral-300">{description}</p>
     </div>
   </section>
-  <div class="h-8 sm:h-12 lg:h-16"></div>
-  <section id="sales" class="container py-8 sm:py-12 lg:py-16">
-    <Overline title="Sales" />
-    <div
-      class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-x-8 lg:grid-cols-3 lg:gap-x-10"
-    >
-      <div class="space-y-4 sm:col-span-2 lg:col-span-1 lg:row-span-2">
-        <h2 class="text-2xl font-semibold text-neutral-900 md:text-3xl dark:text-neutral-100">
-          We’re here to help
-        </h2>
-        <p>
-          Whether you have security and compliance concerns or product questions, our sales team is
-          here to help.
-        </p>
-      </div>
-      <div class="space-y-0.5 lg:mt-1.5">
-        <Image
-          src={tomiImage}
-          alt="Tomi Grönlund"
-          class="mb-4 aspect-square rounded bg-current/10 object-cover text-neutral-500"
-          width={800}
-        />
-        <h3 class="mb-2 text-xl font-semibold text-neutral-900 dark:text-neutral-100">
-          Tomi Grönlund
-        </h3>
-        <p>CEO</p>
-        <p>tomi.gronlund@cloudersolutions.com</p>
-        <p>+358 50 527 1416</p>
-      </div>
-      <div class="space-y-0.5 lg:mt-1.5">
-        <Image
-          src={emmaImage}
-          alt="Emma Grönlund"
-          class="mb-4 aspect-square rounded bg-current/10 object-cover text-neutral-500"
-          width={800}
-        />
-        <h3 class="mb-2 text-xl font-semibold text-neutral-900 dark:text-neutral-100">
-          Emma Grönlund
-        </h3>
-        <p>COO</p>
-        <p>emma.gronlund@cloudersolutions.com</p>
-        <p>+358 40 846 8169</p>
-      </div>
-      <div class="space-y-0.5">
-        <Image
-          src={jussiImage}
-          alt="Jussi Toivonen"
-          class="mb-4 aspect-square rounded bg-current/10 object-cover text-neutral-500"
-          width={800}
-        />
-        <h3 class="mb-2 text-xl font-semibold text-neutral-900 dark:text-neutral-100">
-          Jussi Toivonen
-        </h3>
-        <p>Building Systems Technology Lead</p>
-        <p>jussi.toivonen@cloudersolutions.com</p>
-        <p>+358 50 560 8434</p>
-      </div>
-    </div>
-  </section>
-  <section id="office" class="container py-8 sm:py-12 lg:py-16">
-    <Overline title="Office" />
-    <div
-      class="grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2 sm:gap-x-8 lg:grid-cols-3 lg:gap-x-10"
-    >
-      <Image
-        src={hqImage}
-        alt="Office"
-        class="aspect-square rounded bg-current/10 object-cover object-top text-neutral-500 lg:col-span-2 lg:aspect-video"
-      />
-      <div class="space-y-0.5 sm:order-first">
-        <h2 class="mb-4 text-2xl font-semibold text-neutral-900 md:text-3xl dark:text-neutral-100">
-          Helsinki
-        </h2>
-        <p>Pursimiehenkatu 26 B</p>
-        <p>00150 Helsinki</p>
-        <p>Finland</p>
-        <p>+358 40 3525 47 3</p>
-        <p>3356072-5</p>
-      </div>
-    </div>
-  </section>
-  <section id="form" class="container py-8 sm:py-12 lg:py-16">
-    <Overline title="Contact us" />
+  <Divider />
+  <section id="form" class="container py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32">
     <div class="grid grid-cols-1 gap-x-6 gap-y-10 md:grid-cols-2 md:gap-x-10 lg:grid-cols-3">
       <div class="space-y-4 md:col-span-2 lg:col-span-1">
-        <h2 class="text-2xl font-semibold text-neutral-900 md:text-3xl dark:text-neutral-100">
-          Drop us a line, and we’ll get back to you
+        <h2 class="text-2xl font-semibold text-neutral-950 md:text-3xl dark:text-neutral-50">
+          Send us a message
         </h2>
-        <p>
-          For lab visits and system audits, please suggest a few dates and times that work for you.
-        </p>
+        <p>For consultations and demos, please suggest a few dates and times that work for you.</p>
         <p class="text-sm text-neutral-500">
           Prefer email or phone?
           <a href="#sales" class="underline">Contact our sales team</a>
@@ -123,7 +44,7 @@ const description = 'Get in touch with our sales team or book a demo.';
         action="/success"
         data-netlify="true"
         netlify-honeypot="bot-field"
-        class="col-span-2 space-y-4"
+        class="col-span-2 space-y-4 lg:pt-1"
       >
         <div class="flex gap-4">
           <div class="w-full">
@@ -134,7 +55,7 @@ const description = 'Get in touch with our sales team or book a demo.';
               name="firstname"
               type="text"
               required
-              class="block h-11 w-full rounded border border-neutral-200 bg-white px-3 dark:border-neutral-800 dark:bg-neutral-900"
+              class="block h-10 w-full rounded border border-neutral-200 bg-white px-3 text-sm placeholder-current/50 dark:border-neutral-800 dark:bg-neutral-900"
             />
           </div>
           <div class="w-full">
@@ -145,7 +66,7 @@ const description = 'Get in touch with our sales team or book a demo.';
               name="lastname"
               type="text"
               required
-              class="block h-11 w-full rounded border border-neutral-200 bg-white px-3 dark:border-neutral-800 dark:bg-neutral-900"
+              class="block h-10 w-full rounded border border-neutral-200 bg-white px-3 text-sm placeholder-current/50 dark:border-neutral-800 dark:bg-neutral-900"
             />
           </div>
         </div>
@@ -157,7 +78,7 @@ const description = 'Get in touch with our sales team or book a demo.';
             name="email"
             type="email"
             required
-            class="block h-11 w-full rounded border border-neutral-200 bg-white px-3 dark:border-neutral-800 dark:bg-neutral-900"
+            class="block h-10 w-full rounded border border-neutral-200 bg-white px-3 text-sm placeholder-current/50 dark:border-neutral-800 dark:bg-neutral-900"
           />
         </div>
         <div class="-mt-1 flex gap-1.5">
@@ -175,18 +96,19 @@ const description = 'Get in touch with our sales team or book a demo.';
             id="phone"
             name="phone"
             type="tel"
-            class="block h-11 w-full rounded border border-neutral-200 bg-white px-3 dark:border-neutral-800 dark:bg-neutral-900"
+            class="block h-10 w-full rounded border border-neutral-200 bg-white px-3 text-sm placeholder-current/50 dark:border-neutral-800 dark:bg-neutral-900"
           />
         </div>
         <div class="mb-5">
           <label for="message" class="mb-2 inline-block text-sm font-medium">Message</label>
           <span class="text-sm leading-none opacity-50">*</span>
           <textarea
+            placeholder="Tell us about your requirements or goals…"
             id="message"
             name="message"
             rows="4"
             required
-            class="block w-full rounded border border-neutral-200 bg-white p-3 dark:border-neutral-800 dark:bg-neutral-900"
+            class="block field-sizing-content min-h-26 w-full rounded border border-neutral-200 bg-white px-3 py-2.5 text-sm placeholder-current/50 dark:border-neutral-800 dark:bg-neutral-900"
           ></textarea>
         </div>
         <input
@@ -197,12 +119,12 @@ const description = 'Get in touch with our sales team or book a demo.';
           aria-hidden="true"
           style="position: absolute; left: -9999px;"
         />
-        <div class="flex flex-col items-center justify-between gap-4 sm:flex-row">
+        <div class="mt-6 flex flex-col items-center justify-between gap-4 sm:flex-row">
           <button
             type="submit"
-            class="inline-flex h-11 w-full min-w-24 cursor-pointer items-center justify-center gap-2 rounded bg-indigo-500 px-5 text-center text-sm font-medium text-nowrap text-white transition select-none hover:bg-indigo-600 sm:w-auto dark:hover:bg-indigo-400"
+            class="inline-flex h-10 w-full cursor-pointer items-center justify-center gap-1 rounded bg-indigo-500 px-4 text-center text-sm font-[550] text-nowrap text-white transition select-none hover:bg-indigo-600 active:bg-indigo-600 sm:w-auto dark:hover:bg-indigo-400 dark:active:bg-indigo-400"
           >
-            Send
+            Send message
           </button>
           <p class="text-xs text-neutral-500">
             See our
@@ -215,7 +137,106 @@ const description = 'Get in touch with our sales team or book a demo.';
       </form>
     </div>
   </section>
-  <div class="h-8 sm:h-12 lg:h-16"></div>
+  <Divider />
+  <section id="sales" class="xl container py-16 sm:py-20 md:py-24 lg:py-28">
+    <div
+      class="grid grid-cols-1 gap-x-6 gap-y-10 md:grid-cols-2 md:gap-x-8 lg:grid-cols-3 lg:gap-x-10"
+    >
+      <div class="space-y-4 md:col-span-2 lg:col-span-1 lg:row-span-2">
+        <h2 class="text-2xl font-semibold text-neutral-950 md:text-3xl dark:text-neutral-50">
+          We’re here to help
+        </h2>
+        <p>
+          Whether you have security and compliance concerns or product questions, our sales team is
+          here to help.
+        </p>
+      </div>
+      <div class="space-y-0.5 lg:mt-1.5">
+        <Image
+          src={tomiImage}
+          alt="Tomi Grönlund"
+          class="mb-4 aspect-square rounded bg-current/10 object-cover text-neutral-500"
+          width={600}
+          layout="constrained"
+        />
+        <h3 class="mb-2 text-xl font-semibold text-neutral-950 dark:text-neutral-50">
+          Tomi Grönlund
+        </h3>
+        <p>CEO</p>
+        <p>tomi.gronlund@cloudersolutions.com</p>
+        <p>+358 50 527 1416</p>
+      </div>
+      <div class="space-y-0.5 lg:mt-1.5">
+        <Image
+          src={emmaImage}
+          alt="Emma Grönlund"
+          class="mb-4 aspect-square rounded bg-current/10 object-cover text-neutral-500"
+          width={600}
+          layout="constrained"
+        />
+        <h3 class="mb-2 text-xl font-semibold text-neutral-950 dark:text-neutral-50">
+          Emma Grönlund
+        </h3>
+        <p>COO</p>
+        <p>emma.gronlund@cloudersolutions.com</p>
+        <p>+358 40 846 8169</p>
+      </div>
+      <div class="space-y-0.5">
+        <Image
+          src={jussiImage}
+          alt="Jussi Toivonen"
+          class="mb-4 aspect-square rounded bg-current/10 object-cover text-neutral-500"
+          width={600}
+          layout="constrained"
+        />
+        <h3 class="mb-2 text-xl font-semibold text-neutral-950 dark:text-neutral-50">
+          Jussi Toivonen
+        </h3>
+        <p>Building Systems Technology Lead</p>
+        <p>jussi.toivonen@cloudersolutions.com</p>
+        <p>+358 50 560 8434</p>
+      </div>
+      <div class="space-y-0.5">
+        <Image
+          src={matiasImage}
+          alt="Matias Nissinen"
+          class="mb-4 aspect-square rounded bg-current/10 object-cover text-neutral-500"
+          width={600}
+          layout="constrained"
+        />
+        <h3 class="mb-2 text-xl font-semibold text-neutral-950 dark:text-neutral-50">
+          Matias Nissinen
+        </h3>
+        <p>Business Development Manager</p>
+        <p>matias.nissinen@cloudersolutions.com</p>
+        <p>+358 45 359 8144</p>
+      </div>
+    </div>
+  </section>
+  <Divider />
+  <section id="office" class="xl container py-16 sm:py-20 md:py-24 lg:py-28">
+    <div
+      class="grid grid-cols-1 gap-x-6 gap-y-4 md:grid-cols-2 md:gap-x-8 lg:grid-cols-3 lg:gap-x-10"
+    >
+      <Image
+        src={hqImage}
+        alt="Office"
+        width={900}
+        layout="constrained"
+        class="aspect-square rounded bg-current/10 object-cover object-top text-neutral-500 lg:col-span-2 lg:aspect-video"
+      />
+      <div class="space-y-0.5 md:order-first">
+        <h2 class="mb-4 text-2xl font-semibold text-neutral-950 md:text-3xl dark:text-neutral-50">
+          Office
+        </h2>
+        <p>Pursimiehenkatu 26 B</p>
+        <p>00150 Helsinki</p>
+        <p>Finland</p>
+        <p>+358 40 3525 47 3</p>
+        <p>3356072-5</p>
+      </div>
+    </div>
+  </section>
 </MainLayout>
 
 <script>

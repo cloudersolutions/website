@@ -1,0 +1,124 @@
+---
+import PlusIcon from 'lucide-astro/Plus';
+import EllipsisIcon from 'lucide-astro/Ellipsis';
+import SquareCheckIcon from 'lucide-astro/SquareCheck';
+---
+
+<div class="grid grid-cols-3 gap-5 text-neutral-600 select-none dark:text-neutral-400">
+  <div>
+    <div class="mb-3 flex items-center gap-1">
+      <p class="mr-auto text-sm font-semibold text-current/75">Planned</p>
+      <PlusIcon class="p-px opacity-50" size={16} />
+      <EllipsisIcon class="p-px opacity-50" size={16} />
+    </div>
+    <div
+      class="flex flex-col items-start gap-1.5 rounded border border-current/20 bg-white px-4 py-3.5 shadow-md shadow-black/2 transition hover:shadow-black/5 dark:bg-neutral-900"
+    >
+      <p class="text-[13px] leading-snug font-semibold">Predictive maintenance for HVAC systems</p>
+      <p class="text-xs text-current/75">Impact: Lower maintenance costs and reduced downtime</p>
+      <div class="mt-2 flex w-full items-center">
+        <div class="ml-auto flex items-center gap-1">
+          <SquareCheckIcon size={12} class="opacity-50" />
+          <span class="text-xs text-current/50">0/12</span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mt-3 flex flex-col items-start gap-1.5 rounded border border-current/20 bg-white px-4 py-3.5 shadow-md shadow-black/2 transition hover:shadow-black/5 dark:bg-neutral-900"
+    >
+      <p class="text-[13px] leading-snug font-semibold">
+        Automated fault detection and diagnostics
+      </p>
+      <p class="text-xs text-current/75">
+        Impact: Faster issue resolution and improved system reliability
+      </p>
+      <div class="mt-2 flex w-full items-center">
+        <div class="ml-auto flex items-center gap-1">
+          <SquareCheckIcon size={12} class="opacity-50" />
+          <span class="text-xs text-current/50">0/6</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="mb-3 flex items-center gap-1">
+      <p class="mr-auto text-sm font-semibold text-current/75">In progress</p>
+      <PlusIcon class="p-px opacity-50" size={16} />
+      <EllipsisIcon class="p-px opacity-50" size={16} />
+    </div>
+    <div
+      class="flex flex-col items-start gap-1.5 rounded border border-current/20 bg-white px-4 py-3.5 shadow-md shadow-black/2 transition hover:shadow-black/5 dark:bg-neutral-900"
+    >
+      <p class="text-[13px] leading-snug font-semibold">Prevent simultaneous cooling and heating</p>
+      <p class="text-xs text-current/75">Impact: Reduced energy consumption</p>
+      <div class="mt-2 flex w-full items-center">
+        <div class="flex -space-x-0.5 overflow-hidden">
+          <div
+            class="inline-flex size-4 rounded-full bg-neutral-500 ring-2 ring-white dark:ring-neutral-900"
+          >
+            <span class="m-auto text-[10px] font-medium text-white">M</span>
+          </div>
+          <div
+            class="inline-flex size-4 rounded-full bg-neutral-500 ring-2 ring-white dark:ring-neutral-900"
+          >
+            <span class="m-auto text-[10px] font-medium text-white">R</span>
+          </div>
+          <div
+            class="inline-flex size-4 rounded-full bg-neutral-500 ring-2 ring-white dark:ring-neutral-900"
+          >
+            <span class="m-auto text-[10px] font-medium text-white">A</span>
+          </div>
+        </div>
+        <div class="ml-auto flex items-center gap-1">
+          <SquareCheckIcon size={12} class="opacity-50" />
+          <span class="text-xs text-current/50">9/16</span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mt-3 flex flex-col items-start gap-1.5 rounded border border-current/20 bg-white px-4 py-3.5 shadow-md shadow-black/2 transition hover:shadow-black/5 dark:bg-neutral-900"
+    >
+      <p class="text-[13px] leading-snug font-semibold">Demand response integration</p>
+      <p class="text-xs text-current/75">Impact: Lower peak demand charges and grid support</p>
+      <div class="mt-2 flex w-full items-center">
+        <div class="ml-auto flex items-center gap-1">
+          <SquareCheckIcon size={12} class="opacity-50" />
+          <span class="text-xs text-current/50">1/7</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div>
+      <div class="mb-3 flex items-center gap-1">
+        <p class="mr-auto text-sm font-semibold text-current/75">Done</p>
+        <PlusIcon class="p-px opacity-50" size={16} />
+        <EllipsisIcon class="p-px opacity-50" size={16} />
+      </div>
+      <div
+        class="flex flex-col items-start gap-1.5 rounded border border-current/20 bg-white px-4 py-3.5 shadow-md shadow-black/2 transition hover:shadow-black/5 dark:bg-neutral-900"
+      >
+        <p class="text-[13px] leading-snug font-semibold">Occupancy based ventilation</p>
+        <p class="text-xs text-current/75">Impact: Reduced energy consumption</p>
+        <div class="mt-2 flex w-full items-center">
+          <div class="flex -space-x-0.5 overflow-hidden">
+            <div
+              class="inline-flex size-4 rounded-full bg-neutral-500 ring-2 ring-white dark:ring-neutral-900"
+            >
+              <span class="m-auto text-[10px] font-medium text-white">C</span>
+            </div>
+            <div
+              class="inline-flex size-4 rounded-full bg-neutral-500 ring-2 ring-white dark:ring-neutral-900"
+            >
+              <span class="m-auto text-[10px] font-medium text-white">S</span>
+            </div>
+          </div>
+          <div class="ml-auto flex items-center gap-1">
+            <SquareCheckIcon size={12} class="opacity-50" />
+            <span class="text-xs text-current/50">8/8</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -9,16 +9,16 @@ const isExternal = (href: string) => {
 };
 
 const navigationLinks = Object.entries(navigation)
-  .filter(([key, _]) => !['dashboard', 'privacy', 'guide'].includes(key))
+  .filter(([key, _]) => !['dashboard', 'privacy'].includes(key))
   .map(([_, item]) => item);
 
 const resourcesLinks = Object.entries(navigation)
-  .filter(([key, _]) => ['dashboard', 'privacy', 'guide'].includes(key))
+  .filter(([key, _]) => ['dashboard', 'privacy'].includes(key))
   .map(([_, item]) => item);
 ---
 
 <footer
-  class="border-t border-neutral-200 bg-neutral-50 py-12 dark:border-neutral-800 dark:bg-neutral-950"
+  class="mt-8 border-t border-neutral-200 bg-neutral-50 py-12 dark:border-neutral-800 dark:bg-neutral-950"
 >
   <div class="container grid grid-cols-1 gap-10 sm:grid-cols-9">
     <div class="sm:col-span-3">
@@ -33,7 +33,7 @@ const resourcesLinks = Object.entries(navigation)
         navigationLinks.map(({ title, href }) => (
           <a
             href={href}
-            class="inline-flex items-center gap-0.5 py-1 text-sm text-neutral-500 transition hover:text-neutral-900 dark:hover:text-neutral-200"
+            class="inline-flex items-center gap-0.5 py-1 text-sm text-neutral-500 transition hover:text-current active:text-current"
           >
             {title}
             {isExternal(href) && (
@@ -49,7 +49,7 @@ const resourcesLinks = Object.entries(navigation)
         resourcesLinks.map(({ title, href }) => (
           <a
             href={href}
-            class="inline-flex items-center gap-0.5 py-1 text-sm text-neutral-500 transition hover:text-neutral-900 dark:hover:text-neutral-200"
+            class="inline-flex items-center gap-0.5 py-1 text-sm text-neutral-500 transition hover:text-current active:text-current"
           >
             {title}
             {isExternal(href) && (
@@ -65,7 +65,7 @@ const resourcesLinks = Object.entries(navigation)
         site.social.map(({ title, href }) => (
           <a
             href={href}
-            class="inline-flex items-center gap-0.5 py-1 text-sm text-neutral-500 transition hover:text-neutral-900 dark:hover:text-neutral-200"
+            class="inline-flex items-center gap-0.5 py-1 text-sm text-neutral-500 transition hover:text-current active:text-current"
           >
             {title}
             <ArrowUpRightIcon size={14} class="mt-px flex-shrink-0 opacity-50" />

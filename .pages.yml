@@ -108,6 +108,11 @@ content:
         description: Used in browser tabs, search results, link previews and site footer. On sub-pages, the title is added as a suffix (e.g., "News · Clouder").
         type: string
         required: true
+      - name: ogtitle
+        label: Homepage link preview title
+        description: Only applicable to the homr page, all other pages will use the "<page title> · <site title>" pattern.
+        type: string
+        required: true
       - name: description
         label: Site description
         description: Used in search results and link previews. Individual pages can override this with their own descriptions. Keep it brief and avoid line breaks.

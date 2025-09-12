@@ -3,14 +3,18 @@ import { test, expect } from '@playwright/test';
 test('render home page with key sections', async ({ page }) => {
   await page.goto('/');
   await expect(page).toHaveTitle('Clouder');
-  await expect(page.locator('nav')).toBeVisible();
+  await expect(page.getByTestId('menu')).toBeVisible();
   await expect(
-    page.getByRole('heading', { name: 'The market-leading data and integration platform' })
+    page.getByRole('heading', { name: 'Turn building data into performance and value ' })
   ).toBeVisible();
-  await expect(page.getByTestId('overline').getByText('Benefits')).toBeVisible();
-  await expect(page.getByTestId('overline').getByText('Solution')).toBeVisible();
-  await expect(page.getByTestId('overline').getByText('Product')).toBeVisible();
-  await expect(page.getByTestId('overline').getByText('Sustainability')).toBeVisible();
+  await expect(
+    page.getByRole('heading').getByText('The future of real estate is data')
+  ).toBeVisible();
+  await expect(page.getByRole('heading').getByText('Increased asset value')).toBeVisible();
+  await expect(page.getByRole('heading').getByText('Get up and running in 14 days')).toBeVisible();
+  await expect(
+    page.getByRole('heading').getByText('Learn how our customers are using Clouder')
+  ).toBeVisible();
 });
 
 test('product page navigation', async ({ page }) => {

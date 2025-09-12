@@ -1,5 +1,5 @@
 ---
-title: Energy Savings and Real-Time Monitoring for a Historic Property with
+title: Energy Savings and Real‑Time Monitoring for a Historic Property with
   Clouder’s system
 description: For the owner saving energy is an important mission considering
   both sustainability and costs. Clouder’s integration and data platform

@@ -1,0 +1,100 @@
+---
+import navigation from '@data/navigation.yml';
+---
+
+<div
+  class="overflow-hidden rounded-lg border border-neutral-200 bg-white shadow-lg shadow-black/2 dark:border-neutral-800 dark:bg-neutral-900 dark:shadow-black/50"
+>
+  <div
+    class="relative flex items-center justify-around gap-4 overflow-hidden px-4 pt-8 pb-4 select-none md:pt-12 lg:pt-16"
+  >
+    <div
+      class="pointer-events-none absolute inset-0 z-2 bg-gradient-to-r from-white/50 via-transparent to-white/50 dark:from-neutral-900/50 dark:to-neutral-900/50"
+    >
+    </div>
+    <hr class="absolute z-0 w-full border-neutral-200 dark:border-neutral-800" />
+    <div
+      class="group z-1 flex h-6 flex-shrink-0 cursor-default items-center gap-1.5 rounded-full border border-neutral-200 bg-white px-2 shadow-xs dark:border-neutral-800 dark:bg-neutral-900"
+    >
+      <span
+        class="size-2 rounded-full bg-gray-400 outline-4 outline-transparent transition duration-300 group-hover:outline-gray-400/20"
+      >
+      </span>
+      <span
+        class="text-xs font-medium text-current/75 transition duration-300 group-hover:text-current"
+      >
+        Assessment
+      </span>
+    </div>
+    <div
+      class="group z-1 flex h-6 flex-shrink-0 cursor-default items-center gap-1.5 rounded-full border border-neutral-200 bg-white px-2 shadow-xs dark:border-neutral-800 dark:bg-neutral-900"
+    >
+      <span
+        class="size-2 rounded-full bg-purple-400 outline-4 outline-transparent transition duration-300 group-hover:outline-purple-400/20"
+      >
+      </span>
+      <span
+        class="text-xs font-medium text-current/75 transition duration-300 group-hover:text-current"
+      >
+        Pilot
+      </span>
+    </div>
+    <div
+      class="group z-1 flex h-6 flex-shrink-0 cursor-default items-center gap-1.5 rounded-full border border-neutral-200 bg-white px-2 shadow-xs dark:border-neutral-800 dark:bg-neutral-900"
+    >
+      <span
+        class="size-2 rounded-full bg-indigo-400 outline-4 outline-transparent transition duration-300 group-hover:outline-indigo-400/20"
+      >
+      </span>
+      <span
+        class="text-xs font-medium text-current/75 transition duration-300 group-hover:text-current"
+      >
+        Implementation
+      </span>
+    </div>
+    <div
+      class="group z-1 flex h-6 flex-shrink-0 cursor-default items-center gap-1.5 rounded-full border border-neutral-200 bg-white px-2 shadow-xs dark:border-neutral-800 dark:bg-neutral-900"
+    >
+      <span
+        class="size-2 rounded-full bg-sky-400 outline-4 outline-transparent transition duration-300 group-hover:outline-sky-400/16"
+      >
+      </span>
+      <span
+        class="text-xs font-medium text-current/75 transition duration-300 group-hover:text-current"
+      >
+        Data-driven optimization
+      </span>
+    </div>
+    <div
+      class="group z-1 flex h-6 flex-shrink-0 cursor-default items-center gap-1.5 rounded-full border border-neutral-200 bg-white px-2 shadow-xs dark:border-neutral-800 dark:bg-neutral-900"
+    >
+      <span
+        class="size-2 rounded-full bg-green-600 outline-4 outline-transparent transition duration-300 group-hover:outline-green-600/16"
+      >
+      </span>
+      <span
+        class="text-xs font-medium text-current/75 transition duration-300 group-hover:text-current"
+      >
+        Scaling
+      </span>
+    </div>
+  </div>
+  <div class="flex flex-wrap items-end gap-6 p-8 md:p-12 lg:p-16">
+    <div class="mr-auto">
+      <h2 class="mb-4 text-2xl font-semibold text-neutral-950 md:text-3xl dark:text-neutral-50">
+        Get up and running in 14 days
+      </h2>
+      <p class="text-neutral-700 dark:text-neutral-300">
+        Clouder’s technology has been developed for fast results and quick deployment.
+        <br class="hidden lg:inline" />
+        Book a free consultation session so that you can start increasing value today.
+      </p>
+    </div>
+    <a
+      href={navigation.contact.href}
+      class="inline-flex h-10 cursor-pointer items-center justify-center gap-1.5 rounded bg-indigo-500 px-4 text-center text-sm font-medium text-nowrap text-white transition select-none hover:bg-indigo-600 active:bg-indigo-600 dark:hover:bg-indigo-400 dark:active:bg-indigo-400"
+    >
+      Book a free consultation
+    </a>
+  </div>
+</div>
