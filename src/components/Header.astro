@@ -117,4 +117,11 @@ const defaultClasses =
       document.documentElement.classList.toggle('overflow-y-hidden', e.currentTarget.checked);
     }
   });
+
+  window.addEventListener('beforeunload', () => {
+    if (menu instanceof HTMLInputElement) {
+      menu.checked = false;
+      document.documentElement.classList.remove('overflow-y-hidden');
+    }
+  });
 </script>
