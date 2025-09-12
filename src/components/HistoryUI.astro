@@ -1,4 +1,7 @@
 ---
+import InfoIcon from 'lucide-astro/Info';
+import Undo2Icon from 'lucide-astro/Undo2';
+import LinkIcon from 'lucide-astro/Link';
 import CircleDotIcon from 'lucide-astro/CircleDot';
 import CircleMinusIcon from 'lucide-astro/CircleMinus';
 import CircleCheckIcon from 'lucide-astro/CircleCheck';
@@ -15,11 +18,11 @@ import CircleArrowRightIcon from 'lucide-astro/CircleArrowRight';
     <div class="absolute top-5 bottom-0 left-[5.5px] z-0 w-px bg-current/20"></div>
     <div class="relative z-1 text-[13px]">
       <div
-        class="group flex items-center gap-2 py-1.5 transition duration-300 hover:text-neutral-800 dark:hover:text-neutral-300"
+        class="-ml-2 flex items-center gap-2 rounded bg-neutral-50 px-2 py-1.5 outline -outline-offset-1 outline-current/10 dark:bg-neutral-800"
       >
         <CircleMinusIcon
           size={12}
-          class="flex-shrink-0 fill-white stroke-rose-700/65 transition duration-300 group-hover:stroke-rose-700 dark:fill-neutral-900 dark:stroke-rose-400/65 dark:group-hover:stroke-rose-400"
+          class="flex-shrink-0 stroke-rose-700/65 duration-300 dark:stroke-rose-400/65"
         />
         <div class="min-w-0 flex-shrink-0">
           <strong>System</strong> detected <strong>ventilation damper open without occupancy</strong
@@ -27,12 +30,10 @@ import CircleArrowRightIcon from 'lucide-astro/CircleArrowRight';
           <strong>Floor 4</strong>
         </div>
       </div>
-      <div
-        class="group flex items-center gap-2 py-1.5 transition duration-300 hover:text-neutral-800 dark:hover:text-neutral-300"
-      >
+      <div class="flex items-center gap-2 py-1.5">
         <CircleArrowRightIcon
           size={12}
-          class="flex-shrink-0 fill-white stroke-blue-700/65 transition duration-300 group-hover:stroke-blue-700 dark:fill-neutral-900 dark:stroke-blue-400/65 dark:group-hover:stroke-blue-400"
+          class="flex-shrink-0 fill-white stroke-blue-700/65 dark:fill-neutral-900 dark:stroke-blue-400/65"
         />
         <div class="min-w-0 flex-shrink-0">
           <strong>Amanda</strong> reconfigured <strong>Space 512</strong> into <strong
@@ -41,40 +42,51 @@ import CircleArrowRightIcon from 'lucide-astro/CircleArrowRight';
           <strong>Space 512B</strong>
         </div>
       </div>
-      <div
-        class="group flex items-center gap-2 py-1.5 transition duration-300 hover:text-neutral-800 dark:hover:text-neutral-300"
-      >
+      <div class="flex items-center gap-2 py-1.5">
         <CircleDotIcon
           size={12}
-          class="flex-shrink-0 fill-white stroke-amber-700/65 transition duration-300 group-hover:stroke-amber-700 dark:fill-neutral-900 dark:stroke-amber-400/65 dark:group-hover:stroke-amber-400"
+          class="flex-shrink-0 fill-white stroke-amber-700/65 dark:fill-neutral-900 dark:stroke-amber-400/65"
         />
         <div class="min-w-0 flex-shrink-0">
           <strong>Robert</strong> updated <strong>energy usage targets</strong> for the property
         </div>
       </div>
-      <div
-        class="group flex items-center gap-2 py-1.5 transition duration-300 hover:text-neutral-800 dark:hover:text-neutral-300"
-      >
+      <div class="flex items-center gap-2 py-1.5">
         <CircleDotIcon
           size={12}
-          class="flex-shrink-0 fill-white stroke-amber-700/65 transition duration-300 group-hover:stroke-amber-700 dark:fill-neutral-900 dark:stroke-amber-400/65 dark:group-hover:stroke-amber-400"
+          class="flex-shrink-0 fill-white stroke-amber-700/65 dark:fill-neutral-900 dark:stroke-amber-400/65"
         />
         <div class="min-w-0 flex-shrink-0">
           <strong>Martin</strong> updated <strong>VCE firmware</strong> for all devices
         </div>
       </div>
-      <div
-        class="group flex items-center gap-2 py-1.5 transition duration-300 hover:text-neutral-800 dark:hover:text-neutral-300"
-      >
+      <div class="flex items-center gap-2 py-1.5">
         <CircleCheckIcon
           size={12}
-          class="flex-shrink-0 fill-white stroke-green-700/65 transition duration-300 group-hover:stroke-green-700 dark:fill-neutral-900 dark:stroke-green-400/65 dark:group-hover:stroke-green-400"
+          class="flex-shrink-0 fill-white stroke-green-700/65 dark:fill-neutral-900 dark:stroke-green-400/65"
         />
         <div class="min-w-0 flex-shrink-0">
           <strong>System</strong> adjusted <strong>HVAC schedules</strong> for <strong
             >Zone A</strong
           >
         </div>
+      </div>
+    </div>
+    <div
+      class="absolute top-4 right-0 z-2 w-40 rounded-md border border-current/20 bg-white p-1 shadow-lg dark:bg-neutral-900"
+    >
+      <div class="flex items-center gap-2 rounded px-2 py-1.5 transition hover:bg-current/5">
+        <InfoIcon size={14} class="text-current/65" />
+        <span class="text-xs">View details</span>
+      </div>
+      <div class="flex items-center gap-2 rounded px-2 py-1.5 transition hover:bg-current/5">
+        <LinkIcon size={14} class="text-current/65" />
+        <span class="text-xs">Copy link</span>
+      </div>
+      <hr class="mx-1 my-1 border-current/20" />
+      <div class="flex items-center gap-2 rounded px-2 py-1.5 transition hover:bg-current/5">
+        <Undo2Icon size={14} class="text-current/65" />
+        <span class="text-xs">Rollback…</span>
       </div>
     </div>
   </div>
