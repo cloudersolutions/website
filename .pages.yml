@@ -1,5 +1,5 @@
 media:
-  input: src/content/news/images
+  input: src/assets
   output: images
   extensions: [jpg, jpeg, png, webp]
 content:
@@ -234,3 +234,5 @@ content:
             required: true
 settings:
   hide: true
+  content:
+    merge: true
