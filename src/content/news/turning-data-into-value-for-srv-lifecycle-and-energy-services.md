@@ -8,7 +8,7 @@ description: >
 date: 2025-08-31
 category: case-example
 cover: images/jokirinne-edited.jpg
-draft: true
+draft: false
 ---
 We are proud to announce that **SRV Energy and Lifecycle Services** has selected **Clouder** as their trusted building data integrator and provider.
 
