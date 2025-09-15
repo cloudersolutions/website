@@ -1,5 +1,5 @@
 media:
-  input: src/assets
+  input: src/content/news/images
   output: images
   extensions: [jpg, jpeg, png, webp]
 content:
