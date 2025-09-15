@@ -18,7 +18,7 @@ content:
       - name: description
         label: Description
         type: text
-        description: Used in listing pages, search results and link previews. Keep it brief and avoid line breaks.
+        description: Used in collections, search results and link previews. Keep it brief and avoid line breaks.
         required: true
         options:
           rows: 2
@@ -29,7 +29,6 @@ content:
       - name: category
         label: Category
         type: select
-        description: Two latest "case example" posts are shown on the home page.
         required: true
         options:
           multiple: false
@@ -37,7 +36,7 @@ content:
           values: [case-example, company-news, general, press-release, product-updates]
       - name: cover
         label: Cover image
-        description: Please keep images under 2 MB. Used in listing pages, search results and link previews. To display this image in your post content, you'll need to insert it separately in the editor.
+        description: Keep images under 1 MB. Used in collections, search results and link previews. The cover image is not automatically added to the post contents. To display it there, insert it separately via the editor.
         required: true
         type: image
       - name: draft
