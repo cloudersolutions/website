@@ -110,7 +110,7 @@ content:
         required: true
       - name: ogtitle
         label: Homepage link preview title
-        description: Only applicable to the homr page, all other pages will use the "<page title> · <site title>" pattern.
+        description: Only applicable to the home page, all other pages will use the "<page title> · <site title>" pattern.
         type: string
         required: true
       - name: description
