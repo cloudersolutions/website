@@ -18,7 +18,7 @@ content:
       - name: description
         label: Description
         type: text
-        description: Used in collections, search results and link previews. Keep it brief and avoid line breaks.
+        description: Keep the description brief and avoid line breaks.
         required: true
         options:
           rows: 2
@@ -36,7 +36,7 @@ content:
           values: [case-example, company-news, general, press-release, product-updates]
       - name: cover
         label: Cover image
-        description: Keep images under 1 MB. Used in collections, search results and link previews. The cover image is not automatically added to the post contents. To display it there, insert it separately via the editor.
+        description: Cover image appears only in listings and link previews. Add it to the Body field if you want it in the post. Keep images under 1 MB.
         required: true
         type: image
       - name: draft
