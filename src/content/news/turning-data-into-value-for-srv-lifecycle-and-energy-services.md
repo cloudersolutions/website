@@ -1,7 +1,7 @@
 ---
-title: Turning data into value for SRV Lifecycle and Energy Services
+title: Turning data into value for SRV Energy and Lifecycle Services
 description: >
-  We are proud to announce that SRV Lifecycle and Energy Services has selected
+  We are proud to announce that SRV Energy and Lifecycle Services has selected
   Clouder as their trusted building data integrator and provider. By choosing
   Clouder, SRV reinforces its commitment to harnessing data for smarter property
   management, transparent ESG reporting, and efficient energy management.
@@ -10,7 +10,7 @@ category: case-example
 cover: images/jokirinne-edited.jpg
 draft: true
 ---
-We are proud to announce that **SRV Energy & Lifecycle Services** has selected **Clouder** as their trusted building data integrator and provider.
+We are proud to announce that **SRV Energy and Lifecycle Services** has selected **Clouder** as their trusted building data integrator and provider.
 
 By choosing Clouder, SRV reinforces its commitment to harnessing data for smarter property management, transparent ESG reporting, and efficient energy management. Together, we are driving forward more sustainable and innovative lifecycle services for the built environment.
 
@@ -22,11 +22,11 @@ By choosing Clouder, SRV reinforces its commitment to harnessing data for smarte
 
 In our initial project, Clouder successfully gathered over 40,000 data points from a modern school building. This is noteworthy within an industry where obtaining high-quality, real-time data has traditionally been impossible, and the availability of fragmented data is often restricted to just a few thousand points. Furthermore, collecting even a limited amount of data has proven costly due to pricing models based on data points and different API users.
 
-This data brings instant energy and cost savings for SRV Energy & Lifecycle Services. Many tasks that previously required on-site maintenance can now be handled remotely. For example, room controller setpoints can be automatically updated during unused hours, reducing unnecessary maintenance visits and energy consumption. Switching from scheduled to need-based maintenance also means filters and other components are replaced according to actual use, cutting costs and saving energy.
+This data brings instant energy and cost savings for SRV Energy and Lifecycle Services. Many tasks that previously required on-site maintenance can now be handled remotely. For example, room controller setpoints can be automatically updated during unused hours, reducing unnecessary maintenance visits and energy consumption. Switching from scheduled to need-based maintenance also means filters and other components are replaced according to actual use, cutting costs and saving energy.
 
 ## Why the right data and integration platform matters
 
-By choosing the right platform, SRV also ensures efficient reporting and full portfolio visibility. Energy managers spend less time in spreadsheets and more time creating value, while decision-makers gain a clear overview of all assets in one place.
+By choosing the right platform, SRV ensures efficient reporting and full portfolio visibility. Beyond streamlining maintenance and reducing costs, it also enables the owner to focus on what truly matters in ESG. Energy managers spend less time in spreadsheets and more time creating value, while decision-makers gain a clear overview of all assets in one place, ensuring that investments are directed to the most impactful areas.
 
 ## Jokirinne school project highlights:
 
