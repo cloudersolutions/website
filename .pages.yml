@@ -1,8 +1,7 @@
 media:
   input: src/content/news/images
   output: images
-  path: src/content/news/images
-  categories: [image]
+  extensions: [jpg, jpeg, png, webp]
 content:
   - name: News
     type: collection
