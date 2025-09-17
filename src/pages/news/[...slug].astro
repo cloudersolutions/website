@@ -36,6 +36,12 @@ const { Content } = await post.render();
         <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
         <span>&middot;</span>
         <p>{sentenceCase(post.data.category)}</p>
+        <span>&middot;</span>
+        <button
+          id="copy-clipboard"
+          class="w-16 cursor-pointer text-left transition hover:text-neutral-800 dark:hover:text-neutral-200"
+          >Copy link</button
+        >
       </div>
     </header>
     <section class="py-4 sm:py-6 md:py-8 lg:py-10 xl:py-12">
@@ -77,3 +83,19 @@ const { Content } = await post.render();
     </nav>
   </footer>
 </ProseLayout>
+
+<script>
+  const button = document.getElementById('copy-clipboard');
+
+  button?.addEventListener('click', () => {
+    try {
+      navigator.clipboard.writeText(window.location.href);
+      button.textContent = 'Copied!';
+      setTimeout(() => {
+        button.textContent = 'Copy link';
+      }, 3000);
+    } catch (e) {
+      console.log(e);
+    }
+  });
+</script>
