@@ -26,7 +26,9 @@ const description = 'Company news, product updates, and more.';
     </div>
   </section>
   <section class="container pb-16 sm:pb-20 md:pb-24 lg:pb-28 xl:pb-32">
-    <div class="grid grid-cols-1 gap-x-10 gap-y-12 md:grid-cols-2 lg:grid-cols-6 lg:gap-y-20">
+    <div
+      class="grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-2 md:gap-x-10 md:gap-y-16 lg:grid-cols-6 lg:gap-x-12 lg:gap-y-20"
+    >
       {
         sortedPosts.map((post, index) => (
           <article class={index < 2 ? 'lg:col-span-3' : 'lg:col-span-2'}>
@@ -37,7 +39,7 @@ const description = 'Company news, product updates, and more.';
                   alt={post.data.title}
                   width={600}
                   layout="constrained"
-                  class="aspect-video bg-neutral-500/10 object-cover text-transparent"
+                  class="aspect-video bg-neutral-500/10 object-cover text-transparent outline -outline-offset-1 outline-black/5 dark:outline-white/5"
                 />
                 <div class="absolute inset-0 bg-current opacity-0 transition duration-300 group-hover:opacity-10 group-active:opacity-10" />
               </div>
