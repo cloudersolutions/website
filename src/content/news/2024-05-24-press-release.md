@@ -8,6 +8,7 @@ description: The Finnish technology company Clouder launched a new intelligent
 date: 2024-05-24
 category: press-release
 cover: images/emma-jussi-labra.jpg
+coverAlt: People in hardware laboratory
 draft: false
 ---
 

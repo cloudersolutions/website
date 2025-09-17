@@ -4,6 +4,7 @@ description: By combining Clouder’s robust data infrastructure with Varte’s 
 date: 2025-02-07
 category: case-example
 cover: images/varte.jpg
+coverAlt: People on a construction site
 draft: false
 ---
 

@@ -4,6 +4,7 @@ description: Internationally renowned cyber security experts Mikko Hyppönen, To
 date: 2025-02-27
 category: company-news
 cover: images/t2abvc.jpg
+coverAlt: Three technology investors
 draft: false
 ---
 

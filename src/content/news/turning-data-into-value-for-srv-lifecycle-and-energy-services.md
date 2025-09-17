@@ -3,7 +3,8 @@ title: Turning data into value for SRV Energy and Lifecycle Services
 description: We are proud to announce that SRV Energy and Lifecycle Services has selected Clouder as their trusted building data integrator and provider. By choosing Clouder, SRV reinforces its commitment to harnessing data for smarter property management, transparent ESG reporting, and efficient energy management.
 date: 2025-08-31
 category: case-example
-cover: images/jokirinne-edited.jpg
+cover: images/jokirinne-exterior.jpg
+coverAlt: Exterior shot of Jokirinne school
 draft: false
 ---
 
@@ -15,7 +16,7 @@ By choosing Clouder, SRV reinforces its commitment to harnessing data for smarte
 >
 > Jere Pirhonen, Director, Energy and Lifecycle services, SRV
 
-![Exterior shot of a schoool](images/jokirinne-edited.jpg)
+![Exterior shot of Jokirinne school](images/jokirinne-exterior.jpg)
 
 ## Turning 40,000 Data Points into Smarter Lifecycle Services
 

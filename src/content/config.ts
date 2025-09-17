@@ -17,6 +17,7 @@ const news = defineCollection({
       date: z.coerce.date(),
       category: z.enum(categories),
       cover: image(),
+      coverAlt: z.string(),
       draft: z.boolean().optional()
     })
 });

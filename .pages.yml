@@ -33,16 +33,31 @@ content:
         options:
           multiple: false
           creatable: false
-          values: [case-example, company-news, general, press-release, product-updates]
+          values:
+            - value: case-example
+              label: Case example
+            - value: company-news
+              label: Company news
+            - value: general
+              label: General
+            - value: press-release
+              label: Press release
+            - value: product-updates
+              label: Product updates
       - name: cover
         label: Cover image
-        description: Cover image appears only in listings and link previews. To show it in the post, add it separately in the Body field. Keep images under 1 MB.
-        required: true
+        description: Cover image appears only in listings and link previews. To show it on the article page, add it separately in the Body field. Keep images under 1 MB.
         type: image
+        required: true
+      - name: coverAlt
+        label: Cover image alt text
+        description: Describe the image briefly but meaningfully.
+        type: string
+        required: true
       - name: draft
         label: Draft
         type: boolean
-        description: Draft posts are not visible to the public.
+        description: Draft articles are not visible to the public.
         default: true
       - name: body
         label: Body
