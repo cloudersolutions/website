@@ -33,16 +33,13 @@ const description = 'Company news, product updates, and more.';
         sortedPosts.map((post, index) => (
           <article class={index < 2 ? 'lg:col-span-3' : 'lg:col-span-2'}>
             <a href={`/news/${post.slug}`} class="group flex flex-col gap-3 rounded">
-              <div class="relative mb-1 overflow-clip rounded">
-                <Image
-                  src={post.data.cover}
-                  alt={post.data.coverAlt}
-                  width={600}
-                  layout="constrained"
-                  class="aspect-video bg-neutral-500/10 object-cover text-transparent outline -outline-offset-1 outline-black/5 dark:outline-white/5"
-                />
-                <div class="absolute inset-0 bg-current opacity-0 transition duration-300 group-hover:opacity-10 group-active:opacity-10" />
-              </div>
+              <Image
+                src={post.data.cover}
+                alt={post.data.coverAlt}
+                width={600}
+                layout="constrained"
+                class="mb-1 aspect-video rounded bg-neutral-500/10 object-cover text-transparent outline -outline-offset-1 outline-black/5 transition group-hover:brightness-90 group-hover:saturate-90 group-active:brightness-90 group-active:saturate-90 dark:outline-white/5 dark:group-hover:brightness-110 dark:group-active:brightness-110"
+              />
               <h3 class="text-xl font-semibold text-neutral-950 dark:text-neutral-50">
                 {post.data.title}
               </h3>

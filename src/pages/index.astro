@@ -281,16 +281,13 @@ const caseExamplePosts = posts
           {caseExamplePosts.map((post) => (
             <article class="group relative overflow-clip rounded-md bg-white transition hover:shadow-xs active:shadow-xs dark:bg-neutral-900">
               <a href={`/news/${post.slug}`} class="flex h-full flex-col items-start">
-                <div class="relative">
-                  <Image
-                    src={post.data.cover}
-                    alt={post.data.coverAlt}
-                    width={600}
-                    layout="constrained"
-                    class="aspect-video bg-neutral-500/10 object-cover text-transparent"
-                  />
-                  <div class="absolute inset-0 bg-current opacity-0 transition duration-300 group-hover:opacity-10 group-active:opacity-10" />
-                </div>
+                <Image
+                  src={post.data.cover}
+                  alt={post.data.coverAlt}
+                  width={600}
+                  layout="constrained"
+                  class="aspect-video bg-neutral-500/10 object-cover text-transparent transition group-hover:brightness-90 group-hover:saturate-90 group-active:brightness-90 group-active:saturate-90 dark:group-hover:brightness-110 dark:group-active:brightness-110"
+                />
                 <h3 class="mx-6 my-5 text-xl font-semibold text-neutral-950 dark:text-neutral-50">
                   {post.data.title}
                 </h3>
