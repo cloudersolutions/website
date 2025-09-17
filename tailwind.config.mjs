@@ -45,8 +45,8 @@ export default {
             },
             img: {
               borderRadius: '0.25rem',
-              backgroundColor: 'color-mix(in oklab, currentColor 10%, transparent)',
-              color: 'var(--color-neutral-500)'
+              backgroundColor: 'color-mix(in oklab, var(--color-neutral-500) 10%, transparent)',
+              color: 'transparent'
             }
           }
         },
