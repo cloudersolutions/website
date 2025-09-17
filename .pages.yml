@@ -18,8 +18,9 @@ content:
       - name: description
         label: Description
         type: text
-        description: Keep the description brief and avoid line breaks.
+        description: Short description used for link previews and SEO.
         required: true
+        pattern: { message: 'No line breaks allowed', regex: '^[^\r\n]*$' }
         options:
           rows: 2
       - name: date
@@ -33,26 +34,16 @@ content:
         options:
           multiple: false
           creatable: false
-          values:
-            - value: case-example
-              label: Case example
-            - value: company-news
-              label: Company news
-            - value: general
-              label: General
-            - value: press-release
-              label: Press release
-            - value: product-updates
-              label: Product updates
+          values: [case-example, company-news, general, press-release, product-updates]
       - name: cover
         label: Cover image
-        description: Cover image appears only in listings and link previews. To show it on the article page, add it separately in the Body field. Keep images under 1 MB.
         type: image
+        description: The cover image appears only in listings and link previews. To show it on the article page, add it separately in the Body field. Keep images under 1 MB.
         required: true
       - name: coverAlt
         label: Cover image alt text
-        description: Describe the image briefly but meaningfully.
         type: string
+        description: Describe the cover image briefly but meaningfully. Used for accessibility and SEO.
         required: true
       - name: draft
         label: Draft
@@ -78,9 +69,10 @@ content:
         required: true
       - name: description
         label: Description
-        description: Used in search results and link previews. Keep it brief and avoid line breaks.
         type: text
+        description: Short description used for link previews and SEO.
         required: true
+        pattern: { message: 'No line breaks allowed', regex: '^[^\r\n]*$' }
         options:
           rows: 2
       - name: body
@@ -102,9 +94,10 @@ content:
         required: true
       - name: description
         label: Description
-        description: Used in search results and link previews. Keep it brief and avoid line breaks.
         type: text
+        description: Short description used for link previews and SEO.
         required: true
+        pattern: { message: 'No line breaks allowed', regex: '^[^\r\n]*$' }
         options:
           rows: 2
       - name: body
@@ -114,24 +107,24 @@ content:
     label: Site settings
     type: file
     path: src/data/site.yml
-    icon: file-cog
     format: yaml
     fields:
       - name: title
         label: Site title
-        description: Used in browser tabs, search results, link previews and site footer. On sub-pages, the title is added as a suffix (e.g., "News · Clouder").
         type: string
+        description: Used in browser tabs, search results, link previews and site footer. On sub-pages, the title is added as a suffix (e.g., "News · Clouder").
         required: true
       - name: ogtitle
         label: Homepage link preview title
-        description: Only applicable to the home page, all other pages will use the "<page title> · <site title>" pattern.
         type: string
+        description: Only used for link previews of the homepage. All other pages will use the "<page title> · <site title>" format.
         required: true
       - name: description
         label: Site description
-        description: Used in search results and link previews. Individual pages can override this with their own descriptions. Keep it brief and avoid line breaks.
         type: text
+        description: Used for link previews and SEO. Individual pages can override this with their own descriptions.
         required: true
+        pattern: { message: 'No line breaks allowed', regex: '^[^\r\n]*$' }
         options:
           rows: 2
       - name: social
@@ -152,7 +145,6 @@ content:
     label: Navigation
     type: file
     path: src/data/navigation.yml
-    icon: file-cog
     format: yaml
     fields:
       - name: home
@@ -179,8 +171,8 @@ content:
           - name: href
             label: URL
             type: string
-            pattern: ^(\/|https?)
             required: true
+            pattern: ^(\/|https?)
       - name: news
         label: News
         type: object
@@ -192,8 +184,8 @@ content:
           - name: href
             label: URL
             type: string
-            pattern: ^(\/|https?)
             required: true
+            pattern: ^(\/|https?)
       - name: contact
         label: Contact
         type: object
@@ -205,8 +197,8 @@ content:
           - name: href
             label: URL
             type: string
-            pattern: ^(\/|https?)
             required: true
+            pattern: ^(\/|https?)
       - name: privacy
         label: Privacy policy
         type: object
@@ -218,21 +210,8 @@ content:
           - name: href
             label: URL
             type: string
+            required: true
             pattern: ^(\/|https?)
-            required: true
-      - name: guide
-        label: Design guide
-        type: object
-        fields:
-          - name: title
-            label: Title
-            type: string
-            required: true
-          - name: href
-            label: URL
-            type: string
-            pattern: ^(\/|https?)
-            required: true
       - name: dashboard
         label: Dashboard
         type: object
@@ -244,8 +223,8 @@ content:
           - name: href
             label: URL
             type: string
-            pattern: ^(\/|https?)
             required: true
+            pattern: ^(\/|https?)
 settings:
   hide: true
   content:
