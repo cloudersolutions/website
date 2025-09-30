@@ -3,14 +3,15 @@ import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
 import { YouTube } from '@astro-community/astro-embed-youtube';
 import ChevronRightIcon from 'lucide-astro/ChevronRight';
-import site from '@data/site.yml';
-import navigation from '@data/navigation.yml';
+
+import MainLayout from '@layouts/MainLayout.astro';
 import GetStarted from '@components/GetStarted.astro';
 import Quote from '@components/Quote.astro';
 import EnergyEfficiencyUI from '@components/EnergyEfficiencyUI.astro';
 import SustainabilityUI from '@components/SustainabilityUI2.astro';
 import HistoryUI from '@components/HistoryUI.astro';
-import MainLayout from '@layouts/MainLayout.astro';
+import site from '@data/site.yml';
+import navigation from '@data/navigation.yml';
 import heroVideoWebm from '@assets/hero.webm';
 import heroVideoAv1 from '@assets/hero.av1.mp4';
 import videoPoster from '@assets/video-poster.webp';

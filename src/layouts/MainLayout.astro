@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
-import Header from '@components/Header.astro';
-import Footer from '@components/Footer.astro';
+import SiteHeader from '@components/SiteHeader.astro';
+import SiteFooter from '@components/SiteFooter.astro';
 
 type Props = Parameters<typeof BaseLayout>[0];
 
@@ -9,9 +9,9 @@ const { headerClass, ...restProps } = Astro.props;
 ---
 
 <BaseLayout {...restProps}>
-  <Header class={headerClass} />
+  <SiteHeader class={headerClass} />
   <main class="flex h-full flex-grow flex-col">
     <slot />
   </main>
-  <Footer />
+  <SiteFooter />
 </BaseLayout>

@@ -2,9 +2,10 @@
 import { getCollection } from 'astro:content';
 import ChevronRightIcon from 'lucide-astro/ChevronRight';
 import ChevronLeftIcon from 'lucide-astro/ChevronLeft';
+
+import ProseLayout from '@layouts/ProseLayout.astro';
 import { categoryLabels } from '@content/config.ts';
 import navigation from '@data/navigation.yml';
-import ProseLayout from '@layouts/ProseLayout.astro';
 import { formatDate } from '@utils/date.ts';
 
 export async function getStaticPaths() {
