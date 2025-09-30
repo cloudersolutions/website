@@ -1,0 +1,110 @@
+permissions:
+  contents: write
+
+name: Optimize, verify and deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  optimize-images:
+    name: Optimize images
+    runs-on: ubuntu-latest
+    outputs:
+      optimized: ${{ steps.new-images.outputs.images-to-optimize != '' }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Get new and modified images
+        id: new-images
+        run: |
+          git fetch origin main
+          git diff --name-status origin/main...HEAD | grep -E '^[AM]\s+.*\.(png|jpe?g)$' | cut -f2 > new_images.txt || true
+          echo "New images detected:"
+          cat new_images.txt || echo "No new images found."
+          echo "images-to-optimize=$(paste -sd, new_images.txt)" >> $GITHUB_OUTPUT
+
+      - name: Check TinyPNG API key
+        if: steps.new-images.outputs.images-to-optimize != ''
+        run: |
+          if [ -z "${{ secrets.TINYPNG_API_KEY }}" ]; then
+            echo "Error: TINYPNG_API_KEY is not set"
+            exit 1
+          fi
+
+      - name: Set up Node.js
+        if: steps.new-images.outputs.images-to-optimize != ''
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install tinypng-cli
+        if: steps.new-images.outputs.images-to-optimize != ''
+        run: npm install -g tinypng-cli
+
+      - name: Optimize new images
+        if: steps.new-images.outputs.images-to-optimize != ''
+        env:
+          TINYPNG_API_KEY: ${{ secrets.TINYPNG_API_KEY }}
+        run: |
+          for file in ${{ steps.new-images.outputs.images-to-optimize }}; do
+            echo "Optimizing $file..."
+            tinypng -k "$TINYPNG_API_KEY" "$file" -o "$file" || echo "Skipping $file (already optimized or not a PNG/JPEG)"
+          done
+
+      - name: Commit optimized images
+        if: steps.new-images.outputs.images-to-optimize != ''
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "🔧 Optimized images [skip ci]" || exit 0
+          git pull --rebase origin main
+          git push origin main
+
+  verify:
+    name: Verify and deploy
+    needs: optimize-images
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: 'package.json'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install
+
+      - name: Build Astro site
+        run: npm run build
+
+      - name: Lint
+        if: ${{ !cancelled() }}
+        run: npm run lint
+
+      - name: Test
+        if: ${{ !cancelled() }}
+        run: npm run test
+
+      - name: Promote to production
+        if: ${{ success() && github.ref == 'refs/heads/main' }}
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -B production
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+          git push origin production --force
