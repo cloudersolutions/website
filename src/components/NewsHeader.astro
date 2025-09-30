@@ -1,0 +1,48 @@
+---
+import { getCollection } from 'astro:content';
+import { twMerge } from 'tailwind-merge';
+import { categories, categoryLabels } from '@content/config';
+import navigation from '@data/navigation.yml';
+
+interface Props {
+  current?: string;
+}
+
+const { current } = Astro.props;
+
+const posts = await getCollection('news', ({ data }) => !import.meta.env.PROD || !data.draft);
+const usedCategories = Array.from(new Set(posts.map(({ data }) => data.category)));
+const nonEmptyCategories = categories.filter((c) => usedCategories.includes(c));
+---
+
+<div class="container py-16 text-center sm:py-20 md:py-24 lg:py-28 xl:py-32">
+  <h1
+    class="mb-6 text-3xl font-semibold text-neutral-950 md:text-4xl lg:text-5xl dark:text-neutral-50"
+  >
+    News
+  </h1>
+  <div class="flex flex-wrap justify-center gap-1">
+    <a
+      href={navigation.news.href}
+      class={twMerge(
+        'rounded-full px-3.5 leading-9 font-medium text-indigo-500 transition select-none hover:bg-indigo-400/10 dark:text-indigo-400',
+        current === undefined && 'bg-indigo-400/10'
+      )}
+    >
+      All
+    </a>
+    {
+      nonEmptyCategories.map((category) => (
+        <a
+          href={`${navigation.news.href}/${category}`}
+          class={twMerge(
+            'rounded-full px-3.5 leading-9 font-medium text-indigo-500 transition select-none hover:bg-indigo-400/10 dark:text-indigo-400',
+            current === category && 'bg-indigo-400/10'
+          )}
+        >
+          {categoryLabels[category]}
+        </a>
+      ))
+    }
+  </div>
+</div>

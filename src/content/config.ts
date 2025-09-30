@@ -9,6 +9,14 @@ export const categories = [
   'product-updates'
 ] as const;
 
+export const categoryLabels: Record<(typeof categories)[number], string> = {
+  'case-example': 'Case example',
+  'company-news': 'Company news',
+  general: 'General',
+  'press-release': 'Press release',
+  'product-updates': 'Product updates'
+};
+
 const news = defineCollection({
   schema: ({ image }) =>
     z.object({

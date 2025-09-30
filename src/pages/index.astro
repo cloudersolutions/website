@@ -267,7 +267,7 @@ const caseExamplePosts = posts
             Learn how our customers are using Clouder
           </h2>
           <a
-            href={navigation.news.href}
+            href={`${navigation.news.href}/case-examples`}
             class="group mt-4 inline-flex items-center gap-0.5 text-neutral-500 transition hover:text-current active:text-current"
           >
             More case examples
@@ -280,7 +280,10 @@ const caseExamplePosts = posts
         <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
           {caseExamplePosts.map((post) => (
             <article class="group relative overflow-clip rounded-md bg-white transition hover:shadow-xs active:shadow-xs dark:bg-neutral-900">
-              <a href={`/news/${post.slug}`} class="flex h-full flex-col items-start">
+              <a
+                href={`${navigation.news.href}/${post.slug}`}
+                class="flex h-full flex-col items-start"
+              >
                 <Image
                   src={post.data.cover}
                   alt={post.data.coverAlt}

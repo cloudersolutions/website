@@ -1,0 +1,37 @@
+---
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import { categoryLabels } from '@content/config';
+import navigation from '@data/navigation.yml';
+import { formatDate } from '@utils/date.ts';
+
+interface Props {
+  post: CollectionEntry<'news'>;
+  isLarge?: boolean;
+}
+
+const { post, isLarge } = Astro.props;
+---
+
+<article class={isLarge ? 'lg:col-span-3' : 'lg:col-span-2'}>
+  <a href={`${navigation.news.href}/${post.slug}`} class="group flex flex-col gap-3 rounded">
+    <Image
+      src={post.data.cover}
+      alt={post.data.coverAlt}
+      width={600}
+      layout="constrained"
+      class="mb-1 aspect-video rounded bg-neutral-500/10 object-cover text-transparent outline -outline-offset-1 outline-black/5 transition group-hover:brightness-90 group-hover:saturate-90 group-active:brightness-90 group-active:saturate-90 dark:outline-white/5 dark:group-hover:brightness-110 dark:group-active:brightness-110"
+    />
+    <h3 class="text-xl font-semibold text-neutral-950 dark:text-neutral-50">
+      {post.data.title}
+    </h3>
+    <div
+      class="flex flex-wrap gap-1.5 text-sm text-neutral-500 transition group-hover:text-current"
+    >
+      <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
+      <span>&middot;</span>
+      <span>{categoryLabels[post.data.category]}</span>
+    </div>
+    <p>{post.data.description}</p>
+  </a>
+</article>
