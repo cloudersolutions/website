@@ -11,7 +11,7 @@ date: 2025-09-23
 category: company-news
 cover: images/vapaavuori_8232 (1).jpg
 coverAlt: Jan Vapaavuori Clouder
-draft: true
+draft: false
 ---
 Our mission is to empower the real estate sector to achieve net-zero goals faster, smarter, and more profitably turning buildings into self-optimizing assets that drive higher asset values, lower operating costs, and greener portfolios. To accelerate this vision, we are thrilled to welcome former minister **Jan Vapaavuori** as an advisor, bringing unparalleled expertise to help Clouder scale in the global market.
 
