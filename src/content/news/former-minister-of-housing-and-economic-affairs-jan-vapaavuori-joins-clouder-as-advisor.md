@@ -1,6 +1,6 @@
 ---
-title: Former minister of Housing and Economic Affairs Jan Vapaavuori joins
-  Clouder as advisor
+title: Former Minister of Housing and Economic Affairs Jan Vapaavuori joins
+  Clouder as Advisor
 description: Our mission is to empower the real estate sector to achieve
   net-zero goals faster, smarter, and more profitably turning buildings into
   self-optimizing assets that drive higher asset values, lower operating costs,
