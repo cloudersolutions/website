@@ -26,16 +26,21 @@ test('product page navigation', async ({ page }) => {
   ).toBeVisible();
 });
 
-test('blog post navigation', async ({ page }) => {
+test('post and category navigation', async ({ page }) => {
   const heading = 'New Finnish Innovation Revolutionizes Buildings';
+  const category = 'Press release';
 
   await page.goto('/news');
   await page.getByRole('link', { name: heading }).click();
   await expect(page).toHaveURL('/news/2024-05-24-press-release');
   await expect(page.getByRole('heading', { name: heading })).toBeVisible();
+  await page.getByRole('link', { name: category }).click();
+  await expect(page).toHaveURL('/news/press-release');
+  await expect(page).toHaveTitle(`${category} · Clouder`);
+  await expect(page.getByRole('heading', { name: heading })).toBeVisible();
 });
 
-test('contact form submit, required fields  filled', async ({ page }) => {
+test('contact form, required fields filled', async ({ page }) => {
   await page.goto('/contact');
 
   await page.getByRole('textbox', { name: 'First name' }).fill('Wile E.');
@@ -49,7 +54,7 @@ test('contact form submit, required fields  filled', async ({ page }) => {
   await expect(page.getByRole('heading', { name: 'Thank you!' })).toBeVisible();
 });
 
-test('contact form submit, required fields missing', async ({ page }) => {
+test('contact form, required fields missing', async ({ page }) => {
   await page.goto('/contact');
   await page.getByRole('button', { name: 'Send' }).click();
   await expect(page).toHaveURL('/contact');
