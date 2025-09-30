@@ -38,4 +38,4 @@ A shared vision for impact 
 
 For Jan, Clouder’s ambition resonates with his own commitment to global impact:
 
-> _Finland may be a small country, but it has big ambitions and Clouder is a prime example of that. Their mission to transform real estate through AI and sustainability is exactly the kind of innovation we need to tackle global challenges._
+> _Finland may be a small country, but it has big ambitions and Clouder is a prime example of that. Their mission to redefine how buildings operate, perform, and contribute to a net-zero future is not just innovation; it’s the blueprint for solving global challenges in energy efficiency, asset optimization, and smart infrastructure._
