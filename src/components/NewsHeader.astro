@@ -1,6 +1,5 @@
 ---
 import { getCollection } from 'astro:content';
-import { twMerge } from 'tailwind-merge';
 
 import { categories, categoryLabels } from '@content/config';
 import navigation from '@data/navigation.yml';
@@ -22,13 +21,11 @@ const nonEmptyCategories = categories.filter((c) => usedCategories.includes(c));
   >
     News
   </h1>
-  <div class="flex flex-wrap justify-center gap-1">
+  <div class="flex flex-wrap justify-center text-neutral-950 dark:text-neutral-50">
     <a
       href={navigation.news.href}
-      class={twMerge(
-        'rounded-full px-3.5 leading-9 font-medium text-indigo-500 transition select-none hover:bg-indigo-400/10 dark:text-indigo-400',
-        current === undefined && 'bg-indigo-400/10'
-      )}
+      aria-current={current === undefined}
+      class="rounded-full px-3 leading-8 font-medium text-current/60 transition select-none hover:bg-current/5 hover:text-current active:bg-current/5 active:text-current aria-current:text-current aria-current:hover:bg-transparent"
     >
       All
     </a>
@@ -36,10 +33,8 @@ const nonEmptyCategories = categories.filter((c) => usedCategories.includes(c));
       nonEmptyCategories.map((category) => (
         <a
           href={`${navigation.news.href}/${category}`}
-          class={twMerge(
-            'rounded-full px-3.5 leading-9 font-medium text-indigo-500 transition select-none hover:bg-indigo-400/10 dark:text-indigo-400',
-            current === category && 'bg-indigo-400/10'
-          )}
+          aria-current={current === category}
+          class="rounded-full px-3 leading-8 font-medium text-current/60 transition select-none hover:bg-current/5 hover:text-current active:bg-current/5 active:text-current aria-current:text-current aria-current:hover:bg-transparent"
         >
           {categoryLabels[category]}
         </a>
