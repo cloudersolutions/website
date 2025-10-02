@@ -13,6 +13,9 @@ const { current } = Astro.props;
 const posts = await getCollection('news', ({ data }) => !import.meta.env.PROD || !data.draft);
 const usedCategories = Array.from(new Set(posts.map(({ data }) => data.category)));
 const nonEmptyCategories = categories.filter((c) => usedCategories.includes(c));
+
+const linkClass =
+  'rounded-full px-3 leading-8 font-medium text-current/60 transition select-none hover:bg-current/5 hover:text-current active:bg-current/5 active:text-current aria-current:text-current aria-current:hover:bg-transparent';
 ---
 
 <div class="container py-16 text-center sm:py-20 md:py-24 lg:py-28 xl:py-32">
@@ -22,19 +25,13 @@ const nonEmptyCategories = categories.filter((c) => usedCategories.includes(c));
     News
   </h1>
   <div class="flex flex-wrap justify-center text-neutral-950 dark:text-neutral-50">
-    <a
-      href={navigation.news.href}
-      aria-current={current === undefined}
-      class="rounded-full px-3 leading-8 font-medium text-current/60 transition select-none hover:bg-current/5 hover:text-current active:bg-current/5 active:text-current aria-current:text-current aria-current:hover:bg-transparent"
-    >
-      All
-    </a>
+    <a href={navigation.news.href} aria-current={current === undefined} class={linkClass}>All</a>
     {
       nonEmptyCategories.map((category) => (
         <a
           href={`${navigation.news.href}/${category}`}
           aria-current={current === category}
-          class="rounded-full px-3 leading-8 font-medium text-current/60 transition select-none hover:bg-current/5 hover:text-current active:bg-current/5 active:text-current aria-current:text-current aria-current:hover:bg-transparent"
+          class={linkClass}
         >
           {categoryLabels[category]}
         </a>

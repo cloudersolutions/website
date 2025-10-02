@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
+import { twMerge } from 'tailwind-merge';
 
 import { categoryLabels } from '@content/config';
 import navigation from '@data/navigation.yml';
@@ -14,16 +15,21 @@ interface Props {
 const { post, isLarge } = Astro.props;
 ---
 
-<article class={isLarge ? 'lg:col-span-3' : 'lg:col-span-2'}>
+<article class={isLarge ? 'xl:col-span-3' : 'xl:col-span-2'}>
   <a href={`${navigation.news.href}/${post.slug}`} class="group flex flex-col gap-3 rounded">
     <Image
       src={post.data.cover}
       alt={post.data.coverAlt}
-      width={600}
+      width={640}
       layout="constrained"
-      class="mb-1 aspect-video rounded bg-neutral-500/10 object-cover text-transparent outline -outline-offset-1 outline-black/5 transition group-hover:brightness-90 group-hover:saturate-90 group-active:brightness-90 group-active:saturate-90 dark:outline-white/5 dark:group-hover:brightness-110 dark:group-active:brightness-110"
+      class="mb-1.5 aspect-video rounded bg-neutral-500/10 object-cover text-transparent outline -outline-offset-1 outline-black/5 transition group-hover:brightness-90 group-hover:saturate-90 group-active:brightness-90 group-active:saturate-90 dark:outline-white/5 dark:group-hover:brightness-110 dark:group-active:brightness-110"
     />
-    <h3 class="text-xl font-semibold text-neutral-950 dark:text-neutral-50">
+    <h3
+      class:list={twMerge(
+        'text-xl leading-snug font-semibold text-neutral-950 dark:text-neutral-50',
+        isLarge ? 'xl:text-2xl' : 'xl:text-lg'
+      )}
+    >
       {post.data.title}
     </h3>
     <div
