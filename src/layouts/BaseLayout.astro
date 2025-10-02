@@ -1,12 +1,14 @@
 ---
 import type { ImageMetadata } from 'astro';
-import site from '@data/site.yml';
+
 import PostHog from '@components/PostHog.astro';
+import site from '@data/site.yml';
 import fallbackImage from '@assets/shareimage.png';
 import '../styles/global.css';
 
 interface Props {
   headerClass?: string;
+  headerItemClass?: string;
   title?: string;
   ogTitle?: string;
   description?: string;

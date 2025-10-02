@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+
 import ProseLayout from '@layouts/ProseLayout.astro';
 import ecImage from '@assets/ec-6-2.png';
 
@@ -8,5 +9,5 @@ const title = 'Edge Connector 6-2';
 
 <ProseLayout title={title}>
   <h1 class="text-center">{title}</h1>
-  <Image src={ecImage} alt={title} class="bg-transparent" width={1000} layout="constrained" />
+  <Image src={ecImage} alt={title} class="bg-transparent" width={960} layout="constrained" />
 </ProseLayout>

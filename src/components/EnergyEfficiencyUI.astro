@@ -3,6 +3,7 @@ import TrendingUpIcon from 'lucide-astro/TrendingUp';
 import InfoIcon from 'lucide-astro/Info';
 import ChevronsUpDownIcon from 'lucide-astro/ChevronsUpDown';
 import DownloadIcon from 'lucide-astro/Download';
+
 import { formatPrice, formatNumber } from '@utils/format';
 
 interface Props {
@@ -47,13 +48,13 @@ const valueChange = annualSavings / capRate;
       </span>
     </div>
     <div
-      class="flex h-7 flex-shrink-0 items-center gap-1 rounded border border-neutral-200 pr-1.5 pl-2.5 transition hover:bg-current/3 dark:border-neutral-800"
+      class="flex h-7 flex-shrink-0 items-center gap-1 rounded border border-neutral-200 pr-1.5 pl-2.5 transition hover:bg-current/5 dark:border-neutral-800"
     >
       <span class="text-xs">Last 12 months</span>
       <ChevronsUpDownIcon size={12} />
     </div>
     <div
-      class="flex h-7 items-center gap-1 rounded border border-neutral-200 pr-2.5 pl-1.5 transition hover:bg-current/3 dark:border-neutral-800"
+      class="flex h-7 items-center gap-1 rounded border border-neutral-200 pr-2.5 pl-1.5 transition hover:bg-current/5 dark:border-neutral-800"
     >
       <DownloadIcon size={13} />
       <span class="text-xs">Download</span>

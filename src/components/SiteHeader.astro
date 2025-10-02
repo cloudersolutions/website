@@ -3,15 +3,17 @@ import { twMerge } from 'tailwind-merge';
 import ArrowUpRightIcon from 'lucide-astro/ArrowUpRight';
 import MenuIcon from 'lucide-astro/Menu';
 import XIcon from 'lucide-astro/X';
-import navigation from '@data/navigation.yml';
+
 import site from '@data/site.yml';
+import navigation from '@data/navigation.yml';
 import Logo from '@components/Logo.astro';
 
 interface Props {
-  class?: string;
+  headerClass?: string;
+  itemClass?: string;
 }
 
-const { class: className } = Astro.props;
+const { headerClass, itemClass } = Astro.props;
 
 const { pathname } = Astro.url;
 
@@ -28,18 +30,19 @@ const isExternal = (href: string) => {
   return href.startsWith('http');
 };
 
-const defaultClasses =
-  'bg-neutral-50 py-4 md:py-6 lg:py-8 text-neutral-950 dark:bg-neutral-950 dark:text-neutral-50';
+const defaultHeaderClass =
+  'bg-neutral-50 py-4 md:py-6 lg:py-8 dark:bg-neutral-950 text-neutral-950 dark:text-neutral-50';
+const defaultItemClass = `hover:bg-current/5 active:bg-current/5`;
 ---
 
-<header class:list={twMerge(defaultClasses, className)}>
+<header class:list={twMerge(defaultHeaderClass, headerClass)}>
   <div class="container flex items-center gap-x-4">
     <a href="/" class="mr-auto py-2">
       <Logo size={20} />
     </a>
     <!-- Mobile menu -->
     <label
-      class="relative left-1.5 -m-1.5 block rounded-full p-3 transition active:bg-current/10 md:hidden"
+      class="relative left-1.5 -m-1.5 block rounded-full p-3 transition active:bg-current/5 md:hidden"
       for="mobile-menu"
     >
       <input class="peer hidden" type="checkbox" id="mobile-menu" />
@@ -47,9 +50,9 @@ const defaultClasses =
       <XIcon class="relative z-30 hidden peer-checked:block" />
       <div
         class:list={twMerge(
-          'pointer-events-none invisible fixed inset-0 top-17 z-20 h-auto w-full border-t border-current/10 bg-neutral-50 opacity-0 transition duration-300 peer-checked:pointer-events-auto peer-checked:visible peer-checked:opacity-100',
-          defaultClasses,
-          className
+          'pointer-events-none invisible fixed inset-0 top-17 z-20 h-auto w-full border-t border-current/10 opacity-0 transition duration-300 peer-checked:pointer-events-auto peer-checked:visible peer-checked:opacity-100',
+          defaultHeaderClass,
+          headerClass
         )}
       >
         <nav class="flex h-full flex-col">
@@ -57,8 +60,12 @@ const defaultClasses =
             navigationLinks.map(({ title, href }) => (
               <a
                 href={href}
-                aria-current={isActive(href) ? 'page' : undefined}
-                class="inline-flex items-center gap-0.5 px-6 py-2.5 text-lg font-medium text-current underline-offset-3 transition select-none active:bg-current/10 aria-[current]:underline"
+                aria-current={isActive(href)}
+                class:list={twMerge(
+                  'inline-flex items-center gap-0.5 px-6 py-2.5 text-lg font-medium text-current transition select-none aria-current:bg-current/5',
+                  defaultItemClass,
+                  itemClass
+                )}
               >
                 {title}
                 {isExternal(href) && (
@@ -82,15 +89,17 @@ const defaultClasses =
       </div>
     </label>
     <!-- Desktop menu -->
-    <nav class="-mx-3.5 hidden flex-wrap md:flex" data-testid="menu">
+    <nav class="-mx-3.5 hidden flex-wrap gap-1 md:flex" data-testid="menu">
       {
         navigationLinks.map(({ title, href }) => (
           <a
             href={href}
-            aria-current={isActive(href) ? 'page' : undefined}
+            aria-current={isActive(href)}
             class:list={twMerge(
-              'inline-flex items-center gap-0.5 rounded-full px-3.5 leading-9 font-medium text-current decoration-1 underline-offset-6 transition select-none hover:bg-current/10 aria-[current]:text-current aria-[current]:underline aria-[current]:hover:bg-transparent',
-              navigationLinks.some((i) => isActive(i.href)) && 'text-current/65 hover:text-current'
+              'inline-flex items-center gap-0.5 rounded-full px-3.5 leading-9 font-medium text-current transition select-none aria-current:text-current aria-current:hover:bg-transparent',
+              defaultItemClass,
+              itemClass,
+              navigationLinks.some((i) => isActive(i.href)) && 'text-current/60 hover:text-current'
             )}
           >
             {title}

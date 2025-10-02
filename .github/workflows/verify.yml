@@ -1,12 +1,9 @@
 permissions:
   contents: write
 
-name: Verify and deploy to production
+name: Verify
 
 on:
-  push:
-    branches:
-      - main
   pull_request:
     branches:
       - main
@@ -15,7 +12,6 @@ jobs:
   verify:
     name: Verify
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -44,12 +40,3 @@ jobs:
       - name: Test
         if: ${{ !cancelled() }}
         run: npm run test
-
-      - name: Promote to production
-        if: ${{ success() && github.ref == 'refs/heads/main' }}
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git checkout -B production
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
-          git push origin production --force

@@ -9,13 +9,21 @@ import OcatagonAlertIcon from 'lucide-astro/OctagonAlert';
 import SettingsIcon from 'lucide-astro/Settings';
 import ShieldCheckIcon from 'lucide-astro/ShieldCheck';
 import WrenchIcon from 'lucide-astro/Wrench';
-import navigation from '@data/navigation.yml';
-import { formatPrice } from '@utils/format';
+
+import MainLayout from '@layouts/MainLayout.astro';
 import Divider from '@components/Divider.astro';
 import GetStarted from '@components/GetStarted.astro';
 import Ping from '@components/Ping.astro';
-import MainLayout from '@layouts/MainLayout.astro';
+import navigation from '@data/navigation.yml';
+import { formatPrice } from '@utils/format';
 import HowClouderWorksIllustration from '@assets/how-clouder-works.svg';
+
+const anchorLinks = [
+  { href: '#plans', label: 'Plans' },
+  { href: '#overview', label: 'How it works' },
+  { href: '#features', label: 'Features' },
+  { href: '#questions', label: 'Questions' }
+];
 
 const title = 'Product';
 const description =
@@ -38,31 +46,17 @@ const description =
       <p class="mx-auto mb-8 max-w-3xl text-lg text-neutral-700 dark:text-neutral-300">
         {description}
       </p>
-      <div class="flex flex-wrap justify-center">
-        <a
-          href="#plans"
-          class="rounded-full px-3.5 leading-9 font-medium text-indigo-500 transition select-none hover:bg-indigo-400/10 active:bg-indigo-400/10 dark:text-indigo-400"
-        >
-          Plans
-        </a>
-        <a
-          href="#overview"
-          class="rounded-full px-3.5 leading-9 font-medium text-indigo-500 transition select-none hover:bg-indigo-400/10 active:bg-indigo-400/10 dark:text-indigo-400"
-        >
-          How it works
-        </a>
-        <a
-          href="#features"
-          class="rounded-full px-3.5 leading-9 font-medium text-indigo-500 transition select-none hover:bg-indigo-400/10 active:bg-indigo-400/10 dark:text-indigo-400"
-        >
-          Features
-        </a>
-        <a
-          href="#questions"
-          class="rounded-full px-3.5 leading-9 font-medium text-indigo-500 transition select-none hover:bg-indigo-400/10 active:bg-indigo-400/10 dark:text-indigo-400"
-        >
-          Questions
-        </a>
+      <div class="flex flex-wrap justify-center gap-1 text-neutral-950 dark:text-neutral-50">
+        {
+          anchorLinks.map((link) => (
+            <a
+              href={link.href}
+              class="rounded-full px-3 leading-8 font-medium text-current transition select-none hover:bg-current/5 active:bg-current/5"
+            >
+              {link.label}
+            </a>
+          ))
+        }
       </div>
     </div>
   </section>
@@ -566,7 +560,7 @@ const description =
       <div class="*:border-b *:border-neutral-200 lg:col-span-2 lg:-mt-3 *:dark:border-neutral-800">
         <details class="group open:pb-8">
           <summary
-            class="cursor-pointer list-none py-6 text-lg font-semibold text-neutral-950 transition group-open:pb-4 hover:text-current/65 active:text-current/65 dark:text-neutral-50"
+            class="cursor-pointer list-none py-6 text-lg font-semibold text-neutral-950 transition group-open:pb-4 hover:text-current/60 active:text-current/60 dark:text-neutral-50"
           >
             What is Clouder and how does virtual cabling work?
           </summary>
@@ -581,7 +575,7 @@ const description =
         </details>
         <details class="group open:pb-8">
           <summary
-            class="cursor-pointer list-none py-6 text-lg font-semibold text-neutral-950 transition group-open:pb-4 hover:text-current/65 active:text-current/65 dark:text-neutral-50"
+            class="cursor-pointer list-none py-6 text-lg font-semibold text-neutral-950 transition group-open:pb-4 hover:text-current/60 active:text-current/60 dark:text-neutral-50"
           >
             Where can Clouder be installed?
           </summary>
@@ -594,7 +588,7 @@ const description =
         </details>
         <details class="group open:pb-8">
           <summary
-            class="cursor-pointer list-none py-6 text-lg font-semibold text-neutral-950 transition group-open:pb-4 hover:text-current/65 active:text-current/65 dark:text-neutral-50"
+            class="cursor-pointer list-none py-6 text-lg font-semibold text-neutral-950 transition group-open:pb-4 hover:text-current/60 active:text-current/60 dark:text-neutral-50"
           >
             How quickly can we implement Clouder across a portfolio?
           </summary>
@@ -606,7 +600,7 @@ const description =
         </details>
         <details class="group open:pb-8">
           <summary
-            class="cursor-pointer list-none py-6 text-lg font-semibold text-neutral-950 transition group-open:pb-4 hover:text-current/65 active:text-current/65 dark:text-neutral-50"
+            class="cursor-pointer list-none py-6 text-lg font-semibold text-neutral-950 transition group-open:pb-4 hover:text-current/60 active:text-current/60 dark:text-neutral-50"
           >
             Is Clouder compatible with our existing systems and vendors?
           </summary>
@@ -618,7 +612,7 @@ const description =
         </details>
         <details class="group open:pb-8">
           <summary
-            class="cursor-pointer list-none py-6 text-lg font-semibold text-neutral-950 transition group-open:pb-4 hover:text-current/65 active:text-current/65 dark:text-neutral-50"
+            class="cursor-pointer list-none py-6 text-lg font-semibold text-neutral-950 transition group-open:pb-4 hover:text-current/60 active:text-current/60 dark:text-neutral-50"
           >
             What about cybersecurity and data ownership?
           </summary>
@@ -629,7 +623,7 @@ const description =
         </details>
         <details class="group open:pb-8">
           <summary
-            class="cursor-pointer list-none py-6 text-lg font-semibold text-neutral-950 transition group-open:pb-4 hover:text-current/65 active:text-current/65 dark:text-neutral-50"
+            class="cursor-pointer list-none py-6 text-lg font-semibold text-neutral-950 transition group-open:pb-4 hover:text-current/60 active:text-current/60 dark:text-neutral-50"
           >
             What are the annual costs? Are there any license fees?
           </summary>
@@ -654,7 +648,7 @@ const description =
         </details>
         <details class="group open:pb-5">
           <summary
-            class="cursor-pointer list-none py-6 text-lg font-semibold text-neutral-950 transition group-open:pb-4 hover:text-current/65 active:text-current/65 dark:text-neutral-50"
+            class="cursor-pointer list-none py-6 text-lg font-semibold text-neutral-950 transition group-open:pb-4 hover:text-current/60 active:text-current/60 dark:text-neutral-50"
           >
             How does Clouder work with our existing ESG reporting software?
           </summary>
@@ -667,7 +661,7 @@ const description =
         </details>
         <details class="group open:pb-8">
           <summary
-            class="cursor-pointer list-none py-6 text-lg font-semibold text-neutral-950 transition group-open:pb-4 hover:text-current/65 active:text-current/65 dark:text-neutral-50"
+            class="cursor-pointer list-none py-6 text-lg font-semibold text-neutral-950 transition group-open:pb-4 hover:text-current/60 active:text-current/60 dark:text-neutral-50"
           >
             How does Clouder help with EU Taxonomy and CSRD compliance?
           </summary>
@@ -679,7 +673,7 @@ const description =
         </details>
         <details class="group border-none open:pb-8">
           <summary
-            class="cursor-pointer list-none py-6 text-lg font-semibold text-neutral-950 transition group-open:pb-4 hover:text-current/65 active:text-current/65 dark:text-neutral-50"
+            class="cursor-pointer list-none py-6 text-lg font-semibold text-neutral-950 transition group-open:pb-4 hover:text-current/60 active:text-current/60 dark:text-neutral-50"
           >
             Can Clouder improve our GRESB score?
           </summary>

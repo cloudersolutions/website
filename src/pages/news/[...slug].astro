@@ -1,10 +1,12 @@
 ---
 import { getCollection } from 'astro:content';
-import { sentenceCase } from 'change-case';
 import ChevronRightIcon from 'lucide-astro/ChevronRight';
 import ChevronLeftIcon from 'lucide-astro/ChevronLeft';
-import { formatDate } from '@utils/date.ts';
+
 import ProseLayout from '@layouts/ProseLayout.astro';
+import { categoryLabels } from '@content/config.ts';
+import navigation from '@data/navigation.yml';
+import { formatDate } from '@utils/date.ts';
 
 export async function getStaticPaths() {
   const posts = await getCollection('news', ({ data }) =>
@@ -35,7 +37,12 @@ const { Content } = await post.render();
       <div class="mt-6 flex flex-wrap justify-center gap-1.5 text-sm text-neutral-500">
         <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
         <span>&middot;</span>
-        <p>{sentenceCase(post.data.category)}</p>
+        <a
+          href={`${navigation.news.href}/${post.data.category}`}
+          class="transition hover:text-neutral-800 active:text-neutral-800 dark:hover:text-neutral-200 dark:active:text-neutral-200"
+        >
+          {categoryLabels[post.data.category]}
+        </a>
         <span>&middot;</span>
         <button
           id="copy-clipboard"

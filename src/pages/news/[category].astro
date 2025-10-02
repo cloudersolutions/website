@@ -5,23 +5,36 @@ import MainLayout from '@layouts/MainLayout.astro';
 import NewsHeader from '@components/NewsHeader.astro';
 import Newsletter from '@components/Newsletter.astro';
 import Post from '@components/Post.astro';
+import { categories, categoryLabels } from '@content/config';
+
+export function getStaticPaths() {
+  return categories.map((category) => ({
+    params: {
+      category
+    }
+  }));
+}
+
+const { category } = Astro.params;
 
 const posts = await getCollection('news', ({ data }) => !import.meta.env.PROD || !data.draft);
-const sortedPosts = posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const categoryPosts = posts
+  .filter(({ data }) => data.category === category)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
-const title = 'News';
-const description = 'Company news, case examples, and more.';
+const title = categoryLabels[category];
+const description = `Posts filed under ${title.toLowerCase()}`;
 ---
 
 <MainLayout title={title} description={description} headerClass="bg-white dark:bg-neutral-900">
   <section class="bg-gradient-to-b from-white to-transparent dark:from-neutral-900">
-    <NewsHeader />
+    <NewsHeader current={category} />
   </section>
   <section class="container pb-16 sm:pb-20 md:pb-24 lg:pb-28 xl:pb-32">
     <div
       class="grid grid-cols-1 gap-8 gap-y-10 md:grid-cols-2 md:gap-x-10 md:gap-y-12 xl:grid-cols-6 xl:gap-x-12 xl:gap-y-16"
     >
-      {sortedPosts.map((post, index) => <Post isLarge={index < 4} post={post} />)}
+      {categoryPosts.map((post, index) => <Post isLarge={index < 4} post={post} />)}
     </div>
   </section>
   <section class="container pb-16 sm:pb-20 md:pb-24 lg:pb-28 xl:pb-32">
