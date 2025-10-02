@@ -24,7 +24,7 @@ jobs:
         id: new-images
         run: |
           git fetch origin main
-          git diff --name-status origin/main...HEAD | grep -E '^[AM]\s+.*\.(png|jpe?g)$' | cut -f2 > new_images.txt || true
+          git diff --name-status ${{ github.event.before }} ${{ github.sha }} | grep -E '^[AM]\s+.*\.(png|jpe?g)$' | cut -f2 > new_images.txt || true
           echo "New images detected:"
           cat new_images.txt || echo "No new images found."
           echo "images-to-optimize=$(paste -sd, new_images.txt)" >> $GITHUB_OUTPUT
