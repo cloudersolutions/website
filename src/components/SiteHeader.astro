@@ -9,10 +9,11 @@ import navigation from '@data/navigation.yml';
 import Logo from '@components/Logo.astro';
 
 interface Props {
-  class?: string;
+  headerClass?: string;
+  itemClass?: string;
 }
 
-const { class: className } = Astro.props;
+const { headerClass, itemClass } = Astro.props;
 
 const { pathname } = Astro.url;
 
@@ -29,11 +30,12 @@ const isExternal = (href: string) => {
   return href.startsWith('http');
 };
 
-const defaultClasses =
-  'bg-neutral-50 py-4 md:py-6 lg:py-8 text-neutral-950 dark:bg-neutral-950 dark:text-neutral-50';
+const defaultHeaderClass =
+  'bg-neutral-50 py-4 md:py-6 lg:py-8 dark:bg-neutral-950 text-neutral-950 dark:text-neutral-50';
+const defaultItemClass = `hover:bg-current/5 active:bg-current/5`;
 ---
 
-<header class:list={twMerge(defaultClasses, className)}>
+<header class:list={twMerge(defaultHeaderClass, headerClass)}>
   <div class="container flex items-center gap-x-4">
     <a href="/" class="mr-auto py-2">
       <Logo size={20} />
@@ -48,9 +50,9 @@ const defaultClasses =
       <XIcon class="relative z-30 hidden peer-checked:block" />
       <div
         class:list={twMerge(
-          'pointer-events-none invisible fixed inset-0 top-17 z-20 h-auto w-full border-t border-current/10 bg-neutral-50 opacity-0 transition duration-300 peer-checked:pointer-events-auto peer-checked:visible peer-checked:opacity-100',
-          defaultClasses,
-          className
+          'pointer-events-none invisible fixed inset-0 top-17 z-20 h-auto w-full border-t border-current/10 opacity-0 transition duration-300 peer-checked:pointer-events-auto peer-checked:visible peer-checked:opacity-100',
+          defaultHeaderClass,
+          headerClass
         )}
       >
         <nav class="flex h-full flex-col">
@@ -59,7 +61,11 @@ const defaultClasses =
               <a
                 href={href}
                 aria-current={isActive(href)}
-                class="inline-flex items-center gap-0.5 px-6 py-2.5 text-lg font-medium text-current transition select-none active:bg-current/5 aria-current:bg-current/5"
+                class:list={twMerge(
+                  'inline-flex items-center gap-0.5 px-6 py-2.5 text-lg font-medium text-current transition select-none aria-current:bg-current/5',
+                  defaultItemClass,
+                  itemClass
+                )}
               >
                 {title}
                 {isExternal(href) && (
@@ -90,7 +96,9 @@ const defaultClasses =
             href={href}
             aria-current={isActive(href)}
             class:list={twMerge(
-              'inline-flex items-center gap-0.5 rounded-full px-3.5 leading-9 font-medium text-current transition select-none hover:bg-current/5 aria-current:text-current aria-current:hover:bg-transparent',
+              'inline-flex items-center gap-0.5 rounded-full px-3.5 leading-9 font-medium text-current transition select-none aria-current:text-current aria-current:hover:bg-transparent',
+              defaultItemClass,
+              itemClass,
               navigationLinks.some((i) => isActive(i.href)) && 'text-current/60 hover:text-current'
             )}
           >
