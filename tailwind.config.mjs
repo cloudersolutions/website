@@ -47,6 +47,11 @@ export default {
               borderRadius: '0.25rem',
               backgroundColor: 'color-mix(in oklab, var(--color-neutral-500) 10%, transparent)',
               color: 'transparent'
+            },
+            // Fix for CMS/TipTap/ProseMirror markdown lists. ProseMirror wraps list item content in a paragrap tag, which messes up spacing.
+            'li > p': {
+              marginTop: 0,
+              marginBottom: 0
             }
           }
         },
