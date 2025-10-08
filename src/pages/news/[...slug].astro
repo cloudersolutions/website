@@ -9,9 +9,7 @@ import navigation from '@data/navigation.yml';
 import { formatDate } from '@utils/date.ts';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('news', ({ data }) =>
-    import.meta.env.PROD ? !data.draft : true
-  );
+  const posts = await getCollection('news', ({ data }) => !import.meta.env.PROD || !data.draft);
   const sortedPosts = posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
   return sortedPosts.map((post, index) => ({

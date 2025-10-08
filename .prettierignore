@@ -1,2 +1,2 @@
 src/components/PostHog.astro
-src/content/news/*.md
+src/content/news/*.mdx

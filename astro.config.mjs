@@ -1,8 +1,10 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-import sitemap from '@astrojs/sitemap';
+import mdx from '@astrojs/mdx';
 import yaml from '@rollup/plugin-yaml';
+import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
+import embeds from 'astro-embed/integration';
 
 // https://astro.build/config
 export default defineConfig({
@@ -18,5 +20,9 @@ export default defineConfig({
     port: 3000,
     host: true
   },
-  integrations: [sitemap()]
+  integrations: [
+    sitemap(),
+    embeds({ services: { LinkPreview: true, BlueskyPost: false, Tweet: false } }),
+    mdx()
+  ]
 });

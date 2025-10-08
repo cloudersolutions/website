@@ -48,10 +48,11 @@ export default {
               backgroundColor: 'color-mix(in oklab, var(--color-neutral-500) 10%, transparent)',
               color: 'transparent'
             },
-            iframe: {
+            'iframe, lite-youtube': {
               aspectRatio: '16/9',
               borderRadius: '0.25rem',
               width: '100%',
+              maxWidth: '100% !important',
               marginBlock: '2rem'
             },
             // Fix for CMS/TipTap/ProseMirror markdown lists. ProseMirror wraps list item content in a paragrap tag, which messes up spacing.
