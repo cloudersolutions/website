@@ -12,6 +12,7 @@ import SustainabilityUI from '@components/SustainabilityUI2.astro';
 import HistoryUI from '@components/HistoryUI.astro';
 import site from '@data/site.yml';
 import navigation from '@data/navigation.yml';
+import { filterDrafts } from '@utils/content.ts';
 import heroVideoWebm from '@assets/hero.webm';
 import heroVideoAv1 from '@assets/hero.av1.mp4';
 import videoPoster from '@assets/video-poster.webp';
@@ -21,7 +22,7 @@ import PatriaLogo from '@assets/patria.svg';
 import SrvLogo from '@assets/srv.svg';
 import VarteLogo from '@assets/varte.svg';
 
-const posts = await getCollection('news', ({ data }) => !import.meta.env.PROD || !data.draft);
+const posts = await getCollection('news', filterDrafts);
 
 const caseExamplePosts = posts
   .filter((post) => post.data.category === 'case-example')
