@@ -48,6 +48,16 @@ export default {
               backgroundColor: 'color-mix(in oklab, var(--color-neutral-500) 10%, transparent)',
               color: 'transparent'
             },
+            iframe: {
+              aspectRatio: '16/9',
+              borderRadius: '0.25rem',
+              width: '100%',
+              marginBlock: '2rem'
+            },
+            li: {
+              marginTop: '.375em',
+              marginBottom: '.375em'
+            },
             // Fix for CMS/TipTap/ProseMirror markdown lists. ProseMirror wraps list item content in a paragrap tag, which messes up spacing.
             'li > p': {
               marginTop: 0,

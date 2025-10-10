@@ -6,6 +6,7 @@ import NewsHeader from '@components/NewsHeader.astro';
 import Newsletter from '@components/Newsletter.astro';
 import Post from '@components/Post.astro';
 import { categories, categoryLabels } from '@content/config';
+import { filterDrafts } from '@utils/content.ts';
 
 export function getStaticPaths() {
   return categories.map((category) => ({
@@ -17,7 +18,7 @@ export function getStaticPaths() {
 
 const { category } = Astro.params;
 
-const posts = await getCollection('news', ({ data }) => !import.meta.env.PROD || !data.draft);
+const posts = await getCollection('news', filterDrafts);
 const categoryPosts = posts
   .filter(({ data }) => data.category === category)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
