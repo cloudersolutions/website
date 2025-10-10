@@ -4,7 +4,7 @@ description: We’re excited to announce that Clouder is now AI-ready, empowerin
 date: 2025-10-10
 category: product-updates
 cover: images/clouder-le-chat.png
-coverAlt: AI chat prompt with Clouder
+coverAlt: Screenshot of Le Chat interface with Clouder prompt 
 draft: false
 ---
 We’re excited to announce that Clouder is now AI-ready, enabling seamless interaction with your building data through AI applications like **ChatGPT**, **Copilot**, or **Le Chat**. With this new capability, you can easily access and analyze your building data using natural language queries, making insights more accessible than ever. Watch the video below to see how it works.
