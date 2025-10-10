@@ -5,8 +5,9 @@ import MainLayout from '@layouts/MainLayout.astro';
 import NewsHeader from '@components/NewsHeader.astro';
 import Newsletter from '@components/Newsletter.astro';
 import Post from '@components/Post.astro';
+import { filterDrafts } from '@utils/content.ts';
 
-const posts = await getCollection('news', ({ data }) => !import.meta.env.PROD || !data.draft);
+const posts = await getCollection('news', filterDrafts);
 const sortedPosts = posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
 const title = 'News';
