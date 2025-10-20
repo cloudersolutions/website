@@ -34,7 +34,17 @@ content:
         options:
           creatable: false
           multiple: false
-          values: [case-example, company-news, general, press-release, product-updates]
+          values:
+            - value: case-example
+              label: Case example
+            - value: company-news
+              label: Company news
+            - value: general
+              label: General
+            - value: press-release
+              label: Press release
+            - value: product-updates
+              label: Product updates
       - name: author
         label: Author
         type: select
