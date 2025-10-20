@@ -7,6 +7,7 @@ description: For the owner saving energy is an important mission considering
   day one for a prestigious art nouveau building.
 date: 2025-03-26
 category: case-example
+author: Emma Grönlund
 cover: images/kalevankatu-9-exterior.jpg
 coverAlt: Exterior shot of an art nouveau building
 draft: false

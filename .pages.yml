@@ -32,9 +32,23 @@ content:
         type: select
         required: true
         options:
-          multiple: false
           creatable: false
+          multiple: false
           values: [case-example, company-news, general, press-release, product-updates]
+      - name: author
+        label: Author
+        type: select
+        required: false
+        options:
+          creatable: true
+          multiple: false
+          values:
+            - Emma Grönlund
+            - Ilkka Pirttimaa
+            - Jussi Toivonen
+            - Mathias Lindholm
+            - Tomi Grönlund
+        description: No author will be displayed in the article if this field is left empty.
       - name: cover
         label: Cover image
         type: image

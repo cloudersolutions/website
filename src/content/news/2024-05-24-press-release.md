@@ -7,6 +7,7 @@ description: The Finnish technology company Clouder launched a new intelligent
   environmentally friendly.
 date: 2024-05-24
 category: press-release
+author: Emma Grönlund
 cover: images/emma-jussi-labra.jpg
 coverAlt: People in hardware laboratory
 draft: false

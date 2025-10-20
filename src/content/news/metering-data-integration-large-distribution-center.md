@@ -3,6 +3,7 @@ title: Sensor Data Integration for a Large Logistics Center
 description: This is a case example of how Clouder effectively solved the challenges of sensor data transmission in a large logistics center by providing a solution that seamlessly integrated the data into a centralized monitoring system without expensive infrastructure modifications.
 date: 2024-08-21
 category: case-example
+author: Emma Grönlund
 cover: images/logistic-center.jpg
 coverAlt: A large logistic center
 draft: false

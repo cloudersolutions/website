@@ -34,6 +34,14 @@ const { Content } = await post.render();
         {post.data.title}
       </h1>
       <div class="mt-6 flex flex-wrap justify-center gap-1.5 text-sm text-neutral-500">
+        {
+          post.data.author && (
+            <>
+              <span>{post.data.author}</span>
+              <span>&middot;</span>
+            </>
+          )
+        }
         <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
         <span>&middot;</span>
         <a

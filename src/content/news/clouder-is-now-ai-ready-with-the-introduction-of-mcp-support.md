@@ -4,6 +4,7 @@ description: We’re excited to announce that Clouder is now AI-ready, empowerin
 date: 2025-10-10
 category: product-updates
 cover: images/clouder-le-chat.png
+author: Mathias Lindholm
 coverAlt: Screenshot of Le Chat interface with Clouder prompt 
 draft: false
 ---
