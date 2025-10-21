@@ -6,7 +6,7 @@ description: The Finnish technology company Clouder launched a new intelligent
   enabling data-driven management of the entire property cost-effectively and
   environmentally friendly.
 date: 2024-05-24
-category: press-release
+category: press
 author: Emma Grönlund
 cover: images/emma-jussi-labra.jpg
 coverAlt: People in hardware laboratory

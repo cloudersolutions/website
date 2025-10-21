@@ -2,7 +2,7 @@
 title: Clouder is now AI-ready with the introduction of MCP support
 description: We’re excited to announce that Clouder is now AI-ready, empowering you to interact with your building data through AI applications like ChatGPT, Copilot, and Le Chat. With natural language queries, you can effortlessly access and analyze your building data, uncover anomalies in energy consumption, identify opportunities for optimization, and receive actionable recommendations.
 date: 2025-10-10
-category: product-updates
+category: product
 cover: images/clouder-le-chat.png
 author: Mathias Lindholm
 coverAlt: Screenshot of Le Chat interface with Clouder prompt 

@@ -39,12 +39,12 @@ content:
               label: Case example
             - value: company-news
               label: Company news
-            - value: general
-              label: General
-            - value: press-release
+            - value: insights
+              label: Industry insights
+            - value: press
               label: Press release
-            - value: product-updates
-              label: Product updates
+            - value: product
+              label: Product update
       - name: author
         label: Author
         type: select

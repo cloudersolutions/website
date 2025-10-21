@@ -35,9 +35,9 @@ const { post, isLarge } = Astro.props;
     <div
       class="flex flex-wrap gap-1.5 text-sm text-neutral-500 transition group-hover:text-current"
     >
-      <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
+      <span>{post.data.author ? post.data.author : categoryLabels[post.data.category]}</span>
       <span>&middot;</span>
-      <span>{categoryLabels[post.data.category]}</span>
+      <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
     </div>
     <p>{post.data.description}</p>
   </a>

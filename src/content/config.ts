@@ -1,20 +1,14 @@
 import { defineCollection, z } from 'astro:content';
 
 // Match with .pages.yml
-export const categories = [
-  'case-example',
-  'company-news',
-  'general',
-  'press-release',
-  'product-updates'
-] as const;
+export const categories = ['case-example', 'company-news', 'insights', 'press', 'product'] as const;
 
 export const categoryLabels: Record<(typeof categories)[number], string> = {
   'case-example': 'Case example',
   'company-news': 'Company news',
-  general: 'General',
-  'press-release': 'Press release',
-  'product-updates': 'Product updates'
+  insights: 'Industry insights',
+  press: 'Press release',
+  product: 'Product update'
 };
 
 const news = defineCollection({

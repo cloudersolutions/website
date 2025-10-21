@@ -35,7 +35,7 @@ test('post and category navigation', async ({ page }) => {
   await expect(page).toHaveURL('/news/2024-05-24-press-release');
   await expect(page.getByRole('heading', { name: heading })).toBeVisible();
   await page.getByRole('link', { name: category }).click();
-  await expect(page).toHaveURL('/news/press-release');
+  await expect(page).toHaveURL('/news/press');
   await expect(page).toHaveTitle(`${category} · Clouder`);
   await expect(page.getByRole('heading', { name: heading })).toBeVisible();
 });
