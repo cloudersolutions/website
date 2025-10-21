@@ -34,40 +34,40 @@ status = 301
 [[redirects]]
 from = "/p/EC-6-2"
 to = "/product/ec-6-2"
-status = 302
+status = 301
 
 [[redirects]]
 from = "/p/ec-6-2"
 to = "/product/ec-6-2"
-status = 302
+status = 301
 
 [[redirects]]
 from = "/p/EC-8-8"
 to = "/product/ec-8-8"
-status = 302
+status = 301
 
 [[redirects]]
 from = "/p/ec-8-8"
 to = "/product/ec-8-8"
-status = 302
+status = 301
 
 [[redirects]]
 from = "/metering-data-integration-large-distribution-center"
 to = "/news/metering-data-integration-large-distribution-center"
-status = 302
+status = 301
+
+[[redirects]]
+from = "/news/press-release"
+to = "/news/press"
+status = 301
+
+[[redirects]]
+from = "/news/product-updates"
+to = "/news/product"
+status = 301
 
 [[redirects]]
 from = "/dashboard"
 to = "https://dashboard.cloudersolutions.com"
 status = 301
 force = true
-
-[[redirects]]
-from = "/news/press-release"
-to = "/news/press"
-status = 302
-
-[[redirects]]
-from = "/news/product-updates"
-to = "/news/product"
-status = 302
