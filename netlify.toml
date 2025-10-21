@@ -61,3 +61,13 @@ from = "/dashboard"
 to = "https://dashboard.cloudersolutions.com"
 status = 301
 force = true
+
+[[redirects]]
+from = "/news/press-release"
+to = "/news/press"
+status = 302
+
+[[redirects]]
+from = "/news/product-updates"
+to = "/news/product"
+status = 302
