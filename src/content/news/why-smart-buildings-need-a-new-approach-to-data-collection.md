@@ -12,13 +12,13 @@ cover: images/bms-cables.jpg
 coverAlt: building systems
 draft: false
 ---
-For years, the standard approach to smart buildings has been to gather data into automation systems, push it to the cloud via APIs, and rely on layers of sensors and IoT devices to fill in the gaps. This method became best practice not because it was perfect, but because it was the only viable way to extract even some meaningful data from buildings. For years, this has been the _only_ way to extract any usable data, and it made sense as a natural extension of traditional process automation.
+For years, the standard approach to smart buildings has been to gather data into automation systems, push it to the cloud via APIs, and rely on layers of sensors and IoT devices to fill in the gaps. This method became best practice not because it was perfect, but because it was the only viable way to extract even some meaningful data from buildings and it made sense as a natural extension of traditional process automation.
 
 While this approach might check some of the boxes for data-driven, I don’t believe it’s truly intelligent. Today, we have better ways to achieve true intelligence without the complexity, cost, and limitations of the old model.
 
 ## Three reasons why this isn't the smartest infrastructure for getting data
 
-### 1. Price
+### 1\. Price
 
 **Inside the building:** Custom integrations, like specialized cabling, automation coding, and proprietary protocols quickly inflate expenses. You’re not just paying for the hardware; you’re paying for the labor to stitch it all together. Worse, automation systems often have limits on data points, forcing you to deploy multiple automation centers just to cover all your needs. That means more physical space, more maintenance, and more capital expenditure.
 
@@ -26,13 +26,13 @@ While this approach might check some of the boxes for data-driven, I don’t bel
 
 ![Cables](images/bms-cables.jpg)
 
-### 2. Flexibility
+### 2\. Flexibility
 
 Once you've painstakingly set up numerous local and cloud API integrations, what happens when things inevitably change? What if a field device needs replacement? What about tenant improvements, new systems, or the installation of new sensors? Change is a constant in building technology. With this rigid setup, you're condemned to a continuous race of updating local connections, local automation coding, and then updating the cloud integrations.
 
 Many of us (especially those with a bit more years under their belt) remember this integration nightmare from the nineties. It's expensive, time-consuming, and because buildings involve physical devices, you're almost always in a situation where something will be overlooked or left undone due to this inflexible approach to integration and data collection.
 
-### 3. Data quality
+### 3\. Data quality
 
 Even the most meticulously planned automation systems leave critical gaps in your data and those gaps only widen over time since there is no way to store historical data that has not been programmed there. At the start of any project, it’s impossible to anticipate every future need. Will you need granular energy consumption data by zone next year? Real-time occupancy patterns for space optimization? Predictive maintenance insights for HVAC? Because custom integrations and development work are so costly and time-consuming, buildings often end up with static data sets that reflect yesterday’s priorities, not tomorrow’s opportunities. By the time you realize what’s missing, the system is already locked in, and updating it means more expense, more downtime, and more compromise.
 
