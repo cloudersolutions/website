@@ -180,7 +180,7 @@ content:
   - name: site-settings
     label: Site settings
     type: file
-    path: src/data/site.yml
+    path: src/data/config.yml
     format: yaml
     fields:
       - name: title
