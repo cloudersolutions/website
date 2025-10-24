@@ -16,6 +16,9 @@ contact:
 privacy:
   title: Privacy policy
   href: /privacy-policy
+infosec:
+  title: Information security practices
+  href: /information-security-practices
 dashboard:
   title: Log in
   href: https://dashboard.cloudersolutions.com/

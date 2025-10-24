@@ -18,7 +18,7 @@ const { headerClass, itemClass } = Astro.props;
 const { pathname } = Astro.url;
 
 const navigationLinks = Object.entries(navigation)
-  .filter(([key, _]) => !['home', 'privacy'].includes(key))
+  .filter(([key, _]) => !['home', 'privacy', 'infosec'].includes(key))
   .map(([_, item]) => item);
 
 const isActive = (href: string) => {

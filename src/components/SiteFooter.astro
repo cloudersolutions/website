@@ -9,12 +9,14 @@ const isExternal = (href: string) => {
   return href.startsWith('http');
 };
 
+const resourcesPages = ['dashboard', 'privacy', 'infosec'];
+
 const navigationLinks = Object.entries(navigation)
-  .filter(([key, _]) => !['dashboard', 'privacy'].includes(key))
+  .filter(([key, _]) => !resourcesPages.includes(key))
   .map(([_, item]) => item);
 
 const resourcesLinks = Object.entries(navigation)
-  .filter(([key, _]) => ['dashboard', 'privacy'].includes(key))
+  .filter(([key, _]) => resourcesPages.includes(key))
   .map(([_, item]) => item);
 ---
 
