@@ -2,7 +2,6 @@
 layout: '@layouts/ProseLayout.astro'
 title: Information security practices
 description: This document provides a general overview of Clouder’s information security practices and measures implemented to ensure the security of the service.
-date: 2025-10-24
 ---
 
 ## Dashboard and API

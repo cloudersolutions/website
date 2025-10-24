@@ -2,7 +2,6 @@
 layout: '@layouts/ProseLayout.astro'
 title: Privacy Policy
 description: This privacy policy describes how we collect and process your personal data and what rights you have regarding your data.
-date: 2025-03-28
 ---
 
 ## 1. Controller

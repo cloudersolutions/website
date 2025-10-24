@@ -2,7 +2,6 @@
 layout: '@layouts/ProseLayout.astro'
 title: Tietoturvakäytännöt
 description: Tässä kuvataan yleisellä tasolla Clouderin tietoturvakäytännöt ja toimenpiteet, jotka on toteutettu palvelun turvallisuuden varmistamiseksi.
-date: 2025-10-24
 ---
 
 ## Dashboard ja API
