@@ -42,11 +42,7 @@ export const resourcesLinks = [paths.privacy, paths.infosec, paths.dashboard];
 export const socialLinks = [
   {
     title: 'LinkedIn',
-    href: 'https://www.linkedin.com/company/clouder/about/'
-  },
-  {
-    title: 'X (Twitter)',
-    href: 'https://x.com/Clouder_tech'
+    href: 'https://www.linkedin.com/company/clouder/'
   },
   {
     title: 'Instagram',
