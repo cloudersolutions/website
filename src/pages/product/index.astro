@@ -14,7 +14,7 @@ import MainLayout from '@layouts/MainLayout.astro';
 import Divider from '@components/Divider.astro';
 import GetStarted from '@components/GetStarted.astro';
 import Ping from '@components/Ping.astro';
-import navigation from '@data/navigation.yml';
+import { paths } from '@data/paths';
 import { formatPrice } from '@utils/format';
 import HowClouderWorksIllustration from '@assets/how-clouder-works.svg';
 
@@ -98,7 +98,7 @@ const description =
           </li>
         </ul>
         <a
-          href={navigation.contact.href}
+          href={paths.contact.href}
           class="mt-auto inline-flex h-10 cursor-pointer items-center justify-center gap-1 rounded bg-neutral-800 px-4 text-center text-sm font-[550] text-nowrap text-neutral-50 transition select-none hover:bg-neutral-950 active:bg-neutral-950 dark:bg-neutral-200 dark:text-neutral-950 dark:hover:bg-white dark:active:bg-white"
         >
           Contact sales
@@ -173,7 +173,7 @@ const description =
           </li>
         </ul>
         <a
-          href={navigation.contact.href}
+          href={paths.contact.href}
           class="mt-auto inline-flex h-10 cursor-pointer items-center justify-center gap-1 rounded bg-indigo-500 px-4 text-center text-sm font-[550] text-nowrap text-white transition select-none hover:bg-indigo-600 active:bg-indigo-600 dark:hover:bg-indigo-400 dark:active:bg-indigo-400"
         >
           Contact sales
@@ -211,7 +211,7 @@ const description =
           </li>
         </ul>
         <a
-          href={navigation.contact.href}
+          href={paths.contact.href}
           class="mt-auto inline-flex h-10 cursor-pointer items-center justify-center gap-1 rounded bg-neutral-800 px-4 text-center text-sm font-[550] text-nowrap text-neutral-50 transition select-none hover:bg-neutral-950 active:bg-neutral-950 dark:bg-neutral-200 dark:text-neutral-950 dark:hover:bg-white dark:active:bg-white"
         >
           Contact sales
@@ -527,7 +527,7 @@ const description =
           needs, from advanced system integrations to personalized building performance strategies.
         </p>
         <a
-          href={navigation.contact.href}
+          href={paths.contact.href}
           class="mt-2 inline-flex h-8 cursor-pointer items-center justify-center gap-1 rounded bg-indigo-500 px-3 text-center text-xs font-[550] text-nowrap text-white transition select-none hover:bg-indigo-600 active:bg-indigo-600 dark:hover:bg-indigo-400 dark:active:bg-indigo-400"
         >
           Let’s talk
@@ -547,7 +547,7 @@ const description =
         >
           <p>
             We've gathered answers to the questions we hear most often. <a
-              href={navigation.contact.href}
+              href={paths.contact.href}
               class="underline underline-offset-2 transition hover:opacity-65">Contact&nbsp;us</a
             > if you can’t find what you’re looking for.
           </p>

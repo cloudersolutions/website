@@ -10,8 +10,8 @@ import Quote from '@components/Quote.astro';
 import EnergyEfficiencyUI from '@components/EnergyEfficiencyUI.astro';
 import SustainabilityUI from '@components/SustainabilityUI2.astro';
 import HistoryUI from '@components/HistoryUI.astro';
-import site from '@data/site.yml';
-import navigation from '@data/navigation.yml';
+import config from '@data/config.yml';
+import { paths } from '@data/paths';
 import { filterDrafts } from '@utils/content.ts';
 import heroVideoWebm from '@assets/hero.webm';
 import heroVideoAv1 from '@assets/hero.av1.mp4';
@@ -31,9 +31,9 @@ const caseExamplePosts = posts
 ---
 
 <MainLayout
-  title={site.title}
-  ogTitle={site.ogtitle}
-  description={site.description}
+  title={config.title}
+  ogTitle={config.ogtitle}
+  description={config.description}
   headerClass="bg-black dark:bg-black text-neutral-50 dark:text-neutral-50"
   headerItemClass="hover:bg-current/10 active:bg-current/10"
 >
@@ -51,7 +51,7 @@ const caseExamplePosts = posts
           efficiency, improve sustainability, and increase asset value.
         </p>
         <a
-          href={navigation.contact.href}
+          href={paths.contact.href}
           class="inline-flex h-10 cursor-pointer items-center justify-center gap-1 rounded bg-indigo-500 px-4 text-center text-sm font-[550] text-nowrap text-white shadow-xs transition select-none hover:bg-indigo-400 active:bg-indigo-400"
         >
           Get started today
@@ -112,7 +112,7 @@ const caseExamplePosts = posts
             Future-proof your asset, increase its value, and lead the market in sustainability.
           </p>
           <a
-            href={navigation.contact.href}
+            href={paths.contact.href}
             class="inline-flex h-10 cursor-pointer items-center justify-center gap-1 rounded bg-neutral-800 px-4 text-center text-sm font-[550] text-nowrap text-neutral-50 transition select-none hover:bg-neutral-950 active:bg-neutral-950 dark:bg-neutral-200 dark:text-neutral-950 dark:hover:bg-white dark:active:bg-white"
           >
             Book a free consultation
@@ -172,7 +172,7 @@ const caseExamplePosts = posts
             further boosting your investment returns.
           </p>
           <a
-            href={navigation.contact.href}
+            href={paths.contact.href}
             class="inline-flex h-10 cursor-pointer items-center justify-center gap-1 rounded bg-neutral-800 px-4 text-center text-sm font-[550] text-nowrap text-neutral-50 transition select-none hover:bg-neutral-950 active:bg-neutral-950 dark:bg-neutral-200 dark:text-neutral-950 dark:hover:bg-white dark:active:bg-white"
           >
             Get started today
@@ -210,7 +210,7 @@ const caseExamplePosts = posts
             over the building’s entire lifecycle.
           </p>
           <a
-            href={navigation.product.href}
+            href={paths.product.href}
             class="inline-flex h-10 cursor-pointer items-center justify-center gap-1 rounded bg-neutral-800 px-4 text-center text-sm font-[550] text-nowrap text-neutral-50 transition select-none hover:bg-neutral-950 active:bg-neutral-950 dark:bg-neutral-200 dark:text-neutral-950 dark:hover:bg-white dark:active:bg-white"
           >
             See how it works
@@ -250,7 +250,7 @@ const caseExamplePosts = posts
             appeal.
           </p>
           <a
-            href={`${navigation.news.href}/case-example`}
+            href={`${paths.news.href}/case-example`}
             class="inline-flex h-10 cursor-pointer items-center justify-center gap-1 rounded bg-neutral-800 px-4 text-center text-sm font-[550] text-nowrap text-neutral-50 transition select-none hover:bg-neutral-950 active:bg-neutral-950 dark:bg-neutral-200 dark:text-neutral-950 dark:hover:bg-white dark:active:bg-white"
           >
             See case examples
@@ -270,7 +270,7 @@ const caseExamplePosts = posts
             Learn how our customers are using Clouder
           </h2>
           <a
-            href={`${navigation.news.href}/case-example`}
+            href={`${paths.news.href}/case-example`}
             class="group mt-4 inline-flex items-center gap-0.5 text-neutral-500 transition hover:text-current active:text-current"
           >
             More case examples
@@ -283,10 +283,7 @@ const caseExamplePosts = posts
         <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
           {caseExamplePosts.map((post) => (
             <article class="group relative overflow-clip rounded-md bg-white transition hover:shadow-xs active:shadow-xs dark:bg-neutral-900">
-              <a
-                href={`${navigation.news.href}/${post.slug}`}
-                class="flex h-full flex-col items-start"
-              >
+              <a href={`${paths.news.href}/${post.slug}`} class="flex h-full flex-col items-start">
                 <Image
                   src={post.data.cover}
                   alt={post.data.coverAlt}

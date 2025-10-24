@@ -4,8 +4,7 @@ import ArrowUpRightIcon from 'lucide-astro/ArrowUpRight';
 import MenuIcon from 'lucide-astro/Menu';
 import XIcon from 'lucide-astro/X';
 
-import site from '@data/site.yml';
-import navigation from '@data/navigation.yml';
+import { headerLinks, socialLinks } from '@data/paths';
 import Logo from '@components/Logo.astro';
 
 interface Props {
@@ -16,10 +15,6 @@ interface Props {
 const { headerClass, itemClass } = Astro.props;
 
 const { pathname } = Astro.url;
-
-const navigationLinks = Object.entries(navigation)
-  .filter(([key, _]) => !['home', 'privacy', 'infosec'].includes(key))
-  .map(([_, item]) => item);
 
 const isActive = (href: string) => {
   if (href === '/') return pathname === href;
@@ -57,7 +52,7 @@ const defaultItemClass = `hover:bg-current/5 active:bg-current/5`;
       >
         <nav class="flex h-full flex-col">
           {
-            navigationLinks.map(({ title, href }) => (
+            headerLinks.map(({ title, href }) => (
               <a
                 href={href}
                 aria-current={isActive(href)}
@@ -76,7 +71,7 @@ const defaultItemClass = `hover:bg-current/5 active:bg-current/5`;
           }
           <p class="mt-auto mb-2 px-6 font-medium text-current">Follow us on</p>
           {
-            site.social.map(({ title, href }) => (
+            socialLinks.map(({ title, href }) => (
               <a
                 href={href}
                 class="inline-block px-6 py-2 text-current/50 transition select-none active:text-current"
@@ -91,7 +86,7 @@ const defaultItemClass = `hover:bg-current/5 active:bg-current/5`;
     <!-- Desktop menu -->
     <nav class="-mx-3.5 hidden flex-wrap gap-1 md:flex" data-testid="menu">
       {
-        navigationLinks.map(({ title, href }) => (
+        headerLinks.map(({ title, href }) => (
           <a
             href={href}
             aria-current={isActive(href)}
@@ -99,7 +94,7 @@ const defaultItemClass = `hover:bg-current/5 active:bg-current/5`;
               'inline-flex items-center gap-0.5 rounded-full px-3.5 leading-9 font-medium text-current transition select-none aria-current:text-current aria-current:hover:bg-transparent',
               defaultItemClass,
               itemClass,
-              navigationLinks.some((i) => isActive(i.href)) && 'text-current/60 hover:text-current'
+              headerLinks.some((i) => isActive(i.href)) && 'text-current/60 hover:text-current'
             )}
           >
             {title}

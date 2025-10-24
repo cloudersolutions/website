@@ -1,5 +1,5 @@
 ---
-import navigation from '@data/navigation.yml';
+import { paths } from '@data/paths';
 ---
 
 <div
@@ -44,8 +44,8 @@ import navigation from '@data/navigation.yml';
     </form>
     <p class="text-xs text-neutral-500">
       See our
-      <a href={navigation.privacy.href} class="underline" tabindex="-1">
-        {navigation.privacy.title}
+      <a href={paths.privacy.href} class="underline" tabindex="-1">
+        {paths.privacy.title}
       </a>
       for details on how we handle your data.
     </p>

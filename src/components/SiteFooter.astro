@@ -1,23 +1,13 @@
 ---
 import ArrowUpRightIcon from 'lucide-astro/ArrowUpRight';
 
-import site from '@data/site.yml';
-import navigation from '@data/navigation.yml';
+import config from '@data/config.yml';
+import { sitemapLinks, resourcesLinks, socialLinks } from '@data/paths';
 import Logo from '@components/Logo.astro';
 
 const isExternal = (href: string) => {
   return href.startsWith('http');
 };
-
-const resourcesPages = ['dashboard', 'privacy', 'infosec'];
-
-const navigationLinks = Object.entries(navigation)
-  .filter(([key, _]) => !resourcesPages.includes(key))
-  .map(([_, item]) => item);
-
-const resourcesLinks = Object.entries(navigation)
-  .filter(([key, _]) => resourcesPages.includes(key))
-  .map(([_, item]) => item);
 ---
 
 <footer
@@ -28,12 +18,12 @@ const resourcesLinks = Object.entries(navigation)
       <a href="/" class="inline-block">
         <Logo size={16} class="flex-shrink-0" />
       </a>
-      <p class="mt-4 text-sm text-neutral-500">&copy; {new Date().getFullYear()} {site.title}</p>
+      <p class="mt-4 text-sm text-neutral-500">&copy; {new Date().getFullYear()} {config.title}</p>
     </div>
     <div class="flex flex-col items-start gap-1 sm:col-span-2">
       <h4 class="mb-1 text-sm font-semibold">Sitemap</h4>
       {
-        navigationLinks.map(({ title, href }) => (
+        sitemapLinks.map(({ title, href }) => (
           <a
             href={href}
             class="inline-flex items-center gap-0.5 py-1 text-sm text-neutral-500 transition hover:text-current active:text-current"
@@ -65,7 +55,7 @@ const resourcesLinks = Object.entries(navigation)
     <div class="flex flex-col items-start gap-1 sm:col-span-2">
       <h4 class="mb-1 text-sm font-semibold">Follow</h4>
       {
-        site.social.map(({ title, href }) => (
+        socialLinks.map(({ title, href }) => (
           <a
             href={href}
             class="inline-flex items-center gap-0.5 py-1 text-sm text-neutral-500 transition hover:text-current active:text-current"

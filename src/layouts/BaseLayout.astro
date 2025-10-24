@@ -2,7 +2,7 @@
 import type { ImageMetadata } from 'astro';
 
 import PostHog from '@components/PostHog.astro';
-import site from '@data/site.yml';
+import config from '@data/config.yml';
 import fallbackImage from '@assets/shareimage.png';
 import '../styles/global.css';
 
@@ -21,10 +21,10 @@ interface Props {
 
 const { title, ogTitle, description, image, frontmatter } = Astro.props;
 
-const pageTitle = [...new Set([frontmatter?.title || title, site.title])]
+const pageTitle = [...new Set([frontmatter?.title || title, config.title])]
   .filter(Boolean)
   .join(' · ');
-const pageDescription = frontmatter?.description || description || site.description;
+const pageDescription = frontmatter?.description || description || config.description;
 const pageImage = image ? image : fallbackImage;
 ---
 

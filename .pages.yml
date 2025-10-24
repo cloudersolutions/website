@@ -201,20 +201,6 @@ content:
         pattern: { message: 'No line breaks allowed', regex: '^[^\r\n]*$' }
         options:
           rows: 2
-      - name: social
-        label: Social links
-        type: object
-        list: true
-        fields:
-          - name: title
-            label: Title
-            type: string
-            required: true
-          - name: href
-            label: URL
-            type: string
-            pattern: ^https?
-            required: true
 settings:
   hide: true
   content:

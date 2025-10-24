@@ -5,7 +5,7 @@ import ChevronLeftIcon from 'lucide-astro/ChevronLeft';
 
 import ProseLayout from '@layouts/ProseLayout.astro';
 import { categoryLabels } from '@content/config.ts';
-import navigation from '@data/navigation.yml';
+import { paths } from '@data/paths';
 import { formatDate } from '@utils/date.ts';
 import { filterDrafts } from '@utils/content.ts';
 
@@ -45,7 +45,7 @@ const { Content } = await post.render();
         <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
         <span>&middot;</span>
         <a
-          href={`${navigation.news.href}/${post.data.category}`}
+          href={`${paths.news.href}/${post.data.category}`}
           class="transition hover:text-neutral-800 active:text-neutral-800 dark:hover:text-neutral-200 dark:active:text-neutral-200"
         >
           {categoryLabels[post.data.category]}

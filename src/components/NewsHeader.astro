@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 
 import { categories, categoryLabels } from '@content/config';
-import navigation from '@data/navigation.yml';
+import { paths } from '@data/paths';
 import { filterDrafts } from '@utils/content.ts';
 
 interface Props {
@@ -26,11 +26,11 @@ const linkClass =
     News
   </h1>
   <div class="flex flex-wrap justify-center text-neutral-950 dark:text-neutral-50">
-    <a href={navigation.news.href} aria-current={current === undefined} class={linkClass}>All</a>
+    <a href={paths.news.href} aria-current={current === undefined} class={linkClass}>All</a>
     {
       nonEmptyCategories.map((category) => (
         <a
-          href={`${navigation.news.href}/${category}`}
+          href={`${paths.news.href}/${category}`}
           aria-current={current === category}
           class={linkClass}
         >

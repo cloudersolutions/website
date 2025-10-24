@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 
-import navigation from '@data/navigation.yml';
+import { paths } from '@data/paths';
 import MainLayout from '@layouts/MainLayout.astro';
 import Divider from '@components/Divider.astro';
 import tomiImage from '@assets/tomi.jpg';
@@ -132,9 +132,7 @@ const description =
           </button>
           <p class="text-xs text-neutral-500">
             See our
-            <a href={navigation.privacy.href} class="underline" tabindex="-1"
-              >{navigation.privacy.title}</a
-            >
+            <a href={paths.privacy.href} class="underline" tabindex="-1">{paths.privacy.title}</a>
             for details on how we handle your data.
           </p>
         </div>
