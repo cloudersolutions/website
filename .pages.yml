@@ -94,7 +94,7 @@ content:
       - name: description
         label: Description
         type: text
-        description: Short description used for link previews and SEO.
+        description: Shown below the title, also used for link previews and SEO.
         required: true
         pattern: { message: 'No line breaks allowed', regex: '^[^\r\n]*$' }
         options:
@@ -119,7 +119,57 @@ content:
       - name: description
         label: Description
         type: text
-        description: Short description used for link previews and SEO.
+        description: Shown below the title, also used for link previews and SEO.
+        required: true
+        pattern: { message: 'No line breaks allowed', regex: '^[^\r\n]*$' }
+        options:
+          rows: 2
+      - name: body
+        label: Body
+        type: rich-text
+  - name: information-security-practices-en
+    label: Information security practices
+    type: file
+    path: src/pages/information-security-practices.md
+    fields:
+      - name: layout
+        type: string
+        default: '@layouts/ProseLayout.astro'
+        required: true
+        hidden: true
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: description
+        label: Description
+        type: text
+        description: Shown below the title, also used for link previews and SEO.
+        required: true
+        pattern: { message: 'No line breaks allowed', regex: '^[^\r\n]*$' }
+        options:
+          rows: 2
+      - name: body
+        label: Body
+        type: rich-text
+  - name: information-security-practices-fi
+    label: Tietoturvakäytännöt
+    type: file
+    path: src/pages/tietoturvakaytannot.md
+    fields:
+      - name: layout
+        type: string
+        default: '@layouts/ProseLayout.astro'
+        required: true
+        hidden: true
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: description
+        label: Description
+        type: text
+        description: Shown below the title, also used for link previews and SEO.
         required: true
         pattern: { message: 'No line breaks allowed', regex: '^[^\r\n]*$' }
         options:

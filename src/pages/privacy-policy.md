@@ -1,7 +1,7 @@
 ---
 layout: '@layouts/ProseLayout.astro'
 title: Privacy Policy
-description: Find out how we collect and use personal information and learn about your data privacy rights.
+description: This privacy policy describes how we collect and process your personal data and what rights you have regarding your data.
 ---
 
 ## 1. Controller
