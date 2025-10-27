@@ -34,7 +34,7 @@ const colorClasses = {
 
 {
   isAnimated ? (
-    <span class="relative flex size-2.5 flex-shrink-0">
+    <span class="relative flex size-2.5 shrink-0">
       <span
         class:list={twMerge(
           'absolute inline-flex h-full w-full animate-ping rounded-full opacity-75 [animation-duration:2000ms]',
@@ -51,7 +51,7 @@ const colorClasses = {
   ) : (
     <span
       class:list={twMerge(
-        'shadow-inset inline-flex size-2.5 flex-shrink-0 rounded-full shadow-current/10 outline-4',
+        'shadow-inset inline-flex size-2.5 shrink-0 rounded-full shadow-current/10 outline-4',
         colorClasses[color].outline,
         colorClasses[color].fg
       )}

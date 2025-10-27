@@ -64,7 +64,7 @@ const defaultItemClass = `hover:bg-current/5 active:bg-current/5`;
               >
                 {title}
                 {isExternal(href) && (
-                  <ArrowUpRightIcon size={14} class="mt-px flex-shrink-0 opacity-50" />
+                  <ArrowUpRightIcon size={14} class="mt-px shrink-0 opacity-50" />
                 )}
               </a>
             ))
@@ -98,9 +98,7 @@ const defaultItemClass = `hover:bg-current/5 active:bg-current/5`;
             )}
           >
             {title}
-            {isExternal(href) && (
-              <ArrowUpRightIcon size={14} class="mt-px flex-shrink-0 opacity-50" />
-            )}
+            {isExternal(href) && <ArrowUpRightIcon size={14} class="mt-px shrink-0 opacity-50" />}
           </a>
         ))
       }
