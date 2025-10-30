@@ -4,6 +4,10 @@ title: Tietoturvakäytännöt
 description: Tässä kuvataan yleisellä tasolla Clouderin tietoturvakäytännöt ja toimenpiteet, jotka on toteutettu palvelun turvallisuuden varmistamiseksi.
 ---
 
+<span class="page-meta">[In English](/information-security-practices)</span>
+
+Tässä kuvataan yleisellä tasolla Clouderin tietoturvakäytännöt ja toimenpiteet, jotka on toteutettu palvelun turvallisuuden varmistamiseksi.
+
 ## Dashboard ja API
 
 Kaikki käyttäjät autentikoidaan omaa organisaatiokirjautumistaan vasten kertakirjautumisen (SSO) avulla.

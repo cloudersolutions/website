@@ -3,6 +3,9 @@ layout: '@layouts/ProseLayout.astro'
 title: Tietosuojakäytäntö
 description: Tässä tietosuojakäytännössä kuvataan, miten keräämme ja käsittelemme henkilötietojasi ja mitä oikeuksia sinulla on tietojesi suhteen.
 ---
+<span class="page-meta">28.3.2025 &nbsp;&middot;&nbsp; [In English](/privacy-policy)</span>
+
+Tässä tietosuojakäytännössä kuvataan, miten keräämme ja käsittelemme henkilötietojasi ja mitä oikeuksia sinulla on tietojesi suhteen.
 
 ## 1. Rekisterinpitäjä
 

@@ -118,3 +118,12 @@
     font-weight: 600;
   }
 }
+
+.page-meta {
+  font-size: 14px;
+  color: gray;
+
+  a {
+    color: inherit;
+  }
+}

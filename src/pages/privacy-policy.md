@@ -4,6 +4,10 @@ title: Privacy Policy
 description: This privacy policy describes how we collect and process your personal data and what rights you have regarding your data.
 ---
 
+<span class="page-meta">Mar 28, 2025 &nbsp;&middot;&nbsp; [Suomeksi](/tietosuojakaytanto)</span>
+
+This privacy policy describes how we collect and process your personal data and what rights you have regarding your data.
+
 ## 1. Controller
 
 Clouder Oy (“Clouder”, “we”, “us”)

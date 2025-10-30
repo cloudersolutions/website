@@ -15,14 +15,6 @@ const frontmatter = props.frontmatter || {};
   <main class="container py-16 sm:py-20 md:py-24 lg:py-28">
     <section class="prose prose-neutral dark:prose-invert mx-auto">
       {frontmatter?.title && <h1>{frontmatter.title}</h1>}
-      {
-        frontmatter?.date && (
-          <time class="text-sm text-neutral-500" datetime={frontmatter.date}>
-            {formatDate(frontmatter.date)}
-          </time>
-        )
-      }
-      {frontmatter?.description && <p>{frontmatter.description}</p>}
       <slot />
     </section>
   </main>
