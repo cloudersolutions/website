@@ -35,7 +35,7 @@ Reporting is usually the first step, but it does not in itself bring value. The 
 
 A performance enhancing building data platform should bring these capabilities:
 
-*   **Unified data layer**: Utility meters, HVAC, automation, and IoT sensors flow into a single dashboard, eliminating blind spots.
+*   **Unified data layer**: Utility meters, HVAC, automation, and sensors flow into a single dashboard, eliminating blind spots.
     
 *   **Real-time benchmarking**: Every asset’s consumption is ranked against set targets and conditions.
     
