@@ -69,6 +69,7 @@ export default {
           css: {
             '--tw-prose-body': 'var(--color-neutral-800)',
             '--tw-prose-bullets': 'var(--color-neutral-800)',
+            '--tw-prose-counters': 'var(--color-neutral-800)',
             '--tw-prose-headings': 'var(--color-neutral-950)',
             '--tw-prose-bold': 'var(--color-neutral-900)',
             '--tw-prose-quotes': 'var(--color-neutral-900)',
@@ -77,6 +78,7 @@ export default {
             '--tw-prose-links-hover': 'var(--color-indigo-700)',
             '--tw-prose-invert-body': 'var(--color-neutral-200)',
             '--tw-prose-invert-bullets': 'var(--color-neutral-200)',
+            '--tw-prose-invert-counters': 'var(--color-neutral-200)',
             '--tw-prose-invert-headings': 'var(--color-neutral-50)',
             '--tw-prose-invert-bold': 'var(--color-neutral-100)',
             '--tw-prose-invert-quotes': 'var(--color-neutral-100)',
