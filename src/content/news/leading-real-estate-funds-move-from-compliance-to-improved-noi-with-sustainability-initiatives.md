@@ -11,7 +11,7 @@ category: insights
 author: Emma Grönlund
 cover: images/esg-cover.png
 coverAlt: Bar chart illustration
-draft: true
+draft: false
 ---
 Imagine it’s year-end and you’re finalising yet another sustainability report. Pages of ESG data, meticulous compliance check-lists, a respectable GRESB score, yet your net operating income (NOI) hasn’t budged.
 
