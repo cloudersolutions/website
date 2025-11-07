@@ -27,7 +27,7 @@ However, a revolution is underway. Forward-thinking asset managers are shifting 
 
 ![](images/esg-table.png)
 
-We’ve gathered steps on how to evolve from conventional buildings to compliance-oriented operations, then to energy-efficient, smart systems and ultimately begin the journey toward autonomy, delivering a transformative impact on NOI and asset value.
+We’ve gathered steps on how to evolve from conventional buildings to compliance-oriented operations, then to energy efficient, smart systems and ultimately begin the journey toward autonomy, delivering a clear impact on NOI and asset value.
 
 ## Step 1: Measure and report accurately to see the inefficiencies
 
