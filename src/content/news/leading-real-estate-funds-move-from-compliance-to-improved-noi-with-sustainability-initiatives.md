@@ -25,6 +25,8 @@ Early ESG work focused on avoiding penalties and meeting disclosure demands. Fir
 
 However, a revolution is underway. Forward-thinking asset managers are shifting their focus from mere ESG reporting to tangible energy performance, and they are experiencing significant rewards. These benefits include higher NOI, increased asset value, and enhanced portfolio resilience.
 
+![](images/esg-table.png)
+
 We’ve gathered steps on how to evolve from conventional buildings to compliance-oriented operations, then to energy-efficient, smart systems and ultimately begin the journey toward autonomy, delivering a transformative impact on NOI and asset value.
 
 ## Step 1: Measure and report accurately to see the inefficiencies
