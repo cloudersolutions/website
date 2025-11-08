@@ -89,7 +89,7 @@ Regulators, investors, and tenants increasingly demand sustainability, but they 
 
 *   **Increased Net Operating Income (NOI)**: This is driven by reduced energy consumption, lower maintenance costs, and decreased vacancy rates.
     
-*   **Future-proofed assets**: By mitigating risks and ensuring data accuracy, assets are prepared for evolving regulations, tenant demands, and market conditions over the next 5-10 years.
+*   **Future-proofed assets**: By building a robust data infrastructure, assets are prepared to adapt to evolving regulations, tenant demands, and emerging technologies over the next 5–10 years.
     
 *   **Reduced transition risk & higher asset values**: Owners can avoid "brown discounts" and enhance asset values as regulations become stricter and the energy crisis intensifies.
     
