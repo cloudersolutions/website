@@ -25,7 +25,7 @@ Early ESG work focused on avoiding penalties and meeting disclosure demands. Fir
 
 However, a revolution is underway. Forward-thinking asset managers are shifting their focus from mere ESG reporting to tangible energy performance, and they are experiencing significant rewards. These benefits include higher NOI, increased asset value, and enhanced portfolio resilience.
 
-![](images/esg-table.png)
+![Illustration](images/esg-table.png)
 
 We’ve gathered steps on how to evolve from conventional buildings to compliance-oriented operations, then to energy efficient, smart systems and ultimately begin the journey toward autonomy, delivering a clear impact on NOI and asset value.
 
@@ -35,11 +35,11 @@ Reporting is usually the first step, but it does not in itself bring value. The 
 
 A performance enhancing building data platform should bring these capabilities:
 
-*   **Unified data layer**: Utility meters, HVAC, automation, and sensors flow into a single dashboard, eliminating blind spots.
+*   **Unified data layer:** Utility meters, HVAC, automation, and sensors flow into a single dashboard, eliminating blind spots.
     
-*   **Real-time benchmarking**: Every asset’s consumption is ranked against set targets and conditions.
+*   **Real-time benchmarking:** Every asset’s consumption is ranked against set targets and conditions.
     
-*   **Actionable insights what causes inefficiencies**: Insights reveal anomalies instantly: a chiller stuck on manual override, lights burning overnight, simultaneous heating and cooling, automation devices not working as the graphic shows, etc.
+*   **Actionable insights what causes inefficiencies:** Insights reveal anomalies instantly: a chiller stuck on manual override, lights burning overnight, simultaneous heating and cooling, automation devices not working as the graphic shows, etc.
     
 
 Value comes from knowing **exactly how much energy is spent, what causes excess consumption, faulty conditions, or inefficient operations**. Uncovering inefficiencies in every layer stacks up as major savings that compound over time.
@@ -76,22 +76,22 @@ The insights gained from optimizing individual assets, such as energy savings, r
 
 ### Close the loop on the whole portfolio: Measure → Manage → Improve at scale
 
-*   **Measure**: Use a unified, vendor-agnostic platform to continuously track portfolio-wide performance. Monitor real-time metrics like energy consumption, carbon emissions, and cost savings to identify trends and outliers.
+*   **Measure:** Use a unified, vendor-agnostic platform to continuously track portfolio-wide performance. Monitor real-time metrics like energy consumption, carbon emissions, and cost savings to identify trends and outliers.
     
-*   **Manage**: Proactively address inefficiencies across the portfolio with automated diagnostics and predictive maintenance. Fix issues before they escalate, reduce tenant disruptions, and keep energy waste in check.
+*   **Manage:** Proactively address inefficiencies across the portfolio with automated diagnostics and predictive maintenance. Fix issues before they escalate, reduce tenant disruptions, and keep energy waste in check.
     
-*   **Improve**: Deploy your proven playbook systematically. Double down on high-ROI opportunities whether it’s scaling successful energy-saving measures, targeting assets with the greatest potential for valuation uplift, or mitigating risks in underperforming properties.
+*   **Improve:** Deploy your proven playbook systematically. Double down on high-ROI opportunities whether it’s scaling successful energy-saving measures, targeting assets with the greatest potential for valuation uplift, or mitigating risks in underperforming properties.
     
 
 ## Summary: Why does all this matter?
 
 Regulators, investors, and tenants increasingly demand sustainability, but they reward performance. A portfolio-wide approach ensures that your investments in smart solutions and energy efficiency are not just tactical fixes but strategic moves that:
 
-*   **Increased Net Operating Income (NOI)**: This is driven by reduced energy consumption, lower maintenance costs, and decreased vacancy rates.
+*   **Increased Net Operating Income (NOI):** This is driven by reduced energy consumption, lower maintenance costs, and decreased vacancy rates.
     
-*   **Future-proofed assets**: By building a robust data infrastructure, assets are prepared to adapt to evolving regulations, tenant demands, and emerging technologies over the next 5–10 years.
+*   **Future-proofed assets:** By building a robust data infrastructure, assets are prepared to adapt to evolving regulations, tenant demands, and emerging technologies over the next 5–10 years.
     
-*   **Reduced transition risk & higher asset values**: Owners can avoid "brown discounts" and enhance asset values as regulations become stricter and the energy crisis intensifies.
+*   **Reduced transition risk & higher asset values:** Owners can avoid "brown discounts" and enhance asset values as regulations become stricter and the energy crisis intensifies.
     
 
 The shift from compliance to performance is complete when sustainability becomes a core driver of financial success. The question isn’t _whether_ to invest in smart solutions, it's _where_ and _how fast_ you can scale them for maximum impact.
