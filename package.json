@@ -20,29 +20,29 @@
     "@astro-community/astro-embed-youtube": "^0.5.9",
     "@astrojs/sitemap": "^3.6.0",
     "@tailwindcss/vite": "^4.1.17",
-    "astro": "^5.15.9",
+    "astro": "^5.16.5",
     "change-case": "^5.4.4",
-    "lucide-astro": "^0.554.0",
+    "lucide-astro": "^0.556.0",
     "luxon": "^3.7.2",
-    "posthog-js": "^1.295.0",
+    "posthog-js": "^1.304.0",
     "tailwind-merge": "^3.4.0",
     "tailwindcss": "^4.1.17"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
-    "@playwright/test": "^1.56.1",
+    "@playwright/test": "^1.57.0",
     "@rollup/plugin-yaml": "^4.1.2",
     "@tailwindcss/forms": "^0.5.10",
     "@tailwindcss/typography": "^0.5.19",
     "@types/luxon": "^3.7.1",
-    "@types/node": "^24.10.1",
-    "@typescript-eslint/eslint-plugin": "^8.47.0",
-    "@typescript-eslint/parser": "^8.47.0",
+    "@types/node": "^24.10.2",
+    "@typescript-eslint/eslint-plugin": "^8.49.0",
+    "@typescript-eslint/parser": "^8.49.0",
     "astro-eslint-parser": "^1.2.2",
     "eslint": "^9.39.1",
     "eslint-plugin-astro": "^1.5.0",
-    "prettier": "^3.6.2",
+    "prettier": "^3.7.4",
     "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-tailwindcss": "^0.7.1"
+    "prettier-plugin-tailwindcss": "^0.7.2"
   }
 }
