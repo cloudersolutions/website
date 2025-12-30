@@ -16,6 +16,7 @@ import { filterDrafts } from '@utils/content.ts';
 import heroVideoWebm from '@assets/hero.webm';
 import heroVideoAv1 from '@assets/hero.av1.mp4';
 import videoPoster from '@assets/video-poster.webp';
+import AreimLogo from '@assets/areim.svg';
 import ConficapLogo from '@assets/conficap.svg';
 import LifelineLogo from '@assets/lifeline.svg';
 import PatriaLogo from '@assets/patria.svg';
@@ -79,8 +80,11 @@ const caseExamplePosts = posts
   >
     <div class="container">
       <div>
-        <p class="mb-6 text-center text-lg font-semibold">Our trusted partners</p>
-        <ul class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">
+        <p class="mb-6 text-center text-lg font-semibold">Trusted by</p>
+        <ul class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6">
+          <li class="flex items-center justify-center p-4">
+            <AreimLogo class="h-6 w-auto shrink-0 sm:h-8.5" />
+          </li>
           <li class="flex items-center justify-center p-4">
             <ConficapLogo class="h-6 w-auto shrink-0 sm:h-8.5" />
           </li>
@@ -91,10 +95,10 @@ const caseExamplePosts = posts
             <PatriaLogo class="h-4 w-auto shrink-0 sm:h-6" />
           </li>
           <li class="flex items-center justify-center p-4">
-            <VarteLogo class="h-6 w-auto shrink-0 sm:h-8.5" />
+            <SrvLogo class="h-4 w-auto shrink-0 sm:h-6" />
           </li>
           <li class="flex items-center justify-center p-4">
-            <SrvLogo class="h-4 w-auto shrink-0 sm:h-6" />
+            <VarteLogo class="h-6 w-auto shrink-0 sm:h-8.5" />
           </li>
         </ul>
       </div>
