@@ -1,4 +1,4 @@
-const locale = 'en-IE';
+const locale = 'de';
 
 export function formatPrice(amount: number, monthly: string = ''): string {
   const number = new Intl.NumberFormat(locale, {
