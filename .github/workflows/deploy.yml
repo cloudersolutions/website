@@ -39,9 +39,10 @@ jobs:
 
       - name: Set up Node.js
         if: steps.new-images.outputs.images-to-optimize != ''
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
-          node-version: '20'
+          node-version-file: package.json
+          cache: npm
 
       - name: Install tinypng-cli
         if: steps.new-images.outputs.images-to-optimize != ''
@@ -77,11 +78,11 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - name: Set up Node
+        uses: actions/setup-node@v6
         with:
-          node-version-file: 'package.json'
-          cache: 'npm'
+          node-version-file: package.json
+          cache: npm
 
       - name: Install dependencies
         run: npm ci
