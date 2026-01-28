@@ -44,7 +44,7 @@ const valueChange = annualSavings / capRate;
       <span class="text-xs leading-tight text-neutral-500">
         <span>Office building</span>
         <span class="px-0.5">&middot;</span>
-        <span>{formatNumber(area)}m²</span>
+        <span>{formatNumber(area, 0)}m²</span>
       </span>
     </div>
     <div
@@ -65,7 +65,7 @@ const valueChange = annualSavings / capRate;
   >
     <TrendingUpIcon size={14} />
     <p class="text-xs whitespace-nowrap">
-      {formatNumber(percentChange, true)}% less energy usage compared to the target.
+      {formatNumber(percentChange, 1)}% less energy usage compared to the target.
     </p>
   </div>
   <div class="relative mt-6 mb-5 flex items-end gap-2">
@@ -83,7 +83,7 @@ const valueChange = annualSavings / capRate;
       months.map((m, i) => (
         <div class="group relative flex w-full min-w-8 flex-col gap-1 text-center opacity-65 transition duration-300 hover:opacity-100">
           <span class="absolute top-5 w-full text-[10px] text-indigo-100 opacity-0 transition duration-300 group-hover:translate-y-px group-hover:opacity-100 dark:text-indigo-200">
-            {formatNumber(dist[i] * actualUsage)}
+            {formatNumber(dist[i] * actualUsage, 2)}
           </span>
           <div
             class="mt-4 h-2 rounded-t-xs bg-indigo-500 bg-linear-to-b from-white/10 to-transparent dark:from-neutral-900/10"
@@ -105,10 +105,10 @@ const valueChange = annualSavings / capRate;
     >
       <span class="mr-auto text-sm">Usage</span>
       <span class="w-24 text-[13px] text-neutral-500">
-        {formatNumber(targetUsage, true)} kWh/m²/y
+        {formatNumber(targetUsage, 0)} kWh/m²/y
       </span>
       <span class="w-24 text-[13px]">
-        {formatNumber(actualUsage, true)} kWh/m²/y
+        {formatNumber(actualUsage, 0)} kWh/m²/y
       </span>
     </div>
     <div

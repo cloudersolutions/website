@@ -10,10 +10,10 @@ export function formatPrice(amount: number, monthly: string = ''): string {
   return [number, monthly].filter(Boolean).join('\u00a0/\u00a0');
 }
 
-export function formatNumber(value: number, round?: boolean): string {
+export function formatNumber(value: number, precision?: number): string {
   return new Intl.NumberFormat(locale, {
     style: 'decimal',
-    minimumFractionDigits: 0,
-    maximumFractionDigits: round ? 0 : 2
+    minimumFractionDigits: precision ?? 0,
+    maximumFractionDigits: precision ?? 2
   }).format(value);
 }
