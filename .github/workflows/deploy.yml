@@ -14,7 +14,6 @@ on:
 
 jobs:
   optimize-images:
-    if: contains(github.event.head_commit.message, '(via Pages CMS)')
     name: Optimize images
     runs-on: ubuntu-latest
     outputs:
@@ -75,7 +74,6 @@ jobs:
 
   verify:
     name: Verify and deploy
-    needs: optimize-images
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
