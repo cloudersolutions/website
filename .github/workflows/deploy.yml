@@ -7,10 +7,10 @@ permissions:
 
 name: Optimize, verify and deploy
 
-on:
-  push:
-    branches:
-      - main
+# on:
+#   push:
+#     branches:
+#       - main
 
 jobs:
   optimize-images:
