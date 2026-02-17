@@ -9,7 +9,7 @@ description: "Many real estate teams gather data quarterly, fill out templates,
 date: 2025-11-04
 category: insights
 author: Emma Grönlund
-cover: images/esg-cover-2.png
+cover: images/esg-cover.png
 coverAlt: Bar chart illustration
 draft: false
 ---
