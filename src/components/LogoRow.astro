@@ -1,0 +1,49 @@
+---
+import AreimLogo from '@assets/areim.svg';
+import ConficapLogo from '@assets/conficap.svg';
+import LifelineLogo from '@assets/lifeline.svg';
+import PatriaLogo from '@assets/patria.svg';
+import SkanskaLogo from '@assets/skanska.svg';
+import SrvLogo from '@assets/srv.svg';
+import VarteLogo from '@assets/varte.svg';
+
+const logos = [
+  { name: 'Areim', src: AreimLogo, height: 'h-8' },
+  { name: 'Conficap', src: ConficapLogo, height: 'h-8' },
+  { name: 'Lifeline', src: LifelineLogo, height: 'h-10' },
+  { name: 'Patria', src: PatriaLogo, height: 'h-5.5' },
+  { name: 'Skanska', src: SkanskaLogo, height: 'h-5' },
+  { name: 'SRV', src: SrvLogo, height: 'h-5' },
+  { name: 'Varte', src: VarteLogo, height: 'h-8' }
+];
+---
+
+<div class="group relative flex w-full flex-nowrap gap-24 overflow-hidden mask-x-from-80% py-4">
+  <ul
+    class="animate-loop-scroll flex items-center gap-24 group-hover:[animation-play-state:paused]"
+  >
+    {
+      logos.map(({ name, src: Logo, height }) => (
+        <li aria-label={name}>
+          <Logo
+            class={`w-auto shrink-0 opacity-90 transition-opacity duration-300 hover:opacity-100 ${height}`}
+          />
+        </li>
+      ))
+    }
+  </ul>
+  <ul
+    class="animate-loop-scroll flex items-center gap-24 group-hover:[animation-play-state:paused]"
+    aria-hidden="true"
+  >
+    {
+      logos.map(({ name, src: Logo, height }) => (
+        <li aria-label={name}>
+          <Logo
+            class={`w-auto shrink-0 opacity-90 transition-opacity duration-300 hover:opacity-100 ${height}`}
+          />
+        </li>
+      ))
+    }
+  </ul>
+</div>
