@@ -6,6 +6,7 @@ import ChevronRightIcon from 'lucide-astro/ChevronRight';
 
 import MainLayout from '@layouts/MainLayout.astro';
 import GetStarted from '@components/GetStarted.astro';
+import LogoRow from '@components/LogoRow.astro';
 import Quote from '@components/Quote.astro';
 import EnergyEfficiencyUI from '@components/EnergyEfficiencyUI.astro';
 import SustainabilityUI from '@components/SustainabilityUI2.astro';
@@ -16,12 +17,7 @@ import { filterDrafts } from '@utils/content.ts';
 import heroVideoWebm from '@assets/hero.webm';
 import heroVideoAv1 from '@assets/hero.av1.mp4';
 import videoPoster from '@assets/video-poster.webp';
-import AreimLogo from '@assets/areim.svg';
 import ConficapLogo from '@assets/conficap.svg';
-import LifelineLogo from '@assets/lifeline.svg';
-import PatriaLogo from '@assets/patria.svg';
-import SkanskaLogo from '@assets/skanska.svg';
-import SrvLogo from '@assets/srv.svg';
 import VarteLogo from '@assets/varte.svg';
 
 const posts = await getCollection('news', filterDrafts);
@@ -82,29 +78,7 @@ const caseExamplePosts = posts
     <div class="container">
       <div class="pb-8">
         <p class="mb-6 text-center text-lg font-semibold">Trusted by</p>
-        <ul class="flex flex-col flex-wrap items-center justify-between sm:flex-row">
-          <li class="flex items-center justify-center p-4">
-            <AreimLogo class="h-6 w-auto shrink-0 lg:h-8" />
-          </li>
-          <li class="flex items-center justify-center p-4">
-            <ConficapLogo class="h-6 w-auto shrink-0 lg:h-8" />
-          </li>
-          <li class="flex items-center justify-center p-4">
-            <PatriaLogo class="h-4 w-auto shrink-0 lg:h-5" />
-          </li>
-          <li class="flex items-center justify-center p-4">
-            <LifelineLogo class="h-8 w-auto shrink-0 lg:h-10" />
-          </li>
-          <li class="flex items-center justify-center p-4">
-            <SkanskaLogo class="h-4 w-auto shrink-0 lg:h-5" />
-          </li>
-          <li class="flex items-center justify-center p-4">
-            <SrvLogo class="h-4 w-auto shrink-0 lg:h-5" />
-          </li>
-          <li class="flex items-center justify-center p-4">
-            <VarteLogo class="h-6 w-auto shrink-0 lg:h-8" />
-          </li>
-        </ul>
+        <LogoRow />
       </div>
       <div class="my-12 grid grid-cols-1 gap-12 sm:my-16 md:my-20 lg:my-24 xl:grid-cols-3">
         <div class="max-w-prose">
