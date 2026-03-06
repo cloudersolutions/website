@@ -10,7 +10,7 @@ category: case-example
 author: Emma Grönlund
 cover: images/ilmakuva-sisapiha.jpg
 coverAlt: Gloria
-draft: true
+draft: false
 ---
 After commissioning a renovation project, you're usually flying blind for the first year. Systems don't behave the way they were designed to. Energy consumption doesn't match the models. Tenants start complaining. You send technicians out to investigate and they can't find the cause. You have more meetings. Meanwhile, you're paying for all of it.
 
