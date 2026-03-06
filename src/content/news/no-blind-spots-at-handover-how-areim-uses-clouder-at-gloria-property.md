@@ -36,6 +36,8 @@ District heating and district cooling had been monitored separately, which meant
 
 Clouder’s system is pulling sub-metering, air quality, and indoor conditions into the same view. This ensures Areim has a permanent, automated record of the building's health and performance for both its own ESG reporting and tenants.
 
+![](images/ilmakuva-julkisivu.jpg)
+
 ## Benefits
 
 **Efficient handover period.** The first months after a renovation are usually the most expensive as the projects start going over budget. Technicians, site visits, and meetings to figure out why things aren't working cost time and money. At Gloria, most of that was avoided because the problems were caught before tenants arrived.
