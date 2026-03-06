@@ -16,6 +16,10 @@ After commissioning a renovation project, you're usually flying blind for the fi
 
 Areim didn't want that at Gloria so they connected Clouder to the building's systems already before completion. By the time the first lease started, the team already had a live view of how the building was actually running.
 
+> _With Gloria, we didn't want to spend the first year figuring it out. Clouder gave us the transparency we needed to address our data debt upfront, ensuring the building was optimized before the first tenant even walked through the door._
+> 
+> _Hannu Tammia, Asset Manager, Areim AB_
+
 ## Operational wins
 
 The value of the platform became concrete through three immediate operational wins at Gloria:
@@ -39,3 +43,5 @@ Clouder’s system is pulling sub-metering, air quality, and indoor conditions i
 **Better lifecycle economics.** If you start with a 10% efficiency gap, you spend years trying to fix it through reactive patches. Getting the baseline right on day one means you're not carrying that cost forward for the next decade.
 
 **Better tenant experience.** Small technical issues, like a draft or uneven heating, usually go unnoticed by the owner until a tenant complains. At Gloria, those drifts show up in the data before anyone picks up the phone. That means fewer complaints, faster fixes, and happier tenants.
+
+![](images/gloria-torni-1.jpg)
