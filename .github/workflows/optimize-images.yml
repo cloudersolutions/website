@@ -1,0 +1,62 @@
+name: Optimize images (manual)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  optimize-images:
+    name: Optimize images
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Find images to optimize
+        id: find-images
+        run: |
+          find src/content/news/images src/assets -type f \( -iname '*.png' -o -iname '*.jpg' -o -iname '*.jpeg' \) > images.txt
+          echo "images-to-optimize=$(paste -sd, images.txt)" >> $GITHUB_OUTPUT
+
+      - name: Check TinyPNG API key
+        if: steps.find-images.outputs.images-to-optimize != ''
+        run: |
+          if [ -z "${{ secrets.TINYPNG_API_KEY }}" ]; then
+            echo "Error: TINYPNG_API_KEY is not set"
+            exit 1
+          fi
+
+      - name: Set up Node.js
+        if: steps.find-images.outputs.images-to-optimize != ''
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: package.json
+          cache: npm
+
+      - name: Install tinypng-cli
+        if: steps.find-images.outputs.images-to-optimize != ''
+        run: npm install -g tinypng-cli
+
+      - name: Optimize images
+        if: steps.find-images.outputs.images-to-optimize != ''
+        env:
+          TINYPNG_API_KEY: ${{ secrets.TINYPNG_API_KEY }}
+        run: |
+          for file in ${{ steps.find-images.outputs.images-to-optimize }}; do
+            echo "Optimizing $file..."
+            tinypng -k "$TINYPNG_API_KEY" "$file" -o "$file" || echo "Skipping $file (already optimized or not a PNG/JPEG)"
+          done
+
+      - name: Commit optimized images
+        if: steps.find-images.outputs.images-to-optimize != ''
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "Optimize images" || exit 0
+          git pull --rebase origin main
+          git push origin main
