@@ -1,12 +1,12 @@
 ---
 import { getCollection } from 'astro:content';
 
+import { categories } from 'src/content.config';
 import MainLayout from '@layouts/MainLayout.astro';
 import NewsHeader from '@components/NewsHeader.astro';
 import Newsletter from '@components/Newsletter.astro';
 import Post from '@components/Post.astro';
-import { categories, categoryLabels } from 'src/content.config';
-import { filterDrafts } from '@utils/content.ts';
+import { filterDrafts, getCategoryLabel } from '@utils/content';
 
 export function getStaticPaths() {
   return categories.map((category) => ({
@@ -23,8 +23,8 @@ const categoryPosts = posts
   .filter(({ data }) => data.category === category)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
-const title = categoryLabels[category];
-const description = `Posts filed under ${title.toLowerCase()}`;
+const title = getCategoryLabel(category);
+const description = `Posts filed under “${title}”`;
 ---
 
 <MainLayout title={title} description={description} headerClass="bg-white dark:bg-neutral-900">

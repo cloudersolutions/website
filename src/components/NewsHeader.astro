@@ -1,9 +1,9 @@
 ---
 import { getCollection } from 'astro:content';
 
-import { categories, categoryLabels } from 'src/content.config';
+import { categories } from 'src/content.config';
 import { paths } from '@data/paths';
-import { filterDrafts } from '@utils/content.ts';
+import { filterDrafts, getCategoryLabel } from '@utils/content';
 
 interface Props {
   current?: string;
@@ -34,7 +34,7 @@ const linkClass =
           aria-current={current === category}
           class={linkClass}
         >
-          {categoryLabels[category]}
+          {getCategoryLabel(category)}
         </a>
       ))
     }

@@ -1,3 +1,5 @@
+import type { Category } from 'src/content.config';
+
 export function filterDrafts(entry: { data: Record<string, unknown> }): boolean {
   const isProduction = import.meta.env.PROD && process.env.CONTEXT === 'production';
   // Only filter if 'draft' is present; otherwise, always include
@@ -5,4 +7,22 @@ export function filterDrafts(entry: { data: Record<string, unknown> }): boolean 
     return isProduction ? !entry.data.draft : true;
   }
   return true;
+}
+
+// Match with .pages.yml
+export function getCategoryLabel(category: Category) {
+  switch (category) {
+    case 'case-example':
+      return 'Case example';
+    case 'company-news':
+      return 'Company news';
+    case 'insights':
+      return 'Industry insights';
+    case 'press':
+      return 'Press release';
+    case 'product':
+      return 'Product update';
+    default:
+      return category;
+  }
 }

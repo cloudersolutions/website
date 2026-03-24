@@ -1,20 +1,13 @@
 import { defineCollection } from 'astro:content';
-import { z } from 'astro/zod';
 import { glob } from 'astro/loaders';
+import { z } from 'astro/zod';
 
 // Match with .pages.yml
 export const categories = ['case-example', 'company-news', 'insights', 'press', 'product'] as const;
 export type Category = (typeof categories)[number];
-export const categoryLabels: Record<Category, string> = {
-  'case-example': 'Case example',
-  'company-news': 'Company news',
-  insights: 'Industry insights',
-  press: 'Press release',
-  product: 'Product update'
-} as const;
 
 const news = defineCollection({
-  loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/news' }),
+  loader: glob({ base: './src/content/news', pattern: '**/*.{md,mdx}' }),
   schema: ({ image }) =>
     z.object({
       title: z.string(),

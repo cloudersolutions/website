@@ -3,9 +3,9 @@ import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import { twMerge } from 'tailwind-merge';
 
-import { categoryLabels } from 'src/content.config';
 import { paths } from '@data/paths';
-import { formatDate } from '@utils/date.ts';
+import { getCategoryLabel } from '@utils/content';
+import { formatDate } from '@utils/date';
 
 interface Props {
   post: CollectionEntry<'news'>;
@@ -35,7 +35,7 @@ const { post, isLarge } = Astro.props;
     <div
       class="flex flex-wrap gap-1.5 text-sm text-neutral-500 transition group-hover:text-current"
     >
-      <span>{post.data.author ? post.data.author : categoryLabels[post.data.category]}</span>
+      <span>{post.data.author ? post.data.author : getCategoryLabel(post.data.category)}</span>
       <span>&middot;</span>
       <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
     </div>

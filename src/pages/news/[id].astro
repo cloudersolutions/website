@@ -4,17 +4,16 @@ import ChevronRightIcon from 'lucide-astro/ChevronRight';
 import ChevronLeftIcon from 'lucide-astro/ChevronLeft';
 
 import ProseLayout from '@layouts/ProseLayout.astro';
-import { categoryLabels } from 'src/content.config';
 import { paths } from '@data/paths';
-import { formatDate } from '@utils/date.ts';
-import { filterDrafts } from '@utils/content.ts';
+import { formatDate } from '@utils/date';
+import { filterDrafts, getCategoryLabel } from '@utils/content';
 
 export async function getStaticPaths() {
   const posts = await getCollection('news', filterDrafts);
   const sortedPosts = posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
   return sortedPosts.map((post, index) => ({
-    params: { slug: post.id },
+    params: { id: post.id },
     props: {
       post,
       previousPost: sortedPosts[index - 1] || null,
@@ -54,7 +53,7 @@ const { Content } = await render(post);
           href={`${paths.news.href}/${post.data.category}`}
           class="transition hover:text-neutral-800 active:text-neutral-800 dark:hover:text-neutral-200 dark:active:text-neutral-200"
         >
-          {categoryLabels[post.data.category]}
+          {getCategoryLabel(post.data.category)}
         </a>
         <span>&middot;</span>
         <button
