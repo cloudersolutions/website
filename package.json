@@ -20,7 +20,7 @@
     "@astro-community/astro-embed-youtube": "^0.5.10",
     "@astrojs/sitemap": "^3.7.1",
     "@tailwindcss/vite": "^4.2.2",
-    "astro": "^5.18.0",
+    "astro": "^6.0.8",
     "change-case": "^5.4.4",
     "lucide-astro": "^0.556.0",
     "luxon": "^3.7.2",

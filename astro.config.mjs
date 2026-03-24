@@ -10,6 +10,7 @@ export default defineConfig({
     prefetchAll: true
   },
   site: 'https://cloudersolutions.com',
+  integrations: [sitemap()],
   vite: {
     plugins: [yaml(), tailwindcss()]
   },
@@ -17,6 +18,5 @@ export default defineConfig({
     open: true,
     port: 3000,
     host: true
-  },
-  integrations: [sitemap()]
+  }
 });

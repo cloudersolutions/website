@@ -1,10 +1,10 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, render, type CollectionEntry } from 'astro:content';
 import ChevronRightIcon from 'lucide-astro/ChevronRight';
 import ChevronLeftIcon from 'lucide-astro/ChevronLeft';
 
 import ProseLayout from '@layouts/ProseLayout.astro';
-import { categoryLabels } from '@content/config.ts';
+import { categoryLabels } from 'src/content.config';
 import { paths } from '@data/paths';
 import { formatDate } from '@utils/date.ts';
 import { filterDrafts } from '@utils/content.ts';
@@ -14,7 +14,7 @@ export async function getStaticPaths() {
   const sortedPosts = posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
   return sortedPosts.map((post, index) => ({
-    params: { slug: post.slug },
+    params: { slug: post.id },
     props: {
       post,
       previousPost: sortedPosts[index - 1] || null,
@@ -23,8 +23,14 @@ export async function getStaticPaths() {
   }));
 }
 
+interface Props {
+  post: CollectionEntry<'news'>;
+  previousPost: CollectionEntry<'news'> | null;
+  nextPost: CollectionEntry<'news'> | null;
+}
+
 const { post, previousPost, nextPost } = Astro.props;
-const { Content } = await post.render();
+const { Content } = await render(post);
 ---
 
 <ProseLayout title={post.data.title} description={post.data.description} image={post.data.cover}>
@@ -70,7 +76,7 @@ const { Content } = await post.render();
       {
         previousPost && (
           <a
-            href={`/news/${previousPost.slug}`}
+            href={`/news/${previousPost.id}`}
             class="group flex flex-col items-start gap-1 text-left"
           >
             <div class="flex items-center gap-0.5 text-neutral-500 transition group-hover:text-current group-active:text-current">
@@ -84,7 +90,7 @@ const { Content } = await post.render();
       {
         nextPost && (
           <a
-            href={`/news/${nextPost.slug}`}
+            href={`/news/${nextPost.id}`}
             class="group flex flex-col items-end gap-1 text-right md:col-start-2"
           >
             <div class="flex items-center gap-0.5 text-neutral-500 transition group-hover:text-current group-active:text-current">
