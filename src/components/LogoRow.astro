@@ -25,9 +25,7 @@ const logos = [
     {
       logos.map(({ name, src: Logo, height }) => (
         <li aria-label={name}>
-          <Logo
-            class={`w-auto shrink-0 opacity-90 transition-opacity duration-300 hover:opacity-100 ${height}`}
-          />
+          <Logo class={`w-auto shrink-0 ${height}`} />
         </li>
       ))
     }
@@ -39,9 +37,7 @@ const logos = [
     {
       logos.map(({ name, src: Logo, height }) => (
         <li aria-label={name}>
-          <Logo
-            class={`w-auto shrink-0 opacity-90 transition-opacity duration-300 hover:opacity-100 ${height}`}
-          />
+          <Logo class={`w-auto shrink-0 ${height}`} />
         </li>
       ))
     }

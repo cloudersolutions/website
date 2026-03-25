@@ -12,7 +12,7 @@ const description =
 
 <MainLayout title={title} description={description} headerClass="bg-white dark:bg-neutral-900">
   <section class="bg-linear-to-b from-white to-transparent dark:from-neutral-900">
-    <div class="container-narrow py-16 text-center sm:py-20 md:py-24 lg:py-28 xl:py-32">
+    <div class="container-narrow mb-8 py-16 text-center sm:py-20 md:py-24 lg:py-28 xl:py-32">
       <h1
         class="mb-8 text-3xl font-semibold text-neutral-950 md:text-4xl lg:text-5xl dark:text-neutral-50"
       >
@@ -28,7 +28,7 @@ const description =
     >
       Turning building data into asset intelligence
     </h2>
-    <div class="grid grid-cols-1 gap-x-20 lg:grid-cols-2">
+    <div class="grid grid-cols-1 gap-x-12 gap-y-6 lg:grid-cols-2 lg:gap-x-16 xl:gap-x-20">
       <p>
         We have been on the other side of this problem. As real estate investors, owners, and asset
         managers, we have sat through the transactions, reviewed the reports, and managed the
@@ -47,11 +47,11 @@ const description =
   </section>
   <Divider />
   <section class="container py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32">
-    <div class="grid grid-cols-1 gap-x-20 gap-y-8 lg:grid-cols-2">
+    <div class="grid grid-cols-1 gap-x-12 gap-y-8 lg:grid-cols-2 lg:gap-x-16 xl:gap-x-20">
       <div>
-        <h3 class="mb-6 text-2xl font-semibold text-neutral-950 md:text-3xl dark:text-neutral-50">
+        <h2 class="mb-6 text-2xl font-semibold text-neutral-950 md:text-3xl dark:text-neutral-50">
           Built by people who know commercial real estate and technology
-        </h3>
+        </h2>
         <p>
           Clouder is built on an uncommon combination of expertise: decades of experience in
           large-scale commercial real estate development, transactions and institutional asset
@@ -71,11 +71,17 @@ const description =
   </section>
   <Divider />
   <section class="container py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32">
-    <div class="grid grid-cols-1 gap-x-20 gap-y-8 lg:grid-cols-2">
+    <div class="mx-auto max-w-2xl text-center">
+      <h2 class="mb-6 text-2xl font-semibold text-neutral-950 md:text-3xl dark:text-neutral-50">
+        The gap is measurable.<br />So is closing it.
+      </h2>
+      <p class="mb-8">
+        Clouder works with commercial real estate funds, asset managers, and large-scale investors
+        who manage portfolios where operational inefficiency has real, measurable consequences. If
+        you suspect the gap between your portfolio's current value and its potential is larger than
+        it should be, we should talk.
+      </p>
       <div>
-        <h3 class="mb-6 text-2xl font-semibold text-neutral-950 md:text-3xl dark:text-neutral-50">
-          The gap is measurable. So is closing it.
-        </h3>
         <a
           href={paths.contact.href}
           class="inline-flex h-10 cursor-pointer items-center justify-center gap-1 rounded bg-neutral-800 px-4 text-center text-sm font-[550] text-nowrap text-neutral-50 transition select-none hover:bg-neutral-950 active:bg-neutral-950 dark:bg-neutral-200 dark:text-neutral-950 dark:hover:bg-white dark:active:bg-white"
@@ -83,12 +89,6 @@ const description =
           Get in touch
         </a>
       </div>
-      <p>
-        Clouder works with commercial real estate funds, asset managers, and large-scale investors
-        who manage portfolios where operational inefficiency has real, measurable consequences. If
-        you suspect the gap between your portfolio's current value and its potential is larger than
-        it should be, we should talk.
-      </p>
     </div>
   </section>
 </MainLayout>

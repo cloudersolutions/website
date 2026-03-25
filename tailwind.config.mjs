@@ -19,8 +19,8 @@ export default {
               lineHeight: '1.5'
             },
             'blockquote p:first-of-type': {
-              fontSize: '1.125rem',
-              fontWeight: '550',
+              fontSize: '1.25rem',
+              fontWeight: '500',
               textIndent: '-0.45em'
             },
             'blockquote p:first-of-type::before': {
@@ -36,8 +36,8 @@ export default {
               color: 'var(--tw-prose-captions)',
               fontStyle: 'normal',
               fontSize: '0.875rem',
-              fontWeight: '450',
-              marginTop: '-0.4rem',
+              fontWeight: '400',
+              marginTop: '-0.75rem',
               marginBottom: 0
             },
             'blockquote p:last-of-type:not(p:only-child)::before': {

@@ -1,6 +1,5 @@
 ---
 import BlocksIcon from 'lucide-astro/Blocks';
-import BuildingIcon from 'lucide-astro/Building';
 import CheckIcon from 'lucide-astro/Check';
 import ChevronsLeftRightEllipsisIcon from 'lucide-astro/CodeSquare';
 import DatabaseIcon from 'lucide-astro/Database';
@@ -33,17 +32,12 @@ const description =
 <MainLayout title={title} description={description} headerClass="bg-white dark:bg-neutral-900">
   <section class="bg-linear-to-b from-white to-transparent dark:from-neutral-900">
     <div class="container py-16 text-center sm:py-20 md:py-24 lg:py-28 xl:py-32">
-      <div
-        class="mx-auto mb-12 w-min rounded-full bg-linear-to-br from-indigo-400/10 to-indigo-400/20 p-6 shadow-2xs shadow-indigo-400/20 outline-16 outline-indigo-400/5 lg:-mt-6"
-      >
-        <BuildingIcon class="shrink-0 stroke-indigo-500 dark:stroke-indigo-400" size={24} />
-      </div>
       <h1
-        class="mb-6 text-3xl font-semibold text-neutral-950 md:text-4xl lg:text-5xl dark:text-neutral-50"
+        class="mb-8 text-3xl font-semibold text-neutral-950 md:text-4xl lg:text-5xl dark:text-neutral-50"
       >
         The new standard for commercial property performance
       </h1>
-      <p class="mx-auto mb-8 max-w-3xl text-lg text-neutral-700 dark:text-neutral-300">
+      <p class="mx-auto mb-8 max-w-3xl text-xl text-neutral-700 dark:text-neutral-300">
         {description}
       </p>
       <div class="flex flex-wrap justify-center gap-1 text-neutral-950 dark:text-neutral-50">
@@ -554,9 +548,12 @@ const description =
           <summary
             class="cursor-pointer list-none py-6 text-lg font-semibold text-neutral-950 transition group-open:pb-4 hover:text-current/60 active:text-current/60 dark:text-neutral-50"
           >
+            <span
+              class="inline-block w-6 font-medium before:content-['+'] group-open:before:content-['-']"
+            ></span>
             What is Clouder and how does virtual cabling work?
           </summary>
-          <p>
+          <p class="ml-6">
             Clouder is a vendor-agnostic data and integration platform for commercial real estate.
             Its patented virtual cabling technology connects building systems through one secure API
             without the need for excess rewiring or ceiling tear-downs. This unlocks significant
@@ -569,9 +566,12 @@ const description =
           <summary
             class="cursor-pointer list-none py-6 text-lg font-semibold text-neutral-950 transition group-open:pb-4 hover:text-current/60 active:text-current/60 dark:text-neutral-50"
           >
+            <span
+              class="inline-block w-6 font-medium before:content-['+'] group-open:before:content-['-']"
+            ></span>
             Where can Clouder be installed?
           </summary>
-          <p>
+          <p class="ml-6">
             Clouder can be installed in all types of properties, both existing and new construction.
             Pilot buildings typically go live in two weeks. Portfolio rollouts then follow a
             repeatable playbook. Deployments are capex-light, minimally disruptive to tenants, and
@@ -582,9 +582,12 @@ const description =
           <summary
             class="cursor-pointer list-none py-6 text-lg font-semibold text-neutral-950 transition group-open:pb-4 hover:text-current/60 active:text-current/60 dark:text-neutral-50"
           >
+            <span
+              class="inline-block w-6 font-medium before:content-['+'] group-open:before:content-['-']"
+            ></span>
             How quickly can we implement Clouder across a portfolio?
           </summary>
-          <p>
+          <p class="ml-6">
             Pilot buildings typically go live in two weeks. Portfolio rollouts then follow a
             repeatable playbook. Deployments are capex-light, minimally disruptive to tenants, and
             deliver value from day one.
@@ -594,9 +597,12 @@ const description =
           <summary
             class="cursor-pointer list-none py-6 text-lg font-semibold text-neutral-950 transition group-open:pb-4 hover:text-current/60 active:text-current/60 dark:text-neutral-50"
           >
+            <span
+              class="inline-block w-6 font-medium before:content-['+'] group-open:before:content-['-']"
+            ></span>
             Is Clouder compatible with our existing systems and vendors?
           </summary>
-          <p>
+          <p class="ml-6">
             Yes. Clouder integrates with all major building protocols, for example BACnet and
             Modbus. Owners can retain their existing systems while unifying data into a clean,
             actionable layer.
@@ -606,9 +612,12 @@ const description =
           <summary
             class="cursor-pointer list-none py-6 text-lg font-semibold text-neutral-950 transition group-open:pb-4 hover:text-current/60 active:text-current/60 dark:text-neutral-50"
           >
+            <span
+              class="inline-block w-6 font-medium before:content-['+'] group-open:before:content-['-']"
+            ></span>
             What about cybersecurity and data ownership?
           </summary>
-          <p>
+          <p class="ml-6">
             You retain full ownership and control of your data. Clouder applies end-to-end
             encryption, accurate audit trails, and secure cloud connections.
           </p>
@@ -617,22 +626,28 @@ const description =
           <summary
             class="cursor-pointer list-none py-6 text-lg font-semibold text-neutral-950 transition group-open:pb-4 hover:text-current/60 active:text-current/60 dark:text-neutral-50"
           >
+            <span
+              class="inline-block w-6 font-medium before:content-['+'] group-open:before:content-['-']"
+            ></span>
             What are the annual costs? Are there any license fees?
           </summary>
-          <p class="mb-4">
+          <p class="mb-4 ml-6">
             Our pricing structure consists of a setup fee and a monthly subscription fee. The fees
             are determined by building size, complexity, data volume, selected features, and service
             scope.
           </p>
-          <p>We don't charge any additional license fees for any of our plans.</p>
+          <p class="ml-6">We don't charge any additional license fees for any of our plans.</p>
         </details>
         <details class="group open:pb-8">
           <summary
             class="marker cursor-pointer list-none py-6 text-lg font-semibold transition group-open:pb-4 hover:opacity-65 active:opacity-65"
           >
+            <span
+              class="inline-block w-6 font-medium before:content-['+'] group-open:before:content-['-']"
+            ></span>
             Which asset classes benefit most from Clouder?
           </summary>
-          <p>
+          <p class="ml-6">
             Clouder scales across residential, office, logistics and mixed-use assets. Any building
             type with siloed systems benefits from reduced operating costs, improved sustainability
             metrics and higher valuations.
@@ -642,9 +657,12 @@ const description =
           <summary
             class="cursor-pointer list-none py-6 text-lg font-semibold text-neutral-950 transition group-open:pb-4 hover:text-current/60 active:text-current/60 dark:text-neutral-50"
           >
+            <span
+              class="inline-block w-6 font-medium before:content-['+'] group-open:before:content-['-']"
+            ></span>
             How does Clouder work with our existing ESG reporting software?
           </summary>
-          <p>
+          <p class="ml-6">
             Clouder supplies the clean, unified data that ESG software depends on. This eliminates
             manual data collection, reduces errors, and ensures that operational efficiency gains
             show up clearly in compliance and valuation metrics. You can keep using your existing
@@ -655,9 +673,12 @@ const description =
           <summary
             class="cursor-pointer list-none py-6 text-lg font-semibold text-neutral-950 transition group-open:pb-4 hover:text-current/60 active:text-current/60 dark:text-neutral-50"
           >
+            <span
+              class="inline-block w-6 font-medium before:content-['+'] group-open:before:content-['-']"
+            ></span>
             How does Clouder help with EU Taxonomy and CSRD compliance?
           </summary>
-          <p>
+          <p class="ml-6">
             Clouder integrates energy, water, indoor climate and automation data into one
             standardised layer. This makes reporting under EU Taxonomy and CSRD accurate and
             traceable.
@@ -667,9 +688,12 @@ const description =
           <summary
             class="cursor-pointer list-none py-6 text-lg font-semibold text-neutral-950 transition group-open:pb-4 hover:text-current/60 active:text-current/60 dark:text-neutral-50"
           >
+            <span
+              class="inline-block w-6 font-medium before:content-['+'] group-open:before:content-['-']"
+            ></span>
             Can Clouder improve our GRESB score?
           </summary>
-          <p>
+          <p class="ml-6">
             Yes. By increasing data coverage and reducing consumption, Clouder strengthens the
             Management and Performance components of GRESB. Better metering, benchmarking and fault
             detection all contribute to higher scores and more attractive valuations.

@@ -16,9 +16,9 @@ After commissioning a renovation project, you're usually flying blind for the fi
 
 Areim didn't want that at Gloria so they connected Clouder to the building's systems already before completion. By the time the first lease started, the team already had a live view of how the building was actually running.
 
-> _With Gloria, we didn't want to spend the first year figuring it out. Clouder gave us the transparency we needed to address our data debt upfront, ensuring the building was optimized before the first tenant even walked through the door._
+> With Gloria, we didn't want to spend the first year figuring it out. Clouder gave us the transparency we needed to address our data debt upfront, ensuring the building was optimized before the first tenant even walked through the door.
 > 
-> _Hannu Tammia, Asset Manager, Areim AB_
+> Hannu Tammia, Asset Manager, Areim AB
 
 ## Operational wins
 
