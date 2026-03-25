@@ -3,71 +3,61 @@ import { Image } from 'astro:assets';
 import MainLayout from '@layouts/MainLayout.astro';
 import Divider from '@components/Divider.astro';
 import labImage from '@assets/emma-jussi-labra.jpg';
+import { paths } from '@data/paths';
 
 const title = 'About us';
 const description =
-  'Clouder is on a mission to enable sustainable next generation real estate by changing how building tech connectivity is done.';
+  'Clouder is on a mission to unlock the hidden value in real estate portfolios. We replace silos and fragmented operations with investment-grade data and turn it into measurable asset value.';
 ---
 
 <MainLayout title={title} description={description} headerClass="bg-white dark:bg-neutral-900">
   <section class="bg-linear-to-b from-white to-transparent dark:from-neutral-900">
     <div class="container-narrow py-16 text-center sm:py-20 md:py-24 lg:py-28 xl:py-32">
       <h1
-        class="mb-6 text-3xl font-semibold text-neutral-950 md:text-4xl lg:text-5xl dark:text-neutral-50"
+        class="mb-8 text-3xl font-semibold text-neutral-950 md:text-4xl lg:text-5xl dark:text-neutral-50"
       >
-        The Virtual Cabling Company
+        Unlocking hidden value in real estate portfolios
       </h1>
       <p class="text-lg text-neutral-700 dark:text-neutral-300">{description}</p>
     </div>
   </section>
   <Divider />
   <section class="container py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32">
+    <h2
+      class="mb-6 max-w-lg text-2xl font-semibold text-neutral-950 md:text-3xl dark:text-neutral-50"
+    >
+      Turning building data into asset intelligence
+    </h2>
     <div class="grid grid-cols-1 gap-x-20 lg:grid-cols-2">
-      <h2
-        class="mb-5 text-2xl font-semibold text-neutral-950 md:text-3xl lg:max-w-lg dark:text-neutral-50"
-      >
-        We are the first in the world to enable universal, system agnostic virtual cabling for all
-        building technology systems
-      </h2>
-      <div class="space-y-4">
-        <p>
-          Clouder is pioneering universal virtual cabling technology for commercial real estate,
-          enabling system-agnostic integration across all building technology systems. This
-          innovation significantly reduces physical cables, waste, costs, and emissions during both
-          initial construction and future renovations.
-        </p>
-        <p>
-          Our solution streamlines building automation by providing comprehensive, real-time data
-          across systems, leading to reduced operating costs and a smaller carbon footprint. By
-          simplifying construction and renovation processes, we're making sustainable building
-          technology not just more efficient, but also more affordable.
-        </p>
-      </div>
+      <p>
+        We have been on the other side of this problem. As real estate investors, owners, and asset
+        managers, we have sat through the transactions, reviewed the reports, and managed the
+        portfolios. And we kept seeing the same thing: assets that should be consuming less energy
+        and performing better. Every wasted euro is permanently off the asset value. So we decided
+        to build what the industry was missing.
+      </p>
+      <p>
+        We built a direct connection to building systems (not through cloud APIs, but at the source)
+        that turns real building data into real operational value. Clouder doesn't just read data.
+        It acts on it, in real time, and learns from the result. Every building gets smarter,
+        consumes less energy, and produces fewer emissions. Every new asset benefits from what we
+        have already learned across the portfolio. The system compounds.
+      </p>
     </div>
   </section>
   <Divider />
   <section class="container py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32">
     <div class="grid grid-cols-1 gap-x-20 gap-y-8 lg:grid-cols-2">
-      <div class="space-y-4">
-        <h3 class="mb-5 text-2xl font-semibold text-neutral-950 md:text-3xl dark:text-neutral-50">
-          Built by seasoned professionals
+      <div>
+        <h3 class="mb-6 text-2xl font-semibold text-neutral-950 md:text-3xl dark:text-neutral-50">
+          Built by people who know commercial real estate and technology
         </h3>
         <p>
-          Clouder brings together a team of experts with decades of experience from a range of
-          industries, including building service technology, software development, information and
-          cyber security, wireless networks, real estate asset management, investments and
-          transactions as well as large-scale development projects.
-        </p>
-        <p>
-          With this cross-disciplinary background, we understand first-hand the issues that arise in
-          constructing, adapting and maintaining commercial buildings. By adopting today’s
-          technologies, Clouder’s virtual cabling solution is able to reduce both the long
-          construction times as well as the high costs that the commercial real estate industry face
-          throughout a building’s lifecycle.
-        </p>
-        <p>
-          Clouder’s innovative solution is developed to the highest standards and approved by
-          industry experts.
+          Clouder is built on an uncommon combination of expertise: decades of experience in
+          large-scale commercial real estate development, transactions and institutional asset
+          management, paired with deep knowledge in data architecture, real-time systems engineering
+          and enterprise-scale technology infrastructure. That breadth of competence across both
+          disciplines is what makes it possible to build something the industry has not seen before.
         </p>
       </div>
       <Image
@@ -77,6 +67,28 @@ const description =
         width={720}
         layout="constrained"
       />
+    </div>
+  </section>
+  <Divider />
+  <section class="container py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32">
+    <div class="grid grid-cols-1 gap-x-20 gap-y-8 lg:grid-cols-2">
+      <div>
+        <h3 class="mb-6 text-2xl font-semibold text-neutral-950 md:text-3xl dark:text-neutral-50">
+          The gap is measurable. So is closing it.
+        </h3>
+        <a
+          href={paths.contact.href}
+          class="inline-flex h-10 cursor-pointer items-center justify-center gap-1 rounded bg-neutral-800 px-4 text-center text-sm font-[550] text-nowrap text-neutral-50 transition select-none hover:bg-neutral-950 active:bg-neutral-950 dark:bg-neutral-200 dark:text-neutral-950 dark:hover:bg-white dark:active:bg-white"
+        >
+          Get in touch
+        </a>
+      </div>
+      <p>
+        Clouder works with commercial real estate funds, asset managers, and large-scale investors
+        who manage portfolios where operational inefficiency has real, measurable consequences. If
+        you suspect the gap between your portfolio's current value and its potential is larger than
+        it should be, we should talk.
+      </p>
     </div>
   </section>
 </MainLayout>
