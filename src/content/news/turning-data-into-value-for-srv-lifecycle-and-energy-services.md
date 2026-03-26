@@ -4,8 +4,8 @@ description: We are proud to announce that SRV Energy and Lifecycle Services has
 date: 2025-08-31
 category: case-example
 company: SRV
-calloutValue: 40k+
-calloutLabel: Data points
+resultValue: 40k+
+resultLabel: Data points
 author: Emma Grönlund
 cover: images/jokirinne-exterior.jpg
 coverAlt: Exterior shot of Jokirinne school

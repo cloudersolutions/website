@@ -85,16 +85,16 @@ content:
             - 'SRV'
             - 'Varte'
         description: Shown on Case example posts. No logo will be shown if this field is left empty or if the vector file is not found in `/src/assets`.
-      - name: calloutValue
-        label: Callout value
+      - name: resultValue
+        label: Result value
         type: string
         required: false
-        description: Primary callout on Case example posts, e.g. '50k+'.
-      - name: calloutLabel
-        label: Callout label
+        description: The result value on Case example posts, e.g. '50k+'.
+      - name: resultLabel
+        label: Result label
         type: string
         required: false
-        description: Secondary text on Case example posts, e.g. 'Data points'.
+        description: The result label on Case example posts, e.g. 'Data points'.
       - name: draft
         label: Draft
         type: boolean

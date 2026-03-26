@@ -8,8 +8,8 @@ description: After commissioning a renovation project, you're usually flying
 date: 2026-03-06
 category: case-example
 company: Areim
-calloutValue: Zero reactive surprises
-calloutLabel: First year
+resultValue: Zero reactive surprises
+resultLabel: First year
 author: Emma Grönlund
 cover: images/ilmakuva-sisapiha.jpg
 coverAlt: Gloria

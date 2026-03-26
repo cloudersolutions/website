@@ -8,8 +8,8 @@ description: For the owner saving energy is an important mission considering
 date: 2025-03-26
 category: case-example
 company: Conficap
-calloutValue: 50%+
-calloutLabel: Energy reduction
+resultValue: 50%+
+resultLabel: Energy reduction
 author: Emma Grönlund
 cover: images/kalevankatu-9-exterior.jpg
 coverAlt: Exterior shot of an art nouveau building

@@ -14,9 +14,7 @@ test('render home page with key sections', async ({ page }) => {
   ).toBeVisible();
   await expect(page.getByRole('heading').getByText('Increased asset value')).toBeVisible();
   await expect(page.getByRole('heading').getByText('Get up and running in 14 days')).toBeVisible();
-  await expect(
-    page.getByRole('heading').getByText('Learn how our customers are using Clouder')
-  ).toBeVisible();
+  await expect(page.getByRole('heading').getByText('Results from our customers')).toBeVisible();
 });
 
 test('product page navigation', async ({ page }) => {

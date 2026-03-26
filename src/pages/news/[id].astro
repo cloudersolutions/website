@@ -67,20 +67,20 @@ const { Content } = await render(post);
       </div>
     </header>
     {
-      post.data.calloutValue && (
+      post.data.resultValue && (
         <div class="not-prose aspect-wide mx-auto my-16 flex items-center rounded-md border border-neutral-200 bg-white px-4 md:aspect-3/1 dark:border-neutral-800 dark:bg-neutral-900">
           <div class="flex w-1/2 justify-center p-4">
             <div>
               <p
                 class:list={twMerge(
-                  post.data.calloutValue.length < 6 ? 'text-4xl' : 'text-2xl',
+                  post.data.resultValue.length < 6 ? 'text-4xl' : 'text-2xl',
                   'max-w-48 leading-none font-semibold text-neutral-950 dark:text-neutral-50'
                 )}
               >
-                {post.data.calloutValue}
+                {post.data.resultValue}
               </p>
-              {post.data.calloutLabel && (
-                <p class="mt-2 text-sm leading-none text-neutral-500">{post.data.calloutLabel}</p>
+              {post.data.resultLabel && (
+                <p class="mt-2 text-sm leading-none text-neutral-500">{post.data.resultLabel}</p>
               )}
             </div>
           </div>
