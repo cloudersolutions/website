@@ -1,0 +1,42 @@
+---
+import AreimLogo from '@assets/areim.svg';
+import ConficapLogo from '@assets/conficap.svg';
+import LifelineLogo from '@assets/lifeline.svg';
+import PatriaLogo from '@assets/patria.svg';
+import SkanskaLogo from '@assets/skanska.svg';
+import SrvLogo from '@assets/srv.svg';
+import VarteLogo from '@assets/varte.svg';
+import EmptySvg from '@assets/empty.svg';
+
+interface Props {
+  company: string;
+  class?: string;
+}
+
+const { company, class: className } = Astro.props;
+
+// Keep in sync with .pages.yml
+const Logo = (() => {
+  switch (company.toLowerCase()) {
+    case 'areim':
+      return AreimLogo;
+    case 'conficap':
+      return ConficapLogo;
+    case 'lifeline':
+      return LifelineLogo;
+    case 'patria':
+      return PatriaLogo;
+    case 'skanska':
+      return SkanskaLogo;
+    case 'srv':
+      return SrvLogo;
+    case 'varte':
+      return VarteLogo;
+    default:
+      console.warn(`⚠️ Unknown company "${company}"`);
+      return EmptySvg;
+  }
+})();
+---
+
+<Logo class={className} />

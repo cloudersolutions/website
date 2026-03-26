@@ -7,6 +7,9 @@ description: After commissioning a renovation project, you're usually flying
   actually running.
 date: 2026-03-06
 category: case-example
+company: Areim
+calloutValue: Zero reactive surprises
+calloutLabel: First year
 author: Emma Grönlund
 cover: images/ilmakuva-sisapiha.jpg
 coverAlt: Gloria

@@ -1,14 +1,14 @@
 ---
-import type { AstroComponentFactory } from 'astro/runtime/server/index.js';
+import CompanyLogo from '@components/CompanyLogo.astro';
 
 interface Props {
   quote: string;
   citeName: string;
   citeTitle: string;
-  citeLogo: AstroComponentFactory & ImageMetadata;
+  citeCompany: string;
 }
 
-const { quote, citeName, citeTitle, citeLogo: Logo } = Astro.props;
+const { quote, citeName, citeTitle, citeCompany } = Astro.props;
 ---
 
 <blockquote class="flex flex-col items-start justify-between rounded-md">
@@ -18,7 +18,7 @@ const { quote, citeName, citeTitle, citeLogo: Logo } = Astro.props;
     &ldquo;{quote}&rdquo;
   </p>
   <div class="flex items-center gap-4 pt-4">
-    <Logo class="h-6 w-auto" />
+    <CompanyLogo company={citeCompany} class="h-6 w-auto shrink-0" />
     <div class="h-full w-px bg-current/10"></div>
     <div>
       <p class="text-sm font-medium">{citeName}</p>

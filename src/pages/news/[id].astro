@@ -4,9 +4,11 @@ import ChevronRightIcon from 'lucide-astro/ChevronRight';
 import ChevronLeftIcon from 'lucide-astro/ChevronLeft';
 
 import ProseLayout from '@layouts/ProseLayout.astro';
+import CompanyLogo from '@components/CompanyLogo.astro';
 import { paths } from '@data/paths';
 import { formatDate } from '@utils/date';
 import { filterDrafts, getCategoryLabel } from '@utils/content';
+import { twMerge } from 'tailwind-merge';
 
 export async function getStaticPaths() {
   const posts = await getCollection('news', filterDrafts);
@@ -64,6 +66,38 @@ const { Content } = await render(post);
         </button>
       </div>
     </header>
+    {
+      post.data.calloutValue && (
+        <div class="not-prose aspect-wide mx-auto my-16 flex items-center rounded-md border border-neutral-200 bg-white px-4 md:aspect-3/1 dark:border-neutral-800 dark:bg-neutral-900">
+          <div class="flex w-1/2 justify-center p-4">
+            <div>
+              <p
+                class:list={twMerge(
+                  post.data.calloutValue.length < 6 ? 'text-4xl' : 'text-2xl',
+                  'max-w-48 leading-none font-semibold text-neutral-950 dark:text-neutral-50'
+                )}
+              >
+                {post.data.calloutValue}
+              </p>
+              {post.data.calloutLabel && (
+                <p class="mt-2 text-sm leading-none text-neutral-500">{post.data.calloutLabel}</p>
+              )}
+            </div>
+          </div>
+          {post.data.company && (
+            <>
+              <div class="w-px shrink-0 self-stretch bg-neutral-200 dark:bg-neutral-800" />
+              <div class="flex w-1/2 justify-center p-4">
+                <CompanyLogo
+                  company={post.data.company}
+                  class="h-7 w-auto shrink-0 text-neutral-950 dark:text-neutral-50"
+                />
+              </div>
+            </>
+          )}
+        </div>
+      )
+    }
     <section class="my-10 md:my-12 lg:my-14 xl:my-16">
       <Content />
     </section>

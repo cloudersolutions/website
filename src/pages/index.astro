@@ -1,16 +1,16 @@
 ---
 import { getCollection } from 'astro:content';
-import { Image } from 'astro:assets';
 import { YouTube } from '@astro-community/astro-embed-youtube';
 import ChevronRightIcon from 'lucide-astro/ChevronRight';
 
 import MainLayout from '@layouts/MainLayout.astro';
+import CaseExamplePost from '@components/CaseExamplePost.astro';
+import EnergyEfficiencyUI from '@components/EnergyEfficiencyUI.astro';
 import GetStarted from '@components/GetStarted.astro';
+import HistoryUI from '@components/HistoryUI.astro';
 import LogoRow from '@components/LogoRow.astro';
 import Quote from '@components/Quote.astro';
-import EnergyEfficiencyUI from '@components/EnergyEfficiencyUI.astro';
 import SustainabilityUI from '@components/SustainabilityUI2.astro';
-import HistoryUI from '@components/HistoryUI.astro';
 import config from '@data/config.yml';
 import { paths } from '@data/paths';
 import { filterDrafts } from '@utils/content';
@@ -44,8 +44,8 @@ const caseExamplePosts = posts
           Turn building data into investment-grade asset intelligence
         </h1>
         <p class="mb-10 text-xl text-neutral-300">
-          Clouder connects building systems into one AI-powered intelligence layer unlocking
-          operational excellence, improved sustainability, and lasting asset value.
+          Clouder’s asset intelligence unlocks hidden value in commercial real estate portfolios
+          with industry specific AI agents.
         </p>
         <a
           href={paths.contact.href}
@@ -114,13 +114,13 @@ const caseExamplePosts = posts
           quote="It’s our priority to stay at the forefront of sustainable construction. Partnering with Clouder in this project ensures we remain agile, innovative, and prepared to meet the growing demand from environmentally conscious owners and occupiers."
           citeName="Mikko Sirviö"
           citeTitle="Director of Commercial Construction"
-          citeLogo={VarteLogo}
+          citeCompany="Varte"
         />
         <Quote
           quote="We had two machines going on 16 hours per day and now we’re able to save so much energy being able to control them in real time by the usage of the space. I bet our energy savings are more than 50% with this."
           citeName="Jani Pulkkinen"
           citeTitle="Construction Manager"
-          citeLogo={ConficapLogo}
+          citeCompany="Conficap"
         />
       </div>
     </div>
@@ -246,13 +246,13 @@ const caseExamplePosts = posts
   {
     caseExamplePosts.length > 0 && (
       <section class="container pb-16 sm:pb-20 md:pb-24 lg:pb-32">
-        <div class="mb-8 text-center md:mb-12">
+        <div class="mb-8 flex items-center justify-between gap-4 text-center md:mb-12">
           <h2 class="text-2xl font-semibold text-neutral-950 md:text-3xl dark:text-neutral-50">
-            Learn how our customers are using Clouder
+            Results from our customers
           </h2>
           <a
             href={`${paths.news.href}/case-example`}
-            class="group mt-4 inline-flex items-center gap-0.5 text-neutral-500 transition hover:text-current active:text-current"
+            class="group inline-flex items-center gap-0.5 text-neutral-500 transition hover:text-current active:text-current"
           >
             More case examples
             <ChevronRightIcon
@@ -263,28 +263,7 @@ const caseExamplePosts = posts
         </div>
         <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
           {caseExamplePosts.map((post) => (
-            <article class="group relative overflow-clip rounded-md bg-white transition hover:shadow-xs active:shadow-xs dark:bg-neutral-900">
-              <a href={`${paths.news.href}/${post.id}`} class="flex h-full flex-col items-start">
-                <Image
-                  src={post.data.cover}
-                  alt={post.data.coverAlt}
-                  width={640}
-                  layout="constrained"
-                  class="aspect-video bg-neutral-500/10 object-cover text-transparent transition group-hover:brightness-90 group-hover:saturate-90 group-active:brightness-90 group-active:saturate-90 dark:group-hover:brightness-110 dark:group-active:brightness-110"
-                />
-                <h3 class="mx-6 my-5 text-xl font-semibold text-neutral-950 dark:text-neutral-50">
-                  {post.data.title}
-                </h3>
-                <p class="m-6 mt-auto inline-flex items-center gap-0.5 text-sm text-neutral-500 transition group-hover:text-current">
-                  Read the case example
-                  <ChevronRightIcon
-                    class="mt-px transition group-hover:translate-x-0.5"
-                    size={14}
-                  />
-                </p>
-              </a>
-              <div class="pointer-events-none absolute inset-0 rounded-md border border-current/12 transition group-hover:border-current/16 group-active:border-current/16" />
-            </article>
+            <CaseExamplePost post={post} />
           ))}
         </div>
       </section>

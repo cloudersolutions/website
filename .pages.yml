@@ -69,6 +69,32 @@ content:
         type: string
         description: Describe the cover image briefly but meaningfully. Used for accessibility and SEO.
         required: true
+      - name: company
+        label: Company
+        type: select
+        required: false
+        options:
+          creatable: true
+          multiple: false
+          values:
+            - 'Areim'
+            - 'Conficap'
+            - 'Lifeline'
+            - 'Patria'
+            - 'Skanska'
+            - 'SRV'
+            - 'Varte'
+        description: Shown on Case example posts. No logo will be shown if this field is left empty or if the vector file is not found in `/src/assets`.
+      - name: calloutValue
+        label: Callout value
+        type: string
+        required: false
+        description: Primary callout on Case example posts, e.g. '50k+'.
+      - name: calloutLabel
+        label: Callout label
+        type: string
+        required: false
+        description: Secondary text on Case example posts, e.g. 'Data points'.
       - name: draft
         label: Draft
         type: boolean
