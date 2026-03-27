@@ -74,7 +74,7 @@ const { Content } = await render(post);
             <div>
               <p
                 class:list={twMerge(
-                  post.data.callout.value.length < 6 ? 'text-4xl' : 'text-2xl',
+                  post.data.callout.value.length < 6 ? 'text-4xl md:text-5xl' : 'text-2xl',
                   'max-w-48 leading-none font-semibold text-neutral-950 dark:text-neutral-50'
                 )}
               >
@@ -87,7 +87,7 @@ const { Content } = await render(post);
           <div class="flex w-1/2 justify-center p-16">
             <CompanyLogo
               company={post.data.callout.company}
-              class="h-7 w-auto shrink-0 text-neutral-950 dark:text-neutral-50"
+              class="h-8 w-auto shrink-0 text-neutral-950 dark:text-neutral-50"
             />
           </div>
         </div>
