@@ -70,6 +70,8 @@ content:
         description: Describe the cover image briefly but meaningfully. Used for accessibility and SEO.
         required: true
       - name: callout
+        lable: Case example callout
+        description: Optional case example callout shown below the article header and on the home page.
         type: object
         required: false
         fields:
