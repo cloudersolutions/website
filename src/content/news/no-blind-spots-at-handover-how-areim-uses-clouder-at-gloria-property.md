@@ -39,7 +39,7 @@ District heating and district cooling had been monitored separately, which meant
 
 Clouder’s system is pulling sub-metering, air quality, and indoor conditions into the same view. This ensures Areim has a permanent, automated record of the building's health and performance for both its own ESG reporting and tenants.
 
-![](images/ilmakuva-julkisivu.jpg)
+![Building exterior](images/ilmakuva-julkisivu.jpg)
 
 ## Benefits
 
@@ -49,6 +49,6 @@ Clouder’s system is pulling sub-metering, air quality, and indoor conditions i
 
 **Better tenant experience.** Small technical issues, like a draft or uneven heating, usually go unnoticed by the owner until a tenant complains. At Gloria, those drifts show up in the data before anyone picks up the phone. That means fewer complaints, faster fixes, and happier tenants.
 
-![](images/gloria-torni-1.jpg)
+![Office interior](images/gloria-torni-1.jpg)
 
 &nbsp;
