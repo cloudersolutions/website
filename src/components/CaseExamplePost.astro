@@ -26,27 +26,23 @@ const { post } = Astro.props;
     />
     <div class="flex grow flex-col gap-4 p-6">
       {
-        post.data.resultValue && (
+        post.data.callout && (
           <div class="flex justify-between gap-6">
             <div>
               <p
                 class:list={twMerge(
-                  post.data.resultValue.length < 6 ? 'text-4xl' : 'text-2xl',
+                  post.data.callout.value.length < 6 ? 'text-4xl' : 'text-xl',
                   'leading-none font-semibold text-neutral-950 lg:max-w-48 dark:text-neutral-50'
                 )}
               >
-                {post.data.resultValue}
+                {post.data.callout.value}
               </p>
-              {post.data.resultLabel && (
-                <p class="mt-2 text-sm leading-none text-neutral-500">{post.data.resultLabel}</p>
-              )}
+              <p class="mt-2 text-sm leading-none text-neutral-500">{post.data.callout.label}</p>
             </div>
-            {post.data.company && (
-              <CompanyLogo
-                company={post.data.company}
-                class="mt-1 h-5 w-auto shrink-0 text-current"
-              />
-            )}
+            <CompanyLogo
+              company={post.data.callout.company}
+              class="mt-1 h-5 w-auto shrink-0 text-current"
+            />
           </div>
         )
       }

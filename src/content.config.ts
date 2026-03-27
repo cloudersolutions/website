@@ -14,12 +14,16 @@ const news = defineCollection({
       description: z.string(),
       date: z.coerce.date(),
       category: z.enum(categories),
-      company: z.string().optional(),
-      resultValue: z.string().optional(),
-      resultLabel: z.string().optional(),
       author: z.string().optional(),
       cover: image(),
       coverAlt: z.string(),
+      callout: z
+        .object({
+          company: z.string(),
+          value: z.string(),
+          label: z.string()
+        })
+        .optional(),
       draft: z.boolean().optional()
     })
 });

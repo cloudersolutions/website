@@ -69,32 +69,36 @@ content:
         type: string
         description: Describe the cover image briefly but meaningfully. Used for accessibility and SEO.
         required: true
-      - name: company
-        label: Company
-        type: select
+      - name: callout
+        type: object
         required: false
-        options:
-          creatable: true
-          multiple: false
-          values:
-            - 'Areim'
-            - 'Conficap'
-            - 'Lifeline'
-            - 'Patria'
-            - 'Skanska'
-            - 'SRV'
-            - 'Varte'
-        description: Shown on Case example posts. No logo will be shown if this field is left empty or if the vector file is not found in `/src/assets`.
-      - name: resultValue
-        label: Result value
-        type: string
-        required: false
-        description: The result value on Case example posts, e.g. '50k+'.
-      - name: resultLabel
-        label: Result label
-        type: string
-        required: false
-        description: The result label on Case example posts, e.g. 'Data points'.
+        fields:
+          - name: company
+            label: Company
+            type: select
+            required: true
+            options:
+              creatable: true
+              multiple: false
+              values:
+                - 'Areim'
+                - 'Conficap'
+                - 'Lifeline'
+                - 'Patria'
+                - 'Skanska'
+                - 'SRV'
+                - 'Varte'
+            description: No logo will be shown if the vector file is not found in `/src/assets`.
+          - name: value
+            label: Result value
+            type: string
+            required: false
+            description: The result value, e.g. '50k+'.
+          - name: label
+            label: Result label
+            type: string
+            required: false
+            description: The result label, e.g. 'Data points'.
       - name: draft
         label: Draft
         type: boolean

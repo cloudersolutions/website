@@ -7,12 +7,13 @@ description: After commissioning a renovation project, you're usually flying
   actually running.
 date: 2026-03-06
 category: case-example
-company: Areim
-resultValue: Zero reactive surprises
-resultLabel: First year
 author: Emma Grönlund
 cover: images/ilmakuva-sisapiha.jpg
 coverAlt: Areal picture of Gloria property
+callout: 
+  company: Areim
+  value: Zero reactive surprises
+  label: First year
 draft: false
 ---
 After commissioning a renovation project, you're usually flying blind for the first year. Systems don't behave the way they were designed to. Energy consumption doesn't match the models. Tenants start complaining. You send technicians out to investigate and they can't find the cause. You have more meetings. Meanwhile, you're paying for all of it.
