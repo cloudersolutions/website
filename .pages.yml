@@ -69,9 +69,13 @@ content:
         type: string
         description: Describe the cover image briefly but meaningfully. Used for accessibility and SEO.
         required: true
+      - name: draft
+        label: Draft
+        type: boolean
+        description: Draft articles are not visible to the public.
+        default: true
       - name: callout
-        lable: Case example callout
-        description: Optional case example callout shown below the article header and on the home page.
+        label: Case example callout
         type: object
         required: false
         fields:
@@ -101,11 +105,6 @@ content:
             type: string
             required: false
             description: The result label, e.g. 'Data points'.
-      - name: draft
-        label: Draft
-        type: boolean
-        description: Draft articles are not visible to the public.
-        default: true
       - name: body
         label: Body
         type: rich-text
