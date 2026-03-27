@@ -9,7 +9,6 @@ import { paths } from '@data/paths';
 import { formatDate } from '@utils/date';
 import { filterDrafts, getCategoryLabel } from '@utils/content';
 import { twMerge } from 'tailwind-merge';
-import { categories } from 'src/content.config';
 
 export async function getStaticPaths() {
   const posts = await getCollection('news', filterDrafts);
