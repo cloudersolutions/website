@@ -12,7 +12,7 @@ resultValue: Zero reactive surprises
 resultLabel: First year
 author: Emma Grönlund
 cover: images/ilmakuva-sisapiha.jpg
-coverAlt: Gloria
+coverAlt: Areal picture of Gloria property
 draft: false
 ---
 After commissioning a renovation project, you're usually flying blind for the first year. Systems don't behave the way they were designed to. Energy consumption doesn't match the models. Tenants start complaining. You send technicians out to investigate and they can't find the cause. You have more meetings. Meanwhile, you're paying for all of it.
@@ -20,7 +20,7 @@ After commissioning a renovation project, you're usually flying blind for the fi
 Areim didn't want that at Gloria so they connected Clouder to the building's systems already before completion. By the time the first lease started, the team already had a live view of how the building was actually running.
 
 > With Gloria, we didn't want to spend the first year figuring it out. Clouder gave us the transparency we needed to address our data debt upfront, ensuring the building was optimized before the first tenant even walked through the door.
-> 
+>
 > Hannu Tammia, Asset Manager, Areim AB
 
 ## Operational wins
@@ -50,3 +50,5 @@ Clouder’s system is pulling sub-metering, air quality, and indoor conditions i
 **Better tenant experience.** Small technical issues, like a draft or uneven heating, usually go unnoticed by the owner until a tenant complains. At Gloria, those drifts show up in the data before anyone picks up the phone. That means fewer complaints, faster fixes, and happier tenants.
 
 ![](images/gloria-torni-1.jpg)
+
+&nbsp;
