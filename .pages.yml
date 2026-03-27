@@ -67,7 +67,7 @@ content:
       - name: coverAlt
         label: Cover image alt text
         type: string
-        description: Describe the cover image briefly but meaningfully. Used for accessibility and SEO.
+        description: A textual description of the cover image. Used for accessibility and SEO.
         required: true
       - name: draft
         label: Draft
