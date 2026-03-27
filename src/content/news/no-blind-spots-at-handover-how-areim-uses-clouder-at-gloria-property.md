@@ -50,5 +50,3 @@ Clouder’s system is pulling sub-metering, air quality, and indoor conditions i
 **Better tenant experience.** Small technical issues, like a draft or uneven heating, usually go unnoticed by the owner until a tenant complains. At Gloria, those drifts show up in the data before anyone picks up the phone. That means fewer complaints, faster fixes, and happier tenants.
 
 ![Office interior](images/gloria-torni-1.jpg)
-
-&nbsp;
