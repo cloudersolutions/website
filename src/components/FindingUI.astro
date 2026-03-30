@@ -1,0 +1,36 @@
+---
+import ChevronRightIcon from 'lucide-astro/ChevronRight';
+import TriangleAlertIcon from 'lucide-astro/TriangleAlert';
+
+interface Props {
+  title: string;
+  timeAgo: string;
+  iconClass: string;
+}
+
+const { title, iconClass, timeAgo } = Astro.props;
+---
+
+<div
+  class="w-64 shrink-0 rounded-lg bg-white p-4 text-neutral-700 shadow-[0_1px_24px] shadow-black/5 select-none dark:bg-neutral-900 dark:text-neutral-300 dark:shadow-black/20"
+>
+  <div class="flex items-start gap-2">
+    <TriangleAlertIcon size={14} class:list={['mt-px shrink-0', iconClass]} />
+    <div>
+      <p class="text-[13px] leading-4 font-semibold">{title}</p>
+      <div class="mt-1 flex gap-1">
+        <span class="text-xs text-current/60">{timeAgo}</span>
+        <span class="text-xs text-current/60">&middot;</span>
+        <span
+          class="group flex cursor-pointer items-center text-xs text-current/60 transition hover:text-current"
+        >
+          View details
+          <ChevronRightIcon
+            class="mt-px transition group-hover:translate-x-0.5 group-hover:text-current group-active:text-current"
+            size={12}
+          />
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

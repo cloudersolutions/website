@@ -1,0 +1,90 @@
+---
+import ChevronRightIcon from 'lucide-astro/ChevronRight';
+import EllipsisIcon from 'lucide-astro/EllipsisVertical';
+import { DateTime } from 'luxon';
+
+interface Props {
+  score: number;
+  title: string;
+  description: string;
+}
+
+const { score, title, description } = Astro.props;
+
+const clampScore = Math.max(0, Math.min(score, 100));
+const circumference = 339;
+const offset = circumference - (clampScore / 100) * circumference;
+
+const getColor = (score: number) => {
+  if (score >= 75) return 'text-green-600';
+  if (score >= 50) return 'text-amber-600';
+  return 'text-red-600';
+};
+
+const getLabel = (score: number) => {
+  if (score >= 75) return 'Good';
+  if (score >= 50) return 'Fair';
+  return 'Poor';
+};
+---
+
+<div
+  class="w-64 shrink-0 rounded-lg bg-white p-4 text-neutral-700 shadow-[0_1px_24px] shadow-black/5 select-none dark:bg-neutral-900 dark:text-neutral-300 dark:shadow-black/20"
+>
+  <div class="flex items-center">
+    <div>
+      <p class="text-sm font-semibold">{title}</p>
+      <p class="mt-0.5 text-xs text-current/60">
+        {DateTime.now().minus({ month: 1 }).toFormat('MMMM, yyyy')}
+      </p>
+    </div>
+    <EllipsisIcon
+      size={16}
+      class="ml-auto cursor-pointer text-current/60 transition hover:text-current"
+    />
+  </div>
+  <div class="my-5 flex items-center justify-center">
+    <div class="relative">
+      <svg class="h-24 w-24 -rotate-90 transform" viewBox="0 0 120 120">
+        <circle
+          cx="60"
+          cy="60"
+          r="54"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="6"
+          style="opacity:0.1"
+          class={getColor(clampScore)}></circle>
+        <circle
+          cx="60"
+          cy="60"
+          r="54"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="6"
+          stroke-dasharray={circumference}
+          stroke-dashoffset={offset}
+          stroke-linecap="round"
+          class={getColor(clampScore)}></circle>
+      </svg>
+      <div class="absolute inset-0 flex flex-col items-center justify-center">
+        <span class="text-2xl leading-tight font-medium tracking-tight text-current">
+          {clampScore}
+        </span>
+        <span class="text-xs font-medium text-current/60">{getLabel(clampScore)}</span>
+      </div>
+    </div>
+  </div>
+  <p class="text-xs">
+    <Fragment set:html={description} />
+  </p>
+  <p
+    class="group mt-3 flex cursor-pointer items-center text-xs text-current/60 transition hover:text-current"
+  >
+    View details
+    <ChevronRightIcon
+      class="mt-px transition group-hover:translate-x-0.5 group-hover:text-current group-active:text-current"
+      size={12}
+    />
+  </p>
+</div>

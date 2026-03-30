@@ -2,99 +2,43 @@
 import { paths } from '@data/paths';
 ---
 
-<div
-  class="overflow-hidden rounded-lg border border-neutral-200 bg-white shadow-lg shadow-black/2 dark:border-neutral-800 dark:bg-neutral-900 dark:shadow-black/50"
->
-  <div
-    class="relative flex items-center justify-around gap-4 overflow-hidden px-4 pt-8 pb-4 select-none md:pt-12 lg:pt-16"
-  >
-    <div
-      class="pointer-events-none absolute inset-0 z-2 bg-linear-to-r from-white/50 via-transparent to-white/50 dark:from-neutral-900/50 dark:to-neutral-900/50"
+<div class="bg-gray-200 p-12 lg:p-16 xl:p-20">
+  <div class="grid gap-6 lg:grid-cols-3 lg:gap-12">
+    <h2
+      class="col-span-full text-3xl font-semibold text-neutral-950 md:text-4xl dark:text-neutral-50"
     >
+      Simple engagement. Fast time to value.
+    </h2>
+    <div>
+      <p class="mb-1 font-mono text-xs text-current/60">01</p>
+      <p class="font-semibold">Assesment</p>
+      <p>We assess your assets and quantify exactly what is being left on the table.</p>
     </div>
-    <hr class="absolute z-0 w-full border-neutral-200 dark:border-neutral-800" />
-    <div
-      class="group z-1 flex h-6 shrink-0 cursor-default items-center gap-1.5 rounded-full border border-neutral-200 bg-white px-2 shadow-xs dark:border-neutral-800 dark:bg-neutral-900"
-    >
-      <span
-        class="size-2 rounded-full bg-gray-400 outline-4 outline-transparent transition duration-300 group-hover:outline-gray-400/20"
-      >
-      </span>
-      <span
-        class="text-xs font-medium text-current/75 transition duration-300 group-hover:text-current"
-      >
-        Assessment
-      </span>
-    </div>
-    <div
-      class="group z-1 flex h-6 shrink-0 cursor-default items-center gap-1.5 rounded-full border border-neutral-200 bg-white px-2 shadow-xs dark:border-neutral-800 dark:bg-neutral-900"
-    >
-      <span
-        class="size-2 rounded-full bg-purple-400 outline-4 outline-transparent transition duration-300 group-hover:outline-purple-400/20"
-      >
-      </span>
-      <span
-        class="text-xs font-medium text-current/75 transition duration-300 group-hover:text-current"
-      >
-        Pilot
-      </span>
-    </div>
-    <div
-      class="group z-1 flex h-6 shrink-0 cursor-default items-center gap-1.5 rounded-full border border-neutral-200 bg-white px-2 shadow-xs dark:border-neutral-800 dark:bg-neutral-900"
-    >
-      <span
-        class="size-2 rounded-full bg-indigo-400 outline-4 outline-transparent transition duration-300 group-hover:outline-indigo-400/20"
-      >
-      </span>
-      <span
-        class="text-xs font-medium text-current/75 transition duration-300 group-hover:text-current"
-      >
-        Implementation
-      </span>
-    </div>
-    <div
-      class="group z-1 flex h-6 shrink-0 cursor-default items-center gap-1.5 rounded-full border border-neutral-200 bg-white px-2 shadow-xs dark:border-neutral-800 dark:bg-neutral-900"
-    >
-      <span
-        class="size-2 rounded-full bg-sky-400 outline-4 outline-transparent transition duration-300 group-hover:outline-sky-400/16"
-      >
-      </span>
-      <span
-        class="text-xs font-medium text-current/75 transition duration-300 group-hover:text-current"
-      >
-        Data-driven optimization
-      </span>
-    </div>
-    <div
-      class="group z-1 flex h-6 shrink-0 cursor-default items-center gap-1.5 rounded-full border border-neutral-200 bg-white px-2 shadow-xs dark:border-neutral-800 dark:bg-neutral-900"
-    >
-      <span
-        class="size-2 rounded-full bg-green-600 outline-4 outline-transparent transition duration-300 group-hover:outline-green-600/16"
-      >
-      </span>
-      <span
-        class="text-xs font-medium text-current/75 transition duration-300 group-hover:text-current"
-      >
-        Scaling
-      </span>
-    </div>
-  </div>
-  <div class="flex flex-wrap items-end gap-6 p-8 md:p-12 lg:p-16">
-    <div class="mr-auto">
-      <h2 class="mb-4 text-2xl font-semibold text-neutral-950 md:text-3xl dark:text-neutral-50">
-        Get up and running in 14 days
-      </h2>
-      <p class="text-neutral-700 dark:text-neutral-300">
-        Clouder’s technology has been developed for fast results and quick deployment.
-        <br class="hidden lg:inline" />
-        Book a free consultation session so that you can start increasing value today.
+    <div>
+      <p class="mb-1 font-mono text-xs text-current/60">02</p>
+      <p class="font-semibold">Proof of value</p>
+      <p>
+        We connect the data, close the gaps, and deliver measurable NOI improvement on a single
+        asset
       </p>
     </div>
-    <a
-      href={paths.contact.href}
-      class="inline-flex h-10 cursor-pointer items-center justify-center gap-1.5 rounded bg-indigo-500 px-4 text-center text-sm font-medium text-nowrap text-white transition select-none hover:bg-indigo-600 active:bg-indigo-600 dark:hover:bg-indigo-400 dark:active:bg-indigo-400"
-    >
-      Book a free consultation
-    </a>
+    <div>
+      <p class="mb-1 font-mono text-xs text-current/60">03</p>
+      <p class="font-semibold">Scaling</p>
+      <p>AI agents, automatic reporting, and continuous optimisation from day one.</p>
+    </div>
+    <div class="col-span-full flex flex-wrap justify-between gap-4">
+      <p class="col-span-2">
+        <strong>Roll it out:</strong> The same loop across your assets with compounding results.
+      </p>
+      <div class="text-right">
+        <a
+          href={paths.contact.href}
+          class="inline-flex h-10 cursor-pointer items-center justify-center gap-1 rounded bg-neutral-800 px-4 text-center text-sm font-medium text-nowrap text-neutral-50 transition select-none hover:bg-neutral-950 active:bg-neutral-950 dark:bg-neutral-200 dark:text-neutral-950 dark:hover:bg-white dark:active:bg-white"
+        >
+          Book a free consultation
+        </a>
+      </div>
+    </div>
   </div>
 </div>

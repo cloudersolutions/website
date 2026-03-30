@@ -11,10 +11,10 @@ interface Props {
 const { quote, citeName, citeTitle, citeCompany } = Astro.props;
 ---
 
-<blockquote class="flex flex-col items-start justify-between rounded-md">
-  <p
-    class="max-w-prose py-4 -indent-[0.45em] text-xl leading-normal font-medium text-neutral-900 italic dark:text-neutral-100"
-  >
+<blockquote
+  class="flex flex-col items-start justify-between rounded-md text-neutral-950 dark:text-neutral-50"
+>
+  <p class="max-w-prose py-4 -indent-[0.45em] text-xl leading-normal font-medium italic">
     &ldquo;{quote}&rdquo;
   </p>
   <div class="flex items-center gap-4 pt-4">
@@ -22,7 +22,7 @@ const { quote, citeName, citeTitle, citeCompany } = Astro.props;
     <div class="h-full w-px bg-current/10"></div>
     <div>
       <p class="text-sm font-medium">{citeName}</p>
-      <p class="mt-0.5 text-sm text-neutral-500">{citeTitle}</p>
+      <p class="text-sm text-neutral-500">{citeTitle}</p>
     </div>
   </div>
 </blockquote>

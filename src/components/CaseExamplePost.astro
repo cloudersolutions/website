@@ -20,7 +20,7 @@ const { post } = Astro.props;
     <Image
       src={post.data.cover}
       alt={post.data.coverAlt}
-      width={640}
+      width={720}
       layout="constrained"
       class="aspect-video bg-neutral-500/10 object-cover text-transparent transition group-hover:brightness-90 group-hover:saturate-90 group-active:brightness-90 group-active:saturate-90 dark:group-hover:brightness-110 dark:group-active:brightness-110"
     />
@@ -31,7 +31,7 @@ const { post } = Astro.props;
             <div>
               <p
                 class:list={twMerge(
-                  post.data.callout.value.length < 6 ? 'text-4xl' : 'text-xl',
+                  post.data.callout.value.length < 6 ? 'text-4xl tracking-tight' : 'text-xl',
                   'leading-none font-semibold text-neutral-950 lg:max-w-48 dark:text-neutral-50'
                 )}
               >
@@ -41,7 +41,7 @@ const { post } = Astro.props;
             </div>
             <CompanyLogo
               company={post.data.callout.company}
-              class="mt-1 h-5 w-auto shrink-0 text-current"
+              class="mt-1 h-5 w-auto shrink-0 text-neutral-950 dark:text-neutral-50"
             />
           </div>
         )
