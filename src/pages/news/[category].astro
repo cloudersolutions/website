@@ -27,18 +27,16 @@ const title = getCategoryLabel(category);
 const description = `Posts filed under “${title}”`;
 ---
 
-<MainLayout title={title} description={description} headerClass="bg-white dark:bg-neutral-900">
-  <section class="bg-linear-to-b from-white to-transparent dark:from-neutral-900">
-    <NewsHeader current={category} />
-  </section>
-  <section class="container pb-16 sm:pb-20 md:pb-24 lg:pb-28 xl:pb-32">
-    <div
-      class="grid grid-cols-1 gap-8 gap-y-10 md:grid-cols-2 md:gap-x-10 md:gap-y-12 xl:grid-cols-6 xl:gap-x-12 xl:gap-y-16"
-    >
+<MainLayout title={title} description={description}>
+  <NewsHeader current={category} />
+  <section class="container pt-12 pb-12 sm:pb-16 md:pb-20 lg:pb-24 xl:pb-28">
+    <div class="grid grid-cols-1 gap-x-6 gap-y-12 md:grid-cols-2 xl:grid-cols-6">
       {categoryPosts.map((post, index) => <Post isLarge={index < 4} post={post} />)}
     </div>
   </section>
-  <section class="container pb-16 sm:pb-20 md:pb-24 lg:pb-28 xl:pb-32">
+  <section
+    class="border-t border-neutral-200 py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 dark:border-neutral-800"
+  >
     <Newsletter />
   </section>
 </MainLayout>

@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 
 import MainLayout from '@layouts/MainLayout.astro';
+import Divider from '@components/Divider.astro';
 import NewsHeader from '@components/NewsHeader.astro';
 import Newsletter from '@components/Newsletter.astro';
 import Post from '@components/Post.astro';
@@ -14,18 +15,17 @@ const title = 'News';
 const description = 'Company news, case examples, and more.';
 ---
 
-<MainLayout title={title} description={description} headerClass="bg-white dark:bg-neutral-900">
-  <section class="bg-linear-to-b from-white to-transparent dark:from-neutral-900">
-    <NewsHeader />
-  </section>
-  <section class="container pb-16 sm:pb-20 md:pb-24 lg:pb-28 xl:pb-32">
-    <div
-      class="grid grid-cols-1 gap-8 gap-y-10 md:grid-cols-2 md:gap-x-10 md:gap-y-12 xl:grid-cols-6 xl:gap-x-12 xl:gap-y-16"
-    >
-      {sortedPosts.map((post, index) => <Post isLarge={index < 4} post={post} />)}
+<MainLayout title={title} description={description}>
+  <NewsHeader />
+  <section>
+    <div class="pb-16 lg:pb-32">
+      <div class="container">
+        <div class="grid grid-cols-1 gap-x-8 gap-y-16 md:grid-cols-2 xl:grid-cols-6">
+          {sortedPosts.map((post, index) => <Post isLarge={index < 4} post={post} />)}
+        </div>
+      </div>
     </div>
   </section>
-  <section class="container pb-16 sm:pb-20 md:pb-24 lg:pb-28 xl:pb-32">
-    <Newsletter />
-  </section>
+  <Divider />
+  <Newsletter />
 </MainLayout>

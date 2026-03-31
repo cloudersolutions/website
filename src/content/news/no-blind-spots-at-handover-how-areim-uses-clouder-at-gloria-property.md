@@ -1,6 +1,6 @@
 ---
 title: "No blind spots at handover: How Areim uses Clouder at Gloria property"
-description: After commissioning a renovation project, you're usually flying
+description: After commissioning a renovation, you're usually flying
   blind for the first year. Areim didn't want that at Gloria so they connected
   Clouder to the building's systems already before completion. By the time the
   first lease started, the team already had a live view of how the building was

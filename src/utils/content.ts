@@ -13,15 +13,15 @@ export function filterDrafts(entry: { data: Record<string, unknown> }): boolean 
 export function getCategoryLabel(category: Category) {
   switch (category) {
     case 'case-example':
-      return 'Case example';
+      return 'Case examples';
     case 'company-news':
       return 'Company news';
     case 'insights':
       return 'Industry insights';
     case 'press':
-      return 'Press release';
+      return 'Press releases';
     case 'product':
-      return 'Product update';
+      return 'Product updates';
     default:
       return category;
   }

@@ -67,26 +67,26 @@ export default {
         },
         neutral: {
           css: {
-            '--tw-prose-body': 'var(--color-neutral-800)',
-            '--tw-prose-bullets': 'var(--color-neutral-800)',
-            '--tw-prose-counters': 'var(--color-neutral-800)',
+            '--tw-prose-body': 'var(--color-neutral-700)',
+            '--tw-prose-bullets': 'var(--color-neutral-700)',
+            '--tw-prose-counters': 'var(--color-neutral-700)',
+            '--tw-prose-bold': 'var(--color-neutral-800)',
             '--tw-prose-headings': 'var(--color-neutral-950)',
-            '--tw-prose-bold': 'var(--color-neutral-900)',
             '--tw-prose-quotes': 'var(--color-neutral-950)',
             '--tw-prose-captions': 'var(--color-neutral-500)',
             '--tw-prose-links': 'var(--color-indigo-500)',
             '--tw-prose-links-hover': 'var(--color-indigo-700)',
-            '--tw-prose-invert-body': 'var(--color-neutral-200)',
-            '--tw-prose-invert-bullets': 'var(--color-neutral-200)',
-            '--tw-prose-invert-counters': 'var(--color-neutral-200)',
-            '--tw-prose-invert-bold': 'var(--color-neutral-100)',
+            '--tw-prose-invert-body': 'var(--color-neutral-300)',
+            '--tw-prose-invert-bullets': 'var(--color-neutral-300)',
+            '--tw-prose-invert-counters': 'var(--color-neutral-300)',
+            '--tw-prose-invert-bold': 'var(--color-neutral-200)',
             '--tw-prose-invert-quotes': 'var(--color-neutral-50)',
             '--tw-prose-invert-headings': 'var(--color-neutral-50)',
             '--tw-prose-invert-captions': 'var(--color-neutral-500)',
             '--tw-prose-invert-links': 'var(--color-indigo-400)',
             '--tw-prose-invert-links-hover': 'var(--color-indigo-300)',
             'h1, h2, h3, h4, h5, h6': {
-              fontWeight: '600'
+              fontWeight: '500'
             },
             h1: {
               marginBottom: '0.666667em'

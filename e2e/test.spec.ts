@@ -6,14 +6,18 @@ test('render home page with key sections', async ({ page }) => {
   await expect(page.getByTestId('menu')).toBeVisible();
   await expect(
     page.getByRole('heading', {
-      name: 'Turn building data into investment-grade asset intelligence '
+      name: 'Turn building data into investment-grade asset intelligence'
     })
   ).toBeVisible();
   await expect(
-    page.getByRole('heading').getByText('The future of real estate is data')
+    page.getByRole('heading').getByText('Your portfolio constantly optimized')
   ).toBeVisible();
-  await expect(page.getByRole('heading').getByText('Increased asset value')).toBeVisible();
-  await expect(page.getByRole('heading').getByText('Get up and running in 14 days')).toBeVisible();
+  await expect(
+    page.getByRole('heading').getByText('What asset intelligence does to your portfolio')
+  ).toBeVisible();
+  await expect(
+    page.getByRole('heading').getByText('Simple engagement. Fast time to value.')
+  ).toBeVisible();
   await expect(page.getByRole('heading').getByText('Results from our customers')).toBeVisible();
 });
 
@@ -28,7 +32,7 @@ test('product page navigation', async ({ page }) => {
 
 test('post and category navigation', async ({ page }) => {
   const heading = 'New Finnish Innovation Revolutionizes Buildings';
-  const category = 'Press release';
+  const category = 'Press releases';
 
   await page.goto('/news');
   await page.getByRole('link', { name: heading }).click();

@@ -16,27 +16,29 @@ const usedCategories = Array.from(new Set(posts.map(({ data }) => data.category)
 const nonEmptyCategories = categories.filter((c) => usedCategories.includes(c));
 
 const linkClass =
-  'rounded-full px-3 leading-8 font-medium text-current/60 transition select-none hover:bg-current/5 hover:text-current active:bg-current/5 active:text-current aria-current:text-current aria-current:hover:bg-transparent';
+  'text-base text-neutral-500 transition select-none hover:text-current active:text-current aria-current:text-current aria-current:underline underline-offset-2 decoration-1';
 ---
 
-<div class="container py-16 text-center sm:py-20 md:py-24 lg:py-28 xl:py-32">
-  <h1
-    class="mb-8 text-3xl font-semibold text-neutral-950 md:text-4xl lg:text-5xl dark:text-neutral-50"
-  >
-    News
-  </h1>
-  <div class="flex flex-wrap justify-center text-neutral-950 dark:text-neutral-50">
-    <a href={paths.news.href} aria-current={current === undefined} class={linkClass}>All</a>
-    {
-      nonEmptyCategories.map((category) => (
-        <a
-          href={`${paths.news.href}/${category}`}
-          aria-current={current === category}
-          class={linkClass}
-        >
-          {getCategoryLabel(category)}
-        </a>
-      ))
-    }
+<div class="pt-16 pb-8 lg:pt-32 lg:pb-16">
+  <div class="container">
+    <h1
+      class="mb-4 text-3xl font-medium tracking-tight text-neutral-950 lg:mb-8 lg:text-5xl dark:text-neutral-50"
+    >
+      The latest from Clouder
+    </h1>
+    <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-neutral-950 dark:text-neutral-50">
+      <a href={paths.news.href} aria-current={current === undefined} class={linkClass}>All</a>
+      {
+        nonEmptyCategories.map((category) => (
+          <a
+            href={`${paths.news.href}/${category}`}
+            aria-current={current === category}
+            class={linkClass}
+          >
+            {getCategoryLabel(category)}
+          </a>
+        ))
+      }
+    </div>
   </div>
 </div>

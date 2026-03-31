@@ -1,0 +1,38 @@
+---
+import ChevronRightIcon from 'lucide-astro/ChevronRight';
+
+interface Props {
+  title: string;
+  status: 'error' | 'warning' | 'ok';
+}
+
+const { title, status } = Astro.props;
+
+const color = {
+  error: 'bg-red-600 dark:bg-red-400',
+  warning: 'bg-yellow-600 dark:bg-yellow-400',
+  ok: 'bg-green-600 dark:bg-green-400'
+}[status];
+---
+
+<div
+  class="w-64 shrink-0 rounded-md bg-white p-4 text-neutral-700 shadow-lg shadow-black/5 transition select-none dark:bg-neutral-900 dark:text-neutral-300 dark:shadow-black/20"
+>
+  <div class="flex items-start gap-2">
+    <div class="relative size-4 shrink-0">
+      <div class:list={['absolute inset-0 rounded-full opacity-15', color]}></div>
+      <div class:list={['absolute inset-1.25 size-1.5 rounded-full', color]}></div>
+    </div>
+    <div>
+      <p class="text-[13px] leading-4 font-semibold text-neutral-800 dark:text-neutral-200">
+        {title}
+      </p>
+      <p
+        class="group/link mt-1.5 flex cursor-pointer items-center text-xs text-neutral-500 transition hover:text-neutral-800 dark:hover:text-neutral-800"
+      >
+        View details
+        <ChevronRightIcon class="mt-px transition group-hover/link:translate-x-0.5" size={12} />
+      </p>
+    </div>
+  </div>
+</div>

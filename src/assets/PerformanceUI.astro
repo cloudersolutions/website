@@ -1,0 +1,106 @@
+---
+import { DateTime } from 'luxon';
+import TrendingUpIcon from 'lucide-astro/TrendingUp';
+import TrendingDownIcon from 'lucide-astro/TrendingDown';
+import ChevronRightIcon from 'lucide-astro/ChevronRight';
+import ChevronLeftIcon from 'lucide-astro/ChevronLeft';
+---
+
+<div
+  class="shrink-0 overflow-hidden rounded-md bg-white text-neutral-700 shadow-lg shadow-black/5 select-none dark:bg-neutral-900 dark:text-neutral-300 dark:shadow-black/20"
+>
+  <div class="flex flex-col lg:flex-row">
+    <div class="w-full p-5">
+      <div class="flex items-center">
+        <div class="mr-auto">
+          <p class="text-base font-semibold text-neutral-800 dark:text-neutral-200">
+            Property performance
+          </p>
+          <p class="mt-0.5 text-sm text-neutral-500">Area: 13,500 m²&ensp;&middot;&ensp;EPC: C</p>
+        </div>
+        <div class="flex rounded border border-neutral-200 dark:border-neutral-800">
+          <ChevronLeftIcon class="p-1.5 transition hover:bg-current/5" size={26} />
+          <span
+            class="border-x border-neutral-200 px-3 text-xs leading-6.5 dark:border-neutral-800"
+          >
+            {DateTime.now().year}
+          </span>
+          <ChevronRightIcon class="p-1.5 text-current/50" size={26} />
+        </div>
+      </div>
+      <div class="mt-4 h-96 bg-neutral-100 dark:bg-neutral-800">
+        <!-- Chart -->
+      </div>
+      <div class="mt-2 flex items-center justify-center gap-5">
+        <div class="flex items-center gap-1.5">
+          <span class="size-2 rounded-full bg-blue-600"></span>
+          <span class="text-sm text-neutral-500">Target</span>
+        </div>
+        <div class="flex items-center gap-1.5">
+          <span class="size-2 rounded-full bg-red-600"></span>
+          <span class="text-sm text-neutral-500">Actual</span>
+        </div>
+        <div class="flex items-center gap-1.5">
+          <span class="size-2 rounded-full bg-yellow-600"></span>
+          <span class="text-sm text-neutral-500">Estimate</span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex w-full flex-col justify-center gap-4 border-t border-neutral-200 p-5 lg:w-88 lg:border-t-0 lg:border-l"
+    >
+      <div>
+        <p class="text-[10px] font-medium tracking-wider text-neutral-500 uppercase">
+          Energy target
+        </p>
+        <div class="my-1 flex items-center gap-1">
+          <p class="text-sm font-medium">1.290 MWh <small class="opacity-50">(Adjusted)</small></p>
+        </div>
+        <p class="mb-0.5 text-xs text-neutral-500">Budget: 1.300 MWh</p>
+        <p class="text-xs text-neutral-500">-0.8% below budget due to lower heating need</p>
+      </div>
+      <div>
+        <p class="text-[10px] font-medium tracking-wider text-neutral-500 uppercase">
+          Forecast, year end
+        </p>
+        <div class="my-1 flex items-center gap-1">
+          <p class="text-sm font-medium">1.290 MWh</p>
+          <TrendingDownIcon size={12} class="text-blue-600 dark:text-blue-400" />
+        </div>
+        <p class="text-xs text-neutral-500">Operational gap is 0% below adjusted target</p>
+      </div>
+      <div>
+        <p class="text-[10px] font-medium tracking-wider text-neutral-500 uppercase">
+          Value created
+        </p>
+        <div class="my-1 flex items-center gap-1">
+          <p class="text-sm font-medium">€&hairsp;25.000</p>
+          <TrendingUpIcon size={12} class="text-emerald-600 dark:text-emerald-400" />
+        </div>
+        <p class="text-xs text-neutral-500">
+          Consumption 1 MWh below adjusted target, NOI improved €&hairsp;1.000
+        </p>
+      </div>
+      <div>
+        <p class="text-[10px] font-medium tracking-wider text-neutral-500 uppercase">
+          Energy intensity
+        </p>
+        <div class="my-1 flex items-center gap-1">
+          <p class="text-sm font-medium">130 kWh/m²</p>
+          <TrendingUpIcon size={12} class="text-red-600 dark:text-red-400" />
+        </div>
+        <p class="text-xs text-neutral-500">Target: 96 kWh/m²</p>
+      </div>
+      <div>
+        <p class="text-[10px] font-medium tracking-wider text-neutral-500 uppercase">
+          CO₂ Emissions
+        </p>
+        <div class="my-1 flex items-center gap-1">
+          <p class="text-sm font-medium">23kg CO₂e/m²</p>
+          <TrendingUpIcon size={12} class="text-red-600 dark:text-red-400" />
+        </div>
+        <p class="text-xs text-neutral-500">Target: 20kg CO₂e/m²</p>
+      </div>
+    </div>
+  </div>
+</div>
