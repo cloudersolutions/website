@@ -7,10 +7,14 @@ import ChevronLeftIcon from 'lucide-astro/ChevronLeft';
 ---
 
 <div
-  class="shrink-0 overflow-hidden rounded-md bg-white text-neutral-700 shadow-lg shadow-black/5 select-none dark:bg-neutral-900 dark:text-neutral-300 dark:shadow-black/20"
+  class="relative shrink-0 overflow-hidden rounded-xl bg-white text-neutral-700 shadow-xl shadow-black/5 outline-[0.5px] outline-black/5 select-none dark:bg-neutral-900 dark:text-neutral-300 dark:shadow-black/20 dark:outline-white/5"
 >
-  <div class="flex flex-col lg:flex-row">
-    <div class="w-full p-5">
+  <div
+    class="absolute z-0 hidden size-96 bg-radial-[at_0_0] from-neutral-800/50 via-neutral-800/25 via-25% to-transparent to-50% lg:size-128 dark:block"
+  >
+  </div>
+  <div class="relative flex flex-col lg:flex-row">
+    <div class="w-full p-4 lg:p-6">
       <div class="flex items-center">
         <div class="mr-auto">
           <p class="text-base font-semibold text-neutral-800 dark:text-neutral-200">
@@ -28,75 +32,67 @@ import ChevronLeftIcon from 'lucide-astro/ChevronLeft';
           <ChevronRightIcon class="p-1.5 text-current/50" size={26} />
         </div>
       </div>
-      <div class="mt-4 h-96 bg-neutral-100 dark:bg-neutral-800">
-        <!-- Chart -->
-      </div>
-      <div class="mt-2 flex items-center justify-center gap-5">
-        <div class="flex items-center gap-1.5">
-          <span class="size-2 rounded-full bg-blue-600"></span>
-          <span class="text-sm text-neutral-500">Target</span>
-        </div>
-        <div class="flex items-center gap-1.5">
-          <span class="size-2 rounded-full bg-red-600"></span>
-          <span class="text-sm text-neutral-500">Actual</span>
-        </div>
-        <div class="flex items-center gap-1.5">
-          <span class="size-2 rounded-full bg-yellow-600"></span>
-          <span class="text-sm text-neutral-500">Estimate</span>
-        </div>
+      <div class="lg:aspect-wide mt-4 aspect-square">
+        <canvas id="myChart" class="block"></canvas>
       </div>
     </div>
     <div
-      class="flex w-full flex-col justify-center gap-4 border-t border-neutral-200 p-5 lg:w-88 lg:border-t-0 lg:border-l"
+      class="flex w-full flex-col justify-center gap-4 border-t border-neutral-200 p-4 lg:w-88 lg:border-t-0 lg:border-l lg:p-6 dark:border-neutral-800"
     >
-      <div>
+      <div class="space-y-2">
         <p class="text-[10px] font-medium tracking-wider text-neutral-500 uppercase">
           Energy target
         </p>
-        <div class="my-1 flex items-center gap-1">
-          <p class="text-sm font-medium">1.290 MWh <small class="opacity-50">(Adjusted)</small></p>
+        <div class="flex items-baseline gap-4">
+          <div>
+            <p class="mb-px text-sm font-semibold">1.290 MWh</p>
+            <p class="text-xs text-neutral-500">Adjusted</p>
+          </div>
+          <div>
+            <p class="mb-px text-xs font-medium text-neutral-500">1.1300 MWh</p>
+            <p class="text-xs text-neutral-500">Budget</p>
+          </div>
         </div>
-        <p class="mb-0.5 text-xs text-neutral-500">Budget: 1.300 MWh</p>
-        <p class="text-xs text-neutral-500">-0.8% below budget due to lower heating need</p>
+        <p class="text-xs text-neutral-500">0.8% below budget due to lower heating need</p>
       </div>
-      <div>
+      <div class="space-y-1">
         <p class="text-[10px] font-medium tracking-wider text-neutral-500 uppercase">
           Forecast, year end
         </p>
-        <div class="my-1 flex items-center gap-1">
-          <p class="text-sm font-medium">1.290 MWh</p>
+        <div class="flex items-center gap-1">
+          <p class="text-sm font-semibold">1.289 MWh</p>
           <TrendingDownIcon size={12} class="text-blue-600 dark:text-blue-400" />
         </div>
-        <p class="text-xs text-neutral-500">Operational gap is 0% below adjusted target</p>
+        <p class="text-xs text-neutral-500">Operational gap is 0.1% below adjusted target</p>
       </div>
-      <div>
+      <div class="space-y-1">
         <p class="text-[10px] font-medium tracking-wider text-neutral-500 uppercase">
           Value created
         </p>
-        <div class="my-1 flex items-center gap-1">
-          <p class="text-sm font-medium">€&hairsp;25.000</p>
+        <div class="flex items-center gap-1">
+          <p class="text-sm font-semibold">€&hairsp;25.000</p>
           <TrendingUpIcon size={12} class="text-emerald-600 dark:text-emerald-400" />
         </div>
         <p class="text-xs text-neutral-500">
           Consumption 1 MWh below adjusted target, NOI improved €&hairsp;1.000
         </p>
       </div>
-      <div>
+      <div class="space-y-1">
         <p class="text-[10px] font-medium tracking-wider text-neutral-500 uppercase">
           Energy intensity
         </p>
-        <div class="my-1 flex items-center gap-1">
-          <p class="text-sm font-medium">130 kWh/m²</p>
+        <div class="flex items-center gap-1">
+          <p class="text-sm font-semibold">130 kWh/m²</p>
           <TrendingUpIcon size={12} class="text-red-600 dark:text-red-400" />
         </div>
         <p class="text-xs text-neutral-500">Target: 96 kWh/m²</p>
       </div>
-      <div>
+      <div class="space-y-1">
         <p class="text-[10px] font-medium tracking-wider text-neutral-500 uppercase">
           CO₂ Emissions
         </p>
-        <div class="my-1 flex items-center gap-1">
-          <p class="text-sm font-medium">23kg CO₂e/m²</p>
+        <div class="flex items-center gap-1">
+          <p class="text-sm font-semibold">23kg CO₂e/m²</p>
           <TrendingUpIcon size={12} class="text-red-600 dark:text-red-400" />
         </div>
         <p class="text-xs text-neutral-500">Target: 20kg CO₂e/m²</p>
@@ -104,3 +100,192 @@ import ChevronLeftIcon from 'lucide-astro/ChevronLeft';
     </div>
   </div>
 </div>
+
+<script>
+  import Chart from 'chart.js/auto';
+
+  const ctx = document.getElementById('myChart');
+
+  const isMobile = window.matchMedia('(max-width: 1024px)').matches;
+  const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const text = isDark ? '#737373' : '#a3a3a3';
+  const textDark = isDark ? '#ccc' : '#333';
+  const border = isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.08)';
+  const borderDark = isDark ? 'rgba(255,255,255,0.12)' : 'rgba(0,0,0,0.12)';
+  const bg = isDark ? '#262626' : '#fff';
+
+  const verticalLinePlugin = {
+    id: 'verticalLinePlugin',
+    beforeDraw: (chart) => {
+      if (chart.tooltip?._active && chart.tooltip._active.length) {
+        const ctx = chart.ctx;
+        ctx.save();
+        const activePoint = chart.tooltip._active[0];
+        ctx.beginPath();
+        ctx.setLineDash([5, 5]);
+        ctx.moveTo(activePoint.element.x, chart.chartArea.top);
+        ctx.lineTo(activePoint.element.x, chart.chartArea.bottom);
+        ctx.lineWidth = 1;
+        ctx.strokeStyle = borderDark;
+        ctx.stroke();
+        ctx.restore();
+      }
+    }
+  };
+
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+      datasets: [
+        {
+          label: 'Target',
+          data: [
+            0, 9.090909, 18.181818, 27.272727, 36.363636, 45.454545, 54.545455, 63.636364,
+            72.727273, 81.818182, 90.909091, 100
+          ],
+          borderColor: 'royalblue',
+          backgroundColor: 'royalblue',
+          borderWidth: 2,
+          borderCapStyle: 'round',
+          pointStyle: 'circle',
+          pointHoverRadius: 3,
+          pointRadius: 0,
+          fill: false
+        },
+        {
+          label: 'Actual',
+          data: [0, 12.85, 21.5],
+          borderColor: 'salmon',
+          backgroundColor: 'salmon',
+          borderWidth: 2,
+          borderCapStyle: 'round',
+          pointStyle: 'circle',
+          pointHoverRadius: 3,
+          pointRadius: 0,
+          fill: false
+        },
+        {
+          label: 'Estimate',
+          data: [
+            null,
+            null,
+            21.5,
+            30.144444,
+            38.788889,
+            47.433333,
+            56.077778,
+            64.722222,
+            73.366667,
+            82.011111,
+            90.655556,
+            99.3
+          ],
+          borderColor: 'lightsalmon',
+          backgroundColor: 'lightsalmon',
+          borderWidth: 2,
+          borderDash: [8, 8],
+          borderCapStyle: 'round',
+          pointStyle: 'circle',
+          pointHoverRadius: 3,
+          pointRadius: 0
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      aspectRatio: isMobile ? 1 : 2,
+      animation: {
+        duration: 300
+      },
+      plugins: {
+        tooltip: {
+          enabled: true,
+          caretSize: 0,
+          caretPadding: 20,
+          padding: {
+            left: 12,
+            right: 16,
+            top: 11,
+            bottom: 10
+          },
+          backgroundColor: bg,
+          borderWidth: 1,
+          borderColor: borderDark,
+          titleColor: textDark,
+          bodyColor: textDark,
+          footerSpacing: 0,
+          footerMarginTop: 2,
+          footerColor: textDark,
+          footerFont: {
+            weight: 'normal'
+          },
+          filter: (item) => {
+            if (item.dataset.label === 'Estimate' && item.dataIndex === 2) {
+              return false;
+            }
+            return true;
+          },
+          callbacks: {
+            label: (item) => {
+              return false;
+            },
+            footer: (item) => {
+              const diff = Number(item[0].raw) - Number(item[1].raw);
+              if (isNaN(diff)) return '–';
+              const absDiff = Math.abs(diff).toFixed(1);
+              if (diff === 0) return 'At target';
+              if (diff < 0) return `${absDiff}% over target`;
+              return `${absDiff}% under target`;
+            }
+          }
+        },
+        legend: {
+          display: true,
+          position: 'bottom',
+          labels: {
+            boxWidth: 4,
+            boxHeight: 4,
+            usePointStyle: true,
+            padding: 24
+          }
+        }
+      },
+      interaction: {
+        mode: 'index',
+        intersect: false,
+        axis: 'x'
+      },
+      scales: {
+        x: {
+          offset: true,
+          border: {
+            display: false
+          },
+          grid: {
+            display: false
+          },
+          ticks: {
+            color: text
+          }
+        },
+        y: {
+          border: {
+            display: false
+          },
+          grid: {
+            display: true,
+            color: border
+          },
+          ticks: {
+            color: text,
+            padding: 4,
+            callback: (value) => `${value}%`
+          },
+          beginAtZero: true
+        }
+      }
+    },
+    plugins: [verticalLinePlugin]
+  });
+</script>
