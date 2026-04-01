@@ -1,6 +1,6 @@
 ---
 import { DateTime } from 'luxon';
-import TrendingUpIcon from 'lucide-astro/TrendingUp';
+// import TrendingUpIcon from 'lucide-astro/TrendingUp';
 import TrendingDownIcon from 'lucide-astro/TrendingDown';
 import ChevronRightIcon from 'lucide-astro/ChevronRight';
 import ChevronLeftIcon from 'lucide-astro/ChevronLeft';
@@ -61,7 +61,7 @@ import ChevronLeftIcon from 'lucide-astro/ChevronLeft';
         </p>
         <div class="flex items-center gap-1">
           <p class="text-sm font-semibold">1.289 MWh</p>
-          <TrendingDownIcon size={12} class="text-blue-600 dark:text-blue-400" />
+          <TrendingDownIcon size={14} class="text-blue-600 dark:text-blue-400" />
         </div>
         <p class="text-xs text-neutral-500">Operational gap is 0.1% below adjusted target</p>
       </div>
@@ -69,10 +69,7 @@ import ChevronLeftIcon from 'lucide-astro/ChevronLeft';
         <p class="text-[10px] font-medium tracking-wider text-neutral-500 uppercase">
           Value created
         </p>
-        <div class="flex items-center gap-1">
-          <p class="text-sm font-semibold">€&hairsp;25.000</p>
-          <TrendingUpIcon size={12} class="text-emerald-600 dark:text-emerald-400" />
-        </div>
+        <p class="text-sm font-semibold">€&hairsp;25.000</p>
         <p class="text-xs text-neutral-500">
           Consumption 1 MWh below adjusted target, NOI improved €&hairsp;1.000
         </p>
@@ -82,8 +79,8 @@ import ChevronLeftIcon from 'lucide-astro/ChevronLeft';
           Energy intensity
         </p>
         <div class="flex items-center gap-1">
-          <p class="text-sm font-semibold">130 kWh/m²</p>
-          <TrendingUpIcon size={12} class="text-red-600 dark:text-red-400" />
+          <p class="text-sm font-semibold">95 kWh/m²</p>
+          <TrendingDownIcon size={14} class="text-emerald-600 dark:text-emerald-400" />
         </div>
         <p class="text-xs text-neutral-500">Target: 96 kWh/m²</p>
       </div>
@@ -92,8 +89,8 @@ import ChevronLeftIcon from 'lucide-astro/ChevronLeft';
           CO₂ Emissions
         </p>
         <div class="flex items-center gap-1">
-          <p class="text-sm font-semibold">23kg CO₂e/m²</p>
-          <TrendingUpIcon size={12} class="text-red-600 dark:text-red-400" />
+          <p class="text-sm font-semibold">17kg CO₂e/m²</p>
+          <TrendingDownIcon size={14} class="text-emerald-600 dark:text-emerald-400" />
         </div>
         <p class="text-xs text-neutral-500">Target: 20kg CO₂e/m²</p>
       </div>
@@ -108,11 +105,11 @@ import ChevronLeftIcon from 'lucide-astro/ChevronLeft';
 
   const isMobile = window.matchMedia('(max-width: 1024px)').matches;
   const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const text = isDark ? '#737373' : '#a3a3a3';
-  const textDark = isDark ? '#ccc' : '#333';
+  const fg = isDark ? '#737373' : '#a3a3a3';
+  const fgDark = isDark ? '#d4d4d4' : '#262626';
+  const bg = isDark ? '#262626' : '#fff';
   const border = isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.08)';
   const borderDark = isDark ? 'rgba(255,255,255,0.12)' : 'rgba(0,0,0,0.12)';
-  const bg = isDark ? '#262626' : '#fff';
 
   const verticalLinePlugin = {
     id: 'verticalLinePlugin',
@@ -212,11 +209,11 @@ import ChevronLeftIcon from 'lucide-astro/ChevronLeft';
           backgroundColor: bg,
           borderWidth: 1,
           borderColor: borderDark,
-          titleColor: textDark,
-          bodyColor: textDark,
+          titleColor: fgDark,
+          bodyColor: fgDark,
           footerSpacing: 0,
           footerMarginTop: 2,
-          footerColor: textDark,
+          footerColor: fgDark,
           footerFont: {
             weight: 'normal'
           },
@@ -266,7 +263,7 @@ import ChevronLeftIcon from 'lucide-astro/ChevronLeft';
             display: false
           },
           ticks: {
-            color: text
+            color: fg
           }
         },
         y: {
@@ -278,7 +275,7 @@ import ChevronLeftIcon from 'lucide-astro/ChevronLeft';
             color: border
           },
           ticks: {
-            color: text,
+            color: fg,
             padding: 4,
             callback: (value) => `${value}%`
           },
