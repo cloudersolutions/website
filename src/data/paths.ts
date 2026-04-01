@@ -4,7 +4,7 @@ export const paths = {
     href: '/'
   },
   product: {
-    title: 'Product',
+    title: 'Solutions',
     href: '/product'
   },
   news: {
