@@ -44,13 +44,11 @@ export default {
               content: '"— "'
             },
             img: {
-              borderRadius: '0.25rem',
               backgroundColor: 'color-mix(in oklab, var(--color-neutral-500) 10%, transparent)',
               color: 'transparent'
             },
             iframe: {
               aspectRatio: '16/9',
-              borderRadius: '0.25rem',
               width: '100%',
               marginBlock: '2rem'
             },
