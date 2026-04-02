@@ -21,24 +21,22 @@ const linkClass =
 
 <div class="pt-16 pb-8 lg:pt-32 lg:pb-16">
   <div class="container">
-    <h1
-      class="mb-4 text-3xl font-medium tracking-tight text-neutral-950 lg:mb-8 lg:text-5xl dark:text-neutral-50"
-    >
-      The latest from Clouder
-    </h1>
-    <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-neutral-950 dark:text-neutral-50">
-      <a href={paths.news.href} aria-current={current === undefined} class={linkClass}>All</a>
-      {
-        nonEmptyCategories.map((category) => (
-          <a
-            href={`${paths.news.href}/${category}`}
-            aria-current={current === category}
-            class={linkClass}
-          >
-            {getCategoryLabel(category)}
-          </a>
-        ))
-      }
+    <div class="text-neutral-950 dark:text-neutral-50">
+      <h1 class="mb-4 font-serif text-4xl lg:mb-6 lg:text-5xl">The latest from Clouder</h1>
+      <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
+        <a href={paths.news.href} aria-current={current === undefined} class={linkClass}>All</a>
+        {
+          nonEmptyCategories.map((category) => (
+            <a
+              href={`${paths.news.href}/${category}`}
+              aria-current={current === category}
+              class={linkClass}
+            >
+              {getCategoryLabel(category)}
+            </a>
+          ))
+        }
+      </div>
     </div>
   </div>
 </div>

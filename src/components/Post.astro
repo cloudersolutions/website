@@ -17,7 +17,7 @@ const { post, isLarge } = Astro.props;
 <article class={isLarge ? 'xl:col-span-3' : 'xl:col-span-2'}>
   <a
     href={`${paths.news.href}/${post.id}`}
-    class:list={['group flex flex-col gap-3', isLarge && 'xl:gap-4']}
+    class:list={['group flex flex-col gap-2', isLarge && 'xl:gap-3']}
   >
     <Image
       src={post.data.cover}
@@ -41,8 +41,12 @@ const { post, isLarge } = Astro.props;
     >
       {post.data.title}
     </h3>
-    <p class:list={['text-sm', isLarge ? 'xl:text-base' : 'line-clamp-3']}>
-      {post.data.description}
-    </p>
+    {
+      isLarge && (
+        <p class:list={['text-sm text-neutral-700 xl:text-base dark:text-neutral-300']}>
+          {post.data.description}
+        </p>
+      )
+    }
   </a>
 </article>

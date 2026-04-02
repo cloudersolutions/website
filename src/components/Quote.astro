@@ -12,10 +12,10 @@ const { quote, citeName, citeTitle, citeCompany } = Astro.props;
 ---
 
 <blockquote class="flex flex-col items-start justify-between text-neutral-950 dark:text-neutral-50">
-  <p class="max-w-prose -indent-[0.45em] text-xl leading-normal font-medium text-balance italic">
+  <p class="max-w-prose -indent-[0.45em] font-serif text-xl text-balance lg:text-2xl">
     &ldquo;{quote}&rdquo;
   </p>
-  <div class="flex items-center gap-4 pt-8">
+  <div class="flex items-center gap-4 pt-4 lg:pt-8">
     <CompanyLogo company={citeCompany} class="h-6 w-auto shrink-0" />
     <div class="h-full w-px bg-current/10"></div>
     <div>

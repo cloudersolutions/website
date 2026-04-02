@@ -25,7 +25,7 @@ const isExternal = (href: string) => {
   return href.startsWith('http');
 };
 
-const defaultHeaderClass = 'py-4 lg:py-6 text-neutral-950 dark:text-neutral-50';
+const defaultHeaderClass = 'py-4 text-neutral-950 dark:text-neutral-50';
 ---
 
 <header class:list={twMerge(defaultHeaderClass, headerClass)}>
@@ -43,18 +43,19 @@ const defaultHeaderClass = 'py-4 lg:py-6 text-neutral-950 dark:text-neutral-50';
       <XIcon class="relative z-30 hidden peer-checked:block" />
       <div
         class:list={twMerge(
-          'pointer-events-none invisible fixed inset-8 top-24 z-20 h-auto w-auto rounded bg-white opacity-0 shadow-xl outline-999 outline-black/25 transition duration-300 peer-checked:pointer-events-auto peer-checked:visible peer-checked:opacity-100 dark:bg-neutral-900',
-          defaultHeaderClass
+          'pointer-events-none invisible fixed inset-0 z-20 size-full scale-105 bg-black/25 px-6 py-24 opacity-0 transition duration-300 peer-checked:pointer-events-auto peer-checked:visible peer-checked:scale-100 peer-checked:opacity-100'
         )}
       >
-        <nav class="flex h-full flex-col p-4 pt-0">
+        <nav
+          class="flex h-full flex-col gap-0.5 rounded-lg bg-white p-4 shadow-xl dark:bg-neutral-900"
+        >
           {
             headerLinks.map(({ title, href }) => (
               <a
                 href={href}
                 aria-current={isActive(href)}
                 class:list={twMerge(
-                  'inline-flex items-center gap-0.5 rounded px-3 py-2 text-lg font-medium text-current transition select-none aria-current:bg-current/5',
+                  'inline-flex items-center gap-0.5 rounded-sm px-3 py-2 text-current transition select-none aria-current:bg-current/5',
                   'hover:bg-current/5 active:bg-current/5',
                   itemClass
                 )}
@@ -71,7 +72,7 @@ const defaultHeaderClass = 'py-4 lg:py-6 text-neutral-950 dark:text-neutral-50';
               socialLinks.map(({ title, href }) => (
                 <a
                   href={href}
-                  class="p-2 text-base text-current/50 transition select-none active:text-current"
+                  class="p-2 text-sm text-current/56 transition select-none active:text-current"
                 >
                   {title}
                 </a>
@@ -92,7 +93,7 @@ const defaultHeaderClass = 'py-4 lg:py-6 text-neutral-950 dark:text-neutral-50';
               'inline-flex items-center gap-0.5 p-2 text-current decoration-1 underline-offset-2 transition select-none aria-current:text-current aria-current:hover:bg-transparent',
               'hover:underline active:underline',
               itemClass,
-              headerLinks.some((i) => isActive(i.href)) && 'text-current/50 hover:text-current'
+              headerLinks.some((i) => isActive(i.href)) && 'text-current/56 hover:text-current'
             )}
           >
             {title}

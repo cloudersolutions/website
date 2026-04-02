@@ -15,6 +15,133 @@ import PerformanceUI from '@assets/PerformanceUI.astro';
 
 const title = 'Product';
 const description = 'Clouder unlcoks the hidden value.';
+
+const faq = [
+  {
+    question: 'Where can Clouder be installed?',
+    answer:
+      'Clouder can be installed in all types of properties, both existing and new construction. Pilot buildings typically go live in two weeks. Portfolio rollouts then follow a repeatable playbook. Deployments are capex-light, minimally disruptive to tenants, and deliver value from day one.'
+  },
+  {
+    question: 'How quickly can we implement Clouder across a portfolio?',
+    answer:
+      'Pilot buildings typically go live in two weeks. Portfolio rollouts then follow a repeatable playbook. Deployments are capex-light, minimally disruptive to tenants, and deliver value from day one.'
+  },
+  {
+    question: 'Is Clouder compatible with our existing systems and vendors?',
+    answer:
+      'Yes. Clouder integrates with all major building protocols, for example BACnet and Modbus. Owners can retain their existing systems while unifying data into a clean, actionable layer.'
+  },
+  {
+    question: 'What about cybersecurity and data ownership?',
+    answer:
+      'You retain full ownership and control of your data. Clouder applies end-to-end encryption, accurate audit trails, and secure cloud connections.'
+  },
+  {
+    question: 'What are the annual costs? Are there any license fees?',
+    answer:
+      "Our pricing structure consists of a setup fee and a monthly subscription fee. The fees are determined by building size, complexity, data volume, selected features, and service scope. We don't charge any additional license fees for any of our plans."
+  },
+  {
+    question: 'Which asset classes benefit most from Clouder?',
+    answer:
+      'Clouder scales across residential, office, logistics and mixed-use assets. Any building type with siloed systems benefits from reduced operating costs, improved sustainability metrics and higher valuations.'
+  },
+  {
+    question: 'How does Clouder work with our existing ESG reporting software?',
+    answer:
+      'Clouder supplies the clean, unified data that ESG software depends on. This eliminates manual data collection, reduces errors, and ensures that operational efficiency gains show up clearly in compliance and valuation metrics. You can keep using your existing ESG-software. Clouder will serve clean data to that platform through the API.'
+  },
+  {
+    question: 'How does Clouder help with EU Taxonomy and CSRD compliance?',
+    answer:
+      'Clouder integrates energy, water, indoor climate and automation data into one standardised layer. This makes reporting under EU Taxonomy and CSRD accurate and traceable.'
+  },
+  {
+    question: 'Can Clouder improve our GRESB score?',
+    answer:
+      'Yes. By increasing data coverage and reducing consumption, Clouder strengthens the Management and Performance components of GRESB. Better metering, benchmarking and fault detection all contribute to higher scores and more attractive valuations.'
+  }
+];
+
+const features = [
+  {
+    icon: BlocksIcon,
+    title: 'Integration platform',
+    content: [
+      'Seamless integration of all building technology systems, subsystems, and devices, regardless of vendor or protocol.',
+      'Add new or external systems and devices with minimal construction work by using Edge Connectors.',
+      ''
+    ]
+  },
+  {
+    icon: LaptopIcon,
+    title: 'Clouder Dashboard',
+    content: [
+      'View and manage all aspects of your building straight from your browser.',
+      'Real-time data on energy consumption, indoor climate, and other insights enable improved monitoring and informed decision-making.',
+      'Access to features like Fault detection & diagnostics, Device control, and more.'
+    ]
+  },
+  {
+    icon: SparklesIcon,
+    title: 'Clouder agents',
+    content: [
+      'Multiple Clouder agents analyze your assets to uncover hidden value and optimize performance.',
+      'Automated reports are generated from live data, giving you accurate, up-to-date information without manual effort.'
+    ]
+  },
+  {
+    icon: DatabaseIcon,
+    title: 'Data storage',
+    content: [
+      'Cloud-based data storage for accurate building data. No more relying on benchmarks or estimates.',
+      'View and export building data from Clouder Dashboard for sustainability reporting.',
+      'Our five-year data retention policy gives you full ownership and control of your data.'
+    ]
+  },
+  {
+    icon: ChevronsLeftRightEllipsisIcon,
+    title: 'Real-time API',
+    content: [
+      'Access all building data through our real-time API.',
+      'Perfect for smart office apps, property management software, and other third-party integrations.'
+    ]
+  },
+  {
+    icon: OcatagonAlertIcon,
+    title: 'Fault detection & diagnostics',
+    content: [
+      'Quickly identify and diagnose faults, problems, and conflicts in your building automation system.',
+      'Receive targeted recommendations and clear guidance for resolving identified issues.',
+      'Save time and resources by reducing manual work and streamline troubleshooting workflows.'
+    ]
+  },
+  {
+    icon: SettingsIcon,
+    title: 'Device control',
+    content: [
+      'Control all systems and field devices in your building without disrupting the existing building automation system.',
+      'Use sophisticated, event-based rules to control devices to further reduce energy consumption.'
+    ]
+  },
+  {
+    icon: ShieldCheckIcon,
+    title: 'Additional security',
+    content: [
+      'Fine-grained data access rules, accurate audit trail, end-to-end encryption, and secure cloud storage of building data.',
+      'Robust security in building automation with centralized password management. No more default passwords known by everyone.'
+    ]
+  },
+  {
+    icon: WrenchIcon,
+    title: 'Custom integrations',
+    content: [
+      'Our team can offer tailored solutions and consulting services to address your specific needs, from advanced system integrations to personalized building performance strategies.'
+    ],
+    showCta: true
+  }
+];
 ---
 
 <MainLayout title={title} description={description}>
@@ -23,11 +150,11 @@ const description = 'Clouder unlcoks the hidden value.';
       <div class="container">
         <div class="lg:max-w-3/4">
           <h1
-            class="mb-4 text-4xl font-medium tracking-tight text-neutral-950 lg:mb-8 lg:text-6xl dark:text-neutral-50"
+            class="mb-4 font-serif text-5xl text-neutral-950 lg:mb-6 lg:text-6xl dark:text-neutral-50"
           >
             The new standard for commercial property performance
           </h1>
-          <p class="text-blance text-lg">{description}</p>
+          <p class="text-blance text-xl">{description}</p>
         </div>
       </div>
     </div>
@@ -43,14 +170,14 @@ const description = 'Clouder unlcoks the hidden value.';
   <section>
     <div class="pt-16 pb-8 lg:pt-32 lg:pb-16">
       <div class="container">
-        <p class="col-span-full font-mono text-xs tracking-wider text-neutral-500 uppercase">
+        <p
+          class="col-span-full mb-5 text-xs font-medium tracking-wider text-neutral-500 uppercase lg:mb-6"
+        >
           How it works
         </p>
-        <div class="mt-4 grid gap-4 lg:mt-6 lg:grid-cols-2 lg:gap-8">
-          <h2
-            class="text-3xl font-medium tracking-tight text-neutral-950 lg:text-4xl dark:text-neutral-50"
-          >
-            Turn building data into operational value
+        <div class="grid gap-4 lg:grid-cols-2 lg:gap-8">
+          <h2 class="font-serif text-4xl text-neutral-950 lg:text-5xl dark:text-neutral-50">
+            Turn building data<br class="hidden lg:block" /> into operational value
           </h2>
           <p class="text-balance lg:px-8">
             Clouder is on a mission to unlock the hidden value in real estate portfolios. We replace
@@ -72,14 +199,17 @@ const description = 'Clouder unlcoks the hidden value.';
               >
               </div>
             </div>
-            <p class="mt-4 mb-1 font-medium text-neutral-950 dark:text-neutral-50">Integration</p>
+            <p class="mt-4 mb-2 text-lg font-medium text-neutral-950 dark:text-neutral-50">
+              Integration
+            </p>
             <p class="mb-4 text-balance">
               Clouder connects directly into your building systems. On-site data normalization is
               done before securely transmitting the data into the cloud, to ensure your data is
               always accurate and accessible in real time.
             </p>
-            <p class="text-sm font-medium text-neutral-500">
-              From 500€ + 1000€&hairsp;/&hairsp;month per building
+            <p class="text-sm text-neutral-500">
+              Setup fee: 500€<br />
+              Monthly fee: 1000€ per building
             </p>
           </div>
           <div>
@@ -91,16 +221,17 @@ const description = 'Clouder unlcoks the hidden value.';
               >
               </div>
             </div>
-            <p class="mt-4 mb-1 font-medium text-neutral-950 dark:text-neutral-50">
+            <p class="mt-4 mb-2 text-lg font-medium text-neutral-950 dark:text-neutral-50">
               Agentic analysis
             </p>
             <p class="mb-4 text-balance">
-              Clouder agents analyze your assets to uncover hidden value and optimize performance.
-              Automated energy and performance reports are generated from live data, so you always
-              have accurate, up-to-date information.
+              Multiple Clouder agents analyze your assets to uncover hidden value and optimize
+              performance. Automated energy and performance reports are generated from live data, so
+              you always have accurate, up-to-date information.
             </p>
-            <p class="text-sm font-medium text-neutral-500">
-              From 2000€ + 3000€&hairsp;/&hairsp;month per building
+            <p class="text-sm text-neutral-500">
+              Setup fee: 2000€<br />
+              Monthly fee: 3000€ per building
             </p>
           </div>
           <div>
@@ -112,10 +243,9 @@ const description = 'Clouder unlcoks the hidden value.';
               >
               </div>
             </div>
-            <p class="mt-4 mb-1 font-medium text-neutral-950 dark:text-neutral-50">
+            <p class="mt-4 mb-2 text-lg font-medium text-neutral-950 dark:text-neutral-50">
               Monthly check-ins
             </p>
-
             <p class="text-balance">
               We’re committed to your success, which is why we provide monthly check-ins to help you
               get the most out of Clouder. Your building data always remains yours—full access and
@@ -130,13 +260,11 @@ const description = 'Clouder unlcoks the hidden value.';
   <section id="features">
     <div class="pt-16 pb-8 lg:pt-32 lg:pb-16">
       <div class="container">
-        <p class="mb-4 font-mono text-xs tracking-wider text-neutral-500 uppercase lg:mb-6">
+        <p class="mb-5 text-xs font-medium tracking-wider text-neutral-500 uppercase lg:mb-6">
           Features
         </p>
-        <h2
-          class="text-3xl font-medium tracking-tight text-neutral-950 lg:text-4xl dark:text-neutral-50"
-        >
-          The platform powering<br class="hidden sm:block" /> building intelligence
+        <h2 class="font-serif text-4xl text-neutral-950 lg:text-5xl dark:text-neutral-50">
+          The platform powering<br class="hidden lg:block" /> building intelligence
         </h2>
       </div>
     </div>
@@ -145,181 +273,28 @@ const description = 'Clouder unlcoks the hidden value.';
         <div
           class="grid grid-cols-1 grid-rows-5 gap-4 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-3"
         >
-          <div
-            class="space-y-3 rounded-md border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-900"
-          >
-            <div class="flex items-center gap-2">
-              <BlocksIcon size={18} class="shrink-0 text-neutral-500" />
-              <h4 class="text-xl font-medium text-neutral-950 dark:text-neutral-50">
-                Integration platform
-              </h4>
-            </div>
-            <p class="text-sm">
-              Seamless integration of all building technology systems, subsystems, and devices,
-              regardless of vendor or protocol.
-            </p>
-            <p class="text-sm">
-              Add new or external systems and devices with minimal construction work by using Edge
-              Connectors.
-            </p>
-            <p class="text-sm">
-              Protocol conversions to enable communication between otherwise hard-to-integrate
-              systems that don’t communicate with each other.
-            </p>
-          </div>
-          <div
-            class="space-y-3 rounded-md border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-900"
-          >
-            <div class="flex items-center gap-2">
-              <LaptopIcon size={18} class="shrink-0 text-neutral-500" />
-              <h4 class="text-xl font-medium text-neutral-950 dark:text-neutral-50">
-                Clouder&nbsp;Dashboard
-              </h4>
-            </div>
-            <p class="text-sm">
-              View and manage all aspects of your building straight from your browser.
-            </p>
-            <p class="text-sm">
-              Real-time data on energy consumption, indoor climate, and other insights enable
-              improved monitoring and informed decision-making.
-            </p>
-            <p class="text-sm">
-              Access to features like Fault detection & diagnostics, Device control, and more.
-            </p>
-          </div>
-          <div
-            class="space-y-3 rounded-md border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-900"
-          >
-            <div class="flex items-center gap-2">
-              <SparklesIcon size={18} class="shrink-0 text-neutral-500" />
-              <h4 class="text-xl font-medium text-neutral-950 dark:text-neutral-50">
-                Agentic analysis
-              </h4>
-            </div>
-            <p class="text-sm">
-              Clouder agents analyze your assets to uncover hidden value and optimize performance.
-            </p>
-            <p class="text-sm">
-              Automated reports are generated from live data, giving you accurate, up-to-date
-              information without manual effort.
-            </p>
-          </div>
-          <div
-            class="space-y-3 rounded-md border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-900"
-          >
-            <div class="flex items-center gap-2">
-              <DatabaseIcon size={18} class="shrink-0 text-neutral-500" />
-              <h4 class="text-xl font-medium text-neutral-950 dark:text-neutral-50">
-                Data storage
-              </h4>
-            </div>
-            <p class="text-sm">
-              Cloud-based data storage for accurate building data. No more relying on benchmarks or
-              estimates.
-            </p>
-            <p class="text-sm">
-              View and export building data from Clouder&nbsp;Dashboard for sustainability
-              reporting.
-            </p>
-            <p class="text-sm">
-              Our five-year data retention policy gives you full ownership and control of your data.
-            </p>
-          </div>
-          <div
-            class="space-y-3 rounded-md border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-900"
-          >
-            <div class="flex items-center gap-2">
-              <ChevronsLeftRightEllipsisIcon size={18} class="shrink-0 text-neutral-500" />
-              <h4 class="text-xl font-medium text-neutral-950 dark:text-neutral-50">
-                Real-time API
-              </h4>
-            </div>
-            <p class="text-sm">Access all building data through our real-time API.</p>
-            <p class="text-sm">
-              Perfect for smart office apps, property management software, and other third-party
-              integrations.
-            </p>
-          </div>
-          <div
-            id="features-fdd"
-            class="space-y-3 rounded-md border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-900"
-          >
-            <div class="flex items-center gap-2">
-              <OcatagonAlertIcon size={18} class="shrink-0 text-neutral-500" />
-              <h4 class="text-xl font-medium text-neutral-950 dark:text-neutral-50">
-                Fault detection & diagnostics
-              </h4>
-            </div>
-            <p class="text-sm">
-              Quickly identify and diagnose faults, problems, and conflicts in your building
-              automation system.
-            </p>
-            <p class="text-sm">
-              Receive targeted recommendations and clear guidance for resolving identified issues.
-            </p>
-            <p class="text-sm">
-              Save time and resources by reducing manual work and streamline troubleshooting
-              workflows.
-            </p>
-          </div>
-          <div
-            id="features-dc"
-            class="space-y-3 rounded-md border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-900"
-          >
-            <div class="flex items-center gap-2">
-              <SettingsIcon size={18} class="shrink-0 text-neutral-500" />
-              <h4 class="text-xl font-medium text-neutral-950 dark:text-neutral-50">
-                Device control
-              </h4>
-            </div>
-            <p class="text-sm">
-              Control all systems and field devices in your building without disrupting the existing
-              building automation system.
-            </p>
-            <p class="text-sm">
-              Use sophisticated, event-based rules to control devices to further reduce energy
-              consumption.
-            </p>
-          </div>
-          <div
-            class="space-y-3 rounded-md border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-900"
-          >
-            <div class="flex items-center gap-2">
-              <ShieldCheckIcon size={18} class="shrink-0 text-neutral-500" />
-              <h4 class="text-xl font-medium text-neutral-950 dark:text-neutral-50">
-                Additional security
-              </h4>
-            </div>
-            <p class="text-sm">
-              Fine-grained data access rules, accurate audit trail, end-to-end encryption, and
-              secure cloud storage of building data.
-            </p>
-            <p class="text-sm">
-              Robust security in building automation with centralized password management. No more
-              default passwords known by everyone.
-            </p>
-          </div>
-          <div
-            class="space-y-3 rounded-md border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-900"
-          >
-            <div class="flex items-center gap-2">
-              <WrenchIcon size={18} class="shrink-0 text-neutral-500" />
-              <h4 class="text-xl font-medium text-neutral-950 dark:text-neutral-50">
-                Custom integrations
-              </h4>
-            </div>
-            <p class="text-sm">
-              Our team can offer tailored solutions and consulting services to address your specific
-              needs, from advanced system integrations to personalized building performance
-              strategies.
-            </p>
-            <a
-              href={paths.contact.href}
-              class="mt-2 inline-flex h-8 cursor-pointer items-center justify-center gap-1 rounded bg-neutral-950 px-3 text-center text-xs font-medium text-nowrap text-neutral-50 transition select-none hover:bg-neutral-800 active:bg-neutral-800 dark:bg-neutral-50 dark:text-neutral-950 dark:hover:bg-neutral-200 dark:active:bg-neutral-200"
-            >
-              Let’s talk
-            </a>
-          </div>
+          {
+            features.map(({ icon: Icon, title, content, showCta }, i) => (
+              <div class="space-y-3 rounded-md border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-900">
+                <Icon size={20} class="shrink-0 text-neutral-500" />
+                <h4 class="mt-1 text-lg font-medium text-neutral-950 dark:text-neutral-50">
+                  {title}
+                </h4>
+
+                {content.map((p) => (
+                  <p class="text-neutral-700 dark:text-neutral-300">{p}</p>
+                ))}
+                {showCta && (
+                  <a
+                    href={paths.contact.href}
+                    class="mt-1 inline-flex h-9 cursor-pointer items-center justify-center rounded bg-neutral-950 px-3.5 text-center text-sm text-nowrap text-neutral-50 transition select-none hover:bg-neutral-700 active:bg-neutral-700 dark:bg-neutral-50 dark:text-neutral-950 dark:hover:bg-neutral-300 dark:active:bg-neutral-300"
+                  >
+                    Let’s talk
+                  </a>
+                )}
+              </div>
+            ))
+          }
         </div>
       </div>
     </div>
@@ -328,184 +303,34 @@ const description = 'Clouder unlcoks the hidden value.';
   <section id="questions">
     <div class="py-16 lg:py-32">
       <div class="container">
-        <p
-          class="col-span-full mb-4 font-mono text-xs tracking-wider text-neutral-500 uppercase lg:mb-6"
-        >
-          FAQ
-        </p>
         <div class="grid grid-cols-1 items-start gap-8 lg:grid-cols-3">
           <div>
             <h2
-              class="mb-4 text-3xl font-medium tracking-tight text-neutral-950 lg:mb-6 lg:text-4xl dark:text-neutral-50"
+              class="mb-4 font-serif text-4xl text-neutral-950 lg:mb-6 lg:text-5xl dark:text-neutral-50"
             >
-              I have a question…
+              FAQ
             </h2>
             <button
               id="toggle-button"
-              class="inline-flex h-10 shrink-0 cursor-pointer items-center rounded border border-current/12 bg-white px-4 text-center text-sm font-medium text-nowrap transition select-none hover:bg-neutral-100 active:bg-neutral-100 dark:bg-neutral-900 dark:hover:bg-neutral-800 dark:active:bg-neutral-800"
+              class="inline-flex h-9 cursor-pointer items-center justify-center rounded bg-neutral-950 px-3.5 text-center text-sm text-nowrap text-neutral-50 transition select-none hover:bg-neutral-700 active:bg-neutral-700 dark:bg-neutral-50 dark:text-neutral-950 dark:hover:bg-neutral-300 dark:active:bg-neutral-300"
             >
               Expand all
             </button>
           </div>
           <div
-            class="*:border-b *:border-neutral-200 lg:col-span-2 lg:-mt-3 *:dark:border-neutral-800"
+            class="*:border-t *:border-neutral-200 lg:col-span-2 lg:-mt-3 *:dark:border-neutral-800"
           >
-            <details class="group open:pb-8">
-              <summary
-                class="flex cursor-pointer list-none py-6 text-lg font-medium text-neutral-950 transition group-open:pb-4 hover:text-current/60 active:text-current/60 dark:text-neutral-50"
-              >
-                <span
-                  class="w-6 shrink-0 font-medium before:content-['+'] group-open:before:content-['-']"
-                ></span>
-                What is Clouder and how does virtual cabling work?
-              </summary>
-              <p class="ml-6">
-                Clouder is a vendor-agnostic data and integration platform for commercial real
-                estate. Its patented virtual cabling technology connects building systems through
-                one secure API without the need for excess rewiring or ceiling tear-downs. This
-                unlocks significant energy and operational savings at property and portfolio level,
-                directly increasing asset value. The harmonised data can also be used for ESG
-                reporting, AI solutions and tenant services.
-              </p>
-            </details>
-            <details class="group open:pb-8">
-              <summary
-                class="flex cursor-pointer list-none py-6 text-lg font-medium text-neutral-950 transition group-open:pb-4 hover:text-current/60 active:text-current/60 dark:text-neutral-50"
-              >
-                <span
-                  class="w-6 shrink-0 font-medium before:content-['+'] group-open:before:content-['-']"
-                ></span>
-                Where can Clouder be installed?
-              </summary>
-              <p class="ml-6">
-                Clouder can be installed in all types of properties, both existing and new
-                construction. Pilot buildings typically go live in two weeks. Portfolio rollouts
-                then follow a repeatable playbook. Deployments are capex-light, minimally disruptive
-                to tenants, and deliver value from day one.
-              </p>
-            </details>
-            <details class="group open:pb-8">
-              <summary
-                class="flex cursor-pointer list-none py-6 text-lg font-medium text-neutral-950 transition group-open:pb-4 hover:text-current/60 active:text-current/60 dark:text-neutral-50"
-              >
-                <span
-                  class="w-6 shrink-0 font-medium before:content-['+'] group-open:before:content-['-']"
-                ></span>
-                How quickly can we implement Clouder across a portfolio?
-              </summary>
-              <p class="ml-6">
-                Pilot buildings typically go live in two weeks. Portfolio rollouts then follow a
-                repeatable playbook. Deployments are capex-light, minimally disruptive to tenants,
-                and deliver value from day one.
-              </p>
-            </details>
-            <details class="group open:pb-8">
-              <summary
-                class="flex cursor-pointer list-none py-6 text-lg font-medium text-neutral-950 transition group-open:pb-4 hover:text-current/60 active:text-current/60 dark:text-neutral-50"
-              >
-                <span
-                  class="w-6 shrink-0 font-medium before:content-['+'] group-open:before:content-['-']"
-                ></span>
-                Is Clouder compatible with our existing systems and vendors?
-              </summary>
-              <p class="ml-6">
-                Yes. Clouder integrates with all major building protocols, for example BACnet and
-                Modbus. Owners can retain their existing systems while unifying data into a clean,
-                actionable layer.
-              </p>
-            </details>
-            <details class="group open:pb-8">
-              <summary
-                class="flex cursor-pointer list-none py-6 text-lg font-medium text-neutral-950 transition group-open:pb-4 hover:text-current/60 active:text-current/60 dark:text-neutral-50"
-              >
-                <span
-                  class="w-6 shrink-0 font-medium before:content-['+'] group-open:before:content-['-']"
-                ></span>
-                What about cybersecurity and data ownership?
-              </summary>
-              <p class="ml-6">
-                You retain full ownership and control of your data. Clouder applies end-to-end
-                encryption, accurate audit trails, and secure cloud connections.
-              </p>
-            </details>
-            <details class="group open:pb-8">
-              <summary
-                class="flex cursor-pointer list-none py-6 text-lg font-medium text-neutral-950 transition group-open:pb-4 hover:text-current/60 active:text-current/60 dark:text-neutral-50"
-              >
-                <span
-                  class="w-6 shrink-0 font-medium before:content-['+'] group-open:before:content-['-']"
-                ></span>
-                What are the annual costs? Are there any license fees?
-              </summary>
-              <p class="mb-4 ml-6">
-                Our pricing structure consists of a setup fee and a monthly subscription fee. The
-                fees are determined by building size, complexity, data volume, selected features,
-                and service scope.
-              </p>
-              <p class="ml-6">We don't charge any additional license fees for any of our plans.</p>
-            </details>
-            <details class="group open:pb-8">
-              <summary
-                class="flex cursor-pointer list-none py-6 text-lg font-medium text-neutral-950 transition group-open:pb-4 hover:opacity-65 active:opacity-65 dark:text-neutral-50"
-              >
-                <span
-                  class="w-6 shrink-0 font-medium before:content-['+'] group-open:before:content-['-']"
-                ></span>
-                Which asset classes benefit most from Clouder?
-              </summary>
-              <p class="ml-6">
-                Clouder scales across residential, office, logistics and mixed-use assets. Any
-                building type with siloed systems benefits from reduced operating costs, improved
-                sustainability metrics and higher valuations.
-              </p>
-            </details>
-            <details class="group open:pb-5">
-              <summary
-                class="flex cursor-pointer list-none py-6 text-lg font-medium text-neutral-950 transition group-open:pb-4 hover:text-current/60 active:text-current/60 dark:text-neutral-50"
-              >
-                <span
-                  class="w-6 shrink-0 font-medium before:content-['+'] group-open:before:content-['-']"
-                ></span>
-                How does Clouder work with our existing ESG reporting software?
-              </summary>
-              <p class="ml-6">
-                Clouder supplies the clean, unified data that ESG software depends on. This
-                eliminates manual data collection, reduces errors, and ensures that operational
-                efficiency gains show up clearly in compliance and valuation metrics. You can keep
-                using your existing ESG-software. Clouder will serve clean data to that platform
-                through the API.
-              </p>
-            </details>
-            <details class="group open:pb-8">
-              <summary
-                class="flex cursor-pointer list-none py-6 text-lg font-medium text-neutral-950 transition group-open:pb-4 hover:text-current/60 active:text-current/60 dark:text-neutral-50"
-              >
-                <span
-                  class="w-6 shrink-0 font-medium before:content-['+'] group-open:before:content-['-']"
-                ></span>
-                How does Clouder help with EU Taxonomy and CSRD compliance?
-              </summary>
-              <p class="ml-6">
-                Clouder integrates energy, water, indoor climate and automation data into one
-                standardised layer. This makes reporting under EU Taxonomy and CSRD accurate and
-                traceable.
-              </p>
-            </details>
-            <details class="group border-none open:pb-8">
-              <summary
-                class="flex cursor-pointer list-none py-6 text-lg font-medium text-neutral-950 transition group-open:pb-4 hover:text-current/60 active:text-current/60 dark:text-neutral-50"
-              >
-                <span
-                  class="w-6 shrink-0 font-medium before:content-['+'] group-open:before:content-['-']"
-                ></span>
-                Can Clouder improve our GRESB score?
-              </summary>
-              <p class="ml-6">
-                Yes. By increasing data coverage and reducing consumption, Clouder strengthens the
-                Management and Performance components of GRESB. Better metering, benchmarking and
-                fault detection all contribute to higher scores and more attractive valuations.
-              </p>
-            </details>
+            {
+              faq.map(({ question, answer }) => (
+                <details class="group open:pb-8">
+                  <summary class="flex cursor-pointer list-none py-6 text-lg font-medium text-neutral-950 transition group-open:pb-4 hover:text-neutral-500 active:text-neutral-500 dark:text-neutral-50">
+                    <span class="w-6 shrink-0 font-medium before:content-['+'] group-open:before:content-['-']" />
+                    {question}
+                  </summary>
+                  <p class="ml-6 text-neutral-700 dark:text-neutral-300">{answer}</p>
+                </details>
+              ))
+            }
           </div>
         </div>
       </div>

@@ -4,35 +4,48 @@
 @config '../../tailwind.config.mjs';
 
 @font-face {
-  font-family: 'Plus Jakarta Sans';
+  font-family: 'InterVariable';
   font-style: normal;
   font-weight: 400 700;
   font-display: swap;
-  ascent-override: 99%; /* Fix Jakarta baseline */
-  src: url(/PlusJakartaSans[wght].woff2) format('woff2');
+  font-feature-settings:
+    'liga' 1,
+    'calt' 1;
+  src: url(/InterVariable.woff2) format('woff2');
 }
-
 @font-face {
-  font-family: 'Plus Jakarta Sans';
+  font-family: 'InterVariable';
   font-style: italic;
-  font-weight: 400 700;
+  font-weight: 400 600;
   font-display: swap;
-  ascent-override: 99%; /* Fix Jakarta baseline */
-  src: url(/PlusJakartaSans-Italic[wght].woff2) format('woff2');
+  font-feature-settings:
+    'liga' 1,
+    'calt' 1;
+  src: url(/InterVariable-Italic.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'STIXTwoText';
+  font-style: normal;
+  font-weight: 400 400;
+  font-display: swap;
+  font-feature-settings:
+    'liga' 1,
+    'calt' 1;
+  src: url(/STIXTwoText.woff2) format('woff2');
 }
 
 @theme {
-  --font-sans: 'Plus Jakarta Sans', sans-serif;
-  --font-sans--font-feature-settings: 'case';
+  --font-serif: STIXTwoText, Times, sans-serif;
+  --font-sans: InterVariable, Inter, sans-serif;
+
+  --text-6xl: 3.75rem;
+  --text-5xl: 2.75rem;
+  --text-4xl: 2.25rem;
+
   --aspect-image: 3/2;
   --aspect-wide: 2/1;
-  --shadow-inset: inset 0 0 0 1px;
-  --text-6xl: 3.5rem;
-  --text-5xl: 3rem;
-  --text-4xl: 2.5rem;
-  --text-3xl: 2rem;
-  --tracking-tight: -0.0125em;
 
+  /* Tailwind 3 colors, less saturated */
   --color-red-50: #fef2f2;
   --color-red-100: #fee2e2;
   --color-red-200: #fecaca;
@@ -143,18 +156,7 @@
   --color-sky-800: #075985;
   --color-sky-900: #0c4a6e;
   --color-sky-950: #082f49;
-  --color-blue-50: #eff6ff;
-  --color-blue-100: #dbeafe;
-  --color-blue-200: #bfdbfe;
-  --color-blue-300: #93c5fd;
-  --color-blue-400: #60a5fa;
-  --color-blue-500: #3b82f6;
-  --color-blue-600: #2563eb;
-  --color-blue-700: #1d4ed8;
-  --color-blue-800: #1e40af;
-  --color-blue-900: #1e3a8a;
-  --color-blue-950: #172554;
-  /*--color-indigo-50: #eef2ff;
+  --color-indigo-50: #eef2ff;
   --color-indigo-100: #e0e7ff;
   --color-indigo-200: #c7d2fe;
   --color-indigo-300: #a5b4fc;
@@ -164,7 +166,7 @@
   --color-indigo-700: #4338ca;
   --color-indigo-800: #3730a3;
   --color-indigo-900: #312e81;
-  --color-indigo-950: #1e1b4b;*/
+  --color-indigo-950: #1e1b4b;
   --color-violet-50: #f5f3ff;
   --color-violet-100: #ede9fe;
   --color-violet-200: #ddd6fe;
@@ -221,44 +223,20 @@
   --color-rose-900: #881337;
   --color-rose-950: #4c0519;
 
-  /* Jasper color palette */
-  /*--color-red-50: oklch(96.37% 0.0108 20.229);
-  --color-red-100: oklch(92.48% 0.0264 18.909);
-  --color-red-200: oklch(86.81% 0.0513 18.003);
-  --color-red-300: oklch(78.25% 0.0949 19.24);
-  --color-red-400: oklch(66.69% 0.1605 21.885);
-  --color-red-500: oklch(59.24% 0.2 25);
-  --color-red-600: oklch(52.56% 0.2056 26.994);
-  --color-red-700: oklch(44.56% 0.1775 27.187);
-  --color-red-800: oklch(37.78% 0.1467 26.568);
-  --color-red-900: oklch(32.44% 0.1164 25.392);
-  --color-red-950: oklch(17.1% 0.075 25.711);*/
-  /* Andrea Blue color palette */
-  /*--color-indigo-50: oklch(96.37% 0.0108 259.873);
-  --color-indigo-100: oklch(92.37% 0.0245 259.616);
-  --color-indigo-200: oklch(87.1% 0.0453 258.45);
-  --color-indigo-300: oklch(79.41% 0.081 254.998);
-  --color-indigo-400: oklch(68.67% 0.1282 257.809);
-  --color-indigo-500: oklch(59.82% 0.167 263);
-  --color-indigo-600: oklch(51.71% 0.1898 266.066);
-  --color-indigo-700: oklch(45.6% 0.1874 267.561);
-  --color-indigo-800: oklch(38.85% 0.1526 268.823);
-  --color-indigo-900: oklch(34.11% 0.1116 268.707);
-  --color-indigo-950: oklch(23.89% 0.069 271.12);*/
+  /* Royal blue */
+  --color-blue-50: oklch(0.957 0.017 279.11);
+  --color-blue-100: oklch(0.924 0.033 280.1);
+  --color-blue-200: oklch(0.838 0.07 278.55);
+  --color-blue-300: oklch(0.763 0.106 276.43);
+  --color-blue-400: oklch(0.679 0.146 273.62);
+  --color-blue-500: oklch(0.605 0.182 269.63);
+  --color-blue-600: oklch(0.525 0.204 265.44);
+  --color-blue-700: oklch(0.432 0.168 265.57);
+  --color-blue-800: oklch(0.334 0.13 265.43);
+  --color-blue-900: oklch(0.237 0.094 265.64);
+  --color-blue-950: oklch(0.181 0.07 265.39);
 
-  --color-indigo-50: oklch(96.2% 0.013 270.62);
-  --color-indigo-100: oklch(93% 0.024 270.62);
-  --color-indigo-200: oklch(87% 0.047 270.62);
-  --color-indigo-300: oklch(78.5% 0.083 270.62);
-  --color-indigo-400: oklch(63% 0.131 270.62);
-  --color-indigo-500: oklch(49.43% 0.1673 270.62);
-  --color-indigo-600: oklch(43% 0.188 270.62);
-  --color-indigo-700: oklch(38.5% 0.172 270.62);
-  --color-indigo-800: oklch(33.5% 0.14 270.62);
-  --color-indigo-900: oklch(30% 0.103 270.62);
-  --color-indigo-950: oklch(21.5% 0.065 270.62);
-
-  --color-neutral-900: oklch(18.22% 0 0);
+  /* Darker neutral 950 */
   --color-neutral-950: oklch(13.44% 0 0);
 }
 
@@ -285,12 +263,12 @@
 @layer base {
   /* Force ring color since tailwind doesn't provide a better way of customizing it */
   :root {
-    --ring: #6677cc;
+    --ring: var(--color-blue-600);
   }
 
   @media (prefers-color-scheme: dark) {
     :root {
-      --ring: #334499;
+      --ring: var(--color-blue-400);
     }
   }
 
@@ -326,18 +304,10 @@
   h5,
   h6 {
     text-wrap: balance;
+    letter-spacing: -0.005em;
   }
 
   strong {
     font-weight: 600;
-  }
-}
-
-.page-meta {
-  font-size: 14px;
-  color: gray;
-
-  a {
-    color: inherit;
   }
 }
