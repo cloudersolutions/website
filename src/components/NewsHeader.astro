@@ -16,27 +16,27 @@ const usedCategories = Array.from(new Set(posts.map(({ data }) => data.category)
 const nonEmptyCategories = categories.filter((c) => usedCategories.includes(c));
 
 const linkClass =
-  'inline-flex items-center text-sm p-2 leading-4 rounded transition select-none hover:bg-neutral-100 active:bg-neutral-100 dark:hover:bg-neutral-900 dark:active:bg-neutral-900 aria-current:text-neutral-50 aria-current:bg-neutral-950 dark:aria-current:text-neutral-950 dark:aria-current:bg-neutral-50';
+  'inline-flex items-center text-base py-2.5 px-3 leading-4 rounded transition select-none hover:bg-current/5 active:bg-current/5 aria-current:text-neutral-50 aria-current:bg-neutral-950 dark:aria-current:text-neutral-950 dark:aria-current:bg-neutral-50';
 ---
 
 <div class="pt-16 pb-8 lg:pt-32 lg:pb-16">
   <div class="container">
-    <div class="text-neutral-950 dark:text-neutral-50">
-      <h1 class="mb-4 font-serif text-4xl lg:mb-6 lg:text-5xl">The latest from Clouder</h1>
-      <div class="flex flex-wrap items-center gap-1">
-        <a href={paths.news.href} aria-current={current === undefined} class={linkClass}>All</a>
-        {
-          nonEmptyCategories.map((category) => (
-            <a
-              href={`${paths.news.href}/${category}`}
-              aria-current={current === category}
-              class={linkClass}
-            >
-              {getCategoryLabel(category)}
-            </a>
-          ))
-        }
-      </div>
+    <h1 class="mb-4 font-serif text-4xl text-neutral-950 lg:mb-6 lg:text-6xl dark:text-neutral-50">
+      The latest from Clouder
+    </h1>
+    <div class="flex flex-wrap items-center gap-1 text-neutral-950 dark:text-neutral-50">
+      <a href={paths.news.href} aria-current={current === undefined} class={linkClass}>All</a>
+      {
+        nonEmptyCategories.map((category) => (
+          <a
+            href={`${paths.news.href}/${category}`}
+            aria-current={current === category}
+            class={linkClass}
+          >
+            {getCategoryLabel(category)}
+          </a>
+        ))
+      }
     </div>
   </div>
 </div>

@@ -30,7 +30,7 @@ content:
       - name: category
         label: Category
         type: select
-        required: true
+        required: false
         options:
           creatable: false
           multiple: false

@@ -3,6 +3,7 @@ import { getCollection, render, type CollectionEntry } from 'astro:content';
 
 import ProseLayout from '@layouts/ProseLayout.astro';
 import CompanyLogo from '@components/CompanyLogo.astro';
+import Divider from '@components/Divider.astro';
 import { paths } from '@data/paths';
 import { formatDate } from '@utils/date';
 import { filterDrafts, getCategoryLabel } from '@utils/content';
@@ -34,55 +35,62 @@ const { Content } = await render(post);
 
 <ProseLayout title={post.data.title} description={post.data.description} image={post.data.cover}>
   <article>
-    <header class="not-prose text-center">
-      <h1
-        class="mb-5 font-serif text-4xl text-neutral-950 lg:mb-6 lg:text-5xl dark:text-neutral-50"
-      >
+    <header class="not-prose">
+      <h1 class="font-serif text-4xl text-neutral-950 lg:text-6xl dark:text-neutral-50">
         {post.data.title}
       </h1>
-      <p class="flex flex-wrap justify-center gap-1 text-sm">
+    </header>
+    <aside class="not-prose top-26 right-0 pt-8 xl:absolute xl:pr-6">
+      <ul class="grid grid-cols-2 gap-4 sm:grid-cols-4 xl:grid-cols-1">
         {
           post.data.author && (
-            <>
-              <span class="text-neutral-500">{post.data.author}</span>
-              <span class="text-neutral-500">&middot;</span>
-            </>
+            <li>
+              <p class="text-sm">Author</p>
+              <span class="text-sm text-neutral-500">{post.data.author}</span>
+            </li>
           )
         }
         {
           post.data.category && (
-            <>
+            <li>
+              <p class="text-sm">Category</p>
               <a
-                class="text-neutral-500 transition hover:text-current active:text-current"
+                class="text-sm text-neutral-500 underline-offset-2 hover:underline active:underline"
                 href={`${paths.news.href}/${post.data.category}`}
               >
                 {getCategoryLabel(post.data.category)}
               </a>
-              <span class="text-neutral-500">&middot;</span>
-            </>
+            </li>
           )
         }
-        <time class="text-neutral-500" datetime={post.data.date.toISOString()}>
-          {formatDate(post.data.date)}
-        </time>
-        <span class="text-neutral-500">&middot;</span>
-        <button
-          id="copy-clipboard"
-          class="w-16 cursor-pointer text-left text-neutral-500 transition hover:text-current"
-        >
-          Copy link
-        </button>
-      </p>
-    </header>
+        <li>
+          <p class="text-sm">Date</p>
+          <time class="text-sm text-neutral-500" datetime={post.data.date.toISOString()}>
+            {formatDate(post.data.date)}
+          </time>
+        </li>
+        <li>
+          <p class="text-sm">Share</p>
+          <button
+            id="copy-clipboard"
+            class="cursor-pointer text-left text-sm text-neutral-500 underline-offset-2 hover:underline active:underline"
+          >
+            Copy link
+          </button>
+        </li>
+      </ul>
+    </aside>
     {
-      post.data.callout && post.data.category === 'case-study' && (
-        <div class="not-prose mx-auto my-16 flex items-center border-y border-neutral-200 dark:border-neutral-800">
+      post.data.callout && post.data.category === 'case-study' ? (
+        <div class="not-prose mx-auto my-12 flex items-center border-y border-neutral-200 lg:my-16 dark:border-neutral-800">
           <div class="flex w-1/2 justify-center p-8 lg:p-16">
             <div>
               <p
                 class:list={twMerge(
-                  post.data.callout.value.length < 6 ? 'text-3xl md:text-5xl' : 'text-2xl',
-                  'max-w-48 leading-none font-medium text-neutral-950 dark:text-neutral-50'
+                  post.data.callout.value.length < 6
+                    ? 'text-4xl lg:text-6xl'
+                    : 'text-2xl font-[420] lg:text-3xl',
+                  'font-serif leading-none text-neutral-950 lg:max-w-48 dark:text-neutral-50'
                 )}
               >
                 {post.data.callout.value}
@@ -98,13 +106,16 @@ const { Content } = await render(post);
             />
           </div>
         </div>
+      ) : (
+        <Divider />
       )
     }
-    <section class="my-8 lg:my-16">
+    <section class="my-12">
       <Content />
     </section>
   </article>
-  <div class="not-prose border-t border-neutral-200 pt-8 lg:pt-16 dark:border-neutral-800">
+  <Divider />
+  <div class="not-prose">
     <nav class="grid gap-8 lg:grid-cols-2">
       {
         previousPost && (
@@ -126,7 +137,7 @@ const { Content } = await render(post);
         nextPost && (
           <a
             href={`${paths.news.href}/${nextPost.id}`}
-            class="group text-right text-neutral-950 dark:text-neutral-50"
+            class="group text-right text-neutral-950 lg:col-start-2 dark:text-neutral-50"
           >
             <p class="-mr-0.75 text-sm text-neutral-500 transition group-hover:text-current group-active:text-current">
               Next

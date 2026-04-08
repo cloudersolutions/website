@@ -92,25 +92,26 @@ export default {
             '--tw-prose-invert-links': 'var(--color-blue-400)',
             '--tw-prose-invert-links-hover': 'var(--color-blue-300)',
             'h1, h2, h3, h4, h5, h6': {
-              fontWeight: '500',
               marginBottom: '1rem'
             },
             h1: {
+              fontFamily: 'var(--font-serif)',
               fontSize: '2rem',
-              lineHeight: '1.166665'
+              fontWeight: '400'
             },
             h2: {
-              fontSize: '1.5rem',
-              lineHeight: '1.33334',
-              marginTop: '3rem'
+              fontFamily: 'var(--font-serif)',
+              fontSize: '1.75rem',
+              fontWeight: '420'
             },
             h3: {
-              fontSize: '1.125rem',
-              lineHeight: '1.55556',
-              marginTop: '2rem'
+              fontFamily: 'var(--font-serif)',
+              fontSize: '1.25rem',
+              fontWeight: '450'
             },
             h4: {
               fontSize: '1rem',
+              fontWeight: '500',
               lineHeight: '1.625'
             },
             strong: {

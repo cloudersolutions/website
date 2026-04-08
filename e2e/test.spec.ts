@@ -26,20 +26,23 @@ test('solutions page navigation', async ({ page }) => {
   await page.getByRole('navigation').getByRole('link', { name: 'Solutions' }).click();
   await expect(page).toHaveURL('/solutions');
   await expect(
-    page.getByRole('heading', { name: ' The new standard for commercial property performance ' })
+    page.getByRole('heading', { name: 'The new standard for property performance' })
   ).toBeVisible();
 });
 
 test('post and category navigation', async ({ page }) => {
-  const heading = 'New Finnish Innovation Revolutionizes Buildings';
-  const category = 'Press releases';
+  const heading =
+    'Energy Savings and Real‑Time Monitoring for a Historic Property with Clouder’s system';
+  const category = 'Case study';
 
   await page.goto('/news');
   await page.getByRole('link', { name: heading }).click();
-  await expect(page).toHaveURL('/news/2024-05-24-press-release');
+  await expect(page).toHaveURL(
+    '/news/energy-savings-and-real-time-monitoring-for-a-historic-property-with-clouders-system'
+  );
   await expect(page.getByRole('heading', { name: heading })).toBeVisible();
   await page.getByRole('link', { name: category }).click();
-  await expect(page).toHaveURL('/news/press');
+  await expect(page).toHaveURL('/news/case-study');
   await expect(page).toHaveTitle(`${category} · Clouder`);
   await expect(page.getByRole('heading', { name: heading })).toBeVisible();
 });

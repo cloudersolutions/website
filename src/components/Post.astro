@@ -48,14 +48,20 @@ const { post, isLarge } = Astro.props;
         >&rarr;</span
       >
     </div>
-    <h3
+    <h4
       class:list={[
-        'text-neutral-950 dark:text-neutral-50',
-        isLarge ? 'text-2xl font-[450]' : 'text-base font-medium'
+        'font-serif leading-tight text-neutral-950 dark:text-neutral-50',
+        isLarge ? 'text-2xl' : 'text-xl'
       ]}
     >
       {post.data.title}
-    </h3>
-    {isLarge && <p class="text-sm lg:text-base">{post.data.description}</p>}
+    </h4>
+    {
+      isLarge && (
+        <p class="text-sm text-neutral-700 lg:text-base dark:text-neutral-300">
+          {post.data.description}
+        </p>
+      )
+    }
   </a>
 </article>

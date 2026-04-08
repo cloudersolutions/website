@@ -11,6 +11,7 @@
   font-feature-settings:
     'liga' 1,
     'calt' 1;
+  font-variation-settings: 'opsz' 18;
   src: url(/InterVariable.woff2) format('woff2');
 }
 @font-face {
@@ -21,16 +22,19 @@
   font-feature-settings:
     'liga' 1,
     'calt' 1;
+  font-variation-settings: 'opsz' 18;
   src: url(/InterVariable-Italic.woff2) format('woff2');
 }
 @font-face {
   font-family: 'STIXTwoText';
   font-style: normal;
-  font-weight: 400 400;
+  font-weight: 400 500;
   font-display: swap;
   font-feature-settings:
     'liga' 1,
     'calt' 1;
+  font-variation-settings: 'opsz' 24;
+  ascent-override: 90%;
   src: url(/STIXTwoText.woff2) format('woff2');
 }
 
@@ -38,9 +42,11 @@
   --font-serif: STIXTwoText, Times, sans-serif;
   --font-sans: InterVariable, Inter, sans-serif;
 
-  --text-6xl: 3.75rem;
-  --text-5xl: 2.75rem;
+  --text-7xl: 4.5rem;
+  --text-6xl: 3.5625rem;
+  --text-5xl: 2.8125rem;
   --text-4xl: 2.25rem;
+  --text-3xl: 1.875rem;
 
   --aspect-image: 3/2;
   --aspect-wide: 2/1;
@@ -235,9 +241,6 @@
   --color-blue-800: oklch(0.334 0.13 265.43);
   --color-blue-900: oklch(0.237 0.094 265.64);
   --color-blue-950: oklch(0.181 0.07 265.39);
-
-  /* Darker neutral 950 */
-  --color-neutral-950: oklch(13.44% 0 0);
 }
 
 @utility container {
@@ -293,18 +296,18 @@
     overflow-wrap: break-word;
   }
 
-  p {
-    text-wrap: pretty;
-  }
-
   h1,
   h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  h3 {
     text-wrap: balance;
     letter-spacing: -0.005em;
+  }
+
+  h4,
+  h5,
+  h6,
+  p {
+    text-wrap: pretty;
   }
 
   strong {
