@@ -83,15 +83,14 @@ const defaultHeaderClass = 'py-4 text-neutral-950 dark:text-neutral-50';
       </div>
     </label>
     <!-- Desktop menu -->
-    <nav class="hidden flex-wrap gap-2 md:flex" data-testid="menu">
+    <nav class="hidden flex-wrap gap-1 md:flex" data-testid="menu">
       {
         headerLinks.map(({ title, href }) => (
           <a
             href={href}
             aria-current={isActive(href)}
             class:list={twMerge(
-              'inline-flex items-center gap-0.5 p-2 text-current decoration-1 underline-offset-2 transition select-none aria-current:text-current aria-current:hover:bg-transparent',
-              'hover:underline active:underline',
+              'inline-flex items-center rounded p-2 leading-4 transition select-none hover:bg-current/5 active:bg-current/5 aria-current:text-current',
               itemClass,
               headerLinks.some((i) => isActive(i.href)) && 'text-current/56 hover:text-current'
             )}

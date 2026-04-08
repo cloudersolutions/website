@@ -26,7 +26,7 @@ const caseExamplePosts = posts
 ---
 
 <BaseLayout title={config.title} ogTitle={config.ogtitle} description={config.description}>
-  <section class="relative bg-neutral-900">
+  <section class="relative bg-neutral-900 dark:bg-neutral-950">
     <div class="absolute inset-0 z-0 mask-linear-315 mask-linear-from-0%">
       <video
         aria-hidden="true"
@@ -44,6 +44,7 @@ const caseExamplePosts = posts
     <div class="relative">
       <SiteHeader
         headerClass="bg-transparent dark:bg-transparent text-neutral-50 dark:text-neutral-50"
+        itemClass="hover:bg-current/10 active:bg-current/10 text-shadow-sm"
       />
       <div class="container py-28 lg:py-56">
         <div class="-mt-4 max-w-prose drop-shadow-[0_0_24px] drop-shadow-black/75">

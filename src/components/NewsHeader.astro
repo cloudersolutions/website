@@ -16,14 +16,14 @@ const usedCategories = Array.from(new Set(posts.map(({ data }) => data.category)
 const nonEmptyCategories = categories.filter((c) => usedCategories.includes(c));
 
 const linkClass =
-  'text-base text-neutral-500 transition select-none hover:text-current active:text-current aria-current:text-current aria-current:underline underline-offset-2 decoration-1';
+  'inline-flex items-center text-sm p-2 leading-4 rounded transition select-none hover:bg-neutral-100 active:bg-neutral-100 dark:hover:bg-neutral-900 dark:active:bg-neutral-900 aria-current:text-neutral-50 aria-current:bg-neutral-950 dark:aria-current:text-neutral-950 dark:aria-current:bg-neutral-50';
 ---
 
 <div class="pt-16 pb-8 lg:pt-32 lg:pb-16">
   <div class="container">
     <div class="text-neutral-950 dark:text-neutral-50">
       <h1 class="mb-4 font-serif text-4xl lg:mb-6 lg:text-5xl">The latest from Clouder</h1>
-      <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
+      <div class="flex flex-wrap items-center gap-1">
         <a href={paths.news.href} aria-current={current === undefined} class={linkClass}>All</a>
         {
           nonEmptyCategories.map((category) => (
