@@ -21,10 +21,10 @@ test('render home page with key sections', async ({ page }) => {
   await expect(page.getByRole('heading').getByText('Results from our customers')).toBeVisible();
 });
 
-test('product page navigation', async ({ page }) => {
+test('solutions page navigation', async ({ page }) => {
   await page.goto('/');
-  await page.getByRole('navigation').getByRole('link', { name: 'Product' }).click();
-  await expect(page).toHaveURL('/product');
+  await page.getByRole('navigation').getByRole('link', { name: 'Solutions' }).click();
+  await expect(page).toHaveURL('/solutions');
   await expect(
     page.getByRole('heading', { name: ' The new standard for commercial property performance ' })
   ).toBeVisible();

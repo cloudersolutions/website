@@ -12,11 +12,6 @@ status = 301
 force = true
 
 [[redirects]]
-from = "/our-solutions"
-to = "/product"
-status = 301
-
-[[redirects]]
 from = "/sustainability"
 to = "/"
 status = 301
@@ -29,6 +24,16 @@ status = 301
 [[redirects]]
 from = "/contact-us"
 to = "/contact"
+status = 301
+
+[[redirects]]
+from = "/our-solutions"
+to = "/solutions"
+status = 301
+
+[[redirects]]
+from = "/product"
+to = "/solutions"
 status = 301
 
 [[redirects]]
