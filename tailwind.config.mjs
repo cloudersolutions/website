@@ -19,6 +19,9 @@ export default {
               marginTop: '2rem',
               padding: 0
             },
+            'blockquote em': {
+              fontStyle: 'normal'
+            },
             'blockquote p:first-of-type': {
               fontFamily: 'var(--font-serif)',
               fontSize: '1.25rem',

@@ -27,26 +27,35 @@ const { post, isLarge } = Astro.props;
       class="mb-1 aspect-video bg-neutral-500/10 object-cover text-transparent transition duration-300 group-hover:opacity-90 group-active:opacity-90"
     />
     <div
-      class="flex flex-wrap gap-1.5 text-sm text-neutral-500 transition group-hover:text-current group-active:text-current"
+      class="flex flex-wrap gap-1 text-sm text-neutral-500 transition group-hover:text-current group-active:text-current"
     >
-      <span>{post.data.author ? post.data.author : getCategoryLabel(post.data.category)}</span>
-      <span>&middot;</span>
+      {
+        (post.data.author || post.data.category) && (
+          <>
+            <span>
+              {post.data.author
+                ? post.data.author
+                : post.data.category
+                  ? getCategoryLabel(post.data.category)
+                  : ''}
+            </span>
+            <span>&middot;</span>
+          </>
+        )
+      }
       <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
+      <span class="text-sm opacity-0 transition group-hover:translate-x-0.5 group-hover:opacity-100"
+        >&rarr;</span
+      >
     </div>
     <h3
       class:list={[
-        'font-medium text-neutral-950 dark:text-neutral-50',
-        isLarge ? 'text-2xl' : 'text-base'
+        'text-neutral-950 dark:text-neutral-50',
+        isLarge ? 'text-2xl font-[450]' : 'text-base font-medium'
       ]}
     >
       {post.data.title}
     </h3>
-    {
-      isLarge && (
-        <p class:list={['text-sm text-neutral-700 xl:text-base dark:text-neutral-300']}>
-          {post.data.description}
-        </p>
-      )
-    }
+    {isLarge && <p class="text-sm lg:text-base">{post.data.description}</p>}
   </a>
 </article>

@@ -6,7 +6,7 @@ description: For the owner saving energy is an important mission considering
   provided significant energy savings and improvement in indoor conditions from
   day one for a prestigious art nouveau building.
 date: 2025-03-26
-category: case-example
+category: case-study
 author: Emma Grönlund
 cover: images/kalevankatu-9-exterior.jpg
 coverAlt: Exterior shot of an art nouveau building

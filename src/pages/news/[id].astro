@@ -1,7 +1,5 @@
 ---
 import { getCollection, render, type CollectionEntry } from 'astro:content';
-import ChevronRightIcon from 'lucide-astro/ChevronRight';
-import ChevronLeftIcon from 'lucide-astro/ChevronLeft';
 
 import ProseLayout from '@layouts/ProseLayout.astro';
 import CompanyLogo from '@components/CompanyLogo.astro';
@@ -37,37 +35,47 @@ const { Content } = await render(post);
 <ProseLayout title={post.data.title} description={post.data.description} image={post.data.cover}>
   <article>
     <header class="not-prose text-center">
-      <h1 class="font-serif text-4xl text-neutral-950 lg:text-5xl dark:text-neutral-50">
+      <h1
+        class="mb-5 font-serif text-4xl text-neutral-950 lg:mb-6 lg:text-5xl dark:text-neutral-50"
+      >
         {post.data.title}
       </h1>
-      <div class="mt-6 flex flex-wrap justify-center gap-1.5 text-sm text-neutral-500">
+      <p class="flex flex-wrap justify-center gap-1 text-sm">
         {
           post.data.author && (
             <>
-              <span>{post.data.author}</span>
-              <span>&middot;</span>
+              <span class="text-neutral-500">{post.data.author}</span>
+              <span class="text-neutral-500">&middot;</span>
             </>
           )
         }
-        <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
-        <span>&middot;</span>
-        <a
-          href={`${paths.news.href}/${post.data.category}`}
-          class="transition hover:text-neutral-800 active:text-neutral-800 dark:hover:text-neutral-200 dark:active:text-neutral-200"
-        >
-          {getCategoryLabel(post.data.category)}
-        </a>
-        <span>&middot;</span>
+        {
+          post.data.category && (
+            <>
+              <a
+                class="text-neutral-500 transition hover:text-current active:text-current"
+                href={`${paths.news.href}/${post.data.category}`}
+              >
+                {getCategoryLabel(post.data.category)}
+              </a>
+              <span class="text-neutral-500">&middot;</span>
+            </>
+          )
+        }
+        <time class="text-neutral-500" datetime={post.data.date.toISOString()}>
+          {formatDate(post.data.date)}
+        </time>
+        <span class="text-neutral-500">&middot;</span>
         <button
           id="copy-clipboard"
-          class="w-16 cursor-pointer text-left transition hover:text-neutral-800 active:text-neutral-800 dark:hover:text-neutral-200 dark:active:text-neutral-200"
+          class="w-16 cursor-pointer text-left text-neutral-500 transition hover:text-current"
         >
           Copy link
         </button>
-      </div>
+      </p>
     </header>
     {
-      post.data.callout && post.data.category === 'case-example' && (
+      post.data.callout && post.data.category === 'case-study' && (
         <div class="not-prose mx-auto my-16 flex items-center border-y border-neutral-200 dark:border-neutral-800">
           <div class="flex w-1/2 justify-center p-8 lg:p-16">
             <div>
@@ -96,20 +104,20 @@ const { Content } = await render(post);
       <Content />
     </section>
   </article>
-  <div
-    class="not-prose border-t border-neutral-200 pt-8 sm:pt-10 md:pt-12 lg:pt-14 xl:pt-16 dark:border-neutral-800"
-  >
-    <nav class="grid grid-cols-1 gap-8 sm:grid-cols-2">
+  <div class="not-prose border-t border-neutral-200 pt-8 lg:pt-16 dark:border-neutral-800">
+    <nav class="grid gap-8 lg:grid-cols-2">
       {
         previousPost && (
           <a
             href={`${paths.news.href}/${previousPost.id}`}
-            class="group flex flex-col items-start gap-1 text-left text-neutral-950 dark:text-neutral-50"
+            class="group text-left text-neutral-950 dark:text-neutral-50"
           >
-            <div class="-ml-0.75 flex items-center gap-0.5 text-neutral-500 transition group-hover:text-current group-active:text-current">
-              <ChevronLeftIcon size={14} class="transition group-hover:-translate-x-0.5" />
-              <span class="text-sm">Previous</span>
-            </div>
+            <p class="mb-1 text-sm text-neutral-500 transition group-hover:text-current group-active:text-current">
+              <span class="inline-block opacity-60 transition group-hover:-translate-x-0.5 group-hover:opacity-100">
+                &larr;
+              </span>
+              Previous
+            </p>
             <p class="font-medium text-balance">{previousPost.data.title}</p>
           </a>
         )
@@ -118,12 +126,14 @@ const { Content } = await render(post);
         nextPost && (
           <a
             href={`${paths.news.href}/${nextPost.id}`}
-            class="group flex flex-col items-end gap-1 text-right text-neutral-950 md:col-start-2 dark:text-neutral-50"
+            class="group text-right text-neutral-950 dark:text-neutral-50"
           >
-            <div class="-mr-0.75 flex items-center gap-0.5 text-neutral-500 transition group-hover:text-current group-active:text-current">
-              <span class="text-sm">Next</span>
-              <ChevronRightIcon size={14} class="mt-px transition group-hover:translate-x-0.5" />
-            </div>
+            <p class="-mr-0.75 text-sm text-neutral-500 transition group-hover:text-current group-active:text-current">
+              Next
+              <span class="inline-block opacity-60 transition group-hover:translate-x-0.5 group-hover:opacity-100">
+                &rarr;
+              </span>
+            </p>
             <p class="font-medium text-balance">{nextPost.data.title}</p>
           </a>
         )

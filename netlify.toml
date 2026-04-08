@@ -62,6 +62,11 @@ to = "/news/metering-data-integration-large-distribution-center"
 status = 301
 
 [[redirects]]
+from = "/news/case-example"
+to = "/news/case-study"
+status = 301
+
+[[redirects]]
 from = "/news/press-release"
 to = "/news/press"
 status = 301

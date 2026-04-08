@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 
 import { categories } from 'src/content.config';
+import Divider from '@components/Divider.astro';
 import MainLayout from '@layouts/MainLayout.astro';
 import NewsHeader from '@components/NewsHeader.astro';
 import Newsletter from '@components/Newsletter.astro';
@@ -29,14 +30,15 @@ const description = `Posts filed under “${title}”`;
 
 <MainLayout title={title} description={description}>
   <NewsHeader current={category} />
-  <section class="container pt-12 pb-12 sm:pb-16 md:pb-20 lg:pb-24 xl:pb-28">
-    <div class="grid grid-cols-1 gap-x-6 gap-y-12 md:grid-cols-2 xl:grid-cols-6">
-      {categoryPosts.map((post, index) => <Post isLarge={index < 4} post={post} />)}
+  <section>
+    <div class="pb-16 lg:pb-32">
+      <div class="container">
+        <div class="grid grid-cols-1 gap-x-8 gap-y-16 md:grid-cols-2 xl:grid-cols-6">
+          {categoryPosts.map((post, index) => <Post isLarge={index < 4} post={post} />)}
+        </div>
+      </div>
     </div>
   </section>
-  <section
-    class="border-t border-neutral-200 py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 dark:border-neutral-800"
-  >
-    <Newsletter />
-  </section>
+  <Divider />
+  <Newsletter />
 </MainLayout>

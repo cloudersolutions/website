@@ -12,7 +12,7 @@ const posts = await getCollection('news', filterDrafts);
 const sortedPosts = posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
 const title = 'News';
-const description = 'Company news, case examples, and more.';
+const description = 'Company news, case studies, and more.';
 ---
 
 <MainLayout title={title} description={description}>

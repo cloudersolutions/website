@@ -12,16 +12,16 @@ export function filterDrafts(entry: { data: Record<string, unknown> }): boolean 
 // Match with .pages.yml
 export function getCategoryLabel(category: Category) {
   switch (category) {
-    case 'case-example':
-      return 'Case examples';
+    case 'case-study':
+      return 'Case study';
     case 'company-news':
       return 'Company news';
     case 'insights':
-      return 'Industry insights';
+      return 'Industry insight';
     case 'press':
-      return 'Press releases';
+      return 'Press release';
     case 'product':
-      return 'Product updates';
+      return 'Product update';
     default:
       return category;
   }

@@ -57,7 +57,7 @@ Real-time building data is vital for quickly addressing operational issues. Howe
 3.  Trimming idle use and waste with controls that adjust set-points in real time
     
 
-Field studies show 20–30 % energy cuts and up to 50 % runtime reduction, with [Clouder’s customer cases](/news/case-example) matching those numbers. Savings directly increase NOI and extend equipment life, while emissions cuts lift GRESB scores.
+Field studies show 20–30 % energy cuts and up to 50 % runtime reduction, with [Clouder’s customer cases](/news/case-study) matching those numbers. Savings directly increase NOI and extend equipment life, while emissions cuts lift GRESB scores.
 
 ## Step 3: Portfolio-level thinking and strategic investment
 

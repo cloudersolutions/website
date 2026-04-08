@@ -20,7 +20,7 @@ import heroPoster from '@assets/poster.jpg';
 const posts = await getCollection('news', filterDrafts);
 
 const caseExamplePosts = posts
-  .filter((post) => post.data.category === 'case-example')
+  .filter((post) => post.data.category === 'case-study')
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, 3);
 ---
@@ -241,16 +241,16 @@ const caseExamplePosts = posts
       <div class="container">
         <div class="grid gap-x-8 gap-y-12 lg:grid-cols-2">
           <Quote
-            quote="It’s our priority to stay at the forefront of sustainable construction. Partnering with Clouder in this project ensures we remain agile, innovative, and prepared to meet the growing demand from environmentally conscious owners and occupiers."
-            citeName="Mikko Sirviö"
-            citeTitle="Director of Commercial Construction"
-            citeCompany="Varte"
+            quote="With our high-value property, we didn’t want to spend the first year figuring it out. Clouder gave us the transparency we needed to address our data debt upfront, ensuring the building was optimized before the first tenant even walked through the door."
+            citeName="Hannu Tammia"
+            citeTitle="Asset Manager"
+            citeCompany="areim"
           />
           <Quote
-            quote="We had two machines going on 16 hours per day and now we’re able to save so much energy being able to control them in real time by the usage of the space. I bet our energy savings are more than 50% with this."
-            citeName="Jani Pulkkinen"
-            citeTitle="Construction Manager"
-            citeCompany="Conficap"
+            quote="As we take responsibility for building operations and costs for 20 years, data is mission-critical. With Clouder, we’re able to collect data comprehensively and cost-efficiently to ensure optimal conditions while keeping operational costs low."
+            citeName="Jere Pirhonen"
+            citeTitle="Director, Energy and Lifecycle Services"
+            citeCompany="srv"
           />
         </div>
       </div>
@@ -320,9 +320,20 @@ const caseExamplePosts = posts
         caseExamplePosts.length > 0 && (
           <div class="pb-16 lg:pb-32">
             <div class="container">
-              <h3 class="text-xs font-medium tracking-wider text-neutral-500 uppercase">
-                Results from our customers
-              </h3>
+              <div class="flex items-baseline justify-between">
+                <h3 class="text-xs font-medium tracking-wider text-neutral-500 uppercase">
+                  Results from our customers
+                </h3>
+                <a
+                  class="group text-sm text-neutral-500 transition hover:text-current active:text-current"
+                  href={`${paths.news.href}/case-study`}
+                >
+                  Case studies
+                  <span class="inline-block opacity-60 transition group-hover:translate-x-0.5 group-hover:opacity-100">
+                    &rarr;
+                  </span>
+                </a>
+              </div>
               <div class="mt-8 flex flex-col gap-8 lg:flex-row">
                 {caseExamplePosts.map((post) => (
                   <CasePost post={post} />

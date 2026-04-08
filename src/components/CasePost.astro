@@ -2,7 +2,6 @@
 import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import { twMerge } from 'tailwind-merge';
-import ChevronRightIcon from 'lucide-astro/ChevronRight';
 import CompanyLogo from '@components/CompanyLogo.astro';
 import { paths } from '@data/paths';
 
@@ -35,9 +34,7 @@ const { post } = Astro.props;
               >
                 {post.data.callout.value}
               </p>
-              <p class="mt-2 text-[13px] leading-none text-neutral-500">
-                {post.data.callout.label}
-              </p>
+              <p class="mt-2 text-sm leading-none text-neutral-500">{post.data.callout.label}</p>
             </div>
             <CompanyLogo
               company={post.data.callout.company}
@@ -46,14 +43,18 @@ const { post } = Astro.props;
           </div>
         )
       }
-      <h3 class="line-clamp-2 text-base font-medium text-neutral-950 dark:text-neutral-50">
+      <h3 class="mb-auto line-clamp-2 text-base font-medium text-neutral-950 dark:text-neutral-50">
         {post.data.title}
       </h3>
       <p
-        class="mt-auto inline-flex items-center gap-0.5 text-[13px] leading-none text-neutral-500 transition group-hover:text-neutral-950 group-active:text-neutral-950 dark:group-hover:text-neutral-50 dark:group-active:text-neutral-50"
+        class="text-sm text-neutral-500 transition group-hover:text-current group-active:text-current"
       >
         See how they did it
-        <ChevronRightIcon class="transition group-hover:translate-x-0.5" size={12} />
+        <span
+          class="inline-block opacity-60 transition group-hover:translate-x-0.5 group-hover:opacity-100"
+        >
+          &rarr;
+        </span>
       </p>
     </div>
   </a>
