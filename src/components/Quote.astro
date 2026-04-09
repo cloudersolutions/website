@@ -1,26 +1,39 @@
 ---
 import CompanyLogo from '@components/CompanyLogo.astro';
+import { paths } from '@data/paths';
 
 interface Props {
   quote: string;
   citeName: string;
   citeTitle: string;
   citeCompany: string;
+  caseStudyId: string;
 }
 
-const { quote, citeName, citeTitle, citeCompany } = Astro.props;
+const { quote, citeName, citeTitle, citeCompany, caseStudyId } = Astro.props;
 ---
 
-<blockquote class="flex flex-col items-start justify-between text-neutral-950 dark:text-neutral-50">
-  <p class="max-w-prose -indent-[0.45em] font-serif text-xl text-balance lg:text-2xl">
-    &ldquo;{quote}&rdquo;
+<blockquote class="relative flex flex-col items-start gap-6 text-neutral-950 dark:text-neutral-50">
+  <CompanyLogo company={citeCompany} class="h-5 w-auto shrink-0" />
+  <p class="mb-auto max-w-prose -indent-[0.45em] font-serif text-xl text-balance">
+    &ldquo;&hairsp;{quote}&rdquo;
   </p>
-  <div class="flex items-center gap-4 pt-4 lg:pt-8">
-    <CompanyLogo company={citeCompany} class="h-6 w-auto shrink-0" />
-    <div class="h-full w-px bg-current/10"></div>
-    <div>
+  <div class="flex w-full items-center gap-4">
+    <div class="mr-auto">
       <p class="text-sm font-medium">{citeName}</p>
       <p class="text-sm text-neutral-500">{citeTitle}</p>
     </div>
   </div>
+  {
+    caseStudyId && (
+      <a
+        href={`${paths.news.href}/${caseStudyId}`}
+        class="group absolute -inset-4 rounded transition hover:bg-current/5"
+      >
+        <span class="absolute right-4 bottom-4 text-sm opacity-0 select-none group-hover:opacity-100">
+          &rarr;
+        </span>
+      </a>
+    )
+  }
 </blockquote>

@@ -127,13 +127,28 @@ import { formatCurrency, formatNumber } from '@utils/format';
   new Chart(ctx, {
     type: 'line',
     data: {
-      labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+      labels: [
+        '',
+        'Jan',
+        'Feb',
+        'Mar',
+        'Apr',
+        'May',
+        'Jun',
+        'Jul',
+        'Aug',
+        'Sep',
+        'Oct',
+        'Nov',
+        'Dec'
+      ],
       datasets: [
         {
           label: 'Target',
           data: [
-            0, 9.090909, 18.181818, 27.272727, 36.363636, 45.454545, 54.545455, 63.636364,
-            72.727273, 81.818182, 90.909091, 100
+            0, 8.3333333333, 16.6666666666, 24.9999999999, 33.3333333333, 41.6666666666,
+            49.9999999999, 58.3333333333, 66.6666666666, 74.9999999999, 83.333333333, 91.6666666666,
+            100
           ],
           borderColor: 'royalblue',
           backgroundColor: 'royalblue',
@@ -146,7 +161,7 @@ import { formatCurrency, formatNumber } from '@utils/format';
         },
         {
           label: 'Actual',
-          data: [0, 12.85, 21.5],
+          data: [0, 12, 24, 31.53, 39.06],
           borderColor: 'salmon',
           backgroundColor: 'salmon',
           borderWidth: 2,
@@ -161,15 +176,16 @@ import { formatCurrency, formatNumber } from '@utils/format';
           data: [
             null,
             null,
-            21.5,
-            30.144444,
-            38.788889,
-            47.433333,
-            56.077778,
-            64.722222,
-            73.366667,
-            82.011111,
-            90.655556,
+            null,
+            null,
+            39.06,
+            46.59,
+            54.12,
+            61.65,
+            69.18,
+            76.71,
+            84.24,
+            91.77,
             99.3
           ],
           borderColor: 'lightsalmon',
@@ -249,7 +265,7 @@ import { formatCurrency, formatNumber } from '@utils/format';
       },
       scales: {
         x: {
-          offset: true,
+          offset: false,
           border: {
             display: false
           },
@@ -271,6 +287,7 @@ import { formatCurrency, formatNumber } from '@utils/format';
           ticks: {
             color: fg,
             padding: 4,
+            maxTicksLimit: 9,
             callback: (value) => `${value}%`
           },
           beginAtZero: true
