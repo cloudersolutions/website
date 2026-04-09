@@ -28,14 +28,14 @@ const { post } = Astro.props;
             <p
               class:list={twMerge(
                 post.data.callout.value.length < 6
-                  ? 'text-4xl lg:text-5xl lg:leading-12'
+                  ? 'text-3xl lg:text-4xl lg:leading-12'
                   : 'text-2xl leading-6 font-[420]',
                 'font-serif text-neutral-950 lg:max-w-48 dark:text-neutral-50'
               )}
             >
               {post.data.callout.value}
             </p>
-            <p class="mt-2 text-sm leading-4 text-neutral-500">{post.data.callout.label}</p>
+            <p class="mt-1 text-sm leading-4 text-neutral-500">{post.data.callout.label}</p>
           </div>
           <CompanyLogo
             company={post.data.callout.company}
@@ -44,7 +44,7 @@ const { post } = Astro.props;
         </div>
       )
     }
-    <h4 class="mt-auto font-medium text-neutral-950 dark:text-neutral-50">
+    <h4 class="mb-auto font-medium text-neutral-950 dark:text-neutral-50">
       {post.data.title}
     </h4>
     <p

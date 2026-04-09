@@ -52,16 +52,16 @@ const caseExamplePosts = posts
       />
       <div class="container py-28 lg:py-56">
         <div class="-mt-4 drop-shadow-[0_0_24px] drop-shadow-black/75">
-          <h1 class="mb-6 max-w-[25ch] font-serif text-4xl text-neutral-50 lg:text-6xl">
+          <h1 class="mb-6 max-w-[25ch] font-serif text-4xl text-neutral-50 lg:text-5xl xl:text-6xl">
             Turn building data into investment-grade asset intelligence
           </h1>
-          <p class="mb-8 max-w-prose text-xl text-balance text-neutral-50">
+          <p class="mb-8 max-w-prose text-balance text-neutral-50 lg:text-lg xl:text-xl">
             Clouder’s asset intelligence unlocks hidden value in commercial real estate portfolios
             with industry specific AI agents.
           </p>
           <a
             href={paths.contact.href}
-            class="inline-flex h-11 cursor-pointer items-center justify-center rounded bg-neutral-50 px-4.5 text-center text-nowrap text-neutral-950 shadow-xs transition select-none hover:bg-neutral-300 active:bg-neutral-300"
+            class="inline-flex h-10 cursor-pointer items-center justify-center rounded bg-neutral-50 px-4 text-center text-sm text-nowrap text-neutral-950 shadow-xs transition select-none hover:bg-neutral-300 active:bg-neutral-300 xl:h-11 xl:px-4.5 xl:text-base"
           >
             Get started today
           </a>
@@ -76,7 +76,7 @@ const caseExamplePosts = posts
           The platform
         </p>
         <h2
-          class="mb-4 font-serif text-3xl text-neutral-950 lg:mb-6 lg:text-5xl dark:text-neutral-50"
+          class="mb-4 font-serif text-3xl text-neutral-950 lg:mb-6 lg:text-4xl dark:text-neutral-50"
         >
           Your portfolio<br class="hidden lg:block" /> constantly optimized
         </h2>
@@ -214,7 +214,7 @@ const caseExamplePosts = posts
               The value case
             </p>
             <h2
-              class="mb-4 font-serif text-3xl text-neutral-950 lg:mb-6 lg:text-5xl dark:text-neutral-50"
+              class="mb-4 font-serif text-3xl text-neutral-950 lg:mb-6 lg:text-4xl dark:text-neutral-50"
             >
               What asset intelligence does to your portfolio
             </h2>
@@ -277,7 +277,7 @@ const caseExamplePosts = posts
               <p class="mb-4 text-xs font-medium tracking-wider text-neutral-500 uppercase lg:mb-6">
                 How it works
               </p>
-              <h2 class="font-serif text-3xl text-neutral-950 lg:text-5xl dark:text-neutral-50">
+              <h2 class="font-serif text-3xl text-neutral-950 lg:text-4xl dark:text-neutral-50">
                 Simple engagement.<br class="hidden lg:block" /> Fast time to value.
               </h2>
             </div>
@@ -339,7 +339,7 @@ const caseExamplePosts = posts
                   </span>
                 </a>
               </div>
-              <div class="mt-8 flex flex-col gap-8 lg:flex-row">
+              <div class="mt-8 grid gap-8 lg:grid-cols-3">
                 {caseExamplePosts.map((post) => (
                   <CasePost post={post} />
                 ))}

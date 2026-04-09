@@ -42,11 +42,11 @@
   --font-serif: STIXTwoText, Times, sans-serif;
   --font-sans: InterVariable, Inter, sans-serif;
 
-  --text-7xl: 4.5rem;
-  --text-6xl: 3.5625rem;
-  --text-5xl: 2.8125rem;
-  --text-4xl: 2.25rem;
-  --text-3xl: 1.875rem;
+  --text-7xl: 4rem;
+  --text-6xl: 3.5rem;
+  --text-5xl: 3rem;
+  --text-4xl: 2.5rem;
+  --text-3xl: 2rem;
 
   --aspect-image: 3/2;
   --aspect-wide: 2/1;

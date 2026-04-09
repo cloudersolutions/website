@@ -16,7 +16,7 @@ const usedCategories = Array.from(new Set(posts.map(({ data }) => data.category)
 const nonEmptyCategories = categories.filter((c) => usedCategories.includes(c));
 
 const linkClass =
-  'inline-flex items-center text-base py-2.5 px-3 leading-4 rounded transition select-none hover:bg-current/5 active:bg-current/5 aria-current:text-neutral-50 aria-current:bg-neutral-950 dark:aria-current:text-neutral-950 dark:aria-current:bg-neutral-50';
+  'inline-flex items-center text-sm py-2 px-3 leading-4 rounded transition select-none hover:bg-current/5 active:bg-current/5 aria-current:text-neutral-50 aria-current:bg-neutral-950 dark:aria-current:text-neutral-950 dark:aria-current:bg-neutral-50';
 ---
 
 <div class="pt-16 pb-8 lg:pt-32 lg:pb-16">

@@ -36,7 +36,9 @@ const { Content } = await render(post);
 <ProseLayout title={post.data.title} description={post.data.description} image={post.data.cover}>
   <article>
     <header class="not-prose">
-      <h1 class="font-serif text-4xl text-neutral-950 lg:text-6xl dark:text-neutral-50">
+      <h1
+        class="font-serif text-3xl leading-[1.1] text-neutral-950 lg:text-5xl dark:text-neutral-50"
+      >
         {post.data.title}
       </h1>
     </header>
@@ -88,7 +90,7 @@ const { Content } = await render(post);
               <p
                 class:list={twMerge(
                   post.data.callout.value.length < 6
-                    ? 'text-4xl lg:text-6xl'
+                    ? 'text-3xl lg:text-5xl'
                     : 'text-2xl font-[420] lg:text-3xl',
                   'font-serif leading-none text-neutral-950 lg:max-w-48 dark:text-neutral-50'
                 )}
