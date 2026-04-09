@@ -4,6 +4,7 @@ import { DateTime } from 'luxon';
 import TrendingDownIcon from 'lucide-astro/TrendingDown';
 import ChevronRightIcon from 'lucide-astro/ChevronRight';
 import ChevronLeftIcon from 'lucide-astro/ChevronLeft';
+import { formatCurrency, formatNumber } from '@utils/format';
 ---
 
 <div
@@ -20,7 +21,9 @@ import ChevronLeftIcon from 'lucide-astro/ChevronLeft';
           <p class="text-base font-semibold text-neutral-800 dark:text-neutral-200">
             Property performance
           </p>
-          <p class="mt-0.5 text-sm text-neutral-500">Area: 13,500 m²&ensp;&middot;&ensp;EPC: C</p>
+          <p class="mt-0.5 text-sm text-neutral-500">
+            Area: {formatNumber(13500)} m²&ensp;&middot;&ensp;EPC: C
+          </p>
         </div>
         <div class="flex rounded border border-neutral-200 dark:border-neutral-800">
           <ChevronLeftIcon class="p-1.5 transition hover:bg-current/5" size={26} />
@@ -42,9 +45,9 @@ import ChevronLeftIcon from 'lucide-astro/ChevronLeft';
       <p class="text-sm font-semibold">Energy target</p>
       <div class="grid grid-cols-2 gap-1">
         <p class="text-[13px]">Budget</p>
-        <p class="text-[13px]">1.1300 MWh</p>
+        <p class="text-[13px]">{formatNumber(1300)} MWh</p>
         <p class="text-[13px]">Adjusted</p>
-        <p class="text-[13px]">1.290 MWh</p>
+        <p class="text-[13px]">{formatNumber(1290)} MWh</p>
 
         <p class="col-span-full pr-4 text-xs text-neutral-500">
           0.8% below budget due to lower heating need
@@ -55,7 +58,7 @@ import ChevronLeftIcon from 'lucide-astro/ChevronLeft';
       <div class="grid grid-cols-2 gap-1">
         <p class="text-sm">Consumption</p>
         <div class="flex items-center gap-1">
-          <p class="text-sm">1.289 MWh</p>
+          <p class="text-sm">{formatNumber(1289)} MWh</p>
           <TrendingDownIcon size={14} class="text-blue-600 dark:text-blue-400" />
         </div>
         <p class="col-span-full pr-4 text-xs text-neutral-500">
@@ -64,26 +67,26 @@ import ChevronLeftIcon from 'lucide-astro/ChevronLeft';
       </div>
       <div class="grid grid-cols-2 gap-1">
         <p class="text-sm">Value created</p>
-        <p class="text-sm">€&hairsp;25.000</p>
+        <p class="text-sm">{formatCurrency(25000)}</p>
         <p class="col-span-full pr-4 text-xs text-neutral-500">
-          Consumption 1 MWh below adjusted target, NOI improved €&hairsp;1.000
+          Consumption 1 MWh below adjusted target, NOI improved {formatCurrency(1000)}
         </p>
       </div>
       <div class="grid grid-cols-2 gap-1">
         <p class="text-sm">Energy intensity</p>
         <div class="flex items-center gap-1">
-          <p class="text-sm">95 kWh/m²</p>
+          <p class="text-sm">{formatNumber(95)} kWh/m²</p>
           <TrendingDownIcon size={14} class="text-blue-600 dark:text-blue-400" />
         </div>
-        <p class="col-span-full text-xs text-neutral-500">Target: 96 kWh/m²</p>
+        <p class="col-span-full text-xs text-neutral-500">Target: {formatNumber(96)} kWh/m²</p>
       </div>
       <div class="grid grid-cols-2 gap-1">
         <p class="text-sm">CO₂ Emissions</p>
         <div class="flex items-center gap-1">
-          <p class="text-sm">17kg CO₂e/m²</p>
+          <p class="text-sm">{formatNumber(17)}kg CO₂e/m²</p>
           <TrendingDownIcon size={14} class="text-blue-600 dark:text-blue-400" />
         </div>
-        <p class="col-span-full text-xs text-neutral-500">Target: 20kg CO₂e/m²</p>
+        <p class="col-span-full text-xs text-neutral-500">Target: {formatNumber(20)}kg CO₂e/m²</p>
       </div>
     </div>
   </div>

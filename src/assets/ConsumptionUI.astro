@@ -7,6 +7,7 @@ import SnowflakeIcon from 'lucide-astro/Snowflake';
 import ChevronRightIcon from 'lucide-astro/ChevronRight';
 import EllipsisIcon from 'lucide-astro/EllipsisVertical';
 import { DateTime } from 'luxon';
+import { formatNumber, formatPercent } from '@utils/format';
 
 const consumptions = [
   { type: 'Heating', icon: FlameIcon, value: 54.3, target: 48 },
@@ -16,8 +17,8 @@ const consumptions = [
 
 function getPercentage(target: number, value: number) {
   const diff = value - target;
-  const percentage = diff / target;
-  return Math.abs(percentage * 100).toFixed(1) + '%';
+  const percentage = Math.abs(diff / target);
+  return formatPercent(percentage);
 }
 ---
 
@@ -58,11 +59,11 @@ function getPercentage(target: number, value: number) {
               </span>
             </td>
             <td class="tabular-nums">
-              {value} <small>MWh</small>
+              {formatNumber(value)} <small>MWh</small>
             </td>
             <td>
               <span class="text-xs text-neutral-500 tabular-nums">
-                {target} <small>MWh</small>
+                {formatNumber(target)} <small>MWh</small>
               </span>
             </td>
             <td class="pr-1!">

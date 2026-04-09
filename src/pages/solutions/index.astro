@@ -10,11 +10,87 @@ import SparklesIcon from 'lucide-astro/Sparkles';
 import WrenchIcon from 'lucide-astro/Wrench';
 import MainLayout from '@layouts/MainLayout.astro';
 import Divider from '@components/Divider.astro';
+import { formatCurrency } from '@utils/format';
 import { paths } from '@data/paths';
 import PerformanceUI from '@assets/PerformanceUI.astro';
 
 const title = 'Product';
 const description = 'Clouder unlcoks the hidden value.';
+
+const features = [
+  {
+    icon: BlocksIcon,
+    title: 'Integration platform',
+    content: [
+      'Clouder performs integrations directly on-site, meaning we are not dependent on existing cabling, API’s, or BMS programming.',
+      'On-site data processing ensures accurate, comprehensive, and context-rich data that is immediately ready for AI and ML applications.'
+    ]
+  },
+  {
+    icon: LaptopIcon,
+    title: 'Clouder Dashboard',
+    content: [
+      'A centralized overview of your entire property with access to high-level insights and granular details.',
+      'Track energy consumption and distribution with precision. Drill down to device and data point level when needed.  Export data effortlessly for reporting.'
+    ]
+  },
+  {
+    icon: SparklesIcon,
+    title: 'Clouder agents',
+    content: [
+      'Multiple Clouder agents analyze your assets to give you valuable insights on their performance.',
+      'The insights and data produced by agents is also available through MCP for all internal use cases.'
+    ]
+  },
+  {
+    icon: DatabaseIcon,
+    title: 'Data storage',
+    content: [
+      'Cloud-based data storage accessible via Clouder Dashboard, API, and MCP. No more relying on benchmarks or estimates.',
+      'Our five-year data retention policy gives you full ownership and control of your data.'
+    ]
+  },
+  {
+    icon: ChevronsLeftRightEllipsisIcon,
+    title: 'Real-time API',
+    content: [
+      'Access all building data through our real-time API.',
+      'Ideal for smart office apps, property management software, and other third-party integrations.'
+    ]
+  },
+  {
+    icon: OcatagonAlertIcon,
+    title: 'Fault detection & diagnostics',
+    content: [
+      'Quickly identify and diagnose faults, problems, and conflicts in your building automation system.',
+      'Receive targeted recommendations and clear guidance for resolving identified issues.'
+    ]
+  },
+  {
+    icon: SettingsIcon,
+    title: 'Device control',
+    content: [
+      'Control all systems and devices in your building without disrupting the existing building automation system.',
+      'Use sophisticated, event-based rules to control devices to further reduce energy consumption.'
+    ]
+  },
+  {
+    icon: ShieldCheckIcon,
+    title: 'Security built-in',
+    content: [
+      'Fine-grained data access rules, accurate audit trail, end-to-end encryption, and secure cloud storage of your building data.',
+      'Robust security in building automation with centralized password management. No more default passwords known by everyone.'
+    ]
+  },
+  {
+    icon: WrenchIcon,
+    title: 'Custom integrations',
+    content: [
+      'We can offer tailored solutions and consulting services to address your specific needs, from advanced system integrations to personalized building performance strategies.'
+    ],
+    showCta: true
+  }
+];
 
 const faq = [
   {
@@ -61,85 +137,6 @@ const faq = [
     question: 'Can Clouder improve our GRESB score?',
     answer:
       'Yes. By increasing data coverage and reducing consumption, Clouder strengthens the Management and Performance components of GRESB. Better metering, benchmarking and fault detection all contribute to higher scores and more attractive valuations.'
-  }
-];
-
-const features = [
-  {
-    icon: BlocksIcon,
-    title: 'Integration platform',
-    content: [
-      'Seamless integration of all building technology systems, subsystems, and devices, regardless of vendor or protocol.',
-      'Add new or external systems and devices with minimal construction work by using Edge Connectors.',
-      ''
-    ]
-  },
-  {
-    icon: LaptopIcon,
-    title: 'Clouder Dashboard',
-    content: [
-      'View and manage all aspects of your building straight from your browser.',
-      'Real-time data on energy consumption, indoor climate, and other insights enable improved monitoring and informed decision-making.',
-      'Access to features like Fault detection & diagnostics, Device control, and more.'
-    ]
-  },
-  {
-    icon: SparklesIcon,
-    title: 'Clouder agents',
-    content: [
-      'Multiple Clouder agents analyze your assets to uncover hidden value and optimize performance.',
-      'Automated reports are generated from live data, giving you accurate, up-to-date information without manual effort.'
-    ]
-  },
-  {
-    icon: DatabaseIcon,
-    title: 'Data storage',
-    content: [
-      'Cloud-based data storage for accurate building data. No more relying on benchmarks or estimates.',
-      'View and export building data from Clouder Dashboard for sustainability reporting.',
-      'Our five-year data retention policy gives you full ownership and control of your data.'
-    ]
-  },
-  {
-    icon: ChevronsLeftRightEllipsisIcon,
-    title: 'Real-time API',
-    content: [
-      'Access all building data through our real-time API.',
-      'Perfect for smart office apps, property management software, and other third-party integrations.'
-    ]
-  },
-  {
-    icon: OcatagonAlertIcon,
-    title: 'Fault detection & diagnostics',
-    content: [
-      'Quickly identify and diagnose faults, problems, and conflicts in your building automation system.',
-      'Receive targeted recommendations and clear guidance for resolving identified issues.',
-      'Save time and resources by reducing manual work and streamline troubleshooting workflows.'
-    ]
-  },
-  {
-    icon: SettingsIcon,
-    title: 'Device control',
-    content: [
-      'Control all systems and field devices in your building without disrupting the existing building automation system.',
-      'Use sophisticated, event-based rules to control devices to further reduce energy consumption.'
-    ]
-  },
-  {
-    icon: ShieldCheckIcon,
-    title: 'Additional security',
-    content: [
-      'Fine-grained data access rules, accurate audit trail, end-to-end encryption, and secure cloud storage of building data.',
-      'Robust security in building automation with centralized password management. No more default passwords known by everyone.'
-    ]
-  },
-  {
-    icon: WrenchIcon,
-    title: 'Custom integrations',
-    content: [
-      'Our team can offer tailored solutions and consulting services to address your specific needs, from advanced system integrations to personalized building performance strategies.'
-    ],
-    showCta: true
   }
 ];
 ---
@@ -195,8 +192,8 @@ const features = [
               always accurate and accessible in real time.
             </p>
             <p class="text-sm text-neutral-500">
-              Setup fee: 500€<br />
-              Monthly fee: 1000€ per building
+              Setup fee: {formatCurrency(500)}<br />
+              Monthly fee: {formatCurrency(1000)} per building
             </p>
           </div>
           <div>
@@ -217,8 +214,8 @@ const features = [
               you always have accurate, up-to-date information.
             </p>
             <p class="text-sm text-neutral-500">
-              Setup fee: 2000€<br />
-              Monthly fee: 3000€ per building
+              Setup fee: {formatCurrency(2000)}<br />
+              Monthly fee: {formatCurrency(3000)} per building
             </p>
           </div>
           <div>
@@ -260,7 +257,7 @@ const features = [
         <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-3">
           {
             features.map(({ icon: Icon, title, content, showCta }) => (
-              <div class="space-y-2 rounded-lg border border-neutral-200 p-6 dark:border-neutral-800">
+              <div class="space-y-2 rounded-lg border border-neutral-200 p-6 lg:pb-16 dark:border-neutral-800">
                 <Icon size={20} class="mb-3 shrink-0 text-neutral-500" />
                 <h4 class="font-medium text-neutral-950 dark:text-neutral-50">{title}</h4>
 
