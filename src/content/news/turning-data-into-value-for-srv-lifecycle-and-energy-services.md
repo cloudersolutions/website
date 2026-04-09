@@ -9,8 +9,11 @@ coverAlt: Exterior shot of Jokirinne school
 draft: false
 callout:
   company: SRV
-  value: 40k+
-  label: Data points
+  value: 100%
+  label: Data coverage
+  quote: As we take responsibility for building operations and costs for 20 years, data is mission-critical. With Clouder, we’re able to collect data comprehensively and cost-efficiently to ensure optimal conditions while keeping operational costs low.
+  name: Jere Pirhonen
+  title: Director, Energy and Lifecycle Services, SRV
 ---
 
 We are proud to announce that **SRV Energy and Lifecycle Services** has selected **Clouder** as their trusted building data integrator and provider.

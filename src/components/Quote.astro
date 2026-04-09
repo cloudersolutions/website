@@ -14,7 +14,7 @@ const { quote, citeName, citeTitle, citeCompany, caseStudyId } = Astro.props;
 ---
 
 <blockquote class="relative flex flex-col items-start gap-6 text-neutral-950 dark:text-neutral-50">
-  <CompanyLogo company={citeCompany} class="h-5 w-auto shrink-0" />
+  <CompanyLogo company={citeCompany} class="h-6 w-auto shrink-0" />
   <p class="mb-auto max-w-prose -indent-[0.45em] font-serif text-xl text-balance">
     &ldquo;&hairsp;{quote}&rdquo;
   </p>
@@ -30,8 +30,8 @@ const { quote, citeName, citeTitle, citeCompany, caseStudyId } = Astro.props;
         href={`${paths.news.href}/${caseStudyId}`}
         class="group absolute -inset-4 rounded transition hover:bg-current/5"
       >
-        <span class="absolute right-4 bottom-4 text-sm opacity-0 select-none group-hover:opacity-100">
-          &rarr;
+        <span class="absolute right-4 bottom-4 text-sm opacity-0 transition select-none group-hover:opacity-100">
+          Case study &rarr;
         </span>
       </a>
     )

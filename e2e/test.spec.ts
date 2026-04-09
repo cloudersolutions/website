@@ -18,7 +18,7 @@ test('render home page with key sections', async ({ page }) => {
   await expect(
     page.getByRole('heading').getByText('Simple engagement. Fast time to value.')
   ).toBeVisible();
-  await expect(page.getByRole('heading').getByText('Results from our customers')).toBeVisible();
+  await expect(page.getByRole('heading').getByText('Trusted by industry leaders')).toBeVisible();
 });
 
 test('solutions page navigation', async ({ page }) => {

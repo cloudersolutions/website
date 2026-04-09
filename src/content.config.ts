@@ -21,7 +21,10 @@ const news = defineCollection({
         .object({
           company: z.string(),
           value: z.string(),
-          label: z.string()
+          label: z.string(),
+          quote: z.string(),
+          name: z.string(),
+          title: z.string()
         })
         .optional(),
       draft: z.boolean().optional()
