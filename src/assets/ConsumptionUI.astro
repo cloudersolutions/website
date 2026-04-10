@@ -8,6 +8,7 @@ import ChevronRightIcon from 'lucide-astro/ChevronRight';
 import EllipsisIcon from 'lucide-astro/EllipsisVertical';
 import { DateTime } from 'luxon';
 import { formatNumber, formatPercent } from '@utils/format';
+import { paths } from '@data/paths';
 
 const consumptions = [
   { type: 'Heating', icon: FlameIcon, value: 54.3, target: 48 },
@@ -84,10 +85,13 @@ function getPercentage(target: number, value: number) {
       }
     </tbody>
   </table>
-  <p
+  <a
+    tabindex={-1}
+    href={paths.solutions.href}
     class="group mt-3 flex cursor-pointer items-center text-xs text-neutral-500 transition hover:text-current active:text-current"
   >
     View details
     <ChevronRightIcon class="mt-px transition group-hover:translate-x-0.5" size={12} />
-  </p>
+  </a>
+  <t div> </t>
 </div>

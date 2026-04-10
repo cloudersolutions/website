@@ -19,14 +19,14 @@ const { post } = Astro.props;
 <article class="group lg:aspect-3/1">
   <a href={`${paths.news.href}/${post.id}`} class="flex h-full flex-col lg:flex-row">
     <div
-      class="bg-linear relative flex shrink-0 justify-between bg-black p-8 text-neutral-50 lg:w-1/3 lg:flex-col"
+      class="bg-linear relative flex shrink-0 justify-between overflow-hidden bg-black p-8 text-neutral-50 lg:w-1/3 lg:flex-col"
     >
       <Image
         src={post.data.cover}
         alt={post.data.coverAlt}
         width={240}
         layout="full-width"
-        class="absolute inset-0 size-full object-cover text-transparent opacity-30 transition duration-300 group-hover:opacity-35 group-active:opacity-35"
+        class="absolute inset-0 size-full object-cover text-transparent opacity-40 transition duration-300 group-hover:scale-102 group-hover:opacity-45 group-active:opacity-45"
       />
       <div class="relative drop-shadow-[0_0_16px] drop-shadow-black/50">
         <p

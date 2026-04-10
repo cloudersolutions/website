@@ -1,8 +1,5 @@
 ---
 import BlocksIcon from 'lucide-astro/Blocks';
-import TargetIcon from 'lucide-astro/Target';
-import ZapIcon from 'lucide-astro/Zap';
-import ChartColumnIcon from 'lucide-astro/ChartColumn';
 import CodeSquareIcon from 'lucide-astro/CodeSquare';
 import DatabaseIcon from 'lucide-astro/Database';
 import LaptopIcon from 'lucide-astro/Laptop';
@@ -144,174 +141,337 @@ const faq = [
 ---
 
 <MainLayout title={title} description={description}>
-  <section>
-    <div class="pt-16 pb-8 lg:pt-32 lg:pb-16">
-      <div class="container">
-        <h1
-          class="mb-4 font-serif text-4xl text-neutral-950 lg:mb-6 lg:text-5xl xl:text-6xl dark:text-neutral-50"
-        >
-          The new standard for<br class="hidden lg:block" /> property performance
-        </h1>
-        <p class="text-blance lg:text-lg xl:text-xl">{description}</p>
-      </div>
-    </div>
-    <div class="pb-16 lg:pb-32">
-      <div
-        class="container bg-linear-to-b from-neutral-200 to-neutral-300 p-8 lg:p-16 dark:from-neutral-700 dark:to-neutral-800"
+  <section class="py-16 lg:py-32">
+    <div class="container">
+      <h1
+        class="mb-4 font-serif text-4xl text-neutral-950 lg:mb-6 lg:text-5xl xl:text-6xl dark:text-neutral-50"
       >
-        <PerformanceUI />
-      </div>
+        The new standard for<br class="hidden lg:block" /> property performance
+      </h1>
+      <p class="text-balance lg:text-lg xl:text-xl">{description}</p>
     </div>
-  </section>
-  <Divider />
-  <section>
-    <div class="pt-16 pb-8 lg:pt-32 lg:pb-16">
-      <div class="container">
+    <div class="h-8 lg:h-16"></div>
+    <div
+      class="container bg-linear-to-b from-neutral-200 to-neutral-300 p-8 lg:p-16 dark:from-neutral-700 dark:to-neutral-800"
+    >
+      <PerformanceUI />
+    </div>
+    <div class="h-12 lg:h-24"></div>
+    <div class="container">
+      <div class="grid gap-x-4 gap-y-8 lg:grid-cols-4">
         <p class="mb-4 text-xs font-medium tracking-wider text-neutral-500 uppercase lg:mb-6">
-          Clouder for asset management
+          Commercial real estate<br class="hidden lg:block" /> portfolios carry hidden value
         </p>
-        <h2
-          class="mb-4 font-serif text-3xl text-neutral-950 lg:mb-6 lg:text-4xl dark:text-neutral-50"
-        >
-          Take the guesswork out<br class="hidden lg:block" /> of asset management
-        </h2>
-        <p class="max-w-prose">
-          Stop spending hours on time-consuming manual work, switching between systems, and making
-          decision based on gut-feel. Start running Clouder instead.
-        </p>
-      </div>
-    </div>
-    <div class="pb-16 lg:pb-32">
-      <div class="container">
-        <div
-          class="mb-6 overflow-clip rounded-md border border-neutral-200 dark:border-neutral-800"
-        >
-          <table class="w-full text-left">
-            <thead>
-              <tr class="*:px-4 *:py-3 *:text-xs *:font-medium *:tracking-wider *:uppercase">
-                <th class="text-neutral-500">Task</th>
-                <th class="text-neutral-500">Before</th>
-                <th class="text-neutral-500">With Clouder</th>
-                <th>Savings</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="border-t border-neutral-200 *:px-4 *:py-3 dark:border-neutral-800">
-                <td>Data collection</td>
-                <td class="text-neutral-500">7 days</td>
-                <td>Real-time</td>
-                <td class="font-medium">7 days</td>
-              </tr>
-              <tr class="border-t border-neutral-200 *:px-4 *:py-3 dark:border-neutral-800">
-                <td>Report preparation</td>
-                <td class="text-neutral-500">12 hours</td>
-                <td>&lt; Y 2</td>
-                <td class="font-medium">10 hours</td>
-              </tr>
-              <tr class="border-t border-neutral-200 *:px-4 *:py-3 dark:border-neutral-800">
-                <td>Error correction</td>
-                <td class="text-neutral-500">6 hours</td>
-                <td>0 hours</td>
-                <td class="font-medium">6 hours</td>
-              </tr>
-              <tr class="border-t border-neutral-200 *:px-4 *:py-3 dark:border-neutral-800">
-                <td>Year-end-close</td>
-                <td class="text-neutral-500">14 days</td>
-                <td>1-2 days</td>
-                <td class="font-medium">12 days</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="flex flex-col">
+          <p class="mb-6">Asset level hidden value</p>
+          <p class="mt-auto font-serif text-5xl text-neutral-950 lg:text-7xl dark:text-neutral-50">
+            15–40%
+          </p>
+          <p class="mt-2 h-8 text-sm leading-4 text-neutral-500">Opex reduction potential</p>
         </div>
-        <div class="grid grid-cols-3 gap-6">
-          <div class="rounded-md border border-neutral-200 p-4 dark:border-neutral-800">
-            <TargetIcon size={20} class="shrink-0 text-neutral-500" />
-            <p class="mt-2 font-medium">Fact-based decision making</p>
-          </div>
-          <div class="rounded-md border border-neutral-200 p-4 dark:border-neutral-800">
-            <ZapIcon size={20} class="shrink-0 text-neutral-500" />
-            <p class="mt-2 font-medium">Easy data access &rarr; fast reporting</p>
-          </div>
-          <div class="rounded-md border border-neutral-200 p-4 dark:border-neutral-800">
-            <ChartColumnIcon size={20} class="shrink-0 text-neutral-500" />
-            <p class="mt-2 font-medium">Real-time data in one place</p>
-          </div>
+        <div class="flex flex-col">
+          <p class="mb-6">Outsourced management & external consultants</p>
+          <p class="mt-auto font-serif text-5xl text-neutral-950 lg:text-7xl dark:text-neutral-50">
+            69%
+          </p>
+          <p class="mt-2 h-8 text-sm leading-4 text-neutral-500">Manual tasks automatable</p>
+        </div>
+        <div class="flex flex-col">
+          <p class="mb-6">Fund level operational efficiency</p>
+          <p class="mt-auto font-serif text-3xl leading-8 text-neutral-950 dark:text-neutral-50">
+            Portfolio-wide<br />savings
+          </p>
+          <p class="mt-2 h-8 text-sm leading-4 text-neutral-500">
+            Overhead reduction, removing reporting lag
+          </p>
         </div>
       </div>
     </div>
   </section>
   <Divider />
-  <section>
-    <div class="pt-16 pb-8 lg:pt-32 lg:pb-16">
-      <div class="container">
-        <p class="mb-4 text-xs font-medium tracking-wider text-neutral-500 uppercase lg:mb-6">
-          Features
-        </p>
-        <h2 class="font-serif text-3xl text-neutral-950 lg:text-4xl dark:text-neutral-50">
-          The platform powering<br class="hidden lg:block" /> building intelligence
-        </h2>
-      </div>
-    </div>
-    <div class="pb-16 lg:pb-32">
-      <div class="container">
-        <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-3">
-          {
-            features.map(({ icon: Icon, title, content, showCta }) => (
-              <div class="space-y-2 rounded-md border border-neutral-200 p-6 lg:pb-16 dark:border-neutral-800">
-                <Icon size={20} class="mb-3 shrink-0 text-neutral-500" />
-                <h4 class="font-medium text-neutral-950 dark:text-neutral-50">{title}</h4>
-
-                {content.map((p) => (
-                  <p class="text-neutral-700 dark:text-neutral-300">{p}</p>
-                ))}
-                {showCta && (
-                  <a
-                    href={paths.contact.href}
-                    class="mt-2 inline-flex h-9 cursor-pointer items-center justify-center rounded bg-neutral-950 px-3.5 text-center text-sm text-nowrap text-neutral-50 transition select-none hover:bg-neutral-700 active:bg-neutral-700 dark:bg-neutral-50 dark:text-neutral-950 dark:hover:bg-neutral-300 dark:active:bg-neutral-300"
-                  >
-                    Let’s talk
-                  </a>
-                )}
+  <section class="py-16 lg:py-32">
+    <div class="container">
+      <div class="grid grid-cols-2 gap-8">
+        <div>
+          <p class="mb-4 text-xs font-medium tracking-wider text-neutral-500 uppercase lg:mb-6">
+            How to get started
+          </p>
+          <h2 class="font-serif text-3xl text-neutral-950 lg:text-4xl dark:text-neutral-50">
+            It only takes a few steps to start unlocking the hidden value in your properties
+          </h2>
+        </div>
+        <div>
+          <div class="group flex gap-6">
+            <div class="flex flex-col items-center">
+              <div
+                class="my-1 size-5 shrink-0 rounded-full border-7 border-neutral-200 bg-neutral-950 transition duration-300 group-hover:scale-105 group-hover:border-blue-100 group-hover:bg-blue-500 dark:border-neutral-800 dark:bg-neutral-50 dark:group-hover:border-blue-900"
+              >
               </div>
+              <div class="h-full w-px bg-current/10 pb-24"></div>
+            </div>
+            <div>
+              <p class="mb-1 font-medium text-neutral-950 dark:text-neutral-50">Title</p>
+              <p class="text-neutral-700 dark:text-neutral-300">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non arcu quis ipsum
+                posuere aliquam. In ornare porta nunc, eu mollis ex.
+              </p>
+            </div>
+          </div>
+          <div class="group flex gap-6">
+            <div class="flex flex-col items-center">
+              <div
+                class="my-1 size-5 shrink-0 rounded-full border-7 border-neutral-200 bg-neutral-950 transition duration-300 group-hover:scale-105 group-hover:border-blue-100 group-hover:bg-blue-500 dark:border-neutral-800 dark:bg-neutral-50 dark:group-hover:border-blue-900"
+              >
+              </div>
+              <div class="h-full w-px bg-current/10 pb-24"></div>
+            </div>
+            <div>
+              <p class="mb-1 font-medium text-neutral-950 dark:text-neutral-50">Title</p>
+              <p class="text-neutral-700 dark:text-neutral-300">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non arcu quis ipsum
+                posuere aliquam. In ornare porta nunc, eu mollis ex.
+              </p>
+            </div>
+          </div>
+          <div class="group flex gap-6">
+            <div class="flex flex-col items-center">
+              <div
+                class="my-1 size-5 shrink-0 rounded-full border-7 border-neutral-200 bg-neutral-950 transition duration-300 group-hover:scale-105 group-hover:border-blue-100 group-hover:bg-blue-500 dark:border-neutral-800 dark:bg-neutral-50 dark:group-hover:border-blue-900"
+              >
+              </div>
+              <div class="h-full w-px bg-current/10 pb-24"></div>
+            </div>
+            <div>
+              <p class="mb-1 font-medium text-neutral-950 dark:text-neutral-50">Title</p>
+              <p class="text-neutral-700 dark:text-neutral-300">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non arcu quis ipsum
+                posuere aliquam. In ornare porta nunc, eu mollis ex.
+              </p>
+            </div>
+          </div>
+          <div class="group flex gap-6">
+            <div class="flex flex-col items-center">
+              <div
+                class="my-1 size-5 shrink-0 rounded-full border-7 border-neutral-200 bg-neutral-950 transition duration-300 group-hover:scale-105 group-hover:border-blue-100 group-hover:bg-blue-500 dark:border-neutral-800 dark:bg-neutral-50 dark:group-hover:border-blue-900"
+              >
+              </div>
+              <div class="h-full w-px bg-current/10 pb-24"></div>
+            </div>
+            <div>
+              <p class="mb-1 font-medium text-neutral-950 dark:text-neutral-50">Title</p>
+              <p class="text-neutral-700 dark:text-neutral-300">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non arcu quis ipsum
+                posuere aliquam. In ornare porta nunc, eu mollis ex.
+              </p>
+            </div>
+          </div>
+          <div class="group flex gap-6">
+            <div class="flex flex-col items-center">
+              <div
+                class="my-1 size-5 shrink-0 rounded-full border-7 border-neutral-200 bg-neutral-950 transition duration-300 group-hover:scale-105 group-hover:border-blue-100 group-hover:bg-blue-500 dark:border-neutral-800 dark:bg-neutral-50 dark:group-hover:border-blue-900"
+              >
+              </div>
+            </div>
+            <div>
+              <p class="mb-1 font-medium text-neutral-950 dark:text-neutral-50">Title</p>
+              <p class="text-neutral-700 dark:text-neutral-300">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non arcu quis ipsum
+                posuere aliquam. In ornare porta nunc, eu mollis ex.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <Divider />
+  <section class="py-16 lg:py-32">
+    <div class="container">
+      <p class="mb-4 text-xs font-medium tracking-wider text-neutral-500 uppercase lg:mb-6">
+        Platfrom architecture
+      </p>
+      <h2 class="font-serif text-3xl text-neutral-950 lg:text-5xl dark:text-neutral-50">
+        AI Platform architecture<br class="hidden lg:block" /> built for compounding value
+      </h2>
+      <div class="h-8 lg:h-16"></div>
+      <div>
+        <div class="grid items-start gap-x-8 gap-y-4 lg:grid-cols-2">
+          <div
+            class="flex h-full flex-col items-center justify-center rounded-md border border-dashed border-neutral-300 p-8 pt-7 dark:border-neutral-700"
+          >
+            <p class="mb-3 text-sm leading-4 text-neutral-500">Intelligence</p>
+            <div class="flex flex-wrap items-center justify-center gap-1">
+              <span
+                class="rounded border border-neutral-200 bg-neutral-100 px-3 py-2 text-xs leading-4 dark:border-neutral-800 dark:bg-neutral-900"
+              >
+                CRE-native agents
+              </span>
+              <span
+                class="rounded border border-neutral-200 bg-neutral-100 px-3 py-2 text-xs leading-4 dark:border-neutral-800 dark:bg-neutral-900"
+                >API</span
+              >
+              <span
+                class="rounded border border-neutral-200 bg-neutral-100 px-3 py-2 text-xs leading-4 dark:border-neutral-800 dark:bg-neutral-900"
+              >
+                Dashboard
+              </span>
+            </div>
+          </div>
+          <div>
+            <p class="mb-1 font-medium text-neutral-950 dark:text-neutral-50">Intelligence</p>
+            <p class="text-neutral-700 dark:text-neutral-300">
+              All data is securely stored in the cloud and always available via the Clouder
+              Dashboard and a secure API. AI agents work on insights and data is also available
+              through a MCP server for all internal use cases.
+            </p>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-8">
+          <div class="mx-auto h-12 w-0 bg-neutral-300 lg:w-px dark:bg-neutral-700"></div>
+        </div>
+        <div class="grid items-start gap-x-8 gap-y-4 lg:grid-cols-2">
+          <div
+            class="flex h-full flex-col items-center justify-center rounded-md border border-dashed border-neutral-300 p-8 pt-7 dark:border-neutral-700"
+          >
+            <p class="mb-3 text-sm leading-4 text-neutral-500">Context</p>
+            <div class="flex flex-wrap items-center justify-center gap-1">
+              <span
+                class="rounded border border-neutral-200 bg-neutral-100 px-3 py-2 text-xs leading-4 dark:border-neutral-800 dark:bg-neutral-900"
+              >
+                Integrations
+              </span>
+              <span
+                class="rounded border border-neutral-200 bg-neutral-100 px-3 py-2 text-xs leading-4 dark:border-neutral-800 dark:bg-neutral-900"
+              >
+                Protocol conversions
+              </span>
+              <span
+                class="rounded border border-neutral-200 bg-neutral-100 px-3 py-2 text-xs leading-4 dark:border-neutral-800 dark:bg-neutral-900"
+              >
+                Data preprocessing
+              </span>
+              <span
+                class="rounded border border-neutral-200 bg-neutral-100 px-3 py-2 text-xs leading-4 dark:border-neutral-800 dark:bg-neutral-900"
+              >
+                Harmonization
+              </span>
+            </div>
+          </div>
+          <div>
+            <p class="mb-1 font-medium text-neutral-950 dark:text-neutral-50">Context</p>
+            <p class="text-neutral-700 dark:text-neutral-300">
+              Our data processing ensures accurate, comprehensive, and context-rich data that is
+              immediately ready for artificial intelligence (AI) and machine learning (ML)
+              applications.
+            </p>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-8">
+          <div class="mx-auto h-12 w-0 bg-neutral-300 lg:w-px dark:bg-neutral-700"></div>
+        </div>
+        <div class="grid items-start gap-x-8 gap-y-4 lg:grid-cols-2">
+          <div
+            class="flex h-full flex-col items-center justify-center rounded-md border border-dashed border-neutral-300 p-8 pt-7 dark:border-neutral-700"
+          >
+            <p class="mb-3 text-sm leading-4 text-neutral-500">Local integration</p>
+            <div class="flex flex-wrap items-center justify-center gap-1">
+              <span
+                class="rounded border border-neutral-200 bg-neutral-100 px-3 py-2 text-xs leading-4 dark:border-neutral-800 dark:bg-neutral-900"
+                >BMS</span
+              >
+              <span
+                class="rounded border border-neutral-200 bg-neutral-100 px-3 py-2 text-xs leading-4 dark:border-neutral-800 dark:bg-neutral-900"
+              >
+                Energy metering
+              </span>
+              <span
+                class="rounded border border-neutral-200 bg-neutral-100 px-3 py-2 text-xs leading-4 dark:border-neutral-800 dark:bg-neutral-900"
+              >
+                Water metering
+              </span>
+              <span
+                class="rounded border border-neutral-200 bg-neutral-100 px-3 py-2 text-xs leading-4 dark:border-neutral-800 dark:bg-neutral-900"
+              >
+                Indoor climate
+              </span>
+              <span
+                class="rounded border border-neutral-200 bg-neutral-100 px-3 py-2 text-xs leading-4 dark:border-neutral-800 dark:bg-neutral-900"
+              >
+                50+ more…
+              </span>
+            </div>
+          </div>
+          <div>
+            <p class="mb-1 font-medium text-neutral-950 dark:text-neutral-50">Local integration</p>
+            <p class="text-neutral-700 dark:text-neutral-300">
+              All data is securely stored in the cloud and always available via the Clouder
+              Dashboard and a secure API. AI agents work on insights and data is also available
+              through a MCP server for all internal use cases.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="h-12 lg:h-24"></div>
+    <div class="container">
+      <p class="mb-4 text-xs font-medium tracking-wider text-neutral-500 uppercase lg:mb-6">
+        Features
+      </p>
+      <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-3">
+        {
+          features.map(({ icon: Icon, title, content, showCta }) => (
+            <div class="space-y-2 rounded-md border border-neutral-200 p-6 lg:pb-16 dark:border-neutral-800">
+              <Icon size={20} class="mb-3 shrink-0 text-neutral-500" />
+              <h4 class="font-medium text-neutral-950 dark:text-neutral-50">{title}</h4>
+
+              {content.map((p) => (
+                <p class="text-neutral-700 dark:text-neutral-300">{p}</p>
+              ))}
+              {showCta && (
+                <a
+                  href={paths.contact.href}
+                  class="mt-2 inline-flex h-9 cursor-pointer items-center justify-center rounded bg-neutral-950 px-3.5 text-center text-sm text-nowrap text-neutral-50 transition select-none hover:bg-neutral-700 active:bg-neutral-700 dark:bg-neutral-50 dark:text-neutral-950 dark:hover:bg-neutral-300 dark:active:bg-neutral-300"
+                >
+                  Let’s talk
+                </a>
+              )}
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+  <Divider />
+  <section class="py-16 lg:py-32">
+    <div class="container">
+      <div class="grid grid-cols-1 items-start gap-8 lg:grid-cols-3">
+        <div>
+          <h2
+            class="mb-4 font-serif text-3xl text-neutral-950 lg:mb-6 lg:text-4xl dark:text-neutral-50"
+          >
+            FAQ
+          </h2>
+          <button
+            id="toggle-button"
+            class="inline-flex h-9 cursor-pointer items-center justify-center rounded bg-neutral-950 px-3.5 text-center text-sm text-nowrap text-neutral-50 transition select-none hover:bg-neutral-700 active:bg-neutral-700 dark:bg-neutral-50 dark:text-neutral-950 dark:hover:bg-neutral-300 dark:active:bg-neutral-300"
+          >
+            Expand all
+          </button>
+        </div>
+        <div
+          class="*:border-t *:border-neutral-200 lg:col-span-2 lg:-mt-3 *:dark:border-neutral-800"
+        >
+          {
+            faq.map(({ question, answer }) => (
+              <details class="group open:pb-8">
+                <summary class="flex cursor-pointer list-none py-6 font-medium text-neutral-950 transition group-open:pb-1 hover:text-neutral-500 active:text-neutral-500 dark:text-neutral-50">
+                  <span class="w-6 shrink-0 before:content-['+'] group-open:before:content-['-']" />
+                  {question}
+                </summary>
+                <p class="ml-6 text-neutral-700 dark:text-neutral-300">{answer}</p>
+              </details>
             ))
           }
-        </div>
-      </div>
-    </div>
-  </section>
-  <Divider />
-  <section>
-    <div class="py-16 lg:py-32">
-      <div class="container">
-        <div class="grid grid-cols-1 items-start gap-8 lg:grid-cols-3">
-          <div>
-            <h2
-              class="mb-4 font-serif text-3xl text-neutral-950 lg:mb-6 lg:text-4xl dark:text-neutral-50"
-            >
-              FAQ
-            </h2>
-            <button
-              id="toggle-button"
-              class="inline-flex h-9 cursor-pointer items-center justify-center rounded bg-neutral-950 px-3.5 text-center text-sm text-nowrap text-neutral-50 transition select-none hover:bg-neutral-700 active:bg-neutral-700 dark:bg-neutral-50 dark:text-neutral-950 dark:hover:bg-neutral-300 dark:active:bg-neutral-300"
-            >
-              Expand all
-            </button>
-          </div>
-          <div
-            class="*:border-t *:border-neutral-200 lg:col-span-2 lg:-mt-3 *:dark:border-neutral-800"
-          >
-            {
-              faq.map(({ question, answer }) => (
-                <details class="group open:pb-8">
-                  <summary class="flex cursor-pointer list-none py-6 font-medium text-neutral-950 transition group-open:pb-1 hover:text-neutral-500 active:text-neutral-500 dark:text-neutral-50">
-                    <span class="w-6 shrink-0 before:content-['+'] group-open:before:content-['-']" />
-                    {question}
-                  </summary>
-                  <p class="ml-6 text-neutral-700 dark:text-neutral-300">{answer}</p>
-                </details>
-              ))
-            }
-          </div>
         </div>
       </div>
     </div>
