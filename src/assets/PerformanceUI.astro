@@ -56,6 +56,13 @@ import { formatCurrency, formatNumber } from '@utils/format';
       <hr class="my-1 border-neutral-200 lg:-mx-5 dark:border-neutral-800" />
       <p class="text-sm font-semibold">Forecast, year end</p>
       <div class="grid grid-cols-2 gap-1">
+        <p class="text-sm">Value created</p>
+        <p class="text-sm">{formatCurrency(25000)}</p>
+        <p class="col-span-full pr-4 text-xs text-neutral-500">
+          Consumption 1 MWh below adjusted target, NOI improved {formatCurrency(1000)}
+        </p>
+      </div>
+      <div class="grid grid-cols-2 gap-1">
         <p class="text-sm">Consumption</p>
         <div class="flex items-center gap-1">
           <p class="text-sm">{formatNumber(1289)} MWh</p>
@@ -63,13 +70,6 @@ import { formatCurrency, formatNumber } from '@utils/format';
         </div>
         <p class="col-span-full pr-4 text-xs text-neutral-500">
           Operational gap is 0.1% below adjusted target
-        </p>
-      </div>
-      <div class="grid grid-cols-2 gap-1">
-        <p class="text-sm">Value created</p>
-        <p class="text-sm">{formatCurrency(25000)}</p>
-        <p class="col-span-full pr-4 text-xs text-neutral-500">
-          Consumption 1 MWh below adjusted target, NOI improved {formatCurrency(1000)}
         </p>
       </div>
       <div class="grid grid-cols-2 gap-1">
