@@ -12,16 +12,16 @@ const description =
 
 <MainLayout title={title} description={description}>
   <section>
-    <div class="pt-16 pb-8 lg:pt-32 lg:pb-16">
+    <div class="pt-24 pb-8 lg:pt-48 lg:pb-16">
       <div class="container">
-        <div class="lg:max-w-175">
-          <h1
-            class="mb-4 font-serif text-4xl text-neutral-950 lg:mb-6 lg:text-5xl xl:text-6xl dark:text-neutral-50"
-          >
-            Unlocking hidden value in real estate portfolios
-          </h1>
-          <p class="text-blance lg:text-lg xl:text-xl">{description}</p>
-        </div>
+        <h1
+          class="mb-4 max-w-prose font-serif text-4xl text-neutral-950 lg:mb-6 lg:text-6xl xl:text-7xl dark:text-neutral-50"
+        >
+          Unlocking hidden value<br class="hidden lg:block" /> in real estate portfolios
+        </h1>
+        <p class="max-w-prose leading-normal text-balance lg:text-lg">
+          {description}
+        </p>
       </div>
     </div>
     <div class="container px-0">
@@ -82,9 +82,9 @@ const description =
     <div class="py-16 lg:py-32">
       <div class="container-narrow space-y-4 text-center lg:space-y-6">
         <h2
-          class="font-serif text-3xl text-neutral-950 lg:row-span-2 lg:text-4xl dark:text-neutral-50"
+          class="font-serif text-3xl text-neutral-950 lg:row-span-2 lg:text-5xl dark:text-neutral-50"
         >
-          The gap is measurable.<br />So is closing it.
+          The gap is measurable.<br /><span class="opacity-50">So is closing it.</span>
         </h2>
         <p class="text-balance">
           Clouder works with commercial real estate funds, asset managers, and large-scale investors

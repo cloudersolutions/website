@@ -102,12 +102,13 @@ export default {
             h2: {
               fontFamily: 'var(--font-serif)',
               fontSize: '1.75rem',
-              fontWeight: '420'
+              fontWeight: '400',
+              lineHeight: '2.25rem'
             },
             h3: {
-              fontFamily: 'var(--font-serif)',
-              fontSize: '1.25rem',
-              fontWeight: '450'
+              fontSize: '1.125rem',
+              fontWeight: '500',
+              lineHeight: '1.5rem'
             },
             h4: {
               fontSize: '1rem',

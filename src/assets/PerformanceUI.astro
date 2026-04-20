@@ -1,6 +1,5 @@
 ---
 import { DateTime } from 'luxon';
-// import TrendingUpIcon from 'lucide-astro/TrendingUp';
 import TrendingDownIcon from 'lucide-astro/TrendingDown';
 import ChevronRightIcon from 'lucide-astro/ChevronRight';
 import ChevronLeftIcon from 'lucide-astro/ChevronLeft';
@@ -8,10 +7,10 @@ import { formatCurrency, formatNumber } from '@utils/format';
 ---
 
 <div
-  class="relative shrink-0 overflow-hidden rounded-xl bg-white text-neutral-700 shadow-xl shadow-black/5 outline-[0.5px] outline-black/5 select-none dark:bg-neutral-900 dark:text-neutral-300 dark:shadow-black/20 dark:outline-white/5"
+  class="relative shrink-0 overflow-hidden rounded-xl bg-neutral-50 text-neutral-700 shadow-xl shadow-black/5 outline-[0.5px] outline-black/5 select-none dark:bg-neutral-900 dark:text-neutral-300 dark:shadow-black/20 dark:outline-white/5"
 >
   <div
-    class="absolute z-0 hidden size-96 bg-radial-[at_0_0] from-neutral-800/50 via-neutral-800/25 via-25% to-transparent to-50% lg:size-128 dark:block"
+    class="absolute z-0 size-96 bg-radial-[at_0_0] from-white via-white via-25% to-transparent to-50% lg:size-180 dark:from-neutral-800/50 dark:via-neutral-800/25"
   >
   </div>
   <div class="relative flex flex-col lg:flex-row">
@@ -150,9 +149,9 @@ import { formatCurrency, formatNumber } from '@utils/format';
             49.9999999999, 58.3333333333, 66.6666666666, 74.9999999999, 83.333333333, 91.6666666666,
             100
           ],
-          borderColor: 'royalblue',
-          backgroundColor: 'royalblue',
-          borderWidth: 2,
+          borderColor: 'gray',
+          backgroundColor: 'gray',
+          borderWidth: 1.75,
           borderCapStyle: 'round',
           pointStyle: 'circle',
           pointHoverRadius: 3,
@@ -161,15 +160,17 @@ import { formatCurrency, formatNumber } from '@utils/format';
         },
         {
           label: 'Actual',
-          data: [0, 12, 24, 31.53, 39.06],
-          borderColor: 'salmon',
-          backgroundColor: 'salmon',
-          borderWidth: 2,
+          data: [0, 12, 23, 31.53, 39.06],
+          borderColor: '#e27836',
+          backgroundColor: '#e2783622',
+          borderWidth: 1.75,
           borderCapStyle: 'round',
           pointStyle: 'circle',
           pointHoverRadius: 3,
           pointRadius: 0,
-          fill: false
+          pointBackgroundColor: '#e27836',
+          fill: 'origin',
+          tension: 0.5
         },
         {
           label: 'Estimate',
@@ -188,14 +189,16 @@ import { formatCurrency, formatNumber } from '@utils/format';
             91.77,
             99.3
           ],
-          borderColor: 'lightsalmon',
-          backgroundColor: 'lightsalmon',
-          borderWidth: 2,
-          borderDash: [8, 8],
+          borderColor: '#e2783666',
+          backgroundColor: 'transparent',
+          borderWidth: 1.75,
+          borderDash: [6, 6],
           borderCapStyle: 'round',
           pointStyle: 'circle',
+          pointBackgroundColor: '#e2783666',
           pointHoverRadius: 3,
-          pointRadius: 0
+          pointRadius: 0,
+          opacity: 0.5
         }
       ]
     },
@@ -242,8 +245,8 @@ import { formatCurrency, formatNumber } from '@utils/format';
               if (isNaN(diff)) return '–';
               const absDiff = Math.abs(diff).toFixed(1);
               if (diff === 0) return 'At target';
-              if (diff < 0) return `${absDiff}% over target`;
-              return `${absDiff}% under target`;
+              if (diff < 0) return `+${absDiff}% above target`;
+              return `-${absDiff}% below target`;
             }
           }
         },
