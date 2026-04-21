@@ -75,7 +75,7 @@ import { data } from './performanceData';
         <div class="flex items-center gap-1">
           <p id="actualMwh" class="text-sm">{data.curr.actualMwh}</p>
           <TrendingDownIcon size={14} class="iconDown text-blue-600 dark:text-blue-400" />
-          <TrendingUpIcon size={14} class="hidden text-orange-600 dark:text-orange-400" />
+          <TrendingUpIcon size={14} class="hidden text-red-600 dark:text-red-400" />
         </div>
         <p id="actualMwhDesc" class="col-span-full pr-4 text-xs text-neutral-500">
           {data.curr.actualMwhDesc}
@@ -86,7 +86,7 @@ import { data } from './performanceData';
         <div class="flex items-center gap-1">
           <p id="kwhPsm" class="text-sm">{data.curr.kwhPsm}</p>
           <TrendingDownIcon size={14} class="iconDown text-blue-600 dark:text-blue-400" />
-          <TrendingUpIcon size={14} class="hidden text-orange-600 dark:text-orange-400" />
+          <TrendingUpIcon size={14} class="hidden text-red-600 dark:text-red-400" />
         </div>
         <p class="col-span-full text-xs text-neutral-500">Target: {formatNumber(96)} kWh/m²</p>
       </div>
@@ -95,7 +95,7 @@ import { data } from './performanceData';
         <div class="flex items-center gap-1">
           <p id="kgCo2Psm" class="text-sm">{data.curr.kgCo2Psm}</p>
           <TrendingDownIcon size={14} class="iconDown text-blue-600 dark:text-blue-400" />
-          <TrendingUpIcon size={14} class="hidden text-orange-600 dark:text-orange-400" />
+          <TrendingUpIcon size={14} class="hidden text-red-600 dark:text-red-400" />
         </div>
         <p class="col-span-full text-xs text-neutral-500">Target: {formatNumber(20)}kg CO₂e/m²</p>
       </div>
@@ -175,7 +175,7 @@ import { data } from './performanceData';
     const tValue = target.data[ctx.p1DataIndex];
     const dataset = ctx.chart.data.datasets[ctx.datasetIndex];
     const pValue = dataset.data[ctx.p1DataIndex];
-    return pValue > tValue ? `rgba(226,120,54,${opacity})` : `rgba(65,105,225,${opacity})`;
+    return pValue > tValue ? `rgba(215,65,65,${opacity})` : `rgba(65,105,225,${opacity})`;
   };
 
   const pointColor = (ctx: any, opacity: number) => {
@@ -183,7 +183,7 @@ import { data } from './performanceData';
     const dataset = ctx.chart.data.datasets[ctx.datasetIndex];
     const pValue = dataset.data[ctx.dataIndex];
     const tValue = target.data[ctx.dataIndex];
-    return pValue > tValue ? `rgba(226,120,54,${opacity})` : `rgba(65,105,225,${opacity})`;
+    return pValue > tValue ? `rgba(215,65,65,${opacity})` : `rgba(65,105,225,${opacity})`;
   };
 
   const chart = new Chart(ctx, {
@@ -221,7 +221,7 @@ import { data } from './performanceData';
           pointBackgroundColor: (ctx) => pointColor(ctx, 1),
           segment: {
             borderColor: (ctx) => segmentColor(ctx, 1),
-            backgroundColor: (ctx) => segmentColor(ctx, 0.12)
+            backgroundColor: (ctx) => segmentColor(ctx, 0.1)
           }
         },
         {
