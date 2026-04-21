@@ -282,11 +282,13 @@ const caseExamplePosts = posts
         Trusted by industry leaders
       </h2>
       <div class="h-8 lg:h-16"></div>
-      <div class="space-y-4">
+      <div class="mb-4 space-y-4">
         {caseExamplePosts.map((post) => <QuotePost post={post} />)}
       </div>
     </div>
-    <div class="h-16 lg:h-32"></div>
+  </section>
+  <Divider />
+  <section class="py-16 lg:py-32">
     <div class="container">
       <h2 class="font-serif text-3xl text-neutral-950 lg:text-5xl dark:text-neutral-50">
         Simple engagement. <span class="opacity-50 lg:block">Fast time to value.</span>
@@ -327,22 +329,14 @@ const caseExamplePosts = posts
             The same loop across your assets with compounding results.
           </p>
         </div>
-      </div>
-    </div>
-  </section>
-  <Divider />
-  <section>
-    <div class="py-24 lg:py-48">
-      <div class="container text-center">
-        <h2 class="mb-8 font-serif text-5xl">
-          Ready to unlock the hidden<br class="hidden lg:block" /> value in your portfolio?
-        </h2>
-        <a
-          href={paths.contact.href}
-          class="inline-flex h-10 cursor-pointer items-center justify-center rounded bg-neutral-950 px-4 text-center text-sm text-nowrap text-neutral-50 transition select-none hover:bg-neutral-700 active:bg-neutral-700 dark:bg-neutral-50 dark:text-neutral-950 dark:hover:bg-neutral-300 dark:active:bg-neutral-300"
-        >
-          Get in touch
-        </a>
+        <div class="self-end">
+          <a
+            href={paths.contact.href}
+            class="inline-flex h-10 cursor-pointer items-center justify-center rounded bg-neutral-950 px-4 text-center text-sm text-nowrap text-neutral-50 transition select-none hover:bg-neutral-700 active:bg-neutral-700 dark:bg-neutral-50 dark:text-neutral-950 dark:hover:bg-neutral-300 dark:active:bg-neutral-300"
+          >
+            Get in touch
+          </a>
+        </div>
       </div>
     </div>
   </section>

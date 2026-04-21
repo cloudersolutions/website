@@ -14,7 +14,6 @@ import { paths } from '@data/paths';
 import PerformanceUI from '@assets/PerformanceUI.astro';
 
 const title = 'Product';
-// Todo: better description
 const description =
   'We replace silos and fragmented operations with investment-grade data and turn it into measurable asset value.';
 
@@ -211,7 +210,6 @@ const faq = [
     </div>
     <div class="h-8 lg:h-16"></div>
     <div class="container">
-      <!-- Todo: data for this illustration -->
       <PerformanceUI />
     </div>
     <div class="h-12 lg:h-24"></div>
@@ -279,7 +277,7 @@ const faq = [
                     Step {i + 1}: {title}
                   </p>
                   <p class="text-neutral-500">{subtitle}</p>
-                  <p class="my-4 text-neutral-700 dark:text-neutral-300">{description}</p>
+                  <p class="my-3 text-neutral-700 dark:text-neutral-300">{description}</p>
                   <p>
                     <span class="font-medium">Output: </span>
                     <span class="text-neutral-700 dark:text-neutral-300">{output}</span>
@@ -308,12 +306,12 @@ const faq = [
             <>
               <div class="group grid items-start gap-x-8 gap-y-4 lg:grid-cols-2">
                 <div class="flex h-full flex-col items-center justify-center rounded-lg border border-neutral-200 p-8 pt-7 shadow-md shadow-black/2 transition duration-300 group-hover:border-neutral-300 group-hover:shadow-black/4 dark:border-neutral-800 dark:group-hover:border-neutral-700">
-                  <p class="mb-3 text-sm leading-4 text-neutral-500 transition duration-300 group-hover:text-neutral-600 dark:group-hover:text-neutral-400">
+                  <p class="mb-3 text-sm leading-4 text-neutral-500 transition duration-300 group-hover:text-current">
                     {title}
                   </p>
                   <div class="flex flex-wrap items-center justify-center gap-1">
                     {tags.map((tag) => (
-                      <span class="rounded border border-neutral-200 bg-neutral-100 px-3 py-1.5 text-xs leading-4 text-neutral-700 transition duration-300 group-hover:border-neutral-300 dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-300 dark:group-hover:border-neutral-700">
+                      <span class="rounded border border-current/10 bg-current/4 px-3 py-1.5 text-xs leading-4 text-neutral-700 transition duration-300 group-hover:text-current dark:text-neutral-300">
                         {tag}
                       </span>
                     ))}

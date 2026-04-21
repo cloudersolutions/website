@@ -17,7 +17,7 @@ import { formatCurrency, formatNumber } from '@utils/format';
     <div class="w-full p-4 lg:p-5">
       <div class="flex items-start">
         <div class="mr-auto">
-          <p class="text-base font-semibold text-neutral-800 dark:text-neutral-200">
+          <p class="text-base font-medium text-neutral-800 dark:text-neutral-200">
             Property performance
           </p>
           <p class="mt-0.5 text-sm text-neutral-500">
@@ -41,7 +41,7 @@ import { formatCurrency, formatNumber } from '@utils/format';
     <div
       class="flex w-full flex-col gap-3 border-t border-neutral-200 p-4 lg:w-96 lg:gap-4 lg:border-t-0 lg:border-l lg:p-5 dark:border-neutral-800"
     >
-      <p class="text-sm font-semibold">Energy target</p>
+      <p class="text-xs font-medium tracking-wider text-neutral-500 uppercase">Energy target</p>
       <div class="grid grid-cols-2 gap-1">
         <p class="text-[13px]">Budget</p>
         <p class="text-[13px]">{formatNumber(1300)} MWh</p>
@@ -53,7 +53,9 @@ import { formatCurrency, formatNumber } from '@utils/format';
         </p>
       </div>
       <hr class="my-1 border-neutral-200 lg:-mx-5 dark:border-neutral-800" />
-      <p class="text-sm font-semibold">Forecast, year end</p>
+      <p class="text-xs font-medium tracking-wider text-neutral-500 uppercase">
+        Forecast, year end
+      </p>
       <div class="grid grid-cols-2 gap-1">
         <p class="text-sm">Value created</p>
         <p class="text-sm">{formatCurrency(25000)}</p>
@@ -123,24 +125,42 @@ import { formatCurrency, formatNumber } from '@utils/format';
     }
   };
 
+  const months = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December'
+  ];
+
+  const segmentColor = (ctx, opacity) => {
+    const target = ctx.chart.data.datasets[0];
+    const tValue = target.data[ctx.p1DataIndex];
+    const dataset = ctx.chart.data.datasets[ctx.datasetIndex];
+    const pValue = dataset.data[ctx.p1DataIndex];
+    return pValue > tValue ? `rgba(226,120,54,${opacity})` : `rgba(65,105,225,${opacity})`;
+  };
+
+  const pointColor = (ctx, opacity) => {
+    const target = ctx.chart.data.datasets[0];
+    const dataset = ctx.chart.data.datasets[ctx.datasetIndex];
+    const pValue = dataset.data[ctx.dataIndex];
+    const tValue = target.data[ctx.dataIndex];
+
+    return pValue > tValue ? `rgba(226,120,54,${opacity})` : `rgba(65,105,225,${opacity})`;
+  };
+
   new Chart(ctx, {
     type: 'line',
     data: {
-      labels: [
-        '',
-        'Jan',
-        'Feb',
-        'Mar',
-        'Apr',
-        'May',
-        'Jun',
-        'Jul',
-        'Aug',
-        'Sep',
-        'Oct',
-        'Nov',
-        'Dec'
-      ],
+      labels: ['', ...months.map((m) => m.substring(0, 3))],
       datasets: [
         {
           label: 'Target',
@@ -151,7 +171,7 @@ import { formatCurrency, formatNumber } from '@utils/format';
           ],
           borderColor: 'gray',
           backgroundColor: 'gray',
-          borderWidth: 1.75,
+          borderWidth: 2,
           borderCapStyle: 'round',
           pointStyle: 'circle',
           pointHoverRadius: 3,
@@ -161,44 +181,37 @@ import { formatCurrency, formatNumber } from '@utils/format';
         {
           label: 'Actual',
           data: [0, 12, 23, 31.53, 39.06],
-          borderColor: '#e27836',
-          backgroundColor: '#e2783622',
-          borderWidth: 1.75,
+          borderWidth: 2,
           borderCapStyle: 'round',
+          fill: 'origin',
+          tension: 0.5,
           pointStyle: 'circle',
           pointHoverRadius: 3,
           pointRadius: 0,
-          pointBackgroundColor: '#e27836',
-          fill: 'origin',
-          tension: 0.5
+          pointBorderColor: (ctx) => pointColor(ctx, 1),
+          pointBackgroundColor: (ctx) => pointColor(ctx, 1),
+          segment: {
+            borderColor: (ctx) => segmentColor(ctx, 1),
+            backgroundColor: (ctx) => segmentColor(ctx, 0.12)
+          }
         },
         {
           label: 'Estimate',
-          data: [
-            null,
-            null,
-            null,
-            null,
-            39.06,
-            46.59,
-            54.12,
-            61.65,
-            69.18,
-            76.71,
-            84.24,
-            91.77,
-            99.3
-          ],
+          data: [null, null, null, null, 39.06, 46, 53, 60, 67, 75, 83, 91, 99.3],
           borderColor: '#e2783666',
           backgroundColor: 'transparent',
-          borderWidth: 1.75,
+          borderWidth: 2,
           borderDash: [6, 6],
           borderCapStyle: 'round',
+          tension: 0.5,
           pointStyle: 'circle',
-          pointBackgroundColor: '#e2783666',
+          pointBorderColor: (ctx) => pointColor(ctx, 0.5),
+          pointBackgroundColor: (ctx) => pointColor(ctx, 0.5),
           pointHoverRadius: 3,
           pointRadius: 0,
-          opacity: 0.5
+          segment: {
+            borderColor: (ctx) => segmentColor(ctx, 0.5)
+          }
         }
       ]
     },
@@ -223,12 +236,13 @@ import { formatCurrency, formatNumber } from '@utils/format';
           borderWidth: 1,
           borderColor: borderDark,
           titleColor: fgDark,
+          titleFont: { weight: '600' },
           bodyColor: fgDark,
           footerSpacing: 0,
           footerMarginTop: 2,
           footerColor: fgDark,
           footerFont: {
-            weight: 'normal'
+            weight: '400'
           },
           filter: (item) => {
             if (item.dataset.label === 'Estimate' && item.dataIndex === 2) {
@@ -237,28 +251,26 @@ import { formatCurrency, formatNumber } from '@utils/format';
             return true;
           },
           callbacks: {
+            title: (item) => {
+              const month = months[item[0].dataIndex - 1];
+              if (item[0].dataIndex < 5) return month;
+              return `${month} (estimate)`;
+            },
             label: (item) => {
               return false;
             },
             footer: (item) => {
-              const diff = Number(item[0].raw) - Number(item[1].raw);
+              const diff = Number(item[1].raw) - Number(item[0].raw);
               if (isNaN(diff)) return '–';
               const absDiff = Math.abs(diff).toFixed(1);
               if (diff === 0) return 'At target';
-              if (diff < 0) return `+${absDiff}% above target`;
+              if (diff > 0) return `+${absDiff}% above target`;
               return `-${absDiff}% below target`;
             }
           }
         },
         legend: {
-          display: true,
-          position: 'bottom',
-          labels: {
-            boxWidth: 4,
-            boxHeight: 4,
-            usePointStyle: true,
-            padding: 24
-          }
+          display: false
         }
       },
       interaction: {
@@ -299,4 +311,6 @@ import { formatCurrency, formatNumber } from '@utils/format';
     },
     plugins: [verticalLinePlugin]
   });
+
+  Chart.defaults.font.family = 'InterVariable';
 </script>
