@@ -1,6 +1,4 @@
 ---
-import ArrowUpRightIcon from 'lucide-astro/ArrowUpRight';
-
 import config from '@data/config.yml';
 import { sitemapLinks, resourcesLinks, socialLinks } from '@data/paths';
 import Logo from '@components/Logo.astro';
@@ -34,9 +32,7 @@ const isExternal = (href: string) => {
                 class="inline-flex items-center gap-0.5 py-1 text-sm text-neutral-500 transition hover:text-current active:text-current"
               >
                 {title}
-                {isExternal(href) && (
-                  <ArrowUpRightIcon size={14} class="mt-px shrink-0 opacity-50" />
-                )}
+                {isExternal(href) && <span class="text-xs opacity-50">↗</span>}
               </a>
             ))
           }
@@ -50,9 +46,7 @@ const isExternal = (href: string) => {
                 class="inline-flex items-center gap-0.5 py-1 text-sm text-neutral-500 transition hover:text-current active:text-current"
               >
                 {title}
-                {isExternal(href) && (
-                  <ArrowUpRightIcon size={14} class="mt-px shrink-0 opacity-50" />
-                )}
+                {isExternal(href) && <span class="text-xs opacity-50">↗</span>}
               </a>
             ))
           }
@@ -66,7 +60,7 @@ const isExternal = (href: string) => {
                 class="inline-flex items-center gap-0.5 py-1 text-sm text-neutral-500 transition hover:text-current active:text-current"
               >
                 {title}
-                <ArrowUpRightIcon size={14} class="mt-px shrink-0 opacity-50" />
+                <span class="text-xs opacity-50">↗</span>
               </a>
             ))
           }
