@@ -1,9 +1,12 @@
 ---
 import { DateTime } from 'luxon';
+import InfoIcon from 'lucide-astro/Info';
+import TrendingUpIcon from 'lucide-astro/TrendingUp';
 import TrendingDownIcon from 'lucide-astro/TrendingDown';
 import ChevronRightIcon from 'lucide-astro/ChevronRight';
 import ChevronLeftIcon from 'lucide-astro/ChevronLeft';
-import { formatCurrency, formatNumber } from '@utils/format';
+import { formatNumber } from '@utils/format';
+import { data } from './performanceData';
 ---
 
 <div
@@ -14,9 +17,9 @@ import { formatCurrency, formatNumber } from '@utils/format';
   >
   </div>
   <div class="relative flex flex-col lg:flex-row">
-    <div class="w-full p-4 lg:p-5">
+    <div class="w-full p-4 lg:p-6">
       <div class="flex items-start">
-        <div class="mr-auto">
+        <div class="mr-auto mb-2">
           <p class="text-base font-medium text-neutral-800 dark:text-neutral-200">
             Property performance
           </p>
@@ -25,67 +28,75 @@ import { formatCurrency, formatNumber } from '@utils/format';
           </p>
         </div>
         <div class="flex rounded border border-neutral-200 dark:border-neutral-800">
-          <ChevronLeftIcon class="p-1.5 transition hover:bg-current/5" size={26} />
+          <button id="prevYear" class="p-1.5 transition hover:bg-current/5">
+            <ChevronLeftIcon size={14} />
+          </button>
           <span
+            id="selectedYear"
             class="border-x border-neutral-200 px-3 text-xs leading-6.5 dark:border-neutral-800"
           >
             {DateTime.now().year}
           </span>
-          <ChevronRightIcon class="p-1.5 text-current/50" size={26} />
+          <button id="nextYear" class="p-1.5 transition hover:bg-current/5">
+            <ChevronRightIcon size={14} />
+          </button>
         </div>
       </div>
       <div class="lg:aspect-wide mt-4 aspect-square">
-        <canvas id="myChart" class="block"></canvas>
+        <canvas id="chart" class="block"></canvas>
       </div>
     </div>
     <div
-      class="flex w-full flex-col gap-3 border-t border-neutral-200 p-4 lg:w-96 lg:gap-4 lg:border-t-0 lg:border-l lg:p-5 dark:border-neutral-800"
+      class="flex w-full flex-col gap-3 border-t border-neutral-200 p-4 lg:w-96 lg:gap-4 lg:border-t-0 lg:border-l lg:p-6 dark:border-neutral-800"
     >
       <p class="text-xs font-medium tracking-wider text-neutral-500 uppercase">Energy target</p>
       <div class="grid grid-cols-2 gap-1">
         <p class="text-[13px]">Budget</p>
-        <p class="text-[13px]">{formatNumber(1300)} MWh</p>
+        <p id="budgetMwh" class="text-[13px]">{data.curr.budgetMwh}</p>
         <p class="text-[13px]">Adjusted</p>
-        <p class="text-[13px]">{formatNumber(1290)} MWh</p>
+        <p id="adjustedMwh" class="text-[13px]">{data.curr.adjustedMwh}</p>
 
-        <p class="col-span-full pr-4 text-xs text-neutral-500">
-          0.8% below budget due to lower heating need
+        <p id="adjustedMwhDesc" class="col-span-full pr-4 text-xs text-neutral-500">
+          {data.curr.adjustedMwhDesc}
         </p>
       </div>
-      <hr class="my-1 border-neutral-200 lg:-mx-5 dark:border-neutral-800" />
-      <p class="text-xs font-medium tracking-wider text-neutral-500 uppercase">
-        Forecast, year end
+      <hr class="my-2 border-neutral-200 lg:-mx-6 dark:border-neutral-800" />
+      <p id="forecastTitle" class="text-xs font-medium tracking-wider text-neutral-500 uppercase">
+        {data.curr.forecastTitle}
       </p>
       <div class="grid grid-cols-2 gap-1">
-        <p class="text-sm">Value created</p>
-        <p class="text-sm">{formatCurrency(25000)}</p>
-        <p class="col-span-full pr-4 text-xs text-neutral-500">
-          Consumption 1 MWh below adjusted target, NOI improved {formatCurrency(1000)}
+        <p id="valuePotTitle" class="text-sm">{data.curr.valuePotTitle}</p>
+        <p id="valuePot" class="text-sm">{data.curr.valuePot}</p>
+        <p id="valuePotDesc" class="col-span-full pr-4 text-xs text-neutral-500">
+          {data.curr.valuePotDesc}
         </p>
       </div>
       <div class="grid grid-cols-2 gap-1">
         <p class="text-sm">Consumption</p>
         <div class="flex items-center gap-1">
-          <p class="text-sm">{formatNumber(1289)} MWh</p>
-          <TrendingDownIcon size={14} class="text-blue-600 dark:text-blue-400" />
+          <p id="actualMwh" class="text-sm">{data.curr.actualMwh}</p>
+          <TrendingDownIcon size={14} class="iconDown text-blue-600 dark:text-blue-400" />
+          <TrendingUpIcon size={14} class="hidden text-orange-600 dark:text-orange-400" />
         </div>
-        <p class="col-span-full pr-4 text-xs text-neutral-500">
-          Operational gap is 0.1% below adjusted target
+        <p id="actualMwhDesc" class="col-span-full pr-4 text-xs text-neutral-500">
+          {data.curr.actualMwhDesc}
         </p>
       </div>
       <div class="grid grid-cols-2 gap-1">
         <p class="text-sm">Energy intensity</p>
         <div class="flex items-center gap-1">
-          <p class="text-sm">{formatNumber(95)} kWh/m²</p>
-          <TrendingDownIcon size={14} class="text-blue-600 dark:text-blue-400" />
+          <p id="kwhPsm" class="text-sm">{data.curr.kwhPsm}</p>
+          <TrendingDownIcon size={14} class="iconDown text-blue-600 dark:text-blue-400" />
+          <TrendingUpIcon size={14} class="hidden text-orange-600 dark:text-orange-400" />
         </div>
         <p class="col-span-full text-xs text-neutral-500">Target: {formatNumber(96)} kWh/m²</p>
       </div>
       <div class="grid grid-cols-2 gap-1">
         <p class="text-sm">CO₂ Emissions</p>
         <div class="flex items-center gap-1">
-          <p class="text-sm">{formatNumber(17)}kg CO₂e/m²</p>
-          <TrendingDownIcon size={14} class="text-blue-600 dark:text-blue-400" />
+          <p id="kgCo2Psm" class="text-sm">{data.curr.kgCo2Psm}</p>
+          <TrendingDownIcon size={14} class="iconDown text-blue-600 dark:text-blue-400" />
+          <TrendingUpIcon size={14} class="hidden text-orange-600 dark:text-orange-400" />
         </div>
         <p class="col-span-full text-xs text-neutral-500">Target: {formatNumber(20)}kg CO₂e/m²</p>
       </div>
@@ -95,8 +106,28 @@ import { formatCurrency, formatNumber } from '@utils/format';
 
 <script>
   import Chart from 'chart.js/auto';
+  import { data } from './performanceData.ts';
 
-  const ctx = document.getElementById('myChart');
+  let selectedYear = new Date().getFullYear();
+
+  const ctx = document.getElementById('chart') as HTMLCanvasElement;
+  const prevBtn = document.getElementById('prevYear');
+  const nextBtn = document.getElementById('nextYear');
+  const yearLabel = document.getElementById('selectedYear');
+  const budgetMwh = document.getElementById('budgetMwh');
+  const adjustedMwh = document.getElementById('adjustedMwh');
+  const adjustedMwhDesc = document.getElementById('adjustedMwhDesc');
+  const forecastTitle = document.getElementById('forecastTitle');
+  const actualMwh = document.getElementById('actualMwh');
+  const actualMwhDesc = document.getElementById('actualMwhDesc');
+  const valuePotTitle = document.getElementById('valuePotTitle');
+  const valuePot = document.getElementById('valuePot');
+  const valuePotDesc = document.getElementById('valuePotDesc');
+  const kwhPsm = document.getElementById('kwhPsm');
+  const kgCo2Psm = document.getElementById('kgCo2Psm');
+
+  const iconUps = document.querySelectorAll<HTMLElement>('svg.lucide-trending-up');
+  const iconDowns = document.querySelectorAll<HTMLElement>('svg.lucide-trending-down');
 
   const isMobile = window.matchMedia('(max-width: 1024px)').matches;
   const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -105,25 +136,6 @@ import { formatCurrency, formatNumber } from '@utils/format';
   const bg = isDark ? '#262626' : '#fff';
   const border = isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.08)';
   const borderDark = isDark ? 'rgba(255,255,255,0.12)' : 'rgba(0,0,0,0.12)';
-
-  const verticalLinePlugin = {
-    id: 'verticalLinePlugin',
-    beforeDraw: (chart) => {
-      if (chart.tooltip?._active && chart.tooltip._active.length) {
-        const ctx = chart.ctx;
-        ctx.save();
-        const activePoint = chart.tooltip._active[0];
-        ctx.beginPath();
-        ctx.setLineDash([5, 5]);
-        ctx.moveTo(activePoint.element.x, chart.chartArea.top);
-        ctx.lineTo(activePoint.element.x, chart.chartArea.bottom);
-        ctx.lineWidth = 1;
-        ctx.strokeStyle = borderDark;
-        ctx.stroke();
-        ctx.restore();
-      }
-    }
-  };
 
   const months = [
     'January',
@@ -140,7 +152,26 @@ import { formatCurrency, formatNumber } from '@utils/format';
     'December'
   ];
 
-  const segmentColor = (ctx, opacity) => {
+  const verticalLinePlugin = {
+    id: 'verticalLinePlugin',
+    beforeDraw: (chart: any) => {
+      if (chart.tooltip?._active && chart.tooltip._active.length) {
+        const ctx = chart.ctx;
+        ctx.save();
+        const activePoint = chart.tooltip._active[0];
+        ctx.beginPath();
+        ctx.setLineDash([5, 5]);
+        ctx.moveTo(activePoint.element.x, chart.chartArea.top);
+        ctx.lineTo(activePoint.element.x, chart.chartArea.bottom);
+        ctx.lineWidth = 1;
+        ctx.strokeStyle = borderDark;
+        ctx.stroke();
+        ctx.restore();
+      }
+    }
+  };
+
+  const segmentColor = (ctx: any, opacity: number) => {
     const target = ctx.chart.data.datasets[0];
     const tValue = target.data[ctx.p1DataIndex];
     const dataset = ctx.chart.data.datasets[ctx.datasetIndex];
@@ -148,16 +179,15 @@ import { formatCurrency, formatNumber } from '@utils/format';
     return pValue > tValue ? `rgba(226,120,54,${opacity})` : `rgba(65,105,225,${opacity})`;
   };
 
-  const pointColor = (ctx, opacity) => {
+  const pointColor = (ctx: any, opacity: number) => {
     const target = ctx.chart.data.datasets[0];
     const dataset = ctx.chart.data.datasets[ctx.datasetIndex];
     const pValue = dataset.data[ctx.dataIndex];
     const tValue = target.data[ctx.dataIndex];
-
     return pValue > tValue ? `rgba(226,120,54,${opacity})` : `rgba(65,105,225,${opacity})`;
   };
 
-  new Chart(ctx, {
+  const chart = new Chart(ctx, {
     type: 'line',
     data: {
       labels: ['', ...months.map((m) => m.substring(0, 3))],
@@ -180,11 +210,11 @@ import { formatCurrency, formatNumber } from '@utils/format';
         },
         {
           label: 'Actual',
-          data: [0, 12, 23, 31.53, 39.06],
+          data: data.curr.actual,
           borderWidth: 2,
           borderCapStyle: 'round',
           fill: 'origin',
-          tension: 0.5,
+          tension: 0.3,
           pointStyle: 'circle',
           pointHoverRadius: 3,
           pointRadius: 0,
@@ -197,13 +227,13 @@ import { formatCurrency, formatNumber } from '@utils/format';
         },
         {
           label: 'Estimate',
-          data: [null, null, null, null, 39.06, 46, 53, 60, 67, 75, 83, 91, 99.3],
+          data: data.curr.estimate,
           borderColor: '#e2783666',
           backgroundColor: 'transparent',
           borderWidth: 2,
           borderDash: [6, 6],
           borderCapStyle: 'round',
-          tension: 0.5,
+          tension: 0.3,
           pointStyle: 'circle',
           pointBorderColor: (ctx) => pointColor(ctx, 0.5),
           pointBackgroundColor: (ctx) => pointColor(ctx, 0.5),
@@ -236,34 +266,33 @@ import { formatCurrency, formatNumber } from '@utils/format';
           borderWidth: 1,
           borderColor: borderDark,
           titleColor: fgDark,
-          titleFont: { weight: '600' },
+          titleFont: { weight: 600 },
           bodyColor: fgDark,
           footerSpacing: 0,
           footerMarginTop: 2,
           footerColor: fgDark,
           footerFont: {
-            weight: '400'
+            weight: 400
           },
-          filter: (item) => {
-            if (item.dataset.label === 'Estimate' && item.dataIndex === 2) {
-              return false;
-            }
-            return true;
+          filter: (tooltipItem) => {
+            return tooltipItem.dataIndex !== 0;
           },
           callbacks: {
             title: (item) => {
+              if (item.length === 0) return;
               const month = months[item[0].dataIndex - 1];
-              if (item[0].dataIndex < 5) return month;
-              return `${month} (estimate)`;
+              const monthPart = item.some((i) => i.datasetIndex === 1)
+                ? month
+                : `${month} (estimate)`;
+              const yearPart = selectedYear === new Date().getFullYear() ? null : selectedYear;
+              return [monthPart, yearPart].filter(Boolean).join(', ');
             },
-            label: (item) => {
-              return false;
-            },
+            label: () => '',
             footer: (item) => {
+              if (item.length === 0) return;
               const diff = Number(item[1].raw) - Number(item[0].raw);
               if (isNaN(diff)) return '–';
               const absDiff = Math.abs(diff).toFixed(1);
-              if (diff === 0) return 'At target';
               if (diff > 0) return `+${absDiff}% above target`;
               return `-${absDiff}% below target`;
             }
@@ -313,4 +342,50 @@ import { formatCurrency, formatNumber } from '@utils/format';
   });
 
   Chart.defaults.font.family = 'InterVariable';
+
+  prevBtn?.addEventListener('click', () => {
+    selectedYear = Math.min(selectedYear, new Date().getFullYear() - 1);
+
+    if (yearLabel) yearLabel.textContent = selectedYear.toString();
+    if (budgetMwh) budgetMwh.textContent = data.prev.budgetMwh;
+    if (adjustedMwh) adjustedMwh.textContent = data.prev.adjustedMwh;
+    if (adjustedMwhDesc) adjustedMwhDesc.textContent = data.prev.adjustedMwhDesc;
+    if (forecastTitle) forecastTitle.textContent = data.prev.forecastTitle;
+    if (valuePotTitle) valuePotTitle.textContent = data.prev.valuePotTitle;
+    if (valuePot) valuePot.textContent = data.prev.valuePot;
+    if (valuePotDesc) valuePotDesc.textContent = data.prev.valuePotDesc;
+    if (actualMwh) actualMwh.textContent = data.prev.actualMwh;
+    if (actualMwhDesc) actualMwhDesc.textContent = data.prev.actualMwhDesc;
+    if (kwhPsm) kwhPsm.textContent = data.prev.kwhPsm;
+    if (kgCo2Psm) kgCo2Psm.textContent = data.prev.kgCo2Psm;
+    iconUps.forEach((icon) => (icon.style.display = 'block'));
+    iconDowns.forEach((icon) => (icon.style.display = 'none'));
+
+    chart.data.datasets[1].data = data.prev.actual;
+    chart.data.datasets[2].data = data.prev.estimate;
+    chart.update();
+  });
+
+  nextBtn?.addEventListener('click', () => {
+    selectedYear = Math.min(selectedYear + 1, new Date().getFullYear());
+
+    chart.data.datasets[1].data = data.curr.actual;
+    chart.data.datasets[2].data = data.curr.estimate;
+    chart.update();
+
+    if (yearLabel) yearLabel.textContent = selectedYear.toString();
+    if (budgetMwh) budgetMwh.textContent = data.curr.budgetMwh;
+    if (adjustedMwh) adjustedMwh.textContent = data.curr.adjustedMwh;
+    if (adjustedMwhDesc) adjustedMwhDesc.textContent = data.curr.adjustedMwhDesc;
+    if (forecastTitle) forecastTitle.textContent = data.curr.forecastTitle;
+    if (valuePotTitle) valuePotTitle.textContent = data.curr.valuePotTitle;
+    if (valuePot) valuePot.textContent = data.curr.valuePot;
+    if (valuePotDesc) valuePotDesc.textContent = data.curr.valuePotDesc;
+    if (actualMwh) actualMwh.textContent = data.curr.actualMwh;
+    if (actualMwhDesc) actualMwhDesc.textContent = data.curr.actualMwhDesc;
+    if (kwhPsm) kwhPsm.textContent = data.curr.kwhPsm;
+    if (kgCo2Psm) kgCo2Psm.textContent = data.curr.kgCo2Psm;
+    iconUps.forEach((icon) => (icon.style.display = 'none'));
+    iconDowns.forEach((icon) => (icon.style.display = 'block'));
+  });
 </script>
