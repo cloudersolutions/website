@@ -3,9 +3,9 @@ export const paths = {
     title: 'Home',
     href: '/'
   },
-  product: {
-    title: 'Product',
-    href: '/product'
+  solutions: {
+    title: 'Solutions',
+    href: '/solutions'
   },
   news: {
     title: 'News',
@@ -33,9 +33,15 @@ export const paths = {
   }
 };
 
-export const headerLinks = [paths.product, paths.news, paths.about, paths.contact, paths.dashboard];
+export const headerLinks = [
+  paths.solutions,
+  paths.news,
+  paths.about,
+  paths.contact,
+  paths.dashboard
+];
 
-export const sitemapLinks = [paths.home, paths.product, paths.news, paths.about, paths.contact];
+export const sitemapLinks = [paths.home, paths.solutions, paths.news, paths.about, paths.contact];
 
 export const resourcesLinks = [paths.privacy, paths.infosec, paths.dashboard];
 

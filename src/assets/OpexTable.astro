@@ -1,0 +1,49 @@
+---
+import { formatCurrency } from '@utils/format';
+---
+
+<div class="overflow-clip rounded-md bg-white shadow-xl shadow-black/5 dark:bg-neutral-900">
+  <div class="grid items-center gap-4 p-4 text-sm md:grid-cols-2">
+    <p class="text-xs font-medium tracking-wider text-neutral-500 uppercase">Source</p>
+    <p
+      class="-mt-3 text-xs font-medium tracking-wider text-neutral-500 uppercase md:mt-0 md:text-right"
+    >
+      Annual impact
+    </p>
+    <div class="col-span-full h-px bg-neutral-200 dark:bg-neutral-800"></div>
+    <p class="text-neutral-700 dark:text-neutral-300">Energy & utilities reduction</p>
+    <p
+      class="-mt-3 text-sm text-nowrap text-neutral-700 tabular-nums md:mt-0 md:text-right dark:text-neutral-300"
+    >
+      {formatCurrency(1800000)}
+    </p>
+    <p class="text-neutral-700 dark:text-neutral-300">Maintenance & repairs</p>
+    <p
+      class="-mt-3 text-sm text-nowrap text-neutral-700 tabular-nums md:mt-0 md:text-right dark:text-neutral-300"
+    >
+      {formatCurrency(1012500)}
+    </p>
+    <p class="text-neutral-700 dark:text-neutral-300">Admin & back office</p>
+    <p
+      class="-mt-3 text-sm text-nowrap text-neutral-700 tabular-nums md:mt-0 md:text-right dark:text-neutral-300"
+    >
+      {formatCurrency(750000)}
+    </p>
+    <div class="col-span-full h-px bg-neutral-200 dark:bg-neutral-800"></div>
+    <p class="font-medium text-neutral-900 dark:text-neutral-100">Total NOI potential</p>
+    <p
+      class="-mt-3 text-sm font-medium text-nowrap text-neutral-900 tabular-nums md:mt-0 md:text-right dark:text-neutral-100"
+    >
+      {formatCurrency(3562500)}
+    </p>
+    <p class="font-medium text-neutral-900 dark:text-neutral-100">Value increase</p>
+    <p
+      class="-mt-3 text-sm font-medium text-nowrap text-neutral-900 tabular-nums md:mt-0 md:text-right dark:text-neutral-100"
+    >
+      {formatCurrency(59375000)}
+    </p>
+  </div>
+</div>
+<p class="mt-4 text-xs text-neutral-500 italic md:text-right">
+  Benchmarks applied on a {formatCurrency(500)}M portfolio at 6% cap rate
+</p>

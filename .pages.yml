@@ -30,17 +30,17 @@ content:
       - name: category
         label: Category
         type: select
-        required: true
+        required: false
         options:
           creatable: false
           multiple: false
           values:
-            - value: case-example
-              label: Case example
+            - value: case-study
+              label: Case study
             - value: company-news
               label: Company news
             - value: insights
-              label: Industry insights
+              label: Industry insight
             - value: press
               label: Press release
             - value: product

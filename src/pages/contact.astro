@@ -15,227 +15,272 @@ const description =
   'Get in touch with our sales team for consultations, demos, or general questions.';
 ---
 
-<MainLayout title={title} description={description} headerClass="bg-white dark:bg-neutral-900">
-  <section class="bg-linear-to-b from-white to-transparent dark:from-neutral-900">
-    <div class="container-narrow mb-8 py-16 text-center sm:py-20 md:py-24 lg:py-28 xl:py-32">
-      <h1
-        class="mb-8 text-3xl font-semibold text-neutral-950 md:text-4xl lg:text-5xl dark:text-neutral-50"
-      >
-        Interested to learn more?
-      </h1>
-      <p class="text-xl text-neutral-700 dark:text-neutral-300">{description}</p>
+<MainLayout title={title} description={description}>
+  <section>
+    <div class="pt-24 pb-16 lg:pt-48 lg:pb-32">
+      <div class="container">
+        <h1
+          class="mb-4 font-serif text-4xl text-neutral-950 lg:text-6xl xl:text-7xl dark:text-neutral-50"
+        >
+          Interested to learn more?
+        </h1>
+        <p class="max-w-prose leading-normal text-balance lg:text-lg">
+          {description}
+        </p>
+      </div>
     </div>
   </section>
   <Divider />
-  <section id="form" class="container py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32">
-    <div class="grid grid-cols-1 gap-x-6 gap-y-10 md:grid-cols-2 md:gap-x-10 lg:grid-cols-3">
-      <div class="space-y-4 md:col-span-2 lg:col-span-1">
-        <h2 class="text-2xl font-semibold text-neutral-950 md:text-3xl dark:text-neutral-50">
-          Send us a message
-        </h2>
-        <p>For consultations and demos, please suggest a few dates and times that work for you.</p>
-        <p class="text-sm text-neutral-500">
-          Prefer email or phone?
-          <a href="#sales" class="underline">Contact our sales team</a>
-        </p>
-      </div>
-      <form
-        name="contact"
-        method="POST"
-        action="/success"
-        data-netlify="true"
-        netlify-honeypot="bot-field"
-        class="col-span-2 space-y-4 lg:pt-1"
-      >
-        <div class="flex gap-4">
-          <div class="w-full">
-            <label for="firstname" class="mb-2 inline-block text-sm font-medium">First name</label>
-            <span class="text-sm leading-none opacity-50">*</span>
-            <input
-              id="firstname"
-              name="firstname"
-              type="text"
-              autocapitalize="on"
-              required
-              class="block h-10 w-full rounded border border-neutral-200 bg-white px-3 text-sm placeholder-current/50 dark:border-neutral-800 dark:bg-neutral-900"
-            />
+  <section id="form">
+    <div class="py-16 lg:py-32">
+      <div class="container">
+        <div class="grid grid-cols-1 gap-x-6 gap-y-10 md:grid-cols-2 md:gap-x-10 lg:grid-cols-3">
+          <div class="space-y-3 md:col-span-2 lg:col-span-1">
+            <h2 class="font-serif text-2xl text-neutral-950 lg:text-3xl dark:text-neutral-50">
+              Send us a message
+            </h2>
+            <p>
+              For consultations and demos, please suggest a few dates and times that work for you.
+            </p>
+            <p class="text-sm text-neutral-500">
+              Prefer email or phone?
+              <a href="#sales" class="underline">Contact our sales team</a>
+            </p>
           </div>
-          <div class="w-full">
-            <label for="lastname" class="mb-2 inline-block text-sm font-medium">Last name</label>
-            <span class="text-sm leading-none opacity-50">*</span>
-            <input
-              id="lastname"
-              name="lastname"
-              type="text"
-              autocapitalize="on"
-              required
-              class="block h-10 w-full rounded border border-neutral-200 bg-white px-3 text-sm placeholder-current/50 dark:border-neutral-800 dark:bg-neutral-900"
-            />
-          </div>
-        </div>
-        <div>
-          <label for="email" class="mb-2 inline-block text-sm font-medium">Email</label>
-          <span class="text-sm leading-none opacity-50">*</span>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            required
-            class="block h-10 w-full rounded border border-neutral-200 bg-white px-3 text-sm placeholder-current/50 dark:border-neutral-800 dark:bg-neutral-900"
-          />
-        </div>
-        <div class="-mt-1 flex gap-1.5">
-          <input
-            tabindex="-1"
-            id="marketing"
-            name="marketing"
-            type="checkbox"
-            class="mt-0.5 size-4 rounded border-neutral-300 text-indigo-500 not-checked:bg-white dark:border-neutral-700 dark:not-checked:bg-neutral-900"
-          />
-          <label for="marketing" class="text-sm">Sign up for news and updates</label>
-        </div>
-        <div>
-          <label for="phone" class="mb-2 inline-block text-sm font-medium">Phone</label>
-          <input
-            id="phone"
-            name="phone"
-            type="tel"
-            class="block h-10 w-full rounded border border-neutral-200 bg-white px-3 text-sm placeholder-current/50 dark:border-neutral-800 dark:bg-neutral-900"
-          />
-        </div>
-        <div class="mb-5">
-          <label for="message" class="mb-2 inline-block text-sm font-medium">Message</label>
-          <span class="text-sm leading-none opacity-50">*</span>
-          <textarea
-            placeholder="Tell us about your requirements or goals…"
-            id="message"
-            name="message"
-            rows="4"
-            required
-            class="block field-sizing-content min-h-26 w-full rounded border border-neutral-200 bg-white px-3 py-2.5 text-sm placeholder-current/50 dark:border-neutral-800 dark:bg-neutral-900"
-          ></textarea>
-        </div>
-        <input
-          name="bot-field"
-          type="text"
-          autocomplete="off"
-          tabindex="-1"
-          aria-hidden="true"
-          style="position: absolute; left: -9999px;"
-        />
-        <div class="mt-6 flex flex-col items-center justify-between gap-4 sm:flex-row">
-          <button
-            type="submit"
-            class="inline-flex h-10 w-full cursor-pointer items-center justify-center gap-1 rounded bg-indigo-500 px-4 text-center text-sm font-[550] text-nowrap text-white transition select-none hover:bg-indigo-600 active:bg-indigo-600 sm:w-auto dark:hover:bg-indigo-400 dark:active:bg-indigo-400"
+          <form
+            name="contact"
+            method="POST"
+            action="/success"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            class="col-span-2 space-y-4 lg:pt-1"
           >
-            Send message
-          </button>
-          <p class="text-xs text-neutral-500">
-            See our
-            <a href={paths.privacy.href} class="underline" tabindex="-1">{paths.privacy.title}</a>
-            for details on how we handle your data.
-          </p>
+            <div class="flex gap-4">
+              <div class="w-full">
+                <label
+                  for="firstname"
+                  class="mb-2 inline-block text-sm font-medium text-neutral-900 dark:text-neutral-100"
+                >
+                  First name
+                </label>
+                <span class="text-sm leading-none opacity-50">*</span>
+                <input
+                  id="firstname"
+                  name="firstname"
+                  type="text"
+                  autocapitalize="on"
+                  required
+                  class="block h-10 w-full rounded border border-neutral-200 bg-white px-3 text-sm placeholder-current/50 dark:border-neutral-800 dark:bg-neutral-900"
+                />
+              </div>
+              <div class="w-full">
+                <label
+                  for="lastname"
+                  class="mb-2 inline-block text-sm font-medium text-neutral-900 dark:text-neutral-100"
+                >
+                  Last name
+                </label>
+                <span class="text-sm leading-none opacity-50">*</span>
+                <input
+                  id="lastname"
+                  name="lastname"
+                  type="text"
+                  autocapitalize="on"
+                  required
+                  class="block h-10 w-full rounded border border-neutral-200 bg-white px-3 text-sm placeholder-current/50 dark:border-neutral-800 dark:bg-neutral-900"
+                />
+              </div>
+            </div>
+            <div>
+              <label
+                for="email"
+                class="mb-2 inline-block text-sm font-medium text-neutral-900 dark:text-neutral-100"
+              >
+                Email
+              </label>
+              <span class="text-sm leading-none opacity-50">*</span>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                required
+                class="block h-10 w-full rounded border border-neutral-200 bg-white px-3 text-sm placeholder-current/50 dark:border-neutral-800 dark:bg-neutral-900"
+              />
+            </div>
+            <div class="-mt-1 flex gap-1">
+              <input
+                tabindex="-1"
+                id="marketing"
+                name="marketing"
+                type="checkbox"
+                class="mt-0.5 size-4 rounded border-neutral-300 text-indigo-500 not-checked:bg-white dark:border-neutral-700 dark:not-checked:bg-neutral-900"
+              />
+              <label for="marketing" class="text-sm">Sign up for news and updates</label>
+            </div>
+            <div>
+              <label
+                for="phone"
+                class="mb-2 inline-block text-sm font-medium text-neutral-900 dark:text-neutral-100"
+              >
+                Phone
+              </label>
+              <input
+                id="phone"
+                name="phone"
+                type="tel"
+                class="block h-10 w-full rounded border border-neutral-200 bg-white px-3 text-sm placeholder-current/50 dark:border-neutral-800 dark:bg-neutral-900"
+              />
+            </div>
+            <div class="mb-5">
+              <label
+                for="message"
+                class="mb-2 inline-block text-sm font-medium text-neutral-900 dark:text-neutral-100"
+              >
+                Message
+              </label>
+              <span class="text-sm leading-none opacity-50">*</span>
+              <textarea
+                placeholder="Tell us about your requirements or goals…"
+                id="message"
+                name="message"
+                rows="4"
+                required
+                class="block field-sizing-content min-h-26 w-full rounded border border-neutral-200 bg-white px-3 py-2.5 text-sm placeholder-current/50 dark:border-neutral-800 dark:bg-neutral-900"
+              ></textarea>
+            </div>
+            <input
+              name="bot-field"
+              type="text"
+              autocomplete="off"
+              tabindex="-1"
+              aria-hidden="true"
+              style="position: absolute; left: -9999px;"
+            />
+            <div class="mt-6 flex flex-col items-center justify-between gap-4 sm:flex-row">
+              <button
+                type="submit"
+                class="inline-flex h-10 cursor-pointer items-center justify-center gap-1 rounded bg-neutral-950 px-4 text-center text-sm text-nowrap text-neutral-50 transition select-none hover:bg-neutral-800 active:bg-neutral-800 dark:bg-neutral-50 dark:text-neutral-950 dark:hover:bg-neutral-200 dark:active:bg-neutral-200"
+              >
+                Send message
+              </button>
+              <p class="text-xs text-neutral-500">
+                See our
+                <a href={paths.privacy.href} class="underline" tabindex="-1"
+                  >{paths.privacy.title}</a
+                >
+                for details on how we handle your data.
+              </p>
+            </div>
+          </form>
         </div>
-      </form>
-    </div>
-  </section>
-  <Divider />
-  <section id="sales" class="xl container py-16 sm:py-20 md:py-24 lg:py-28">
-    <div
-      class="grid grid-cols-1 gap-x-6 gap-y-10 md:grid-cols-2 md:gap-x-8 lg:grid-cols-3 lg:gap-x-10"
-    >
-      <div class="space-y-4 md:col-span-2 lg:col-span-1 lg:row-span-2">
-        <h2 class="text-2xl font-semibold text-neutral-950 md:text-3xl dark:text-neutral-50">
-          We’re here to help
-        </h2>
-        <p>
-          Whether you have security and compliance concerns or product questions, our sales team is
-          here to help.
-        </p>
-      </div>
-      <div class="space-y-0.5 lg:mt-1.5">
-        <Image
-          src={tomiImage}
-          alt="Tomi Grönlund"
-          class="mb-4 aspect-square rounded bg-neutral-500/10 object-cover text-transparent"
-          width={640}
-          layout="constrained"
-        />
-        <h3 class="mb-2 text-xl font-semibold text-neutral-950 dark:text-neutral-50">
-          Tomi Grönlund
-        </h3>
-        <p>CEO</p>
-        <p>tomi.gronlund@cloudersolutions.com</p>
-        <p>+358 50 527 1416</p>
-      </div>
-      <div class="space-y-0.5 lg:mt-1.5">
-        <Image
-          src={emmaImage}
-          alt="Emma Grönlund"
-          class="mb-4 aspect-square rounded bg-neutral-500/10 object-cover text-transparent"
-          width={640}
-          layout="constrained"
-        />
-        <h3 class="mb-2 text-xl font-semibold text-neutral-950 dark:text-neutral-50">
-          Emma Grönlund
-        </h3>
-        <p>COO</p>
-        <p>emma.gronlund@cloudersolutions.com</p>
-        <p>+358 40 846 8169</p>
-      </div>
-      <div class="space-y-0.5">
-        <Image
-          src={jussiImage}
-          alt="Jussi Toivonen"
-          class="mb-4 aspect-square rounded bg-neutral-500/10 object-cover text-transparent"
-          width={640}
-          layout="constrained"
-        />
-        <h3 class="mb-2 text-xl font-semibold text-neutral-950 dark:text-neutral-50">
-          Jussi Toivonen
-        </h3>
-        <p>Building Systems Technology Lead</p>
-        <p>jussi.toivonen@cloudersolutions.com</p>
-        <p>+358 50 560 8434</p>
-      </div>
-      <div class="space-y-0.5">
-        <Image
-          src={matiasImage}
-          alt="Matias Nissinen"
-          class="mb-4 aspect-square rounded bg-neutral-500/10 object-cover text-transparent"
-          width={640}
-          layout="constrained"
-        />
-        <h3 class="mb-2 text-xl font-semibold text-neutral-950 dark:text-neutral-50">
-          Matias Nissinen
-        </h3>
-        <p>Business Development Manager</p>
-        <p>matias.nissinen@cloudersolutions.com</p>
-        <p>+358 45 359 8144</p>
       </div>
     </div>
   </section>
   <Divider />
-  <section id="office" class="xl container py-16 sm:py-20 md:py-24 lg:py-28">
-    <div
-      class="grid grid-cols-1 gap-x-6 gap-y-4 md:grid-cols-2 md:gap-x-8 lg:grid-cols-3 lg:gap-x-10"
-    >
-      <Image
-        src={hqImage}
-        alt="Office"
-        width={880}
-        layout="constrained"
-        class="aspect-square rounded bg-neutral-500/10 object-cover object-top text-transparent lg:col-span-2 lg:aspect-video"
-      />
-      <div class="space-y-0.5 md:order-first">
-        <h2 class="mb-4 text-2xl font-semibold text-neutral-950 md:text-3xl dark:text-neutral-50">
-          Office
-        </h2>
-        <p>Pursimiehenkatu 26 B</p>
-        <p>00150 Helsinki</p>
-        <p>Finland</p>
-        <p>+358 40 3525 47 3</p>
-        <p>3356072-5</p>
+  <section id="sales">
+    <div class="py-16 lg:py-32">
+      <div class="container">
+        <div
+          class="grid grid-cols-1 gap-x-6 gap-y-10 md:grid-cols-2 md:gap-x-8 lg:grid-cols-3 lg:gap-x-10"
+        >
+          <div class="space-y-3 md:col-span-2 lg:col-span-1 lg:row-span-2">
+            <h2 class="font-serif text-2xl text-neutral-950 lg:text-3xl dark:text-neutral-50">
+              We’re here to help
+            </h2>
+            <p>
+              Whether you have security and compliance concerns or product questions, our sales team
+              is here to help.
+            </p>
+          </div>
+          <div class="space-y-0.5 lg:mt-1.5">
+            <Image
+              src={tomiImage}
+              alt="Tomi Grönlund"
+              class="mb-4 aspect-square bg-neutral-500/10 object-cover text-transparent"
+              width={640}
+              layout="constrained"
+            />
+            <h4 class="mb-1 text-base font-medium text-neutral-950 dark:text-neutral-50">
+              Tomi Grönlund
+            </h4>
+            <p class="text-sm">CEO</p>
+            <p class="text-sm">tomi.gronlund@cloudersolutions.com</p>
+            <p class="text-sm">+358 50 527 1416</p>
+          </div>
+          <div class="space-y-0.5 lg:mt-1.5">
+            <Image
+              src={emmaImage}
+              alt="Emma Grönlund"
+              class="mb-4 aspect-square bg-neutral-500/10 object-cover text-transparent"
+              width={640}
+              layout="constrained"
+            />
+            <h4 class="mb-1 text-base font-medium text-neutral-950 dark:text-neutral-50">
+              Emma Grönlund
+            </h4>
+            <p class="text-sm">COO</p>
+            <p class="text-sm">emma.gronlund@cloudersolutions.com</p>
+            <p class="text-sm">+358 40 846 8169</p>
+          </div>
+          <div class="space-y-0.5">
+            <Image
+              src={jussiImage}
+              alt="Jussi Toivonen"
+              class="mb-4 aspect-square bg-neutral-500/10 object-cover text-transparent"
+              width={640}
+              layout="constrained"
+            />
+            <h4 class="mb-1 text-base font-medium text-neutral-950 dark:text-neutral-50">
+              Jussi Toivonen
+            </h4>
+            <p class="text-sm">Building Systems Technology Lead</p>
+            <p class="text-sm">jussi.toivonen@cloudersolutions.com</p>
+            <p class="text-sm">+358 50 560 8434</p>
+          </div>
+          <div class="space-y-0.5">
+            <Image
+              src={matiasImage}
+              alt="Matias Nissinen"
+              class="mb-4 aspect-square bg-neutral-500/10 object-cover text-transparent"
+              width={640}
+              layout="constrained"
+            />
+            <h4 class="mb-1 text-base font-medium text-neutral-950 dark:text-neutral-50">
+              Matias Nissinen
+            </h4>
+            <p class="text-sm">Data Analyst</p>
+            <p class="text-sm">matias.nissinen@cloudersolutions.com</p>
+            <p class="text-sm">+358 45 359 8144</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <Divider />
+  <section id="office">
+    <div class="py-16 lg:py-32">
+      <div class="container">
+        <div
+          class="grid grid-cols-1 gap-x-6 gap-y-4 md:grid-cols-2 md:gap-x-8 lg:grid-cols-3 lg:gap-x-10"
+        >
+          <Image
+            src={hqImage}
+            alt="Office"
+            width={880}
+            layout="constrained"
+            class="aspect-square bg-neutral-500/10 object-cover object-top text-transparent lg:col-span-2 lg:aspect-video"
+          />
+          <div class="space-y-0.5 md:order-first">
+            <h2 class="mb-3 font-serif text-2xl text-neutral-950 lg:text-3xl dark:text-neutral-50">
+              Office
+            </h2>
+            <p class="text-sm">Pursimiehenkatu 26 B</p>
+            <p class="text-sm">00150 Helsinki</p>
+            <p class="text-sm">Finland</p>
+            <p class="text-sm">+358 40 3525 47 3</p>
+            <p class="text-sm">3356072-5</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>

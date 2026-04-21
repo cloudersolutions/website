@@ -6,36 +6,43 @@ test('render home page with key sections', async ({ page }) => {
   await expect(page.getByTestId('menu')).toBeVisible();
   await expect(
     page.getByRole('heading', {
-      name: 'Turn building data into investment-grade asset intelligence '
+      name: 'Turn building data into investment-grade asset intelligence'
     })
   ).toBeVisible();
   await expect(
-    page.getByRole('heading').getByText('The future of real estate is data')
+    page.getByRole('heading').getByText('Your portfolio constantly optimized')
   ).toBeVisible();
-  await expect(page.getByRole('heading').getByText('Increased asset value')).toBeVisible();
-  await expect(page.getByRole('heading').getByText('Get up and running in 14 days')).toBeVisible();
-  await expect(page.getByRole('heading').getByText('Results from our customers')).toBeVisible();
+  await expect(
+    page.getByRole('heading').getByText('What asset intelligence does to your portfolio')
+  ).toBeVisible();
+  await expect(
+    page.getByRole('heading').getByText('Simple engagement. Fast time to value.')
+  ).toBeVisible();
+  await expect(page.getByRole('heading').getByText('Trusted by industry leaders')).toBeVisible();
 });
 
-test('product page navigation', async ({ page }) => {
+test('solutions page navigation', async ({ page }) => {
   await page.goto('/');
-  await page.getByRole('navigation').getByRole('link', { name: 'Product' }).click();
-  await expect(page).toHaveURL('/product');
+  await page.getByRole('navigation').getByRole('link', { name: 'Solutions' }).click();
+  await expect(page).toHaveURL('/solutions');
   await expect(
-    page.getByRole('heading', { name: ' The new standard for commercial property performance ' })
+    page.getByRole('heading', { name: 'The new standard for property performance' })
   ).toBeVisible();
 });
 
 test('post and category navigation', async ({ page }) => {
-  const heading = 'New Finnish Innovation Revolutionizes Buildings';
-  const category = 'Press release';
+  const heading =
+    'Energy Savings and Real‑Time Monitoring for a Historic Property with Clouder’s system';
+  const category = 'Case study';
 
   await page.goto('/news');
   await page.getByRole('link', { name: heading }).click();
-  await expect(page).toHaveURL('/news/2024-05-24-press-release');
+  await expect(page).toHaveURL(
+    '/news/energy-savings-and-real-time-monitoring-for-a-historic-property-with-clouders-system'
+  );
   await expect(page.getByRole('heading', { name: heading })).toBeVisible();
   await page.getByRole('link', { name: category }).click();
-  await expect(page).toHaveURL('/news/press');
+  await expect(page).toHaveURL('/news/case-study');
   await expect(page).toHaveTitle(`${category} · Clouder`);
   await expect(page.getByRole('heading', { name: heading })).toBeVisible();
 });

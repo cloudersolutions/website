@@ -4,8 +4,6 @@ title: Information security practices
 description: This document provides a general overview of Clouder’s information security practices and measures implemented to ensure the security of the service.
 ---
 
-<span class="page-meta">[Suomeksi](/tietoturvakaytannot)</span>
-
 This document provides a general overview of Clouder’s information security practices and measures implemented to ensure the security of the service.
 
 ## Dashboard and API

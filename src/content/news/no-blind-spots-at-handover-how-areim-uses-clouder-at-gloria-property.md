@@ -1,21 +1,32 @@
 ---
 title: "No blind spots at handover: How Areim uses Clouder at Gloria property"
-description: After commissioning a renovation project, you're usually flying
+description: After commissioning a renovation, you're usually flying
   blind for the first year. Areim didn't want that at Gloria so they connected
   Clouder to the building's systems already before completion. By the time the
   first lease started, the team already had a live view of how the building was
   actually running.
 date: 2026-03-06
-category: case-example
+category: case-study
 author: Emma Grönlund
 cover: images/ilmakuva-sisapiha.jpg
 coverAlt: Areal picture of Gloria property
 draft: false
 callout: 
   company: Areim
-  value: Zero reactive surprises
-  label: First year
+  value: Optimal asset performance
+  label: Before tenants move in
+  quote: With our high-value property, we didn’t want to spend the first year figuring it out. Clouder gave us the transparency we needed to address our data debt upfront, ensuring the building was optimized before the first tenant even walked through the door.
+  name: Hannu Tammia
+  title: Asset Manager, Areim AB
 ---
+
+
+
+
+
+
+
+
 After commissioning a renovation project, you're usually flying blind for the first year. Systems don't behave the way they were designed to. Energy consumption doesn't match the models. Tenants start complaining. You send technicians out to investigate and they can't find the cause. You have more meetings. Meanwhile, you're paying for all of it.
 
 Areim didn't want that at Gloria so they connected Clouder to the building's systems already before completion. By the time the first lease started, the team already had a live view of how the building was actually running.

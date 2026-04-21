@@ -2,7 +2,7 @@
 import { Image } from 'astro:assets';
 import MainLayout from '@layouts/MainLayout.astro';
 import Divider from '@components/Divider.astro';
-import labImage from '@assets/emma-jussi-labra.jpg';
+import labImage from '@assets/aerial.jpg';
 import { paths } from '@data/paths';
 
 const title = 'About us';
@@ -10,84 +10,96 @@ const description =
   'Clouder is on a mission to unlock the hidden value in real estate portfolios. We replace silos and fragmented operations with investment-grade data and turn it into measurable asset value.';
 ---
 
-<MainLayout title={title} description={description} headerClass="bg-white dark:bg-neutral-900">
-  <section class="bg-linear-to-b from-white to-transparent dark:from-neutral-900">
-    <div class="container-narrow mb-8 py-16 text-center sm:py-20 md:py-24 lg:py-28 xl:py-32">
-      <h1
-        class="mb-8 text-3xl font-semibold text-neutral-950 md:text-4xl lg:text-5xl dark:text-neutral-50"
-      >
-        Unlocking hidden value in real estate portfolios
-      </h1>
-      <p class="text-lg text-neutral-700 dark:text-neutral-300">{description}</p>
-    </div>
-  </section>
-  <Divider />
-  <section class="container py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32">
-    <h2
-      class="mb-6 max-w-lg text-2xl font-semibold text-neutral-950 md:text-3xl dark:text-neutral-50"
-    >
-      Turning building data into asset intelligence
-    </h2>
-    <div class="grid grid-cols-1 gap-x-12 gap-y-6 lg:grid-cols-2 lg:gap-x-16 xl:gap-x-20">
-      <p>
-        We have been on the other side of this problem. As real estate investors, owners, and asset
-        managers, we have sat through the transactions, reviewed the reports, and managed the
-        portfolios. And we kept seeing the same thing: assets that should be consuming less energy
-        and performing better. Every wasted euro is permanently off the asset value. So we decided
-        to build what the industry was missing.
-      </p>
-      <p>
-        We built a direct connection to building systems (not through cloud APIs, but at the source)
-        that turns real building data into real operational value. Clouder doesn't just read data.
-        It acts on it, in real time, and learns from the result. Every building gets smarter,
-        consumes less energy, and produces fewer emissions. Every new asset benefits from what we
-        have already learned across the portfolio. The system compounds.
-      </p>
-    </div>
-  </section>
-  <Divider />
-  <section class="container py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32">
-    <div class="grid grid-cols-1 gap-x-12 gap-y-8 lg:grid-cols-2 lg:gap-x-16 xl:gap-x-20">
-      <div>
-        <h2 class="mb-6 text-2xl font-semibold text-neutral-950 md:text-3xl dark:text-neutral-50">
-          Built by people who know commercial real estate and technology
-        </h2>
-        <p>
-          Clouder is built on an uncommon combination of expertise: decades of experience in
-          large-scale commercial real estate development, transactions and institutional asset
-          management, paired with deep knowledge in data architecture, real-time systems engineering
-          and enterprise-scale technology infrastructure. That breadth of competence across both
-          disciplines is what makes it possible to build something the industry has not seen before.
+<MainLayout title={title} description={description}>
+  <section>
+    <div class="pt-24 pb-8 lg:pt-48 lg:pb-16">
+      <div class="container">
+        <h1
+          class="mb-4 max-w-prose font-serif text-4xl text-neutral-950 lg:mb-6 lg:text-6xl xl:text-7xl dark:text-neutral-50"
+        >
+          Unlocking hidden value<br class="hidden lg:block" /> in real estate portfolios
+        </h1>
+        <p class="max-w-prose leading-normal text-balance lg:text-lg">
+          {description}
         </p>
       </div>
+    </div>
+    <div class="container px-0">
       <Image
         src={labImage}
         alt="People in hardware laboratory"
-        class="rounded bg-neutral-500/10 text-transparent lg:mt-1.5"
-        width={720}
+        class="aspect-video bg-neutral-500/10 object-cover object-top text-transparent"
+        width={1280}
         layout="constrained"
       />
     </div>
+    <div class="py-16 lg:py-32">
+      <div class="container">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
+          <div class="space-y-4">
+            <h2
+              class="font-serif text-2xl text-neutral-950 lg:row-span-2 lg:text-3xl dark:text-neutral-50"
+            >
+              Turning building data<br class="hidden lg:block" /> into asset intelligence
+            </h2>
+            <p class="text-balance">
+              We have been on the other side of this problem. As real estate investors, owners, and
+              asset managers, we have sat through the transactions, reviewed the reports, and
+              managed the portfolios. And we kept seeing the same thing: assets that should be
+              consuming less energy and performing better. Every wasted euro is permanently off the
+              asset value. So we decided to build what the industry was missing.
+            </p>
+            <p class="text-balance">
+              We built a direct connection to building systems (not through cloud APIs, but at the
+              source) that turns real building data into real operational value. Clouder doesn't
+              just read data. It acts on it, in real time, and learns from the result. Every
+              building gets smarter, consumes less energy, and produces fewer emissions. Every new
+              asset benefits from what we have already learned across the portfolio. The system
+              compounds.
+            </p>
+          </div>
+          <div class="space-y-4">
+            <h2
+              class="font-serif text-2xl text-neutral-950 lg:row-span-2 lg:text-3xl dark:text-neutral-50"
+            >
+              Built by people who know real estate and technology
+            </h2>
+            <p class="text-balance">
+              Clouder is built on an uncommon combination of expertise: decades of experience in
+              large-scale commercial real estate development, transactions and institutional asset
+              management, paired with deep knowledge in data architecture, real-time systems
+              engineering and enterprise-scale technology infrastructure. That breadth of competence
+              across both disciplines is what makes it possible to build something the industry has
+              not seen before.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
   <Divider />
-  <section class="container py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32">
-    <div class="mx-auto max-w-2xl text-center">
-      <h2 class="mb-6 text-2xl font-semibold text-neutral-950 md:text-3xl dark:text-neutral-50">
-        The gap is measurable.<br />So is closing it.
-      </h2>
-      <p class="mb-8">
-        Clouder works with commercial real estate funds, asset managers, and large-scale investors
-        who manage portfolios where operational inefficiency has real, measurable consequences. If
-        you suspect the gap between your portfolio's current value and its potential is larger than
-        it should be, we should talk.
-      </p>
-      <div>
-        <a
-          href={paths.contact.href}
-          class="inline-flex h-10 cursor-pointer items-center justify-center gap-1 rounded bg-neutral-800 px-4 text-center text-sm font-[550] text-nowrap text-neutral-50 transition select-none hover:bg-neutral-950 active:bg-neutral-950 dark:bg-neutral-200 dark:text-neutral-950 dark:hover:bg-white dark:active:bg-white"
+  <section>
+    <div class="py-16 lg:py-32">
+      <div class="container-narrow space-y-4 text-center lg:space-y-6">
+        <h2
+          class="font-serif text-3xl text-neutral-950 lg:row-span-2 lg:text-5xl dark:text-neutral-50"
         >
-          Get in touch
-        </a>
+          The gap is measurable.<br /><span class="opacity-50">So is closing it.</span>
+        </h2>
+        <p class="text-balance">
+          Clouder works with commercial real estate funds, asset managers, and large-scale investors
+          who manage portfolios where operational inefficiency has real, measurable consequences. If
+          you suspect the gap between your portfolio's current value and its potential is larger
+          than it should be, we should talk.
+        </p>
+        <div>
+          <a
+            href={paths.contact.href}
+            class="mt-1 inline-flex h-10 cursor-pointer items-center justify-center rounded bg-neutral-950 px-4 text-center text-sm text-nowrap text-neutral-50 transition select-none hover:bg-neutral-700 active:bg-neutral-700 dark:bg-neutral-50 dark:text-neutral-950 dark:hover:bg-neutral-300 dark:active:bg-neutral-300"
+          >
+            Get in touch
+          </a>
+        </div>
       </div>
     </div>
   </section>
