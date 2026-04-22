@@ -2,7 +2,7 @@ export const data = {
   prev: {
     budgetMwh: '1,300 MWh',
     adjustedMwh: '1,215 MWh',
-    adjustedMwhDesc: '-6.5% below target due to lower heating need',
+    adjustedMwhDesc: '-6.5% below budget due to lower heating need',
     forecastTitle: 'Actual',
     actualMwh: '1,756 MWh',
     actualMwhDesc: 'Operational gap 44.5% above adjusted target',
@@ -20,7 +20,7 @@ export const data = {
   curr: {
     budgetMwh: '1,300 MWh',
     adjustedMwh: '1,290 MWh',
-    adjustedMwhDesc: '-0.8% below target due to lower heating need',
+    adjustedMwhDesc: '-0.8% below budget due to lower heating need',
     forecastTitle: 'Forecast, year end',
     actualMwh: '1,289 MWh',
     actualMwhDesc: 'Operational gap is -0.8% below adjusted target.',
