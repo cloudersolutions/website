@@ -394,11 +394,10 @@ const faq = [
           {
             faq.map(({ question, answer }) => (
               <details class="group open:pb-8">
-                <summary class="flex cursor-pointer list-none py-6 text-lg font-medium text-neutral-950 transition group-open:pb-2 hover:text-neutral-500 active:text-neutral-500 dark:text-neutral-50">
-                  <span class="w-6 shrink-0 before:content-['+'] group-open:before:content-['-']" />
+                <summary class="flex cursor-pointer list-none py-6 text-lg font-medium text-neutral-950 transition group-open:pb-2 before:mx-3 before:inline-block before:transition before:content-[''] group-open:before:rotate-180 group-open:before:content-[''] hover:text-neutral-500 active:text-neutral-500 dark:text-neutral-50">
                   {question}
                 </summary>
-                <p class="ml-6 text-neutral-700 dark:text-neutral-300">{answer}</p>
+                <p class="ml-9 text-neutral-700 dark:text-neutral-300">{answer}</p>
               </details>
             ))
           }
