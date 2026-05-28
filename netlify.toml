@@ -77,6 +77,16 @@ to = "/news/product"
 status = 301
 
 [[redirects]]
+from = "/tietoturvakaytannot"
+to = "/information-security-practices"
+status = 301
+
+[[redirects]]
+from = "/tietosuojakaytanto"
+to = "/privacy-policy"
+status = 301
+
+[[redirects]]
 from = "/dashboard"
 to = "https://dashboard.cloudersolutions.com"
 status = 301
