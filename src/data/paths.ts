@@ -27,6 +27,10 @@ export const paths = {
     title: 'Information security',
     href: '/information-security-practices'
   },
+  terms: {
+    title: 'Terms & conditions',
+    href: '/general-terms-and-conditions'
+  },
   dashboard: {
     title: 'Log in',
     href: 'https://dashboard.cloudersolutions.com/'
@@ -43,7 +47,7 @@ export const headerLinks = [
 
 export const sitemapLinks = [paths.home, paths.solutions, paths.news, paths.about, paths.contact];
 
-export const resourcesLinks = [paths.privacy, paths.infosec, paths.dashboard];
+export const resourcesLinks = [paths.privacy, paths.infosec, paths.terms, paths.dashboard];
 
 export const socialLinks = [
   {

@@ -1,7 +1,7 @@
 ---
 layout: '@layouts/ProseLayout.astro'
-title: Information security practices
-description: This document provides a general overview of Clouder’s information security practices and measures implemented to ensure the security of the service.
+title: Information Security Practices
+description: This document provides an overview of Clouder’s information security practices and measures implemented to ensure the security of the service.
 ---
 
 This document provides a general overview of Clouder’s information security practices and measures implemented to ensure the security of the service.
