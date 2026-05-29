@@ -2,7 +2,7 @@
 import { Image } from 'astro:assets';
 import MainLayout from '@layouts/MainLayout.astro';
 import Divider from '@components/Divider.astro';
-import labImage from '@assets/aerial.jpg';
+import aerialImage from '@assets/aerial.jpg';
 import { paths } from '@data/paths';
 
 const title = 'About us';
@@ -24,10 +24,10 @@ const description =
         </p>
       </div>
     </div>
-    <div class="container px-0">
+    <div class="container">
       <Image
-        src={labImage}
-        alt="People in hardware laboratory"
+        src={aerialImage}
+        alt="Aerial image of buildings"
         class="aspect-video bg-neutral-500/10 object-cover object-top text-transparent"
         width={1280}
         layout="constrained"
@@ -95,7 +95,7 @@ const description =
         <div>
           <a
             href={paths.contact.href}
-            class="mt-1 inline-flex h-10 cursor-pointer items-center justify-center rounded bg-neutral-950 px-4 text-center text-sm text-nowrap text-neutral-50 transition select-none hover:bg-neutral-700 active:bg-neutral-700 dark:bg-neutral-50 dark:text-neutral-950 dark:hover:bg-neutral-300 dark:active:bg-neutral-300"
+            class="mt-1 inline-flex h-10 cursor-pointer items-center justify-center rounded-md bg-neutral-950 px-4 text-center text-sm font-[420] text-nowrap text-neutral-50 transition select-none hover:bg-neutral-700 active:bg-neutral-700 dark:bg-neutral-50 dark:text-neutral-950 dark:hover:bg-neutral-300 dark:active:bg-neutral-300"
           >
             Get in touch
           </a>

@@ -26,13 +26,13 @@ import { data } from './performanceData';
             Area: {formatNumber(13500)} m²&ensp;&middot;&ensp;EPC: C
           </p>
         </div>
-        <div class="flex rounded border border-neutral-200 dark:border-neutral-800">
+        <div class="flex rounded-md border border-neutral-200 dark:border-neutral-800">
           <button id="prevYear" class="p-1.5 transition hover:bg-current/5">
             <ChevronLeftIcon size={14} />
           </button>
           <span
             id="selectedYear"
-            class="border-x border-neutral-200 px-3 text-xs leading-6.5 dark:border-neutral-800"
+            class="border-x border-neutral-200 px-2 text-xs leading-6.5 dark:border-neutral-800"
           >
             {DateTime.now().year}
           </span>

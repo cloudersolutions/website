@@ -360,7 +360,7 @@ const faq = [
               {showCta && (
                 <a
                   href={paths.contact.href}
-                  class="mt-2 inline-flex h-9 cursor-pointer items-center justify-center rounded bg-neutral-950 px-3.5 text-center text-sm text-nowrap text-neutral-50 transition select-none hover:bg-neutral-700 active:bg-neutral-700 dark:bg-neutral-50 dark:text-neutral-950 dark:hover:bg-neutral-300 dark:active:bg-neutral-300"
+                  class="mt-3 inline-flex h-9 cursor-pointer items-center justify-center rounded-md bg-neutral-950 px-3.5 text-center text-sm font-[420] text-nowrap text-neutral-50 transition select-none hover:bg-neutral-700 active:bg-neutral-700 dark:bg-neutral-50 dark:text-neutral-950 dark:hover:bg-neutral-300 dark:active:bg-neutral-300"
                 >
                   Let’s talk
                 </a>
@@ -383,7 +383,7 @@ const faq = [
           </h2>
           <button
             id="toggle-button"
-            class="inline-flex h-9 cursor-pointer items-center justify-center rounded bg-neutral-950 px-3.5 text-center text-sm text-nowrap text-neutral-50 transition select-none hover:bg-neutral-700 active:bg-neutral-700 dark:bg-neutral-50 dark:text-neutral-950 dark:hover:bg-neutral-300 dark:active:bg-neutral-300"
+            class="inline-flex h-9 cursor-pointer items-center justify-center rounded-md bg-neutral-950 px-3.5 text-center text-sm font-[420] text-nowrap text-neutral-50 transition select-none hover:bg-neutral-700 active:bg-neutral-700 dark:bg-neutral-50 dark:text-neutral-950 dark:hover:bg-neutral-300 dark:active:bg-neutral-300"
           >
             Expand all
           </button>
@@ -394,10 +394,10 @@ const faq = [
           {
             faq.map(({ question, answer }) => (
               <details class="group open:pb-8">
-                <summary class="flex cursor-pointer list-none py-6 text-lg font-medium text-neutral-950 transition group-open:pb-2 before:mx-3 before:inline-block before:transition before:content-[''] group-open:before:rotate-180 group-open:before:content-[''] hover:text-neutral-500 active:text-neutral-500 dark:text-neutral-50">
+                <summary class="flex cursor-pointer list-none py-6 text-lg font-medium text-neutral-950 transition group-open:pb-2 after:ml-auto after:px-3 after:transition after:content-[''] group-open:after:rotate-180 group-open:after:content-[''] hover:text-neutral-500 active:text-neutral-500 dark:text-neutral-50">
                   {question}
                 </summary>
-                <p class="ml-9 text-neutral-700 dark:text-neutral-300">{answer}</p>
+                <p class="mr-12 text-neutral-700 dark:text-neutral-300">{answer}</p>
               </details>
             ))
           }

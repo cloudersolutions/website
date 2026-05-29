@@ -69,7 +69,7 @@ const description = 'Get in touch with our team for demos or product questions.'
                   type="text"
                   autocapitalize="on"
                   required
-                  class="block h-10 w-full rounded border border-neutral-200 bg-white px-3 text-sm placeholder-current/50 dark:border-neutral-800 dark:bg-neutral-900"
+                  class="block h-10 w-full rounded-md border border-neutral-200 bg-white px-3 text-sm placeholder-current/50 dark:border-neutral-800 dark:bg-neutral-900"
                 />
               </div>
               <div class="w-full">
@@ -86,7 +86,7 @@ const description = 'Get in touch with our team for demos or product questions.'
                   type="text"
                   autocapitalize="on"
                   required
-                  class="block h-10 w-full rounded border border-neutral-200 bg-white px-3 text-sm placeholder-current/50 dark:border-neutral-800 dark:bg-neutral-900"
+                  class="block h-10 w-full rounded-md border border-neutral-200 bg-white px-3 text-sm placeholder-current/50 dark:border-neutral-800 dark:bg-neutral-900"
                 />
               </div>
             </div>
@@ -103,7 +103,7 @@ const description = 'Get in touch with our team for demos or product questions.'
                 name="email"
                 type="email"
                 required
-                class="block h-10 w-full rounded border border-neutral-200 bg-white px-3 text-sm placeholder-current/50 dark:border-neutral-800 dark:bg-neutral-900"
+                class="block h-10 w-full rounded-md border border-neutral-200 bg-white px-3 text-sm placeholder-current/50 dark:border-neutral-800 dark:bg-neutral-900"
               />
             </div>
             <div class="-mt-1 flex gap-1">
@@ -112,7 +112,7 @@ const description = 'Get in touch with our team for demos or product questions.'
                 id="marketing"
                 name="marketing"
                 type="checkbox"
-                class="mt-0.5 size-4 rounded border-neutral-300 text-indigo-500 not-checked:bg-white dark:border-neutral-700 dark:not-checked:bg-neutral-900"
+                class="mt-0.5 size-4 rounded-md border-neutral-300 text-indigo-500 not-checked:bg-white dark:border-neutral-700 dark:not-checked:bg-neutral-900"
               />
               <label for="marketing" class="text-sm">Sign up for news and updates</label>
             </div>
@@ -127,7 +127,7 @@ const description = 'Get in touch with our team for demos or product questions.'
                 id="phone"
                 name="phone"
                 type="tel"
-                class="block h-10 w-full rounded border border-neutral-200 bg-white px-3 text-sm placeholder-current/50 dark:border-neutral-800 dark:bg-neutral-900"
+                class="block h-10 w-full rounded-md border border-neutral-200 bg-white px-3 text-sm placeholder-current/50 dark:border-neutral-800 dark:bg-neutral-900"
               />
             </div>
             <div class="mb-5">
@@ -144,7 +144,7 @@ const description = 'Get in touch with our team for demos or product questions.'
                 name="message"
                 rows="4"
                 required
-                class="block field-sizing-content min-h-26 w-full rounded border border-neutral-200 bg-white px-3 py-2.5 text-sm placeholder-current/50 dark:border-neutral-800 dark:bg-neutral-900"
+                class="block field-sizing-content min-h-26 w-full rounded-md border border-neutral-200 bg-white px-3 py-2.5 text-sm placeholder-current/50 dark:border-neutral-800 dark:bg-neutral-900"
               ></textarea>
             </div>
             <input
@@ -158,15 +158,15 @@ const description = 'Get in touch with our team for demos or product questions.'
             <div class="mt-6 flex flex-col items-center justify-between gap-4 sm:flex-row">
               <button
                 type="submit"
-                class="inline-flex h-10 cursor-pointer items-center justify-center gap-1 rounded bg-neutral-950 px-4 text-center text-sm text-nowrap text-neutral-50 transition select-none hover:bg-neutral-800 active:bg-neutral-800 dark:bg-neutral-50 dark:text-neutral-950 dark:hover:bg-neutral-200 dark:active:bg-neutral-200"
+                class="inline-flex h-10 cursor-pointer items-center justify-center gap-1 rounded-md bg-neutral-950 px-4 text-center text-sm font-[420] text-nowrap text-neutral-50 transition select-none hover:bg-neutral-800 active:bg-neutral-800 dark:bg-neutral-50 dark:text-neutral-950 dark:hover:bg-neutral-200 dark:active:bg-neutral-200"
               >
                 Send message
               </button>
               <p class="text-xs text-neutral-500">
                 See our
-                <a href={paths.privacy.href} class="underline" tabindex="-1"
-                  >{paths.privacy.title}</a
-                >
+                <a href={paths.privacy.href} class="underline" tabindex="-1">
+                  {paths.privacy.title}
+                </a>
                 for details on how we handle your data.
               </p>
             </div>
