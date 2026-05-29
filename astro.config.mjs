@@ -10,7 +10,16 @@ export default defineConfig({
     prefetchAll: true
   },
   site: 'https://cloudersolutions.com',
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      serialize(item) {
+        if (/general-terms-and-conditions/.test(item.url)) {
+          return undefined;
+        }
+        return item;
+      }
+    })
+  ],
   vite: {
     plugins: [yaml(), tailwindcss()]
   },

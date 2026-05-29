@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /general-terms-and-conditions/
 
 Sitemap: https://cloudersolutions.com/sitemap-index.xml

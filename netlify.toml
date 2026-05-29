@@ -5,6 +5,11 @@ X-Frame-Options = "DENY"
 X-Content-Type-Options = "nosniff"
 X-XSS-Protection = "1; mode=block"
 
+[[headers]]
+for = "//general-terms-and-conditions/"
+[headers.values]
+X-Robots-Tag = "noindex, nofollow"
+
 [[redirects]]
 from = "https://fi.cloudersolutions.com/*"
 to = "https://cloudersolutions.com/:splat"
