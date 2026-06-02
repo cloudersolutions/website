@@ -13,7 +13,7 @@
     "astro": "astro",
     "format": "prettier --write .",
     "lint": "prettier --check . && eslint .",
-    "optimize-new-images": "git diff --name-only HEAD^ | grep -E '\\.(png|jpe?g)$' | xargs -I {} tinypng --key $TINYPNG_API_KEY '{}' -o '{}' || echo 'No new images to optimize'",
+    "optimize-new-images": "source .env && git diff --name-only HEAD^ | grep -E '\\.(png|jpe?g)$' | xargs -I {} tinypng --key $TINYPNG_API_KEY '{}' -o '{}' || echo 'No new images to optimize'",
     "test": "playwright test"
   },
   "dependencies": {
