@@ -1,5 +1,4 @@
 ---
-import { DateTime } from 'luxon';
 import TrendingUpIcon from 'lucide-astro/TrendingUp';
 import TrendingDownIcon from 'lucide-astro/TrendingDown';
 import ChevronRightIcon from 'lucide-astro/ChevronRight';
@@ -23,7 +22,7 @@ import { data } from './performanceData';
             Property performance
           </p>
           <p class="mt-0.5 text-sm text-neutral-500">
-            Area: {formatNumber(13500)} m²&ensp;&middot;&ensp;EPC: C
+            Net heated area: {formatNumber(13500)} m²&ensp;&middot;&ensp;EPC: C
           </p>
         </div>
         <div class="flex rounded-md border border-neutral-200 dark:border-neutral-800">
@@ -34,28 +33,28 @@ import { data } from './performanceData';
             id="selectedYear"
             class="border-x border-neutral-200 px-2 text-xs leading-6.5 dark:border-neutral-800"
           >
-            {DateTime.now().year}
+            {data.curr.year}
           </span>
           <button id="nextYear" class="p-1.5 transition hover:bg-current/5">
             <ChevronRightIcon size={14} />
           </button>
         </div>
       </div>
-      <div class="lg:aspect-wide mt-4 aspect-square">
+      <div class="lg:aspect-wide mt-4 aspect-auto">
         <canvas id="chart" class="block"></canvas>
       </div>
     </div>
     <div
-      class="flex w-full flex-col gap-3 border-t border-neutral-200 p-4 lg:w-96 lg:gap-4 lg:border-t-0 lg:border-l lg:p-6 dark:border-neutral-800"
+      class="flex w-full shrink-0 flex-col gap-3 border-t border-neutral-200 p-4 lg:w-80 lg:gap-4 lg:border-t-0 lg:border-l lg:p-6 dark:border-neutral-800"
     >
       <p class="text-xs font-medium tracking-wider text-neutral-500 uppercase">Energy target</p>
       <div class="grid grid-cols-2 gap-1">
-        <p class="text-[13px]">Budget</p>
-        <p id="budgetMwh" class="text-[13px]">{data.curr.budgetMwh}</p>
-        <p class="text-[13px]">Adjusted</p>
-        <p id="adjustedMwh" class="text-[13px]">{data.curr.adjustedMwh}</p>
+        <p class="text-sm">Budget</p>
+        <p id="budgetMwh" class="text-sm">{data.curr.budgetMwh}</p>
+        <p class="text-sm">Adjusted</p>
+        <p id="adjustedMwh" class="text-sm">{data.curr.adjustedMwh}</p>
 
-        <p id="adjustedMwhDesc" class="col-span-full pr-4 text-xs text-neutral-500">
+        <p id="adjustedMwhDesc" class="col-span-full text-xs text-neutral-500">
           {data.curr.adjustedMwhDesc}
         </p>
       </div>
@@ -64,7 +63,13 @@ import { data } from './performanceData';
         {data.curr.forecastTitle}
       </p>
       <div class="grid grid-cols-2 gap-1">
-        <p id="valuePotTitle" class="text-sm">{data.curr.valuePotTitle}</p>
+        <p
+          id="valuePotTitle"
+          class="text-sm"
+          title="Estimated increase in property value achievable by reaching energy and emission targets."
+        >
+          {data.curr.valuePotTitle}
+        </p>
         <p id="valuePot" class="text-sm">{data.curr.valuePot}</p>
         <p id="valuePotDesc" class="col-span-full pr-4 text-xs text-neutral-500">
           {data.curr.valuePotDesc}
@@ -130,7 +135,7 @@ import { data } from './performanceData';
 
   const isMobile = window.matchMedia('(max-width: 1024px)').matches;
   const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const fg = isDark ? '#737373' : '#a3a3a3';
+  const fg = '#737373';
   const fgDark = isDark ? '#d4d4d4' : '#262626';
   const bg = isDark ? '#262626' : '#fff';
   const border = isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.08)';
@@ -170,10 +175,18 @@ import { data } from './performanceData';
     }
   };
 
-  const segmentColor = (ctx: any, opacity: number) => {
-    const target = ctx.chart.data.datasets[0];
-    const tValue = target.data[ctx.p1DataIndex];
+  const pointColor = (ctx: any, opacity: number) => {
+    const target = ctx.chart.data.datasets[2];
     const dataset = ctx.chart.data.datasets[ctx.datasetIndex];
+    const tValue = target.data[ctx.dataIndex];
+    const pValue = dataset.data[ctx.dataIndex];
+    return pValue > tValue ? `hsla(350,70%,50%,${opacity})` : `hsla(225,70%,50%,${opacity})`;
+  };
+
+  const segmentColor = (ctx: any, opacity: number) => {
+    const target = ctx.chart.data.datasets[2];
+    const dataset = ctx.chart.data.datasets[ctx.datasetIndex];
+    const tValue = target.data[ctx.p1DataIndex];
     const pValue = dataset.data[ctx.p1DataIndex];
     return pValue > tValue ? `hsla(350,70%,50%,${opacity})` : `hsla(225,70%,50%,${opacity})`;
   };
@@ -187,35 +200,11 @@ import { data } from './performanceData';
     return gradient;
   };
 
-  const pointColor = (ctx: any, opacity: number) => {
-    const target = ctx.chart.data.datasets[0];
-    const dataset = ctx.chart.data.datasets[ctx.datasetIndex];
-    const pValue = dataset.data[ctx.dataIndex];
-    const tValue = target.data[ctx.dataIndex];
-    return pValue > tValue ? `hsla(350,70%,50%,${opacity})` : `hsla(225,70%,50%,${opacity})`;
-  };
-
   const chart = new Chart(ctx, {
     type: 'line',
     data: {
       labels: ['', ...months.map((m) => m.substring(0, 3))],
       datasets: [
-        {
-          label: 'Target',
-          data: [
-            0, 8.3333333333, 16.6666666666, 24.9999999999, 33.3333333333, 41.6666666666,
-            49.9999999999, 58.3333333333, 66.6666666666, 74.9999999999, 83.333333333, 91.6666666666,
-            100
-          ],
-          borderColor: 'gray',
-          backgroundColor: 'gray',
-          borderWidth: 2,
-          borderCapStyle: 'round',
-          pointStyle: 'circle',
-          pointHoverRadius: 3,
-          pointRadius: 0,
-          fill: false
-        },
         {
           label: 'Actual',
           data: data.curr.actual,
@@ -250,14 +239,27 @@ import { data } from './performanceData';
           segment: {
             borderColor: (ctx) => segmentColor(ctx, 0.5)
           }
+        },
+        {
+          label: 'Target',
+          data: Array.from({ length: 13 }, (_, i) => (i / 12) * 100),
+          borderColor: 'gray',
+          backgroundColor: 'gray',
+          borderWidth: 2,
+          borderCapStyle: 'round',
+          pointStyle: 'circle',
+          pointHoverRadius: 3,
+          pointRadius: 0,
+          fill: false
         }
       ]
     },
     options: {
       responsive: true,
-      aspectRatio: isMobile ? 1 : 2,
+      aspectRatio: isMobile ? 1.5 : 2,
       animation: {
-        duration: 300
+        duration: 200,
+        easing: 'easeOutSine'
       },
       plugins: {
         tooltip: {
@@ -298,7 +300,7 @@ import { data } from './performanceData';
             label: () => '',
             footer: (item) => {
               if (item.length === 0) return;
-              const diff = Number(item[1].raw) - Number(item[0].raw);
+              const diff = Number(item[0].raw) - Number(item[item.length - 1].raw);
               if (isNaN(diff)) return '–';
               const absDiff = Math.abs(diff).toFixed(1);
               if (diff > 0) return `${absDiff}% above adjusted target`;
