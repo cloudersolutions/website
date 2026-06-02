@@ -33,7 +33,7 @@ import { data } from './performanceData';
             id="selectedYear"
             class="border-x border-neutral-200 px-2 text-xs leading-6.5 dark:border-neutral-800"
           >
-            {data.curr.year}
+            {data.curr.year.toString()}
           </span>
           <button id="nextYear" class="p-1.5 transition hover:bg-current/5">
             <ChevronRightIcon size={14} />
@@ -353,49 +353,39 @@ import { data } from './performanceData';
 
   Chart.defaults.font.family = 'InterVariable, sans-serif';
 
+  function updateSidebar(data: any) {
+    if (yearLabel) yearLabel.textContent = data.year.toString();
+    if (budgetMwh) budgetMwh.textContent = data.budgetMwh;
+    if (adjustedMwh) adjustedMwh.textContent = data.adjustedMwh;
+    if (adjustedMwhDesc) adjustedMwhDesc.textContent = data.adjustedMwhDesc;
+    if (forecastTitle) forecastTitle.textContent = data.forecastTitle;
+    if (valuePotTitle) valuePotTitle.textContent = data.valuePotTitle;
+    if (valuePot) valuePot.textContent = data.valuePot;
+    if (valuePotDesc) valuePotDesc.textContent = data.valuePotDesc;
+    if (actualMwh) actualMwh.textContent = data.actualMwh;
+    if (actualMwhDesc) actualMwhDesc.textContent = data.actualMwhDesc;
+    if (kwhPsm) kwhPsm.textContent = data.kwhPsm;
+    if (kgCo2Psm) kgCo2Psm.textContent = data.kgCo2Psm;
+    if (data.year === new Date().getFullYear()) {
+      iconUps.forEach((icon) => (icon.style.display = 'none'));
+      iconDowns.forEach((icon) => (icon.style.display = 'block'));
+    } else {
+      iconUps.forEach((icon) => (icon.style.display = 'block'));
+      iconDowns.forEach((icon) => (icon.style.display = 'none'));
+    }
+  }
+
   prevBtn?.addEventListener('click', () => {
-    selectedYear = Math.min(selectedYear, new Date().getFullYear() - 1);
-
-    if (yearLabel) yearLabel.textContent = selectedYear.toString();
-    if (budgetMwh) budgetMwh.textContent = data.prev.budgetMwh;
-    if (adjustedMwh) adjustedMwh.textContent = data.prev.adjustedMwh;
-    if (adjustedMwhDesc) adjustedMwhDesc.textContent = data.prev.adjustedMwhDesc;
-    if (forecastTitle) forecastTitle.textContent = data.prev.forecastTitle;
-    if (valuePotTitle) valuePotTitle.textContent = data.prev.valuePotTitle;
-    if (valuePot) valuePot.textContent = data.prev.valuePot;
-    if (valuePotDesc) valuePotDesc.textContent = data.prev.valuePotDesc;
-    if (actualMwh) actualMwh.textContent = data.prev.actualMwh;
-    if (actualMwhDesc) actualMwhDesc.textContent = data.prev.actualMwhDesc;
-    if (kwhPsm) kwhPsm.textContent = data.prev.kwhPsm;
-    if (kgCo2Psm) kgCo2Psm.textContent = data.prev.kgCo2Psm;
-    iconUps.forEach((icon) => (icon.style.display = 'block'));
-    iconDowns.forEach((icon) => (icon.style.display = 'none'));
-
+    updateSidebar(data.prev);
     chart.data.datasets[0].data = data.prev.actual;
     chart.data.datasets[1].data = data.prev.estimate;
     chart.update();
   });
 
   nextBtn?.addEventListener('click', () => {
-    selectedYear = Math.min(selectedYear + 1, new Date().getFullYear());
-
+    updateSidebar(data.curr);
     chart.data.datasets[0].data = data.curr.actual;
     chart.data.datasets[1].data = data.curr.estimate;
     chart.update();
-
-    if (yearLabel) yearLabel.textContent = selectedYear.toString();
-    if (budgetMwh) budgetMwh.textContent = data.curr.budgetMwh;
-    if (adjustedMwh) adjustedMwh.textContent = data.curr.adjustedMwh;
-    if (adjustedMwhDesc) adjustedMwhDesc.textContent = data.curr.adjustedMwhDesc;
-    if (forecastTitle) forecastTitle.textContent = data.curr.forecastTitle;
-    if (valuePotTitle) valuePotTitle.textContent = data.curr.valuePotTitle;
-    if (valuePot) valuePot.textContent = data.curr.valuePot;
-    if (valuePotDesc) valuePotDesc.textContent = data.curr.valuePotDesc;
-    if (actualMwh) actualMwh.textContent = data.curr.actualMwh;
-    if (actualMwhDesc) actualMwhDesc.textContent = data.curr.actualMwhDesc;
-    if (kwhPsm) kwhPsm.textContent = data.curr.kwhPsm;
-    if (kgCo2Psm) kgCo2Psm.textContent = data.curr.kgCo2Psm;
-    iconUps.forEach((icon) => (icon.style.display = 'none'));
-    iconDowns.forEach((icon) => (icon.style.display = 'block'));
   });
 </script>
