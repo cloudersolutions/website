@@ -10,7 +10,7 @@ export default {
         DEFAULT: {
           css: {
             lineHeight: '1.5',
-            maxWidth: '70ch',
+            maxWidth: '45rem',
             blockquote: {
               border: 'none',
               fontStyle: 'normal',
