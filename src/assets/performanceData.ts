@@ -2,13 +2,13 @@ export const data = {
   prev: {
     budgetMwh: '1,300 MWh',
     adjustedMwh: '1,215 MWh',
-    adjustedMwhDesc: '-6.5% below budget due to lower heating need',
+    adjustedMwhDesc: '6.5% below budget due to lower heating need',
     forecastTitle: 'Actual',
     actualMwh: '1,756 MWh',
-    actualMwhDesc: 'Operational gap 44.5% above adjusted target',
+    actualMwhDesc: '44.5% above adjusted target',
     valuePotTitle: 'Value potential',
-    valuePot: '€1,350,000',
-    valuePotDesc: 'Consumption 541 MWh above adjusted target. NOI leakage €54,000.',
+    valuePot: '€1,082,000',
+    valuePotDesc: 'Consumption 541 MWh above adjusted target. NOI leakage €54,100.',
     kwhPsm: '130 kWh/m²',
     kgCo2Psm: '23kg CO₂e/m²',
     actual: [
@@ -20,30 +20,16 @@ export const data = {
   curr: {
     budgetMwh: '1,300 MWh',
     adjustedMwh: '1,290 MWh',
-    adjustedMwhDesc: '-0.8% below budget due to lower heating need',
+    adjustedMwhDesc: '0.8% below budget due to lower heating need',
     forecastTitle: 'Forecast, year end',
-    actualMwh: '1,289 MWh',
-    actualMwhDesc: 'Operational gap is -0.8% below adjusted target.',
+    actualMwh: '1,275 MWh',
+    actualMwhDesc: '1.2% below adjusted target',
     valuePotTitle: 'Value created',
-    valuePot: '€25,000',
-    valuePotDesc: 'Consumption 1 MWh below adjusted target. NOI improved €1,000.',
+    valuePot: '€30,000',
+    valuePotDesc: 'Consumption 15 MWh below adjusted target. NOI increased by €1,500.',
     kwhPsm: '95 kWh/m²',
     kgCo2Psm: '17kg CO₂e/m²',
-    actual: [0, 11.53333333, 22.86666667, 30.4999999999, 38.2333333333],
-    estimate: [
-      null,
-      null,
-      null,
-      null,
-      38.2333333333,
-      45.7666666666,
-      53.3999999999,
-      61.1333333333,
-      68.6666666666,
-      76.2999999999,
-      83.933333333,
-      91.5666666666,
-      99.2
-    ]
+    actual: [0, 10.6, 20.6, 28.6, 36.4, 44.2],
+    estimate: [null, null, null, null, null, 44.2, 52.0, 59.8, 67.6, 75.4, 83.2, 91.0, 98.8]
   }
 };
