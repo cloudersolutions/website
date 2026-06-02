@@ -371,16 +371,16 @@ import { data } from './performanceData';
     iconUps.forEach((icon) => (icon.style.display = 'block'));
     iconDowns.forEach((icon) => (icon.style.display = 'none'));
 
-    chart.data.datasets[1].data = data.prev.actual;
-    chart.data.datasets[2].data = data.prev.estimate;
+    chart.data.datasets[0].data = data.prev.actual;
+    chart.data.datasets[1].data = data.prev.estimate;
     chart.update();
   });
 
   nextBtn?.addEventListener('click', () => {
     selectedYear = Math.min(selectedYear + 1, new Date().getFullYear());
 
-    chart.data.datasets[1].data = data.curr.actual;
-    chart.data.datasets[2].data = data.curr.estimate;
+    chart.data.datasets[0].data = data.curr.actual;
+    chart.data.datasets[1].data = data.curr.estimate;
     chart.update();
 
     if (yearLabel) yearLabel.textContent = selectedYear.toString();
