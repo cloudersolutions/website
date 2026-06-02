@@ -349,7 +349,7 @@ import { data } from './performanceData';
     plugins: [verticalLinePlugin]
   });
 
-  Chart.defaults.font.family = 'InterVariable';
+  Chart.defaults.font.family = 'InterVariable, sans-serif';
 
   prevBtn?.addEventListener('click', () => {
     selectedYear = Math.min(selectedYear, new Date().getFullYear() - 1);

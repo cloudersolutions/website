@@ -39,7 +39,7 @@
 }
 
 @theme {
-  --font-serif: STIXTwoText, Times, sans-serif;
+  --font-serif: STIXTwoText, Times, serif;
   --font-sans: InterVariable, Inter, sans-serif;
 
   --text-7xl: 4rem;
