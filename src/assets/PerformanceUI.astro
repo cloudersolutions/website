@@ -26,7 +26,10 @@ import { data } from './performanceData';
           </p>
         </div>
         <div class="flex rounded-md border border-neutral-200 dark:border-neutral-800">
-          <button id="prevYear" class="p-1.5 transition hover:bg-current/5">
+          <button
+            id="prevYear"
+            class="p-1.5 transition hover:bg-current/5 disabled:pointer-events-none disabled:opacity-50"
+          >
             <ChevronLeftIcon size={14} />
           </button>
           <span
@@ -35,7 +38,11 @@ import { data } from './performanceData';
           >
             {data.curr.year.toString()}
           </span>
-          <button id="nextYear" class="p-1.5 transition hover:bg-current/5">
+          <button
+            id="nextYear"
+            disabled
+            class="p-1.5 transition hover:bg-current/5 disabled:pointer-events-none disabled:opacity-50"
+          >
             <ChevronRightIcon size={14} />
           </button>
         </div>
@@ -115,8 +122,8 @@ import { data } from './performanceData';
   let selectedYear = new Date().getFullYear();
 
   const ctx = document.getElementById('chart') as HTMLCanvasElement;
-  const prevBtn = document.getElementById('prevYear');
-  const nextBtn = document.getElementById('nextYear');
+  const prevBtn = document.getElementById('prevYear') as HTMLButtonElement;
+  const nextBtn = document.getElementById('nextYear') as HTMLButtonElement;
   const yearLabel = document.getElementById('selectedYear');
   const budgetMwh = document.getElementById('budgetMwh');
   const adjustedMwh = document.getElementById('adjustedMwh');
@@ -367,11 +374,17 @@ import { data } from './performanceData';
     if (kwhPsm) kwhPsm.textContent = data.kwhPsm;
     if (kgCo2Psm) kgCo2Psm.textContent = data.kgCo2Psm;
     if (data.year === new Date().getFullYear()) {
+      console.log('noniin2');
       iconUps.forEach((icon) => (icon.style.display = 'none'));
       iconDowns.forEach((icon) => (icon.style.display = 'block'));
+      nextBtn.disabled = true;
+      prevBtn.disabled = false;
     } else {
+      console.log('noniin');
       iconUps.forEach((icon) => (icon.style.display = 'block'));
       iconDowns.forEach((icon) => (icon.style.display = 'none'));
+      nextBtn.disabled = false;
+      prevBtn.disabled = true;
     }
   }
 
