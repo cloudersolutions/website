@@ -1,6 +1,4 @@
 ---
-import TrendingUpIcon from 'lucide-astro/TrendingUp';
-import TrendingDownIcon from 'lucide-astro/TrendingDown';
 import ChevronRightIcon from 'lucide-astro/ChevronRight';
 import ChevronLeftIcon from 'lucide-astro/ChevronLeft';
 import { formatNumber } from '@utils/format';
@@ -47,16 +45,19 @@ import { data } from './performanceData';
           </button>
         </div>
       </div>
-      <div class="lg:aspect-wide mt-4 aspect-auto">
+      <div class="mt-4">
         <canvas id="chart" class="block"></canvas>
       </div>
     </div>
     <div
-      class="flex w-full shrink-0 flex-col gap-3 border-t border-neutral-200 p-4 lg:w-80 lg:gap-4 lg:border-t-0 lg:border-l lg:p-6 dark:border-neutral-800"
+      class="flex w-full shrink-0 flex-col gap-3 border-t border-neutral-200 p-4 lg:w-80 lg:border-t-0 lg:border-l lg:p-6 dark:border-neutral-800"
     >
-      <p class="text-xs font-medium tracking-wider text-neutral-500 uppercase">Energy target</p>
+      <p class="text-xs text-neutral-500">
+        <span class="font-medium tracking-wider uppercase">Energy target</span>
+        <span>(Budget)</span>
+      </p>
       <div class="grid grid-cols-2 gap-1">
-        <p class="text-sm">Budget</p>
+        <p class="text-sm">Original</p>
         <p id="budgetMwh" class="text-sm">{data.curr.budgetMwh}</p>
         <p class="text-sm">Adjusted</p>
         <p id="adjustedMwh" class="text-sm">{data.curr.adjustedMwh}</p>
@@ -66,50 +67,33 @@ import { data } from './performanceData';
         </p>
       </div>
       <hr class="my-2 border-neutral-200 lg:-mx-6 dark:border-neutral-800" />
-      <p id="forecastTitle" class="text-xs font-medium tracking-wider text-neutral-500 uppercase">
-        {data.curr.forecastTitle}
-      </p>
-      <div class="grid grid-cols-2 gap-1">
-        <p
-          id="valuePotTitle"
-          class="text-sm"
-          title="Estimated increase in property value achievable by reaching energy and emission targets."
+      <p class="text-xs text-neutral-500">
+        <span id="forecastTitle" class="font-medium tracking-wider uppercase"
+          >{data.curr.forecastTitle}</span
         >
-          {data.curr.valuePotTitle}
-        </p>
-        <p id="valuePot" class="text-sm">{data.curr.valuePot}</p>
-        <p id="valuePotDesc" class="col-span-full pr-4 text-xs text-neutral-500">
-          {data.curr.valuePotDesc}
-        </p>
-      </div>
+        <span id="forecastTitleSub">{data.curr.forecastTitleSub}</span>
+      </p>
       <div class="grid grid-cols-2 gap-1">
         <p class="text-sm">Consumption</p>
         <div class="flex items-center gap-1">
           <p id="actualMwh" class="text-sm">{data.curr.actualMwh}</p>
-          <TrendingDownIcon size={14} class="iconDown text-blue-600 dark:text-blue-400" />
-          <TrendingUpIcon size={14} class="hidden text-rose-600 dark:text-rose-400" />
         </div>
-        <p id="actualMwhDesc" class="col-span-full pr-4 text-xs text-neutral-500">
-          {data.curr.actualMwhDesc}
+        <p
+          id="actualMwhDesc"
+          class="col-span-full pr-4 text-xs text-neutral-500"
+          set:html={data.curr.actualMwhDesc}
+        />
+      </div>
+      <div class="grid grid-cols-2 gap-1">
+        <p id="noiImpactTitle" class="text-sm">NOI impact</p>
+        <p id="noiImpact" class="text-sm">{data.curr.noiImpact}</p>
+      </div>
+      <div class="grid grid-cols-2 gap-1">
+        <p id="valuePotTitle" class="text-sm font-medium">Value potential</p>
+        <p id="valuePot" class="text-sm font-medium">{data.curr.valuePot}</p>
+        <p id="valuePotDesc" class="col-span-full pr-4 text-xs text-neutral-500">
+          {data.curr.valuePotDesc}
         </p>
-      </div>
-      <div class="grid grid-cols-2 gap-1">
-        <p class="text-sm">Energy intensity</p>
-        <div class="flex items-center gap-1">
-          <p id="kwhPsm" class="text-sm">{data.curr.kwhPsm}</p>
-          <TrendingDownIcon size={14} class="iconDown text-blue-600 dark:text-blue-400" />
-          <TrendingUpIcon size={14} class="hidden text-rose-600 dark:text-rose-400" />
-        </div>
-        <p class="col-span-full text-xs text-neutral-500">Target: {formatNumber(96)} kWh/m²</p>
-      </div>
-      <div class="grid grid-cols-2 gap-1">
-        <p class="text-sm">CO₂ Emissions</p>
-        <div class="flex items-center gap-1">
-          <p id="kgCo2Psm" class="text-sm">{data.curr.kgCo2Psm}</p>
-          <TrendingDownIcon size={14} class="iconDown text-blue-600 dark:text-blue-400" />
-          <TrendingUpIcon size={14} class="hidden text-rose-600 dark:text-rose-400" />
-        </div>
-        <p class="col-span-full text-xs text-neutral-500">Target: {formatNumber(20)}kg CO₂e/m²</p>
       </div>
     </div>
   </div>
@@ -129,16 +113,12 @@ import { data } from './performanceData';
   const adjustedMwh = document.getElementById('adjustedMwh');
   const adjustedMwhDesc = document.getElementById('adjustedMwhDesc');
   const forecastTitle = document.getElementById('forecastTitle');
+  const forecastTitleSub = document.getElementById('forecastTitleSub');
   const actualMwh = document.getElementById('actualMwh');
   const actualMwhDesc = document.getElementById('actualMwhDesc');
-  const valuePotTitle = document.getElementById('valuePotTitle');
+  const noiImpact = document.getElementById('noiImpact');
   const valuePot = document.getElementById('valuePot');
   const valuePotDesc = document.getElementById('valuePotDesc');
-  const kwhPsm = document.getElementById('kwhPsm');
-  const kgCo2Psm = document.getElementById('kgCo2Psm');
-
-  const iconUps = document.querySelectorAll<HTMLElement>('svg.lucide-trending-up');
-  const iconDowns = document.querySelectorAll<HTMLElement>('svg.lucide-trending-down');
 
   const isMobile = window.matchMedia('(max-width: 1024px)').matches;
   const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -263,7 +243,7 @@ import { data } from './performanceData';
     },
     options: {
       responsive: true,
-      aspectRatio: isMobile ? 1.5 : 2,
+      aspectRatio: isMobile ? 1.75 : 2.25,
       animation: {
         duration: 200,
         easing: 'easeOutSine'
@@ -366,23 +346,17 @@ import { data } from './performanceData';
     if (adjustedMwh) adjustedMwh.textContent = data.adjustedMwh;
     if (adjustedMwhDesc) adjustedMwhDesc.textContent = data.adjustedMwhDesc;
     if (forecastTitle) forecastTitle.textContent = data.forecastTitle;
-    if (valuePotTitle) valuePotTitle.textContent = data.valuePotTitle;
+    if (forecastTitleSub) forecastTitleSub.textContent = data.forecastTitleSub;
+    if (noiImpact) noiImpact.textContent = data.noiImpact;
     if (valuePot) valuePot.textContent = data.valuePot;
     if (valuePotDesc) valuePotDesc.textContent = data.valuePotDesc;
     if (actualMwh) actualMwh.textContent = data.actualMwh;
-    if (actualMwhDesc) actualMwhDesc.textContent = data.actualMwhDesc;
-    if (kwhPsm) kwhPsm.textContent = data.kwhPsm;
-    if (kgCo2Psm) kgCo2Psm.textContent = data.kgCo2Psm;
+    if (actualMwhDesc) actualMwhDesc.innerHTML = data.actualMwhDesc;
+
     if (data.year === new Date().getFullYear()) {
-      console.log('noniin2');
-      iconUps.forEach((icon) => (icon.style.display = 'none'));
-      iconDowns.forEach((icon) => (icon.style.display = 'block'));
       nextBtn.disabled = true;
       prevBtn.disabled = false;
     } else {
-      console.log('noniin');
-      iconUps.forEach((icon) => (icon.style.display = 'block'));
-      iconDowns.forEach((icon) => (icon.style.display = 'none'));
       nextBtn.disabled = false;
       prevBtn.disabled = true;
     }
