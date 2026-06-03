@@ -1,14 +1,14 @@
 export const data = {
   prev: {
     year: new Date().getFullYear() - 1,
-    budgetMwh: '1,300 MWh',
-    adjustedMwh: '1,215 MWh',
-    adjustedMwhDesc: 'Weather adjusted target is 85 MWh (6.5%) below original budget',
+    budgetMwh: '1,300\xa0MWh',
+    adjustedMwh: '1,215\xa0MWh',
+    adjustedMwhDesc: 'Weather adjusted target is 85\xa0MWh (6.5%) below original budget',
     forecastTitle: 'Actual',
     forecastTitleSub: null,
-    actualMwh: '1,756 MWh',
+    actualMwh: '1,756\xa0MWh',
     actualMwhDesc:
-      '<span class="text-rose-600 dark:text-rose-400">541 MWh (44.5%)</span> above adjusted target',
+      '<span class="text-rose-600 dark:text-rose-400">541\xa0MWh (44.5%)</span> above adjusted target',
     noiImpact: '-€54,100',
     valuePot: '€901,667',
     valuePotDesc: '',
@@ -20,15 +20,14 @@ export const data = {
   },
   curr: {
     year: new Date().getFullYear(),
-    budgetMwh: '1,300 MWh',
-    adjustedMwh: '1,290 MWh',
-    adjustedMwhDesc:
-      'Weather adjusted target is 10 MWh (0.8%) below budget due to lower heating need',
+    budgetMwh: '1,300\xa0MWh',
+    adjustedMwh: '1,290\xa0MWh',
+    adjustedMwhDesc: 'Weather adjusted target is 10\xa0MWh (0.8%) below original budget ',
     forecastTitle: 'Forecast',
     forecastTitleSub: '(Year end)',
-    actualMwh: '1,275 MWh',
+    actualMwh: '1,275\xa0MWh',
     actualMwhDesc:
-      '<span class="text-blue-600 dark:text-blue-400">15 MWh (1.2%)</span> below adjusted target',
+      '<span class="text-blue-600 dark:text-blue-400">15\xa0MWh (1.2%)</span> below adjusted target',
     noiImpact: '+€1,500',
     valuePot: '€0',
     valuePotDesc: 'Energy targets have been exceeded',
