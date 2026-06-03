@@ -1,7 +1,7 @@
 ---
 import ChevronRightIcon from 'lucide-astro/ChevronRight';
 import ChevronLeftIcon from 'lucide-astro/ChevronLeft';
-import { formatNumber } from '@utils/format';
+import { formatValue } from '@utils/format';
 import { data } from './performanceData';
 ---
 
@@ -20,7 +20,7 @@ import { data } from './performanceData';
             Property performance
           </p>
           <p class="mt-0.5 text-sm text-neutral-500">
-            Net heated area: {formatNumber(13500)} m²&ensp;&middot;&ensp;EPC: C
+            Net heated area: {formatValue(13500, 'm²')}&ensp;&middot;&ensp;EPC: C
           </p>
         </div>
         <div class="flex rounded-md border border-neutral-200 dark:border-neutral-800">
@@ -45,7 +45,7 @@ import { data } from './performanceData';
           </button>
         </div>
       </div>
-      <div class="mt-4">
+      <div class="mt-4 aspect-7/4 lg:aspect-9/4">
         <canvas id="chart" class="block"></canvas>
       </div>
     </div>
@@ -68,31 +68,31 @@ import { data } from './performanceData';
       </div>
       <hr class="my-2 border-neutral-200 lg:-mx-6 dark:border-neutral-800" />
       <p class="text-xs text-neutral-500">
-        <span id="forecastTitle" class="font-medium tracking-wider uppercase"
-          >{data.curr.forecastTitle}</span
-        >
+        <span id="forecastTitle" class="font-medium tracking-wider uppercase">
+          {data.curr.forecastTitle}
+        </span>
         <span id="forecastTitleSub">{data.curr.forecastTitleSub}</span>
       </p>
       <div class="grid grid-cols-2 gap-1">
         <p class="text-sm">Consumption</p>
         <div class="flex items-center gap-1">
-          <p id="actualMwh" class="text-sm">{data.curr.actualMwh}</p>
+          <p id="yearEndMwh" class="text-sm">{data.curr.yearEndMwh}</p>
         </div>
         <p
-          id="actualMwhDesc"
+          id="yearEndMwhDesc"
           class="col-span-full pr-4 text-xs text-neutral-500"
-          set:html={data.curr.actualMwhDesc}
+          set:html={data.curr.yearEndMwhDesc}
         />
       </div>
       <div class="grid grid-cols-2 gap-1">
-        <p id="noiImpactTitle" class="text-sm">NOI impact</p>
+        <p class="text-sm">NOI impact</p>
         <p id="noiImpact" class="text-sm">{data.curr.noiImpact}</p>
       </div>
       <div class="grid grid-cols-2 gap-1">
-        <p id="valuePotTitle" class="text-sm font-medium">Value potential</p>
-        <p id="valuePot" class="text-sm font-medium">{data.curr.valuePot}</p>
-        <p id="valuePotDesc" class="col-span-full pr-4 text-xs text-neutral-500">
-          {data.curr.valuePotDesc}
+        <p class="text-sm font-medium">Value potential</p>
+        <p id="valueGap" class="text-sm font-medium">{data.curr.valueGap}</p>
+        <p id="valueGapDesc" class="col-span-full pr-4 text-xs text-neutral-500">
+          {data.curr.valueGapDesc}
         </p>
       </div>
     </div>
@@ -114,11 +114,11 @@ import { data } from './performanceData';
   const adjustedMwhDesc = document.getElementById('adjustedMwhDesc');
   const forecastTitle = document.getElementById('forecastTitle');
   const forecastTitleSub = document.getElementById('forecastTitleSub');
-  const actualMwh = document.getElementById('actualMwh');
-  const actualMwhDesc = document.getElementById('actualMwhDesc');
+  const yearEndMwh = document.getElementById('yearEndMwh');
+  const yearEndMwhDesc = document.getElementById('yearEndMwhDesc');
   const noiImpact = document.getElementById('noiImpact');
-  const valuePot = document.getElementById('valuePot');
-  const valuePotDesc = document.getElementById('valuePotDesc');
+  const valueGap = document.getElementById('valueGap');
+  const valueGapDesc = document.getElementById('valueGapDesc');
 
   const isMobile = window.matchMedia('(max-width: 1024px)').matches;
   const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -348,10 +348,10 @@ import { data } from './performanceData';
     if (forecastTitle) forecastTitle.textContent = data.forecastTitle;
     if (forecastTitleSub) forecastTitleSub.textContent = data.forecastTitleSub;
     if (noiImpact) noiImpact.textContent = data.noiImpact;
-    if (valuePot) valuePot.textContent = data.valuePot;
-    if (valuePotDesc) valuePotDesc.textContent = data.valuePotDesc;
-    if (actualMwh) actualMwh.textContent = data.actualMwh;
-    if (actualMwhDesc) actualMwhDesc.innerHTML = data.actualMwhDesc;
+    if (valueGap) valueGap.textContent = data.valueGap;
+    if (valueGapDesc) valueGapDesc.textContent = data.valueGapDesc;
+    if (yearEndMwh) yearEndMwh.textContent = data.yearEndMwh;
+    if (yearEndMwhDesc) yearEndMwhDesc.innerHTML = data.yearEndMwhDesc;
 
     if (data.year === new Date().getFullYear()) {
       nextBtn.disabled = true;

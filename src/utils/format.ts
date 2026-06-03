@@ -1,11 +1,12 @@
 const locale = 'en';
 
-export function formatCurrency(value: number): string {
+export function formatCurrency(value: number, opts?: Intl.NumberFormatOptions): string {
   return new Intl.NumberFormat(locale, {
     style: 'currency',
     currency: 'EUR',
     minimumFractionDigits: 0,
-    maximumFractionDigits: 0
+    maximumFractionDigits: 0,
+    ...opts
   }).format(value);
 }
 
@@ -15,6 +16,10 @@ export function formatNumber(value: number, precision?: number): string {
     minimumFractionDigits: precision ?? 0,
     maximumFractionDigits: precision ?? 2
   }).format(value);
+}
+
+export function formatValue(value: number, unit: string, precision?: number): string {
+  return formatNumber(value, precision) + '\xa0' + unit;
 }
 
 export function formatPercent(value: number): string {
