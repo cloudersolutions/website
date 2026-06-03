@@ -83,7 +83,7 @@ const { Content } = await render(post);
       </ul>
     </aside>
     {
-      post.data.callout && post.data.category === 'case-study' ? (
+      post.data.callout && post.data.category === 'case-study' && (
         <div class="not-prose mx-auto my-12 flex items-center border-y border-neutral-200 lg:my-16 dark:border-neutral-800">
           <div class="flex w-1/2 justify-center p-8 lg:p-16">
             <div>
@@ -108,8 +108,6 @@ const { Content } = await render(post);
             />
           </div>
         </div>
-      ) : (
-        <Divider />
       )
     }
     <section class="my-12">
