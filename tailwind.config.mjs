@@ -96,9 +96,9 @@ export default {
             },
             h1: {
               fontFamily: 'var(--font-serif)',
-              fontSize: '2rem',
+              fontSize: '2.25rem',
               fontWeight: '400',
-              lineHeight: '1.25'
+              lineHeight: '1.2223'
             },
             h2: {
               fontFamily: 'var(--font-serif)',
