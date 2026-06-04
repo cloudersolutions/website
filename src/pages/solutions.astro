@@ -264,7 +264,7 @@ const faq = [
             process.map(({ title, subtitle, description, output }, i) => (
               <div class="group flex gap-6">
                 <div class="flex flex-col items-center">
-                  <div class="my-1 size-5 shrink-0 rounded-full border-7 border-neutral-200 bg-neutral-600 transition duration-300 group-hover:scale-110 group-hover:border-blue-100 group-hover:bg-blue-500 group-active:border-blue-100 group-active:bg-blue-500 dark:border-neutral-800 dark:bg-neutral-400 dark:group-hover:border-blue-900 dark:group-active:border-blue-900" />
+                  <div class="my-1 size-5 shrink-0 rounded-full border-7 border-neutral-200 bg-neutral-600 transition duration-300 group-hover:scale-110 group-hover:border-white/80 group-hover:bg-blue-500 group-active:border-white/80 group-active:bg-blue-500 dark:border-neutral-800 dark:bg-neutral-400 dark:group-hover:border-black/70 dark:group-active:border-black/70" />
                   <div
                     class:list={[
                       'h-full w-px border-l border-current/10 transition duration-300 group-hover:border-current/20 group-active:border-current/15',
@@ -305,13 +305,13 @@ const faq = [
           platform.map(({ title, description, tags }, i) => (
             <>
               <div class="group grid items-start gap-x-8 gap-y-4 lg:grid-cols-2">
-                <div class="flex h-full flex-col items-center justify-center rounded-lg border border-neutral-200 p-8 pt-7 shadow-md shadow-black/2 transition duration-300 group-hover:border-neutral-300 group-hover:bg-neutral-50 group-hover:shadow-black/4 dark:border-neutral-800 dark:group-hover:border-neutral-700 dark:group-hover:bg-neutral-900">
+                <div class="dark: flex h-full flex-col items-center justify-center rounded-lg border border-neutral-200 p-8 pt-7 shadow-md shadow-black/2 transition duration-300 group-hover:bg-current/3 group-hover:shadow-black/4 dark:border-neutral-800">
                   <p class="mb-3 text-sm leading-4 font-[450] text-neutral-500 transition duration-300 group-hover:text-current">
                     {title}
                   </p>
                   <div class="flex flex-wrap items-center justify-center gap-1">
                     {tags.map((tag) => (
-                      <span class="rounded border border-current/20 px-2 py-1 font-mono text-[11px] leading-4 text-neutral-500 transition duration-300 group-hover:bg-current/4 group-hover:text-current">
+                      <span class="rounded border border-current/20 px-2 py-1 font-mono text-[11px] leading-4 text-neutral-500 transition duration-300 group-hover:bg-current/5 group-hover:text-blue-600 dark:group-hover:text-blue-400">
                         {tag}
                       </span>
                     ))}

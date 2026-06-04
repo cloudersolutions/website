@@ -16,7 +16,7 @@ interface Props {
 const { post } = Astro.props;
 ---
 
-<article class="group lg:aspect-3/1">
+<article class="group transition duration-500 hover:bg-current/3 lg:aspect-3/1">
   <a href={`${paths.news.href}/${post.id}`} class="flex h-full flex-col lg:flex-row">
     <div
       class="bg-linear relative flex shrink-0 justify-between overflow-hidden bg-black p-8 text-neutral-50 lg:w-1/3 lg:flex-col"
@@ -48,16 +48,16 @@ const { post } = Astro.props;
       class="flex flex-col justify-between border border-t-0 border-neutral-200 p-8 lg:border-t lg:border-l-0 dark:border-neutral-800"
     >
       <p
-        class="mb-8 pr-8 -indent-[0.45em] font-serif text-xl text-balance text-neutral-950 lg:text-2xl dark:text-neutral-50"
+        class="mb-8 pr-8 indent-[-0.45em] font-serif text-xl text-balance text-neutral-950 lg:text-2xl dark:text-neutral-50"
       >
-        &ldquo;&hairsp;{post.data.callout.quote}&rdquo;
+        &ldquo;&hairsp;{post.data.callout.quote}&hairsp;&rdquo;
       </p>
       <div class="flex flex-wrap items-end justify-between gap-4">
         <div>
-          <p class="text-sm font-medium text-neutral-950 dark:text-neutral-50">
+          <p class="text-sm text-neutral-950 dark:text-neutral-50">
             {post.data.callout.name}
           </p>
-          <p class="text-sm leading-4 text-neutral-500">{post.data.callout.title}</p>
+          <p class="mt-0.5 text-sm leading-4 text-neutral-500">{post.data.callout.title}</p>
         </div>
         <p
           class="text-sm leading-4 text-neutral-500 transition group-hover:text-current group-active:text-current"

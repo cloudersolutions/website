@@ -97,23 +97,24 @@ export default {
             h1: {
               fontFamily: 'var(--font-serif)',
               fontSize: '2rem',
-              fontWeight: '400'
+              fontWeight: '400',
+              lineHeight: '1.25'
             },
             h2: {
               fontFamily: 'var(--font-serif)',
               fontSize: '1.75rem',
               fontWeight: '400',
-              lineHeight: '2.25rem'
+              lineHeight: '1.2858'
             },
             h3: {
               fontSize: '1.125rem',
               fontWeight: '500',
-              lineHeight: '1.5rem'
+              lineHeight: '1.3334'
             },
             h4: {
               fontSize: '1rem',
               fontWeight: '500',
-              lineHeight: '1.625'
+              lineHeight: '1.5'
             },
             strong: {
               fontWeight: '550'
