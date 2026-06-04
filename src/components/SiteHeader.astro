@@ -41,11 +41,11 @@ const defaultHeaderClass = 'py-4 text-neutral-950 dark:text-neutral-50';
       <XIcon class="relative z-30 hidden peer-checked:block" />
       <div
         class:list={twMerge(
-          'pointer-events-none invisible fixed inset-0 z-20 size-full scale-105 bg-black/25 px-6 py-24 opacity-0 transition duration-300 peer-checked:pointer-events-auto peer-checked:visible peer-checked:scale-100 peer-checked:opacity-100'
+          'pointer-events-none invisible fixed inset-0 z-20 size-full scale-105 bg-black/25 px-6 py-24 opacity-0 backdrop-blur-[2px] transition duration-300 peer-checked:pointer-events-auto peer-checked:visible peer-checked:scale-100 peer-checked:opacity-100 dark:bg-black/35'
         )}
       >
         <nav
-          class="flex h-full flex-col gap-0.5 rounded-lg bg-white p-4 shadow-xl dark:bg-neutral-900"
+          class="flex h-full flex-col gap-0.5 rounded-xl bg-white p-4 shadow-2xl dark:bg-neutral-900"
         >
           {
             headerLinks.map(({ title, href }) => (
@@ -53,7 +53,7 @@ const defaultHeaderClass = 'py-4 text-neutral-950 dark:text-neutral-50';
                 href={href}
                 aria-current={isActive(href)}
                 class:list={twMerge(
-                  'inline-flex items-center gap-0.5 rounded-sm px-3 py-2 font-[420] text-current transition select-none aria-current:bg-current/5',
+                  'inline-flex items-center gap-0.5 rounded-md px-3 py-2 font-[420] text-current transition select-none aria-current:bg-current/5',
                   'hover:bg-current/5 active:bg-current/5',
                   itemClass
                 )}
