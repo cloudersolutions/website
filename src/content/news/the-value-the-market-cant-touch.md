@@ -1,7 +1,7 @@
 ---
 title: The value the market can't touch
-description: "Every quarter, capital allocation in commercial real estate is dominated by one question: where is the market going? We model cap rate movements, debate interest rate paths, and reposition portfolios around forecasts we can't control. This is necessary work. AI is about to make us far better at it: sharper signals, faster reads, better-timed moves."
-date: 2026-06-02
+description: The biggest pool of hidden value in your portfolio isn’t in the market, it’s already inside the buildings you own. And unlike a market edge, it’s yours, and it doesn’t reverse when sentiment turns.
+date: 2026-06-04
 category: insights
 author: Tomi Grönlund
 about:
@@ -33,16 +33,18 @@ AI changes both sides of this equation, but not equally. Yes, AI will help you r
 
 ## Introducing the Performance Curve
 
-Clouder’s Performance Curve is an econometric model built to answer what good looks like for each asset, and what it costs you not to reach it.
+Finding the hidden value is the hard part. It takes deep technical knowledge of how buildings actually run, and AI capable of turning raw signals into something you can act on. That is the work Clouder does. 
+
+Seeing that value, judging how far an asset is from where it should be, and watching the gap close, should be effortless. That's why we built the Performance Curve: a model that answers what good actually looks like for each asset, and what it's costing you not to get there.
 
 ![Illustration](images/perf-chart.png)
 
 Three things it gives an owner:
 
-1. **Where you'll land**. Run the building the way you're running it now, and where do you end up at year-end? The model projects the trajectory, so the consequence of today's operating pattern is visible before the year is gone, not after.
-2. **What it's costing you continuously**. Not just the NOI impact of closing the gap, but the money leaking out operationally every moment you don't. As long as nothing is done, there is NOI leakage. Framing the opportunity as an active, ongoing loss rather than a prize waiting to be claimed is what makes the cost of inaction real.
-3. **Real-time and continuous**. The effects of every action show up against the baseline, and performance is held at the right level over time. This is the end of project-after-project: not a one-off optimization that decays, but a curve kept where it should be, permanently.
+1. **Where you'll land**. Keep running the building the way you run it now, and the model projects where you end up at year-end, so the consequence of today's operating pattern is visible before the year is gone, not after.
+2. **What inaction is costing you**. Not just the NOI gained by closing the gap, but the money leaking out every moment you don't. Framing the opportunity as an active, ongoing loss (and not a prize waiting to be claimed) is what makes the cost of inaction real. Every €1 of NOI recovered adds €20 of asset value at a 5% cap rate. 
+3. **Performance that holds**. This is the end of project-after-project. Every action shows up against the baseline in real time, and the curve is kept where it should be. Performance is not a one-off optimization that decays, but a level held permanently.
 
-Reading the market better with AI is table stakes now; everyone will have that. The durable edge belongs to allocators who also turn inward and treat operational performance as a measurable, capturable asset rather than an untracked cost.
+The curve runs against a verified baseline, so every gain is measured rather than estimated. And a pilot building is typically live and showing its own curve within two weeks.
 
-The value is already inside your portfolio. Clouder Performance Curve is how you see it.
+Reading the market better with AI is table stakes now; everyone will have that. The durable edge belongs to allocators who also turn inward and treat operational performance as a measurable, capturable asset rather than an untracked cost. The value is already inside your portfolio. The Performance Curve is how you see it.
