@@ -9,7 +9,7 @@ export default {
       typography: () => ({
         DEFAULT: {
           css: {
-            lineHeight: '1.625',
+            lineHeight: '1.5',
             maxWidth: '70ch',
             blockquote: {
               border: 'none',

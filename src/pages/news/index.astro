@@ -6,6 +6,7 @@ import Divider from '@components/Divider.astro';
 import NewsHeader from '@components/NewsHeader.astro';
 import Newsletter from '@components/Newsletter.astro';
 import Post from '@components/Post.astro';
+import LargePost from '@components/LargePost.astro';
 import { filterDrafts } from '@utils/content';
 
 const posts = await getCollection('news', filterDrafts);
@@ -20,8 +21,19 @@ const description = 'Company news, case studies, and more.';
   <section>
     <div class="pb-16 lg:pb-32">
       <div class="container">
-        <div class="grid grid-cols-1 gap-x-8 gap-y-16 md:grid-cols-2 xl:grid-cols-6">
-          {sortedPosts.map((post, index) => <Post isLarge={index < 4} post={post} />)}
+        <div class="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-3">
+          {
+            sortedPosts.map((post, index) =>
+              index === 0 ? (
+                <>
+                  <LargePost post={post} />
+                  <Divider />
+                </>
+              ) : (
+                <Post post={post} />
+              )
+            )
+          }
         </div>
       </div>
     </div>

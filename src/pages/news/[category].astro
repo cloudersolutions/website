@@ -33,8 +33,8 @@ const description = `Posts filed under “${title}”`;
   <section>
     <div class="pb-16 lg:pb-32">
       <div class="container">
-        <div class="grid grid-cols-1 gap-x-8 gap-y-16 md:grid-cols-2 xl:grid-cols-6">
-          {categoryPosts.map((post, index) => <Post isLarge={index < 4} post={post} />)}
+        <div class="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-3">
+          {categoryPosts.map((post) => <Post post={post} />)}
         </div>
       </div>
     </div>
