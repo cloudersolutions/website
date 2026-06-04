@@ -33,7 +33,7 @@ const description = `Posts filed under “${title}”`;
   <section>
     <div class="pb-16 lg:pb-32">
       <div class="container">
-        <div class="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-3">
+        <div class="grid grid-cols-1 gap-x-8 gap-y-12 lg:grid-cols-3 lg:gap-y-16">
           {categoryPosts.map((post) => <Post post={post} />)}
         </div>
       </div>

@@ -14,45 +14,43 @@ const { post } = Astro.props;
 ---
 
 <article>
-  <a href={`${paths.news.href}/${post.id}`} class="group flex flex-col gap-4">
+  <a href={`${paths.news.href}/${post.id}`} class="group flex h-full flex-col">
     <Image
       src={post.data.cover}
       alt={post.data.coverAlt}
       width={640}
       layout="constrained"
-      class="aspect-video bg-neutral-500/10 object-cover text-transparent transition duration-300 group-hover:opacity-90 group-active:opacity-90"
+      class="mb-6 aspect-video bg-neutral-500/10 object-cover text-transparent transition duration-300 group-hover:opacity-90 group-active:opacity-90"
     />
-    <div class="flex flex-col gap-2">
-      <div
-        class="flex flex-wrap gap-1 text-sm text-neutral-500 transition group-hover:text-current group-active:text-current"
+    <h4 class="mb-2 text-lg leading-snug font-medium text-neutral-950 dark:text-neutral-50">
+      {post.data.title}
+    </h4>
+    <p class="mb-4 line-clamp-4 text-neutral-600 dark:text-neutral-400">
+      {post.data.description}
+    </p>
+    <div
+      class="mt-auto flex flex-wrap gap-1 text-sm text-neutral-500 transition group-hover:text-current group-active:text-current"
+    >
+      {
+        (post.data.author || post.data.category) && (
+          <>
+            <span>
+              {post.data.author
+                ? post.data.author
+                : post.data.category
+                  ? getCategoryLabel(post.data.category)
+                  : ''}
+            </span>
+            <span>&middot;</span>
+          </>
+        )
+      }
+      <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
+      <span
+        class="text-sm opacity-0 transition group-hover:translate-x-0.5 group-hover:opacity-100"
       >
-        {
-          (post.data.author || post.data.category) && (
-            <>
-              <span>
-                {post.data.author
-                  ? post.data.author
-                  : post.data.category
-                    ? getCategoryLabel(post.data.category)
-                    : ''}
-              </span>
-              <span>&middot;</span>
-            </>
-          )
-        }
-        <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
-        <span
-          class="text-sm opacity-0 transition group-hover:translate-x-0.5 group-hover:opacity-100"
-        >
-          &rarr;
-        </span>
-      </div>
-      <h4 class="font-medium text-neutral-950 dark:text-neutral-50">
-        {post.data.title}
-      </h4>
-      <p class="line-clamp-3 text-sm leading-normal text-neutral-600 dark:text-neutral-400">
-        {post.data.description}
-      </p>
+        &rarr;
+      </span>
     </div>
   </a>
 </article>

@@ -14,7 +14,7 @@ const { post } = Astro.props;
 ---
 
 <article class="col-span-full">
-  <a href={`${paths.news.href}/${post.id}`} class="group grid gap-x-8 gap-y-4 lg:grid-cols-3">
+  <a href={`${paths.news.href}/${post.id}`} class="group grid gap-x-8 gap-y-6 lg:grid-cols-3">
     <Image
       src={post.data.cover}
       alt={post.data.coverAlt}
@@ -22,7 +22,15 @@ const { post } = Astro.props;
       layout="constrained"
       class="aspect-video bg-neutral-500/10 object-cover text-transparent transition duration-300 group-hover:opacity-90 group-active:opacity-90 lg:col-span-2"
     />
-    <div class="flex flex-col gap-2 lg:col-span-1">
+    <div class="flex flex-col lg:col-span-1">
+      <h4
+        class="mb-2 text-xl leading-tight font-medium text-neutral-950 lg:text-2xl dark:text-neutral-50"
+      >
+        {post.data.title}
+      </h4>
+      <p class="mb-4 text-neutral-600 dark:text-neutral-400">
+        {post.data.description}
+      </p>
       <div
         class="flex flex-wrap gap-1 text-sm text-neutral-500 transition group-hover:text-current group-active:text-current"
       >
@@ -47,12 +55,6 @@ const { post } = Astro.props;
           &rarr;
         </span>
       </div>
-      <h4 class="text-xl font-medium text-neutral-950 lg:text-2xl dark:text-neutral-50">
-        {post.data.title}
-      </h4>
-      <p class="text-neutral-600 dark:text-neutral-400">
-        {post.data.description}
-      </p>
     </div>
   </a>
 </article>
