@@ -1,9 +1,13 @@
 ---
 title: The value the market can't touch
-description: "Fifteen years as an investor taught me that the only value not tied to market movements is the value released from inside the asset itself. Every quarter, capital allocation in commercial real estate is dominated by one question: where is the market going? We model cap rate movements, debate interest rate paths, and reposition portfolios around forecasts we can't control. This is necessary work. AI is about to make us far better at it: sharper signals, faster reads, better-timed moves. But it has trained us to look in the wrong direction for our largest source of untapped value."
+description: "Every quarter, capital allocation in commercial real estate is dominated by one question: where is the market going? We model cap rate movements, debate interest rate paths, and reposition portfolios around forecasts we can't control. This is necessary work. AI is about to make us far better at it: sharper signals, faster reads, better-timed moves."
 date: 2026-06-02
 category: insights
 author: Tomi Grönlund
+about:
+  title: Founder & CEO, Clouder
+  bio: Tomi has led over €5 billion in international real estate transactions and development projects, including one of the highest-scoring LEED Platinum buildings in the world. As former Head of Transactions at Aberdeen Standard Investments, he oversaw acquisitions for a €40 billion European platform. He founded Clouder to turn the operational value he spent fifteen years watching go unmeasured into something owners can finally see and capture.
+  image: src/assets/tomi.jpg
 cover: images/perf-chart.png
 coverAlt: Performance chart UI
 draft: false

@@ -27,6 +27,13 @@ const news = defineCollection({
           title: z.string()
         })
         .optional(),
+      about: z
+        .object({
+          title: z.string(),
+          bio: z.string(),
+          image: image()
+        })
+        .optional(),
       draft: z.boolean().optional()
     })
 });

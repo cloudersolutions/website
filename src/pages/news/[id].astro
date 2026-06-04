@@ -1,6 +1,6 @@
 ---
 import { getCollection, render, type CollectionEntry } from 'astro:content';
-
+import { Image } from 'astro:assets';
 import ProseLayout from '@layouts/ProseLayout.astro';
 import CompanyLogo from '@components/CompanyLogo.astro';
 import Divider from '@components/Divider.astro';
@@ -113,6 +113,34 @@ const { Content } = await render(post);
     <section class="my-12">
       <Content />
     </section>
+    {
+      post.data.about && (
+        <>
+          <Divider />
+          <section class="not-prose grid grid-cols-1 gap-4 lg:grid-cols-7">
+            <div class="lg:col-span-3">
+              <h3 class="font-serif text-[28px] leading-8">About the author</h3>
+              <div class="mt-4 flex items-center gap-4">
+                <Image
+                  src={post.data.about.image}
+                  alt="Portrait of the author"
+                  width={128}
+                  layout="constrained"
+                  class="aspect-square size-12 rounded-full"
+                />
+                <div>
+                  <p class="text-base leading-5">{post.data.author}</p>
+                  <p class="mt-0.5 text-sm leading-5 text-neutral-500">{post.data.about.title}</p>
+                </div>
+              </div>
+            </div>
+            <div class="lg:col-span-4">
+              <p class="text-base">{post.data.about.bio}</p>
+            </div>
+          </section>
+        </>
+      )
+    }
   </article>
   <Divider />
   <div class="not-prose">

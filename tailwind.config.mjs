@@ -61,8 +61,8 @@ export default {
               marginBlock: '2rem'
             },
             li: {
-              marginTop: '0.25em',
-              marginBottom: '0.25em'
+              marginTop: '0.625em',
+              marginBottom: '0.625em'
             },
             // Fix for CMS/TipTap/ProseMirror markdown lists. ProseMirror wraps list item content in a paragrap tag, which messes up spacing.
             'li > p': {
