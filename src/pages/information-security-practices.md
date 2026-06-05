@@ -6,7 +6,7 @@ description: This document provides an overview of Clouder’s information secur
 
 This document provides a general overview of Clouder’s information security practices and measures implemented to ensure the security of the service.
 
-## Dashboard and API
+### Dashboard and API
 
 All users are authenticated against their own organization’s login using Single Sign-On (SSO).
 
@@ -18,7 +18,7 @@ All connections to the dashboard are TLS-encrypted.
 
 The service automatically takes daily backups of databases. The data is physically located within the EU.
 
-## Software development security practices
+### Software development security practices
 
 In software development, OWASP recommendations and best practices are followed. Dependencies are automatically monitored for security vulnerabilities and outdated versions.
 
@@ -26,7 +26,7 @@ All source code is under Clouder’s version control, and at the release stage, 
 
 Regular off-site backups are automatically taken from version control.
 
-## Updates and remote management of on-premise devices
+### Updates and remote management of on-premise devices
 
 On-premise VCE devices are updated regularly via a managed remote connection. Managed remote connections are handled through the Tailscale network, which authenticates users and devices according to rules defined by Clouder. Direct password-authenticated connections are not used or allowed from outside.
 
