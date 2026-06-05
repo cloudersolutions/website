@@ -1,18 +1,25 @@
 ---
 title: The value the market can't touch
-description: The biggest pool of hidden value in your portfolio isn’t in the market, it’s already inside the buildings you own. And unlike a market edge, it’s yours, and it doesn’t reverse when sentiment turns.
+description: The biggest pool of hidden value in your portfolio isn’t in the
+  market, it’s already inside the buildings you own. And unlike a market edge,
+  it’s yours, and it doesn’t reverse when sentiment turns.
 date: 2026-06-04
 category: insights
 author: Tomi Grönlund
 about:
   title: Founder & CEO, Clouder
-  bio: Tomi has led over €5 billion in international real estate transactions and development projects, including one of the highest-scoring LEED Platinum buildings in the world. He was Head of Transactions at Aberdeen Standard Investments, which managed a real estate investment platform of over €40 billion. He founded Clouder to turn the operational value he spent fifteen years watching go unmeasured into something owners can finally see and capture.
+  bio: Tomi has led over €5 billion in international real estate transactions and
+    development projects, including one of the highest-scoring LEED Platinum
+    buildings in the world. He was Head of Transactions at Aberdeen Standard
+    Investments, which managed a real estate investment platform of over €40
+    billion. He founded Clouder to turn the operational value he spent fifteen
+    years watching go unmeasured into something owners can finally see and
+    capture.
   image: src/assets/tomi.jpg
-cover: images/perf-chart.png
+cover: images/perf-chart (1).png
 coverAlt: Chart showing the Performance Curve
 draft: false
 ---
-
 Fifteen years as a real estate investor taught me that the only value not tied to market movements is the value released from inside the asset itself. 
 
 Every quarter, capital allocation in commercial real estate is dominated by one question: where is the market going? We model cap rate movements, debate interest rate paths, and reposition portfolios around forecasts. This is necessary work. AI is about to make us far better at it: sharper signals, faster reads, better-timed moves. 
@@ -35,12 +42,12 @@ AI changes both sides of this equation, but not equally. Yes, AI will help you r
 
 Finding the hidden value is the hard part. It takes deep technical knowledge of how buildings actually run, and AI capable of turning raw signals into something you can act on. That is the work Clouder does. 
 
-![Chart showing the Performance Curve](images/perf-chart.png)
+![](<images/perf-chart (1)-1.png>)
 
 Seeing that value, judging how far an asset is from where it should be, and watching the gap close, should be effortless. That's why we built the Performance Curve: a model that answers what good actually looks like for each asset, and what it's costing you not to get there. Three things it gives an owner:
 
 1. **Where you'll land.** Keep running the building the way you run it now, and the model projects where you end up at year-end, so the consequence of today's operating pattern is visible before the year is gone, not after.
-2. **What inaction is costing you.** Not just the NOI gained by closing the gap, but the money leaking out every moment you don't. Framing the opportunity as an active, ongoing loss (and not a prize waiting to be claimed) is what makes the cost of inaction real. Every €1 of NOI recovered adds 20x asset value at a 5% cap rate. 
+2. **What inaction is costing you.** Not just the NOI gained by closing the gap, but the money leaking out every moment you don't. Framing the opportunity as an active, ongoing loss (and not a prize waiting to be claimed) is what makes the cost of inaction real. Every €1 of NOI recovered adds 20x asset value at a 5% cap rate.
 3. **Performance that holds**. This is the end of project-after-project. Every action shows up against the baseline in real time, and the curve is kept where it should be. Performance is not a one-off optimization that decays, but a level held permanently.
 
 The curve runs against a verified baseline, so every gain is measured rather than estimated. And a pilot building is typically live and showing its own curve within two weeks. Take a 20,100 m² commercial building where overconsumption was costing €189K in NOI annually. At a 5% cap rate, that's a €3.8M gap in asset value. The corrections become visible as the gap starts to close after the first half of the year. €3.8M created without buying a single new property.
