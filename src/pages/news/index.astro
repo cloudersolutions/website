@@ -22,20 +22,11 @@ const description = 'Company news, case studies, and more.';
     <div class="pb-16 lg:pb-32">
       <div class="container">
         <div class="grid grid-cols-1 gap-x-8 gap-y-12 lg:grid-cols-3 lg:gap-y-16">
-          {
-            sortedPosts.map((post, index) =>
-              index === 0 ? (
-                <>
-                  <LargePost post={post} />
-                  <div class="hidden lg:col-span-full lg:block">
-                    <Divider />
-                  </div>
-                </>
-              ) : (
-                <Post post={post} />
-              )
-            )
-          }
+          <LargePost post={sortedPosts[0]} />
+          <div class="hidden lg:col-span-full lg:block">
+            <Divider />
+          </div>
+          {sortedPosts.slice(1).map((post) => <Post post={post} />)}
         </div>
       </div>
     </div>
