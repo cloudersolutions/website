@@ -1,4 +1,4 @@
-import { defineCollection } from 'astro:content';
+import { defineCollection, reference } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 
@@ -15,6 +15,7 @@ const news = defineCollection({
       date: z.coerce.date(),
       category: z.enum(categories).optional(),
       author: z.string().optional(),
+      authorDetails: reference('authors').optional(),
       cover: image(),
       coverAlt: z.string(),
       callout: z
@@ -27,15 +28,19 @@ const news = defineCollection({
           title: z.string()
         })
         .optional(),
-      about: z
-        .object({
-          title: z.string(),
-          bio: z.string(),
-          image: image()
-        })
-        .optional(),
       draft: z.boolean().optional()
     })
 });
 
-export const collections = { news };
+const authors = defineCollection({
+  loader: glob({ base: './src/content/authors', pattern: '**/*.yml' }),
+  schema: ({ image }) =>
+    z.object({
+      name: z.string(),
+      title: z.string(),
+      bio: z.string(),
+      image: image()
+    })
+});
+
+export const collections = { news, authors };

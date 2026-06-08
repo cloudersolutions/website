@@ -12,6 +12,7 @@ cover: images/bms-cables.jpg
 coverAlt: building systems
 draft: false
 ---
+
 For years, the standard approach to smart buildings has been to gather data into automation systems, push it to the cloud via APIs, and rely on layers of sensors and IoT devices to fill in the gaps. This method became best practice not because it was perfect, but because it was the only viable way to extract even some meaningful data from buildings and it made sense as a natural extension of traditional process automation.
 
 While this approach might check some of the boxes for data-driven, I don’t believe it’s truly intelligent. Today, we have better ways to achieve true intelligence without the complexity, cost, and limitations of the old model.

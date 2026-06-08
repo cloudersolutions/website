@@ -1,14 +1,25 @@
 media:
-  input: src/content/news/images
-  output: images
-  extensions: [jpg, jpeg, png, webp]
+  - name: article_images
+    label: Article images
+    input: src/content/news/images
+    output: images
+    rename: safe
+    extensions: [jpg, jpeg, png, webp]
+  - name: author_images
+    label: Author images
+    input: src/content/authors/images
+    output: images
+    rename: safe
+    extensions: [jpg, jpeg, png, webp]
 content:
-  - name: News
+  - name: articles
+    label: Articles
     type: collection
     path: src/content/news
     filename: '{primary}.md'
     subfolders: false
     view:
+      primary: title
       fields: [cover, title, date, draft, category]
     fields:
       - name: title
@@ -18,11 +29,9 @@ content:
       - name: description
         label: Description
         type: text
-        description: Short description used for link previews and SEO.
+        description: Used for link previews/search results.
         required: true
         pattern: { message: 'No line breaks allowed', regex: '^[^\r\n]*$' }
-        options:
-          rows: 2
       - name: date
         label: Date
         type: date
@@ -59,15 +68,27 @@ content:
             - Mathias Lindholm
             - Tomi Grönlund
         description: No author will be displayed in the article if this field is left empty.
+      - name: authorDetails
+        label: Author details
+        type: reference
+        required: false
+        options:
+          collection: authors
+          value: '{name}'
+          label: '{fields.name}'
+          multiple: false
+        description: If an author detail is selected, an 'about the author' section will be shown after the article.
       - name: cover
         label: Cover image
         type: image
-        description: The cover image appears only in listings and link previews. To show it on the article page, add it separately in the Body field. Keep images under 1 MB.
+        description: Used in listings and for link previews. To show it on the article page, add it separately in the Body field. Use a 16:9 aspect ratio and keep the image under 1 MB.
         required: true
+        options:
+          media: article_images
       - name: coverAlt
         label: Cover image alt text
         type: string
-        description: A textual description of the cover image. Used for accessibility and SEO.
+        description: A textual description of the cover image for accessibility and search engines.
         required: true
       - name: draft
         label: Draft
@@ -110,7 +131,39 @@ content:
       - name: body
         label: Body
         type: rich-text
-  - name: privacy-policy-en
+        options:
+          media: article_images
+  - name: authors
+    label: Authors
+    type: collection
+    path: src/content/authors
+    filename: '{primary}.yml'
+    subfolders: false
+    view:
+      primary: name
+      fields: [image, name, title]
+    fields:
+      - name: image
+        label: Image
+        type: image
+        required: true
+        options:
+          media: author_images
+        description: Use a 1:1 aspect ratio and keep the image under 1 MB.
+      - name: name
+        label: Name
+        type: string
+        required: true
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: bio
+        label: Bio
+        type: text
+        required: true
+        pattern: { message: 'No line breaks allowed', regex: '^[^\r\n]*$' }
+  - name: privacy-policy
     label: Privacy policy
     type: file
     path: src/pages/privacy-policy.md
@@ -127,40 +180,13 @@ content:
       - name: description
         label: Description
         type: text
-        description: Shown below the title, also used for link previews and SEO.
+        description: Used for link previews/search results.
         required: true
         pattern: { message: 'No line breaks allowed', regex: '^[^\r\n]*$' }
-        options:
-          rows: 2
       - name: body
         label: Body
         type: rich-text
-  - name: privacy-policy-fi
-    label: Tietosuojakäytäntö
-    type: file
-    path: src/pages/tietosuojakaytanto.md
-    fields:
-      - name: layout
-        type: string
-        default: '@layouts/ProseLayout.astro'
-        required: true
-        hidden: true
-      - name: title
-        label: Title
-        type: string
-        required: true
-      - name: description
-        label: Description
-        type: text
-        description: Shown below the title, also used for link previews and SEO.
-        required: true
-        pattern: { message: 'No line breaks allowed', regex: '^[^\r\n]*$' }
-        options:
-          rows: 2
-      - name: body
-        label: Body
-        type: rich-text
-  - name: information-security-practices-en
+  - name: information-security-practices
     label: Information security practices
     type: file
     path: src/pages/information-security-practices.md
@@ -177,18 +203,16 @@ content:
       - name: description
         label: Description
         type: text
-        description: Shown below the title, also used for link previews and SEO.
+        description: Used for link previews/search results.
         required: true
         pattern: { message: 'No line breaks allowed', regex: '^[^\r\n]*$' }
-        options:
-          rows: 2
       - name: body
         label: Body
         type: rich-text
-  - name: information-security-practices-fi
-    label: Tietoturvakäytännöt
+  - name: general-terms-conditions
+    label: General terms and conditions
     type: file
-    path: src/pages/tietoturvakaytannot.md
+    path: src/pages/general-terms-and-conditions.md
     fields:
       - name: layout
         type: string
@@ -202,11 +226,8 @@ content:
       - name: description
         label: Description
         type: text
-        description: Shown below the title, also used for link previews and SEO.
         required: true
         pattern: { message: 'No line breaks allowed', regex: '^[^\r\n]*$' }
-        options:
-          rows: 2
       - name: body
         label: Body
         type: rich-text
@@ -219,21 +240,19 @@ content:
       - name: title
         label: Site title
         type: string
-        description: Used in browser tabs, search results, link previews and site footer. On sub-pages, the title is added as a suffix (e.g., "News · Clouder").
+        description: Used in browser tabs, link previews, and search results. On sub-pages, the title is added as a suffix, for example "News · Clouder".
         required: true
       - name: ogtitle
         label: Homepage link preview title
         type: string
-        description: Only used for link previews of the homepage. All other pages will use the "<page title> · <site title>" format.
+        description: All other pages will use the "<page title> · <site title>" format.
         required: true
       - name: description
         label: Site description
         type: text
-        description: Used for link previews and SEO. Individual pages can override this with their own descriptions.
+        description: Used for link previews/search results. Individual pages can override this with their own descriptions.
         required: true
         pattern: { message: 'No line breaks allowed', regex: '^[^\r\n]*$' }
-        options:
-          rows: 2
 settings:
   hide: true
   content:
