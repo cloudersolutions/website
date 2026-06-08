@@ -1,7 +1,9 @@
 ---
 import AreimLogo from '@assets/areim.svg';
+import AvantLogo from '@assets/avant.svg';
 import ConficapLogo from '@assets/conficap.svg';
 import LifelineLogo from '@assets/lifeline.svg';
+import LahiTapiolaLogo from '@assets/lahitapiola.svg';
 import PatriaLogo from '@assets/patria.svg';
 import SkanskaLogo from '@assets/skanska.svg';
 import SrvLogo from '@assets/srv.svg';
@@ -17,13 +19,18 @@ const { company, class: className } = Astro.props;
 
 // Keep in sync with .pages.yml
 const Logo = (() => {
-  switch (company.toLowerCase()) {
+  switch (company.toLowerCase().replace(/\s/g, '')) {
     case 'areim':
       return AreimLogo;
+    case 'avant':
+      return AvantLogo;
     case 'conficap':
       return ConficapLogo;
     case 'lifeline':
       return LifelineLogo;
+    case 'lahitapiola':
+    case 'lähitapiola':
+      return LahiTapiolaLogo;
     case 'patria':
       return PatriaLogo;
     case 'skanska':

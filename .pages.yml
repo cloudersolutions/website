@@ -88,8 +88,10 @@ content:
               multiple: false
               values:
                 - 'Areim'
+                - 'Avant'
                 - 'Conficap'
                 - 'Lifeline'
+                - 'LähiTapiola'
                 - 'Patria'
                 - 'Skanska'
                 - 'SRV'
