@@ -16,7 +16,7 @@ about:
     years watching go unmeasured into something owners can finally see and
     capture.
   image: src/assets/tomi.jpg
-cover: images/perf-chart (1).png
+cover: images/perf-chart.png
 coverAlt: Chart showing the Performance Curve
 draft: false
 ---
@@ -42,7 +42,7 @@ AI changes both sides of this equation, but not equally. Yes, AI will help you r
 
 Finding the hidden value is the hard part. It takes deep technical knowledge of how buildings actually run, and AI capable of turning raw signals into something you can act on. That is the work Clouder does. 
 
-![](<images/perf-chart (1)-1.png>)
+![Chart showing the Performance Curve](images/perf-chart.png)
 
 Seeing that value, judging how far an asset is from where it should be, and watching the gap close, should be effortless. That's why we built the Performance Curve: a model that answers what good actually looks like for each asset, and what it's costing you not to get there. Three things it gives an owner:
 
