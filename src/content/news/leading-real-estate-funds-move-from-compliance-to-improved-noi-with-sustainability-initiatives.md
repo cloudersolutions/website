@@ -13,6 +13,7 @@ cover: images/esg-cover.png
 coverAlt: Bar chart illustration
 draft: false
 ---
+
 Imagine it’s year-end and you’re finalising yet another sustainability report. Pages of ESG data, meticulous compliance check-lists, a respectable GRESB score, yet your net operating income (NOI) hasn’t budged.
 
 You're not alone. Many real estate fund managers and CFOs find themselves caught in a cycle of "reporting for reporting's sake", merely ticking ESG boxes to appease regulators and investors without seeing any real impact on their profit and loss statements. Shouldn't all that effort and those green initiatives translate into tangible financial benefits?

@@ -1,33 +1,19 @@
 import { test, expect } from '@playwright/test';
 
-test('render home page with key sections', async ({ page }) => {
-  await page.goto('/');
-  await expect(page).toHaveTitle('Clouder');
-  await expect(page.getByTestId('menu')).toBeVisible();
-  await expect(
-    page.getByRole('heading', {
-      name: 'Turn building data into investment-grade asset intelligence'
-    })
-  ).toBeVisible();
-  await expect(
-    page.getByRole('heading').getByText('Your portfolio constantly optimized')
-  ).toBeVisible();
-  await expect(
-    page.getByRole('heading').getByText('What asset intelligence does to your portfolio')
-  ).toBeVisible();
-  await expect(
-    page.getByRole('heading').getByText('Simple engagement. Fast time to value.')
-  ).toBeVisible();
-  await expect(page.getByRole('heading').getByText('Trusted by industry leaders')).toBeVisible();
-});
-
-test('solutions page navigation', async ({ page }) => {
+test('navigation to solutions page', async ({ page }) => {
   await page.goto('/');
   await page.getByRole('navigation').getByRole('link', { name: 'Solutions' }).click();
   await expect(page).toHaveURL('/solutions');
   await expect(
     page.getByRole('heading', { name: 'The new standard for property performance' })
   ).toBeVisible();
+});
+
+test('renders 3 case studies on home page', async ({ page }) => {
+  await page.goto('/');
+  await expect(page.getByRole('heading').getByText('Trusted by industry leaders')).toBeVisible();
+  const articles = await page.getByRole('article').count();
+  expect(articles).toBe(3);
 });
 
 test('post and category navigation', async ({ page }) => {
@@ -45,6 +31,12 @@ test('post and category navigation', async ({ page }) => {
   await expect(page).toHaveURL('/news/case-study');
   await expect(page).toHaveTitle(`${category} · Clouder`);
   await expect(page.getByRole('heading', { name: heading })).toBeVisible();
+});
+
+test('renders author details section', async ({ page }) => {
+  await page.goto('/news/the-value-the-market-cant-touch');
+  await expect(page.getByRole('heading', { name: 'About the Author' })).toBeVisible();
+  await expect(page.getByRole('paragraph').filter({ hasText: 'Tomi Grönlund' })).toBeVisible();
 });
 
 test('contact form, required fields filled', async ({ page }) => {

@@ -6,20 +6,12 @@ description: The biggest pool of hidden value in your portfolio isn’t in the
 date: 2026-06-04
 category: insights
 author: Tomi Grönlund
-about:
-  title: Founder & CEO, Clouder
-  bio: Tomi has led over €5 billion in international real estate transactions and
-    development projects, including one of the highest-scoring LEED Platinum
-    buildings in the world. He was Head of Transactions at Aberdeen Standard
-    Investments, which managed a real estate investment platform of over €40
-    billion. He founded Clouder to turn the operational value he spent fifteen
-    years watching go unmeasured into something owners can finally see and
-    capture.
-  image: src/assets/tomi.jpg
+authorDetails: tomi-gronlund
 cover: images/perf-chart.png
 coverAlt: Chart showing the Performance Curve
 draft: false
 ---
+
 Fifteen years as a real estate investor taught me that the only value not tied to market movements is the value released from inside the asset itself. 
 
 Every quarter, capital allocation in commercial real estate is dominated by one question: where is the market going? We model cap rate movements, debate interest rate paths, and reposition portfolios around forecasts. This is necessary work. AI is about to make us far better at it: sharper signals, faster reads, better-timed moves. 
