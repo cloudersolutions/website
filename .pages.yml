@@ -29,7 +29,6 @@ content:
       - name: description
         label: Description
         type: text
-        description: Used for link previews/search results.
         required: true
         pattern: { message: 'No line breaks allowed', regex: '^[^\r\n]*$' }
       - name: date
@@ -77,11 +76,11 @@ content:
           value: '{name}'
           label: '{fields.name}'
           multiple: false
-        description: If an author detail is selected, an 'about the author' section will be shown after the article.
+        description: If an author detail is selected, an “About the author” section will be shown after the article.
       - name: cover
         label: Cover image
         type: image
-        description: Used in listings and for link previews. To show it on the article page, add it separately in the Body field. Use a 16:9 aspect ratio and keep the image under 1 MB.
+        description: Used in listings and for link previews. To show it on the article page, add it separately in the “Body” field. Use a 16:9 aspect ratio and keep the image under 1 MB.
         required: true
         options:
           media: articleImages
@@ -117,7 +116,7 @@ content:
                 - 'Skanska'
                 - 'SRV'
                 - 'Varte'
-            description: No logo will be shown if the vector file is not found in `/src/assets`.
+            description: No logo will be shown if the vector file is not found.
           - name: value
             label: Result value
             type: string
@@ -180,7 +179,6 @@ content:
       - name: description
         label: Description
         type: text
-        description: Used for link previews/search results.
         required: true
         pattern: { message: 'No line breaks allowed', regex: '^[^\r\n]*$' }
       - name: body
@@ -203,7 +201,6 @@ content:
       - name: description
         label: Description
         type: text
-        description: Used for link previews/search results.
         required: true
         pattern: { message: 'No line breaks allowed', regex: '^[^\r\n]*$' }
       - name: body
@@ -240,17 +237,17 @@ content:
       - name: title
         label: Site title
         type: string
-        description: Used in browser tabs, link previews, and search results. On sub-pages, the title is added as a suffix, for example "News · Clouder".
+        description: Used in browser tabs, link previews, and search results. On sub-pages, the title is added as a suffix, for example “News · Clouder“.
         required: true
       - name: ogtitle
         label: Homepage link preview title
         type: string
-        description: All other pages will use the "<page title> · <site title>" format.
+        description: All other pages will use the “<page title> · <site title>” format.
         required: true
       - name: description
         label: Site description
         type: text
-        description: Used for link previews/search results. Individual pages can override this with their own descriptions.
+        description: Individual pages can override this with their own descriptions.
         required: true
         pattern: { message: 'No line breaks allowed', regex: '^[^\r\n]*$' }
 settings:
