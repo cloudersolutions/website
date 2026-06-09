@@ -1,11 +1,11 @@
 media:
-  - name: article_images
+  - name: articleImages
     label: Article images
     input: src/content/news/images
     output: images
     rename: safe
     extensions: [jpg, jpeg, png, webp]
-  - name: author_images
+  - name: authorImages
     label: Author images
     input: src/content/authors/images
     output: images
@@ -65,7 +65,7 @@ content:
             - Emma Grönlund
             - Ilkka Pirttimaa
             - Jussi Toivonen
-            - Mathias Lindholm
+            - Mathias Herler
             - Tomi Grönlund
         description: No author will be displayed in the article if this field is left empty.
       - name: authorDetails
@@ -84,7 +84,7 @@ content:
         description: Used in listings and for link previews. To show it on the article page, add it separately in the Body field. Use a 16:9 aspect ratio and keep the image under 1 MB.
         required: true
         options:
-          media: article_images
+          media: articleImages
       - name: coverAlt
         label: Cover image alt text
         type: string
@@ -122,17 +122,17 @@ content:
             label: Result value
             type: string
             required: true
-            description: The result value, e.g. '50k+'.
+            description: The big result value, e.g. '50k+'.
           - name: label
             label: Result label
             type: string
             required: true
-            description: The result label, e.g. 'Data points'.
+            description: The small result label, e.g. 'Data points'.
       - name: body
         label: Body
         type: rich-text
         options:
-          media: article_images
+          media: articleImages
   - name: authors
     label: Authors
     type: collection
@@ -148,7 +148,7 @@ content:
         type: image
         required: true
         options:
-          media: author_images
+          media: authorImages
         description: Use a 1:1 aspect ratio and keep the image under 1 MB.
       - name: name
         label: Name
