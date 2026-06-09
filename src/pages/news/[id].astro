@@ -98,14 +98,14 @@ const authorDetails = post.data.authorDetails
               <p
                 class:list={twMerge(
                   post.data.callout.value.length < 6
-                    ? 'text-3xl lg:text-5xl'
-                    : 'text-2xl font-[420] lg:text-3xl',
+                    ? 'mb-1 text-4xl lg:text-5xl'
+                    : 'mb-2 text-2xl lg:text-3xl',
                   'font-serif leading-none text-neutral-950 lg:max-w-48 dark:text-neutral-50'
                 )}
               >
                 {post.data.callout.value}
               </p>
-              <p class="mt-2 text-sm leading-none text-neutral-500">{post.data.callout.label}</p>
+              <p class="text-sm leading-none text-neutral-500">{post.data.callout.label}</p>
             </div>
           </div>
           <div class="w-px shrink-0 self-stretch bg-neutral-200 dark:bg-neutral-800" />

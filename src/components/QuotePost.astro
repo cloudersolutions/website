@@ -27,13 +27,15 @@ const { post } = Astro.props;
       <div class="relative drop-shadow-[0_0_16px] drop-shadow-black/50">
         <p
           class:list={twMerge(
-            post.data.callout.value.length < 6 ? 'text-5xl lg:text-7xl' : 'text-3xl leading-8',
-            'font-serif'
+            post.data.callout.value.length < 6
+              ? 'mb-1 text-5xl lg:text-7xl'
+              : 'mb-2 text-2xl lg:text-3xl',
+            'font-serif leading-none'
           )}
         >
           {post.data.callout.value}
         </p>
-        <p class="mt-2 text-sm opacity-75">{post.data.callout.label}</p>
+        <p class="text-sm opacity-75">{post.data.callout.label}</p>
       </div>
       <CompanyLogo
         company={post.data.callout.company}
