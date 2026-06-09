@@ -11,7 +11,6 @@ cover: images/perf-chart.png
 coverAlt: Chart showing the Performance Curve
 draft: false
 ---
-
 Fifteen years as a real estate investor taught me that the only value not tied to market movements is the value released from inside the asset itself. 
 
 Every quarter, capital allocation in commercial real estate is dominated by one question: where is the market going? We model cap rate movements, debate interest rate paths, and reposition portfolios around forecasts. This is necessary work. AI is about to make us far better at it: sharper signals, faster reads, better-timed moves. 
