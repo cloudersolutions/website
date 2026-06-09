@@ -1,3 +1,4 @@
+import type { CollectionEntry } from 'astro:content';
 import type { Category } from 'src/content.config';
 
 export function filterDrafts(entry: { data: Record<string, unknown> }): boolean {
@@ -7,6 +8,16 @@ export function filterDrafts(entry: { data: Record<string, unknown> }): boolean 
     return isProduction ? !entry.data.draft : true;
   }
   return true;
+}
+
+export type PostWithCallout = CollectionEntry<'news'> & {
+  data: CollectionEntry<'news'>['data'] & {
+    callout: NonNullable<CollectionEntry<'news'>['data']['callout']>;
+  };
+};
+
+export function hasCallout(post: CollectionEntry<'news'>): post is PostWithCallout {
+  return post.data.category === 'case-study' && post.data.callout !== undefined;
 }
 
 // Match with .pages.yml

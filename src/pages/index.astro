@@ -12,7 +12,7 @@ import SiteFooter from '@components/SiteFooter.astro';
 import SiteHeader from '@components/SiteHeader.astro';
 import config from '@data/config.yml';
 import { paths } from '@data/paths';
-import { filterDrafts } from '@utils/content';
+import { filterDrafts, hasCallout } from '@utils/content';
 import OpexTable from '@assets/OpexTable.astro';
 import FindingsUI from '@assets/FindingsUI.astro';
 import ConsumptionUI from '@assets/ConsumptionUI.astro';
@@ -23,7 +23,7 @@ import heroPoster from '@assets/poster.jpg';
 const posts = await getCollection('news', filterDrafts);
 
 const caseExamplePosts = posts
-  .filter((post) => post.data.category === 'case-study' && post.data.callout !== undefined)
+  .filter(hasCallout)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, 3);
 ---

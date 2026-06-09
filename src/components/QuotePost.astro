@@ -1,16 +1,12 @@
 ---
 import { Image } from 'astro:assets';
-import type { CollectionEntry } from 'astro:content';
 import { twMerge } from 'tailwind-merge';
+import { type PostWithCallout } from '@utils/content';
 import CompanyLogo from '@components/CompanyLogo.astro';
 import { paths } from '@data/paths';
 
 interface Props {
-  post: CollectionEntry<'news'> & {
-    data: CollectionEntry<'news'>['data'] & {
-      callout: NonNullable<CollectionEntry<'news'>['data']['callout']>;
-    };
-  };
+  post: PostWithCallout;
 }
 
 const { post } = Astro.props;
