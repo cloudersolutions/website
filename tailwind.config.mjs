@@ -85,7 +85,8 @@ export default {
             },
             img: {
               backgroundColor: 'color-mix(in oklab, var(--color-neutral-500) 10%, transparent)',
-              color: 'transparent'
+              color: 'transparent',
+              marginBlock: '2rem'
             },
             iframe: {
               aspectRatio: '16/9',
@@ -125,6 +126,9 @@ export default {
             h4: {
               fontSize: '1rem',
               lineHeight: '1.5rem'
+            },
+            img: {
+              marginBlock: '2rem'
             }
           }
         },
