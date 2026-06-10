@@ -1,7 +1,7 @@
 ---
 title: How SRV built an AI‑ready data foundation for its lifecycle buildings
 description: SRV partnered with Clouder to build a unified data foundation for its lifecycle buildings. What once took weeks now takes minutes, unlocking AI-driven optimization, predictive maintenance, and real-time building intelligence.
-date: 2026-06-12
+date: 2026-06-11
 category: case-study
 author: Emma Grönlund
 cover: images/srv-ai-data.jpg
