@@ -1,14 +1,16 @@
 ---
 title: How SRV built an AI‑ready data foundation for its lifecycle buildings
-description: SRV partnered with Clouder to build a unified data foundation for its lifecycle buildings. What once took weeks now takes minutes, unlocking AI-driven optimization, predictive maintenance, and real-time building intelligence.
+description: SRV partnered with Clouder to build a unified data foundation for
+  its lifecycle buildings. What once took weeks now takes minutes, unlocking
+  AI-driven optimization, predictive maintenance, and real-time building
+  intelligence.
 date: 2026-06-11
 category: case-study
 author: Emma Grönlund
 cover: images/srv-ai-data.jpg
-coverAlt: 'Abstract illustration of data-driven building management'
-draft: true
+coverAlt: Abstract illustration of data-driven building management
+draft: false
 ---
-
 ![Abstract illustration of data-driven building management](images/srv-ai-data.jpg)
 
 The construction industry has been living through a downturn. While many are waiting it out, some players are already building the future, and SRV is one of them. The company has made a deliberate push to develop data capabilities in their Public-Private-Partnership properties. They partnered with Clouder to do it.
@@ -41,6 +43,6 @@ Operators who use this period to build that foundation will be in a very differe
 >
 > Jere Pirhonen, Director, Energy and Lifecycle Services, SRV
 
-***
+---
 
-_[SRV’s Energy and Lifecycle Services team](https://www.srv.fi/en/for-developers/energy-and-lifecycle-services/) delivers Public-Private-Partnership property services under long-term contracts. Clouder turns building data into investment-grade asset intelligence, partnering with property owners, funds and operators to unlock hidden value across commercial real estate portfolios with industry-specific AI agents._
+*[SRV’s Energy and Lifecycle Services team](https://www.srv.fi/en/for-developers/energy-and-lifecycle-services/) delivers Public-Private-Partnership property services under long-term contracts. Clouder turns building data into investment-grade asset intelligence, partnering with property owners, funds and operators to unlock hidden value across commercial real estate portfolios with industry-specific AI agents.*
