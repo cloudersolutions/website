@@ -8,7 +8,7 @@ description: "Many real estate teams gather data quarterly, fill out templates,
   sight of why we measure."
 date: 2025-11-04
 category: insights
-author: Emma Grönlund
+author: emma-gronlund
 cover: images/esg-cover.png
 coverAlt: Bar chart illustration
 draft: false

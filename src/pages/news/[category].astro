@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, getEntry } from 'astro:content';
 
 import { categories } from 'src/content.config';
 import Divider from '@components/Divider.astro';
@@ -20,7 +20,19 @@ export function getStaticPaths() {
 const { category } = Astro.params;
 
 const posts = await getCollection('news', filterDrafts);
-const categoryPosts = posts
+const postsWithAuthors = await Promise.all(
+  posts.map(async (post) => {
+    if (!post.data.author) {
+      return { ...post, author: undefined };
+    }
+    const author = await getEntry(
+      post.data.author.collection,
+      post.data.author.id.replace('.yml', '')
+    );
+    return { ...post, author };
+  })
+);
+const categoryPosts = postsWithAuthors
   .filter(({ data }) => data.category === category)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
@@ -34,7 +46,7 @@ const description = `Posts filed under “${title}”`;
     <div class="pb-16 lg:pb-32">
       <div class="container">
         <div class="grid grid-cols-1 gap-x-8 gap-y-12 lg:grid-cols-3 lg:gap-y-16">
-          {categoryPosts.map((post) => <Post post={post} />)}
+          {categoryPosts.map((post) => <Post post={post} author={post.author} />)}
         </div>
       </div>
     </div>

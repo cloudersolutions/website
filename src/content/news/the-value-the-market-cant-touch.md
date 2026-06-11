@@ -5,8 +5,8 @@ description: The biggest pool of hidden value in your portfolio isn’t in the
   it’s yours, and it doesn’t reverse when sentiment turns.
 date: 2026-06-04
 category: insights
-author: Tomi Grönlund
-authorDetails: tomi-gronlund
+author: tomi-gronlund
+showAuthorDetails: true
 cover: images/perf-chart.png
 coverAlt: Chart showing the Performance Curve
 draft: false
