@@ -8,9 +8,22 @@ import Newsletter from '@components/Newsletter.astro';
 import Post from '@components/Post.astro';
 import LargePost from '@components/LargePost.astro';
 import { filterDrafts } from '@utils/content';
+import { getEntry } from 'astro:content';
 
 const posts = await getCollection('news', filterDrafts);
-const sortedPosts = posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const postsWithAuthors = await Promise.all(
+  posts.map(async (post) => {
+    if (!post.data.author) {
+      return { ...post, author: undefined };
+    }
+    const author = await getEntry(
+      post.data.author.collection,
+      post.data.author.id.replace('.yml', '')
+    );
+    return { ...post, author };
+  })
+);
+const sortedPosts = postsWithAuthors.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
 const title = 'News';
 const description = 'Company news, case studies, and more.';
@@ -22,11 +35,11 @@ const description = 'Company news, case studies, and more.';
     <div class="pb-16 lg:pb-32">
       <div class="container">
         <div class="grid grid-cols-1 gap-x-8 gap-y-12 lg:grid-cols-3 lg:gap-y-16">
-          <LargePost post={sortedPosts[0]} />
+          <LargePost post={sortedPosts[0]} author={sortedPosts[0].author} />
           <div class="hidden lg:col-span-full lg:block">
             <Divider />
           </div>
-          {sortedPosts.slice(1).map((post) => <Post post={post} />)}
+          {sortedPosts.slice(1).map((post) => <Post post={post} author={post.author} />)}
         </div>
       </div>
     </div>

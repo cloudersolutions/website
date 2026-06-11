@@ -14,8 +14,8 @@ const news = defineCollection({
       description: z.string(),
       date: z.coerce.date(),
       category: z.enum(categories).optional(),
-      author: z.string().optional(),
-      authorDetails: reference('authors').optional(),
+      author: reference('authors').optional(),
+      showAuthorDetails: z.boolean().optional(),
       cover: image(),
       coverAlt: z.string(),
       callout: z
@@ -38,8 +38,8 @@ const authors = defineCollection({
     z.object({
       name: z.string(),
       title: z.string(),
-      bio: z.string(),
-      image: image()
+      bio: z.string().optional(),
+      image: image().optional()
     })
 });
 

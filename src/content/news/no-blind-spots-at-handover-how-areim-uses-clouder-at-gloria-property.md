@@ -7,7 +7,7 @@ description: After commissioning a renovation, you're usually flying
   actually running.
 date: 2026-03-06
 category: case-study
-author: Emma Grönlund
+author: emma-gronlund
 cover: images/ilmakuva-sisapiha.jpg
 coverAlt: Areal picture of Gloria property
 draft: false

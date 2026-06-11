@@ -55,20 +55,7 @@ content:
               label: Product update
       - name: author
         label: Author
-        type: select
-        required: false
-        options:
-          creatable: true
-          multiple: false
-          values:
-            - Emma Grönlund
-            - Ilkka Pirttimaa
-            - Jussi Toivonen
-            - Mathias Herler
-            - Tomi Grönlund
         description: No author will be displayed in the article if this field is left empty.
-      - name: authorDetails
-        label: Author details
         type: reference
         required: false
         options:
@@ -76,7 +63,11 @@ content:
           value: '{name}'
           label: '{fields.name}'
           multiple: false
-        description: If an author detail is selected, an “About the author” section will be shown after the article.
+      - name: showAuthorDetails
+        label: Show author details
+        description: If enabled and author has a bio, an “About the author” section will be shown after the article.
+        type: boolean
+        default: false
       - name: cover
         label: Cover image
         type: image
