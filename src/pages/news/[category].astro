@@ -1,18 +1,17 @@
 ---
 import { getCollection, getEntry } from 'astro:content';
 
-import { categories } from 'src/content.config';
 import Divider from '@components/Divider.astro';
 import MainLayout from '@layouts/MainLayout.astro';
 import NewsHeader from '@components/NewsHeader.astro';
 import Newsletter from '@components/Newsletter.astro';
 import Post from '@components/Post.astro';
-import { filterDrafts, getCategoryLabel } from '@utils/content';
+import { filterDrafts, categories, getCategoryLabel } from '@utils/content';
 
 export function getStaticPaths() {
   return categories.map((category) => ({
     params: {
-      category
+      category: category.value
     }
   }));
 }
