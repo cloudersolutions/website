@@ -1,9 +1,8 @@
 ---
 import { getCollection } from 'astro:content';
 
-import { categories } from 'src/content.config';
 import { paths } from '@data/paths';
-import { filterDrafts, getCategoryLabel } from '@utils/content';
+import { filterDrafts, categories } from '@utils/content';
 
 interface Props {
   current?: string;
@@ -13,7 +12,7 @@ const { current } = Astro.props;
 
 const posts = await getCollection('news', filterDrafts);
 const usedCategories = Array.from(new Set(posts.map(({ data }) => data.category)));
-const nonEmptyCategories = categories.filter((c) => usedCategories.includes(c));
+const nonEmptyCategories = categories.filter((c) => usedCategories.includes(c.value));
 
 const linkClass =
   'inline-flex items-center text-sm py-2 font-[420] text-neutral-600 dark:text-neutral-400 hover:text-current px-3 leading-4 rounded-md transition select-none hover:bg-current/5 active:bg-current/5 aria-current:text-neutral-50 aria-current:bg-neutral-950 dark:aria-current:text-neutral-950 dark:aria-current:bg-neutral-50';
@@ -31,11 +30,11 @@ const linkClass =
       {
         nonEmptyCategories.map((category) => (
           <a
-            href={`${paths.news.href}/${category}`}
-            aria-current={current === category}
+            href={`${paths.news.href}/${category.value}`}
+            aria-current={current === category.value}
             class={linkClass}
           >
-            {getCategoryLabel(category)}
+            {category.label}
           </a>
         ))
       }

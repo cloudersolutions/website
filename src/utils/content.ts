@@ -1,5 +1,4 @@
 import type { CollectionEntry } from 'astro:content';
-import type { Category } from 'src/content.config';
 
 export function filterDrafts(entry: { data: Record<string, unknown> }): boolean {
   const isProduction = import.meta.env.PROD && process.env.CONTEXT === 'production';
@@ -21,19 +20,23 @@ export function hasCallout(post: CollectionEntry<'news'>): post is PostWithCallo
 }
 
 // Match with .pages.yml
-export function getCategoryLabel(category: Category) {
-  switch (category) {
-    case 'case-study':
-      return 'Case study';
-    case 'company-news':
-      return 'Company news';
-    case 'insights':
-      return 'Industry insight';
-    case 'press':
-      return 'Press release';
-    case 'product':
-      return 'Product update';
-    default:
-      return category;
-  }
+export const categories = [
+  { value: 'case-study', label: 'Case study' },
+  { value: 'company-news', label: 'Company news' },
+  { value: 'insights', label: 'Industry insight' },
+  { value: 'press', label: 'Press release' },
+  { value: 'product', label: 'Product update' }
+] as const;
+
+export type CategoryValue = (typeof categories)[number]['value'];
+
+export const categoryValues = categories.map((c) => c.value) as readonly CategoryValue[];
+
+const categoryLabels = Object.fromEntries(categories.map((c) => [c.value, c.label])) as Record<
+  CategoryValue,
+  string
+>;
+
+export function getCategoryLabel(category: CategoryValue): string {
+  return categoryLabels[category];
 }
