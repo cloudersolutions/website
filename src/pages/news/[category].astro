@@ -25,10 +25,7 @@ const postsWithAuthors = await Promise.all(
     if (!post.data.author) {
       return { ...post, author: undefined };
     }
-    const author = await getEntry(
-      post.data.author.collection,
-      post.data.author.id.replace('.yml', '')
-    );
+    const author = await getEntry(post.data.author);
     return { ...post, author };
   })
 );

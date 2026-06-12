@@ -33,9 +33,7 @@ const { post, previousPost, nextPost } = Astro.props;
 const { Content } = await render(post);
 
 // The replace is for Pages CMS, since it won't give the reference without the extension…
-const author = post.data.author
-  ? await getEntry(post.data.author.collection, post.data.author.id.replace('.yml', ''))
-  : null;
+const author = post.data.author ? await getEntry(post.data.author) : null;
 ---
 
 <ProseLayout title={post.data.title} description={post.data.description} image={post.data.cover}>
