@@ -7,7 +7,7 @@ description: "For years, the standard approach to smart buildings has been to
   way to extract even some meaningful data from buildings. "
 date: 2025-10-21
 category: insights
-author: jussi-toivonen
+author: jussi-toivonen.yml
 cover: images/bms-cables.jpg
 coverAlt: building systems
 draft: false

@@ -6,7 +6,7 @@ description: SRV partnered with Clouder to build a unified data foundation for
   intelligence.
 date: 2026-06-11
 category: case-study
-author: emma-gronlund
+author: emma-gronlund.yml
 cover: images/srv-ai-data.jpg
 coverAlt: Abstract illustration of data-driven building management
 draft: false

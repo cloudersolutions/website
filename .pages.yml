@@ -20,7 +20,7 @@ content:
     subfolders: false
     view:
       primary: title
-      fields: [cover, title, date, draft, category]
+      fields: [cover, title, draft, date, author, category]
     fields:
       - name: title
         label: Title

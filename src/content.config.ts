@@ -14,7 +14,15 @@ const news = defineCollection({
       description: z.string(),
       date: z.coerce.date(),
       category: z.enum(categories).optional(),
-      author: reference('authors').optional(),
+      author: z
+        .string()
+        .optional()
+        .transform((val) => {
+          if (!val) return undefined;
+          // Strip .yml extension that Pages CMS adds to references
+          return val.replace(/\.yml$/, '');
+        })
+        .pipe(reference('authors').optional()),
       showAuthorDetails: z.boolean().optional(),
       cover: image(),
       coverAlt: z.string(),
