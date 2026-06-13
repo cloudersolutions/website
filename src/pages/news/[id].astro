@@ -117,7 +117,7 @@ const author = post.data.author ? await getEntry(post.data.author) : null;
       <Content />
     </section>
     {
-      author?.data.bio && post.data.showAuthorDetails && (
+      author?.data.description && post.data.showAuthorDetails && (
         <>
           <Divider />
           <section class="not-prose grid grid-cols-1 gap-4 lg:grid-cols-7">
@@ -149,7 +149,7 @@ const author = post.data.author ? await getEntry(post.data.author) : null;
               </div>
             </div>
             <div class="lg:col-span-4">
-              <p class="text-base">{author.data.bio}</p>
+              <p class="text-base">{author.data.description}</p>
             </div>
           </section>
         </>

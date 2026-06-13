@@ -20,7 +20,7 @@ content:
     subfolders: false
     view:
       primary: title
-      fields: [cover, title, draft, date, author, category]
+      fields: [cover, title, date, category, author, draft]
     fields:
       - name: title
         label: Title
@@ -55,7 +55,6 @@ content:
               label: Product update
       - name: author
         label: Author
-        description: No author will be displayed in the article if this field is left empty.
         type: reference
         required: false
         options:
@@ -65,13 +64,13 @@ content:
           multiple: false
       - name: showAuthorDetails
         label: Show author details
-        description: If enabled and author has a bio, an “About the author” section will be shown after the article.
+        description: If the author has a description, an “About the author” section will be shown after the article.
         type: boolean
         default: false
       - name: cover
         label: Cover image
         type: image
-        description: Used in listings and for link previews. To show it on the article page, add it separately in the “Body” field. Use a 16:9 aspect ratio and keep the image under 1 MB.
+        description: Used in listings and for link previews. Use a 16:9 aspect ratio and keep the image under 1 MB.
         required: true
         options:
           media: articleImages
@@ -95,7 +94,7 @@ content:
             type: select
             required: true
             options:
-              creatable: true
+              creatable: false
               multiple: false
               values:
                 - 'Areim'
@@ -131,7 +130,7 @@ content:
     subfolders: false
     view:
       primary: name
-      fields: [image, name, title]
+      fields: [image, name]
     fields:
       - name: image
         label: Image
@@ -148,8 +147,8 @@ content:
         label: Title
         type: string
         required: true
-      - name: bio
-        label: Bio
+      - name: description
+        label: Description
         type: text
         required: true
         pattern: { message: 'No line breaks allowed', regex: '^[^\r\n]*$' }
