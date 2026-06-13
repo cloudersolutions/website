@@ -33,9 +33,6 @@ const description = 'Company news, case studies, and more.';
       <div class="container">
         <div class="grid grid-cols-1 gap-x-8 gap-y-12 lg:grid-cols-3 lg:gap-y-16">
           <LargePost post={sortedPosts[0]} author={sortedPosts[0].author} />
-          <div class="hidden lg:col-span-full lg:block">
-            <Divider />
-          </div>
           {sortedPosts.slice(1).map((post) => <Post post={post} author={post.author} />)}
         </div>
       </div>
