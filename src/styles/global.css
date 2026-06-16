@@ -243,6 +243,10 @@
   --color-blue-950: oklch(0.181 0.07 265.39);
 }
 
+@utility font-book {
+  font-weight: 450;
+}
+
 @utility container {
   @media (width >= 96rem) {
     max-width: 80rem;

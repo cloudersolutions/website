@@ -16,7 +16,7 @@ const usedCategories = Array.from(new Set(posts.map(({ data }) => data.category)
 const nonEmptyCategories = categories.filter((c) => usedCategories.includes(c.value));
 
 const linkClass =
-  'font-[420] text-neutral-500 transition select-none hover:text-current active:text-current aria-current:text-neutral-950 dark:aria-current:text-neutral-50';
+  'font-book text-neutral-500 transition select-none hover:text-current active:text-current aria-current:text-neutral-950 dark:aria-current:text-neutral-50';
 ---
 
 <div class="pt-16 pb-8 lg:pt-32 lg:pb-12">
