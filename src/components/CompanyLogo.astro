@@ -1,6 +1,7 @@
 ---
 import AreimLogo from '@assets/areim.svg';
 import AvantLogo from '@assets/avant.svg';
+import CatellaLogo from '@assets/catella.svg';
 import ConficapLogo from '@assets/conficap.svg';
 import LifelineLogo from '@assets/lifeline.svg';
 import LahiTapiolaLogo from '@assets/lahitapiola.svg';
@@ -18,12 +19,14 @@ interface Props {
 const { company, class: className } = Astro.props;
 
 // Keep in sync with .pages.yml
-const Logo = (() => {
-  switch (company.toLowerCase().replace(/\s/g, '')) {
+export function getCompanyLogo(company: string) {
+  switch (company.toLowerCase().replaceAll(/\s/g, '')) {
     case 'areim':
       return AreimLogo;
     case 'avant':
       return AvantLogo;
+    case 'catella':
+      return CatellaLogo;
     case 'conficap':
       return ConficapLogo;
     case 'lifeline':
@@ -43,7 +46,9 @@ const Logo = (() => {
       console.warn(`⚠️ Unknown company "${company}"`);
       return EmptySvg;
   }
-})();
+}
+
+const Logo = getCompanyLogo(company);
 ---
 
 <Logo class={className} />

@@ -1,24 +1,17 @@
 ---
-import AreimLogo from '@assets/areim.svg';
-import AvantLogo from '@assets/avant.svg';
-import ConficapLogo from '@assets/conficap.svg';
-import LifelineLogo from '@assets/lifeline.svg';
-import LahiTapiolaLogo from '@assets/lahitapiola.svg';
-import PatriaLogo from '@assets/patria.svg';
-import SkanskaLogo from '@assets/skanska.svg';
-import SrvLogo from '@assets/srv.svg';
-import VarteLogo from '@assets/varte.svg';
+import { getCompanyLogo } from '@components/CompanyLogo.astro';
 
 const logos = [
-  { name: 'Areim', src: AreimLogo, height: 'h-8' },
-  { name: 'Avant', src: AvantLogo, height: 'h-8' },
-  { name: 'Conficap', src: ConficapLogo, height: 'h-8' },
-  { name: 'Lifeline', src: LifelineLogo, height: 'h-10' },
-  { name: 'LähiTapiola', src: LahiTapiolaLogo, height: 'h-8' },
-  { name: 'Patria', src: PatriaLogo, height: 'h-5.5' },
-  { name: 'Skanska', src: SkanskaLogo, height: 'h-5' },
-  { name: 'SRV', src: SrvLogo, height: 'h-6' },
-  { name: 'Varte', src: VarteLogo, height: 'h-8' }
+  { name: 'Areim', src: getCompanyLogo('areim'), height: 'h-8' },
+  { name: 'Avant', src: getCompanyLogo('avant'), height: 'h-8' },
+  { name: 'Catella', src: getCompanyLogo('catella'), height: 'h-12' },
+  { name: 'Conficap', src: getCompanyLogo('conficap'), height: 'h-8' },
+  { name: 'Lifeline', src: getCompanyLogo('lifeline'), height: 'h-10' },
+  { name: 'LähiTapiola', src: getCompanyLogo('lähitapiola'), height: 'h-8' },
+  { name: 'Patria', src: getCompanyLogo('patria'), height: 'h-5.5' },
+  { name: 'Skanska', src: getCompanyLogo('skanska'), height: 'h-5' },
+  { name: 'SRV', src: getCompanyLogo('srv'), height: 'h-6' },
+  { name: 'Varte', src: getCompanyLogo('varte'), height: 'h-8' }
 ];
 ---
 
