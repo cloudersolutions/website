@@ -14,7 +14,7 @@ function getValues(budgetMwh: number, adjustedMwh: number, yearEndMwh: number) {
     yearEndMwh: formatValue(yearEndMwh, 'MWh', 0),
     yearEndMwhDesc:
       yearEndMwh > adjustedMwh
-        ? `<span class="text-rose-600 dark:text-rose-400">${formatValue(Math.abs(yearEndGapMwh), 'MWh', 0)} (${formatPercent(Math.abs(yearEndGapPercent))})</span> above adjusted target`
+        ? `<span class="text-red-600 dark:text-red-400">${formatValue(Math.abs(yearEndGapMwh), 'MWh', 0)} (${formatPercent(Math.abs(yearEndGapPercent))})</span> above adjusted target`
         : `<span class="text-blue-600 dark:text-blue-400">${formatValue(Math.abs(yearEndGapMwh), 'MWh', 0)} (${formatPercent(Math.abs(yearEndGapPercent))})</span> below adjusted target`,
     noiImpact: formatCurrency(noiImpact * -1, {
       roundingMode: 'trunc',

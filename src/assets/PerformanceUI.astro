@@ -167,7 +167,7 @@ import { data } from './performanceData';
     const dataset = ctx.chart.data.datasets[ctx.datasetIndex];
     const tValue = target.data[ctx.dataIndex];
     const pValue = dataset.data[ctx.dataIndex];
-    return pValue > tValue ? `hsla(350,70%,50%,${opacity})` : `hsla(225,70%,50%,${opacity})`;
+    return pValue > tValue ? `hsla(350,63%,54%,${opacity})` : `hsla(225,60%,51%,${opacity})`;
   };
 
   const segmentColor = (ctx: any, opacity: number) => {
@@ -175,7 +175,7 @@ import { data } from './performanceData';
     const dataset = ctx.chart.data.datasets[ctx.datasetIndex];
     const tValue = target.data[ctx.p1DataIndex];
     const pValue = dataset.data[ctx.p1DataIndex];
-    return pValue > tValue ? `hsla(350,70%,50%,${opacity})` : `hsla(225,70%,50%,${opacity})`;
+    return pValue > tValue ? `hsla(350,63%,54%,${opacity})` : `hsla(225,60%,51%,${opacity})`;
   };
 
   const segmentGradient = (ctx: any) => {
@@ -200,10 +200,12 @@ import { data } from './performanceData';
           fill: 'origin',
           tension: 0.3,
           pointStyle: 'circle',
-          pointHoverRadius: 3,
           pointRadius: 0,
-          pointBorderColor: (ctx) => pointColor(ctx, 1),
+          pointHoverRadius: 3.5,
+          pointBorderWidth: 0,
+          pointBorderColor: 'transparent',
           pointBackgroundColor: (ctx) => pointColor(ctx, 1),
+          pointHoverBackgroundColor: (ctx) => pointColor(ctx, 1),
           segment: {
             borderColor: (ctx) => segmentColor(ctx, 1),
             backgroundColor: (ctx) => segmentGradient(ctx)
@@ -212,17 +214,18 @@ import { data } from './performanceData';
         {
           label: 'Estimate',
           data: data.curr.estimate,
-          borderColor: '#e2783666',
           backgroundColor: 'transparent',
           borderWidth: 2,
           borderDash: [6, 6],
           borderCapStyle: 'round',
           tension: 0.3,
           pointStyle: 'circle',
-          pointBorderColor: (ctx) => pointColor(ctx, 0.5),
-          pointBackgroundColor: (ctx) => pointColor(ctx, 0.5),
-          pointHoverRadius: 3,
           pointRadius: 0,
+          pointHoverRadius: 3.5,
+          pointBorderWidth: 0,
+          pointBorderColor: 'transparent',
+          pointBackgroundColor: (ctx) => pointColor(ctx, 0.5),
+          pointHoverBackgroundColor: (ctx) => pointColor(ctx, 0.5),
           segment: {
             borderColor: (ctx) => segmentColor(ctx, 0.5)
           }
@@ -235,8 +238,10 @@ import { data } from './performanceData';
           borderWidth: 2,
           borderCapStyle: 'round',
           pointStyle: 'circle',
-          pointHoverRadius: 3,
           pointRadius: 0,
+          pointHoverRadius: 3.5,
+          pointBorderWidth: 0,
+          pointBorderColor: 'transparent',
           fill: false
         }
       ]
