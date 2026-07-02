@@ -11,7 +11,6 @@
   font-feature-settings:
     'liga' 1,
     'calt' 1;
-  font-variation-settings: 'opsz' 18;
   src: url(/InterVariable.woff2) format('woff2');
 }
 @font-face {
@@ -22,7 +21,6 @@
   font-feature-settings:
     'liga' 1,
     'calt' 1;
-  font-variation-settings: 'opsz' 18;
   src: url(/InterVariable-Italic.woff2) format('woff2');
 }
 @font-face {
@@ -33,7 +31,6 @@
   font-feature-settings:
     'liga' 1,
     'calt' 1;
-  font-variation-settings: 'opsz' 24;
   ascent-override: 85%;
   src: url(/STIXTwoText.woff2) format('woff2');
 }
