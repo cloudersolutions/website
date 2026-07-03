@@ -162,12 +162,16 @@ import { data } from './performanceData';
     }
   };
 
+  const getColor = (p: number, t: number, opacity: number) => {
+    return p > t ? `hsla(350,63%,54%,${opacity})` : `hsla(225,60%,51%,${opacity})`;
+  };
+
   const footerColor = (ctx: any, opacity: number) => {
     const target = ctx.tooltipItems.at(-1);
     const dataset = ctx.tooltipItems.at(0);
     const tValue = target?.raw;
     const pValue = dataset?.raw;
-    return pValue > tValue ? `hsla(350,63%,54%,${opacity})` : `hsla(225,60%,51%,${opacity})`;
+    return getColor(pValue, tValue, opacity);
   };
 
   const pointColor = (ctx: any, opacity: number) => {
@@ -175,7 +179,7 @@ import { data } from './performanceData';
     const dataset = ctx.chart.data.datasets[ctx.datasetIndex];
     const tValue = target.data[ctx.dataIndex];
     const pValue = dataset.data[ctx.dataIndex];
-    return pValue > tValue ? `hsla(350,63%,54%,${opacity})` : `hsla(225,60%,51%,${opacity})`;
+    return getColor(pValue, tValue, opacity);
   };
 
   const segmentColor = (ctx: any, opacity: number) => {
@@ -183,7 +187,7 @@ import { data } from './performanceData';
     const dataset = ctx.chart.data.datasets[ctx.datasetIndex];
     const tValue = target.data[ctx.p1DataIndex];
     const pValue = dataset.data[ctx.p1DataIndex];
-    return pValue > tValue ? `hsla(350,63%,54%,${opacity})` : `hsla(225,60%,51%,${opacity})`;
+    return getColor(pValue, tValue, opacity);
   };
 
   const segmentGradient = (ctx: any) => {
