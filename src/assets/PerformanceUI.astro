@@ -163,6 +163,10 @@ import { data } from './performanceData';
   };
 
   const getColor = (p: number, t: number, opacity: number) => {
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (prefersDark) {
+      return p > t ? `hsla(350,81%,69%,${opacity})` : `hsla(225,77%,66%,${opacity})`;
+    }
     return p > t ? `hsla(350,63%,54%,${opacity})` : `hsla(225,60%,51%,${opacity})`;
   };
 
