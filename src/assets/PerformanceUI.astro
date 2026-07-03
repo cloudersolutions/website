@@ -162,6 +162,14 @@ import { data } from './performanceData';
     }
   };
 
+  const footerColor = (ctx: any, opacity: number) => {
+    const target = ctx.tooltipItems.at(-1);
+    const dataset = ctx.tooltipItems.at(0);
+    const tValue = target?.raw;
+    const pValue = dataset?.raw;
+    return pValue > tValue ? `hsla(350,63%,54%,${opacity})` : `hsla(225,60%,51%,${opacity})`;
+  };
+
   const pointColor = (ctx: any, opacity: number) => {
     const target = ctx.chart.data.datasets[2];
     const dataset = ctx.chart.data.datasets[ctx.datasetIndex];
@@ -272,7 +280,7 @@ import { data } from './performanceData';
           bodyColor: fgDark,
           footerSpacing: 0,
           footerMarginTop: 2,
-          footerColor: fgDark,
+          footerColor: (ctx) => footerColor(ctx, 1),
           footerFont: {
             weight: 400
           },
