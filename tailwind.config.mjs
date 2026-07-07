@@ -11,30 +11,29 @@ export default {
           css: {
             lineHeight: '1.5',
             maxWidth: '45rem',
-            'h1, h2, h3, h4, h5, h6': {
-              marginBottom: '1rem'
-            },
             h1: {
               fontFamily: 'var(--font-serif)',
               fontSize: '2rem',
               fontWeight: '400',
-              lineHeight: '2.5rem'
+              lineHeight: '1',
+              marginBottom: '1.5rem'
             },
             h2: {
               fontFamily: 'var(--font-serif)',
               fontSize: '1.5rem',
               fontWeight: '400',
-              lineHeight: '2rem'
+              lineHeight: '1.2',
+              marginBottom: '1rem'
             },
             h3: {
               fontSize: '1.125rem',
               fontWeight: '500',
-              lineHeight: '1.5rem'
+              lineHeight: '1.4'
             },
             h4: {
               fontSize: '1rem',
               fontWeight: '500',
-              lineHeight: '1.5rem'
+              lineHeight: '1.5'
             },
             strong: {
               fontWeight: '550'
@@ -107,25 +106,23 @@ export default {
         lg: {
           css: {
             font: 'inherit',
-            lineHeight: '1.5',
-            'h1, h2, h3, h4, h5, h6': {
-              marginBottom: '1rem'
-            },
             h1: {
               fontSize: '2.5rem',
-              lineHeight: '3rem'
+              lineHeight: '1',
+              marginBottom: '1.5rem'
             },
             h2: {
               fontSize: '2rem',
-              lineHeight: '2.5rem'
+              lineHeight: '1.2',
+              marginBottom: '1rem'
             },
             h3: {
               fontSize: '1.25rem',
-              lineHeight: '1.75rem'
+              lineHeight: '1.4'
             },
             h4: {
               fontSize: '1rem',
-              lineHeight: '1.5rem'
+              lineHeight: '1.5'
             },
             img: {
               marginBlock: '2rem'
