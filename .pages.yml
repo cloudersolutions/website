@@ -118,6 +118,22 @@ content:
             type: string
             required: true
             description: The small result label, e.g. 'Data points'.
+          - name: quote
+            label: Quote
+            type: text
+            required: true
+            description: Shown on the home page for case studies. Leave out the quotation marks, they are added automatically.
+            pattern: { message: 'No line breaks allowed', regex: '^[^\r\n]*$' }
+          - name: name
+            label: Quote author
+            type: string
+            required: true
+            description: The person quoted, e.g. 'Hannu Tammia'.
+          - name: title
+            label: Quote author title
+            type: string
+            required: true
+            description: The quoted person’s title, e.g. 'Asset Manager, Areim AB'.
       - name: body
         label: Body
         type: rich-text
