@@ -4,7 +4,7 @@ title: Privacy Policy
 description: This privacy policy describes how we collect and process your personal data and what rights you have regarding your data.
 ---
 
-<p class="text-neutral-500 mb-8 text-sm">Mar 28, 2025</p>
+<p class="text-neutral-500 mb-8 text-sm">Oct 7, 2026</p>
 
 This privacy policy describes how we collect and process your personal data and what rights you have regarding your data.
 
@@ -118,8 +118,7 @@ We may also store your information in other third party services for the purpose
 
 - Amazon Web Services (user authentication, data storage)
 - Azure (user authentication)
-- Sentry (error tracking and monitoring)
-- Honeycomb (monitoring)
+- Honeycomb (error tracking and monitoring)
 
 Data storage for these service providers is based in the EU, and we have data processing agreements in place with each provider.
 
