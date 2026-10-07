@@ -119,6 +119,7 @@ We may also store your information in other third party services for the purpose
 - Amazon Web Services (user authentication, data storage)
 - Azure (user authentication)
 - Honeycomb (error tracking and monitoring)
+- PostHog (product analytics)
 
 Data storage for these service providers is based in the EU, and we have data processing agreements in place with each provider.
 
