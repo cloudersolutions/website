@@ -19,7 +19,7 @@
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",
     "@tailwindcss/vite": "^4.3.3",
-    "astro": "^7.2.9",
+    "astro": "^7.4.2",
     "change-case": "^5.4.4",
     "chart.js": "^4.5.1",
     "lucide-astro": "^0.556.0",
@@ -46,10 +46,7 @@
     "prettier-plugin-tailwindcss": "^0.8.1"
   },
   "allowScripts": {
-    "esbuild@0.28.2": true,
     "core-js@3.50.0": true,
-    "fsevents@2.3.3": true,
-    "fsevents@2.3.2": true,
-    "sharp@0.34.4": true
+    "fsevents@2.3.3": true
   }
 }
