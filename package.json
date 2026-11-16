@@ -19,7 +19,7 @@
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
     "@tailwindcss/vite": "^4.3.3",
-    "astro": "^7.4.2",
+    "astro": "^7.4.12",
     "change-case": "^5.4.4",
     "chart.js": "^4.5.1",
     "lucide-astro": "^0.556.0",
